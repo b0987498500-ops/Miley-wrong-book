@@ -136,7 +136,7 @@ class App {
       if (dateStr === '2026-08-24') {
         badgeLabel = '本週';
       } else if (dateStr === '2026-08-31') {
-        badgeLabel = '下週 (8/31)';
+        badgeLabel = '下週';
       }
 
       html += `
