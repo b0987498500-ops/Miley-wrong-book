@@ -248,10 +248,26 @@ window.ReviewModule = {
     document.getElementById('fc-concept').innerText = `# ${q.concept}`;
     document.getElementById('fc-mastery-badge').innerText = `連續掌握：${q.consecutiveMastered || 0} / 2 次`;
 
-    // Render Clean Stem with KaTeX
-    window.katexUtils.renderText('fc-stem-content', q.stem);
+    // Separate Stem Text & Options for Middle Diagram Placement
+    let stemMain = q.stem;
+    let optionsText = '';
 
-    // Diagram
+    const optionIndex = q.stem.indexOf('○ (A)');
+    if (optionIndex !== -1) {
+      stemMain = q.stem.substring(0, optionIndex).trim();
+      optionsText = q.stem.substring(optionIndex).trim();
+    } else {
+      const optionIndexAlt = q.stem.indexOf('(A)');
+      if (optionIndexAlt !== -1) {
+        stemMain = q.stem.substring(0, optionIndexAlt).trim();
+        optionsText = q.stem.substring(optionIndexAlt).trim();
+      }
+    }
+
+    // 1. Render Top Stem Text
+    window.katexUtils.renderText('fc-stem-text', stemMain);
+
+    // 2. Render Middle Diagram Image (Moved UP right below stem text, ABOVE options!)
     const diagContainer = document.getElementById('fc-diagram-container');
     const diagImg = document.getElementById('fc-diagram-img');
     if (q.diagramUrl && diagContainer && diagImg) {
@@ -260,6 +276,9 @@ window.ReviewModule = {
     } else if (diagContainer) {
       diagContainer.classList.add('hidden');
     }
+
+    // 3. Render Bottom Options Text
+    window.katexUtils.renderText('fc-options-text', optionsText);
 
     // Reset Split Container Class
     document.querySelector('.card-grid-split')?.classList.remove('has-answer');
