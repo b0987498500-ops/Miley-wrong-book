@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智慧錯題複習系統 | Smart Question Review</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div id="app" class="app-container">
+    <!-- Sidebar / Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="logo-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="brand-text">
+          <h2>麥麥錯題本</h2>
+          <span class="sub-title">智慧錯題複習系統</span>
+        </div>
+        <button id="sidebar-toggle-btn" class="sidebar-toggle-btn" title="收合/展開側邊欄">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+
+      <!-- Subject Categories Section -->
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">
+          <i class="fa-solid fa-shapes"></i>
+          <span>科目分類</span>
+        </div>
+        <div class="sidebar-subject-group" id="sidebar-subject-group">
+          <button class="sidebar-subject-btn active" data-subject="ALL" title="全部科目">
+            <span class="subj-badge">全</span>
+            <span class="subj-name">全部科目</span>
+          </button>
+          <button class="sidebar-subject-btn" data-subject="國文" title="國文">
+            <span class="subj-badge subj-zh">國</span>
+            <span class="subj-name">國文</span>
+          </button>
+          <button class="sidebar-subject-btn" data-subject="英文" title="英文">
+            <span class="subj-badge subj-en">英</span>
+            <span class="subj-name">英文</span>
+          </button>
+          <button class="sidebar-subject-btn" data-subject="數學" title="數學">
+            <span class="subj-badge subj-math">數</span>
+            <span class="subj-name">數學</span>
+          </button>
+          <button class="sidebar-subject-btn" data-subject="自然/理化" title="自然/理化">
+            <span class="subj-badge subj-sci">自</span>
+            <span class="subj-name">自然/理化</span>
+          </button>
+          <button class="sidebar-subject-btn" data-subject="社會" title="社會">
+            <span class="subj-badge subj-soc">社</span>
+            <span class="subj-name">社會</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="ebbinghaus-summary-box">
+          <div class="ebb-title"><i class="fa-solid fa-rotate-left"></i> 本週待複習</div>
+          <div class="ebb-count"><span id="due-review-count">0</span> 題</div>
+          <p class="ebb-desc">艾賓浩斯週期追蹤中</p>
+        </div>
+        <button id="reset-data-btn" class="btn-ghost-sm" title="重置種子數據">
+          <i class="fa-solid fa-rotate"></i> 重置示範資料
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Header Bar -->
+      <header class="top-header" id="top-header">
+        <div class="header-main-row">
+          <div class="header-left">
+            <button id="topbar-sidebar-trigger" class="icon-btn sidebar-trigger-btn hidden" title="展開側邊欄">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div>
+              <h1 id="page-title">錯題上傳與處理</h1>
+              <p id="page-subtitle" class="subtitle" style="display: none;"></p>
+            </div>
+          </div>
+          <div class="header-right">
+            <div class="calendar-popover-wrapper">
+              <div class="current-date-chip" id="calendar-trigger-btn" title="點擊開啟學習進度與段考標記日曆">
+                <i class="fa-regular fa-calendar-check"></i>
+                <div class="date-chip-text-group">
+                  <span id="current-date-display">2026-08-25 (週二)</span>
+                  <span id="header-study-plan-subtext" class="header-study-plan-subtext">🎯 自然/理化第一次段考 (倒數 7 天)</span>
+                </div>
+                <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px; opacity: 0.7;"></i>
+              </div>
+
+              <!-- Calendar Dropdown Popover -->
+              <div class="calendar-popover" id="calendar-popover">
+                <!-- Nearest Exam Countdown Banner -->
+                <div class="calendar-countdown-banner" id="cal-countdown-banner">
+                  <i class="fa-solid fa-bullseye" style="color: #f59e0b;"></i>
+                  <span id="cal-countdown-text">距離「自然/理化第一次段考」還有 7 天！</span>
+                </div>
+
+                <!-- Calendar Month Nav Header -->
+                <div class="cal-month-header">
+                  <button id="cal-prev-month-btn" class="cal-nav-btn" title="上個月"><i class="fa-solid fa-chevron-left"></i></button>
+                  <span id="cal-month-label" class="cal-month-title">2026 年 8 月</span>
+                  <button id="cal-next-month-btn" class="cal-nav-btn" title="下個月"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+
+                <!-- Days of Week Header -->
+                <div class="cal-weekdays-row">
+                  <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+                </div>
+
+                <!-- Calendar Days Grid -->
+                <div class="cal-days-grid" id="cal-days-grid">
+                  <!-- Rendered dynamically -->
+                </div>
+
+                <!-- Calendar Footer & Quick Add -->
+                <div class="cal-footer-actions">
+                  <button id="cal-add-event-btn" class="btn-accent-sm" style="width: 100%; justify-content: center;">
+                    <i class="fa-solid fa-plus"></i> 新增段考 / 學習進度標記
+                  </button>
+                </div>
+
+                <!-- Selected Day Event List Area -->
+                <div class="cal-day-events-box" id="cal-day-events-box">
+                  <div class="events-box-title" id="cal-selected-day-title">今日安排</div>
+                  <div class="events-list" id="cal-events-list">
+                    <!-- Dynamic Event items -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button id="theme-toggle-btn" class="icon-btn" title="切換深淺模式">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+            <button id="topbar-toggle-btn" class="icon-btn" title="收合/展開頂部欄">
+              <i class="fa-solid fa-chevron-up"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Weekly Monday Dates Bar (Collapsible Content) -->
+        <div class="weekly-monday-bar" id="weekly-monday-bar">
+          <div class="weekly-monday-chips" id="weekly-monday-chips">
+            <!-- Dynamic Monday Chips Rendered via JS -->
+          </div>
+        </div>
+      </header>
+
+      <!-- Views Container -->
+      <div class="views-wrapper">
+        <!-- ==================== MODULE 1: UPLOAD & AI PROCESSING ==================== -->
+        <section id="view-upload" class="tab-view">
+          <div class="upload-grid">
+            <!-- Left: Upload & Raw Brush Eraser -->
+            <!-- Left: Single Upload Dropzone & Processing -->
+            <div class="glass-panel upload-panel">
+              <div class="panel-header">
+                <h3><i class="fa-solid fa-cloud-arrow-up"></i> 上傳錯題照片 (自動分離題目與解析)</h3>
+                <span class="step-indicator">步驟 1 / 2</span>
+              </div>
+
+              <!-- Single Unified Dropzone -->
+              <div class="drop-zone" id="image-drop-zone" style="margin-bottom: 20px;">
+                <input type="file" id="file-input" accept="image/*,.txt" class="file-input-hidden">
+                <div class="drop-zone-content">
+                  <div class="upload-icon-wrapper">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                  </div>
+                  <h4>拖曳或選擇【上傳錯題照片】</h4>
+                  <p>請拍攝或上傳包含題目與解析的考卷照片，系統將自動分離出題目與詳解 <kbd class="kbd-badge">Ctrl+V 貼上</kbd></p>
+                  <div class="paste-action-box">
+                    <button type="button" class="btn-chip btn-chip-action" id="btn-select-file">
+                      <i class="fa-solid fa-folder-open"></i> 選擇錯題照片
+                    </button>
+                    <button type="button" class="btn-chip btn-chip-action" id="clipboard-paste-btn">
+                      <i class="fa-solid fa-paste"></i> 貼上照片截圖
+                    </button>
+                    <button type="button" class="btn-chip btn-chip-action" id="btn-open-paste-text-modal">
+                      <i class="fa-solid fa-font"></i> 貼上純文字題目
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dual Photo Display & Comparison Section -->
+              <div class="ai-auto-processing-section hidden" id="ai-auto-processing-section">
+                <div class="phase1-comparison-grid">
+                  <!-- Left Card: Pure Question Data (Stem, Table, Options, No Handwritings/Answers) -->
+                  <div class="ai-preview-card phase1-col-left">
+                    <div class="preview-header">
+                      <div class="preview-header-left">
+                        <i class="fa-solid fa-file-circle-question" style="color: var(--accent-primary);"></i>
+                        <span style="font-weight: 700;">【純題目】（絕無答案 ‧ (A)(B)(C)(D)選項完全相同白圓圈 ‧ 無手寫痕跡）</span>
+                      </div>
+                      <div class="preview-header-actions" style="display: flex; gap: 6px;">
+                        <button type="button" class="btn-chip btn-chip-zoom" id="zoom-orig-btn" title="點擊全螢幕放大">
+                          <i class="fa-solid fa-magnifying-glass-plus"></i> 放大純題目
+                        </button>
+                      </div>
+                    </div>
+                    <div class="canvas-wrapper clickable-image-wrapper" id="orig-img-wrapper" title="點擊全螢幕放大閱讀純淨題目照片">
+                      <div id="orig-placeholder-hint" style="padding: 40px 20px; text-align: center; color: var(--text-muted);">
+                        <i class="fa-solid fa-image" style="font-size: 2.5rem; margin-bottom: 10px; opacity: 0.5;"></i>
+                        <p>請先由上方【上傳錯題照片】</p>
+                      </div>
+                      <img id="original-preview-img" alt="純淨題目照片" style="max-width: 100%; height: auto; border-radius: 6px; display: none; margin: 0 auto; cursor: pointer;">
+                    </div>
+                  </div>
+
+                  <!-- Right Card: Pure Solution Data (Correct Answer & Detailed Reasoning Steps) -->
+                  <div class="ai-preview-card phase1-col-right">
+                    <div class="preview-header">
+                      <div class="preview-header-left">
+                        <i class="fa-solid fa-circle-check" style="color: #10b981;"></i>
+                        <span style="font-weight: 700; color: #10b981;">【純解答】（正確答案標示與詳細解題說明）</span>
+                      </div>
+                      <div class="preview-header-actions" style="display: flex; gap: 6px;">
+                        <button type="button" class="btn-chip btn-chip-zoom" id="zoom-solution-btn" title="點擊全螢幕放大">
+                          <i class="fa-solid fa-magnifying-glass-plus"></i> 放大純解答
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Direct Answer Image Display -->
+                    <div id="solution-drawer-container" class="canvas-wrapper clickable-image-wrapper solution-drawer" title="點擊全螢幕放大閱讀解答照片">
+                      <div id="solution-placeholder-hint" style="padding: 40px 20px; text-align: center; color: var(--text-muted);">
+                        <i class="fa-solid fa-image" style="font-size: 2.5rem; margin-bottom: 10px; opacity: 0.5;"></i>
+                        <p>系統將自動分離出【解析與答案照片】</p>
+                      </div>
+                      <img id="solution-preview-img" alt="分離出之答案照片" style="max-width: 100%; height: auto; border-radius: 6px; display: none; margin: 0 auto; cursor: pointer;">
+                    </div>
+                  </div>
+
+                  <!-- Hidden image holder for diagram source fallback -->
+                  <img id="diagram-preview-img" src="" alt="AI 增強圖形" class="hidden">
+                </div>
+
+                <!-- Action Bar: Confirm & Save Wrong Question to Archive -->
+                <div class="save-action-bar" style="display: flex; justify-content: center; margin-top: 24px; padding-top: 18px; border-top: 1px dashed rgba(255, 255, 255, 0.15);">
+                  <button type="button" id="btn-save-question-confirm" class="btn-primary" style="padding: 16px 48px; font-size: 1.2rem; font-weight: 700; border-radius: 50px; background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35); cursor: pointer; transition: all 0.25s ease;">
+                    <i class="fa-solid fa-floppy-disk"></i> 💾 確認儲存錯題 (歸檔入庫)
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== MODULE 2: HIERARCHICAL ARCHIVE & MANAGEMENT ==================== -->
+        <section id="view-archive" class="tab-view">
+          <div class="archive-layout">
+            <!-- Left Sidebar: Exam -> Monday Date Tree -->
+            <div class="glass-panel archive-sidebar">
+              <div class="sidebar-header">
+                <h3><i class="fa-solid fa-sitemap"></i> 段考 ➔ 週一日期目錄</h3>
+              </div>
+              <div id="tree-menu" class="tree-menu">
+                <!-- Tree rendered via JavaScript -->
+              </div>
+
+              <div class="concept-cluster-box">
+                <div class="cluster-title">
+                  <i class="fa-solid fa-network-wired"></i> AI 核心概念聚類串聯
+                </div>
+                <p class="cluster-desc">點擊下方標籤可跨週次串聯所有相同觀念錯題：</p>
+                <div id="concept-tags-cloud" class="concept-tags-cloud">
+                  <!-- Rendered dynamically -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Content: Filtered List & Card Grid -->
+            <div class="glass-panel archive-main">
+              <!-- Filter bar -->
+              <div class="archive-filter-bar">
+                <div class="filter-group">
+                  <span class="filter-label">科目標籤：</span>
+                  <div class="filter-chips" id="subject-filter-chips">
+                    <button class="chip active" data-subject="ALL">全部科目</button>
+                    <button class="chip" data-subject="數學">數學</button>
+                    <button class="chip" data-subject="自然/理化">自然/理化</button>
+                    <button class="chip" data-subject="英文">英文</button>
+                    <button class="chip" data-subject="國文">國文</button>
+                    <button class="chip" data-subject="社會">社會</button>
+                  </div>
+                </div>
+
+                <div class="filter-group">
+                  <span class="filter-label">失分原因：</span>
+                  <div class="filter-chips" id="reason-filter-chips">
+                    <button class="chip active" data-reason="ALL">全部原因</button>
+                    <button class="chip" data-reason="計算粗心">計算粗心</button>
+                    <button class="chip" data-reason="觀念不懂">觀念不懂</button>
+                    <button class="chip" data-reason="題目看錯">題目看錯</button>
+                    <button class="chip" data-reason="公式忘記">公式忘記</button>
+                  </div>
+                </div>
+
+                <div class="search-box">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" id="archive-search-input" placeholder="搜尋題幹、觀念或防錯筆記...">
+                </div>
+              </div>
+
+              <!-- Selected Active Node Indicator -->
+              <div class="archive-current-indicator">
+                <span id="archive-current-title">全部錯題列表</span>
+                <span class="count-badge" id="archive-results-count">0 題</span>
+              </div>
+
+              <!-- Wrong Questions Grid -->
+              <div id="archive-cards-grid" class="cards-grid">
+                <!-- Cards dynamically rendered via JS -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== MODULE 3: WEEKEND FLASHCARD REVIEW & A4 PDF ==================== -->
+        <section id="view-review" class="tab-view active">
+          <div class="glass-panel review-container">
+            <div class="review-header">
+              <div class="review-mode-info">
+                <h3><i class="fa-solid fa-calendar-check" style="color: #6366f1;"></i> 每週錯題複習</h3>
+              </div>
+
+              <div class="review-top-actions">
+                <button id="btn-toggle-fullscreen" class="btn-accent-sm" title="切換全螢幕滿版大畫面">
+                  <i class="fa-solid fa-expand"></i> 全螢幕專注大畫面
+                </button>
+                <button id="toggle-scratchpad-btn" class="btn-secondary">
+                  <i class="fa-solid fa-pen-ruler"></i> 開啟螢幕計算草稿區
+                </button>
+                <div class="export-pdf-dropdown">
+                  <button id="export-pdf-main-btn" class="btn-primary">
+                    <i class="fa-solid fa-file-pdf"></i> 匯出 A4 雙 PDF 測驗卷 <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                  <div class="pdf-dropdown-menu" id="pdf-dropdown-menu">
+                    <button id="export-pdf-test-paper">
+                      <i class="fa-solid fa-file-lines"></i> 匯出「檔案一：純題目測驗卷」
+                    </button>
+                    <button id="export-pdf-answer-paper">
+                      <i class="fa-solid fa-file-circle-check"></i> 匯出「檔案二：解答解析與提醒卷」
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Flashcard Review Stage -->
+            <div class="flashcard-stage-wrapper">
+              <!-- Ebbinghaus Progress Tracker -->
+              <div class="review-progress-bar-container">
+                <div class="progress-info">
+                  <span id="review-current-index">題目 1 / 5</span>
+                  <span id="review-ebbinghaus-stage" class="stage-tag">艾賓浩斯週期: 1 週次</span>
+                </div>
+                <div class="progress-track">
+                  <div id="review-progress-fill" class="progress-fill" style="width: 20%;"></div>
+                </div>
+              </div>
+
+              <!-- Main Card Component with Navigation Arrows -->
+              <div class="flashcard-stage-main">
+                <button id="fc-prev-btn" class="fc-nav-arrow arrow-left" title="上一題 (快捷鍵 ←)">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="flashcard-card" id="main-flashcard">
+                  <!-- Card Header -->
+                  <div class="card-top-bar">
+                    <div class="card-meta-tags">
+                      <span class="tag-subject" id="fc-subject">理化</span>
+                      <span class="tag-reason" id="fc-reason">觀念不懂</span>
+                      <span class="tag-concept" id="fc-concept">連通管原理</span>
+                    </div>
+                    <span class="mastery-status" id="fc-mastery-badge">連續掌握：0 / 2 次</span>
+                  </div>
+
+                  <!-- Split Content Grid: Left Question, Right Solution -->
+                  <div class="card-grid-split">
+                    <!-- Clean Stem & Diagram -->
+                    <div class="card-body-stem">
+                      <div id="fc-stem-content" class="stem-katex-text"></div>
+                      <div id="fc-diagram-container" class="fc-diagram-container hidden">
+                        <img id="fc-diagram-img" src="" alt="題目圖形">
+                      </div>
+                    </div>
+
+                    <!-- Fluorescent Yellow Mistake Note & Answer (Initially Hidden) -->
+                    <div id="fc-answer-container" class="fc-answer-container hidden">
+                      <!-- FLUORESCENT YELLOW TOP NOTE -->
+                      <div class="yellow-fluorescent-banner">
+                        <div class="banner-tag"><i class="fa-solid fa-highlighter"></i> 個人防錯備忘筆記 (置頂黃色醒目提醒)</div>
+                        <div id="fc-mistake-note-text" class="banner-content">
+                          <!-- Note content -->
+                        </div>
+                      </div>
+
+                      <!-- Standard Answer & Steps -->
+                      <div class="solution-content-box">
+                        <div class="sol-answer"><strong>標準答案：</strong><span id="fc-std-answer"></span></div>
+                        <div class="sol-steps">
+                          <strong>詳細解題步驟：</strong>
+                          <div id="fc-solution-steps" class="steps-katex-text"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Action Toolbar -->
+                  <div class="card-action-bar">
+                    <button id="fc-reveal-btn" class="btn-reveal">
+                      <i class="fa-solid fa-eye"></i> 查看解析與防錯口訣 (Space)
+                    </button>
+
+                    <div id="fc-feedback-btns" class="feedback-btns-group hidden">
+                      <button id="btn-mark-unmastered" class="btn-unmastered">
+                        <i class="fa-solid fa-xmark"></i> 未掌握 (按 1)
+                      </button>
+                      <button id="btn-mark-mastered" class="btn-mastered">
+                        <i class="fa-solid fa-check"></i> 已掌握 (按 2)
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <button id="fc-next-btn" class="fc-nav-arrow arrow-right" title="下一題 (快捷鍵 →)">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== MODULE 4: EXAM HIGH-FREQUENCY SPRINT ==================== -->
+        <section id="view-sprint" class="tab-view">
+          <div class="sprint-layout">
+            <!-- Filter Banner Header -->
+            <div class="glass-panel sprint-header-panel">
+              <div class="sprint-title-box">
+                <div class="sprint-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                <div>
+                  <h3>段考高頻衝刺與考前 15 分鐘隨身卡</h3>
+                  <p>系統已自動為您篩選該段考期間「錯誤次數 $\ge$ 2 次」或標記「觀念不懂」的高頻頑固錯題</p>
+                </div>
+              </div>
+
+              <div class="sprint-filter-controls">
+                <label>選擇衝刺段考範圍：</label>
+                <select id="sprint-exam-select" class="form-control inline-select">
+                  <option value="二段" selected>第二次段考 (二段)</option>
+                  <option value="一段">第一次段考 (一段)</option>
+                  <option value="三段">第三次段考 (三段)</option>
+                </select>
+                <span class="sprint-count-chip" id="sprint-filtered-count">篩選出 3 題高頻題</span>
+              </div>
+            </div>
+
+            <!-- Two Sub-tabs: Mobile Swipe UI & AI Variant Generation -->
+            <div class="sprint-content-grid">
+              <!-- Left: Mobile Swipe UI Card Deck -->
+              <div class="glass-panel swipe-deck-panel">
+                <div class="deck-header">
+                  <h4><i class="fa-solid fa-mobile-screen-button"></i> 考前 15 分鐘衝刺隨身卡 (Swipe UI)</h4>
+                  <span class="hint-pill">點擊卡片翻面 | 左右滑動切換</span>
+                </div>
+
+                <div class="swipe-container" id="swipe-card-container">
+                  <!-- Swipe Card Component dynamically rendered -->
+                  <div class="flip-card-wrapper" id="current-swipe-card">
+                    <div class="flip-card-inner">
+                      <!-- Front Side -->
+                      <div class="flip-card-front">
+                        <div class="card-badge-front">正面：核心題幹與配圖</div>
+                        <div class="card-subject-tag" id="swipe-subject">數學</div>
+                        <div id="swipe-front-stem" class="swipe-stem-text"></div>
+                        <div id="swipe-front-diagram" class="swipe-diagram-box hidden">
+                          <img id="swipe-diagram-img" src="" alt="題幹圖">
+                        </div>
+                        <div class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> 點擊卡片查看背面防錯口訣</div>
+                      </div>
+
+                      <!-- Back Side -->
+                      <div class="flip-card-back">
+                        <div class="card-badge-back">背面：螢光黃防錯口訣 & 關鍵公式</div>
+                        <div class="yellow-back-note">
+                          <div class="note-title"><i class="fa-solid fa-highlighter"></i> 防錯口訣</div>
+                          <div id="swipe-back-note" class="note-body"></div>
+                        </div>
+                        <div class="key-formula-box">
+                          <div class="formula-title"><i class="fa-solid fa-square-root-variable"></i> 關鍵解題公式與步驟</div>
+                          <div id="swipe-back-formula" class="formula-body"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swipe-controls">
+                  <button id="swipe-prev-btn" class="btn-circle" title="上一題"><i class="fa-solid fa-arrow-left"></i></button>
+                  <span id="swipe-index-indicator" class="swipe-index">1 / 3</span>
+                  <button id="swipe-next-btn" class="btn-circle" title="下一題"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+              </div>
+
+              <!-- Right: AI Variant / Similar Question Generator -->
+              <div class="glass-panel variant-gen-panel">
+                <div class="panel-header">
+                  <h4><i class="fa-solid fa-wand-magic-sparkles"></i> AI 變形題 / 相似題驗收生成器</h4>
+                </div>
+
+                <div class="variant-intro">
+                  <p>針對頑固高頻錯題，點擊下方按鈕可生成一題「觀念相同但變換數字/題幹」的新題目，即時檢驗理解程度！</p>
+                </div>
+
+                <div class="variant-question-card" id="variant-card">
+                  <div class="variant-meta">
+                    <span class="target-concept" id="var-concept-tag">當前對應觀念：一元二次方程式公式解</span>
+                    <button id="btn-generate-variant" class="btn-accent-sm">
+                      <i class="fa-solid fa-arrows-rotate"></i> 生成 AI 變形題
+                    </button>
+                  </div>
+
+                  <div id="variant-content-box" class="variant-content-box">
+                    <div class="variant-stem-title"><i class="fa-solid fa-file-pen"></i> AI 產出變形試題：</div>
+                    <div id="variant-stem-text" class="variant-stem-text">
+                      請點擊上方按鈕生成相似變形題...
+                    </div>
+
+                    <!-- Interactive Options for Variant Validation -->
+                    <div id="variant-options-box" class="variant-options-box hidden">
+                      <!-- Rendered via JS -->
+                    </div>
+
+                    <div id="variant-feedback-box" class="variant-feedback-box hidden">
+                      <!-- Feedback displayed here -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== MODULE 5: LEARNING ANALYTICS & FEEDBACK ==================== -->
+        <section id="view-analytics" class="tab-view">
+          <div class="analytics-grid">
+            <!-- Left: Error Reason Distribution Chart -->
+            <div class="glass-panel chart-panel">
+              <div class="panel-header">
+                <h3><i class="fa-solid fa-chart-pie"></i> 失分原因分佈統計</h3>
+                <select id="analytics-time-select" class="form-control inline-select">
+                  <option value="ALL">全部段考累積</option>
+                  <option value="二段" selected>第二次段考 (二段)</option>
+                  <option value="一段">第一次段考 (一段)</option>
+                </select>
+              </div>
+              <div class="chart-wrapper">
+                <canvas id="error-reason-chart"></canvas>
+              </div>
+              <div class="chart-insights" id="chart-insights">
+                <!-- Insight summary text rendered via JS -->
+              </div>
+            </div>
+
+            <!-- Right: Concept Weakness Ranking (Top 3) -->
+            <div class="glass-panel ranking-panel">
+              <div class="panel-header">
+                <h3><i class="fa-solid fa-trophy"></i> 核心概念弱點排行榜 (Top 3)</h3>
+                <span class="subtitle-chip">針對高錯率盲點進行特訓</span>
+              </div>
+
+              <div id="top-weakness-list" class="weakness-list">
+                <!-- Top 3 Weaknesses rendered via JS -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Transparent Floating Screen Calculation Scratchpad Canvas (Module 3) -->
+  <div id="scratchpad-overlay" class="scratchpad-overlay hidden">
+    <!-- Floating Transparent Controls Toolbar -->
+    <div class="scratchpad-floating-toolbar">
+      <div class="toolbar-title"><i class="fa-solid fa-pen-ruler" style="color: var(--accent-primary);"></i> 全透視計算畫布</div>
+      <div class="toolbar-divider"></div>
+      
+      <!-- Color Chips Picker -->
+      <div class="scratch-color-picker">
+        <button class="color-dot active" data-color="#ef4444" style="background: #ef4444;" title="紅色筆"></button>
+        <button class="color-dot" data-color="#3b82f6" style="background: #3b82f6;" title="藍色筆"></button>
+        <button class="color-dot" data-color="#10b981" style="background: #10b981;" title="綠色筆"></button>
+        <button class="color-dot" data-color="#f59e0b" style="background: #f59e0b;" title="黃色筆"></button>
+        <button class="color-dot" data-color="#0f172a" style="background: #0f172a;" title="黑色筆"></button>
+        <button class="color-dot" data-color="#ffffff" style="background: #ffffff; border: 1px solid #ccc;" title="白色筆"></button>
+        <input type="color" id="scratch-color-custom" value="#ef4444" title="自訂顏色" style="width: 22px; height: 22px; border: none; cursor: pointer; background: transparent; padding: 0;">
+      </div>
+
+      <div class="toolbar-divider"></div>
+
+      <!-- Size Selector -->
+      <div class="scratch-size-picker">
+        <button class="size-dot active" data-size="3" title="細筆">細</button>
+        <button class="size-dot" data-size="6" title="中筆">中</button>
+        <button class="size-dot" data-size="10" title="粗筆">粗</button>
+      </div>
+
+      <div class="toolbar-divider"></div>
+
+      <div class="scratch-action-btns">
+        <button id="scratch-undo-btn" class="scratch-btn" title="復原上一筆"><i class="fa-solid fa-rotate-left"></i> 復原</button>
+        <button id="scratch-clear-btn" class="scratch-btn" title="清除所有筆劃"><i class="fa-solid fa-trash-can"></i> 清除</button>
+        <button id="scratch-close-btn" class="scratch-btn btn-close-scratch" title="關閉草稿區"><i class="fa-solid fa-xmark"></i> 關閉</button>
+      </div>
+    </div>
+
+    <!-- Fullscreen 100% Transparent Drawing Canvas -->
+    <canvas id="scratchpad-canvas" class="scratchpad-transparent-canvas"></canvas>
+  </div>
+
+  <!-- Add Calendar Event Modal -->
+  <div id="modal-add-calendar-event" class="modal-overlay hidden">
+    <div class="modal-content glass-panel" style="max-width: 440px;">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-calendar-plus" style="color: var(--accent-primary);"></i> 安排學習進度 / 標記段考</h3>
+        <button class="modal-close-btn" id="btn-close-cal-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group" style="margin-bottom: 14px;">
+          <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; display: block;"><i class="fa-regular fa-calendar"></i> 目標日期</label>
+          <input type="date" id="cal-input-date" class="form-control" style="width: 100%; padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-main);">
+        </div>
+        <div class="form-group" style="margin-bottom: 14px;">
+          <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; display: block;"><i class="fa-solid fa-tag"></i> 類型</label>
+          <select id="cal-input-type" class="form-control" style="width: 100%; padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-main);">
+            <option value="exam">🎯 段考標記 (Exam)</option>
+            <option value="plan">📖 學習進度 (Study Plan)</option>
+            <option value="review">⏰ 複習提醒 (Review)</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom: 14px;">
+          <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; display: block;"><i class="fa-solid fa-pen"></i> 事項名稱 / 科目說明</label>
+          <input type="text" id="cal-input-title" class="form-control" placeholder="例如：自然/理化第一次段考、複習連通管錯題" style="width: 100%; padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-main);">
+        </div>
+      </div>
+      <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+        <button id="btn-cancel-cal-modal" class="btn-secondary">取消</button>
+        <button id="btn-save-cal-modal" class="btn-primary"><i class="fa-solid fa-check"></i> 儲存標記</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Lightbox Modal for Fullscreen Inspection -->
+  <div id="image-lightbox-modal" class="modal-overlay hidden">
+    <div class="lightbox-modal-content">
+      <div class="lightbox-header">
+        <span id="lightbox-title" class="lightbox-title"><i class="fa-solid fa-magnifying-glass-plus"></i> 圖片放大檢視</span>
+        <button type="button" id="lightbox-close-btn" class="icon-btn" title="關閉 (Esc)">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="lightbox-body">
+        <img id="lightbox-img" src="" alt="全螢幕照片檢視">
+      </div>
+    </div>
+  </div>
+
+  <!-- Paste Pure Text Question Modal -->
+  <div id="modal-paste-text" class="modal-overlay hidden">
+    <div class="modal-content glass-panel" style="max-width: 560px;">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-font" style="color: var(--accent-primary);"></i> 貼上純文字題目與解析</h3>
+        <button type="button" class="modal-close-btn" id="btn-close-paste-text-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p class="hint-text" style="margin-bottom: 12px; color: var(--text-secondary); font-size: 0.85rem;">
+          <i class="fa-solid fa-circle-info"></i> 請直接將文字題目貼入下方框中，AI 將自動辨識拆分題目、選項與解答：
+        </p>
+        <div class="form-group" style="margin-bottom: 14px;">
+          <textarea id="paste-text-input" class="form-control" rows="8" placeholder="請在此貼上純文字題目、選項或解答...&#10;範例：&#10;求一元二次方程式 2x² - 5x + 1 = 0 的兩實根。&#10;(A) x = (5 ± √17) / 4&#10;解析：代入公式解 x = (-b ± √(b²-4ac)) / (2a)..." style="width: 100%; font-size: 0.9rem; line-height: 1.5; padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-main);"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px;">
+        <button type="button" id="btn-cancel-paste-text-modal" class="btn-secondary">取消</button>
+        <button type="button" id="btn-submit-paste-text" class="btn-secondary"><i class="fa-solid fa-wand-magic-sparkles"></i> 載入至表單</button>
+        <button type="button" id="btn-submit-and-save-text" class="btn-primary"><i class="fa-solid fa-cloud-arrow-up"></i> 一鍵歸檔錄入</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PDF Export Hidden Render Container -->
+  <div id="pdf-export-container" class="pdf-export-container"></div>
+
+  <!-- Main JavaScript App Modules -->
+  <script src="js/data.js"></script>
+  <script src="js/utils/katex_render.js"></script>
+  <script src="js/utils/pdf_export.js"></script>
+  <script src="js/modules/upload.js"></script>
+  <script src="js/modules/archive.js"></script>
+  <script src="js/modules/review.js"></script>
+  <script src="js/modules/sprint.js"></script>
+  <script src="js/modules/analytics.js"></script>
+  <script src="js/modules/calendar.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
