@@ -3,25 +3,25 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v4';
+const STORAGE_KEY = 'miley_wrong_questions_v5';
 
 // Initial Seed Data with real LaTeX, diagram samples, and mistake prevention notes
 const INITIAL_SEED_DATA = [
   {
-    id: 'q_112_civics_001',
+    id: 'q_math_sim_001',
     examPeriod: '二段',
-    subject: '社會',
-    errorReason: '審題讀圖細節',
-    concept: '家務勞動與性別平權',
+    subject: '數學',
+    errorReason: '觀念不懂',
+    concept: 'AA相似三角形與對應邊成比例',
     uploadDate: '2026-08-24',
     mondayDate: '2026-08-24',
     weekLabel: '2026-08-24 (第 1 週)',
     isGuessedOrUnstable: true,
-    mistakeNote: '女性未就業原因大多集中於照顧家人與打理家務，顯示家務分工主要由女性承擔，反映家庭平權觀念仍待提升！',
-    stem: '甲國女性的就業率，長期以來皆大幅低於全國平均值，因此該國政府調查女性勞動人口中未就業者的原因，附表是調查結果中的部分統計資料。關於此資料的解讀，下列何者最適當？［112.會考］\n\n○ (A) 老年人口比例呈現上升趨勢\n○ (B) 家庭職能因社會變遷而弱化\n○ (C) 家庭平權的觀念仍有待加強\n○ (D) 勞雇間的權力與資源不對等',
-    answer: '(C) 家庭平權的觀念仍有待加強',
-    solution: '從表中訊息可以看出，女性未就業的原因主要是為了照顧未滿 12 歲兒童、照顧老人及打理家務，顯示家務勞動多由女性負責，女性是家務勞動主要性別，可見家庭平權觀念有待加強，故選(C)。',
-    diagramUrl: 'assets/questions/q_112_civics_001.png',
+    mistakeNote: 'AA 相似三角形對應邊成比例！注意 \\(\\overline{AB} = \\overline{AD} + \\overline{DB} = 9 + 3 = 12\\)，不要誤將 \\(\\overline{AD}\\) 當作 \\(\\overline{AB}\\)！',
+    stem: '如圖，\\(\\angle BCD = \\angle BAC\\)，若已知 \\(\\overline{AD} = 9\\)，\\(\\overline{DB} = 3\\)，則 \\(\\overline{BC} = ?\\)\n\n○ (A) 4\n○ (B) 5\n○ (C) 6\n○ (D) 7',
+    answer: '(C) 6',
+    solution: '1. 在 \\(\\Delta ACB\\) 與 \\(\\Delta CDB\\) 中，因為 \\(\\angle BCD = \\angle BAC\\)，且 \\(\\angle B = \\angle B\\)（共用角），故 \\(\\Delta ACB \\sim \\Delta CDB\\)（AA 相似性質）。\n2. 由相似三角形對應邊成比例：\\(\\overline{AB} : \\overline{BC} = \\overline{BC} : \\overline{DB}\\)。\n3. 其中 \\(\\overline{AB} = \\overline{AD} + \\overline{DB} = 9 + 3 = 12\\)。\n4. 代入比例式：\\(12 : \\overline{BC} = \\overline{BC} : 3 \\implies \\overline{BC}^2 = 12 \\times 3 = 36\\)。\n5. 解得 \\(\\overline{BC} = 6\\)。',
+    diagramUrl: 'assets/questions/q_math_sim_001_diagram.png',
     errorCount: 2,
     ebbinghausStage: 1,
     consecutiveMastered: 0,
