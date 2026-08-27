@@ -1841,22 +1841,25 @@ body {
 }
 
 .fc-diagram-container {
-  margin-top: 16px;
-  max-height: 480px;
-  overflow: auto;
+  margin: 20px 0;
+  max-height: 320px;
+  overflow: hidden;
   border-radius: var(--radius-md);
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: center;
-  padding: 12px;
+  align-items: center;
+  padding: 16px;
 }
 
 .fc-diagram-container img {
-  max-height: 450px;
+  max-height: 280px;
   max-width: 100%;
   object-fit: contain;
-  border-radius: 8px;
+  filter: contrast(1.1);
+  border-radius: 4px;
 }
 
 /* FLUORESCENT YELLOW TOP BANNER (MUST BE AT TOP OF SOLUTION) */
