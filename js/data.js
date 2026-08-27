@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v3';
+const STORAGE_KEY = 'miley_wrong_questions_v4';
 
 // Initial Seed Data with real LaTeX, diagram samples, and mistake prevention notes
 const INITIAL_SEED_DATA = [
@@ -18,10 +18,10 @@ const INITIAL_SEED_DATA = [
     weekLabel: '2026-08-24 (第 1 週)',
     isGuessedOrUnstable: true,
     mistakeNote: '女性未就業原因大多集中於照顧家人與打理家務，顯示家務分工主要由女性承擔，反映家庭平權觀念仍待提升！',
-    stem: '甲國女性的就業率，長期以來皆大幅低於全國平均值，因此該國政府調查女性勞動人口中未就業者的原因，附表是調查結果中的部分統計資料。關於此資料的解讀，下列何者最適當？［112.會考］\n\n（單位：%）\n| 年齡(歲) | 需照顧未滿12歲子女 | 需照顧65歲以上家屬 | 負責打理家務 | 健康狀況不佳 | 其他 |\n| 30-34 | 65.37 | 0.89 | 11.43 | 2.98 | 19.33 |\n| 35-39 | 55.35 | 2.60 | 21.39 | 4.26 | 16.40 |\n| 40-44 | 35.36 | 5.16 | 39.70 | 7.15 | 12.63 |\n| 45-49 | 7.05 | 8.10 | 58.04 | 5.50 | 21.31 |\n| 50-54 | 0.53 | 7.58 | 56.69 | 4.69 | 30.51 |\n\n○ (A) 老年人口比例呈現上升趨勢\n○ (B) 家庭職能因社會變遷而弱化\n○ (C) 家庭平權的觀念仍有待加強\n○ (D) 勞雇間的權力與資源不對等',
+    stem: '甲國女性的就業率，長期以來皆大幅低於全國平均值，因此該國政府調查女性勞動人口中未就業者的原因，附表是調查結果中的部分統計資料。關於此資料的解讀，下列何者最適當？［112.會考］\n\n○ (A) 老年人口比例呈現上升趨勢\n○ (B) 家庭職能因社會變遷而弱化\n○ (C) 家庭平權的觀念仍有待加強\n○ (D) 勞雇間的權力與資源不對等',
     answer: '(C) 家庭平權的觀念仍有待加強',
     solution: '從表中訊息可以看出，女性未就業的原因主要是為了照顧未滿 12 歲兒童、照顧老人及打理家務，顯示家務勞動多由女性負責，女性是家務勞動主要性別，可見家庭平權觀念有待加強，故選(C)。',
-    diagramUrl: '',
+    diagramUrl: 'assets/questions/q_112_civics_001.png',
     errorCount: 2,
     ebbinghausStage: 1,
     consecutiveMastered: 0,

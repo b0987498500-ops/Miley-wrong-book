@@ -1695,20 +1695,20 @@ body {
   box-sizing: border-box;
 }
 
-.card-grid-split {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
+.card-grid-split,
+.card-grid-split.has-answer {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 24px !important;
+  width: 100% !important;
+  align-items: stretch !important;
 }
 
-@media (min-width: 1024px) {
-  .card-grid-split.has-answer {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    align-items: stretch;
-  }
+.card-body-stem,
+#fc-answer-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .review-header {
@@ -1842,17 +1842,21 @@ body {
 
 .fc-diagram-container {
   margin-top: 16px;
-  max-height: 220px;
-  overflow: hidden;
+  max-height: 480px;
+  overflow: auto;
   border-radius: var(--radius-md);
-  background: #000;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   justify-content: center;
+  padding: 12px;
 }
 
 .fc-diagram-container img {
-  max-height: 220px;
+  max-height: 450px;
+  max-width: 100%;
   object-fit: contain;
+  border-radius: 8px;
 }
 
 /* FLUORESCENT YELLOW TOP BANNER (MUST BE AT TOP OF SOLUTION) */
