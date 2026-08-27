@@ -123,22 +123,25 @@ class App {
       </button>
     `;
 
-    mondayDates.forEach((dateStr, index) => {
+    mondayDates.forEach((dateStr) => {
+      const parts = dateStr.split('-');
       let formattedDate = dateStr;
-      if (index === mondayDates.length - 1) {
-        formattedDate = '本週';
-      } else {
-        const parts = dateStr.split('-');
-        if (parts.length === 3) {
-          const month = parseInt(parts[1], 10);
-          const day = parseInt(parts[2], 10);
-          formattedDate = `${month}/${day}`;
-        }
+      if (parts.length === 3) {
+        const month = parseInt(parts[1], 10);
+        const day = parseInt(parts[2], 10);
+        formattedDate = `${month}/${day}`;
+      }
+
+      let badgeLabel = formattedDate;
+      if (dateStr === '2026-08-24') {
+        badgeLabel = '本週';
+      } else if (dateStr === '2026-08-31') {
+        badgeLabel = '下週 (8/31)';
       }
 
       html += `
         <button class="monday-chip" data-monday="${dateStr}">
-          <i class="fa-regular fa-calendar-check"></i> ${formattedDate}
+          <i class="fa-regular fa-calendar-check"></i> ${badgeLabel}
         </button>
       `;
     });

@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v11';
+const STORAGE_KEY = 'miley_wrong_questions_v12';
 
 // Initial Seed Data with real LaTeX, diagram samples, and mistake prevention notes
 const INITIAL_SEED_DATA = [
@@ -320,9 +320,17 @@ class DataManager {
     return this.questions.filter(q => !q.isArchived);
   }
 
-  // Get Tree Structure: Exam -> Monday Date
+  // Get Tree Structure: Exam -> Monday Date (Includes current and next week folders)
   getTreeStructure() {
     const tree = {};
+    const currentMonday = '2026-08-24';
+    const nextMonday = '2026-08-31';
+
+    tree['二段'] = {
+      [currentMonday]: [],
+      [nextMonday]: []
+    };
+
     this.questions.forEach(q => {
       const exam = q.examPeriod || '二段';
       const monday = q.mondayDate || '2026-08-24';
@@ -334,12 +342,14 @@ class DataManager {
     return tree;
   }
 
-  // Get sorted unique list of all Monday dates present in dataset (ascending order)
+  // Get sorted unique list of all Monday dates present in dataset (Includes 下週 2026-08-31)
   getAllMondayDates() {
     const mondays = new Set();
     this.questions.forEach(q => {
       if (q.mondayDate) mondays.add(q.mondayDate);
     });
+    mondays.add('2026-08-24');
+    mondays.add('2026-08-31'); // 下週
     return Array.from(mondays).sort();
   }
 
