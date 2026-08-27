@@ -3,10 +3,31 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v9';
+const STORAGE_KEY = 'miley_wrong_questions_v10';
 
 // Initial Seed Data with real LaTeX, diagram samples, and mistake prevention notes
 const INITIAL_SEED_DATA = [
+  {
+    id: 'q_math_coord_001',
+    examPeriod: '二段',
+    subject: '數學',
+    errorReason: '觀念不懂',
+    concept: '一次函數與直線方程式(y軸截距)',
+    uploadDate: '2026-08-24',
+    mondayDate: '2026-08-24',
+    weekLabel: '2026-08-24 (第 1 週)',
+    isGuessedOrUnstable: true,
+    mistakeNote: '直線方程式 y = mx + k 與 y 軸的交點座標為 (0, k)！觀察 y 軸上的交點高低即可比較 k 的大小關係。',
+    stem: '如圖，直線 \\(L_1\\)、\\(L_2\\)、\\(L_3\\) 分別為方程式 \\(y = x + a\\)、\\(y = -x + b\\)、\\(y = c\\) 的圖形，下列有關 \\(a\\)、\\(b\\)、\\(c\\) 大小關係的敘述何者正確？【93 年第 2 次基測】\n\n○ (A) a > b > c\n○ (B) b > a > c\n○ (C) b > c > a\n○ (D) a > c > b',
+    answer: '(A) a > b > c',
+    solution: '1. 直線 \\(L_1 : y = x + a\\) 與 y 軸的交點為 \\((0, a)\\)。\n2. 直線 \\(L_2 : y = -x + b\\) 與 y 軸的交點為 \\((0, b)\\)。\n3. 直線 \\(L_3 : y = c\\) 與 y 軸的交點為 \\((0, c)\\)。\n4. 觀察圖中 y 軸上交點的高度位置：\\(L_1\\) 的交點最高（在最上方），其次為 \\(L_2\\)，最下方為 \\(L_3\\)。\n5. 故可知 \\(a > b > c\\)，答案選擇 (A)。',
+    diagramUrl: 'assets/questions/q_math_coord_001_diagram.png',
+    errorCount: 2,
+    ebbinghausStage: 1,
+    consecutiveMastered: 0,
+    isArchived: false,
+    nextReviewDate: '2026-08-25'
+  },
   {
     id: 'q_math_sim_001',
     examPeriod: '二段',
