@@ -3,10 +3,31 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v10';
+const STORAGE_KEY = 'miley_wrong_questions_v11';
 
 // Initial Seed Data with real LaTeX, diagram samples, and mistake prevention notes
 const INITIAL_SEED_DATA = [
+  {
+    id: 'q_eng_guitar_001',
+    examPeriod: '二段',
+    subject: '英文',
+    errorReason: '觀念不懂',
+    concept: '冠詞用法(play + the + 樂器)',
+    uploadDate: '2026-08-24',
+    mondayDate: '2026-08-24',
+    weekLabel: '2026-08-24 (第 1 週)',
+    isGuessedOrUnstable: true,
+    mistakeNote: '演奏樂器一定要加定冠詞 the！如 play the guitar、play the piano；球類運動則不加冠詞，如 play basketball！',
+    stem: 'My brother likes music a lot. He always plays ______ before he goes to bed.\n\n○ (A) the guitar\n○ (B) guitar\n○ (C) a guitar\n○ (D) guitars',
+    answer: '(A) the guitar',
+    solution: '1. 本題考查「演奏樂器」前必須冠上定冠詞 the 的英文文法規則。\n2. 在英文中表達「彈奏/演奏樂器」時，動詞固定搭配為 play + the + 樂器名稱（例如：play the guitar 彈吉他、play the piano 彈鋼琴）。\n3. 比較提醒：若為「球類/運動」則完全不加定冠詞，例如 play basketball（打籃球）、play baseball（打棒球）。\n4. 故空格中應填入 the guitar，答案選擇 (A)。',
+    diagramUrl: '',
+    errorCount: 1,
+    ebbinghausStage: 1,
+    consecutiveMastered: 0,
+    isArchived: false,
+    nextReviewDate: '2026-08-25'
+  },
   {
     id: 'q_math_coord_001',
     examPeriod: '二段',
