@@ -3,10 +3,73 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v16';
+const STORAGE_KEY = 'miley_wrong_questions_v17';
 
 // Initial Seed Data with real LaTeX, diagram samples, and mistake prevention notes
 const INITIAL_SEED_DATA = [
+  {
+    id: 'q_sci_chem_103_001',
+    examPeriod: '二段',
+    subject: '自然/理化',
+    errorReason: '計算錯誤',
+    concept: '食鹽水溶解度與飽和溶液過濾混合濃度計算(103年會考題)',
+    uploadDate: '2026-08-29',
+    mondayDate: '2026-08-24',
+    weekLabel: '2026-08-24 (第 1 週)',
+    isGuessedOrUnstable: true,
+    mistakeNote: '過濾後只保留已溶解的食鹽！甲、乙兩杯過濾後均達到飽和，飽和溶液混合後依然是飽和溶液，濃度即為飽和濃度 36/(36+100) × 100% ≈ 26.5%！',
+    stem: '已知室溫時，食鹽的溶解度為 $36\\text{ g}/100\\text{ g}$ 水。小梅在室溫下分別配製甲、乙兩杯食鹽水溶液，各杯內加入的食鹽與水之質量如表所示。小梅將兩杯食鹽水溶液過濾後混合成一杯，若過程中水的蒸發量不計，此杯混合溶液的重量百分濃度約為多少？【103年會考】\n\n燒杯 | 食鹽(g) | 水(g)\n甲 | 24 | 60\n乙 | 36 | 80\n\n○ (A) 26.5%\n○ (B) 30.0%\n○ (C) 36.0%\n○ (D) 42.9%',
+    answer: '(A) 26.5%',
+    solution: '1. 觀念解析與溶解度計算：\n- 已知室溫下食鹽溶解度為 $36\\text{ g} / 100\\text{ g}$ 水。\n- 甲杯：$60\\text{ g}$ 水最多可溶解 $60 \\times \\frac{36}{100} = 21.6\\text{ g}$ 食鹽，過濾後僅保留 $21.6\\text{ g}$（飽和）。\n- 乙杯：$80\\text{ g}$ 水最多可溶解 $80 \\times \\frac{36}{100} = 28.8\\text{ g}$ 食鹽，過濾後僅保留 $28.8\\text{ g}$（飽和）。\n\n2. 混合濃度計算：\n- 甲、乙兩杯過濾後均為飽和溶液，兩者混合後仍為飽和溶液。\n- 重量百分濃度 $P\\% = \\frac{36}{36+100} \\times 100\\% \\approx 26.5\\%$。\n- 故選 (A)。\n\n3. 名師影音解題教學影片：\nhttps://www.youtube.com/watch?v=gjnDtTaeF4w',
+    diagramUrl: '',
+    errorCount: 1,
+    ebbinghausStage: 1,
+    consecutiveMastered: 0,
+    isArchived: false,
+    nextReviewDate: '2026-08-30'
+  },
+  {
+    id: 'q_sci_chem_104_002',
+    examPeriod: '二段',
+    subject: '自然/理化',
+    errorReason: '觀念不懂',
+    concept: '醋酸鈉飽和溶液與溶解度範圍推算(104年會考題)',
+    uploadDate: '2026-08-29',
+    mondayDate: '2026-08-24',
+    weekLabel: '2026-08-24 (第 1 週)',
+    isGuessedOrUnstable: true,
+    mistakeNote: '步驟一：$3\\text{g}$ 醋酸鈉加入 $10\\text{g}$ 水完全溶解（未飽和，濃度 $> \\frac{3}{3+10}=23.1\\%$）；步驟二：再加 $3\\text{g}$（共 $6\\text{g}$）有沉澱（飽和，濃度 $< \\frac{6}{6+10}=37.5\\%$）。故飽和溶液濃度介於 $23.0\\%\\sim 37.5\\%$！',
+    stem: '如圖為小怡在 $20\\text{ }^\\circ\\text{C}$ 時進行實驗的步驟示意圖：若溶解醋酸鈉（$\\text{CH}_3\\text{COONa}$）的過程中，溶液溫度均維持 $20\\text{ }^\\circ\\text{C}$，根據實驗結果可知，在 $20\\text{ }^\\circ\\text{C}$ 時飽和的醋酸鈉水溶液，其重量百分濃度會在下列哪一個範圍內？【104.會考】\n\n○ (A) 23.0%~37.5%\n○ (B) 37.5%~47.5%\n○ (C) 47.5%~60.0%\n○ (D) 60.0%~90.0%',
+    answer: '(A) 23.0%~37.5%',
+    solution: '1. 實驗步驟分析：\n- 步驟一：$3\\text{ g}$ 醋酸鈉加入 $10\\text{ g}$ 水中完全溶解，代表此時尚未達到飽和上限，故 $20\\text{ }^\\circ\\text{C}$ 時飽和濃度必定大於此時濃度：\n  $P_1\\% = \\frac{3}{3+10} \\times 100\\% \\approx 23.1\\%$\n- 步驟二：再加入 $3\\text{ g}$ 醋酸鈉（總共加入 $6\\text{ g}$），結果出現未溶解沉澱，代表已超過飽和上限，故 $20\\text{ }^\\circ\\text{C}$ 時飽和濃度必定小於假定完全溶解時的濃度：\n  $P_2\\% = \\frac{6}{6+10} \\times 100\\% = 37.5\\%$\n\n2. 結論：\n- 飽和醋酸鈉水溶液之重量百分濃度介於 $23.0\\% \\sim 37.5\\%$ 之間。\n- 故選 (A)。',
+    diagramUrl: 'assets/questions/q_104_nat_002_diagram.png',
+    errorCount: 1,
+    ebbinghausStage: 1,
+    consecutiveMastered: 0,
+    isArchived: false,
+    nextReviewDate: '2026-08-30'
+  },
+  {
+    id: 'q_sci_bio_107_003',
+    examPeriod: '二段',
+    subject: '自然/理化',
+    errorReason: '觀念不懂',
+    concept: '細胞滲透作用與體積變化與莫耳濃度換算(107年會考題)',
+    uploadDate: '2026-08-29',
+    mondayDate: '2026-08-24',
+    weekLabel: '2026-08-24 (第 1 週)',
+    isGuessedOrUnstable: true,
+    mistakeNote: '甲杯濃度為 $0.5\\text{ M} \\approx 17.1\\%$，乙杯濃度為 $0.5\\%$（甲 $>$ 乙）。小袋丙置於乙中形狀不變（丙 $\\approx$ 乙），置於甲中萎縮（水滲出，甲 $>$ 丙）。故甲最大，乙與丙相近（甲 $>$ 乙 $\\approx$ 丙）！',
+    stem: '曉營進行滲透作用的實驗，其步驟和說明如圖所示：已知水可以自由進出兩小袋的薄膜而蔗糖不行，結果其中一杯內的小袋保持原形狀且體積幾乎不變，另一杯內的小袋形狀萎縮且體積變小。若各溶液的密度均約為 $1\\text{ g/cm}^3$，則步驟一中甲、乙和丙三種溶液濃度的關係，應為下列何者？（$1\\text{莫耳}$的蔗糖質量為 $342\\text{ g}$）【107.會考】\n\n○ (A) 乙最小，甲與丙相近\n○ (B) 乙最大，甲與丙相近\n○ (C) 甲最小，乙與丙相近\n○ (D) 甲最大，乙與丙相近',
+    answer: '(D) 甲最大，乙與丙相近',
+    solution: '1. 溶液濃度單位換算：\n- 假設溶液密度約為 $1\\text{ g/cm}^3$，則 $1\\text{ L} = 1000\\text{ mL} = 1000\\text{ g}$。\n- 甲杯：$0.5\\text{ M}$ 蔗糖溶液代表 $1\\text{ L}$ 中含有 $0.5\\text{ mol} \\times 342\\text{ g/mol} = 171\\text{ g}$ 蔗糖。\n- 重量百分濃度 $P_{\\text{甲}}\\% = \\frac{171}{1000} \\times 100\\% = 17.1\\%$\n- 乙杯：重量百分濃度 $P_{\\text{乙}}\\% = 0.5\\%$\n- 故濃度大小：甲 $>$ 乙。\n\n2. 滲透作用與體積變化分析：\n- 水分子由低濃度向高濃度滲透。\n- 丙袋放入乙杯時，形狀與體積保持不變，說明丙與乙濃度相等（丙 $\\approx$ 乙）。\n- 丙袋放入甲杯時，形狀萎縮且體積變小，說明水由丙袋滲出至甲杯，故甲杯濃度高於丙袋（甲 $>$ 丙）。\n\n3. 綜合比較：\n- 濃度大小關係：甲 $>$ 乙 $\\approx$ 丙，故選 (D)。\n\n4. 名師影音解題教學影片：\nhttps://www.youtube.com/watch?v=xRfvRVY1M8U',
+    diagramUrl: 'assets/questions/q_107_nat_003_diagram.png',
+    errorCount: 1,
+    ebbinghausStage: 1,
+    consecutiveMastered: 0,
+    isArchived: false,
+    nextReviewDate: '2026-08-30'
+  },
   {
     id: 'q_soc_civ_110_001',
     examPeriod: '二段',
