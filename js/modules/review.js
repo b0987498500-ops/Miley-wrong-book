@@ -179,10 +179,12 @@ window.ReviewModule = {
 
     const welcomeStage = document.getElementById('review-welcome-stage');
     const cardContainer = document.getElementById('review-card-container');
+    const reviewHeader = document.querySelector('.review-header');
 
     if (isUnselected) {
       if (welcomeStage) welcomeStage.classList.remove('hidden');
       if (cardContainer) cardContainer.classList.add('hidden');
+      if (reviewHeader) reviewHeader.classList.add('hidden');
       this.renderWelcomeHero();
       return;
     }
@@ -190,6 +192,7 @@ window.ReviewModule = {
     // Filters are selected -> show flashcard review container!
     if (welcomeStage) welcomeStage.classList.add('hidden');
     if (cardContainer) cardContainer.classList.remove('hidden');
+    if (reviewHeader) reviewHeader.classList.remove('hidden');
 
     const targetSubject = this.currentSubjectFilter || 'ALL';
     const targetMonday = this.currentMondayFilter || 'ALL';
