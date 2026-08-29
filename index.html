@@ -401,36 +401,9 @@
         </section>
 
         <!-- ==================== MODULE 3: WEEKEND FLASHCARD REVIEW & A4 PDF ==================== -->
+        <!-- ==================== MODULE 3: WEEKEND FLASHCARD REVIEW & A4 PDF ==================== -->
         <section id="view-review" class="tab-view active">
           <div class="glass-panel review-container">
-            <div class="review-header hidden">
-              <div class="review-mode-info">
-                <h3><i class="fa-solid fa-calendar-check" style="color: #6366f1;"></i> 每週錯題複習</h3>
-              </div>
-
-              <div class="review-top-actions">
-                <button id="btn-toggle-fullscreen" class="btn-accent-sm" title="切換全螢幕滿版大畫面">
-                  <i class="fa-solid fa-expand"></i> 全螢幕專注大畫面
-                </button>
-                <button id="toggle-scratchpad-btn" class="btn-secondary">
-                  <i class="fa-solid fa-pen-ruler"></i> 開啟螢幕計算草稿區
-                </button>
-                <div class="export-pdf-dropdown">
-                  <button id="export-pdf-main-btn" class="btn-primary">
-                    <i class="fa-solid fa-file-pdf"></i> 匯出 A4 雙 PDF 測驗卷 <i class="fa-solid fa-chevron-down"></i>
-                  </button>
-                  <div class="pdf-dropdown-menu" id="pdf-dropdown-menu">
-                    <button id="export-pdf-test-paper">
-                      <i class="fa-solid fa-file-lines"></i> 匯出「檔案一：純題目測驗卷」
-                    </button>
-                    <button id="export-pdf-answer-paper">
-                      <i class="fa-solid fa-file-circle-check"></i> 匯出「檔案二：解答解析與提醒卷」
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <!-- Flashcard Review Stage -->
             <div class="flashcard-stage-wrapper">
               <!-- Welcome Hero Screen (Initial State before subject/week selection) -->
@@ -483,6 +456,33 @@
               </div>
 
               <div id="review-card-container" class="review-card-container hidden">
+                <div class="review-header">
+                  <div class="review-mode-info">
+                    <h3><i class="fa-solid fa-calendar-check" style="color: #6366f1;"></i> 每週錯題複習</h3>
+                  </div>
+
+                  <div class="review-top-actions">
+                    <button id="btn-toggle-fullscreen" class="btn-accent-sm" title="切換全螢幕滿版大畫面">
+                      <i class="fa-solid fa-expand"></i> 全螢幕專注大畫面
+                    </button>
+                    <button id="toggle-scratchpad-btn" class="btn-secondary">
+                      <i class="fa-solid fa-pen-ruler"></i> 開啟螢幕計算草稿區
+                    </button>
+                    <div class="export-pdf-dropdown">
+                      <button id="export-pdf-main-btn" class="btn-primary">
+                        <i class="fa-solid fa-file-pdf"></i> 匯出 A4 雙 PDF 測驗卷 <i class="fa-solid fa-chevron-down"></i>
+                      </button>
+                      <div class="pdf-dropdown-menu" id="pdf-dropdown-menu">
+                        <button id="export-pdf-test-paper">
+                          <i class="fa-solid fa-file-lines"></i> 匯出「檔案一：純題目測驗卷」
+                        </button>
+                        <button id="export-pdf-answer-paper">
+                          <i class="fa-solid fa-file-circle-check"></i> 匯出「檔案二：解答解析與提醒卷」
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <!-- Ebbinghaus Progress Tracker -->
                 <div class="review-progress-bar-container">
                 <div class="progress-info">
