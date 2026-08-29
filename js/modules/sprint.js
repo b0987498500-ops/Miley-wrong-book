@@ -28,9 +28,22 @@ window.SprintModule = {
     // Swipe Card Flip Click
     const cardWrapper = document.getElementById('current-swipe-card');
     if (cardWrapper) {
-      cardWrapper.addEventListener('click', () => {
+      cardWrapper.addEventListener('click', (e) => {
+        if (e.target.closest('#swipe-front-diagram')) return;
         cardWrapper.classList.toggle('flipped');
         self.isFlipped = cardWrapper.classList.contains('flipped');
+      });
+    }
+
+    const diagBox = document.getElementById('swipe-front-diagram');
+    const diagImg = document.getElementById('swipe-diagram-img');
+    if (diagBox && diagImg) {
+      diagBox.style.cursor = 'zoom-in';
+      diagBox.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (diagImg.src) {
+          window.UploadModule?.openLightbox('題目附圖高清全螢幕放大檢視', diagImg.src);
+        }
       });
     }
 

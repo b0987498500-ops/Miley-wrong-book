@@ -2809,7 +2809,7 @@ body {
 
 .fc-diagram-container {
   margin: 20px 0;
-  max-height: 320px;
+  max-height: 380px;
   overflow: hidden;
   border-radius: var(--radius-md);
   background: #ffffff;
@@ -2819,10 +2819,39 @@ body {
   justify-content: center;
   align-items: center;
   padding: 16px;
+  cursor: zoom-in;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fc-diagram-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.35);
+}
+
+.fc-diagram-container::after {
+  content: "🔍 點擊全螢幕放大檢視圖片";
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #fbbf24;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.fc-diagram-container:hover::after {
+  opacity: 1;
 }
 
 .fc-diagram-container img {
-  max-height: 280px;
+  max-height: 340px;
   max-width: 100%;
   object-fit: contain;
   filter: contrast(1.1);
@@ -4168,10 +4197,12 @@ body.light-theme .fc-nav-arrow:hover {
 
 .lightbox-body img {
   max-width: 100%;
-  max-height: 80vh;
+  max-height: 82vh;
   object-fit: contain;
-  border-radius: var(--radius-sm);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+  background: #ffffff;
+  padding: 12px;
 }
 
 .clickable-image-wrapper {

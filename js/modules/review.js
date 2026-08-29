@@ -46,10 +46,23 @@ window.ReviewModule = {
       });
     }
 
+    const diagContainer = document.getElementById('fc-diagram-container');
+    const diagImg = document.getElementById('fc-diagram-img');
+    if (diagContainer && diagImg) {
+      diagContainer.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (diagImg.src) {
+          window.UploadModule?.openLightbox('題目附圖高清全螢幕放大檢視', diagImg.src);
+        }
+      });
+    }
+
     const mainCard = document.getElementById('main-flashcard');
     if (mainCard) {
       mainCard.addEventListener('click', (e) => {
-        if (!self.isAnswerRevealed && !e.target.closest('button')) {
+        if (e.target.closest('#fc-diagram-container') || e.target.closest('button')) return;
+        if (!self.isAnswerRevealed) {
           self.revealAnswer();
         }
       });
