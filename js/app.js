@@ -1,8 +1,8 @@
 class App {
   constructor() {
     this.currentTab = 'review';
-    this.currentSubjectFilter = 'ALL';
-    this.currentMondayFilter = 'ALL';
+    this.currentSubjectFilter = null;
+    this.currentMondayFilter = null;
     this.init();
   }
 
@@ -11,6 +11,7 @@ class App {
     this.bindSidebarToggle();
     this.bindTopbarToggle();
     this.bindSidebarSubjectFilter();
+    this.bindBrandHomeClick();
     this.renderWeeklyMondayBar();
     this.bindThemeToggle();
     this.bindResetData();
@@ -22,6 +23,8 @@ class App {
     if (window.ReviewModule) window.ReviewModule.init();
     if (window.SprintModule) window.SprintModule.init();
     if (window.AnalyticsModule) window.AnalyticsModule.init();
+    if (window.WisdomModule) window.WisdomModule.init();
+    if (window.CardModule) window.CardModule.init();
   }
 
   bindNavigation() {
@@ -67,9 +70,9 @@ class App {
     }
   }
 
-  startReviewWithFilter(subject = 'ALL', monday = 'ALL', enableFullscreen = false) {
-    this.currentSubjectFilter = subject || 'ALL';
-    this.currentMondayFilter = monday || 'ALL';
+  startReviewWithFilter(subject = null, monday = null, enableFullscreen = false) {
+    this.currentSubjectFilter = subject;
+    this.currentMondayFilter = monday;
 
     // Switch to review tab directly
     this.switchTab('review');
@@ -112,16 +115,34 @@ class App {
     });
   }
 
+  bindBrandHomeClick() {
+    const brandBtn = document.getElementById('brand-logo-btn');
+    if (!brandBtn) return;
+
+    brandBtn.addEventListener('click', (e) => {
+      // Prevent sidebar toggle button from triggering page reload if toggle button clicked
+      if (e.target.closest('#sidebar-toggle-btn')) return;
+
+      if (window.location.protocol === 'file:') {
+        // Reset state safely under file:// protocol without triggering origin warnings
+        this.currentSubjectFilter = null;
+        this.currentMondayFilter = null;
+        document.querySelectorAll('.sidebar-subject-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.monday-chip').forEach(c => c.classList.remove('active'));
+        this.switchTab('review');
+        if (window.ReviewModule) window.ReviewModule.loadReviewQueue(null, null);
+      } else {
+        window.location.reload();
+      }
+    });
+  }
+
   renderWeeklyMondayBar() {
     const chipsContainer = document.getElementById('weekly-monday-chips');
     if (!chipsContainer || !window.dataManager) return;
 
     const mondayDates = window.dataManager.getAllMondayDates();
-    let html = `
-      <button class="monday-chip active" data-monday="ALL">
-        <i class="fa-solid fa-layer-group"></i> 全部週次
-      </button>
-    `;
+    let html = '';
 
     mondayDates.forEach((dateStr) => {
       const parts = dateStr.split('-');
@@ -139,8 +160,10 @@ class App {
         badgeLabel = '下週';
       }
 
+      const isActive = dateStr === this.currentMondayFilter ? 'active' : '';
+
       html += `
-        <button class="monday-chip" data-monday="${dateStr}">
+        <button class="monday-chip ${isActive}" data-monday="${dateStr}">
           <i class="fa-regular fa-calendar-check"></i> ${badgeLabel}
         </button>
       `;
@@ -190,9 +213,10 @@ class App {
 
     // Page Titles Update
     const titles = {
+      review: { title: '麥麥錯題本', sub: '' },
+      card: { title: '翻轉填空學習卡', sub: '選擇科目進行重點填空特訓，點擊卡片自由 3D 翻轉觀看解答與記憶點' },
       upload: { title: '錯題上傳與處理', sub: '' },
       archive: { title: '階層分類與樹狀目錄管理', sub: '段考 ➔ 週一日期樹狀歸檔、標籤與 AI 概念聚類' },
-      review: { title: '每週錯題複習', sub: '' },
       sprint: { title: '段考高頻衝刺與隨身卡', sub: '錯誤≥2次高頻題篩選、15分鐘 Swipe UI 隨身卡、AI 變形題驗收' },
       analytics: { title: '學習數據與盲點分析', sub: '失分原因佔比統計與 Top 3 核心概念弱點排行榜' }
     };
@@ -213,7 +237,7 @@ class App {
       window.ArchiveModule.renderConceptCloud();
       window.ArchiveModule.renderCards();
     } else if (tabId === 'review' && window.ReviewModule) {
-      window.ReviewModule.loadReviewQueue();
+      window.ReviewModule.loadReviewQueue(this.currentSubjectFilter, this.currentMondayFilter);
     } else if (tabId === 'sprint' && window.SprintModule) {
       window.SprintModule.loadSprintQuestions();
     } else if (tabId === 'analytics' && window.AnalyticsModule) {
@@ -250,7 +274,10 @@ class App {
   }
 
   updateSidebarCounts() {
-    const pendingQuestions = window.dataManager.getPendingReviewQuestions();
+    let pendingQuestions = window.dataManager.getPendingReviewQuestions();
+    if (this.currentMondayFilter && this.currentMondayFilter !== 'ALL') {
+      pendingQuestions = pendingQuestions.filter(q => window.dataManager.isQuestionInMonday(q, this.currentMondayFilter));
+    }
     const dueCountEl = document.getElementById('due-review-count');
     if (dueCountEl) dueCountEl.innerText = pendingQuestions.length;
 
@@ -258,26 +285,33 @@ class App {
     const sprintBadge = document.getElementById('sprint-badge');
     if (sprintBadge) sprintBadge.innerText = sprintQuestions.length;
 
-    // Update dynamic subject question count badges on sidebar subject buttons
-    const allQuestions = window.dataManager.getAll();
+    // Filter questions by currently selected Monday week filter
+    let targetQuestions = window.dataManager.getAll();
+    if (this.currentMondayFilter && this.currentMondayFilter !== 'ALL') {
+      targetQuestions = targetQuestions.filter(q => window.dataManager.isQuestionInMonday(q, this.currentMondayFilter));
+    }
+
     const isSubjMatch = (qSubj, targetSubj) => {
       if (!targetSubj || targetSubj === 'ALL') return true;
       if (!qSubj) return false;
-      if (qSubj === targetSubj) return true;
-      const q = String(qSubj).toLowerCase();
-      const t = String(targetSubj).toLowerCase();
+      const q = String(qSubj).trim();
+      const t = String(targetSubj).trim();
+      if (q === t) return true;
+      if (t === '國文') return q === '國文' || q.includes('國文');
+      if (t === '英文') return q === '英文' || q.includes('英文');
+      if (t === '數學') return q === '數學' || q.includes('數學');
       if (t === '社會') return q.includes('社會') || q.includes('公民') || q.includes('地理') || q.includes('歷史');
       if (t === '自然/理化' || t === '自然') return q.includes('自然') || q.includes('理化') || q.includes('生物') || q.includes('地科');
-      return q.includes(t) || t.includes(q);
+      return q === t;
     };
 
     const subjectCounts = {
-      'ALL': allQuestions.length,
-      '國文': allQuestions.filter(q => isSubjMatch(q.subject, '國文')).length,
-      '英文': allQuestions.filter(q => isSubjMatch(q.subject, '英文')).length,
-      '數學': allQuestions.filter(q => isSubjMatch(q.subject, '數學')).length,
-      '自然/理化': allQuestions.filter(q => isSubjMatch(q.subject, '自然/理化')).length,
-      '社會': allQuestions.filter(q => isSubjMatch(q.subject, '社會')).length
+      'ALL': targetQuestions.length,
+      '國文': targetQuestions.filter(q => isSubjMatch(q.subject, '國文')).length,
+      '英文': targetQuestions.filter(q => isSubjMatch(q.subject, '英文')).length,
+      '數學': targetQuestions.filter(q => isSubjMatch(q.subject, '數學')).length,
+      '自然/理化': targetQuestions.filter(q => isSubjMatch(q.subject, '自然/理化')).length,
+      '社會': targetQuestions.filter(q => isSubjMatch(q.subject, '社會')).length
     };
 
     document.querySelectorAll('.sidebar-subject-btn').forEach(btn => {
@@ -290,6 +324,10 @@ class App {
       }
       badge.innerText = `${subjectCounts[subj] || 0}題`;
     });
+
+    if (window.WisdomModule) {
+      window.WisdomModule.updateHeaderBadge();
+    }
   }
 
   refreshAllViews() {
@@ -298,7 +336,7 @@ class App {
       window.ArchiveModule.renderConceptCloud();
       window.ArchiveModule.renderCards();
     }
-    if (window.ReviewModule) window.ReviewModule.loadReviewQueue();
+    if (window.ReviewModule) window.ReviewModule.loadReviewQueue(this.currentSubjectFilter, this.currentMondayFilter);
     if (window.SprintModule) window.SprintModule.loadSprintQuestions();
     if (window.AnalyticsModule) {
       window.AnalyticsModule.renderChart();

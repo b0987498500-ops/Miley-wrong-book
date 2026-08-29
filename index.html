@@ -16,6 +16,14 @@
   <!-- KaTeX CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   
+  <!-- PWA Manifest & Mobile App Support -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#6366f1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="麥麥錯題本">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 
@@ -25,12 +33,13 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 </head>
 <body>
   <div id="app" class="app-container">
     <!-- Sidebar / Navigation -->
     <aside class="sidebar" id="sidebar">
-      <div class="brand">
+      <div class="brand" id="brand-logo-btn" style="cursor: pointer;" title="點擊重新整理頁面">
         <div class="logo-icon">
           <i class="fa-solid fa-graduation-cap"></i>
         </div>
@@ -43,6 +52,17 @@
         </button>
       </div>
 
+      <!-- Single Learning Flashcard Feature Button -->
+      <div class="sidebar-section">
+        <button class="nav-item sidebar-learning-card-btn" data-tab="card" title="點擊進入翻轉填空學習卡">
+          <div class="btn-left">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>翻轉學習卡</span>
+          </div>
+          <span class="new-tag">NEW</span>
+        </button>
+      </div>
+
       <!-- Subject Categories Section -->
       <div class="sidebar-section">
         <div class="sidebar-section-title">
@@ -50,10 +70,6 @@
           <span>科目分類</span>
         </div>
         <div class="sidebar-subject-group" id="sidebar-subject-group">
-          <button class="sidebar-subject-btn active" data-subject="ALL" title="全部科目">
-            <span class="subj-badge">全</span>
-            <span class="subj-name">全部科目</span>
-          </button>
           <button class="sidebar-subject-btn" data-subject="國文" title="國文">
             <span class="subj-badge subj-zh">國</span>
             <span class="subj-name">國文</span>
@@ -99,11 +115,53 @@
               <i class="fa-solid fa-bars"></i>
             </button>
             <div>
-              <h1 id="page-title">錯題上傳與處理</h1>
+              <h1 id="page-title">麥麥錯題本</h1>
               <p id="page-subtitle" class="subtitle" style="display: none;"></p>
             </div>
           </div>
           <div class="header-right">
+            <div class="wisdom-popover-wrapper">
+              <button id="btn-open-wisdom-modal" class="wisdom-nav-btn" title="擊敗錯題怪解鎖的名言與心理學小知識">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>智慧寶庫</span>
+                <span class="wisdom-badge" id="wisdom-unlocked-badge" style="display: none;">0</span>
+              </button>
+
+              <!-- Wisdom Dropdown Popover (Floating underneath button) -->
+              <div id="wisdom-popover" class="wisdom-popover hidden">
+                <div class="popover-header">
+                  <div class="popover-title">
+                    <i class="fa-solid fa-lightbulb" style="color: #fbbf24;"></i>
+                    <span>智慧心靈寶庫</span>
+                  </div>
+                  <button id="btn-close-wisdom-popover" class="popover-close-btn" title="關閉">&times;</button>
+                </div>
+
+                <div class="wisdom-summary-bar">
+                  <div class="wisdom-stat-item">
+                    <span class="stat-label">已討伐錯題怪</span>
+                    <span class="stat-val"><strong id="wisdom-stat-defeated">0</strong> 題</span>
+                  </div>
+                  <div class="wisdom-stat-item">
+                    <span class="stat-label">已解鎖金句</span>
+                    <span class="stat-val"><strong id="wisdom-stat-unlocked">0</strong> 篇</span>
+                  </div>
+                  <div class="wisdom-stat-item">
+                    <span class="stat-label">已收藏愛心</span>
+                    <span class="stat-val"><strong id="wisdom-stat-favorites">0</strong> 心</span>
+                  </div>
+                </div>
+
+                <div class="wisdom-tabs">
+                  <button class="wisdom-tab-btn active" data-wisdom-tab="all">🌟 全部知識金句</button>
+                  <button class="wisdom-tab-btn" data-wisdom-tab="fav">❤️ 我收藏的愛心 (<span id="wisdom-fav-count">0</span>)</button>
+                </div>
+
+                <div class="wisdom-cards-scroll" id="wisdom-cards-container">
+                  <!-- Dynamically rendered via JS -->
+                </div>
+              </div>
+            </div>
             <div class="calendar-popover-wrapper">
               <div class="current-date-chip" id="calendar-trigger-btn" title="點擊開啟學習進度與段考標記日曆">
                 <i class="fa-regular fa-calendar-check"></i>
@@ -303,11 +361,10 @@
                 <div class="filter-group">
                   <span class="filter-label">科目標籤：</span>
                   <div class="filter-chips" id="subject-filter-chips">
-                    <button class="chip active" data-subject="ALL">全部科目</button>
+                    <button class="chip active" data-subject="國文">國文</button>
                     <button class="chip" data-subject="數學">數學</button>
                     <button class="chip" data-subject="自然/理化">自然/理化</button>
                     <button class="chip" data-subject="英文">英文</button>
-                    <button class="chip" data-subject="國文">國文</button>
                     <button class="chip" data-subject="社會">社會</button>
                   </div>
                 </div>
@@ -376,8 +433,58 @@
 
             <!-- Flashcard Review Stage -->
             <div class="flashcard-stage-wrapper">
-              <!-- Ebbinghaus Progress Tracker -->
-              <div class="review-progress-bar-container">
+              <!-- Welcome Hero Screen (Initial State before subject/week selection) -->
+              <div id="review-welcome-stage" class="review-welcome-stage glass-panel">
+                <div class="hero-battle-container">
+                  <div class="battle-stats-header">
+                    <div class="battle-stat-pill main-badge">
+                      <i class="fa-solid fa-trophy"></i>
+                      <span>已擊敗 <strong id="defeated-monsters-count">0</strong> 題錯題怪！</span>
+                    </div>
+                    <div class="battle-stat-pill sub-badge">
+                      <i class="fa-solid fa-fire-flame-curved"></i>
+                      <span id="mastery-rate-badge">錯題討伐進行中</span>
+                    </div>
+                  </div>
+
+                  <div class="battle-arena">
+                    <div class="hero-character" id="hero-character">
+                      <div class="character-avatar">
+                        <i class="fa-solid fa-user-ninja"></i>
+                        <div class="hero-weapon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                      </div>
+                      <div class="character-name">錯題剋星 Miley</div>
+                      <div class="hero-hp-bar"><div class="hp-fill" style="width: 100%;"></div></div>
+                    </div>
+
+                    <div class="battle-slash-fx" id="battle-slash-fx">
+                      <div class="slash-line"></div>
+                      <div class="damage-popup" id="damage-popup">CRITICAL -9999!</div>
+                    </div>
+
+                    <div class="monster-character" id="monster-character">
+                      <div class="monster-avatar">
+                        <i class="fa-solid fa-dragon"></i>
+                      </div>
+                      <div class="monster-name" id="monster-name">粗心失分怪 (Lv.99)</div>
+                      <div class="monster-hp-bar"><div class="monster-hp-fill" id="monster-hp-fill" style="width: 75%;"></div></div>
+                    </div>
+                  </div>
+
+                  <div class="battle-cta-box">
+                    <button type="button" id="btn-attack-monster" class="btn-attack-monster">
+                      <i class="fa-solid fa-hand-fist"></i> 點擊揮刀打擊錯題怪！
+                    </button>
+                    <p class="battle-instruction">
+                      <i class="fa-solid fa-hand-point-left fa-bounce"></i> 請從左側選取<strong>【科目分類】</strong>或上方選擇<strong>【週次】</strong>開始錯題特訓！
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="review-card-container" class="review-card-container hidden">
+                <!-- Ebbinghaus Progress Tracker -->
+                <div class="review-progress-bar-container">
                 <div class="progress-info">
                   <span id="review-current-index">題目 1 / 5</span>
                   <span id="review-ebbinghaus-stage" class="stage-tag">艾賓浩斯週期: 1 週次</span>
@@ -401,7 +508,12 @@
                       <span class="tag-reason" id="fc-reason">觀念不懂</span>
                       <span class="tag-concept" id="fc-concept">連通管原理</span>
                     </div>
-                    <span class="mastery-status" id="fc-mastery-badge">連續掌握：0 / 2 次</span>
+                    <div class="card-top-actions">
+                      <span class="mastery-status unmastered" id="fc-mastery-badge">未擊敗 (1 次)</span>
+                      <button id="btn-delete-this-week" class="btn-delete-week" title="僅從本週移除此錯題">
+                        <i class="fa-solid fa-trash-can"></i> 僅在本週刪除
+                      </button>
+                    </div>
                   </div>
 
                   <!-- Split Content Grid: Left Question, Right Solution -->
@@ -436,10 +548,10 @@
 
                     <div id="fc-feedback-btns" class="feedback-btns-group hidden">
                       <button id="btn-mark-unmastered" class="btn-unmastered">
-                        <i class="fa-solid fa-xmark"></i> 未掌握 (按 1)
+                        <i class="fa-solid fa-xmark"></i> 未擊敗 (按 1)
                       </button>
                       <button id="btn-mark-mastered" class="btn-mastered">
-                        <i class="fa-solid fa-check"></i> 已掌握 (按 2)
+                        <i class="fa-solid fa-check"></i> 已擊敗 (按 2)
                       </button>
                     </div>
                   </div>
@@ -449,6 +561,7 @@
                   <i class="fa-solid fa-chevron-right"></i>
                 </button>
               </div>
+            </div>
             </div>
           </div>
         </section>
@@ -597,6 +710,89 @@
             </div>
           </div>
         </section>
+
+        <!-- ==================== MODULE 6: FILL-IN-THE-BLANK FLIP FLASHCARDS ==================== -->
+        <section id="view-card" class="tab-view">
+          <div class="glass-panel card-module-container" style="padding: 32px 28px;">
+            
+            <!-- Subject Filter Bar at Top -->
+            <div class="card-subject-chips">
+              <button class="card-subject-chip active" data-subject="ALL"><i class="fa-solid fa-shapes"></i> 全部科目</button>
+              <button class="card-subject-chip" data-subject="國文"><span class="subj-badge subj-zh">國</span> 國文</button>
+              <button class="card-subject-chip" data-subject="英文"><span class="subj-badge subj-en">英</span> 英文</button>
+              <button class="card-subject-chip" data-subject="數學"><span class="subj-badge subj-math">數</span> 數學</button>
+              <button class="card-subject-chip" data-subject="自然/理化"><span class="subj-badge subj-sci">自</span> 自然/理化</button>
+              <button class="card-subject-chip" data-subject="社會"><span class="subj-badge subj-soc">社</span> 社會</button>
+            </div>
+
+            <!-- Initial Welcome Screen (When no subject is chosen yet) -->
+            <div id="card-subject-welcome" class="card-subject-welcome-panel">
+              <div style="text-align: center; margin-bottom: 24px;">
+                <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">
+                  <i class="fa-solid fa-graduation-cap" style="color: #f59e0b;"></i> 選擇科目進行【填空學習卡】特訓
+                </h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">
+                  點選下方科目或上方標籤，翻轉卡片學習關鍵字與記憶點！
+                </p>
+              </div>
+
+              <div class="card-subject-grid">
+                <div class="card-subj-welcome-card" onclick="window.CardModule.selectSubject('國文')">
+                  <div class="subj-badge subj-zh" style="width: 48px; height: 48px; font-size: 1.4rem; margin: 0 auto 12px;">國</div>
+                  <h4 style="font-weight: 700; color: var(--text-main);">國文填空卡</h4>
+                  <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">成語填空、古文注音與名句特訓</p>
+                </div>
+                <div class="card-subj-welcome-card" onclick="window.CardModule.selectSubject('英文')">
+                  <div class="subj-badge subj-en" style="width: 48px; height: 48px; font-size: 1.4rem; margin: 0 auto 12px;">英</div>
+                  <h4 style="font-weight: 700; color: var(--text-main);">英文填空卡</h4>
+                  <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">文法介系詞、核心單字與句型</p>
+                </div>
+                <div class="card-subj-welcome-card" onclick="window.CardModule.selectSubject('數學')">
+                  <div class="subj-badge subj-math" style="width: 48px; height: 48px; font-size: 1.4rem; margin: 0 auto 12px;">數</div>
+                  <h4 style="font-weight: 700; color: var(--text-main);">數學填空卡</h4>
+                  <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">韋達定理、畢氏定理與核心公式</p>
+                </div>
+                <div class="card-subj-welcome-card" onclick="window.CardModule.selectSubject('自然/理化')">
+                  <div class="subj-badge subj-sci" style="width: 48px; height: 48px; font-size: 1.4rem; margin: 0 auto 12px;">自</div>
+                  <h4 style="font-weight: 700; color: var(--text-main);">自然/理化卡</h4>
+                  <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">牛頓定律、光合作用與理化概念</p>
+                </div>
+                <div class="card-subj-welcome-card" onclick="window.CardModule.selectSubject('社會')">
+                  <div class="subj-badge subj-soc" style="width: 48px; height: 48px; font-size: 1.4rem; margin: 0 auto 12px;">社</div>
+                  <h4 style="font-weight: 700; color: var(--text-main);">社會填空卡</h4>
+                  <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">歷史事件、地理緯度與公民法條</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive 3D Flip Flashcard Stage Panel -->
+            <div id="card-stage-panel" class="card-stage-panel hidden">
+              <div class="card-stage-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <h3 id="card-stage-title" style="font-size: 1.1rem; font-weight: 800; color: var(--text-main);">填空學習卡</h3>
+                <span id="card-counter-display" class="stage-tag" style="background: rgba(99, 102, 241, 0.2); color: #a5b4fc; font-weight: 700;">卡片 1 / 1</span>
+              </div>
+
+              <!-- 3D Flip Card Container -->
+              <div id="flip-card-container" class="flip-card-container" title="點擊翻轉查看答案與解析">
+                <!-- Rendered dynamically via JS -->
+              </div>
+
+              <!-- Nav Actions Footer -->
+              <div class="card-nav-bar">
+                <button id="card-prev-btn" class="btn-secondary" title="上一張 (快捷鍵 ←)">
+                  <i class="fa-solid fa-chevron-left"></i> 上一張
+                </button>
+                <button id="btn-flip-card" class="btn-primary" style="padding: 10px 28px; background: linear-gradient(135deg, #f59e0b, #d97706); border: none;">
+                  <i class="fa-solid fa-rotate"></i> 翻轉卡片看答案 (Space)
+                </button>
+                <button id="card-next-btn" class="btn-secondary" title="下一張 (快捷鍵 →)">
+                  下一張 <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </section>
       </div>
     </main>
   </div>
@@ -714,6 +910,8 @@
   <!-- PDF Export Hidden Render Container -->
   <div id="pdf-export-container" class="pdf-export-container"></div>
 
+
+
   <!-- Main JavaScript App Modules -->
   <script src="js/data.js"></script>
   <script src="js/utils/katex_render.js"></script>
@@ -724,6 +922,15 @@
   <script src="js/modules/sprint.js"></script>
   <script src="js/modules/analytics.js"></script>
   <script src="js/modules/calendar.js"></script>
+  <script src="js/modules/wisdom.js"></script>
+  <script src="js/modules/card.js"></script>
   <script src="js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW reg failed:', err));
+      });
+    }
+  </script>
 </body>
 </html>

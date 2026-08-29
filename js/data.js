@@ -3,10 +3,115 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v13';
+const STORAGE_KEY = 'miley_wrong_questions_v16';
 
 // Initial Seed Data with real LaTeX, diagram samples, and mistake prevention notes
 const INITIAL_SEED_DATA = [
+  {
+    id: 'q_soc_civ_110_001',
+    examPeriod: '二段',
+    subject: '社會',
+    errorReason: '觀念不懂',
+    concept: '地方政府與直轄市行政區劃(110年會考補考題)',
+    uploadDate: '2026-08-28',
+    mondayDate: '2026-08-24',
+    weekLabel: '2026-08-24 (第 1 週)',
+    isGuessedOrUnstable: true,
+    mistakeNote: '區公所屬於直轄市（六都）政府的派出單位！彰化縣與雲林縣屬於縣，下設鄉、鎮、縣轄市公所，沒有「區公所」！',
+    stem: '附圖是小芬蒐集區公所戳章的旅遊路線示意圖，她發現自己在其中一段路線中，沒有蒐集到任何一個區公所的戳章。根據圖中內容判斷，上述路線最可能是甲、乙、丙、丁中的何者？【110年會考補考】\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁。',
+    answer: '(C) 丙',
+    solution: '1. 觀念解析：\n區公所屬於直轄市政府的派出單位，僅在直轄市（六都：臺北市、新北市、桃園市、臺中市、臺南市、高雄市）設置。\n2. 路線判讀：\n- 甲路線：經過新北市、臺北市等直轄市區公所。\n- 乙路線：經過臺中市直轄市區公所。\n- 丙路線：僅經過彰化縣及雲林縣，兩者皆為「縣」，下設鄉、鎮、市公所，完全沒有經過直轄市，故無法蒐集到區公所戳章。\n- 丁路線：經過臺南市、高雄市等直轄市區公所。\n3. 名師影音解題教學影片：\nhttps://www.youtube.com/watch?v=Gq115_MhSYE',
+    diagramUrl: 'assets/questions/q_110_civics_district_office_diagram.png',
+    errorCount: 1,
+    ebbinghausStage: 1,
+    consecutiveMastered: 0,
+    isArchived: false,
+    nextReviewDate: '2026-08-29'
+  },
+  {
+    id: 'q_soc_geo_112_001',
+    examPeriod: '二段',
+    subject: '社會',
+    errorReason: '觀念不懂',
+    concept: '臺灣氣候與地形降水(112年會考題)',
+    uploadDate: '2026-08-24',
+    mondayDate: '2026-08-24',
+    weekLabel: '2026-08-24 (第 1 週)',
+    isGuessedOrUnstable: true,
+    mistakeNote: '乙測站位於臺灣東北角迎風面（基隆/宜蘭一帶），受冬季東北季風與夏季颱風、地形抬升影響，年降水量為全臺最多！',
+    stem: '臺灣本島的經緯度約介於 22°N ~ 25°N, 120°E ~ 122°E 之間，降水的空間分布受到地形及季風的影響而有顯著差異。附表為本島四個氣象測站的資料，根據各測站位置及地形判斷，何者的年降水量可能最多？【112 年會考】\n\n測站 | 緯度 | 經度 | 高度(m)\n甲 | 23.98°N | 121.61°E | 16.0\n乙 | 25.13°N | 121.74°E | 26.7\n丙 | 22.99°N | 120.20°E | 40.8\n丁 | 23.95°N | 120.59°E | 34.0\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁',
+    answer: '(B) 乙',
+    solution: '1. 分析測站位置：\n- 乙測站緯度為 25.13°N，經度為 121.74°E，位於臺灣東北角（基隆/宜蘭海岸一帶）。\n2. 降水量因素分析：\n- 臺灣東北角地位於迎風面，冬季迎東北季風，夏季受西南季風與颱風地形抬升影響，全年多雨，年降水總量為四個測站中最多者。\n3. 名師影音解題教學影片：\nhttps://www.youtube.com/watch?v=rBrKF9lroJU',
+    diagramUrl: '',
+    errorCount: 1,
+    ebbinghausStage: 1,
+    consecutiveMastered: 0,
+    isArchived: false,
+    nextReviewDate: '2026-08-25'
+  },
+  {
+    id: 'q_soc_geo_105_002',
+    examPeriod: '二段',
+    subject: '社會',
+    errorReason: '觀念不懂',
+    concept: '臺灣自然災害與土石流地形分布(105年會考題)',
+    uploadDate: '2026-08-24',
+    mondayDate: '2026-08-24',
+    weekLabel: '2026-08-24 (第 1 週)',
+    isGuessedOrUnstable: true,
+    mistakeNote: '土石流好發於坡度陡峭、起伏較大的丘陵與山地地形！彰化、雲林多平原，新竹市多平緩台地，故南投縣山地地形比例最高！',
+    stem: '附圖為某種災害的警告標示牌，用來提醒民眾提高警覺。根據臺灣行政區的地形特色判斷，此種標示牌在下列哪個縣（市）最多？【105年會考】\n\n○ (A) 彰化縣\n○ (B) 雲林縣\n○ (C) 南投縣\n○ (D) 新竹市。',
+    answer: '(C) 南投縣',
+    solution: '1. 題目概念分析：\n土石流是指泥、沙、礫石等和水的混合物在豪雨期間沿坡面向下滑動的情形，多分布在起伏較大的丘陵或山地區域。\n2. 行政區地形判讀：\n選項中的行政區以南投縣的全境山地與丘陵地形比例最高，故此類警告標示牌數量最多。\n3. 名師影音解題教學影片：\nhttps://www.youtube.com/watch?v=ehNyQQV9rAo',
+    diagramUrl: 'assets/questions/q_soc_geo_105_002_diagram.png',
+    errorCount: 1,
+    ebbinghausStage: 1,
+    consecutiveMastered: 0,
+    isArchived: false,
+    nextReviewDate: '2026-08-25'
+  },
+  {
+    id: 'q_chi_idiom_001',
+    examPeriod: '二段',
+    subject: '國文',
+    errorReason: '字音字形錯誤',
+    concept: '常見錯別字與成語字形辨析(趨之若鶩)',
+    uploadDate: '2026-08-24',
+    mondayDate: '2026-08-24',
+    weekLabel: '2026-08-24 (第 1 週)',
+    isGuessedOrUnstable: true,
+    mistakeNote: '「趨之若鶩」的「鶩」是野鴨（鳥部），非鶺鴒或鶖鳥！比喻眾人爭相前往趨附，含貶義。',
+    stem: '下列各組「」中的成語，何者字形完全正確？\n\n○ (A) 趨之若鶩 / 穿鑿附會\n○ (B) 趨之若騖 / 穿鑿附會\n○ (C) 趨之若鶩 / 穿鑿赴會\n○ (D) 趨之若鶖 / 穿鑿附會',
+    answer: '(A) 趨之若鶩 / 穿鑿附會',
+    solution: '1. 「趨之若鶩」：「鶩」音 ㄨˋ，指野鴨。像野鴨一般成群爭相前往，比喻眾人爭相前去趨附（多含貶義）。常誤寫為「騖」（馬奔跑）或「鶖」。\n2. 「穿鑿附會」：「附會」指強行牽合，不可寫作「赴會」。\n3. 故正確選項為 (A)。',
+    diagramUrl: '',
+    errorCount: 2,
+    ebbinghausStage: 1,
+    consecutiveMastered: 0,
+    isArchived: false,
+    nextReviewDate: '2026-08-25'
+  },
+  {
+    id: 'q_chi_rhetoric_001',
+    examPeriod: '二段',
+    subject: '國文',
+    errorReason: '觀念不懂',
+    concept: '修辭法辨析(借代與轉化)',
+    uploadDate: '2026-08-24',
+    mondayDate: '2026-08-24',
+    weekLabel: '2026-08-24 (第 1 週)',
+    isGuessedOrUnstable: true,
+    mistakeNote: '「黃髮垂髫」中「黃髮」借代老人，「垂髫」借代幼童；「巾幗」借代女性，「須眉」借代男子！',
+    stem: '下列詩句「」中的詞語，何者借代對象的說明「不正確」？\n\n○ (A) 何以解憂？唯有「杜康」➔ 借代為美酒\n○ (B) 臣本布衣，躬耕於南陽 ➔ 「布衣」借代平民\n○ (C) 渡頭餘落日，墟里上「孤煙」➔ 借代為戰火煙硝\n○ (D) 巾幗不讓須眉 ➔ 「巾幗」借代女性，「須眉」借代男子',
+    answer: '(C) 渡頭餘落日，墟里上「孤煙」➔ 借代為戰火煙硝',
+    solution: '1. (A) 「杜康」相傳為造酒始祖，此處借代為美酒。正確。\n2. (B) 「布衣」指平民百姓穿的布衣，借代為平民。正確。\n3. (C) 王維《歸嵩山作》中「墟里上孤煙」，「孤煙」指村落中炊煙袊袊升起，非戰火煙硝。故 (C) 說明不正確。\n4. (D) 「巾幗」為古代女性頭飾借代女性；「須眉」指鬍鬚眉毛借代男子。正確。\n5. 故答案選擇 (C)。',
+    diagramUrl: '',
+    errorCount: 1,
+    ebbinghausStage: 1,
+    consecutiveMastered: 0,
+    isArchived: false,
+    nextReviewDate: '2026-08-25'
+  },
   {
     id: 'q_eng_guitar_001',
     examPeriod: '二段',
@@ -196,13 +301,16 @@ class DataManager {
       this.questions = [...INITIAL_SEED_DATA];
     }
 
-    // Force migration & auto-merge of seeds into dataset
+    // Force migration & auto-merge of seeds into dataset (preserve user saved modifications!)
     INITIAL_SEED_DATA.forEach(seed => {
       const idx = this.questions.findIndex(q => q.id === seed.id);
       if (idx === -1) {
         this.questions.unshift(seed);
       } else {
-        this.questions[idx] = seed;
+        this.questions[idx] = { ...seed, ...this.questions[idx] };
+        if (seed.diagramUrl) {
+          this.questions[idx].diagramUrl = seed.diagramUrl;
+        }
       }
     });
 
@@ -275,6 +383,46 @@ class DataManager {
     return newQuestion;
   }
 
+  deleteQuestion(id) {
+    this.questions = this.questions.filter(q => q.id !== id);
+    this.save();
+  }
+
+  removeQuestionFromWeek(id, targetMonday) {
+    const q = this.getById(id);
+    if (!q) return null;
+
+    let mondays = Array.isArray(q.mondayDates) && q.mondayDates.length > 0
+      ? q.mondayDates
+      : [q.mondayDate || '2026-08-24'];
+
+    if (targetMonday && targetMonday !== 'ALL') {
+      mondays = mondays.filter(m => m !== targetMonday);
+    } else {
+      mondays = [];
+    }
+
+    if (mondays.length === 0) {
+      this.deleteQuestion(id);
+      return null;
+    } else {
+      q.mondayDates = mondays;
+      q.mondayDate = mondays[mondays.length - 1];
+      this.save();
+      return q;
+    }
+  }
+
+  // Check if a question belongs to a specific Monday date filter
+  isQuestionInMonday(q, targetMonday) {
+    if (!targetMonday || targetMonday === 'ALL') return true;
+    if (!q) return false;
+    const mondays = Array.isArray(q.mondayDates) && q.mondayDates.length > 0
+      ? q.mondayDates
+      : [q.mondayDate || '2026-08-24'];
+    return mondays.includes(targetMonday);
+  }
+
   updateQuestionMastery(id, isMastered) {
     const q = this.getById(id);
     if (!q) return null;
@@ -291,10 +439,46 @@ class DataManager {
       q.consecutiveMastered = 0;
       q.errorCount = (q.errorCount || 0) + 1;
       q.ebbinghausStage = 1; // Reset Ebbinghaus repetition cycle to 1st week
+      
+      const currentMonday = q.mondayDate || '2026-08-24';
+      if (!Array.isArray(q.mondayDates)) {
+        q.mondayDates = [currentMonday];
+      }
+      const nextMonday = this.getNextMondayDate(currentMonday);
+      if (!q.mondayDates.includes(nextMonday)) {
+        q.mondayDates.push(nextMonday);
+      }
+      q.mondayDate = nextMonday;
     }
 
     this.save();
     return q;
+  }
+
+  // Get next Monday date string (YYYY-MM-DD) from current mondayDate (or today)
+  getNextMondayDate(currentMondayDateStr) {
+    let date;
+    if (currentMondayDateStr && !isNaN(Date.parse(currentMondayDateStr))) {
+      const parts = currentMondayDateStr.split('-');
+      if (parts.length === 3) {
+        const year = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10) - 1;
+        const day = parseInt(parts[2], 10);
+        date = new Date(year, month, day + 7);
+      } else {
+        date = new Date(currentMondayDateStr);
+        date.setDate(date.getDate() + 7);
+      }
+    } else {
+      date = new Date();
+      const day = date.getDay();
+      const diff = date.getDate() - day + (day === 0 ? -6 : 1) + 7;
+      date.setDate(diff);
+    }
+    const yyyy = date.getFullYear();
+    const mm = String(date.getMonth() + 1).padStart(2, '0');
+    const dd = String(date.getDate()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd}`;
   }
 
   // Get Monday date string (YYYY-MM-DD) for any date
@@ -333,11 +517,18 @@ class DataManager {
 
     this.questions.forEach(q => {
       const exam = q.examPeriod || '二段';
-      const monday = q.mondayDate || '2026-08-24';
+      const mList = Array.isArray(q.mondayDates) && q.mondayDates.length > 0
+        ? q.mondayDates
+        : [q.mondayDate || '2026-08-24'];
       
       if (!tree[exam]) tree[exam] = {};
-      if (!tree[exam][monday]) tree[exam][monday] = [];
-      tree[exam][monday].push(q);
+
+      mList.forEach(monday => {
+        if (!tree[exam][monday]) tree[exam][monday] = [];
+        if (!tree[exam][monday].includes(q)) {
+          tree[exam][monday].push(q);
+        }
+      });
     });
     return tree;
   }
@@ -347,6 +538,9 @@ class DataManager {
     const mondays = new Set();
     this.questions.forEach(q => {
       if (q.mondayDate) mondays.add(q.mondayDate);
+      if (Array.isArray(q.mondayDates)) {
+        q.mondayDates.forEach(m => mondays.add(m));
+      }
     });
     mondays.add('2026-08-24');
     mondays.add('2026-08-31'); // 下週

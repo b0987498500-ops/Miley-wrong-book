@@ -173,17 +173,20 @@ window.ArchiveModule = {
       list = list.filter(q => q.examPeriod === this.currentExam);
     }
     if (this.currentMonday !== 'ALL') {
-      list = list.filter(q => q.mondayDate === this.currentMonday);
+      list = list.filter(q => window.dataManager.isQuestionInMonday(q, this.currentMonday));
     }
     const isSubjMatch = (qSubj, targetSubj) => {
       if (!targetSubj || targetSubj === 'ALL') return true;
       if (!qSubj) return false;
-      if (qSubj === targetSubj) return true;
-      const q = String(qSubj).toLowerCase();
-      const t = String(targetSubj).toLowerCase();
+      const q = String(qSubj).trim();
+      const t = String(targetSubj).trim();
+      if (q === t) return true;
+      if (t === '國文') return q === '國文' || q.includes('國文');
+      if (t === '英文') return q === '英文' || q.includes('英文');
+      if (t === '數學') return q === '數學' || q.includes('數學');
       if (t === '社會') return q.includes('社會') || q.includes('公民') || q.includes('地理') || q.includes('歷史');
       if (t === '自然/理化' || t === '自然') return q.includes('自然') || q.includes('理化') || q.includes('生物') || q.includes('地科');
-      return q.includes(t) || t.includes(q);
+      return q === t;
     };
 
     if (this.currentSubject !== 'ALL') {

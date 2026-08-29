@@ -15,6 +15,7 @@ window.ReviewModule = {
 
   init: function() {
     this.bindEvents();
+    this.bindWelcomeEvents();
     this.initScratchpad();
     this.loadReviewQueue();
   },
@@ -57,6 +58,12 @@ window.ReviewModule = {
     // Feedback Buttons (Mastered / Unmastered)
     document.getElementById('btn-mark-unmastered')?.addEventListener('click', () => self.handleFeedback(false));
     document.getElementById('btn-mark-mastered')?.addEventListener('click', () => self.handleFeedback(true));
+
+    // Delete Question From Current Week Only
+    document.getElementById('btn-delete-this-week')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      self.deleteCurrentQuestionFromWeek();
+    });
 
     // PDF Export Dropdown Actions
     const pdfMainBtn = document.getElementById('export-pdf-main-btn');
@@ -160,32 +167,113 @@ window.ReviewModule = {
     }
   },
 
-  loadReviewQueue: function(subjectFilter = 'ALL', mondayFilter = 'ALL') {
+  currentSubjectFilter: null,
+  currentMondayFilter: null,
+
+  loadReviewQueue: function(subjectFilter = null, mondayFilter = null) {
+    if (subjectFilter !== undefined) this.currentSubjectFilter = subjectFilter;
+    if (mondayFilter !== undefined) this.currentMondayFilter = mondayFilter;
+
+    // Check if both filters are unselected/null -> Show Battle Arena Welcome Screen!
+    const isUnselected = !this.currentSubjectFilter && !this.currentMondayFilter;
+
+    const welcomeStage = document.getElementById('review-welcome-stage');
+    const cardContainer = document.getElementById('review-card-container');
+
+    if (isUnselected) {
+      if (welcomeStage) welcomeStage.classList.remove('hidden');
+      if (cardContainer) cardContainer.classList.add('hidden');
+      this.renderWelcomeHero();
+      return;
+    }
+
+    // Filters are selected -> show flashcard review container!
+    if (welcomeStage) welcomeStage.classList.add('hidden');
+    if (cardContainer) cardContainer.classList.remove('hidden');
+
+    const targetSubject = this.currentSubjectFilter || 'ALL';
+    const targetMonday = this.currentMondayFilter || 'ALL';
+
     let list = window.dataManager.getAll();
 
     const isSubjMatch = (qSubj, targetSubj) => {
       if (!targetSubj || targetSubj === 'ALL') return true;
       if (!qSubj) return false;
-      if (qSubj === targetSubj) return true;
-      const q = String(qSubj).toLowerCase();
-      const t = String(targetSubj).toLowerCase();
+      const q = String(qSubj).trim();
+      const t = String(targetSubj).trim();
+      if (q === t) return true;
+      if (t === '國文') return q === '國文' || q.includes('國文');
+      if (t === '英文') return q === '英文' || q.includes('英文');
+      if (t === '數學') return q === '數學' || q.includes('數學');
       if (t === '社會') return q.includes('社會') || q.includes('公民') || q.includes('地理') || q.includes('歷史');
       if (t === '自然/理化' || t === '自然') return q.includes('自然') || q.includes('理化') || q.includes('生物') || q.includes('地科');
-      return q.includes(t) || t.includes(q);
+      return q === t;
     };
 
-    if (subjectFilter && subjectFilter !== 'ALL') {
-      list = list.filter(q => isSubjMatch(q.subject, subjectFilter));
+    if (targetSubject && targetSubject !== 'ALL') {
+      list = list.filter(q => isSubjMatch(q.subject, targetSubject));
     }
 
-    if (mondayFilter && mondayFilter !== 'ALL' && mondayFilter !== 'undefined') {
-      list = list.filter(q => q.mondayDate === mondayFilter);
+    if (targetMonday && targetMonday !== 'ALL' && targetMonday !== 'undefined') {
+      list = list.filter(q => window.dataManager.isQuestionInMonday(q, targetMonday));
     }
 
     this.activeQuestions = list;
     this.currentIndex = 0;
     this.updateMotivationalQuote();
     this.renderCurrentCard();
+  },
+
+  renderWelcomeHero: function() {
+    const allQuestions = window.dataManager.getAll();
+    const defeatedCount = allQuestions.filter(q => q.isArchived || (q.consecutiveMastered || 0) > 0).length;
+
+    const countEl = document.getElementById('defeated-monsters-count');
+    if (countEl) countEl.innerText = defeatedCount;
+
+    const rateEl = document.getElementById('mastery-rate-badge');
+    if (rateEl) {
+      const total = allQuestions.length || 1;
+      const pct = Math.round((defeatedCount / total) * 100);
+      rateEl.innerHTML = `<i class="fa-solid fa-shield-halved"></i> 討伐率 ${pct}% (${defeatedCount}/${allQuestions.length}題)`;
+    }
+  },
+
+  bindWelcomeEvents: function() {
+    const attackBtn = document.getElementById('btn-attack-monster');
+    const monsterChar = document.getElementById('monster-character');
+    
+    const doAttack = () => {
+      const slashFx = document.getElementById('battle-slash-fx');
+      const dmgPopup = document.getElementById('damage-popup');
+      const hpFill = document.getElementById('monster-hp-fill');
+
+      if (monsterChar) {
+        monsterChar.classList.remove('hit-shake');
+        void monsterChar.offsetWidth;
+        monsterChar.classList.add('hit-shake');
+      }
+
+      if (slashFx) {
+        slashFx.classList.remove('active');
+        void slashFx.offsetWidth;
+        slashFx.classList.add('active');
+      }
+
+      if (dmgPopup) {
+        const damages = ['CRITICAL -9999!', 'SWORD SLASH -5800!', 'CONCEPT HIT -8888!', 'PERFECT! -12000!'];
+        const randomDmg = damages[Math.floor(Math.random() * damages.length)];
+        dmgPopup.innerText = randomDmg;
+      }
+
+      if (hpFill) {
+        const currentHp = Math.max(10, Math.floor(Math.random() * 60) + 20);
+        hpFill.style.width = `${currentHp}%`;
+      }
+    };
+
+    if (attackBtn) attackBtn.addEventListener('click', doAttack);
+    if (monsterChar) monsterChar.addEventListener('click', doAttack);
   },
 
   prevQuestion: function() {
@@ -221,17 +309,48 @@ window.ReviewModule = {
 
     if (this.activeQuestions.length === 0) {
       this.updateProgressDisplay();
-      document.getElementById('fc-stem-content').innerHTML = `
-        <div style="text-align: center; padding: 40px 20px; color: var(--text-muted);">
-          <i class="fa-solid fa-folder-open" style="font-size: 3rem; margin-bottom: 12px; opacity: 0.5;"></i>
-          <h3>此科目 / 週次目前尚無錯題數據</h3>
-          <p style="margin-top: 8px; font-size: 0.9rem;">您可以切換其它科目或點擊上方「全部週次」查看所有錯題！</p>
-        </div>
-      `;
+      const activeSubj = (this.currentSubjectFilter && this.currentSubjectFilter !== 'ALL') ? this.currentSubjectFilter : '全部科目';
+      
+      const subjEl = document.getElementById('fc-subject');
+      if (subjEl) subjEl.innerText = activeSubj;
+      
+      const reasonEl = document.getElementById('fc-reason');
+      if (reasonEl) reasonEl.innerText = '尚無數據';
+      
+      const conceptEl = document.getElementById('fc-concept');
+      if (conceptEl) conceptEl.innerText = '# 尚無錯題';
+      
+      const badgeEl = document.getElementById('fc-mastery-badge');
+      if (badgeEl) {
+        badgeEl.className = 'mastery-status unmastered';
+        badgeEl.innerText = '未擊敗 (0 次)';
+      }
+      
+      const stageEl = document.getElementById('review-ebbinghaus-stage');
+      if (stageEl) stageEl.innerText = '艾賓浩斯週期: 第 - 週次';
+
+      const stemTextEl = document.getElementById('fc-stem-text');
+      if (stemTextEl) {
+        stemTextEl.innerHTML = `
+          <div style="text-align: center; padding: 40px 20px; color: var(--text-muted);">
+            <i class="fa-solid fa-folder-open" style="font-size: 3rem; margin-bottom: 12px; opacity: 0.5;"></i>
+            <h3>此科目 (${activeSubj}) / 週次目前尚無錯題數據</h3>
+            <p style="margin-top: 8px; font-size: 0.9rem;">您可以切換其它科目或點擊上方切換其它週次！</p>
+          </div>
+        `;
+      }
+
+      const optionsTextEl = document.getElementById('fc-options-text');
+      if (optionsTextEl) optionsTextEl.innerHTML = '';
+
       document.getElementById('fc-diagram-container')?.classList.add('hidden');
       document.getElementById('fc-answer-container')?.classList.add('hidden');
       document.getElementById('fc-reveal-btn')?.classList.add('hidden');
       document.getElementById('fc-feedback-btns')?.classList.add('hidden');
+      
+      const noteTextEl = document.getElementById('fc-mistake-note-text');
+      if (noteTextEl) noteTextEl.innerText = '尚無防錯筆記';
+
       return;
     }
 
@@ -246,7 +365,19 @@ window.ReviewModule = {
     document.getElementById('fc-subject').innerText = q.subject;
     document.getElementById('fc-reason').innerText = q.errorReason;
     document.getElementById('fc-concept').innerText = `# ${q.concept}`;
-    document.getElementById('fc-mastery-badge').innerText = `連續掌握：${q.consecutiveMastered || 0} / 2 次`;
+    
+    const badgeEl = document.getElementById('fc-mastery-badge');
+    if (badgeEl) {
+      const isMastered = (q.consecutiveMastered || 0) > 0 || q.isArchived;
+      if (isMastered) {
+        badgeEl.className = 'mastery-status mastered';
+        badgeEl.innerHTML = `<i class="fa-solid fa-check"></i> 已擊敗`;
+      } else {
+        const times = q.errorCount || 1;
+        badgeEl.className = 'mastery-status unmastered';
+        badgeEl.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> 未擊敗 (${times} 次)`;
+      }
+    }
 
     // Separate Stem Text & Options for Middle Diagram Placement
     let stemMain = q.stem;
@@ -318,19 +449,68 @@ window.ReviewModule = {
 
   handleFeedback: function(isMastered) {
     const q = this.activeQuestions[this.currentIndex];
-    window.dataManager.updateQuestionMastery(q.id, isMastered);
+    const updatedQ = window.dataManager.updateQuestionMastery(q.id, isMastered);
+
+    if (!isMastered && updatedQ) {
+      const nextDate = updatedQ.mondayDate;
+      const parts = nextDate.split('-');
+      const formatted = parts.length === 3 ? `${parseInt(parts[1], 10)}/${parseInt(parts[2], 10)}` : nextDate;
+      this.showToast(`📌 已將此題移至下週 (${formatted}) 重新複習！`);
+    }
+
+    if (window.app && window.app.renderWeeklyMondayBar) {
+      window.app.renderWeeklyMondayBar();
+    }
 
     // Advance to next card
     this.currentIndex++;
     if (this.currentIndex >= this.activeQuestions.length) {
       alert('🎉 恭喜！已完成本次週末線上抽認卡複習測驗！');
-      this.loadReviewQueue();
+      this.loadReviewQueue(window.app?.currentSubjectFilter, window.app?.currentMondayFilter);
     } else {
       this.renderCurrentCard();
     }
 
     // Update global sidebar badge
     if (window.app) window.app.updateSidebarCounts();
+  },
+
+  deleteCurrentQuestionFromWeek: function() {
+    if (this.activeQuestions.length === 0) return;
+    const q = this.activeQuestions[this.currentIndex];
+    if (!q) return;
+
+    const currentMonday = window.app?.currentMondayFilter || q.mondayDate || '2026-08-24';
+    const parts = currentMonday.split('-');
+    const formattedWeek = parts.length === 3 ? `${parseInt(parts[1], 10)}/${parseInt(parts[2], 10)}` : currentMonday;
+
+    if (confirm(`確定要將此題僅從 ${formattedWeek} 週次中刪除嗎？\n（若此題包含其它週次，其它週次將不受影響）`)) {
+      window.dataManager.removeQuestionFromWeek(q.id, currentMonday);
+      this.showToast(`🗑️ 已從 ${formattedWeek} 週次清單中移除此題！`);
+
+      if (window.app) {
+        if (window.app.renderWeeklyMondayBar) window.app.renderWeeklyMondayBar();
+        if (window.app.updateSidebarCounts) window.app.updateSidebarCounts();
+      }
+
+      this.loadReviewQueue(window.app?.currentSubjectFilter, currentMonday);
+    }
+  },
+
+  showToast: function(message) {
+    let toast = document.getElementById('ux-toast-message');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'ux-toast-message';
+      toast.className = 'ux-toast';
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = `<i class="fa-solid fa-calendar-plus" style="color: #f59e0b;"></i> ${message}`;
+    toast.classList.add('show');
+    clearTimeout(this._toastTimer);
+    this._toastTimer = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2500);
   },
 
   scratchColor: '#ef4444',

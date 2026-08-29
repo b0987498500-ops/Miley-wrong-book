@@ -719,6 +719,13 @@ window.UploadModule = {
     if (!text) return '';
     let str = text;
 
+    // Temporarily extract and protect URLs to preserve 100% exact case sensitivity (lowercase l vs uppercase I)
+    const urls = [];
+    str = str.replace(/(https?:\/\/[^\s<]+)/g, function(match) {
+      urls.push(match);
+      return `___URL_PROTECTED_${urls.length - 1}___`;
+    });
+
     // Unit & math exponent replacements
     str = str.replace(/\\text\{\s*cm\s*\}\^2/gi, 'cm\u00B2');
     str = str.replace(/\\text\{\s*cm\s*\}\^3/gi, 'cm\u00B3');
@@ -746,6 +753,11 @@ window.UploadModule = {
 
     // Remove stray braces
     str = str.replace(/[{}]/g, '');
+
+    // Restore protected URLs with exact original case intact
+    urls.forEach((url, idx) => {
+      str = str.replace(`___URL_PROTECTED_${idx}___`, url);
+    });
 
     return str.trim();
   },
