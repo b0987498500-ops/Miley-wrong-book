@@ -2809,7 +2809,7 @@ body {
 
 .fc-diagram-container {
   margin: 20px 0;
-  max-height: 380px;
+  max-height: 420px;
   overflow: hidden;
   border-radius: var(--radius-md);
   background: #ffffff;
@@ -2851,8 +2851,8 @@ body {
 }
 
 .fc-diagram-container img {
-  max-height: 340px;
-  max-width: 100%;
+  max-height: 380px;
+  width: 100%;
   object-fit: contain;
   filter: contrast(1.1);
   border-radius: 4px;
