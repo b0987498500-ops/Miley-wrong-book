@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v17';
+const STORAGE_KEY = 'miley_wrong_questions_v18';
 
 // Initial Seed Data with real LaTeX, diagram samples, and mistake prevention notes
 const INITIAL_SEED_DATA = [
@@ -21,7 +21,7 @@ const INITIAL_SEED_DATA = [
     stem: '已知室溫時，食鹽的溶解度為 $36\\text{ g}/100\\text{ g}$ 水。小梅在室溫下分別配製甲、乙兩杯食鹽水溶液，各杯內加入的食鹽與水之質量如表所示。小梅將兩杯食鹽水溶液過濾後混合成一杯，若過程中水的蒸發量不計，此杯混合溶液的重量百分濃度約為多少？【103年會考】\n\n燒杯 | 食鹽(g) | 水(g)\n甲 | 24 | 60\n乙 | 36 | 80\n\n○ (A) 26.5%\n○ (B) 30.0%\n○ (C) 36.0%\n○ (D) 42.9%',
     answer: '(A) 26.5%',
     solution: '1. 觀念解析與溶解度計算：\n- 已知室溫下食鹽溶解度為 $36\\text{ g} / 100\\text{ g}$ 水。\n- 甲杯：$60\\text{ g}$ 水最多可溶解 $60 \\times \\frac{36}{100} = 21.6\\text{ g}$ 食鹽，過濾後僅保留 $21.6\\text{ g}$（飽和）。\n- 乙杯：$80\\text{ g}$ 水最多可溶解 $80 \\times \\frac{36}{100} = 28.8\\text{ g}$ 食鹽，過濾後僅保留 $28.8\\text{ g}$（飽和）。\n\n2. 混合濃度計算：\n- 甲、乙兩杯過濾後均為飽和溶液，兩者混合後仍為飽和溶液。\n- 重量百分濃度 $P\\% = \\frac{36}{36+100} \\times 100\\% \\approx 26.5\\%$。\n- 故選 (A)。\n\n3. 名師影音解題教學影片：\nhttps://www.youtube.com/watch?v=gjnDtTaeF4w',
-    diagramUrl: '',
+    diagramUrl: 'assets/questions/q_103_nat_001_table.png',
     errorCount: 1,
     ebbinghausStage: 1,
     consecutiveMastered: 0,
