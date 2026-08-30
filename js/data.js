@@ -345,35 +345,65 @@ const INITIAL_SEED_DATA = [
   }
 ];
 
+const DELETED_KEYS_STORAGE = 'miley_deleted_question_ids_v17';
+
 class DataManager {
   constructor() {
     this.questions = [];
+    this.deletedIds = [];
     this.init();
   }
 
+  loadDeletedIds() {
+    try {
+      const stored = localStorage.getItem(DELETED_KEYS_STORAGE);
+      this.deletedIds = stored ? JSON.parse(stored) : [];
+    } catch (e) {
+      this.deletedIds = [];
+    }
+  }
+
+  saveDeletedIds() {
+    try {
+      localStorage.setItem(DELETED_KEYS_STORAGE, JSON.stringify(this.deletedIds));
+    } catch (e) {}
+  }
+
   init() {
+    this.loadDeletedIds();
+
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
       try {
         this.questions = JSON.parse(stored);
       } catch (e) {
         console.error('Failed to parse localStorage questions, loading seeds', e);
-        this.questions = [...INITIAL_SEED_DATA];
+        this.questions = JSON.parse(JSON.stringify(INITIAL_SEED_DATA));
       }
     } else {
-      this.questions = [...INITIAL_SEED_DATA];
+      this.questions = JSON.parse(JSON.stringify(INITIAL_SEED_DATA));
     }
 
-    // Force migration & auto-merge of seeds into dataset (preserve user saved modifications!)
+    // 1. Filter out any questions user has explicitly deleted
+    if (Array.isArray(this.deletedIds) && this.deletedIds.length > 0) {
+      this.questions = this.questions.filter(q => !this.deletedIds.includes(q.id));
+    }
+
+    // 2. Auto-merge seeds (ONLY for seeds NOT deleted by user!)
     INITIAL_SEED_DATA.forEach(seed => {
+      if (this.deletedIds.includes(seed.id)) return; // User deleted this seed, do NOT restore!
+
       const idx = this.questions.findIndex(q => q.id === seed.id);
       if (idx === -1) {
-        this.questions.unshift(seed);
+        this.questions.unshift(JSON.parse(JSON.stringify(seed)));
       } else {
-        this.questions[idx] = { ...seed, ...this.questions[idx] };
-        if (seed.diagramUrl) {
-          this.questions[idx].diagramUrl = seed.diagramUrl;
-        }
+        const existing = this.questions[idx];
+        // Preserve user state (isArchived, consecutiveMastered, errorCount, ebbinghausStage, mondayDates, etc.)
+        this.questions[idx] = {
+          ...seed,
+          ...existing,
+          diagramUrl: seed.diagramUrl || existing.diagramUrl || ''
+        };
       }
     });
 
@@ -401,7 +431,9 @@ class DataManager {
   }
 
   resetToSeed() {
-    this.questions = [...INITIAL_SEED_DATA];
+    this.deletedIds = [];
+    this.saveDeletedIds();
+    this.questions = JSON.parse(JSON.stringify(INITIAL_SEED_DATA));
     this.save();
   }
 
@@ -447,6 +479,10 @@ class DataManager {
   }
 
   deleteQuestion(id) {
+    if (id && !this.deletedIds.includes(id)) {
+      this.deletedIds.push(id);
+      this.saveDeletedIds();
+    }
     this.questions = this.questions.filter(q => q.id !== id);
     this.save();
   }
