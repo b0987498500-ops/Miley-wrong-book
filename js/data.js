@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v18';
+const STORAGE_KEY = 'miley_wrong_questions_v19';
 
 // Initial Seed Data with real LaTeX, diagram samples, and mistake prevention notes
 const INITIAL_SEED_DATA = [
@@ -15,6 +15,7 @@ const INITIAL_SEED_DATA = [
     concept: '食鹽水溶解度與飽和溶液過濾混合濃度計算(103年會考題)',
     uploadDate: '2026-08-29',
     mondayDate: '2026-08-24',
+    mondayDates: ['2026-08-24'],
     weekLabel: '2026-08-24 (第 1 週)',
     isGuessedOrUnstable: true,
     mistakeNote: '過濾後只保留已溶解的食鹽！甲、乙兩杯過濾後均達到飽和，飽和溶液混合後依然是飽和溶液，濃度即為飽和濃度 36/(36+100) × 100% ≈ 26.5%！',
@@ -36,6 +37,7 @@ const INITIAL_SEED_DATA = [
     concept: '醋酸鈉飽和溶液與溶解度範圍推算(104年會考題)',
     uploadDate: '2026-08-29',
     mondayDate: '2026-08-24',
+    mondayDates: ['2026-08-24'],
     weekLabel: '2026-08-24 (第 1 週)',
     isGuessedOrUnstable: true,
     mistakeNote: '步驟一：$3\\text{g}$ 醋酸鈉加入 $10\\text{g}$ 水完全溶解（未飽和，濃度 $> \\frac{3}{3+10}=23.1\\%$）；步驟二：再加 $3\\text{g}$（共 $6\\text{g}$）有沉澱（飽和，濃度 $< \\frac{6}{6+10}=37.5\\%$）。故飽和溶液濃度介於 $23.0\\%\\sim 37.5\\%$！',
@@ -57,6 +59,7 @@ const INITIAL_SEED_DATA = [
     concept: '細胞滲透作用與體積變化與莫耳濃度換算(107年會考題)',
     uploadDate: '2026-08-29',
     mondayDate: '2026-08-24',
+    mondayDates: ['2026-08-24'],
     weekLabel: '2026-08-24 (第 1 週)',
     isGuessedOrUnstable: true,
     mistakeNote: '甲杯濃度為 $0.5\\text{ M} \\approx 17.1\\%$，乙杯濃度為 $0.5\\%$（甲 $>$ 乙）。小袋丙置於乙中形狀不變（丙 $\\approx$ 乙），置於甲中萎縮（水滲出，甲 $>$ 丙）。故甲最大，乙與丙相近（甲 $>$ 乙 $\\approx$ 丙）！',
