@@ -17,7 +17,7 @@ window.ReviewModule = {
     this.bindEvents();
     this.bindWelcomeEvents();
     this.initScratchpad();
-    this.loadReviewQueue();
+    this.loadReviewQueue('ALL', '2026-08-24');
   },
 
   bindEvents: function() {

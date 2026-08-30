@@ -1,8 +1,8 @@
 class App {
   constructor() {
     this.currentTab = 'review';
-    this.currentSubjectFilter = null;
-    this.currentMondayFilter = null;
+    this.currentSubjectFilter = 'ALL';
+    this.currentMondayFilter = '2026-08-24';
     this.init();
   }
 
@@ -25,6 +25,9 @@ class App {
     if (window.AnalyticsModule) window.AnalyticsModule.init();
     if (window.WisdomModule) window.WisdomModule.init();
     if (window.CardModule) window.CardModule.init();
+
+    // Load review queue immediately on app start so user sees questions right away
+    if (window.ReviewModule) window.ReviewModule.loadReviewQueue('ALL', '2026-08-24');
   }
 
   bindNavigation() {
