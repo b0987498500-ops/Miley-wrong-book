@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v19';
+const STORAGE_KEY = 'miley_wrong_questions_v20';
 
 // Initial Seed Data with real LaTeX, diagram samples, and mistake prevention notes
 const INITIAL_SEED_DATA = [
@@ -384,6 +384,11 @@ class DataManager {
         this.questions = JSON.parse(JSON.stringify(INITIAL_SEED_DATA));
       }
     } else {
+      this.questions = JSON.parse(JSON.stringify(INITIAL_SEED_DATA));
+    }
+
+    // Safety fallback: Ensure questions array is never empty on initial load
+    if (!Array.isArray(this.questions) || this.questions.length === 0) {
       this.questions = JSON.parse(JSON.stringify(INITIAL_SEED_DATA));
     }
 

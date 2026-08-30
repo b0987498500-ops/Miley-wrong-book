@@ -1,4 +1,4 @@
-const CACHE_NAME = 'miley-wrong-book-v5';
+const CACHE_NAME = 'miley-wrong-book-v6';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -23,7 +23,7 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(ASSETS_TO_CACHE);
-    })
+    }).catch(() => {})
   );
 });
 
@@ -42,15 +42,19 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  // Network-First strategy to ensure latest updates are served immediately
+  // Only intercept HTTP/HTTPS GET requests (ignore chrome-extension:// and non-http schemes)
+  if (event.request.method !== 'GET' || !event.request.url.startsWith('http')) {
+    return;
+  }
+
   event.respondWith(
     fetch(event.request)
       .then(networkResponse => {
-        if (networkResponse && networkResponse.status === 200 && event.request.method === 'GET') {
+        if (networkResponse && networkResponse.status === 200) {
           const responseClone = networkResponse.clone();
           caches.open(CACHE_NAME).then(cache => {
-            cache.put(event.request, responseClone);
-          });
+            cache.put(event.request, responseClone).catch(() => {});
+          }).catch(() => {});
         }
         return networkResponse;
       })
