@@ -1,4 +1,4 @@
-const CACHE_NAME = 'miley-wrong-book-v11';
+const CACHE_NAME = 'miley-wrong-book-v12';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

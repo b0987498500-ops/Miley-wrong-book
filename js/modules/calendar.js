@@ -1,19 +1,38 @@
 /**
- * Interactive Study & Exam Calendar Module (學習進度與段考標記日曆)
- */
-window.CalendarModule = {
-  currentYear: 2026,
-  currentMonth: 7, // 0-indexed: 7 = August
-  selectedDateStr: '2026-08-25',
+ * Interactive Study & Exam Calendar Module (學習進度與window.CalendarModule = {
+  currentYear: new Date().getFullYear(),
+  currentMonth: new Date().getMonth(),
+  selectedDateStr: '',
+
+  getTodayDateStr: function() {
+    const d = new Date();
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const da = String(d.getDate()).padStart(2, '0');
+    return `${y}-${m}-${da}`;
+  },
 
   init: function() {
-    const today = new Date(2026, 7, 25);
+    const today = new Date();
     this.currentYear = today.getFullYear();
     this.currentMonth = today.getMonth();
-    this.selectedDateStr = this.formatDateStr(this.currentYear, this.currentMonth + 1, today.getDate());
+    this.selectedDateStr = this.getTodayDateStr();
 
     this.bindEvents();
     this.renderCalendar();
+    this.updateTopDateDisplay();
+  },
+
+  updateTopDateDisplay: function() {
+    const displayEl = document.getElementById('current-date-display');
+    if (!displayEl) return;
+    const d = new Date();
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    const days = ['週日', '週一', '週二', '週三', '週四', '週五', '週六'];
+    const dayOfWeek = days[d.getDay()];
+    displayEl.innerText = `${year}-${month}-${day} (${dayOfWeek})`;
   },
 
   bindEvents: function() {
@@ -95,7 +114,7 @@ window.CalendarModule = {
     if (!window.dataManager) return;
 
     const events = window.dataManager.getCalendarEvents();
-    const todayStr = '2026-08-25';
+    const todayStr = this.getTodayDateStr();
     
     // Future exams sorted by date
     const futureExams = events
@@ -139,7 +158,7 @@ window.CalendarModule = {
 
     const firstDayIndex = new Date(this.currentYear, this.currentMonth, 1).getDay();
     const totalDays = new Date(this.currentYear, this.currentMonth + 1, 0).getDate();
-    const todayStr = '2026-08-25';
+    const todayStr = this.getTodayDateStr();
 
     let html = '';
 

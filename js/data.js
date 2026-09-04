@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v24';
+const STORAGE_KEY = 'miley_wrong_questions_v25';
 
 // Initial Seed Data - Strictly only the Natural Science wrong question uploaded by user
 const INITIAL_SEED_DATA = [
@@ -31,7 +31,7 @@ const INITIAL_SEED_DATA = [
   }
 ];
 
-const DELETED_KEYS_STORAGE = 'miley_deleted_question_ids_v24';
+const DELETED_KEYS_STORAGE = 'miley_deleted_question_ids_v25';
 
 class DataManager {
   constructor() {
@@ -297,10 +297,33 @@ class DataManager {
   }
 
   // Get Tree Structure: Exam -> Monday Date (Includes current and next week folders)
+
+  getMondayDate(dateInput = new Date()) {
+    const d = new Date(dateInput);
+    if (isNaN(d.getTime())) return this.getCurrentMondayDate();
+    const day = d.getDay();
+    const diff = d.getDate() - day + (day === 0 ? -6 : 1);
+    const monday = new Date(d.setDate(diff));
+    const y = monday.getFullYear();
+    const m = String(monday.getMonth() + 1).padStart(2, '0');
+    const da = String(monday.getDate()).padStart(2, '0');
+    return ;
+  }
+
+  getCurrentMondayDate() {
+    return this.getMondayDate(new Date());
+  }
+
+  getNextMondayDate() {
+    const d = new Date();
+    d.setDate(d.getDate() + 7);
+    return this.getMondayDate(d);
+  }
+
   getTreeStructure() {
     const tree = {};
-    const currentMonday = '2026-08-24';
-    const nextMonday = '2026-08-31';
+    const currentMonday = this.getCurrentMondayDate();
+    const nextMonday = this.getNextMondayDate();
 
     tree['二段'] = {
       [currentMonday]: [],
@@ -309,9 +332,10 @@ class DataManager {
 
     this.questions.forEach(q => {
       const exam = q.examPeriod || '二段';
+      const fallbackM = q.mondayDate || this.getCurrentMondayDate();
       const mList = Array.isArray(q.mondayDates) && q.mondayDates.length > 0
         ? q.mondayDates
-        : [q.mondayDate || '2026-08-24'];
+        : [fallbackM];
       
       if (!tree[exam]) tree[exam] = {};
 
@@ -325,17 +349,20 @@ class DataManager {
     return tree;
   }
 
-  // Get sorted unique list of all Monday dates present in dataset (Includes 下週 2026-08-31)
   getAllMondayDates() {
     const mondays = new Set();
+    const currentM = this.getCurrentMondayDate();
+    const nextM = this.getNextMondayDate();
+
+    mondays.add(currentM);
+    mondays.add(nextM);
+
     this.questions.forEach(q => {
       if (q.mondayDate) mondays.add(q.mondayDate);
       if (Array.isArray(q.mondayDates)) {
         q.mondayDates.forEach(m => mondays.add(m));
       }
     });
-    mondays.add('2026-08-24');
-    mondays.add('2026-08-31'); // 下週
     return Array.from(mondays).sort();
   }
 

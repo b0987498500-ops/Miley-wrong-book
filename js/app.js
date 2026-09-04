@@ -145,6 +145,8 @@ class App {
     if (!chipsContainer || !window.dataManager) return;
 
     const mondayDates = window.dataManager.getAllMondayDates();
+    const currentMonday = window.dataManager.getCurrentMondayDate();
+    const nextMonday = window.dataManager.getNextMondayDate();
     let html = '';
 
     mondayDates.forEach((dateStr) => {
@@ -157,10 +159,10 @@ class App {
       }
 
       let badgeLabel = formattedDate;
-      if (dateStr === '2026-08-24') {
-        badgeLabel = '本週';
-      } else if (dateStr === '2026-08-31') {
-        badgeLabel = '下週';
+      if (dateStr === currentMonday) {
+        badgeLabel = '本週 (' + formattedDate + ')';
+      } else if (dateStr === nextMonday) {
+        badgeLabel = '下週 (' + formattedDate + ')';
       }
 
       const isActive = dateStr === this.currentMondayFilter ? 'active' : '';
