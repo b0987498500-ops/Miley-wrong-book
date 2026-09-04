@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v21';
+const STORAGE_KEY = 'miley_wrong_questions_v23';
 
 // Initial Seed Data with real LaTeX, diagram samples, and mistake prevention notes
 const INITIAL_SEED_DATA = [
@@ -348,7 +348,7 @@ const INITIAL_SEED_DATA = [
   }
 ];
 
-const DELETED_KEYS_STORAGE = 'miley_deleted_question_ids_v17';
+const DELETED_KEYS_STORAGE = 'miley_deleted_question_ids_v23';
 
 class DataManager {
   constructor() {
@@ -387,13 +387,6 @@ class DataManager {
       this.questions = JSON.parse(JSON.stringify(INITIAL_SEED_DATA));
     }
 
-    // Safety fallback: Ensure questions array is never empty on initial load
-    if (!Array.isArray(this.questions) || this.questions.length === 0) {
-      this.deletedIds = [];
-      this.saveDeletedIds();
-      this.questions = JSON.parse(JSON.stringify(INITIAL_SEED_DATA));
-    }
-
     // 1. Filter out any questions user has explicitly deleted
     if (Array.isArray(this.deletedIds) && this.deletedIds.length > 0) {
       this.questions = this.questions.filter(q => !this.deletedIds.includes(q.id));
@@ -416,6 +409,13 @@ class DataManager {
         };
       }
     });
+
+    // 3. Ultra-Safety Fallback: If questions array is empty or corrupt, clear deletedIds and force reload seeds!
+    if (!Array.isArray(this.questions) || this.questions.length === 0) {
+      this.deletedIds = [];
+      this.saveDeletedIds();
+      this.questions = JSON.parse(JSON.stringify(INITIAL_SEED_DATA));
+    }
 
     this.save();
   }

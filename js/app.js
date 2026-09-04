@@ -1,8 +1,8 @@
 class App {
   constructor() {
     this.currentTab = 'review';
-    this.currentSubjectFilter = 'ALL';
-    this.currentMondayFilter = '2026-08-24';
+    this.currentSubjectFilter = null;
+    this.currentMondayFilter = null;
     this.init();
   }
 
@@ -26,8 +26,8 @@ class App {
     if (window.WisdomModule) window.WisdomModule.init();
     if (window.CardModule) window.CardModule.init();
 
-    // Load review queue immediately on app start so user sees questions right away
-    if (window.ReviewModule) window.ReviewModule.loadReviewQueue('ALL', '2026-08-24');
+    // Show Interactive Battle Arena Welcome Screen on Homepage launch
+    if (window.ReviewModule) window.ReviewModule.loadReviewQueue(null, null);
   }
 
   bindNavigation() {
