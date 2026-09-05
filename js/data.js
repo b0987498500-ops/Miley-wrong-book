@@ -160,6 +160,28 @@ const INITIAL_SEED_DATA = [
     consecutiveMastered: 0,
     isArchived: false,
     nextReviewDate: '2026-09-05'
+  },
+  {
+    id: 'q_sci_optics_115',
+    examPeriod: '二段',
+    subject: '自然/理化',
+    errorReason: '觀念不懂',
+    concept: '凸透鏡成像與幻燈片投影機成像原理',
+    uploadDate: '2026-09-05',
+    mondayDate: '2026-08-31',
+    mondayDates: ['2026-08-31'],
+    weekLabel: '2026-08-31 (本週)',
+    isGuessedOrUnstable: true,
+    mistakeNote: '幻燈片放在 1 倍到 2 倍焦距之間（f < P < 2f），成倒立放大實像在 2 倍焦距外（Q > 2f）！故像距 Q 大於物距 P 大於焦距 f，大小關係為 Q > P > f。',
+    stem: '幻燈片的投影機是利用凹面鏡將強光源所發出的光線，反射至聚光器，再使光線通過幻燈片，然後射到凸透鏡，經凸透鏡折射成清晰的像在屏幕上，如圖為幻燈片的投影機內透鏡排列方式（未依實際距離大小比例繪圖），及屏幕之關係圖。試回答下列問題：\n\n幻燈片與凸透鏡的距離為 P cm，凸透鏡的焦距為 f cm，屏幕與凸透鏡的距離為 Q cm，則 P、f、Q 三者大小關係為何？\n\n○ (A) f > P > Q\n○ (B) Q > P > f\n○ (C) P > f > Q\n○ (D) P > Q > f',
+    answer: '(B) Q > P > f',
+    solution: '1. 物距分析（P）：\n- 投影機欲在屏幕上投射出清晰放大的實像，物體（幻燈片）必須放置在凸透鏡的「1 倍焦距與 2 倍焦距之間」（$f < P < 2f$），故 $P > f$。\n\n2. 像距分析（Q）：\n- 當物體在 $f \\sim 2f$ 之間時，經凸透鏡折射後會成「倒立放大實像」於鏡後「2 倍焦距外」（$Q > 2f$）。\n- 比較物距與像距：因為成放大像，故像距大於物距，即 $Q > P$。\n\n3. 綜合比較：\n- 綜合以上可知：$Q > P > f$，正確選項選 (B)。',
+    diagramUrl: 'assets/questions/q_115_slide_projector_diagram.png',
+    errorCount: 1,
+    ebbinghausStage: 1,
+    consecutiveMastered: 0,
+    isArchived: false,
+    nextReviewDate: '2026-09-05'
   }
 ];
 
