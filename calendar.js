@@ -1,5 +1,5 @@
 /**
- * Interactive Study & Exam Calendar Module
+ * Interactive Study & Exam Calendar Module (Root Backward-Compatibility Copy)
  */
 window.CalendarModule = {
   currentYear: new Date().getFullYear(),
@@ -159,7 +159,7 @@ window.CalendarModule = {
       if (textEl) textEl.innerText = `近期進度：${targetPlan.title}`;
       if (headerSubtextEl) headerSubtextEl.innerText = `${targetPlan.title}`;
     } else {
-      if (textEl) textEl.innerText = `目前尚無近期段考標記，點擊「+」立即安排！`;
+      if (textEl) textEl.innerText = `目前尚無近期段考標記，點擊「+」安排新進度！`;
       if (headerSubtextEl) headerSubtextEl.innerText = `📖 點擊標記學習目標`;
     }
   },

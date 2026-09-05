@@ -25,13 +25,57 @@
   <meta name="apple-mobile-web-app-title" content="麥麥錯題本">
   <link rel="apple-touch-icon" href="assets/icon-192.png">
 
-  <!-- Cache Prevention Meta Tags for GitHub Pages -->
+  <!-- Cache Prevention Meta Tags & Auto Unregister SW -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+  <script>
+    (function() {
+      // Unregister Service Workers & clear Cache Storage
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(regs) {
+          regs.forEach(function(r) { r.unregister(); });
+        });
+      }
+      if ('caches' in window) {
+        caches.keys().then(function(names) {
+          names.forEach(function(n) { caches.delete(n); });
+        });
+      }
+      // Force reload if legacy cached version is active
+      var currVer = localStorage.getItem('miley_purge_v35_final');
+      if (!currVer) {
+        localStorage.setItem('miley_purge_v35_final', 'true');
+        if (window.location.search.indexOf('v=35') === -1) {
+          console.log('Purging legacy browser cache and reloading...');
+          window.location.search = '?v=35_force_purge&t=' + Date.now();
+        }
+      }
+    })();
+    // Immediate date updater on load
+    (function() {
+      function syncCurrentDateDisplay() {
+        const displayEl = document.getElementById('current-date-display');
+        if (displayEl) {
+          const d = new Date();
+          const year = d.getFullYear();
+          const month = String(d.getMonth() + 1).padStart(2, '0');
+          const day = String(d.getDate()).padStart(2, '0');
+          const days = ['週日', '週一', '週二', '週三', '週四', '週五', '週六'];
+          displayEl.innerText = year + '-' + month + '-' + day + ' (' + days[d.getDay()] + ')';
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', syncCurrentDateDisplay);
+      } else {
+        syncCurrentDateDisplay();
+      }
+    })();
+  </script>
+  <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=99_force_purge">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -172,7 +216,7 @@
               <div class="current-date-chip" id="calendar-trigger-btn" title="點擊開啟學習進度與段考標記日曆">
                 <i class="fa-regular fa-calendar-check"></i>
                 <div class="date-chip-text-group">
-                  <span id="current-date-display">2026-08-25 (週二)</span>
+                  <span id="current-date-display">2026-09-05 (週六)</span>
                   <span id="header-study-plan-subtext" class="header-study-plan-subtext">🎯 自然/理化第一次段考 (倒數 7 天)</span>
                 </div>
                 <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px; opacity: 0.7;"></i>
@@ -189,7 +233,7 @@
                 <!-- Calendar Month Nav Header -->
                 <div class="cal-month-header">
                   <button id="cal-prev-month-btn" class="cal-nav-btn" title="上個月"><i class="fa-solid fa-chevron-left"></i></button>
-                  <span id="cal-month-label" class="cal-month-title">2026 年 8 月</span>
+                  <span id="cal-month-label" class="cal-month-title">2026 年 9 月</span>
                   <button id="cal-next-month-btn" class="cal-nav-btn" title="下個月"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
 
@@ -919,22 +963,29 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=12"></script>
-  <script src="js/utils/katex_render.js?v=12"></script>
-  <script src="js/utils/pdf_export.js?v=12"></script>
-  <script src="js/modules/upload.js?v=12"></script>
-  <script src="js/modules/archive.js?v=12"></script>
-  <script src="js/modules/review.js?v=12"></script>
-  <script src="js/modules/sprint.js?v=12"></script>
-  <script src="js/modules/analytics.js?v=12"></script>
-  <script src="js/modules/calendar.js?v=12"></script>
-  <script src="js/modules/wisdom.js?v=12"></script>
-  <script src="js/modules/card.js?v=12"></script>
-  <script src="js/app.js?v=12"></script>
+  <script src="js/data.js?v=13"></script>
+  <script src="js/utils/katex_render.js?v=13"></script>
+  <script src="js/utils/pdf_export.js?v=13"></script>
+  <script src="js/modules/upload.js?v=13"></script>
+  <script src="js/modules/archive.js?v=13"></script>
+  <script src="js/modules/review.js?v=13"></script>
+  <script src="js/modules/sprint.js?v=13"></script>
+  <script src="js/modules/analytics.js?v=13"></script>
+  <script src="js/modules/calendar.js?v=13"></script>
+  <script src="js/modules/wisdom.js?v=13"></script>
+  <script src="js/modules/card.js?v=13"></script>
+  <script src="js/app.js?v=13"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=12').catch(err => console.log('SW reg failed:', err));
+      navigator.serviceWorker.getRegistrations().then(regs => {
+        for (let reg of regs) {
+          reg.unregister();
+        }
+      });
+    }
+    if ('caches' in window) {
+      caches.keys().then(keys => {
+        for (let k of keys) caches.delete(k);
       });
     }
   </script>

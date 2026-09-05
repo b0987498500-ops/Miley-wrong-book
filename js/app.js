@@ -7,27 +7,84 @@ class App {
   }
 
   init() {
-    this.bindNavigation();
-    this.bindSidebarToggle();
-    this.bindTopbarToggle();
-    this.bindSidebarSubjectFilter();
-    this.bindBrandHomeClick();
-    this.renderWeeklyMondayBar();
-    this.bindThemeToggle();
-    this.bindResetData();
-    this.updateSidebarCounts();
+    try {
+      this.lastCheckedDate = window.dataManager ? window.dataManager.getTodayDateStr() : '';
+      this.currentMondayFilter = window.dataManager ? window.dataManager.getCurrentMondayDate() : null;
 
-    // Initialize Sub-modules
-    if (window.UploadModule) window.UploadModule.init();
-    if (window.ArchiveModule) window.ArchiveModule.init();
-    if (window.ReviewModule) window.ReviewModule.init();
-    if (window.SprintModule) window.SprintModule.init();
-    if (window.AnalyticsModule) window.AnalyticsModule.init();
-    if (window.WisdomModule) window.WisdomModule.init();
-    if (window.CardModule) window.CardModule.init();
+      this.bindNavigation();
+      this.bindSidebarToggle();
+      this.bindTopbarToggle();
+      this.bindSidebarSubjectFilter();
+      this.bindBrandHomeClick();
+      this.renderWeeklyMondayBar();
+      this.bindThemeToggle();
+      this.bindResetData();
+      this.updateSidebarCounts();
+      this.startDailyUpdateTimer();
+    } catch (e) {
+      console.warn('App core init warning:', e);
+    }
 
-    // Show Interactive Battle Arena Welcome Screen on Homepage launch
-    if (window.ReviewModule) window.ReviewModule.loadReviewQueue(null, null);
+    // Initialize Sub-modules safely
+    try { if (window.UploadModule) window.UploadModule.init(); } catch (e) { console.error(e); }
+    try { if (window.ArchiveModule) window.ArchiveModule.init(); } catch (e) { console.error(e); }
+    try { if (window.ReviewModule) window.ReviewModule.init(); } catch (e) { console.error(e); }
+    try { if (window.SprintModule) window.SprintModule.init(); } catch (e) { console.error(e); }
+    try { if (window.AnalyticsModule) window.AnalyticsModule.init(); } catch (e) { console.error(e); }
+    try { if (window.CalendarModule) window.CalendarModule.init(); } catch (e) { console.error(e); }
+    try { if (window.WisdomModule) window.WisdomModule.init(); } catch (e) { console.error(e); }
+    try { if (window.CardModule) window.CardModule.init(); } catch (e) { console.error(e); }
+
+    // Load current week review queue directly on launch
+    try {
+      const initialMonday = this.currentMondayFilter || (window.dataManager ? window.dataManager.getCurrentMondayDate() : null);
+      if (window.ReviewModule && initialMonday) {
+        window.ReviewModule.loadReviewQueue(null, initialMonday);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  startDailyUpdateTimer() {
+    // Check every 30 seconds for date changes (midnight cross or date sync)
+    setInterval(() => {
+      this.checkAndUpdateDailyState();
+    }, 30000);
+
+    // Check on tab visibility change or focus
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        this.checkAndUpdateDailyState();
+      }
+    });
+
+    window.addEventListener('focus', () => {
+      this.checkAndUpdateDailyState();
+    });
+  }
+
+  checkAndUpdateDailyState() {
+    if (!window.dataManager) return;
+    const todayStr = window.dataManager.getTodayDateStr();
+    if (this.lastCheckedDate !== todayStr) {
+      this.lastCheckedDate = todayStr;
+      
+      // Update calendar header & countdown
+      if (window.CalendarModule) {
+        window.CalendarModule.updateTopDateDisplay();
+        window.CalendarModule.renderCalendar();
+      }
+
+      // Re-render weekly Monday chips bar
+      const newCurrentMonday = window.dataManager.getCurrentMondayDate();
+      if (this.currentMondayFilter && this.currentMondayFilter !== 'ALL') {
+        this.currentMondayFilter = newCurrentMonday;
+      }
+
+      this.renderWeeklyMondayBar();
+      this.refreshAllViews();
+    }
   }
 
   bindNavigation() {
@@ -126,73 +183,87 @@ class App {
       // Prevent sidebar toggle button from triggering page reload if toggle button clicked
       if (e.target.closest('#sidebar-toggle-btn')) return;
 
-      if (window.location.protocol === 'file:') {
-        // Reset state safely under file:// protocol without triggering origin warnings
-        this.currentSubjectFilter = null;
-        this.currentMondayFilter = null;
-        document.querySelectorAll('.sidebar-subject-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.monday-chip').forEach(c => c.classList.remove('active'));
-        this.switchTab('review');
-        if (window.ReviewModule) window.ReviewModule.loadReviewQueue(null, null);
-      } else {
-        window.location.reload();
+      const currentM = window.dataManager ? window.dataManager.getCurrentMondayDate() : null;
+      this.currentSubjectFilter = null;
+      this.currentMondayFilter = currentM;
+
+      document.querySelectorAll('.sidebar-subject-btn').forEach(b => b.classList.remove('active'));
+      
+      this.switchTab('review');
+      this.renderWeeklyMondayBar();
+      if (window.ReviewModule && currentM) {
+        window.ReviewModule.loadReviewQueue(null, currentM);
       }
     });
   }
 
   renderWeeklyMondayBar() {
-    const chipsContainer = document.getElementById('weekly-monday-chips');
-    if (!chipsContainer || !window.dataManager) return;
+    try {
+      const chipsContainer = document.getElementById('weekly-monday-chips');
+      if (!chipsContainer || !window.dataManager) return;
 
-    const mondayDates = window.dataManager.getAllMondayDates();
-    const currentMonday = window.dataManager.getCurrentMondayDate();
-    const nextMonday = window.dataManager.getNextMondayDate();
-    let html = '';
+      const mondayDates = typeof window.dataManager.getAllMondayDates === 'function'
+        ? window.dataManager.getAllMondayDates()
+        : [];
+      if (!Array.isArray(mondayDates)) return;
 
-    mondayDates.forEach((dateStr) => {
-      const parts = dateStr.split('-');
-      let formattedDate = dateStr;
-      if (parts.length === 3) {
-        const month = parseInt(parts[1], 10);
-        const day = parseInt(parts[2], 10);
-        formattedDate = `${month}/${day}`;
-      }
+      const currentMonday = typeof window.dataManager.getCurrentMondayDate === 'function'
+        ? window.dataManager.getCurrentMondayDate()
+        : '';
+      const nextMonday = typeof window.dataManager.getNextMondayDate === 'function'
+        ? window.dataManager.getNextMondayDate(currentMonday)
+        : '';
+      let html = '';
 
-      let badgeLabel = formattedDate;
-      if (dateStr === currentMonday) {
-        badgeLabel = '本週 (' + formattedDate + ')';
-      } else if (dateStr === nextMonday) {
-        badgeLabel = '下週 (' + formattedDate + ')';
-      }
+      mondayDates.forEach((dateStr) => {
+        if (!dateStr || typeof dateStr !== 'string' || !dateStr.includes('-')) return;
 
-      const isActive = dateStr === this.currentMondayFilter ? 'active' : '';
-
-      html += `
-        <button class="monday-chip ${isActive}" data-monday="${dateStr}">
-          <i class="fa-regular fa-calendar-check"></i> ${badgeLabel}
-        </button>
-      `;
-    });
-
-    chipsContainer.innerHTML = html;
-
-    // Bind Monday Chips click events -> Direct Jump to Review Mode!
-    chipsContainer.querySelectorAll('.monday-chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        chipsContainer.querySelectorAll('.monday-chip').forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-
-        const monday = chip.dataset.monday;
-        this.currentMondayFilter = monday;
-
-        if (window.ArchiveModule) {
-          window.ArchiveModule.currentMonday = monday;
+        const parts = dateStr.split('-');
+        let formattedDate = dateStr;
+        if (parts.length === 3) {
+          const month = parseInt(parts[1], 10);
+          const day = parseInt(parts[2], 10);
+          formattedDate = `${month}/${day}`;
         }
 
-        // Direct jump into Review Mode (Standard view first, let user choose fullscreen)
-        this.startReviewWithFilter(this.currentSubjectFilter || 'ALL', monday, false);
+        let badgeLabel = formattedDate;
+        if (dateStr === currentMonday) {
+          badgeLabel = '本週 (' + formattedDate + ')';
+        } else if (dateStr === nextMonday) {
+          badgeLabel = '下週 (' + formattedDate + ')';
+        }
+
+        const isActive = dateStr === this.currentMondayFilter ? 'active' : '';
+
+        html += `
+          <button class="monday-chip ${isActive}" data-monday="${dateStr}">
+            <i class="fa-regular fa-calendar-check"></i> ${badgeLabel}
+          </button>
+        `;
       });
-    });
+
+      chipsContainer.innerHTML = html;
+
+      // Bind Monday Chips click events -> Direct Jump to Review Mode!
+      chipsContainer.querySelectorAll('.monday-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          chipsContainer.querySelectorAll('.monday-chip').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+
+          const monday = chip.dataset.monday;
+          this.currentMondayFilter = monday;
+
+          if (window.ArchiveModule) {
+            window.ArchiveModule.currentMonday = monday;
+          }
+
+          // Direct jump into Review Mode (Standard view first, let user choose fullscreen)
+          this.startReviewWithFilter(this.currentSubjectFilter || 'ALL', monday, false);
+        });
+      });
+    } catch (err) {
+      console.error('Error rendering weekly monday bar:', err);
+    }
   }
 
   switchTab(tabId) {

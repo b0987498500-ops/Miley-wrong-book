@@ -185,19 +185,22 @@ window.ReviewModule = {
 
   loadReviewQueue: function(subjectFilter = null, mondayFilter = null) {
     if (subjectFilter !== undefined) this.currentSubjectFilter = subjectFilter;
-    if (mondayFilter !== undefined) this.currentMondayFilter = mondayFilter;
-
-    // Check if both filters are unselected/null -> Show Battle Arena Welcome Screen!
-    const isUnselected = !this.currentSubjectFilter && !this.currentMondayFilter;
+    if (mondayFilter !== undefined && mondayFilter !== null) {
+      this.currentMondayFilter = mondayFilter;
+    } else if (!this.currentMondayFilter && window.dataManager) {
+      this.currentMondayFilter = window.dataManager.getCurrentMondayDate();
+    }
 
     const welcomeStage = document.getElementById('review-welcome-stage');
     const cardContainer = document.getElementById('review-card-container');
     const reviewHeader = document.querySelector('.review-header');
 
+    if (reviewHeader) reviewHeader.classList.remove('hidden');
+
+    const isUnselected = !this.currentSubjectFilter && !this.currentMondayFilter;
     if (isUnselected) {
       if (welcomeStage) welcomeStage.classList.remove('hidden');
       if (cardContainer) cardContainer.classList.add('hidden');
-      if (reviewHeader) reviewHeader.classList.add('hidden');
       this.renderWelcomeHero();
       return;
     }
@@ -205,7 +208,6 @@ window.ReviewModule = {
     // Filters are selected -> show flashcard review container!
     if (welcomeStage) welcomeStage.classList.add('hidden');
     if (cardContainer) cardContainer.classList.remove('hidden');
-    if (reviewHeader) reviewHeader.classList.remove('hidden');
 
     const targetSubject = this.currentSubjectFilter || 'ALL';
     const targetMonday = this.currentMondayFilter || 'ALL';
@@ -496,7 +498,7 @@ window.ReviewModule = {
     const q = this.activeQuestions[this.currentIndex];
     if (!q) return;
 
-    const currentMonday = window.app?.currentMondayFilter || q.mondayDate || '2026-08-24';
+    const currentMonday = window.app?.currentMondayFilter || q.mondayDate || (window.dataManager?.getCurrentMondayDate() || '2026-08-31');
     const parts = currentMonday.split('-');
     const formattedWeek = parts.length === 3 ? `${parseInt(parts[1], 10)}/${parseInt(parts[2], 10)}` : currentMonday;
 
