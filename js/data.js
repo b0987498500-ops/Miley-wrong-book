@@ -546,39 +546,29 @@ class DataManager {
 
   // ==================== CALENDAR EVENTS STORAGE ====================
   getCalendarEvents() {
-    const CALENDAR_STORAGE_KEY = 'miley_study_calendar_events_v1';
+    const CALENDAR_STORAGE_KEY = 'miley_study_calendar_events_v2';
 
-    const getRelativeDateStr = (offsetDays) => {
-      const d = new Date();
-      d.setDate(d.getDate() + offsetDays);
-      const y = d.getFullYear();
-      const m = String(d.getMonth() + 1).padStart(2, '0');
-      const da = String(d.getDate()).padStart(2, '0');
-      return `${y}-${m}-${da}`;
-    };
-
-    const INITIAL_CALENDAR_EVENTS = [
-      { id: 'ce_1', date: getRelativeDateStr(7), type: 'exam', title: '🎯 自然/理化第一次段考' },
-      { id: 'ce_2', date: getRelativeDateStr(-2), type: 'plan', title: '📖 複習數學一元二次方程式錯題' },
-      { id: 'ce_3', date: getRelativeDateStr(2), type: 'review', title: '⏰ 英文關聯代詞錯題抽認卡考驗' }
-    ];
+    // Purge legacy v1 demo events if present
+    if (localStorage.getItem('miley_study_calendar_events_v1')) {
+      localStorage.removeItem('miley_study_calendar_events_v1');
+    }
 
     const stored = localStorage.getItem(CALENDAR_STORAGE_KEY);
     if (stored) {
       try {
         const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        if (Array.isArray(parsed)) return parsed;
       } catch (e) {
-        return [...INITIAL_CALENDAR_EVENTS];
+        return [];
       }
     }
     
-    localStorage.setItem(CALENDAR_STORAGE_KEY, JSON.stringify(INITIAL_CALENDAR_EVENTS));
-    return [...INITIAL_CALENDAR_EVENTS];
+    localStorage.setItem(CALENDAR_STORAGE_KEY, JSON.stringify([]));
+    return [];
   }
 
   saveCalendarEvents(events) {
-    const CALENDAR_STORAGE_KEY = 'miley_study_calendar_events_v1';
+    const CALENDAR_STORAGE_KEY = 'miley_study_calendar_events_v2';
     localStorage.setItem(CALENDAR_STORAGE_KEY, JSON.stringify(events));
   }
 
