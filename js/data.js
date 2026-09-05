@@ -182,6 +182,28 @@ const INITIAL_SEED_DATA = [
     consecutiveMastered: 0,
     isArchived: false,
     nextReviewDate: '2026-09-05'
+  },
+  {
+    id: 'q_sci_optics_116',
+    examPeriod: '二段',
+    subject: '自然/理化',
+    errorReason: '計算粗心',
+    concept: '凸透鏡物距與像距數據推算焦距範圍',
+    uploadDate: '2026-09-05',
+    mondayDate: '2026-08-31',
+    mondayDates: ['2026-08-31'],
+    weekLabel: '2026-08-31 (本週)',
+    isGuessedOrUnstable: true,
+    mistakeNote: '當物距 p = 像距 q = 2f 時成等大實像。由表中數據 p=35 時 q=29.5 (p>q)，當 p=25 時 q=44.4 (p<q)，故 2f 必然介於 29.5~35 之間，推得焦距 14.75 < f < 17.5，選 (C) 16cm。',
+    stem: '凸透鏡成像實驗，物距透鏡 $p\\text{ cm}$ 時，調整屏距透鏡為 $q\\text{ cm}$ 時可得清晰像，數據如表所示，則此凸透鏡的焦距最有可能為下列何者？\n\n<table style="width:100%; border-collapse:collapse; margin:10px 0; text-align:center; border:1px solid rgba(255,255,255,0.2); font-size:0.9rem;"><thead><tr style="background:rgba(99,102,241,0.2);"><th style="border:1px solid rgba(255,255,255,0.2); padding:6px;">p (公分)</th><th style="border:1px solid rgba(255,255,255,0.2); padding:6px;">80</th><th style="border:1px solid rgba(255,255,255,0.2); padding:6px;">60</th><th style="border:1px solid rgba(255,255,255,0.2); padding:6px;">40</th><th style="border:1px solid rgba(255,255,255,0.2); padding:6px;">35</th><th style="border:1px solid rgba(255,255,255,0.2); padding:6px;">25</th></tr></thead><tbody><tr><td style="border:1px solid rgba(255,255,255,0.2); padding:6px; font-weight:bold;">q (公分)</td><td style="border:1px solid rgba(255,255,255,0.2); padding:6px;">20</td><td style="border:1px solid rgba(255,255,255,0.2); padding:6px;">21.8</td><td style="border:1px solid rgba(255,255,255,0.2); padding:6px;">26.7</td><td style="border:1px solid rgba(255,255,255,0.2); padding:6px;">29.5</td><td style="border:1px solid rgba(255,255,255,0.2); padding:6px;">44.4</td></tr></tbody></table>\n\n○ (A) 24cm\n○ (B) 20cm\n○ (C) 16cm\n○ (D) 12cm',
+    answer: '(C) 16cm',
+    solution: '1. 成像原理與等大像交界：\n- 當物體放在 2 倍焦距上（物距 $p = 2f$）時，成像亦在 2 倍焦距上（像距 $q = 2f$），此時 $p = q$。\n- 當物距 $p > 2f$ 時，像距 $q < 2f$（物距大於像距，即 $p > q$）。\n- 當物距 $f < p < 2f$ 時，像距 $q > 2f$（物距小於像距，即 $p < q$）。\n\n2. 數據表範圍過濾：\n- 觀察表中數據：\n  - 當 $p = 35$ 時，$q = 29.5$（$p > q$）\n  - 當 $p = 25$ 時，$q = 44.4$（$p < q$）\n- 由此可知 $p = q = 2f$ 的交界點必定落在 $p = 35$ 與 $p = 25$ 之間，其對應的等大像距離範圍落在 $29.5\\text{ cm} \\sim 35\\text{ cm}$ 之間。\n\n3. 焦距 $f$ 範圍計算：\n  $$29.5 < 2f < 35$$\n  $$14.75\\text{ cm} < f < 17.5\\text{ cm}$$\n\n4. 選項比對：\n- 僅 (C) $16\\text{ cm}$ 介於 $14.75 \\sim 17.5\\text{ cm}$ 之間，故正確答案選 (C)。',
+    diagramUrl: '',
+    errorCount: 1,
+    ebbinghausStage: 1,
+    consecutiveMastered: 0,
+    isArchived: false,
+    nextReviewDate: '2026-09-05'
   }
 ];
 
