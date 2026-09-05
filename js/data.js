@@ -226,6 +226,28 @@ const INITIAL_SEED_DATA = [
     consecutiveMastered: 0,
     isArchived: false,
     nextReviewDate: '2026-09-05'
+  },
+  {
+    id: 'q_sci_heat_118',
+    examPeriod: '二段',
+    subject: '自然/理化',
+    errorReason: '計算粗心',
+    concept: '冰塊熔化與熱平衡計算',
+    uploadDate: '2026-09-05',
+    mondayDate: '2026-08-31',
+    mondayDates: ['2026-08-31'],
+    weekLabel: '2026-08-31 (本週)',
+    isGuessedOrUnstable: true,
+    mistakeNote: '冰塊熔化質量守恆：20g 冰化成 20g 水（20mL），液面上升 40mL 代表有 2 顆冰塊！冰塊由 -20°C 到完全熔化為 0°C 水共需 36.4 分鐘（吸熱 2×36.4×50 = 3640 卡），再利用「飲料放熱 ＝ 冰水升溫吸熱 ＋ 熔化吸熱」列式求得平衡溫度 T = 10°C。',
+    stem: '曉華準備了一杯 $500\\text{ 毫升}、20\\text{ }^\\circ\\text{C}$，密度為 $1.01\\text{ 公克／立方公分}$，且比熱為 $0.8$ 的飲料，再丟入數顆冰塊，過一陣子後冰塊完全熔化，曉華發現飲料水位上升到 $540\\text{ 毫升}$。（假設水與飲料的體積有加成性）已知冰塊溫度為 $-20\\text{ }^\\circ\\text{C}$，每顆冰塊質量為 $20\\text{ 公克}$，且每顆冰塊隨時間熔化成水的溫度變化如圖，冰塊密度為 $0.9\\text{ 公克／立方公分}$。不計熱能散失，試算最後達熱平衡時，飲料溫度為何？\n\n○ (A) 13°C\n○ (B) 5°C\n○ (C) 15°C\n○ (D) 10°C',
+    answer: '(D) 10°C',
+    solution: '1. **判斷丟入冰塊的顆數**：\n- 每顆冰塊質量為 $20\\text{ g}$，熔化成水後質量守恆仍為 $20\\text{ g}$。\n- 水的密度為 $1.0\\text{ g/cm}^3$，故每顆冰塊熔化後體積為 $20\\text{ cm}^3 = 20\\text{ mL}$。\n- 飲料水位從 $500\\text{ mL}$ 增加到 $540\\text{ mL}$，體積增加 $\\Delta V = 540 - 500 = 40\\text{ mL}$。\n- 故丟入冰塊顆數為：$\\frac{40\\text{ mL}}{20\\text{ mL/顆}} = 2\\text{ 顆}$（總質量 $M = 2 \\times 20 = 40\\text{ g}$）。\n\n2. **根據加熱圖計算每顆冰塊熔化吸熱量**：\n- 加熱熱源功率為每分鐘提供 $50\\text{ cal}$（$50\\text{ cal/min}$）。\n- 由溫度－時間變化圖可知，每顆冰塊從 $-20\\text{ }^\\circ\\text{C}$ 升溫並完全熔化成 $0\\text{ }^\\circ\\text{C}$ 的水，總共歷時 $36.4\\text{ 分鐘}$。\n- 每顆冰塊吸熱量：$Q_1 = 36.4 \\times 50 = 1820\\text{ cal}$。\n- 兩顆冰塊完全熔化為 $0\\text{ }^\\circ\\text{C}$ 水總吸熱量：$Q_{\\text{熔}} = 2 \\times 1820 = 3640\\text{ cal}$。\n\n3. **列熱平衡方程式求末溫 $T$**：\n- 設熱平衡後之末溫為 $T\\text{ }^\\circ\\text{C}$。\n- **飲料放熱**：\n  - 飲料質量 $m_{\\text{飲}} = 500\\text{ mL} \\times 1.01\\text{ g/cm}^3 = 505\\text{ g}$。\n  - 飲料比熱 $s = 0.8\\text{ cal/(g}\\cdot^\\circ\\text{C)}$，初溫 $20\\text{ }^\\circ\\text{C}$。\n  - 放熱量 $H_{\\text{放}} = 505 \\times 0.8 \\times (20 - T) = 404 \\times (20 - T)$。\n- **冰塊吸熱**：\n  - 熔化成 $0\\text{ }^\\circ\\text{C}$ 水已吸收 $3640\\text{ cal}$。\n  - 兩顆熔化後的 $40\\text{ g}$ 水由 $0\\text{ }^\\circ\\text{C}$ 升溫至 $T\\text{ }^\\circ\\text{C}$（水的比熱為 $1.0$）：\n    $H_{\\text{水升溫}} = 40 \\times 1 \\times (T - 0) = 40T$。\n  - 總吸熱量 $H_{\\text{吸}} = 3640 + 40T$。\n- **能量守恆（放熱 ＝ 吸熱）**：\n  $$404 \\times (20 - T) = 3640 + 40T$$\n  $$8080 - 404T = 3640 + 40T$$\n  $$4440 = 444T \\implies T = 10\\text{ }^\\circ\\text{C}$$\n\n4. **結論**：達熱平衡時飲料溫度為 $10\\text{ }^\\circ\\text{C}$，正確答案選 **(D)**。',
+    diagramUrl: 'assets/questions/q_118_ice_thermal_equilibrium_graph.png',
+    errorCount: 1,
+    ebbinghausStage: 1,
+    consecutiveMastered: 0,
+    isArchived: false,
+    nextReviewDate: '2026-09-05'
   }
 ];
 
