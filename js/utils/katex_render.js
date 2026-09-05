@@ -63,24 +63,50 @@ window.katexUtils = {
     setTimeout(() => toast.remove(), 2500);
   },
 
+  formatMarkdownLinks: function(textStr) {
+    if (!textStr) return '';
+    // Process markdown links [link title](https://...)
+    const mdLinkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
+    return textStr.replace(mdLinkRegex, function(match, labelText, url) {
+      const cleanUrl = url.replace(/[.,;)]+$/, '');
+      const safeAttr = cleanUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+      const isYoutube = cleanUrl.toLowerCase().includes('youtube.com') || cleanUrl.toLowerCase().includes('youtu.be');
+
+      return `<div class="solution-url-copy-box" style="margin:10px 0; padding:12px 14px; background:rgba(37, 99, 235, 0.06); border-radius:10px; border:1px solid rgba(37, 99, 235, 0.2);">
+        <div style="margin-bottom:6px;">
+          <a href="${safeAttr}" target="_blank" rel="noopener noreferrer" style="color:#2563eb; text-decoration:underline; font-size:1.08rem; font-weight:bold; display:inline-flex; align-items:center; gap:6px;">
+            <i class="${isYoutube ? 'fa-brands fa-youtube' : 'fa-solid fa-link'}" style="color: ${isYoutube ? '#ef4444' : '#6366f1'}; font-size:1.25rem;"></i> ${labelText}
+          </a>
+        </div>
+        <div class="url-input-group" style="margin-top:6px;">
+          <input type="text" class="url-text-input" value="${safeAttr}" data-raw-url="${safeAttr}" readonly onclick="this.select();" title="點擊全選網址">
+          <button type="button" class="btn-copy-url" onclick="event.stopPropagation(); window.katexUtils.copyFromInput(this)">
+            <i class="fa-regular fa-copy"></i> 複製網址
+          </button>
+        </div>
+      </div>`;
+    });
+  },
+
   formatVideoUrls: function(textStr) {
     if (!textStr) return '';
     
-    // Strict Case-Sensitive URL Matching
-    const urlRegex = /(https?:\/\/[^\s<]+)/g;
+    // Strict Case-Sensitive URL Matching (for standalone URLs not inside markdown or HTML links)
+    const urlRegex = /(?<!href="|data-raw-url="|data-url="|">)(https?:\/\/[^\s<"']+)/g;
 
     return textStr.replace(urlRegex, function(url) {
-      // PRESERVE EXACT CASE of the original URL (do NOT call toLowerCase on cleanUrl)
       const cleanUrl = url.replace(/[.,;)]+$/, '');
       const isYoutube = cleanUrl.toLowerCase().includes('youtube.com') || cleanUrl.toLowerCase().includes('youtu.be');
-      const label = isYoutube ? '🎬 名師影音解題網址' : '🔗 參考網址';
+      const label = isYoutube ? '🎬 點選看 YouTube' : '🔗 參考網址';
 
-      // HTML escape quotes for data attribute while strictly maintaining exact character cases
       const safeAttr = cleanUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 
       return `<div class="solution-url-copy-box" style="margin:10px 0;">
-        <div class="url-label" style="font-weight:bold; margin-bottom:6px;"><i class="${isYoutube ? 'fa-brands fa-youtube' : 'fa-solid fa-link'}" style="color: ${isYoutube ? '#ef4444' : '#6366f1'};"></i> ${label}：</div>
-        <div style="margin-bottom:8px;"><a href="${safeAttr}" target="_blank" rel="noopener noreferrer" style="color:#2563eb; text-decoration:underline; font-size:1.05rem; word-break:break-all; font-weight:600;">${safeAttr}</a></div>
+        <div class="url-label" style="font-weight:bold; margin-bottom:6px;">
+          <a href="${safeAttr}" target="_blank" rel="noopener noreferrer" style="color:#2563eb; text-decoration:underline; font-size:1.05rem; word-break:break-all; font-weight:600;">
+            <i class="${isYoutube ? 'fa-brands fa-youtube' : 'fa-solid fa-link'}" style="color: ${isYoutube ? '#ef4444' : '#6366f1'};"></i> ${label}
+          </a>
+        </div>
         <div class="url-input-group">
           <input type="text" class="url-text-input" value="${safeAttr}" data-raw-url="${safeAttr}" readonly onclick="this.select();" title="點擊全選網址">
           <button type="button" class="btn-copy-url" onclick="event.stopPropagation(); window.katexUtils.copyFromInput(this)">
@@ -143,6 +169,7 @@ window.katexUtils = {
     if (textStr !== undefined && textStr !== null) {
       let formattedText = String(textStr).replace(/\n/g, '<br/>');
       formattedText = this.formatTables(formattedText);
+      formattedText = this.formatMarkdownLinks(formattedText);
       formattedText = this.formatVideoUrls(formattedText);
       el.innerHTML = formattedText;
     }

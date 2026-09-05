@@ -217,9 +217,9 @@ const INITIAL_SEED_DATA = [
     weekLabel: '2026-08-31 (本週)',
     isGuessedOrUnstable: true,
     mistakeNote: '焦點定義：自焦點發射的光線經凸透鏡折射後必平行於主軸！圖(B)中 P 點距透鏡 10 cm，折射後光線平行主軸，故 P 點即為焦點，透鏡焦距最可能為 10 cm。',
-    stem: '已知下列各選項的示意圖，表示由透鏡主軸上 $P$ 點發射的光線，經過透鏡後的偏折情形，則哪一個選項中透鏡的焦距最有可能為 $10\\text{ cm}$？【113.會考】\n\nhttps://www.youtube.com/watch?v=-bhnwXIVzXw',
+    stem: '已知下列各選項的示意圖，表示由透鏡主軸上 $P$ 點發射的光線，經過透鏡後的偏折情形，則哪一個選項中透鏡的焦距最有可能為 $10\\text{ cm}$？【113.會考】',
     answer: '(B)',
-    solution: '1. 凸透鏡三大基本光路與焦點定義：\n- **規則一**：平行於主軸的光線，經凸透鏡折射後會通過鏡後焦點。\n- **規則二（光路可逆性）**：自焦點發射（或通過焦點）的光線，經凸透鏡折射後會「平行於主軸」發散/射出。\n- **規則三**：通過鏡心的光線，直線穿過不偏折。\n\n2. 分析選項 (B) 的圖示：\n- 圖中 $P$ 點位於透鏡主軸上，距離透鏡為 $10\\text{ cm}$。\n- 自 $P$ 點發出的多條光線，經過透鏡折射後，全部「平行於主軸」前進。\n- 根據上述規則二，這代表 $P$ 點恰好就是該凸透鏡的「焦點」！\n- 因為 $P$ 點到透鏡鏡心的距離為 $10\\text{ cm}$，故該透鏡之焦距 $f$ 恰好為 $10\\text{ cm}$。\n\n3. 其他選項分析：\n- **(A)** 折射光線呈現發散，其後方延長虛線會聚於透鏡左側 $20\\text{ cm}$ 處，此為凹透鏡，虛焦點為 $20\\text{ cm}$（焦距 $f = 20\\text{ cm}$），不符合 $10\\text{ cm}$ 的要求。\n- **結論**：正確答案選 (B)。\n\n4. 影音解說連結：\nhttps://www.youtube.com/watch?v=-bhnwXIVzXw',
+    solution: '1. 凸透鏡三大基本光路與焦點定義：\n- **規則一**：平行於主軸的光線，經凸透鏡折射後會通過鏡後焦點。\n- **規則二（光路可逆性）**：自焦點發射（或通過焦點）的光線，經凸透鏡折射後會「平行於主軸」發散/射出。\n- **規則三**：通過鏡心的光線，直線穿過不偏折。\n\n2. 分析選項 (B) 的圖示：\n- 圖中 $P$ 點位於透鏡主軸上，距離透鏡為 $10\\text{ cm}$。\n- 自 $P$ 點發出的多條光線，經過透鏡折射後，全部「平行於主軸」前進。\n- 根據上述規則二，這代表 $P$ 點恰好就是該凸透鏡的「焦點」！\n- 因為 $P$ 點到透鏡鏡心的距離為 $10\\text{ cm}$，故該透鏡之焦距 $f$ 恰好為 $10\\text{ cm}$。\n\n3. 其他選項分析：\n- **(A)** 折射光線呈現發散，其後方延長虛線會聚於透鏡左側 $20\\text{ cm}$ 處，此為凹透鏡，虛焦點為 $20\\text{ cm}$（焦距 $f = 20\\text{ cm}$），不符合 $10\\text{ cm}$ 的要求。\n- **結論**：正確答案選 (B)。\n\n[🎬 點選看 YouTube 解題影片](https://www.youtube.com/watch?v=-bhnwXIVzXw)',
     diagramUrl: 'assets/questions/q_117_lens_focal_length_diagram.png',
     errorCount: 1,
     ebbinghausStage: 1,
@@ -275,12 +275,20 @@ class DataManager {
       this.save();
     }
 
-    // Auto-sync any newly added system seed questions if not deleted and not present
+    // Auto-sync any newly added system seed questions or seed content updates
     INITIAL_SEED_DATA.forEach(seed => {
       if (Array.isArray(this.deletedIds) && this.deletedIds.includes(seed.id)) return;
-      const exists = this.questions.some(q => q.id === seed.id);
-      if (!exists) {
+      const idx = this.questions.findIndex(q => q.id === seed.id);
+      if (idx === -1) {
         this.questions.push(JSON.parse(JSON.stringify(seed)));
+      } else {
+        // Sync latest text, solution & links from INITIAL_SEED_DATA while preserving user stats
+        this.questions[idx].stem = seed.stem;
+        this.questions[idx].solution = seed.solution;
+        this.questions[idx].concept = seed.concept;
+        this.questions[idx].mistakeNote = seed.mistakeNote;
+        this.questions[idx].diagramUrl = seed.diagramUrl;
+        this.questions[idx].answer = seed.answer;
       }
     });
 
