@@ -65,25 +65,20 @@ window.katexUtils = {
 
   formatMarkdownLinks: function(textStr) {
     if (!textStr) return '';
-    // Process markdown links [link title](https://...)
+    // Process markdown links [link title](https://...) into clean, elegant hyperlinks
     const mdLinkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
     return textStr.replace(mdLinkRegex, function(match, labelText, url) {
       const cleanUrl = url.replace(/[.,;)]+$/, '');
       const safeAttr = cleanUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
       const isYoutube = cleanUrl.toLowerCase().includes('youtube.com') || cleanUrl.toLowerCase().includes('youtu.be');
+      const icon = isYoutube 
+        ? '<i class="fa-brands fa-youtube" style="color: #ef4444; font-size: 1.25rem;"></i>' 
+        : '<i class="fa-solid fa-link" style="color: #6366f1; font-size: 1.1rem;"></i>';
 
-      return `<div class="solution-url-copy-box" style="margin:10px 0; padding:12px 14px; background:rgba(37, 99, 235, 0.06); border-radius:10px; border:1px solid rgba(37, 99, 235, 0.2);">
-        <div style="margin-bottom:6px;">
-          <a href="${safeAttr}" target="_blank" rel="noopener noreferrer" style="color:#2563eb; text-decoration:underline; font-size:1.08rem; font-weight:bold; display:inline-flex; align-items:center; gap:6px;">
-            <i class="${isYoutube ? 'fa-brands fa-youtube' : 'fa-solid fa-link'}" style="color: ${isYoutube ? '#ef4444' : '#6366f1'}; font-size:1.25rem;"></i> ${labelText}
-          </a>
-        </div>
-        <div class="url-input-group" style="margin-top:6px;">
-          <input type="text" class="url-text-input" value="${safeAttr}" data-raw-url="${safeAttr}" readonly onclick="this.select();" title="點擊全選網址">
-          <button type="button" class="btn-copy-url" onclick="event.stopPropagation(); window.katexUtils.copyFromInput(this)">
-            <i class="fa-regular fa-copy"></i> 複製網址
-          </button>
-        </div>
+      return `<div class="clean-link-item" style="margin: 10px 0;">
+        <a href="${safeAttr}" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline; font-size: 1.08rem; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;">
+          ${icon} <span>${labelText}</span>
+        </a>
       </div>`;
     });
   },
@@ -91,28 +86,22 @@ window.katexUtils = {
   formatVideoUrls: function(textStr) {
     if (!textStr) return '';
     
-    // Strict Case-Sensitive URL Matching (for standalone URLs not inside markdown or HTML links)
-    const urlRegex = /(?<!href="|data-raw-url="|data-url="|">)(https?:\/\/[^\s<"']+)/g;
+    // Strict Case-Sensitive URL Matching ONLY for raw URLs not already inside an <a> tag
+    const urlRegex = /(?<!href="|data-raw-url="|data-url="|">|\[.*?\]\()(https?:\/\/[^\s<"']+)/g;
 
     return textStr.replace(urlRegex, function(url) {
       const cleanUrl = url.replace(/[.,;)]+$/, '');
-      const isYoutube = cleanUrl.toLowerCase().includes('youtube.com') || cleanUrl.toLowerCase().includes('youtu.be');
-      const label = isYoutube ? '🎬 點選看 YouTube' : '🔗 參考網址';
-
       const safeAttr = cleanUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+      const isYoutube = cleanUrl.toLowerCase().includes('youtube.com') || cleanUrl.toLowerCase().includes('youtu.be');
+      const label = isYoutube ? '點選看 YouTube' : cleanUrl;
+      const icon = isYoutube 
+        ? '<i class="fa-brands fa-youtube" style="color: #ef4444; font-size: 1.25rem;"></i>' 
+        : '<i class="fa-solid fa-link" style="color: #6366f1; font-size: 1.1rem;"></i>';
 
-      return `<div class="solution-url-copy-box" style="margin:10px 0;">
-        <div class="url-label" style="font-weight:bold; margin-bottom:6px;">
-          <a href="${safeAttr}" target="_blank" rel="noopener noreferrer" style="color:#2563eb; text-decoration:underline; font-size:1.05rem; word-break:break-all; font-weight:600;">
-            <i class="${isYoutube ? 'fa-brands fa-youtube' : 'fa-solid fa-link'}" style="color: ${isYoutube ? '#ef4444' : '#6366f1'};"></i> ${label}
-          </a>
-        </div>
-        <div class="url-input-group">
-          <input type="text" class="url-text-input" value="${safeAttr}" data-raw-url="${safeAttr}" readonly onclick="this.select();" title="點擊全選網址">
-          <button type="button" class="btn-copy-url" onclick="event.stopPropagation(); window.katexUtils.copyFromInput(this)">
-            <i class="fa-regular fa-copy"></i> 複製網址
-          </button>
-        </div>
+      return `<div class="clean-link-item" style="margin: 10px 0;">
+        <a href="${safeAttr}" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline; font-size: 1.08rem; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;">
+          ${icon} <span>${label}</span>
+        </a>
       </div>`;
     });
   },
