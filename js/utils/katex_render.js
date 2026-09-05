@@ -78,8 +78,9 @@ window.katexUtils = {
       // HTML escape quotes for data attribute while strictly maintaining exact character cases
       const safeAttr = cleanUrl.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 
-      return `<div class="solution-url-copy-box">
-        <div class="url-label"><i class="${isYoutube ? 'fa-brands fa-youtube' : 'fa-solid fa-link'}" style="color: ${isYoutube ? '#ef4444' : '#6366f1'};"></i> ${label}：</div>
+      return `<div class="solution-url-copy-box" style="margin:10px 0;">
+        <div class="url-label" style="font-weight:bold; margin-bottom:6px;"><i class="${isYoutube ? 'fa-brands fa-youtube' : 'fa-solid fa-link'}" style="color: ${isYoutube ? '#ef4444' : '#6366f1'};"></i> ${label}：</div>
+        <div style="margin-bottom:8px;"><a href="${safeAttr}" target="_blank" rel="noopener noreferrer" style="color:#2563eb; text-decoration:underline; font-size:1.05rem; word-break:break-all; font-weight:600;">${safeAttr}</a></div>
         <div class="url-input-group">
           <input type="text" class="url-text-input" value="${safeAttr}" data-raw-url="${safeAttr}" readonly onclick="this.select();" title="點擊全選網址">
           <button type="button" class="btn-copy-url" onclick="event.stopPropagation(); window.katexUtils.copyFromInput(this)">
