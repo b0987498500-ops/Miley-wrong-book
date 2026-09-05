@@ -231,10 +231,14 @@ class DataManager {
       this.save();
     }
 
-    // Filter out any questions user has explicitly deleted
-    if (Array.isArray(this.deletedIds) && this.deletedIds.length > 0 && Array.isArray(this.questions)) {
-      this.questions = this.questions.filter(q => !this.deletedIds.includes(q.id));
-    }
+    // Auto-sync any newly added system seed questions if not deleted and not present
+    INITIAL_SEED_DATA.forEach(seed => {
+      if (Array.isArray(this.deletedIds) && this.deletedIds.includes(seed.id)) return;
+      const exists = this.questions.some(q => q.id === seed.id);
+      if (!exists) {
+        this.questions.push(JSON.parse(JSON.stringify(seed)));
+      }
+    });
 
     // Sanitize & auto-repair legacy or corrupt date values without overriding user edits
     if (Array.isArray(this.questions)) {

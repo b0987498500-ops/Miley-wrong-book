@@ -35,11 +35,10 @@ class App {
     try { if (window.WisdomModule) window.WisdomModule.init(); } catch (e) { console.error(e); }
     try { if (window.CardModule) window.CardModule.init(); } catch (e) { console.error(e); }
 
-    // Load current week review queue directly on launch
+    // Load monster battle home page on launch
     try {
-      const initialMonday = this.currentMondayFilter || (window.dataManager ? window.dataManager.getCurrentMondayDate() : null);
-      if (window.ReviewModule && initialMonday) {
-        window.ReviewModule.loadReviewQueue(null, initialMonday);
+      if (window.ReviewModule) {
+        window.ReviewModule.loadReviewQueue(null, null);
       }
     } catch (e) {
       console.error(e);
@@ -183,16 +182,16 @@ class App {
       // Prevent sidebar toggle button from triggering page reload if toggle button clicked
       if (e.target.closest('#sidebar-toggle-btn')) return;
 
-      const currentM = window.dataManager ? window.dataManager.getCurrentMondayDate() : null;
       this.currentSubjectFilter = null;
-      this.currentMondayFilter = currentM;
+      this.currentMondayFilter = null;
 
       document.querySelectorAll('.sidebar-subject-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.monday-chip').forEach(c => c.classList.remove('active'));
       
       this.switchTab('review');
       this.renderWeeklyMondayBar();
-      if (window.ReviewModule && currentM) {
-        window.ReviewModule.loadReviewQueue(null, currentM);
+      if (window.ReviewModule) {
+        window.ReviewModule.loadReviewQueue(null, null);
       }
     });
   }
