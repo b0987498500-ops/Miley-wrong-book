@@ -191,48 +191,30 @@ class DataManager {
     this.loadDeletedIds();
 
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
+    if (stored !== null) {
       try {
-        this.questions = JSON.parse(stored);
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed)) {
+          this.questions = parsed;
+        } else {
+          this.questions = JSON.parse(JSON.stringify(INITIAL_SEED_DATA));
+        }
       } catch (e) {
         console.error('Failed to parse localStorage questions, loading seeds', e);
         this.questions = JSON.parse(JSON.stringify(INITIAL_SEED_DATA));
       }
     } else {
+      // First time user visit ONLY: Initialize with demo seeds
       this.questions = JSON.parse(JSON.stringify(INITIAL_SEED_DATA));
+      this.save();
     }
 
-    // 1. Filter out any questions user has explicitly deleted
-    if (Array.isArray(this.deletedIds) && this.deletedIds.length > 0) {
+    // Filter out any questions user has explicitly deleted
+    if (Array.isArray(this.deletedIds) && this.deletedIds.length > 0 && Array.isArray(this.questions)) {
       this.questions = this.questions.filter(q => !this.deletedIds.includes(q.id));
     }
 
-    // 2. Auto-merge seeds (ONLY for seeds NOT deleted by user!)
-    INITIAL_SEED_DATA.forEach(seed => {
-      if (this.deletedIds.includes(seed.id)) return; // User deleted this seed, do NOT restore!
-
-      const idx = this.questions.findIndex(q => q.id === seed.id);
-      if (idx === -1) {
-        this.questions.unshift(JSON.parse(JSON.stringify(seed)));
-      } else {
-        const existing = this.questions[idx];
-        // Preserve user state (isArchived, consecutiveMastered, errorCount, ebbinghausStage, mondayDates, etc.)
-        this.questions[idx] = {
-          ...seed,
-          ...existing,
-          diagramUrl: seed.diagramUrl || existing.diagramUrl || ''
-        };
-      }
-    });
-
-    // 3. Ultra-Safety Fallback: If questions array is empty or corrupt, clear deletedIds and force reload seeds!
-    if (!Array.isArray(this.questions) || this.questions.length === 0) {
-      this.deletedIds = [];
-      this.saveDeletedIds();
-      this.questions = JSON.parse(JSON.stringify(INITIAL_SEED_DATA));
-    }
-
-    // 4. Sanitize & auto-repair legacy or corrupt date values
+    // Sanitize & auto-repair legacy or corrupt date values without overriding user edits
     if (Array.isArray(this.questions)) {
       this.questions.forEach(q => {
         if (!q.uploadDate || typeof q.uploadDate !== 'string') {
