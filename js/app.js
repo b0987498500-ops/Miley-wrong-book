@@ -9,7 +9,7 @@ class App {
   init() {
     try {
       this.lastCheckedDate = window.dataManager ? window.dataManager.getTodayDateStr() : '';
-      this.currentMondayFilter = window.dataManager ? window.dataManager.getCurrentMondayDate() : null;
+      this.currentMondayFilter = null;
 
       this.bindNavigation();
       this.bindSidebarToggle();

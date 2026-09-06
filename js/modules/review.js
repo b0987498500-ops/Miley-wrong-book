@@ -185,10 +185,8 @@ window.ReviewModule = {
 
   loadReviewQueue: function(subjectFilter = null, mondayFilter = null) {
     if (subjectFilter !== undefined) this.currentSubjectFilter = subjectFilter;
-    if (mondayFilter !== undefined && mondayFilter !== null) {
+    if (mondayFilter !== undefined) {
       this.currentMondayFilter = mondayFilter;
-    } else if (!this.currentMondayFilter && window.dataManager) {
-      this.currentMondayFilter = window.dataManager.getCurrentMondayDate();
     }
 
     const welcomeStage = document.getElementById('review-welcome-stage');
