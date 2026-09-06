@@ -115,9 +115,19 @@ window.katexUtils = {
     let resultLines = [];
 
     lines.forEach(line => {
-      const trimmed = line.trim();
+      let trimmed = line.trim();
       if (trimmed.includes('|') && trimmed.split('|').length >= 3) {
+        if (trimmed.startsWith('|')) trimmed = trimmed.slice(1);
+        if (trimmed.endsWith('|')) trimmed = trimmed.slice(0, -1);
+
         const cells = trimmed.split('|').map(c => c.trim());
+
+        // Check if this row is just markdown table alignment separator row (e.g. :---:, ---, :--, --:)
+        const isSeparatorRow = cells.length > 0 && cells.every(c => /^:?-+:?$/.test(c));
+        if (isSeparatorRow) {
+          return;
+        }
+
         if (!inTable) {
           inTable = true;
           tableHtml = '<div class="table-wrapper"><table class="katex-formatted-table"><thead><tr>';

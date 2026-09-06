@@ -43,12 +43,12 @@
         });
       }
       // Force reload if legacy cached version is active
-      var currVer = localStorage.getItem('miley_purge_v38_final');
+      var currVer = localStorage.getItem('miley_purge_v39_final');
       if (!currVer) {
-        localStorage.setItem('miley_purge_v38_final', 'true');
-        if (window.location.search.indexOf('v=38') === -1) {
+        localStorage.setItem('miley_purge_v39_final', 'true');
+        if (window.location.search.indexOf('v=39') === -1) {
           console.log('Purging legacy browser cache and reloading...');
-          window.location.search = '?v=38_force_purge&t=' + Date.now();
+          window.location.search = '?v=39_force_purge&t=' + Date.now();
         }
       }
     })();
@@ -969,18 +969,18 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=38"></script>
-  <script src="js/utils/katex_render.js?v=38"></script>
-  <script src="js/utils/pdf_export.js?v=38"></script>
-  <script src="js/modules/upload.js?v=38"></script>
-  <script src="js/modules/archive.js?v=38"></script>
-  <script src="js/modules/review.js?v=38"></script>
-  <script src="js/modules/sprint.js?v=38"></script>
-  <script src="js/modules/analytics.js?v=38"></script>
-  <script src="js/modules/calendar.js?v=38"></script>
-  <script src="js/modules/wisdom.js?v=38"></script>
-  <script src="js/modules/card.js?v=38"></script>
-  <script src="js/app.js?v=38"></script>
+  <script src="js/data.js?v=39"></script>
+  <script src="js/utils/katex_render.js?v=39"></script>
+  <script src="js/utils/pdf_export.js?v=39"></script>
+  <script src="js/modules/upload.js?v=39"></script>
+  <script src="js/modules/archive.js?v=39"></script>
+  <script src="js/modules/review.js?v=39"></script>
+  <script src="js/modules/sprint.js?v=39"></script>
+  <script src="js/modules/analytics.js?v=39"></script>
+  <script src="js/modules/calendar.js?v=39"></script>
+  <script src="js/modules/wisdom.js?v=39"></script>
+  <script src="js/modules/card.js?v=39"></script>
+  <script src="js/app.js?v=39"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => {
