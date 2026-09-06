@@ -43,12 +43,12 @@
         });
       }
       // Force reload if legacy cached version is active
-      var currVer = localStorage.getItem('miley_purge_v41_final');
+      var currVer = localStorage.getItem('miley_purge_v42_final');
       if (!currVer) {
-        localStorage.setItem('miley_purge_v41_final', 'true');
-        if (window.location.search.indexOf('v=41') === -1) {
+        localStorage.setItem('miley_purge_v42_final', 'true');
+        if (window.location.search.indexOf('v=42') === -1) {
           console.log('Purging legacy browser cache and reloading...');
-          window.location.search = '?v=41_force_purge&t=' + Date.now();
+          window.location.search = '?v=42_force_purge&t=' + Date.now();
         }
       }
     })();
@@ -75,7 +75,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=100_lightbox_zoom">
+  <link rel="stylesheet" href="styles.css?v=101_top_nav_buttons">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -546,8 +546,9 @@
 
               <!-- Main Card Component with Navigation Arrows -->
               <div class="flashcard-stage-main">
-                <button id="fc-prev-btn" class="fc-nav-arrow arrow-left" title="上一題 (快捷鍵 ←)">
+                <button id="fc-prev-btn" class="fc-nav-arrow arrow-left" title="上一題 (快捷鍵 ←)" aria-label="上一題">
                   <i class="fa-solid fa-chevron-left"></i>
+                  <span class="fc-nav-label">上一題</span>
                 </button>
 
                 <div class="flashcard-card" id="main-flashcard">
@@ -607,8 +608,9 @@
                   </div>
                 </div>
 
-                <button id="fc-next-btn" class="fc-nav-arrow arrow-right" title="下一題 (快捷鍵 →)">
+                <button id="fc-next-btn" class="fc-nav-arrow arrow-right" title="下一題 (快捷鍵 →)" aria-label="下一題">
                   <i class="fa-solid fa-chevron-right"></i>
+                  <span class="fc-nav-label">下一題</span>
                 </button>
               </div>
             </div>
@@ -818,8 +820,18 @@
             <!-- Interactive 3D Flip Flashcard Stage Panel -->
             <div id="card-stage-panel" class="card-stage-panel hidden">
               <div class="card-stage-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                <h3 id="card-stage-title" style="font-size: 1.1rem; font-weight: 800; color: var(--text-main);">填空學習卡</h3>
-                <span id="card-counter-display" class="stage-tag" style="background: rgba(99, 102, 241, 0.2); color: #a5b4fc; font-weight: 700;">卡片 1 / 1</span>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <button id="card-prev-top-btn" class="btn-secondary btn-sm" title="上一張 (快捷鍵 ←)">
+                    <i class="fa-solid fa-chevron-left"></i> 上一張
+                  </button>
+                  <h3 id="card-stage-title" style="font-size: 1.1rem; font-weight: 800; color: var(--text-main); margin: 0;">填空學習卡</h3>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span id="card-counter-display" class="stage-tag" style="background: rgba(99, 102, 241, 0.2); color: #a5b4fc; font-weight: 700;">卡片 1 / 1</span>
+                  <button id="card-next-top-btn" class="btn-secondary btn-sm" title="下一張 (快捷鍵 →)">
+                    下一張 <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
               </div>
 
               <!-- 3D Flip Card Container -->
@@ -969,18 +981,18 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=41"></script>
-  <script src="js/utils/katex_render.js?v=41"></script>
-  <script src="js/utils/pdf_export.js?v=41"></script>
-  <script src="js/modules/upload.js?v=41"></script>
-  <script src="js/modules/archive.js?v=41"></script>
-  <script src="js/modules/review.js?v=41"></script>
-  <script src="js/modules/sprint.js?v=41"></script>
-  <script src="js/modules/analytics.js?v=41"></script>
-  <script src="js/modules/calendar.js?v=41"></script>
-  <script src="js/modules/wisdom.js?v=41"></script>
-  <script src="js/modules/card.js?v=41"></script>
-  <script src="js/app.js?v=41"></script>
+  <script src="js/data.js?v=42"></script>
+  <script src="js/utils/katex_render.js?v=42"></script>
+  <script src="js/utils/pdf_export.js?v=42"></script>
+  <script src="js/modules/upload.js?v=42"></script>
+  <script src="js/modules/archive.js?v=42"></script>
+  <script src="js/modules/review.js?v=42"></script>
+  <script src="js/modules/sprint.js?v=42"></script>
+  <script src="js/modules/analytics.js?v=42"></script>
+  <script src="js/modules/calendar.js?v=42"></script>
+  <script src="js/modules/wisdom.js?v=42"></script>
+  <script src="js/modules/card.js?v=42"></script>
+  <script src="js/app.js?v=42"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => {

@@ -296,12 +296,24 @@ window.ReviewModule = {
     if (this.activeQuestions.length === 0) return;
     this.currentIndex = (this.currentIndex - 1 + this.activeQuestions.length) % this.activeQuestions.length;
     this.renderCurrentCard();
+    this.scrollToCardTop();
   },
 
   nextQuestion: function() {
     if (this.activeQuestions.length === 0) return;
     this.currentIndex = (this.currentIndex + 1) % this.activeQuestions.length;
     this.renderCurrentCard();
+    this.scrollToCardTop();
+  },
+
+  scrollToCardTop: function() {
+    const mainCard = document.getElementById('main-flashcard');
+    if (mainCard) {
+      const rect = mainCard.getBoundingClientRect();
+      if (rect.top < 60 || rect.top > 300) {
+        mainCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
   },
 
   updateProgressDisplay: function() {

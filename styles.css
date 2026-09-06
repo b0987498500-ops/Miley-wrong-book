@@ -3684,7 +3684,7 @@ body.fullscreen-review-mode .flashcard-card {
   height: 100% !important;
   border-radius: var(--radius-md) !important;
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  padding: 24px 64px !important;
+  padding: 24px 72px !important;
   font-size: 1.25rem !important;
   display: flex !important;
   flex-direction: column !important;
@@ -3718,29 +3718,43 @@ body.fullscreen-review-mode .stem-katex-text {
 .flashcard-stage-main .flashcard-card {
   flex: 1;
   width: 100%;
-  padding: 24px 60px; /* Padding to ensure text does not overlap with floating arrows */
+  padding: 24px 72px; /* Padding to ensure text does not overlap with top-left & top-right floating buttons */
 }
 
 .fc-nav-arrow {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 18px; /* 固定在題目卡片頂部左上角與右上角，高度完全鎖定，不隨每題長度跳動 */
+  transform: none;
   z-index: 30;
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--border-color);
   background: var(--bg-card);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
   color: var(--text-main);
-  font-size: 1.2rem;
   cursor: pointer;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: var(--transition-fast);
+  gap: 2px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  user-select: none;
+}
+
+.fc-nav-arrow i {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.fc-nav-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1;
 }
 
 .fc-nav-arrow.arrow-left {
@@ -3755,15 +3769,20 @@ body.fullscreen-review-mode .stem-katex-text {
   background: var(--accent-primary);
   color: #ffffff;
   border-color: var(--accent-primary);
-  transform: translateY(-50%) scale(1.1);
+  transform: scale(1.08);
+  box-shadow: 0 6px 22px rgba(99, 102, 241, 0.45);
+}
+
+.fc-nav-arrow:active {
+  transform: scale(0.94);
 }
 
 /* Light Theme Navigation Arrow Styling */
 body.light-theme .fc-nav-arrow {
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
   color: var(--text-main) !important;
-  border: 1px solid rgba(0, 0, 0, 0.12) !important;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12) !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1) !important;
 }
 
 body.light-theme .fc-nav-arrow:hover {

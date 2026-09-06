@@ -183,13 +183,21 @@ window.CardModule = {
       });
     }
 
-    // Prev / Next Navigation Arrows
+    // Prev / Next Navigation Arrows (Bottom + Top)
     document.getElementById('card-prev-btn')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      self.prevCard();
+    });
+    document.getElementById('card-prev-top-btn')?.addEventListener('click', (e) => {
       e.stopPropagation();
       self.prevCard();
     });
 
     document.getElementById('card-next-btn')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      self.nextCard();
+    });
+    document.getElementById('card-next-top-btn')?.addEventListener('click', (e) => {
       e.stopPropagation();
       self.nextCard();
     });
