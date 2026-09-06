@@ -63,6 +63,20 @@ window.katexUtils = {
     setTimeout(() => toast.remove(), 2500);
   },
 
+  formatMarkdownImages: function(textStr) {
+    if (!textStr) return '';
+    const mdImgRegex = /!\[([^\]]*)\]\(([^)]+)\)/g;
+    return textStr.replace(mdImgRegex, function(match, altText, src) {
+      const cleanSrc = src.trim();
+      return `<div class="solution-diagram-card" style="text-align: center; margin: 16px 0 20px 0;">
+        <div style="display: inline-block; background: #ffffff; padding: 12px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); border: 1px solid rgba(226, 232, 240, 0.8); max-width: 100%;">
+          <img src="${cleanSrc}" alt="${altText}" style="max-width: 100%; height: auto; display: block; border-radius: 8px;">
+          ${altText ? `<div style="margin-top: 8px; font-size: 0.82rem; color: #64748b; font-weight: 500;"><i class="fa-solid fa-shapes" style="color: #f59e0b; margin-right: 6px;"></i>${altText}</div>` : ''}
+        </div>
+      </div>`;
+    });
+  },
+
   formatMarkdownLinks: function(textStr) {
     if (!textStr) return '';
     // Process markdown links [link title](https://...) into clean, elegant hyperlinks
@@ -168,6 +182,7 @@ window.katexUtils = {
     if (textStr !== undefined && textStr !== null) {
       let formattedText = String(textStr).replace(/\n/g, '<br/>');
       formattedText = this.formatTables(formattedText);
+      formattedText = this.formatMarkdownImages(formattedText);
       formattedText = this.formatMarkdownLinks(formattedText);
       formattedText = this.formatVideoUrls(formattedText);
       el.innerHTML = formattedText;

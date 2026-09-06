@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v43';
+const STORAGE_KEY = 'miley_wrong_questions_v44';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1428,11 +1428,11 @@ const INITIAL_SEED_DATA = [
       ],
       "weekLabel": "2026-09-07 (最新週次)",
       "isGuessedOrUnstable": true,
-      "mistakeNote": "重心 G 將三角形面積三等分：△ABG = 1/3 △ABC；內心 I 到三邊等距（高為內切圓半徑 r），故各分塊三角形面積與底邊長成正比：△ABI = 4/15 △ABC、△BCI = 5/15 △ABC！本題題意選項對應 △ABG : △ABI = 5 : 4！",
-      "stem": "如圖，$\triangle ABC$ 中，$\\overline{AB}=4$、$\\overline{BC}=5$、$\\overline{AC}=6$，$ 是內心，$ 是重心，則 $\triangle ABG$ 與 $\triangle BCI$ 的面積比為何？\n\n○ (A) 5 : 4\n○ (B) 4 : 5\n○ (C) 2 : 3\n○ (D) 1 : 1",
+      "mistakeNote": "重心 $G$ 將三角形面積三等分：$\\triangle ABG = \\frac{1}{3} \\triangle ABC$；內心 $I$ 到三邊等距（垂直高為內切圓半徑 $r$），故各小三角形面積與底邊長成正比：$\\triangle ABI = \\frac{4}{15} \\triangle ABC$、$\\triangle BCI = \\frac{5}{15} \\triangle ABC$！本題題意選項對應 $\\triangle ABG : \\triangle ABI = 5 : 4$！",
+      "stem": "$\\triangle ABC$ 中，$\\overline{AB} = 4$、$\\overline{BC} = 5$、$\\overline{AC} = 6$，$I$ 是內心，$G$ 是重心，則 $\\triangle ABG$ 與 $\\triangle BCI$ 的面積比為何？\n\n○ (A) 5 : 4\n○ (B) 4 : 5\n○ (C) 2 : 3\n○ (D) 1 : 1",
       "answer": "(A) 5 : 4",
-      "diagramUrl": "assets/questions/q_math_triangle_incenter_centroid_001.png",
-      "solution": "1. **題意解析與核心概念**：\n- **重心 $ 面積均分性質**：重心為三中線交點，將三角形面積等分為 3 等份，故：\n  13097\triangle ABG = \frac{1}{3} \triangle ABC13097\n- **內心 $ 邊長正比性質**：內心到三邊之垂直距離均為內切圓半徑 $。\n  連接內心至各頂點所得之各小三角形面積與底邊長成正比：\n  13097\triangle ABC = \triangle ABI + \triangle BCI + \triangle CAI = \frac{(4+5+6)r}{2} = \frac{15r}{2}13097\n  13097\triangle ABI = \frac{4}{15} \triangle ABC13097\n  13097\triangle BCI = \frac{5}{15} \triangle ABC = \frac{1}{3} \triangle ABC13097\n\n2. **比值計算與原題詳解剖析**：\n- 素材標準解答對應 $\triangle ABG : \triangle ABI$（印刷題幹筆誤，原解題採 $\triangle ABI$）：\n  13097\triangle ABG : \triangle ABI = \frac{1}{3} : \frac{4}{15} = \frac{5}{15} : \frac{4}{15} = 5 : 413097\n- 若字面求 $\triangle ABG : \triangle BCI$，則為 $\frac{1}{3} : \frac{1}{3} = 1 : 1$（即選項 D）。\n- 本題依教材官方答案選 **(A) 5 : 4**。\n\n3. **結論**：正確答案選 **(A)**。",
+      "diagramUrl": "",
+      "solution": "1. **幾何輔助解析圖**：\n![三角形重心與內心幾何圖](assets/questions/q_math_triangle_incenter_centroid_001.png)\n\n2. **核心觀念與面積分配性質**：\n- **重心 $G$ 面積均分性質**：\n  重心為三中線交點，將原三角形面積等分為 3 份面積相等的小三角形，故：\n  $$\\triangle ABG = \\frac{1}{3} \\triangle ABC$$\n- **內心 $I$ 邊長正比性質**：\n  內心到三邊之垂直距離均為內切圓半徑 $r$。\n  連接內心至各頂點所得之各小三角形面積與底邊長成正比：\n  $$\\triangle ABC = \\triangle ABI + \\triangle BCI + \\triangle CAI = \\frac{(4 + 5 + 6) \\times r}{2} = \\frac{15r}{2}$$\n  $$\\triangle ABI = \\frac{4}{15} \\triangle ABC$$\n  $$\\triangle BCI = \\frac{5}{15} \\triangle ABC = \\frac{1}{3} \\triangle ABC$$\n\n3. **比值計算與原題詳解剖析**：\n- 教材標準解答對應 $\\triangle ABG : \\triangle ABI$（印刷題幹筆誤，原解析採 $\\triangle ABI$）：\n  $$\\triangle ABG : \\triangle ABI = \\frac{1}{3} : \\frac{4}{15} = \\frac{5}{15} : \\frac{4}{15} = 5 : 4$$\n- 若依字面求 $\\triangle ABG : \\triangle BCI$，則為 $\\frac{1}{3} : \\frac{1}{3} = 1 : 1$（即選項 D）。\n- 本題依教材官方答案選 **(A) 5 : 4**。\n\n4. **結論**：正確答案選 **(A)**。",
       "errorCount": 1,
       "ebbinghausStage": 1,
       "consecutiveMastered": 0,
@@ -1452,11 +1452,11 @@ const INITIAL_SEED_DATA = [
       ],
       "weekLabel": "2026-09-07 (最新週次)",
       "isGuessedOrUnstable": true,
-      "mistakeNote": "多席次選舉「確定當選」最嚴苛門檻：當選人數為 N，則與第 N+1 名（落選頭）競爭。門檻公式為 x > 總有效票 / (應選名額 + 1)！本題 12300 / (2 + 1) = 4100，票數須為整數且嚴格大於，故至少 4101 票！",
+      "mistakeNote": "多席次選舉「確定當選」最嚴苛門檻：應選名額為 $N$ 人，最不利情境為有 $N+1$ 人平分票數！門檻公式為：得票數 $x > \\frac{\\text{總有效票}}{N + 1}$。本題 $\\frac{12300}{2 + 1} = 4100$，票數為整數且須嚴格大於，故至少 4101 票！",
       "stem": "花田村要選村民代表，共有 5 位候選人，從中要選出 2 位，若開出有效票共 12300 張，則候選人至少應得多少票才可確定當選？\n\n○ (A) 4100\n○ (B) 4101\n○ (C) 4102\n○ (D) 4103",
       "answer": "(B) 4101",
       "diagramUrl": "",
-      "solution": "1. **列不等式嚴謹分析**：\n- 設某位候選人得 $ 票。\n- 本次選舉「應選 2 位」，最激烈的競爭情境為：\n  前兩名均為當選人，而第 3 名（落選頭）得票盡可能最高。\n- 若前兩名當選人各得 $ 票，則其餘未當選的 3 位候選人合計最多獲得：\n  13097(12300 - 2x) \text{ 票}13097\n- 其中落選頭（第 3 名）能獲得的最高票數為其平均值：\n  13097\frac{12300 - 2x}{3} \text{ 票}13097\n- 該候選人若要「確定當選」，其得票數 $ 必須嚴格大於落選頭的最高可能得票：\n  13097x > \frac{12300 - 2x}{3}13097\n  130973x > 12300 - 2x13097\n  130975x > 1230013097\n  13097x > 2460 \\quad \text{（當只選1位時的考慮）}13097\n\n- **正規複數選區當選臨界值推導**：\n  若考慮自身為當選 2 人之一，自身得 $ 票，另 1 名當選人得票極高或極低，最不利情境為有另外 2 人票數與自己完全平手並列第 2 名：\n  即 3 個人平分票數時無法選出前 2 名，故：\n  13097x > \frac{\text{總有效票數}}{\text{應選席次} + 1} = \frac{12300}{2 + 1} = \frac{12300}{3} = 410013097\n- 若得 4100 票，有可能前 3 名皆各得 4100 票（ \times 3 = 12300$），導致 3 人同票同列無法確定保證 2 個席位。\n- 因此得票數必須嚴格大於 4100 票，即  \\ge 4101$ 票！\n\n2. **結論**：至少應得 **4101** 票才可確定當選，選 **(B)**。",
+      "solution": "1. **列不等式嚴謹分析**：\n- 設候選人得 $x$ 票。\n- 本次選舉應選出 2 位村民代表，最激烈的競爭情境為：\n  有 3 位候選人（前 2 位當選人與第 3 位落選頭）票數極度接近或平手。\n- 若 3 人平分所有選票，每人得到：\n  $$\\frac{12300}{2 + 1} = \\frac{12300}{3} = 4100 \\text{ 票}$$\n- 若某位候選人剛好得 4100 票，可能出現前 3 名皆各得 4100 票（$4100 \\times 3 = 12300$），此時 3 人同票同列，無法確定保證獲得 2 個席位之一。\n- 因此，得票數必須嚴格大於 4100 票才能「確定當選」：\n  $$x > 4100$$\n- 因為得票數必為正整數，故 $x \\ge 4101$。\n\n2. **速算公式**：\n- 最低確定當選門檻票數：\n  $$x > \\frac{\\text{總有效票數}}{\\text{應選名額} + 1}$$\n  $$x > \\frac{12300}{2 + 1} = 4100 \\implies x \\ge 4101 \\text{ 票}$$\n\n3. **結論**：候選人至少應得 **4101** 票才可確定當選，選 **(B)**。",
       "errorCount": 1,
       "ebbinghausStage": 1,
       "consecutiveMastered": 0,
@@ -1476,11 +1476,11 @@ const INITIAL_SEED_DATA = [
       ],
       "weekLabel": "2026-09-07 (最新週次)",
       "isGuessedOrUnstable": true,
-      "mistakeNote": "利用「全部總和 - 取出的 48 數總和 = 未取的數字」！計算帶分數乘法時利用分配律：48 × 49(5/12) = 48 × 49 + 48 × (5/12) = 2352 + 20 = 2372，計算快速又不易出錯！",
-      "stem": "已知  \\sim 99$ 中有 49 個偶數，從這 49 個偶數中取出 48 個數，其平均數為 \frac{5}{12}$，則未取的數字為何？【98.基測 I】\n\n○ (A) 20\n○ (B) 28\n○ (C) 72\n○ (D) 78",
+      "mistakeNote": "利用「全部總和 - 取出的 48 數總和 = 未取的數字」！計算帶分數乘法時善用乘法分配律：$48 \\times 49\\frac{5}{12} = 48 \\times 49 + 48 \\times \\frac{5}{12} = 2352 + 20 = 2372$，又快又準確！",
+      "stem": "已知 $1 \\sim 99$ 中有 49 個偶數，從這 49 個偶數中取出 48 個數，其平均數為 $49\\frac{5}{12}$，則未取的數字為何？【98.基測 I】\n\n○ (A) 20\n○ (B) 28\n○ (C) 72\n○ (D) 78",
       "answer": "(D) 78",
       "diagramUrl": "",
-      "solution": "1. **計算全部 49 個偶數之總和**：\n-  \\sim 99$ 中的偶數為 , 4, 6, \\dots, 98$，為等差數列，項數  = 49$，首項  = 2$，末項 {49} = 98$。\n- 根據等差級數求和公式：\n  13097S_{49} = \frac{49 \times (2 + 98)}{2} = \frac{49 \times 100}{2} = 49 \times 50 = 245013097\n\n2. **計算取出 48 個數之總和**：\n- 平均數為 \frac{5}{12} = 49 + \frac{5}{12}$。\n- 48 個數之總和為：\n  13097\text{總和} = 48 \times \\left(49 + \frac{5}{12}\right) = 48 \times 49 + 48 \times \frac{5}{12}13097\n  1309748 \times 49 = 48 \times (50 - 1) = 2400 - 48 = 235213097\n  1309748 \times \frac{5}{12} = 4 \times 5 = 2013097\n  13097\text{取出總和} = 2352 + 20 = 237213097\n\n3. **反求未取之數**：\n- 未取的數字即為兩總和之差：\n  13097\text{未取數字} = 2450 - 2372 = 7813097\n\n4. **結論**：未取的數字為 **78**，正確答案選 **(D)**。",
+      "solution": "1. **計算全部 49 個偶數之總和**：\n- $1 \\sim 99$ 中的偶數為 $2, 4, 6, \\dots, 98$，為等差數列，項數 $n = 49$，首項 $a_1 = 2$，末項 $a_{49} = 98$。\n- 根據等差級數求和公式：\n  $$S_{49} = \\frac{49 \\times (2 + 98)}{2} = \\frac{49 \\times 100}{2} = 49 \\times 50 = 2450$$\n\n2. **計算取出 48 個數之總和**：\n- 取出的 48 個數平均數為 $49\\frac{5}{12} = 49 + \\frac{5}{12}$。\n- 48 個數之總和為：\n  $$\\text{總和} = 48 \\times \\left(49 + \\frac{5}{12}\\right) = 48 \\times 49 + 48 \\times \\frac{5}{12}$$\n  $$48 \\times 49 = 48 \\times (50 - 1) = 2400 - 48 = 2352$$\n  $$48 \\times \\frac{5}{12} = 4 \\times 5 = 20$$\n  $$\\text{總和} = 2352 + 20 = 2372$$\n\n3. **反求未取之數字**：\n- 未取的數字即為全部總和減去取出的總和：\n  $$\\text{未取的數字} = 2450 - 2372 = 78$$\n\n4. **結論**：未取的數字為 **78**，正確答案選 **(D)**。",
       "errorCount": 1,
       "ebbinghausStage": 1,
       "consecutiveMastered": 0,
@@ -1500,11 +1500,11 @@ const INITIAL_SEED_DATA = [
       ],
       "weekLabel": "2026-09-07 (最新週次)",
       "isGuessedOrUnstable": true,
-      "mistakeNote": "若 1/x : 2/y : 3/z = 3 : 4 : 5，取倒數時注意係數移項：x : (y/2) : (z/3) = 1/3 : 1/4 : 1/5，故 x : y : z = 1/3 : (2/4) : (3/5) = 1/3 : 1/2 : 3/5！再同乘以公倍數 30 得 10 : 15 : 18！",
-      "stem": "若 $\frac{1}{x} : \frac{2}{y} : \frac{3}{z} = 3 : 4 : 5$，則  : y : z = ?$",
+      "mistakeNote": "若 $\\frac{1}{x} : \\frac{2}{y} : \\frac{3}{z} = 3 : 4 : 5$，取倒數時注意分子係數移項：$x : \\frac{y}{2} : \\frac{z}{3} = \\frac{1}{3} : \\frac{1}{4} : \\frac{1}{5}$，故 $x : y : z = \\frac{1}{3} : \\frac{2}{4} : \\frac{3}{5} = \\frac{1}{3} : \\frac{1}{2} : \\frac{3}{5}$！同乘最小公倍數 30 得 $10 : 15 : 18$！",
+      "stem": "若 $\\frac{1}{x} : \\frac{2}{y} : \\frac{3}{z} = 3 : 4 : 5$，則 $x : y : z = ?$",
       "answer": "10 : 15 : 18",
       "diagramUrl": "",
-      "solution": "1. **利用連比例設參數或倒數關係求解**：\n- **方法一（倒數法）**：\n  已知 $\frac{1}{x} : \frac{2}{y} : \frac{3}{z} = 3 : 4 : 5$。\n  取各項倒數可得：\n  13097x : \frac{y}{2} : \frac{z}{3} = \frac{1}{3} : \frac{1}{4} : \frac{1}{5}13097\n  將第二項同乘 2，第三項同乘 3：\n  13097x : y : z = \frac{1}{3} : \\left(\frac{1}{4} \times 2\right) : \\left(\frac{1}{5} \times 3\right) = \frac{1}{3} : \frac{1}{2} : \frac{3}{5}13097\n\n- **方法二（設參數法）**：\n  設 $\frac{1}{x} = 3k$，$\frac{2}{y} = 4k$，$\frac{3}{z} = 5k$（ \ne 0$）。\n  則  = \frac{1}{3k}$， = \frac{2}{4k} = \frac{1}{2k}$， = \frac{3}{5k}$。\n  13097x : y : z = \frac{1}{3} : \frac{1}{2} : \frac{3}{5}13097\n\n2. **化為最簡整數比**：\n- 分母 3、2、5 的最小公倍數 5 = 30$。\n- 各項同乘以 30：\n  13097x : y : z = \\left(\frac{1}{3} \times 30\right) : \\left(\frac{1}{2} \times 30\right) : \\left(\frac{3}{5} \times 30\right) = 10 : 15 : 1813097\n\n3. **結論**： : y : z = \\mathbf{10 : 15 : 18}$。",
+      "solution": "1. **利用連比例設參數或倒數關係求解**：\n- **方法一（倒數法）**：\n  已知 $\\frac{1}{x} : \\frac{2}{y} : \\frac{3}{z} = 3 : 4 : 5$。\n  各項取倒數可得：\n  $$x : \\frac{y}{2} : \\frac{z}{3} = \\frac{1}{3} : \\frac{1}{4} : \\frac{1}{5}$$\n  第二項乘以 2，第三項乘以 3：\n  $$x : y : z = \\frac{1}{3} : \\left(\\frac{1}{4} \\times 2\\right) : \\left(\\frac{1}{5} \\times 3\\right) = \\frac{1}{3} : \\frac{1}{2} : \\frac{3}{5}$$\n\n- **方法二（設參數法）**：\n  設 $\\frac{1}{x} = 3k$、$\\frac{2}{y} = 4k$、$\\frac{3}{z} = 5k$（$k \\ne 0$）。\n  則：\n  $$x = \\frac{1}{3k}, \\quad y = \\frac{2}{4k} = \\frac{1}{2k}, \\quad z = \\frac{3}{5k}$$\n  $$x : y : z = \\frac{1}{3} : \\frac{1}{2} : \\frac{3}{5}$$\n\n2. **化為最簡整數比**：\n- 分母 3、2、5 的最小公倍數 $[3, 2, 5] = 30$。\n- 各項同乘以 30：\n  $$x : y : z = \\left(\\frac{1}{3} \\times 30\\right) : \\left(\\frac{1}{2} \\times 30\\right) : \\left(\\frac{3}{5} \\times 30\\right) = 10 : 15 : 18$$\n\n3. **結論**：$x : y : z = 10 : 15 : 18$。",
       "errorCount": 1,
       "ebbinghausStage": 1,
       "consecutiveMastered": 0,
@@ -1524,11 +1524,11 @@ const INITIAL_SEED_DATA = [
       ],
       "weekLabel": "2026-09-07 (最新週次)",
       "isGuessedOrUnstable": true,
-      "mistakeNote": "連比例求值標準 SOP：令 x+3=4r, y-2=2r, z=3r，將 x, y, z 均用 r 表示後代入總和條件求出 r=5。注意最後求的是 x - y，別忘了括號 (4r-3) - (2r+2) = 2r - 5！",
-      "stem": "若  : (y - 2) : z = 4 : 2 : 3$，且  + y + z = 44$，則  - y = ?$",
+      "mistakeNote": "連比例求值標準 SOP：令 $x+3=4r$、$y-2=2r$、$z=3r$，將 $x, y, z$ 均以 $r$ 表示後代入總和條件求得 $r=5$。注意目標為 $x - y = (4r-3) - (2r+2) = 2r - 5 = 10 - 5 = 5$！",
+      "stem": "若 $(x + 3) : (y - 2) : z = 4 : 2 : 3$，且 $x + y + z = 44$，則 $x - y = ?$",
       "answer": "5",
       "diagramUrl": "",
-      "solution": "1. **設參數法解題**：\n- 由連比例式  : (y - 2) : z = 4 : 2 : 3$，\n  可設：\n  13097x + 3 = 4r \\implies x = 4r - 313097\n  13097y - 2 = 2r \\implies y = 2r + 213097\n  13097z = 3r \\quad (r \ne 0)13097\n\n2. **代入總和條件解出參數 *：\n- 已知  + y + z = 44$：\n  13097(4r - 3) + (2r + 2) + 3r = 4413097\n  13097(4r + 2r + 3r) + (-3 + 2) = 4413097\n  130979r - 1 = 4413097\n  130979r = 45 \\implies r = 513097\n\n3. **求目標式  - y$ 之值**：\n- 將 , y$ 表示為 $：\n  13097x - y = (4r - 3) - (2r + 2) = 4r - 3 - 2r - 2 = 2r - 513097\n- 將  = 5$ 代入：\n  13097x - y = 2(5) - 5 = 10 - 5 = 513097\n- *(驗算： = 4(5)-3 = 17$， = 2(5)+2 = 12$， = 3(5) = 15$；+12+15 = 44$ 符合！ - y = 17 - 12 = 5$)*\n\n4. **結論**： - y = \\mathbf{5}$。",
+      "solution": "1. **設參數法解題**：\n- 由連比例式 $(x + 3) : (y - 2) : z = 4 : 2 : 3$，可設：\n  $$x + 3 = 4r \\implies x = 4r - 3$$\n  $$y - 2 = 2r \\implies y = 2r + 2$$\n  $$z = 3r \\quad (r \\ne 0)$$\n\n2. **代入總和條件解出參數 $r$**：\n- 已知 $x + y + z = 44$：\n  $$(4r - 3) + (2r + 2) + 3r = 44$$\\n  $$(4r + 2r + 3r) + (-3 + 2) = 44$$\n  $$9r - 1 = 44$$\n  $$9r = 45 \\implies r = 5$$\n\n3. **求目標式 $x - y$ 之值**：\n- 將 $x, y$ 表示為 $r$：\n  $$x - y = (4r - 3) - (2r + 2) = 4r - 3 - 2r - 2 = 2r - 5$$\n- 將 $r = 5$ 代入：\n  $$x - y = 2(5) - 5 = 10 - 5 = 5$$\n- *(驗算：$x = 4(5)-3 = 17$，$y = 2(5)+2 = 12$，$z = 3(5) = 15$；$17 + 12 + 15 = 44$ 符合！$x - y = 17 - 12 = 5$)*\n\n4. **結論**：$x - y = 5$。",
       "errorCount": 1,
       "ebbinghausStage": 1,
       "consecutiveMastered": 0,
@@ -1548,11 +1548,11 @@ const INITIAL_SEED_DATA = [
       ],
       "weekLabel": "2026-09-07 (最新週次)",
       "isGuessedOrUnstable": true,
-      "mistakeNote": "等高矩形面積比等於底邊長之比！乙與丙等寬同底，面積比 4:5 故 DG:GC = 4:5，總高為 9y；甲與 (乙+丙) 等高，故底邊 AE:ED = 3:9 = 1:3，總寬為 4x。周長 2(4x+9y)=34，限制長寬為整數只有 x=2, y=1 一組正整數解！",
-      "stem": "如圖，在長方形 $ 中，$\\overline{EF}$、$\\overline{GH}$ 將長方形 $ 分割成甲、乙、丙三個長方形區域，若甲、乙、丙的面積比為  : 4 : 5$，且長方形 $ 的周長為 34，甲、乙、丙的長、寬皆為整數，則甲、乙、丙的周長比為何？",
+      "mistakeNote": "等高矩形面積比等於底邊長之比！乙與丙等寬同底，面積比 4:5 故 $DG:GC = 4:5$，總高為 $9y$；甲與 (乙+丙) 等高，故底邊 $AE:ED = 3:9 = 1:3$，總寬為 $4x$。周長 $2(4x+9y)=34$，限制長寬為整數只有 $x=2, y=1$ 一組正整數解！",
+      "stem": "如圖，在長方形 $ABCD$ 中，$\\overline{EF}$、$\\overline{GH}$ 將長方形 $ABCD$ 分割成甲、乙、丙三個長方形區域，若甲、乙、丙的面積比為 $3 : 4 : 5$，且長方形 $ABCD$ 的周長為 34，甲、乙、丙的長、寬皆為整數，則甲、乙、丙的周長比為何？",
       "answer": "11 : 10 : 11",
       "diagramUrl": "assets/questions/q_math_rect_area_ratio_perimeter_006.png",
-      "solution": "1. **由面積比求出長寬線段比值**：\n- 設甲面積為 r$，乙面積為 r$，丙面積為 r$（ > 0$）。\n- **觀察乙與丙**：共用橫向邊長 $\\overline{ED}$（即 $\\overline{HG}$），面積比等於垂直高之比：\n  13097\\overline{DG} : \\overline{GC} = 4r : 5r = 4 : 513097\n  令 $\\overline{DG} = 4y$、$\\overline{GC} = 5y$，則大長方形垂直高 $\\overline{CD} = \\overline{AB} = 4y + 5y = 9y$。\n- **觀察甲與 (乙+丙)**：\n  甲的高為 $\\overline{AB} = 9y$；(乙+丙) 構成的組合長方形高亦為 y$。\n  兩者高相同，面積比等於橫向寬度比：\n  13097\\overline{AE} : \\overline{ED} = \text{面積(甲)} : \text{面積(乙+丙)} = 3r : (4r + 5r) = 3 : 9 = 1 : 313097\n  令 $\\overline{AE} = x$、$\\overline{ED} = 3x$，則大長方形水平長度 $\\overline{AD} = \\overline{BC} = x + 3x = 4x$。\n\n2. **利用周長條件與整數性質求解**：\n- 長方形 $ 周長為 34：\n  130972 \times (\\overline{AD} + \\overline{CD}) = 34 \\implies 4x + 9y = 1713097\n- 題目註明「甲、乙、丙的長、寬皆為整數」，故 , y$ 必為正整數（, y \\in \\mathbb{N}$）：\n  - 若  = 1$：x + 9(1) = 17 \\implies 4x = 8 \\implies x = 2$（符合正整數解！）\n  - 若  \\ge 2$：y \\ge 18 > 17$，無正數解。\n  因此唯一整數解為： = 2,\\; y = 1$。\n\n3. **計算各區域尺寸與周長比**：\n- 各線段具體長度：\n  $\\overline{AE} = 2$，$\\overline{ED} = 6$，$\\overline{DG} = 4$，$\\overline{GC} = 5$，$\\overline{AB} = 9$。\n- **長方形甲**：寬 2，長 9 $\\implies$ 周長  2 \times (2 + 9) = 22$\n- **長方形乙**：長 6，寬 4 $\\implies$ 周長  2 \times (6 + 4) = 20$\n- **長方形丙**：長 6，寬 5 $\\implies$ 周長  2 \times (6 + 5) = 22$\n- **周長比**：\n  13097\text{甲周長} : \text{乙周長} : \text{丙周長} = 22 : 20 : 22 = 11 : 10 : 1113097\n\n4. **結論**：甲、乙、丙的周長比為 $\\mathbf{11 : 10 : 11}$。",
+      "solution": "1. **由面積比求出長寬線段比值**：\n- 設甲面積為 $3r$，乙面積為 $4r$，丙面積為 $5r$（$r > 0$）。\n- **觀察乙與丙**：共用橫向邊長 $\\overline{ED}$（即 $\\overline{HG}$），面積比等於垂直高之比：\n  $$\\overline{DG} : \\overline{GC} = 4r : 5r = 4 : 5$$\n  令 $\\overline{DG} = 4y$、$\\overline{GC} = 5y$，則大長方形垂直高 $\\overline{CD} = \\overline{AB} = 4y + 5y = 9y$。\n- **觀察甲與 (乙+丙)**：\n  甲的高為 $\\overline{AB} = 9y$；(乙+丙) 構成的組合長方形高亦為 $9y$。\n  兩者高相同，面積比等於橫向寬度比：\n  $$\\overline{AE} : \\overline{ED} = \\text{面積(甲)} : \\text{面積(乙+丙)} = 3r : (4r + 5r) = 3 : 9 = 1 : 3$$\n  令 $\\overline{AE} = x$、$\\overline{ED} = 3x$，則大長方形水平長度 $\\overline{AD} = \\overline{BC} = x + 3x = 4x$。\n\n2. **利用周長條件與整數性質求解**：\n- 長方形 $ABCD$ 周長為 34：\n  $$2 \\times (\\overline{AD} + \\overline{CD}) = 34 \\implies 4x + 9y = 17$$\n- 題目註明「甲、乙、丙的長、寬皆為整數」，故 $x, y$ 必為正整數（$x, y \\in \\mathbb{N}$）：\n  - 若 $y = 1$：$4x + 9(1) = 17 \\implies 4x = 8 \\implies x = 2$（符合正整數解！）\n  - 若 $y \\ge 2$：$9y \\ge 18 > 17$，無正數解。\n  因此唯一整數解為：$x = 2, \\; y = 1$。\n\n3. **計算各區域尺寸與周長比**：\n- 各線段具體長度：\n  $\\overline{AE} = 2$、$\\overline{ED} = 6$、$\\overline{DG} = 4$、$\\overline{GC} = 5$、$\\overline{AB} = 9$。\n- **長方形甲**：寬 2，長 9 $\\implies$ 周長 $= 2 \\times (2 + 9) = 22$\n- **長方形乙**：長 6，寬 4 $\\implies$ 周長 $= 2 \\times (6 + 4) = 20$\n- **長方形丙**：長 6，寬 5 $\\implies$ 周長 $= 2 \\times (6 + 5) = 22$\n- **周長比**：\n  $$\\text{甲周長} : \\text{乙周長} : \\text{丙周長} = 22 : 20 : 22 = 11 : 10 : 11$$\n\n4. **結論**：甲、乙、丙的周長比為 **11 : 10 : 11**。",
       "errorCount": 1,
       "ebbinghausStage": 1,
       "consecutiveMastered": 0,
@@ -1610,7 +1610,7 @@ class DataManager {
     // Auto-sync any newly added system seed questions or seed content updates
     INITIAL_SEED_DATA.forEach(seed => {
       if (Array.isArray(this.deletedIds) && this.deletedIds.includes(seed.id)) return;
-      const idx = this.questions.findIndex(q => q.id === seed.id);
+      const idx = this.questions.findIndex(q => q && q.id === seed.id);
       if (idx === -1) {
         this.questions.push(JSON.parse(JSON.stringify(seed)));
       } else {
