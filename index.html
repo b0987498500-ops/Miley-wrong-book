@@ -75,7 +75,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=99_force_purge">
+  <link rel="stylesheet" href="styles.css?v=100_lightbox_zoom">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -924,11 +924,17 @@
     <div class="lightbox-modal-content">
       <div class="lightbox-header">
         <span id="lightbox-title" class="lightbox-title"><i class="fa-solid fa-magnifying-glass-plus"></i> 圖片放大檢視</span>
-        <button type="button" id="lightbox-close-btn" class="icon-btn" title="關閉 (Esc)">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
+        <div class="lightbox-controls">
+          <button type="button" id="lightbox-zoom-out-btn" class="lightbox-tool-btn" title="縮小 (滾輪向下)"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+          <button type="button" id="lightbox-zoom-reset-btn" class="lightbox-tool-btn" title="還原最佳尺寸"><span id="lightbox-zoom-level">100%</span></button>
+          <button type="button" id="lightbox-zoom-in-btn" class="lightbox-tool-btn" title="放大 (滾輪向上)"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+          <button type="button" id="lightbox-zoom-fit-btn" class="lightbox-tool-btn" title="最適填滿"><i class="fa-solid fa-expand"></i></button>
+          <button type="button" id="lightbox-close-btn" class="icon-btn" title="關閉 (Esc)">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
       </div>
-      <div class="lightbox-body">
+      <div class="lightbox-body" id="lightbox-body">
         <img id="lightbox-img" src="" alt="全螢幕照片檢視">
       </div>
     </div>
@@ -963,18 +969,18 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=32"></script>
-  <script src="js/utils/katex_render.js?v=32"></script>
-  <script src="js/utils/pdf_export.js?v=32"></script>
-  <script src="js/modules/upload.js?v=32"></script>
-  <script src="js/modules/archive.js?v=32"></script>
-  <script src="js/modules/review.js?v=32"></script>
-  <script src="js/modules/sprint.js?v=32"></script>
-  <script src="js/modules/analytics.js?v=32"></script>
-  <script src="js/modules/calendar.js?v=32"></script>
-  <script src="js/modules/wisdom.js?v=32"></script>
-  <script src="js/modules/card.js?v=32"></script>
-  <script src="js/app.js?v=32"></script>
+  <script src="js/data.js?v=33"></script>
+  <script src="js/utils/katex_render.js?v=33"></script>
+  <script src="js/utils/pdf_export.js?v=33"></script>
+  <script src="js/modules/upload.js?v=33"></script>
+  <script src="js/modules/archive.js?v=33"></script>
+  <script src="js/modules/review.js?v=33"></script>
+  <script src="js/modules/sprint.js?v=33"></script>
+  <script src="js/modules/analytics.js?v=33"></script>
+  <script src="js/modules/calendar.js?v=33"></script>
+  <script src="js/modules/wisdom.js?v=33"></script>
+  <script src="js/modules/card.js?v=33"></script>
+  <script src="js/app.js?v=33"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => {

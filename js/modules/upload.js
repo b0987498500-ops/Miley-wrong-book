@@ -1110,11 +1110,123 @@ window.UploadModule = {
 
     if (!modal) return;
 
-    const closeModal = () => modal.classList.add('hidden');
+    const zoomLevelEl = document.getElementById('lightbox-zoom-level');
+    const zoomInBtn = document.getElementById('lightbox-zoom-in-btn');
+    const zoomOutBtn = document.getElementById('lightbox-zoom-out-btn');
+    const zoomResetBtn = document.getElementById('lightbox-zoom-reset-btn');
+    const zoomFitBtn = document.getElementById('lightbox-zoom-fit-btn');
+    const lightboxBody = document.getElementById('lightbox-body');
+    const imgEl = document.getElementById('lightbox-img');
+
+    let currentScale = 1.0;
+    let isPanning = false;
+    let startX = 0, startY = 0;
+    let scrollLeft = 0, scrollTop = 0;
+
+    const updateZoomDisplay = () => {
+      if (zoomLevelEl) zoomLevelEl.textContent = `${Math.round(currentScale * 100)}%`;
+      if (imgEl) {
+        imgEl.style.transform = `scale(${currentScale})`;
+      }
+    };
+
+    self._setLightboxScale = function(scale) {
+      currentScale = Math.max(0.5, Math.min(scale, 5.0));
+      updateZoomDisplay();
+    };
+
+    const resetZoom = () => {
+      self._setLightboxScale(1.0);
+      if (lightboxBody) {
+        lightboxBody.scrollLeft = (lightboxBody.scrollWidth - lightboxBody.clientWidth) / 2;
+        lightboxBody.scrollTop = (lightboxBody.scrollHeight - lightboxBody.clientHeight) / 2;
+      }
+    };
+
+    const fitZoom = () => {
+      if (!imgEl || !lightboxBody) return;
+      const naturalW = imgEl.naturalWidth || 400;
+      const naturalH = imgEl.naturalHeight || 300;
+      const bodyW = lightboxBody.clientWidth - 48;
+      const bodyH = lightboxBody.clientHeight - 48;
+      const scaleW = bodyW / naturalW;
+      const scaleH = bodyH / naturalH;
+      const fitScale = Math.min(scaleW, scaleH, 3.0);
+      self._setLightboxScale(Math.max(1.0, fitScale));
+    };
+
+    if (zoomInBtn) {
+      zoomInBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        self._setLightboxScale(currentScale + 0.3);
+      });
+    }
+
+    if (zoomOutBtn) {
+      zoomOutBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        self._setLightboxScale(currentScale - 0.3);
+      });
+    }
+
+    if (zoomResetBtn) {
+      zoomResetBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        resetZoom();
+      });
+    }
+
+    if (zoomFitBtn) {
+      zoomFitBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        fitZoom();
+      });
+    }
+
+    // Mouse wheel zoom
+    if (lightboxBody) {
+      lightboxBody.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        const delta = e.deltaY < 0 ? 0.2 : -0.2;
+        self._setLightboxScale(currentScale + delta);
+      }, { passive: false });
+
+      // Click & drag pan
+      lightboxBody.addEventListener('mousedown', (e) => {
+        if (e.target === closeBtn || e.target.closest('.lightbox-header')) return;
+        isPanning = true;
+        lightboxBody.classList.add('dragging');
+        startX = e.pageX - lightboxBody.offsetLeft;
+        startY = e.pageY - lightboxBody.offsetTop;
+        scrollLeft = lightboxBody.scrollLeft;
+        scrollTop = lightboxBody.scrollTop;
+      });
+
+      window.addEventListener('mouseup', () => {
+        isPanning = false;
+        if (lightboxBody) lightboxBody.classList.remove('dragging');
+      });
+
+      lightboxBody.addEventListener('mousemove', (e) => {
+        if (!isPanning) return;
+        e.preventDefault();
+        const x = e.pageX - lightboxBody.offsetLeft;
+        const y = e.pageY - lightboxBody.offsetTop;
+        const walkX = (x - startX) * 1.5;
+        const walkY = (y - startY) * 1.5;
+        lightboxBody.scrollLeft = scrollLeft - walkX;
+        lightboxBody.scrollTop = scrollTop - walkY;
+      });
+    }
+
+    const closeModal = () => {
+      modal.classList.add('hidden');
+      resetZoom();
+    };
 
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => {
-      if (e.target === modal || e.target.classList.contains('lightbox-body')) {
+      if (e.target === modal) {
         closeModal();
       }
     });
@@ -1277,8 +1389,33 @@ window.UploadModule = {
     if (!modal || !imgEl) return;
 
     if (titleEl) titleEl.innerHTML = `<i class="fa-solid fa-magnifying-glass-plus" style="color: var(--accent-secondary);"></i> ${title}`;
+    
+    // Clear previous transform and prepare image
+    imgEl.style.transform = 'scale(1.0)';
     imgEl.src = imgSrc;
     modal.classList.remove('hidden');
+
+    // Auto-fit to viewport
+    imgEl.onload = () => {
+      if (typeof this._setLightboxScale === 'function') {
+        const lightboxBody = document.getElementById('lightbox-body');
+        if (lightboxBody) {
+          const bodyW = lightboxBody.clientWidth - 64;
+          const bodyH = lightboxBody.clientHeight - 64;
+          const nw = imgEl.naturalWidth || 400;
+          const nh = imgEl.naturalHeight || 300;
+          
+          // Calculate scale so image fills ~75% to 85% of modal view
+          const scaleW = bodyW / nw;
+          const scaleH = bodyH / nh;
+          let bestScale = Math.min(scaleW, scaleH);
+          
+          // Clamp bestScale between 1.0 and 2.5
+          bestScale = Math.max(1.0, Math.min(bestScale, 2.5));
+          this._setLightboxScale(bestScale);
+        }
+      }
+    };
   },
 
   applyAIRedInkErasure: function() {
