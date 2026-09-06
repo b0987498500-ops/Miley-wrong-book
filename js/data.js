@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v44';
+const STORAGE_KEY = 'miley_wrong_questions_v45';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1553,6 +1553,102 @@ const INITIAL_SEED_DATA = [
       "answer": "11 : 10 : 11",
       "diagramUrl": "assets/questions/q_math_rect_area_ratio_perimeter_006.png",
       "solution": "1. **由面積比求出長寬線段比值**：\n- 設甲面積為 $3r$，乙面積為 $4r$，丙面積為 $5r$（$r > 0$）。\n- **觀察乙與丙**：共用橫向邊長 $\\overline{ED}$（即 $\\overline{HG}$），面積比等於垂直高之比：\n  $$\\overline{DG} : \\overline{GC} = 4r : 5r = 4 : 5$$\n  令 $\\overline{DG} = 4y$、$\\overline{GC} = 5y$，則大長方形垂直高 $\\overline{CD} = \\overline{AB} = 4y + 5y = 9y$。\n- **觀察甲與 (乙+丙)**：\n  甲的高為 $\\overline{AB} = 9y$；(乙+丙) 構成的組合長方形高亦為 $9y$。\n  兩者高相同，面積比等於橫向寬度比：\n  $$\\overline{AE} : \\overline{ED} = \\text{面積(甲)} : \\text{面積(乙+丙)} = 3r : (4r + 5r) = 3 : 9 = 1 : 3$$\n  令 $\\overline{AE} = x$、$\\overline{ED} = 3x$，則大長方形水平長度 $\\overline{AD} = \\overline{BC} = x + 3x = 4x$。\n\n2. **利用周長條件與整數性質求解**：\n- 長方形 $ABCD$ 周長為 34：\n  $$2 \\times (\\overline{AD} + \\overline{CD}) = 34 \\implies 4x + 9y = 17$$\n- 題目註明「甲、乙、丙的長、寬皆為整數」，故 $x, y$ 必為正整數（$x, y \\in \\mathbb{N}$）：\n  - 若 $y = 1$：$4x + 9(1) = 17 \\implies 4x = 8 \\implies x = 2$（符合正整數解！）\n  - 若 $y \\ge 2$：$9y \\ge 18 > 17$，無正數解。\n  因此唯一整數解為：$x = 2, \\; y = 1$。\n\n3. **計算各區域尺寸與周長比**：\n- 各線段具體長度：\n  $\\overline{AE} = 2$、$\\overline{ED} = 6$、$\\overline{DG} = 4$、$\\overline{GC} = 5$、$\\overline{AB} = 9$。\n- **長方形甲**：寬 2，長 9 $\\implies$ 周長 $= 2 \\times (2 + 9) = 22$\n- **長方形乙**：長 6，寬 4 $\\implies$ 周長 $= 2 \\times (6 + 4) = 20$\n- **長方形丙**：長 6，寬 5 $\\implies$ 周長 $= 2 \\times (6 + 5) = 22$\n- **周長比**：\n  $$\\text{甲周長} : \\text{乙周長} : \\text{丙周長} = 22 : 20 : 22 = 11 : 10 : 11$$\n\n4. **結論**：甲、乙、丙的周長比為 **11 : 10 : 11**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-09-07"
+  },
+  {
+      "id": "q_sci_bio_organism_hierarchy_001",
+      "examPeriod": "一段",
+      "subject": "自然/生物",
+      "errorReason": "觀念不懂",
+      "concept": "生物體的個體組成層次差異（動物 vs. 植物）",
+      "uploadDate": "2026-09-07",
+      "mondayDate": "2026-09-07",
+      "mondayDates": [
+          "2026-09-07"
+      ],
+      "weekLabel": "2026-09-07 (最新週次)",
+      "isGuessedOrUnstable": true,
+      "mistakeNote": "動植物個體組成層次對比：動物為「細胞 → 組織 → 器官 → 器官系統 → 個體」；植物為「細胞 → 組織 → 器官 → 個體」，植物缺少「器官系統」層次，因此植物的組成層次比動物少一個層級！",
+      "stem": "關於章魚和松樹在個體組成層次的差異，下列何者正確？\n\n○ (A) 兩者沒有差異\n○ (B) 章魚沒有器官系統層次\n○ (C) 松樹僅有一種器官系統\n○ (D) 松樹的層次較少",
+      "answer": "(D) 松樹的層次較少",
+      "diagramUrl": "",
+      "solution": "1. **動植物個體組成層次的核心差異**：\n- **動物（章魚為軟體動物）**：\n  具有完整的五大組成層次：\n  $$\\text{細胞} \\rightarrow \\text{組織} \\rightarrow \\text{器官} \\rightarrow \\text{器官系統} \\rightarrow \\text{個體}$$\n  （例如消化系統、循環系統、神經系統等）。\n- **植物（松樹為裸子植物）**：\n  僅有四大組成層次：\n  $$\\text{細胞} \\rightarrow \\text{組織} \\rightarrow \\text{器官} \\rightarrow \\text{個體}$$\n  **植物「沒有」器官系統層次**！植物的器官直接分工協調構成個體（營養器官：根、莖、葉；繁殖器官：毬果/花、果實、種子）。\n\n2. **選項逐一剖析**：\n- **(A) 錯誤**：兩者層次不同，動物多了器官系統。\n- **(B) 錯誤**：章魚為動物，具有器官系統層次。\n- **(C) 錯誤**：松樹為植物，完全沒有器官系統層次，而非僅有一種。\n- **(D) 正確**：松樹（植物）比章魚（動物）少了器官系統層次，故松樹的層次較少。\n\n3. **結論**：正確答案選 **(D)**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-09-07"
+  },
+  {
+      "id": "q_sci_phy_position_description_002",
+      "examPeriod": "一段",
+      "subject": "自然/理化",
+      "errorReason": "觀念不懂",
+      "concept": "物體位置之精確描述三要素（參考點、方向、距離）",
+      "uploadDate": "2026-09-07",
+      "mondayDate": "2026-09-07",
+      "mondayDates": [
+          "2026-09-07"
+      ],
+      "weekLabel": "2026-09-07 (最新週次)",
+      "isGuessedOrUnstable": true,
+      "mistakeNote": "物理學中描述位置必須完整具備「三要素」：基準點（參考點）、方向、距離，三者缺一不可！例如「小威在小東（基準點）右邊（方向）50公尺處（距離）」即為完整描述！",
+      "stem": "下列何者對位置的描述最正確？\n\n○ (A) 小惠位於小強的東方\n○ (B) 小強距離小東 100 公尺處\n○ (C) 小東在北方 150 公尺\n○ (D) 小威在小東右邊 50 公尺處",
+      "answer": "(D) 小威在小東右邊 50 公尺處",
+      "diagramUrl": "",
+      "solution": "1. **描述空間位置的三要素**：\n物理學中要精確標定一個物體的位置，必須同時明確交代：\n- **基準點（參考點）**：以何處為原點。\n- **方向**：朝向何方（如東、西、南、北、左、右、前、後等）。\n- **距離**：相隔多遠（具有量值與單位）。\n\n2. **檢視各選項完整性**：\n- **(A) 錯誤**：基準點為小強，方向為東方，但**缺乏距離**。\n- **(B) 錯誤**：基準點為小東，距離為 100 公尺，但**缺乏方向**。\n- **(C) 錯誤**：方向為北方，距離為 150 公尺，但**缺乏基準點**（從何處向北？）。\n- **(D) 正確**：基準點為「小東」，方向為「右邊」，距離為「50 公尺」，三要素完整俱全！\n\n3. **結論**：正確答案選 **(D)**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-09-07"
+  },
+  {
+      "id": "q_sci_phy_round_trip_average_speed_003",
+      "examPeriod": "一段",
+      "subject": "自然/理化",
+      "errorReason": "計算錯誤",
+      "concept": "往返平均速率之計算（總路徑長除以總時間）",
+      "uploadDate": "2026-09-07",
+      "mondayDate": "2026-09-07",
+      "mondayDates": [
+          "2026-09-07"
+      ],
+      "weekLabel": "2026-09-07 (最新週次)",
+      "isGuessedOrUnstable": true,
+      "mistakeNote": "平均速率絕對不是速度相加除以 2（10+30）/2 = 20 是大陷阱！平均速率定義是「總路徑長 / 總時間」！因為上山速度慢、花費時間較多，整體平均速率會被拉低為 15 公里/小時！",
+      "stem": "小光騎自行車上山，若上山時平均速率為 10 公里／小時，下山時平均速率為 30 公里／小時，則往返一趟的平均速率為下列何者？\n\n○ (A) 0 公里／小時\n○ (B) 10 公里／小時\n○ (C) 15 公里／小時\n○ (D) 20 公里／小時",
+      "answer": "(C) 15 公里／小時",
+      "diagramUrl": "",
+      "solution": "1. **平均速率核心定義**：\n$$\\text{平均速率} = \\frac{\\text{總路徑長}}{\\text{總時間}}$$\n*(切記：平均速率「不可」直接將上山與下山速率相加除以 2，因為兩段路程所花費的時間不相等！)*\n\n2. **嚴謹計算步驟**：\n- 設單程（上山）路徑長為 $S$ 公里，則往返總路徑長為 $2S$ 公里。\n- **上山所花時間**：$t_{\\text{上}} = \\frac{S}{10} \\text{ 小時}$。\n- **下山所花時間**：$t_{\\text{下}} = \\frac{S}{30} \\text{ 小時}$。\n- **總時間**：\n  $$t_{\\text{總}} = \\frac{S}{10} + \\frac{S}{30} = \\frac{3S + S}{30} = \\frac{4S}{30} = \\frac{2S}{15} \\text{ 小時}$$\n- **往返平均速率**：\n  $$v_{\\text{平均}} = \\frac{2S}{t_{\\text{總}}} = \\frac{2S}{\\frac{2S}{15}} = 2S \\times \\frac{15}{2S} = 15 \\text{ (公里／小時)}$$\n\n3. **延伸調和平均數速算公式**：\n- 若等距離往返速率分別為 $v_1$ 與 $v_2$，則往返平均速率為兩者的調和平均數：\n  $$v = \\frac{2v_1 v_2}{v_1 + v_2} = \\frac{2 \\times 10 \\times 30}{10 + 30} = \\frac{600}{40} = 15 \\text{ (公里／小時)}$$\n\n4. **結論**：正確答案選 **(C)**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-09-07"
+  },
+  {
+      "id": "q_sci_phy_car_vt_displacement_004",
+      "examPeriod": "一段",
+      "subject": "自然/理化",
+      "errorReason": "觀念不懂",
+      "concept": "等加速度運動 v-t 圖與梯形面積求位移",
+      "uploadDate": "2026-09-07",
+      "mondayDate": "2026-09-07",
+      "mondayDates": [
+          "2026-09-07"
+      ],
+      "weekLabel": "2026-09-07 (最新週次)",
+      "isGuessedOrUnstable": true,
+      "mistakeNote": "v-t 圖之斜率代表「加速度 a」，曲線下方所圍面積代表「位移」！第 2 秒至第 4 秒之位移對應高為 2 秒的梯形面積：[(v₂ + v₄) × Δt] / 2 = [(6 + 12) × 2] / 2 = 18m！",
+      "stem": "如圖為甲車的速度（$v$）與時間（$t$）關係圖，試問第 2 秒到第 4 秒間甲車移動的位移大小為下列何者？\n\n○ (A) 75m\n○ (B) 37.5m\n○ (C) 36m\n○ (D) 18m",
+      "answer": "(D) 18m",
+      "diagramUrl": "assets/questions/q_sci_phy_car_vt_displacement_007.png",
+      "solution": "1. **求甲車之加速度 $a$**：\n- 由 $v-t$ 圖可知，直線通過原點 $(0, 0)$，在 $t = 5\\text{ s}$ 時速度達到 $v = 15\\text{ m/s}$。\n- 甲車做等加速度直線運動，其加速度為：\n  $$a = \\frac{\\Delta v}{\\Delta t} = \\frac{15 - 0}{5 - 0} = 3 \\text{ m/s}^2$$\n\n2. **計算第 2 秒與第 4 秒的瞬時速度**：\n- 由等加速度速度公式 $v = v_0 + at$：\n  $$v_2 = 0 + 3 \\times 2 = 6 \\text{ m/s}$$\n  $$v_4 = 0 + 3 \\times 4 = 12 \\text{ m/s}$$\n\n3. **利用 $v-t$ 圖梯形面積求位移**：\n- $v-t$ 圖中，曲線與時間軸所圍成的面積即代表「位移大小」。\n- 第 2 秒到第 4 秒（時間間隔 $\\Delta t = 4 - 2 = 2\\text{ s}$）所圍成的圖形為一梯形：\n  - 上底（初速）$= v_2 = 6\\text{ m/s}$\n  - 下底（末速）$= v_4 = 12\\text{ m/s}$\n  - 高（時間差）$= \\Delta t = 2\\text{ s}$\n- 計算梯形面積：\n  $$\\text{位移} = \\frac{(v_2 + v_4) \\times \\Delta t}{2} = \\frac{(6 + 12) \\times 2}{2} = 18 \\text{ m}$$\n\n4. **結論**：第 2 秒到第 4 秒間甲車移動的位移為 **18m**，正確答案選 **(D)**。",
       "errorCount": 1,
       "ebbinghausStage": 1,
       "consecutiveMastered": 0,
