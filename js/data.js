@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v46';
+const STORAGE_KEY = 'miley_wrong_questions_v48';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -241,6 +241,54 @@ const INITIAL_SEED_DATA = [
       "answer": "(D) 18m",
       "diagramUrl": "assets/questions/q_sci_phy_car_vt_displacement_007.png",
       "solution": "1. **求甲車之加速度 $a$**：\n- 由 $v-t$ 圖可知，直線通過原點 $(0, 0)$，在 $t = 5\\text{ s}$ 時速度達到 $v = 15\\text{ m/s}$。\n- 甲車做等加速度直線運動，其加速度為：\n  $$a = \\frac{\\Delta v}{\\Delta t} = \\frac{15 - 0}{5 - 0} = 3 \\text{ m/s}^2$$\n\n2. **計算第 2 秒與第 4 秒的瞬時速度**：\n- 由等加速度速度公式 $v = v_0 + at$：\n  $$v_2 = 0 + 3 \\times 2 = 6 \\text{ m/s}$$\n  $$v_4 = 0 + 3 \\times 4 = 12 \\text{ m/s}$$\n\n3. **利用 $v-t$ 圖梯形面積求位移**：\n- $v-t$ 圖中，曲線與時間軸所圍成的面積即代表「位移大小」。\n- 第 2 秒到第 4 秒（時間間隔 $\\Delta t = 4 - 2 = 2\\text{ s}$）所圍成的圖形為一梯形：\n  - 上底（初速）$= v_2 = 6\\text{ m/s}$\n  - 下底（末速）$= v_4 = 12\\text{ m/s}$\n  - 高（時間差）$= \\Delta t = 2\\text{ s}$\n- 計算梯形面積：\n  $$\\text{位移} = \\frac{(v_2 + v_4) \\times \\Delta t}{2} = \\frac{(6 + 12) \\times 2}{2} = 18 \\text{ m}$$\n\n4. **結論**：第 2 秒到第 4 秒間甲車移動的位移為 **18m**，正確答案選 **(D)**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-09-07"
+  },
+  {
+      "id": "q_math_ratio_fraction_param_linear_007",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "計算錯誤",
+      "concept": "連比例式之分數型參數 r 假設法與三元一次式求值",
+      "uploadDate": "2026-09-07",
+      "mondayDate": "2026-09-07",
+      "mondayDates": [
+          "2026-09-07"
+      ],
+      "weekLabel": "2026-09-07 (最新週次)",
+      "isGuessedOrUnstable": true,
+      "mistakeNote": "連比連等式令參數 $r$：設 $\\frac{x+3}{2} = \\frac{y-1}{4} = \\frac{z+1}{5} = r$，得 $x=2r-3, y=4r+1, z=5r-1$。代入 $2z-x-y=180$ 時去括號務必變號：$2(5r-1) - (2r-3) - (4r+1) = 4r = 180 \\implies r=45$！最後求 $x+y+z = 11r - 3 = 492$！",
+      "stem": "若 $\\frac{x+3}{2} = \\frac{y-1}{4} = \\frac{z+1}{5}$，且 $2z - x - y = 180$，則 $x + y + z = ?$\n\n○ (A) 485\n○ (B) 490\n○ (C) 492\n○ (D) 495",
+      "answer": "(C) 492",
+      "diagramUrl": "",
+      "solution": "1. **設參數 $r$ 解題**：\n- 令分數連等式為 $r$（$r \\ne 0$）：\n  $$\\frac{x+3}{2} = \\frac{y-1}{4} = \\frac{z+1}{5} = r$$\n- 分別將 $x, y, z$ 用 $r$ 表示：\n  $$x + 3 = 2r \\implies x = 2r - 3$$\n  $$y - 1 = 4r \\implies y = 4r + 1$$\n  $$z + 1 = 5r \\implies z = 5r - 1$$\n\n2. **代入條件式 $2z - x - y = 180$ 解 $r$**：\n- 將 $x, y, z$ 的代數式代入，注意括號去負號：\n  $$2(5r - 1) - (2r - 3) - (4r + 1) = 180$$\n  $$(10r - 2) - 2r + 3 - 4r - 1 = 180$$\n  $$(10r - 2r - 4r) + (-2 + 3 - 1) = 180$$\n  $$4r + 0 = 180 \\implies 4r = 180 \\implies r = 45$$\n\n3. **求目標式 $x + y + z$ 之值**：\n- 先化簡代數總和式：\n  $$x + y + z = (2r - 3) + (4r + 1) + (5r - 1) = 11r - 3$$\n- 將 $r = 45$ 代入計算：\n  $$x + y + z = 11 \\times 45 - 3 = 495 - 3 = 492$$\n- *(驗算：$x = 2(45)-3 = 87$，$y = 4(45)+1 = 181$，$z = 5(45)-1 = 224$；$2z - x - y = 448 - 87 - 181 = 180$ 符合！$87 + 181 + 224 = 492$ 符合！)*\n\n4. **結論**：正確答案選 **(C)**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-09-07"
+  },
+  {
+      "id": "q_math_ratio_partnership_profit_weighted_008",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "審題不清",
+      "concept": "正比與乘積連比例應用：合夥投資紅利按「金額 × 期間」加權分配",
+      "uploadDate": "2026-09-07",
+      "mondayDate": "2026-09-07",
+      "mondayDates": [
+          "2026-09-07"
+      ],
+      "weekLabel": "2026-09-07 (最新週次)",
+      "isGuessedOrUnstable": true,
+      "mistakeNote": "合夥紅利依「投資金額 × 投資期間」之乘積成正比分配！紅利比為 $(7 \\times 5) : 5x : (11 \\times 11) = 35 : 5x : 121$。由乙分得 50000 解得比值參數 $x=8$。注意題目最後問的是「乙的投資期間為多少個月」，總期間 2 年為 24 個月，乙的月份為 $24 \\times \\frac{8}{5+8+11} = 8$ 個月！",
+      "stem": "若甲、乙、丙三人合夥投資，期末的紅利為 245000 元，投資期間為兩年，協議期末的紅利分配按投資金額和投資期間的乘積來分配，若甲、乙、丙在此期間的投資金額比為 $7 : 5 : 11$，投資期間比為 $5 : x : 11$，若乙在兩年後可分配紅利 50000 元，則乙的投資期間為多少個月？\n\n○ (A) 8\n○ (B) 4\n○ (C) 3\n○ (D) 2.5",
+      "answer": "(A) 8",
+      "diagramUrl": "",
+      "solution": "1. **建立紅利加權分配連比例式**：\n- 題目約定：紅利分配按「投資金額 $\\times$ 投資期間」的乘積來分配。\n- 甲、乙、丙之分配紅利比為：\n  $$\\text{紅利比} = (7 \\times 5) : (5 \\times x) : (11 \\times 11) = 35 : 5x : 121$$\n- 三人分配的紅利總份數為：\n  $$35 + 5x + 121 = 156 + 5x$$\n\n2. **利用乙分配到的紅利求出 $x$**：\n- 總紅利為 245000 元，乙分得 50000 元：\n  $$245000 \\times \\frac{5x}{35 + 5x + 121} = 50000$$\n- 兩邊同除以 5000：\n  $$49 \\times \\frac{5x}{156 + 5x} = 10$$\n  $$49 \\times 5x = 10 \\times (156 + 5x)$$\n  $$245x = 1560 + 50x$$\n  $$195x = 1560 \\implies x = \\frac{1560}{195} = 8$$\n\n3. **計算乙的投資期間（以「月」為單位）**：\n- 投資總期間為「兩年」，即 $2 \\times 12 = 24 \\text{ 個月}$。\n- 依三人投資期間比 $5 : x : 11 = 5 : 8 : 11$，期間總比值為：\n  $$5 + 8 + 11 = 24$$\n- 故乙的投資期間佔其中的 $\\frac{8}{24}$：\n  $$\\text{乙的投資月數} = 24 \\times \\frac{8}{5 + 8 + 11} = 24 \\times \\frac{8}{24} = 8 \\text{ (個月)}$$\n\n4. **結論**：乙的投資期間為 **8 個月**，正確答案選 **(A)**。",
       "errorCount": 1,
       "ebbinghausStage": 1,
       "consecutiveMastered": 0,
