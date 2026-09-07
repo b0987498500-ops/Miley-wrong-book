@@ -3595,7 +3595,11 @@ body {
 
 /* ==================== TRUE 100% FULL-BLEED FULLSCREEN REVIEW MODE ==================== */
 body.fullscreen-review-mode {
-  overflow: hidden !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  height: auto !important;
+  min-height: 100vh !important;
+  -webkit-overflow-scrolling: touch !important;
 }
 
 body.fullscreen-review-mode .sidebar,
@@ -3606,44 +3610,53 @@ body.fullscreen-review-mode .top-header {
 body.fullscreen-review-mode .app-container {
   width: 100vw !important;
   max-width: 100vw !important;
-  height: 100vh !important;
+  min-height: 100vh !important;
+  height: auto !important;
   margin: 0 !important;
   padding: 0 !important;
-  overflow: hidden !important;
+  overflow: visible !important;
 }
 
 body.fullscreen-review-mode .main-content {
   width: 100vw !important;
   max-width: 100vw !important;
-  height: 100vh !important;
+  min-height: 100vh !important;
+  height: auto !important;
   margin: 0 !important;
   padding: 0 !important;
-  overflow: hidden !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
 }
 
 body.fullscreen-review-mode .views-wrapper {
   width: 100vw !important;
   max-width: 100vw !important;
-  height: 100vh !important;
+  min-height: 100vh !important;
+  height: auto !important;
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box !important;
+  overflow: visible !important;
 }
 
 body.fullscreen-review-mode #view-review {
   width: 100vw !important;
   max-width: 100vw !important;
-  height: 100vh !important;
+  min-height: 100vh !important;
+  height: auto !important;
   margin: 0 !important;
   padding: 0 !important;
+  overflow: visible !important;
 }
 
 body.fullscreen-review-mode .review-container {
   width: 100vw !important;
   max-width: 100vw !important;
-  height: 100vh !important;
+  min-height: 100vh !important;
+  height: auto !important;
   margin: 0 !important;
-  padding: 12px 16px !important;
+  padding: 12px 24px 60px 24px !important;
   border-radius: 0 !important;
   border: none !important;
   box-shadow: none !important;
@@ -3651,59 +3664,123 @@ body.fullscreen-review-mode .review-container {
   display: flex !important;
   flex-direction: column !important;
   box-sizing: border-box !important;
+  overflow: visible !important;
 }
 
 body.fullscreen-review-mode .review-header {
-  margin-bottom: 10px !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 50 !important;
+  background: rgba(15, 23, 42, 0.9) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  padding: 10px 14px !important;
+  margin: -12px -24px 12px -24px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+body.light-theme.fullscreen-review-mode .review-header {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
 body.fullscreen-review-mode .flashcard-stage-wrapper {
-  flex: 1 !important;
+  flex: 1 0 auto !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 10px !important;
+  gap: 12px !important;
   width: 100% !important;
   max-width: 100% !important;
-  height: calc(100vh - 65px) !important;
+  height: auto !important;
+  min-height: calc(100vh - 80px) !important;
 }
 
 body.fullscreen-review-mode .flashcard-stage-main {
   display: flex !important;
   position: relative !important;
   align-items: stretch !important;
-  flex: 1 !important;
+  flex: 1 0 auto !important;
   width: 100% !important;
   max-width: 100% !important;
-  height: 100% !important;
+  height: auto !important;
+  min-height: calc(100vh - 140px) !important;
 }
 
 body.fullscreen-review-mode .flashcard-card {
-  flex: 1 !important;
+  flex: 1 0 auto !important;
   width: 100% !important;
   max-width: 100% !important;
-  height: 100% !important;
+  height: auto !important;
+  min-height: calc(100vh - 140px) !important;
   border-radius: var(--radius-md) !important;
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  padding: 24px 72px !important;
+  padding: 24px 80px 32px 80px !important;
   font-size: 1.25rem !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: space-between !important;
+  justify-content: flex-start !important;
+  gap: 20px !important;
   background: var(--bg-secondary) !important;
   box-sizing: border-box !important;
+  overflow: visible !important;
 }
 
 body.fullscreen-review-mode .card-body-stem {
-  flex: 1 !important;
+  flex: 0 1 auto !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: center !important;
-  padding: 16px 0 !important;
+  justify-content: flex-start !important;
+  padding: 8px 0 16px 0 !important;
 }
 
 body.fullscreen-review-mode .stem-katex-text {
   font-size: 1.55rem !important;
   line-height: 1.9 !important;
+}
+
+body.fullscreen-review-mode .fc-nav-arrow {
+  position: fixed !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 60 !important;
+}
+
+body.fullscreen-review-mode .fc-nav-arrow.arrow-left {
+  left: 16px !important;
+}
+
+body.fullscreen-review-mode .fc-nav-arrow.arrow-right {
+  right: 16px !important;
+}
+
+body.fullscreen-review-mode .fc-nav-arrow:hover {
+  transform: translateY(-50%) scale(1.08) !important;
+}
+
+body.fullscreen-review-mode .fc-nav-arrow:active {
+  transform: translateY(-50%) scale(0.94) !important;
+}
+
+/* Custom smooth scrollbar for fullscreen review mode */
+body.fullscreen-review-mode::-webkit-scrollbar,
+body.fullscreen-review-mode .main-content::-webkit-scrollbar {
+  width: 8px;
+}
+body.fullscreen-review-mode::-webkit-scrollbar-track,
+body.fullscreen-review-mode .main-content::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+body.fullscreen-review-mode::-webkit-scrollbar-thumb,
+body.fullscreen-review-mode .main-content::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.45);
+  border-radius: 4px;
+}
+body.fullscreen-review-mode::-webkit-scrollbar-thumb:hover,
+body.fullscreen-review-mode .main-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.75);
 }
 
 /* Stage main container with floating navigation arrows */

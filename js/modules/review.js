@@ -120,6 +120,17 @@ window.ReviewModule = {
       }
     });
 
+    // Keep fullscreen UI state in sync when user exits via ESC key
+    document.addEventListener('fullscreenchange', () => {
+      if (!document.fullscreenElement && document.body.classList.contains('fullscreen-review-mode')) {
+        document.body.classList.remove('fullscreen-review-mode');
+        const btn = document.getElementById('btn-toggle-fullscreen');
+        if (btn) {
+          btn.innerHTML = '<i class="fa-solid fa-expand"></i> 全螢幕專注大畫面';
+        }
+      }
+    });
+
     // Global Keyboard Shortcuts for Fullscreen Flashcard Review
     document.addEventListener('keydown', (e) => {
       // Ignore if typing in text inputs or textareas
@@ -307,12 +318,12 @@ window.ReviewModule = {
   },
 
   scrollToCardTop: function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const mainContent = document.querySelector('.main-content');
+    if (mainContent) mainContent.scrollTo({ top: 0, behavior: 'smooth' });
     const mainCard = document.getElementById('main-flashcard');
     if (mainCard) {
-      const rect = mainCard.getBoundingClientRect();
-      if (rect.top < 60 || rect.top > 300) {
-        mainCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
+      mainCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   },
 
