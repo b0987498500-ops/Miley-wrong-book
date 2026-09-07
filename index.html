@@ -43,12 +43,12 @@
         });
       }
       // Force reload if legacy cached version is active
-      var currVer = localStorage.getItem('miley_purge_v52_final');
+      var currVer = localStorage.getItem('miley_purge_v53_final');
       if (!currVer) {
-        localStorage.setItem('miley_purge_v52_final', 'true');
-        if (window.location.search.indexOf('v=52') === -1) {
+        localStorage.setItem('miley_purge_v53_final', 'true');
+        if (window.location.search.indexOf('v=53') === -1) {
           console.log('Purging legacy browser cache and reloading...');
-          window.location.search = '?v=52_force_purge&t=' + Date.now();
+          window.location.search = '?v=53_force_purge&t=' + Date.now();
         }
       }
     })();
@@ -75,7 +75,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=105_four_math_questions">
+  <link rel="stylesheet" href="styles.css?v=106_chinese_grammar_rhetoric">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -978,18 +978,18 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=52"></script>
-  <script src="js/utils/katex_render.js?v=52"></script>
-  <script src="js/utils/pdf_export.js?v=52"></script>
-  <script src="js/modules/upload.js?v=52"></script>
-  <script src="js/modules/archive.js?v=52"></script>
-  <script src="js/modules/review.js?v=52"></script>
-  <script src="js/modules/sprint.js?v=52"></script>
-  <script src="js/modules/analytics.js?v=52"></script>
-  <script src="js/modules/calendar.js?v=52"></script>
-  <script src="js/modules/wisdom.js?v=52"></script>
-  <script src="js/modules/card.js?v=52"></script>
-  <script src="js/app.js?v=52"></script>
+  <script src="js/data.js?v=53"></script>
+  <script src="js/utils/katex_render.js?v=53"></script>
+  <script src="js/utils/pdf_export.js?v=53"></script>
+  <script src="js/modules/upload.js?v=53"></script>
+  <script src="js/modules/archive.js?v=53"></script>
+  <script src="js/modules/review.js?v=53"></script>
+  <script src="js/modules/sprint.js?v=53"></script>
+  <script src="js/modules/analytics.js?v=53"></script>
+  <script src="js/modules/calendar.js?v=53"></script>
+  <script src="js/modules/wisdom.js?v=53"></script>
+  <script src="js/modules/card.js?v=53"></script>
+  <script src="js/app.js?v=53"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => {
