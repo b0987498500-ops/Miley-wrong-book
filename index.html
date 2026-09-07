@@ -43,12 +43,12 @@
         });
       }
       // Force reload if legacy cached version is active
-      var currVer = localStorage.getItem('miley_purge_v46_final');
+      var currVer = localStorage.getItem('miley_purge_v47_final');
       if (!currVer) {
-        localStorage.setItem('miley_purge_v46_final', 'true');
-        if (window.location.search.indexOf('v=46') === -1) {
+        localStorage.setItem('miley_purge_v47_final', 'true');
+        if (window.location.search.indexOf('v=47') === -1) {
           console.log('Purging legacy browser cache and reloading...');
-          window.location.search = '?v=46_force_purge&t=' + Date.now();
+          window.location.search = '?v=47_force_purge&t=' + Date.now();
         }
       }
     })();
@@ -149,9 +149,6 @@
           <div class="ebb-count"><span id="due-review-count">0</span> 題</div>
           <p class="ebb-desc">艾賓浩斯週期追蹤中</p>
         </div>
-        <button id="reset-data-btn" class="btn-ghost-sm" title="重置種子數據">
-          <i class="fa-solid fa-rotate"></i> 重置示範資料
-        </button>
       </div>
     </aside>
 
@@ -981,18 +978,18 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=46"></script>
-  <script src="js/utils/katex_render.js?v=46"></script>
-  <script src="js/utils/pdf_export.js?v=46"></script>
-  <script src="js/modules/upload.js?v=46"></script>
-  <script src="js/modules/archive.js?v=46"></script>
-  <script src="js/modules/review.js?v=46"></script>
-  <script src="js/modules/sprint.js?v=46"></script>
-  <script src="js/modules/analytics.js?v=46"></script>
-  <script src="js/modules/calendar.js?v=46"></script>
-  <script src="js/modules/wisdom.js?v=46"></script>
-  <script src="js/modules/card.js?v=46"></script>
-  <script src="js/app.js?v=46"></script>
+  <script src="js/data.js?v=47"></script>
+  <script src="js/utils/katex_render.js?v=47"></script>
+  <script src="js/utils/pdf_export.js?v=47"></script>
+  <script src="js/modules/upload.js?v=47"></script>
+  <script src="js/modules/archive.js?v=47"></script>
+  <script src="js/modules/review.js?v=47"></script>
+  <script src="js/modules/sprint.js?v=47"></script>
+  <script src="js/modules/analytics.js?v=47"></script>
+  <script src="js/modules/calendar.js?v=47"></script>
+  <script src="js/modules/wisdom.js?v=47"></script>
+  <script src="js/modules/card.js?v=47"></script>
+  <script src="js/app.js?v=47"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => {
