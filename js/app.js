@@ -358,32 +358,13 @@ class App {
       document.documentElement.style.setProperty('--content-font-scale', lvl.scale);
       localStorage.setItem(FONT_STORAGE_KEY, currentIdx.toString());
 
-      // Update UI indicators
-      const headerIndicator = document.getElementById('font-scale-indicator');
-      if (headerIndicator) headerIndicator.innerText = lvl.label;
-
+      // Update review UI indicator
       const reviewIndicator = document.getElementById('review-font-indicator');
       if (reviewIndicator) reviewIndicator.innerText = lvl.label;
     };
 
     // Apply initial font scale immediately
     applyFontScale(currentIdx);
-
-    // Top Header Buttons
-    const btnInc = document.getElementById('btn-font-increase');
-    const btnDec = document.getElementById('btn-font-decrease');
-    if (btnInc) {
-      btnInc.addEventListener('click', (e) => {
-        e.stopPropagation();
-        applyFontScale(currentIdx + 1);
-      });
-    }
-    if (btnDec) {
-      btnDec.addEventListener('click', (e) => {
-        e.stopPropagation();
-        applyFontScale(currentIdx - 1);
-      });
-    }
 
     // Review Toolbar Inline Buttons
     const btnReviewInc = document.getElementById('btn-review-font-inc');

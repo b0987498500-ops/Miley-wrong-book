@@ -43,12 +43,12 @@
         });
       }
       // Force reload if legacy cached version is active
-      var currVer = localStorage.getItem('miley_purge_v56_final');
+      var currVer = localStorage.getItem('miley_purge_v57_final');
       if (!currVer) {
-        localStorage.setItem('miley_purge_v56_final', 'true');
-        if (window.location.search.indexOf('v=56') === -1) {
+        localStorage.setItem('miley_purge_v57_final', 'true');
+        if (window.location.search.indexOf('v=57') === -1) {
           console.log('Purging legacy browser cache and reloading...');
-          window.location.search = '?v=56_force_purge&t=' + Date.now();
+          window.location.search = '?v=57_force_purge&t=' + Date.now();
         }
       }
     })();
@@ -75,7 +75,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=109_liyu_xinqiji_dialogue">
+  <link rel="stylesheet" href="styles.css?v=110_font_scaling_solution_and_que_fix">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -167,20 +167,6 @@
             </div>
           </div>
           <div class="header-right">
-            <!-- Font Size Scaling Controller (調整字體大小) -->
-            <div class="font-size-control-wrapper" id="font-size-control-wrapper">
-              <div class="font-size-badge-pill" title="調整字體大小 (專門放大/縮小題目與解析文字，不影響版面)">
-                <span class="font-size-label"><i class="fa-solid fa-font"></i> 字體</span>
-                <button type="button" class="btn-font-scale" id="btn-font-decrease" title="字體縮小 (A-)">
-                  <i class="fa-solid fa-minus"></i>
-                </button>
-                <span class="font-scale-current" id="font-scale-indicator">100%</span>
-                <button type="button" class="btn-font-scale" id="btn-font-increase" title="字體放大 (A+)">
-                  <i class="fa-solid fa-plus"></i>
-                </button>
-              </div>
-            </div>
-
             <div class="wisdom-popover-wrapper">
               <button id="btn-open-wisdom-modal" class="wisdom-nav-btn" title="擊敗錯題怪解鎖的名言與心理學小知識">
                 <i class="fa-solid fa-lightbulb"></i>
@@ -999,18 +985,18 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=56"></script>
-  <script src="js/utils/katex_render.js?v=56"></script>
-  <script src="js/utils/pdf_export.js?v=56"></script>
-  <script src="js/modules/upload.js?v=56"></script>
-  <script src="js/modules/archive.js?v=56"></script>
-  <script src="js/modules/review.js?v=56"></script>
-  <script src="js/modules/sprint.js?v=56"></script>
-  <script src="js/modules/analytics.js?v=56"></script>
-  <script src="js/modules/calendar.js?v=56"></script>
-  <script src="js/modules/wisdom.js?v=56"></script>
-  <script src="js/modules/card.js?v=56"></script>
-  <script src="js/app.js?v=56"></script>
+  <script src="js/data.js?v=57"></script>
+  <script src="js/utils/katex_render.js?v=57"></script>
+  <script src="js/utils/pdf_export.js?v=57"></script>
+  <script src="js/modules/upload.js?v=57"></script>
+  <script src="js/modules/archive.js?v=57"></script>
+  <script src="js/modules/review.js?v=57"></script>
+  <script src="js/modules/sprint.js?v=57"></script>
+  <script src="js/modules/analytics.js?v=57"></script>
+  <script src="js/modules/calendar.js?v=57"></script>
+  <script src="js/modules/wisdom.js?v=57"></script>
+  <script src="js/modules/card.js?v=57"></script>
+  <script src="js/app.js?v=57"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => {

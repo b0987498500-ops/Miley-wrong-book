@@ -4582,15 +4582,33 @@ body.light-theme .fc-nav-arrow:hover {
 
 /* Scaled Typography for Stem, Options, Answers, Notes, and Cards */
 .stem-katex-text,
+.stem-katex-text *,
 .options-katex-text,
+.options-katex-text *,
 #fc-stem-text,
+#fc-stem-text *,
 #fc-options-text,
+#fc-options-text *,
 .card-stem-text,
 .card-stem,
 .solution-content,
 .mistake-note-content,
-#fc-solution-content,
-#fc-mistake-content,
+#fc-answer-container,
+#fc-answer-container *,
+.solution-content-box,
+.solution-content-box *,
+.sol-answer,
+.sol-answer *,
+#fc-std-answer,
+.sol-steps,
+.sol-steps *,
+#fc-solution-steps,
+#fc-solution-steps *,
+.steps-katex-text,
+.steps-katex-text *,
+.mistake-note-container,
+.mistake-note-container *,
+#fc-mistake-note-text,
 .katex-rendered-preview,
 .flip-card-front,
 .flip-card-back,
@@ -4610,8 +4628,23 @@ body.light-theme .fc-nav-arrow:hover {
 .options-katex-text .katex,
 #fc-stem-text .katex,
 #fc-options-text .katex,
-#fc-solution-content .katex {
+#fc-answer-container .katex,
+#fc-solution-steps .katex {
   font-size: calc(1.15em * var(--content-font-scale, 1)) !important;
 }
+
+/* Table scaling inside explanation */
+#fc-solution-steps table,
+.steps-katex-text table {
+  font-size: calc(0.95rem * var(--content-font-scale, 1)) !important;
+}
+#fc-solution-steps table th,
+#fc-solution-steps table td,
+.steps-katex-text table th,
+.steps-katex-text table td {
+  font-size: calc(0.92rem * var(--content-font-scale, 1)) !important;
+  padding: calc(8px * var(--content-font-scale, 1)) calc(12px * var(--content-font-scale, 1)) !important;
+}
+
 
 
