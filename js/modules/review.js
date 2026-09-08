@@ -61,7 +61,7 @@ window.ReviewModule = {
     const mainCard = document.getElementById('main-flashcard');
     if (mainCard) {
       mainCard.addEventListener('click', (e) => {
-        if (e.target.closest('#fc-diagram-container') || e.target.closest('button')) return;
+        if (e.target.closest('#fc-diagram-container') || e.target.closest('button') || e.target.closest('input') || e.target.closest('textarea')) return;
         if (!self.isAnswerRevealed) {
           self.revealAnswer();
         }
@@ -441,8 +441,15 @@ window.ReviewModule = {
       }
     }
 
+    // Interactive Fill-in-the-Blank Slot Converter for 【　　】
+    let slotIndex = 0;
+    const interactiveStem = stemMain.replace(/【[　\s]*】/g, function() {
+      slotIndex++;
+      return `<span class="fill-in-box-wrapper">【<input type="text" class="fc-fill-in-input" data-slot="${slotIndex}" maxlength="4" placeholder="寫字" autocomplete="off" autocorrect="off">】</span>`;
+    });
+
     // 1. Render Top Stem Text
-    window.katexUtils.renderText('fc-stem-text', stemMain);
+    window.katexUtils.renderText('fc-stem-text', interactiveStem);
 
     // 2. Render Middle Diagram Image (Moved UP right below stem text, ABOVE options!)
     const diagContainer = document.getElementById('fc-diagram-container');
@@ -485,6 +492,29 @@ window.ReviewModule = {
 
     const ansContainer = document.getElementById('fc-answer-container');
     if (ansContainer) ansContainer.classList.remove('hidden');
+
+    // Auto-check and reveal fill-in inputs against target characters
+    const q = this.activeQuestions[this.currentIndex];
+    const fillInputs = document.querySelectorAll('.fc-fill-in-input');
+    if (fillInputs.length > 0 && q && q.answer) {
+      const answerChars = (q.answer.match(/【([^】]+)】/g) || []).map(s => s.replace(/【|】/g, '').trim());
+      fillInputs.forEach((inp, idx) => {
+        inp.disabled = true;
+        const val = inp.value.trim();
+        const expected = answerChars[idx];
+        if (expected) {
+          if (val && val === expected) {
+            inp.classList.add('input-correct');
+          } else if (val) {
+            inp.classList.add('input-wrong');
+            inp.title = `您的作答：${val}，正確答案：${expected}`;
+          } else {
+            inp.value = expected;
+            inp.classList.add('input-revealed');
+          }
+        }
+      });
+    }
 
     const revealBtn = document.getElementById('fc-reveal-btn');
     if (revealBtn) revealBtn.classList.add('hidden');

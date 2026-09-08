@@ -2905,6 +2905,7 @@ body {
   font-size: 1.05rem;
   color: var(--accent-success);
   margin-bottom: 12px;
+  white-space: pre-wrap;
 }
 
 .sol-steps {
@@ -4818,3 +4819,62 @@ body.light-theme .fc-nav-arrow:hover {
 
 
 
+
+/* ==================== INTERACTIVE FILL-IN-THE-BLANK (寫字填空) ==================== */
+.fill-in-box-wrapper {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin: 0 4px;
+}
+
+.fc-fill-in-input {
+  width: 54px;
+  height: 40px;
+  text-align: center;
+  font-size: calc(1.2rem * var(--content-font-scale, 1));
+  font-weight: 700;
+  border: 2px dashed rgba(245, 158, 11, 0.7);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--accent-warning);
+  outline: none;
+  transition: all 0.2s ease;
+  margin: 0 2px;
+}
+
+.fc-fill-in-input:focus {
+  border: 2px solid #6366f1;
+  background: rgba(99, 102, 241, 0.18);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
+  color: #ffffff;
+}
+
+.fc-fill-in-input.input-correct {
+  border: 2px solid #10b981 !important;
+  color: #34d399 !important;
+  background: rgba(16, 185, 129, 0.22) !important;
+}
+
+.fc-fill-in-input.input-wrong {
+  border: 2px solid #ef4444 !important;
+  color: #f87171 !important;
+  background: rgba(239, 68, 68, 0.22) !important;
+}
+
+.fc-fill-in-input.input-revealed {
+  border: 2px solid #10b981 !important;
+  color: #34d399 !important;
+  background: rgba(16, 185, 129, 0.12) !important;
+}
+
+body.light-theme .fc-fill-in-input {
+  background: #f8fafc;
+  color: #d97706;
+  border-color: #f59e0b;
+}
+
+body.light-theme .fc-fill-in-input:focus {
+  background: #ffffff;
+  color: #1e293b;
+}
