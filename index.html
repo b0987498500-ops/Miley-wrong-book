@@ -43,13 +43,11 @@
         });
       }
       // Force reload if legacy cached version is active
-      var currVer = localStorage.getItem('miley_purge_v62_restore_and_add_exam_questions');
+      var currVer = localStorage.getItem('miley_purge_v63_syntax_fixed');
       if (!currVer) {
-        localStorage.setItem('miley_purge_v62_restore_and_add_exam_questions', 'true');
-        if (window.location.search.indexOf('v=57') === -1) {
-          console.log('Purging legacy browser cache and reloading...');
-          window.location.search = '?v=62_force_purge&t=' + Date.now();
-        }
+        localStorage.setItem('miley_purge_v63_syntax_fixed', 'true');
+        console.log('Purging legacy browser cache and reloading...');
+        window.location.search = '?v=63_force_purge&t=' + Date.now();
       }
     })();
     // Immediate date updater on load
@@ -75,7 +73,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=115_all_questions_restored">
+  <link rel="stylesheet" href="styles.css?v=116_syntax_fixed">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -1049,18 +1047,18 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=62"></script>
-  <script src="js/utils/katex_render.js?v=62"></script>
-  <script src="js/utils/pdf_export.js?v=62"></script>
-  <script src="js/modules/upload.js?v=62"></script>
-  <script src="js/modules/archive.js?v=62"></script>
-  <script src="js/modules/review.js?v=62"></script>
-  <script src="js/modules/sprint.js?v=62"></script>
-  <script src="js/modules/analytics.js?v=62"></script>
-  <script src="js/modules/calendar.js?v=62"></script>
-  <script src="js/modules/wisdom.js?v=62"></script>
-  <script src="js/modules/card.js?v=62"></script>
-  <script src="js/app.js?v=62"></script>
+  <script src="js/data.js?v=63"></script>
+  <script src="js/utils/katex_render.js?v=63"></script>
+  <script src="js/utils/pdf_export.js?v=63"></script>
+  <script src="js/modules/upload.js?v=63"></script>
+  <script src="js/modules/archive.js?v=63"></script>
+  <script src="js/modules/review.js?v=63"></script>
+  <script src="js/modules/sprint.js?v=63"></script>
+  <script src="js/modules/analytics.js?v=63"></script>
+  <script src="js/modules/calendar.js?v=63"></script>
+  <script src="js/modules/wisdom.js?v=63"></script>
+  <script src="js/modules/card.js?v=63"></script>
+  <script src="js/app.js?v=63"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => {

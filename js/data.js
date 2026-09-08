@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v62';
+const STORAGE_KEY = 'miley_wrong_questions_v63';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -758,29 +758,12 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      const legacyV61 = localStorage.getItem('miley_wrong_questions_v61');
-      if (legacyV61 !== null) {
-        stored = legacyV61;
-      } else {
-        const legacyV60 = localStorage.getItem('miley_wrong_questions_v60');
-        if (legacyV60 !== null) {
-          stored = legacyV60;
-        } else {
-        const legacyV59 = localStorage.getItem('miley_wrong_questions_v59');
-        if (legacyV59 !== null) {
-          stored = legacyV59;
-        } else {
-          const legacyV58 = localStorage.getItem('miley_wrong_questions_v58');
-          if (legacyV58 !== null) {
-            stored = legacyV58;
-          } else {
-            const legacyV57 = localStorage.getItem('miley_wrong_questions_v57');
-            if (legacyV57 !== null) {
-              stored = legacyV57;
-            }
-          }
-        }
-      }
+      stored = localStorage.getItem('miley_wrong_questions_v62') ||
+               localStorage.getItem('miley_wrong_questions_v61') ||
+               localStorage.getItem('miley_wrong_questions_v60') ||
+               localStorage.getItem('miley_wrong_questions_v59') ||
+               localStorage.getItem('miley_wrong_questions_v58') ||
+               localStorage.getItem('miley_wrong_questions_v57');
     }
     if (stored !== null) {
       try {
