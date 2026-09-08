@@ -160,6 +160,7 @@ window.ReviewModule = {
 
       // Only handle if in review tab
       if (!document.getElementById('view-review')?.classList.contains('active')) return;
+      if (self.activeQuestions.length === 0) return;
 
       if (['a', 'b', 'c', 'd', 'A', 'B', 'C', 'D'].includes(e.key) && !self.isAnswerRevealed && self.hasInteractiveOptions) {
         self.selectChoice(e.key.toUpperCase());
@@ -616,12 +617,22 @@ window.ReviewModule = {
       document.getElementById('fc-answer-container')?.classList.add('hidden');
       document.getElementById('fc-reveal-btn')?.classList.add('hidden');
       document.getElementById('fc-feedback-btns')?.classList.add('hidden');
+      document.getElementById('fc-check-answer-btn')?.classList.add('hidden');
+      document.getElementById('fc-check-result-banner')?.classList.add('hidden');
+      document.getElementById('fc-action-buttons-wrap')?.classList.add('hidden');
+      document.getElementById('btn-retry-question')?.classList.add('hidden');
+      
+      this.selectedChoice = null;
+      this.hasInteractiveOptions = false;
+      this.isAnswerRevealed = false;
       
       const noteTextEl = document.getElementById('fc-mistake-note-text');
       if (noteTextEl) noteTextEl.innerText = '尚無防錯筆記';
 
       return;
     }
+
+    document.getElementById('fc-action-buttons-wrap')?.classList.remove('hidden');
 
     const q = this.activeQuestions[this.currentIndex];
     this.isAnswerRevealed = false;
