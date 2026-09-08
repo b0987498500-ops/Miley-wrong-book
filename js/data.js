@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v61';
+const STORAGE_KEY = 'miley_wrong_questions_v62';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -564,7 +564,7 @@ const INITIAL_SEED_DATA = [
     "examPeriod": "一段",
     "subject": "國文",
     "errorReason": "觀念不懂",
-    "concept": "修辭技巧辨析：借代（兜鍪、五斗米、孤帆、桑梓）vs 譬喻",
+    "concept": "名句活用：南唐兩宋詞作情境辨析（秦觀〈鵲橋仙〉、馮延巳〈謁金門〉、辛棄疾〈醜奴兒〉）",
     "uploadDate": "2026-09-08",
     "mondayDate": "2026-09-07",
     "mondayDates": [
@@ -572,11 +572,11 @@ const INITIAL_SEED_DATA = [
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
-    "mistakeNote": "兜鍪借代戰士。(A)五斗米借代官俸；(B)孤帆借代船隻；(C)「恰似」為譬喻（未用借代）；(D)桑梓借代家鄉。",
-    "stem": "辛棄疾〈南鄉子〉這闋詞中，以「兜鍪」借代為戰士。以下何者「未使用」相同的修辭技巧？\n\n○ (A) 吾不能為五斗米折腰\n○ (B) 孤帆遠影碧山盡\n○ (C) 恰似一江春水向東流\n○ (D) 令我生心憶桑梓",
-    "answer": "(C) 恰似一江春水向東流",
+    "mistakeNote": "注意詞作名句典故與文意搭配！1.「兩情若是長久時」出自秦觀〈鵲橋仙〉（兩情若是久長時，又豈在朝朝暮暮），指真情不因短暫時空分離而褪色，用以安慰出國遠距男友完全正確（✔）。2.「吹皺一池春水」出自馮延巳〈謁金門〉（干卿底事之典），比喻「事不關己而好管閒事」，不能用在寫作無病呻吟！小說被退稿因閱歷不足強作感慨，宜改用辛棄疾〈醜奴兒〉「為賦新詞強說愁」。",
+    "stem": "【今朝話名句】下列題目皆使用了南唐兩宋詞作中的經典名句，請依據各題文意，判斷何者使用「最恰當」？\n\n○ (A) 即將出國的洛詩安慰男友：「兩情若是長久時，何必在乎一時的分離？我們還能隨時視訊，別擔心。」\n○ (B) S君的小說被出版社退稿，主要是閱歷不夠、體悟不深，寫作常「吹皺一池春水」，以致作品不受青睞",
+    "answer": "(A) 即將出國的洛詩安慰男友：「兩情若是長久時，何必在乎一時的分離？我們還能隨時視訊，別擔心。」",
     "diagramUrl": "",
-    "solution": "- **題幹「兜鍪」**：借代戰士（修辭為**借代**）。\n- **(A) 借代**：「五斗米」借代微薄官俸。\n- **(B) 借代**：「孤帆」借代船隻。\n- **(C) 譬喻（正解）**：「恰似」為喻詞，將愁緒比作春水，為譬喻（未用借代），選 **(C)**。\n- **(D) 借代**：「桑梓」借代故鄉。",
+    "solution": "- **(A) 恰當（正解）**：秦觀〈鵲橋仙〉「兩情若是久長時，又豈在朝朝暮暮」，指真情經得起時空分離考驗，安慰出國男友語境貼切，選 **(A)**。\n- **(B) 誤用**：「吹皺一池春水」出自馮延巳〈謁金門〉，比喻**事不關己而好管閒事**，不可用於形容寫作缺乏歷練；應改為辛棄疾「為賦新詞強說愁」。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
@@ -612,7 +612,7 @@ const INITIAL_SEED_DATA = [
     "examPeriod": "一段",
     "subject": "國文",
     "errorReason": "觀念不懂",
-    "concept": "詞義辨析：辛棄疾名句「悠悠」與各文句涵義比較",
+    "concept": "古典韻文體制大比較：古詩、樂府詩、近體詩（絕句與律詩）、詞之全面統整",
     "uploadDate": "2026-09-08",
     "mondayDate": "2026-09-07",
     "mondayDates": [
@@ -620,11 +620,11 @@ const INITIAL_SEED_DATA = [
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
-    "mistakeNote": "「悠悠」多義：(A)憂思長久；(B)從容徐緩；(C)高遠遙遠貌（正解）；(D)眾多凡俗（眾人之口）。",
-    "stem": "下列各項「悠悠」，何者是表示「遙遠」的意思？\n\n○ (A)「悠悠」我心\n○ (B)「悠悠」南行\n○ (C)「悠悠」蒼天\n○ (D) 杜「悠悠」之口",
-    "answer": "(C)「悠悠」蒼天",
+    "mistakeNote": "國文會考韻文四大天王必背對照：1.【句數字數】：古詩（多五七言，不限句）、樂府（多雜言，不限句）、絕句（4句/20或28字）、律詩（8句/40或56字）、詞（長短句，依詞牌小令≤58字、中調59~90字、長調≥91字）。2.【對仗】：律詩「頷聯(第二聯)與頸聯(第三聯)」必對仗！其餘（古詩、樂府、絕句）皆不限。3.【押韻】：古詩、樂府可換韻；近體詩一韻到底絕不可換韻（偶數句必押平聲韻，首句可押可不押）；詞依詞牌而定。4.【朝代別名】：古詩（漢魏六朝/古風）、樂府（漢魏南北朝）、近體詩（唐代/今體詩）、詞（宋代成熟/詩餘、長短句、曲子詞、樂府）。故 (B) 正確！",
+    "stem": "關於我國古典韻文「古詩、樂府詩、近體詩、詞」的體制特徵比較，下列敘述何者「完全正確」？\n\n○ (A) 句數與字數：古詩與樂府詩皆無句數限制；近體詩絕句四句、律詩八句；詞則字數固定為五言或七言\n○ (B) 押韻規定：古詩與樂府詩皆可換韻；近體詩偶數句押韻、一韻到底不可換韻；詞則須依各詞牌規定押韻\n○ (C) 對仗要求：近體詩之絕句與律詩皆規定必須嚴格對仗；古詩與樂府詩則完全不限\n○ (D) 發展與別名：古詩盛行於唐代，別名「長短句」；詞成熟於兩宋，別名「今體詩」或「古風」",
+    "answer": "(B) 押韻規定：古詩與樂府詩皆可換韻；近體詩偶數句押韻、一韻到底不可換韻；詞則須依各詞牌規定押韻",
     "diagramUrl": "",
-    "solution": "- **(A)** 憂思長久貌（《詩經》「悠悠我心」）。\n- **(B)** 從容徐緩、閒適慢行貌。\n- **(C) 正解**：高遠、遙遠貌（《詩經》「悠悠蒼天，此何人哉」），選 **(C)**。\n- **(D)** 眾多、凡俗貌（指世俗眾人之口）。",
+    "solution": "- **(A) 錯誤**：詞為「長短句」，字數依詞牌而定，非固定五七言。\n- **(B) 完全正確（正解）**：古詩、樂府可換韻；近體詩一韻到底不可換韻；詞則依各詞牌規定押韻，選 **(B)**。\n- **(C) 錯誤**：絕句不限對仗；律詩僅「頷聯、頸聯」必對仗。\n- **(D) 錯誤**：古詩別名「古風」；詞別名「長短句、詩餘」。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
@@ -636,7 +636,79 @@ const INITIAL_SEED_DATA = [
     "examPeriod": "一段",
     "subject": "國文",
     "errorReason": "觀念不懂",
-    "concept": "詞義古今演變與語境辨析（滾滾、千古、了了、風光）",
+    "concept": "詞人生平、風格與詞壇稱號辨析（李煜「詞中之聖／詞中之帝」vs 辛棄疾「愛國詞人」）",
+    "uploadDate": "2026-09-08",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "詞家頭銜張冠李戴大陷阱！南唐後主李煜為亡國降臣，被王國維評為「詞中之帝」，後世尊為「詞中之聖」；南宋辛棄疾力主抗金北伐收復神州，為名震千古的「愛國詞人」！(B) 選項將兩人的稱號顛倒替換（張冠李戴），因此對話不適當！其餘(A)(C)(D)對兩人詞風、亡國/報國處境、名句引用完全吻合。",
+    "stem": "在「古畫動起來」展覽中，透過AI技術讓李煜、辛棄疾進行跨時代對話。依據兩人生平及作品的特色，下列對話內容，何者「不適當」？\n\n○ (A) 李煜：「稼軒居士，您知道嗎？後人讀詞，常說我前期的詞婉約清麗，而您則是擅長創作豪情萬千、氣勢雄渾的詞作。」\n○ (B) 辛棄疾：「閣下說的沒錯，您曾為國君，詞作都是真情流露，被稱為「愛國詞人」。我的詞作多為憂國傷時之作，被稱為「詞中之聖」。」\n○ (C) 李煜：「我以「亡國之痛」成就婉約詞的極致，而您則以「報國無門」寫出豪放詞的高峰。」\n○ (D) 辛棄疾：「舉例來說，您的作品虞美人以「春花秋月何時了，往事知多少」，表達對故國的懷念；而我的南鄉子 登京口北固亭有懷 則以「何處望神州？滿眼風光北固樓」抒發山河變色的慨嘆。」",
+    "answer": "(B) 辛棄疾：「閣下說的沒錯，您曾為國君，詞作都是真情流露，被稱為「愛國詞人」。我的詞作多為憂國傷時之作，被稱為「詞中之聖」。」",
+    "diagramUrl": "",
+    "solution": "- **(A)(C)(D) 對話皆適當**：李煜前期婉約清麗，以「亡國之痛」成婉約詞極致；辛棄疾豪邁雄渾，以「報國無門」成豪放詞高峰。\n- **(B) 不適當（正解）**：稱號張冠李戴！李煜為五代國君，降宋後抒發亡國血淚，被尊為**「詞中之帝／詞中之聖」**；辛棄疾一生抗金北伐，被譽為**「愛國詞人」**。選項將兩人稱號顛倒，選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-08"
+  },
+  {
+    "id": "q_chinese_xinqiji_doumou_rhetoric_012",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "修辭技巧辨析：辛棄疾〈南鄉子〉「兜鍪」借代 vs 譬喻",
+    "uploadDate": "2026-09-08",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "題幹「兜鍪」借代戰士。(A)五斗米借代官俸；(B)孤帆借代船隻；(C)「恰似」為譬喻（未用借代）；(D)桑梓借代家鄉。",
+    "stem": "辛棄疾南鄉子這闋詞中，以「兜鍪」借代為戰士。以下何者未使用相同的修辭技巧？\n\n○ (A) 吾不能為五斗米折腰\n○ (B) 孤帆遠影碧山盡\n○ (C) 恰似一江春水向東流\n○ (D) 令我生心憶桑梓。",
+    "answer": "(C) 恰似一江春水向東流",
+    "diagramUrl": "",
+    "solution": "- **題幹「兜鍪」**：借代戰士（修辭為**借代**）。\n- **(A) 借代**：「五斗米」借代微薄官俸。\n- **(B) 借代**：「孤帆」借代船隻。\n- **(C) 譬喻（正解）**：「恰似」為喻詞，將愁緒比作春水，為譬喻（**未用借代**），選 **(C)**。\n- **(D) 借代**：「桑梓」借代家鄉、故鄉。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-08"
+  },
+  {
+    "id": "q_chinese_youyou_polysemy_013",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "一詞多義辨析：辛棄疾名句「悠悠」與各文句涵義比較",
+    "uploadDate": "2026-09-08",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "「悠悠」多義：(A)憂思長久；(B)從容徐緩；(C)高遠、遙遠貌（正解）；(D)眾多凡俗（眾人之口）。",
+    "stem": "下列各項「悠悠」，何者是表示遙遠的意思？\n\n○ (A)「悠悠」我心\n○ (B)「悠悠」南行\n○ (C)「悠悠」蒼天\n○ (D) 杜「悠悠」之口。",
+    "answer": "(C)「悠悠」蒼天",
+    "diagramUrl": "",
+    "solution": "- **(A)** 憂思長久貌（《詩經》「悠悠我心」）。\n- **(B)** 從容徐緩、閒適慢行貌。\n- **(C) 正解**：高遠、遙遠貌（出自《詩經·黍離》「悠悠蒼天，此何人哉」），選 **(C)**。\n- **(D)** 眾多、凡俗貌（指世俗眾人之口）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-08"
+  },
+  {
+    "id": "q_chinese_word_meaning_evolution_014",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "詞語古今義與時空演變辨析（滾滾、千古、了了、風光）",
     "uploadDate": "2026-09-08",
     "mondayDate": "2026-09-07",
     "mondayDates": [
@@ -645,7 +717,7 @@ const INITIAL_SEED_DATA = [
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
     "mistakeNote": "(A)皆指翻湧紛擾貌（相同）；(B)流傳久遠／去世輓辭；(C)聰明／明白；(D)風景／榮耀。",
-    "stem": "詞語的意思有時會因應時空的不同而有所改變，下列「　」中的詞語，何組意思相同？\n\n○ (A) 黃沙「滾滾」／遠離「滾滾」紅塵\n○ (B)「千古」流傳／恭弔陳老太太「千古」\n○ (C) 小時「了了」／他對此事不甚「了了」\n○ (D)「風光」明媚／她在運動會上獨占「風光」",
+    "stem": "詞語的意思有時會因應時空的不同而有所改變，下列「　」中的詞語，何組意思相同？\n\n○ (A) 黃沙「滾滾」／遠離「滾滾」紅塵\n○ (B)「千古」流傳／恭弔陳老太太「千古」\n○ (C) 小時「了了」／他對此事不甚「了了」\n○ (D)「風光」明媚／她在運動會上獨占「風光」。",
     "answer": "(A) 黃沙「滾滾」／遠離「滾滾」紅塵",
     "diagramUrl": "",
     "solution": "- **(A) 意思相同（正解）**：皆指翻湧、紛擾繁盛貌，選 **(A)**。\n- **(B) 不同**：流傳久遠年代／哀悼死者之輓辭（去世）。\n- **(C) 不同**：聰明伶俐／明白清楚、理解。\n- **(D) 不同**：風景景緻／榮耀光彩體面。",
@@ -686,10 +758,14 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      const legacyV60 = localStorage.getItem('miley_wrong_questions_v60');
-      if (legacyV60 !== null) {
-        stored = legacyV60;
+      const legacyV61 = localStorage.getItem('miley_wrong_questions_v61');
+      if (legacyV61 !== null) {
+        stored = legacyV61;
       } else {
+        const legacyV60 = localStorage.getItem('miley_wrong_questions_v60');
+        if (legacyV60 !== null) {
+          stored = legacyV60;
+        } else {
         const legacyV59 = localStorage.getItem('miley_wrong_questions_v59');
         if (legacyV59 !== null) {
           stored = legacyV59;
