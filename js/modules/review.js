@@ -441,12 +441,25 @@ window.ReviewModule = {
       }
     }
 
-    // Interactive Fill-in-the-Blank Slot Converter for 【　　】
+    // Interactive Fill-in-the-Blank Slot Converter (Line-by-line & Question-Number Aware)
     let slotIndex = 0;
-    const interactiveStem = stemMain.replace(/【[　\s]*】/g, function() {
-      slotIndex++;
-      return `<span class="fill-in-box-wrapper">【<input type="text" class="fc-fill-in-input" data-slot="${slotIndex}" maxlength="4" placeholder="寫字" autocomplete="off" autocorrect="off">】</span>`;
+    const stemLines = stemMain.split('\n');
+    const processedLines = stemLines.map(line => {
+      // Never convert instruction / header lines into fill-in inputs
+      const isInstruction = /^\s*(【|請依|請在|請寫出|說明|注意事項)/.test(line);
+      if (isInstruction) return line;
+
+      // Extract item number if present (e.g. "2.", "8.", "10.")
+      const numMatch = line.match(/^\s*(\d+)[\.。、\s]/);
+      const qNum = numMatch ? numMatch[1] : '';
+
+      return line.replace(/【[　\s]*】/g, function() {
+        slotIndex++;
+        const qAttr = qNum ? `data-qnum="${qNum}"` : '';
+        return `<span class="fill-in-box-wrapper">【<input type="text" class="fc-fill-in-input" data-slot="${slotIndex}" ${qAttr} maxlength="4" placeholder="寫字" autocomplete="off" autocorrect="off">】</span>`;
+      });
     });
+    const interactiveStem = processedLines.join('\n');
 
     // 1. Render Top Stem Text
     window.katexUtils.renderText('fc-stem-text', interactiveStem);
@@ -497,11 +510,25 @@ window.ReviewModule = {
     const q = this.activeQuestions[this.currentIndex];
     const fillInputs = document.querySelectorAll('.fc-fill-in-input');
     if (fillInputs.length > 0 && q && q.answer) {
-      const answerChars = (q.answer.match(/【([^】]+)】/g) || []).map(s => s.replace(/【|】/g, '').trim());
+      // Build question number mapping (e.g. { '2': '鍪', '8': '悠', '9': '休', '10': '闋' })
+      const answerLines = q.answer.split('\n');
+      const numToCharMap = {};
+      answerLines.forEach(aLine => {
+        const nMatch = aLine.match(/^\s*(\d+)[\.。、\s]/);
+        const charMatch = aLine.match(/【([^】]+)】/);
+        if (nMatch && charMatch) {
+          numToCharMap[nMatch[1]] = charMatch[1].trim();
+        }
+      });
+
+      const fallbackChars = (q.answer.match(/【([^】]+)】/g) || []).map(s => s.replace(/【|】/g, '').trim());
+
       fillInputs.forEach((inp, idx) => {
         inp.disabled = true;
         const val = inp.value.trim();
-        const expected = answerChars[idx];
+        const qNum = inp.getAttribute('data-qnum');
+        const expected = (qNum && numToCharMap[qNum]) ? numToCharMap[qNum] : fallbackChars[idx];
+
         if (expected) {
           if (val && val === expected) {
             inp.classList.add('input-correct');

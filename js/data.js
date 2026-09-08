@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v59';
+const STORAGE_KEY = 'miley_wrong_questions_v60';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -597,7 +597,7 @@ const INITIAL_SEED_DATA = [
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
     "mistakeNote": "【國字注音常考陷阱筆記】：\n2. 兜【鍪】（矛＋攴＋金，古代頭盔）；\n8. 【悠】然神往（攸＋心，神思嚮往，非「幽」）；\n9. 【休】戚與共（休是喜慶，戚是憂患，非「修」）；\n10. 一【闋】詞（門＋癸，計算詞的單位，切勿誤寫為「闕」）！",
-    "stem": "【國字注音寫字填空測驗】\n請依題幹注音在【　】中寫出正確國字（可於框內鍵入，或開啟上方「草稿區」手寫練習）：\n\n2. 兜 ㄇㄠˋ 【　　】\n8. 一 ㄧㄡ 然神往 【　　】\n9. ㄒㄧㄡ 戚與共 【　　】\n10. 一 ㄑㄩㄝˋ 詞 【　　】",
+    "stem": "【國字注音寫字填空測驗】\n請依題幹注音在各題括號中寫出正確國字（可於框內鍵入，或點擊上方「草稿區」手寫練習）：\n\n2. 兜 ㄇㄠˋ 【　　】\n8. 一 ㄧㄡ 然神往 【　　】\n9. ㄒㄧㄡ 戚與共 【　　】\n10. 一 ㄑㄩㄝˋ 詞 【　　】",
     "answer": "2. 【鍪】（兜鍪）\n8. 【悠】（悠然神往）\n9. 【休】（休戚與共）\n10. 【闋】（一闋詞）",
     "diagramUrl": "assets/questions/q_chinese_fill_in_characters_009_test.png",
     "solution": "![原考卷紅字答案照](assets/questions/q_chinese_fill_in_characters_009_answer.png)\n\n1. **各題正確國字、字形結構與字義詳解**：\n- **2. 兜 ㄇㄠˋ ➔ 【鍪】**\n  - **結構**：金部（上「矛＋攴」、下「金」）。\n  - **讀音**：ㄇㄠˊ（又音 ㄇㄠˋ）。\n  - **釋義與典故**：「兜鍪」為古代作戰時所戴的金屬頭盔；出自辛棄疾〈南鄉子·登京口北固亭有懷〉：「年少萬兜鍪，坐斷東南戰未休」，此處借指全副武裝的英勇戰士或大軍。\n  - **防錯提醒**：上半部是「敄」（矛＋攴），下半部是「金」，筆畫繁多，切勿漏寫或誤寫為「矛」！\n\n- **8. 一 ㄧㄡ 然神往 ➔ 【悠】**\n  - **結構**：心部（上「攸」、下「心」）。\n  - **讀音**：ㄧㄡ。\n  - **釋義**：「悠然神往」形容心神嚮往、思緒馳往的樣子。\n  - **防錯提醒**：上半部是「攸」（人＋攵），下半部是「心」，切勿誤寫為「幽」。\n\n- **9. ㄒㄧㄡ 戚與共 ➔ 【休】**\n  - **結構**：人部（亻＋木）。\n  - **讀音**：ㄒㄧㄡ。\n  - **釋義**：「休戚與共」形容關係極為密切，彼此吉凶禍福共同承擔。「休」代表吉祥、喜慶、福祉；「戚」代表憂傷、禍患。\n  - **防錯提醒**：注意「休（吉祥喜慶）」切勿誤寫為「修」！\n\n- **10. 一 ㄑㄩㄝˋ 詞 ➔ 【闋】**\n  - **結構**：門部（門 ＋ **癸**）。\n  - **讀音**：ㄑㄩㄝˋ（去聲/第四聲）。\n  - **釋義**：專指**計算歌曲或詞的單位（量詞）**，如「一闋詞」；亦指詞的段落（如「上闋」、「下闋」）。\n  - **防錯提醒【段考必考重點】**：\n    - 正字為門部＋**癸**的**「闋」**！\n    - **絕對不可寫成門部＋欮的「闕」**！「闕」本義為天子宮殿門樓（宮闕、城闕）或缺點、脫漏（闕文、拾遺補闕），非歌曲計量單位！\n\n2. **考前速查必背對照表**：\n| 題號 | 題目注音詞語 | 正確國字（紅色答案） | 部首偏旁 | 核心意涵與易錯叮嚀 |\n| :---: | :--- | :---: | :---: | :--- |\n| **2** | 兜 ㄇㄠˋ | **鍪** | 金部 | 古代頭盔，借代戰士大軍（矛＋攴＋金） |\n| **8** | 一 ㄧㄡ 然神往 | **悠** | 心部 | 神思嚮往（攸＋心，非「幽」） |\n| **9** | ㄒㄧㄡ 戚與共 | **休** | 人部 | 休是喜慶吉祥、戚是憂患禍害（非「修」） |\n| **10** | 一 ㄑㄩㄝˋ 詞 | **闋** | 門部 | 計算詞的單位（門＋癸，切勿寫成「闕」） |",
@@ -686,13 +686,18 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      const legacyV58 = localStorage.getItem('miley_wrong_questions_v58');
-      if (legacyV58 !== null) {
-        stored = legacyV58;
+      const legacyV59 = localStorage.getItem('miley_wrong_questions_v59');
+      if (legacyV59 !== null) {
+        stored = legacyV59;
       } else {
-        const legacyV57 = localStorage.getItem('miley_wrong_questions_v57');
-        if (legacyV57 !== null) {
-          stored = legacyV57;
+        const legacyV58 = localStorage.getItem('miley_wrong_questions_v58');
+        if (legacyV58 !== null) {
+          stored = legacyV58;
+        } else {
+          const legacyV57 = localStorage.getItem('miley_wrong_questions_v57');
+          if (legacyV57 !== null) {
+            stored = legacyV57;
+          }
         }
       }
     }
