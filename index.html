@@ -43,12 +43,12 @@
         });
       }
       // Force reload if legacy cached version is active
-      var currVer = localStorage.getItem('miley_purge_v54_final');
+      var currVer = localStorage.getItem('miley_purge_v55_final');
       if (!currVer) {
-        localStorage.setItem('miley_purge_v54_final', 'true');
-        if (window.location.search.indexOf('v=54') === -1) {
+        localStorage.setItem('miley_purge_v55_final', 'true');
+        if (window.location.search.indexOf('v=55') === -1) {
           console.log('Purging legacy browser cache and reloading...');
-          window.location.search = '?v=54_force_purge&t=' + Date.now();
+          window.location.search = '?v=55_force_purge&t=' + Date.now();
         }
       }
     })();
@@ -75,7 +75,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=107_song_ci_quotes">
+  <link rel="stylesheet" href="styles.css?v=108_font_size_controls_and_verse_table">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -167,6 +167,20 @@
             </div>
           </div>
           <div class="header-right">
+            <!-- Font Size Scaling Controller (調整字體大小) -->
+            <div class="font-size-control-wrapper" id="font-size-control-wrapper">
+              <div class="font-size-badge-pill" title="調整字體大小 (專門放大/縮小題目與解析文字，不影響版面)">
+                <span class="font-size-label"><i class="fa-solid fa-font"></i> 字體</span>
+                <button type="button" class="btn-font-scale" id="btn-font-decrease" title="字體縮小 (A-)">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <span class="font-scale-current" id="font-scale-indicator">100%</span>
+                <button type="button" class="btn-font-scale" id="btn-font-increase" title="字體放大 (A+)">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+
             <div class="wisdom-popover-wrapper">
               <button id="btn-open-wisdom-modal" class="wisdom-nav-btn" title="擊敗錯題怪解鎖的名言與心理學小知識">
                 <i class="fa-solid fa-lightbulb"></i>
@@ -509,6 +523,13 @@
                   </div>
 
                   <div class="review-top-actions">
+                    <!-- Inline Font Size Quick Adjuster -->
+                    <div class="review-font-control-inline" title="快速調整題目與解析字體大小">
+                      <button type="button" id="btn-review-font-dec" class="btn-secondary font-quick-btn" title="題目字體縮小"><i class="fa-solid fa-font" style="font-size: 0.72rem;"></i> -</button>
+                      <span id="review-font-indicator" class="review-font-tag">100%</span>
+                      <button type="button" id="btn-review-font-inc" class="btn-secondary font-quick-btn" title="題目字體放大"><i class="fa-solid fa-font" style="font-size: 1.05rem;"></i> +</button>
+                    </div>
+
                     <button id="btn-toggle-fullscreen" class="btn-accent-sm" title="切換全螢幕滿版大畫面">
                       <i class="fa-solid fa-expand"></i> 全螢幕專注大畫面
                     </button>
@@ -978,18 +999,18 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=54"></script>
-  <script src="js/utils/katex_render.js?v=54"></script>
-  <script src="js/utils/pdf_export.js?v=54"></script>
-  <script src="js/modules/upload.js?v=54"></script>
-  <script src="js/modules/archive.js?v=54"></script>
-  <script src="js/modules/review.js?v=54"></script>
-  <script src="js/modules/sprint.js?v=54"></script>
-  <script src="js/modules/analytics.js?v=54"></script>
-  <script src="js/modules/calendar.js?v=54"></script>
-  <script src="js/modules/wisdom.js?v=54"></script>
-  <script src="js/modules/card.js?v=54"></script>
-  <script src="js/app.js?v=54"></script>
+  <script src="js/data.js?v=55"></script>
+  <script src="js/utils/katex_render.js?v=55"></script>
+  <script src="js/utils/pdf_export.js?v=55"></script>
+  <script src="js/modules/upload.js?v=55"></script>
+  <script src="js/modules/archive.js?v=55"></script>
+  <script src="js/modules/review.js?v=55"></script>
+  <script src="js/modules/sprint.js?v=55"></script>
+  <script src="js/modules/analytics.js?v=55"></script>
+  <script src="js/modules/calendar.js?v=55"></script>
+  <script src="js/modules/wisdom.js?v=55"></script>
+  <script src="js/modules/card.js?v=55"></script>
+  <script src="js/app.js?v=55"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => {

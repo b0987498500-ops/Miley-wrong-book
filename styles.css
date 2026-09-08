@@ -42,6 +42,7 @@
   --radius-lg: 20px;
   --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --content-font-scale: 1;
 }
 
 /* Light Theme Variables */
@@ -4485,4 +4486,132 @@ body.light-theme .fc-nav-arrow:hover {
   0% { transform: scale(1); filter: drop-shadow(0 0 4px #f59e0b); }
   100% { transform: scale(1.15); filter: drop-shadow(0 0 12px #f59e0b); }
 }
+
+/* ==================== FONT SIZE SCALING CONTROLS (字體大小調節器) ==================== */
+.font-size-control-wrapper {
+  position: relative;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.font-size-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(79, 70, 229, 0.25));
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  user-select: none;
+}
+
+.font-size-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #a5b4fc;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: 4px;
+}
+
+.btn-font-scale {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-font-scale:hover {
+  background: var(--accent-primary);
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+.font-scale-current {
+  font-size: 0.82rem;
+  font-weight: 800;
+  min-width: 44px;
+  text-align: center;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 2px 6px;
+  border-radius: 12px;
+}
+
+/* Inline Font Control in Review Toolbar */
+.review-font-control-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.font-quick-btn {
+  padding: 4px 8px !important;
+  font-size: 0.82rem !important;
+  min-width: 28px;
+  height: 28px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.review-font-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-warning);
+  min-width: 40px;
+  text-align: center;
+}
+
+/* Scaled Typography for Stem, Options, Answers, Notes, and Cards */
+.stem-katex-text,
+.options-katex-text,
+#fc-stem-text,
+#fc-options-text,
+.card-stem-text,
+.card-stem,
+.solution-content,
+.mistake-note-content,
+#fc-solution-content,
+#fc-mistake-content,
+.katex-rendered-preview,
+.flip-card-front,
+.flip-card-back,
+.card-single-text,
+.q-stem-preview,
+.solution-text-box,
+.fc-solution-text,
+.table-reading-view,
+.fc-step-item,
+.fc-explanation-box {
+  font-size: calc(1rem * var(--content-font-scale, 1)) !important;
+  line-height: calc(1.75 * var(--content-font-scale, 1)) !important;
+}
+
+/* KaTeX formula font adjustments */
+.stem-katex-text .katex,
+.options-katex-text .katex,
+#fc-stem-text .katex,
+#fc-options-text .katex,
+#fc-solution-content .katex {
+  font-size: calc(1.15em * var(--content-font-scale, 1)) !important;
+}
+
 

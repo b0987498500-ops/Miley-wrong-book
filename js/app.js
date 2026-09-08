@@ -18,6 +18,7 @@ class App {
       this.bindBrandHomeClick();
       this.renderWeeklyMondayBar();
       this.bindThemeToggle();
+      this.bindFontSizeControls();
       this.bindResetData();
       this.updateSidebarCounts();
       this.startDailyUpdateTimer();
@@ -332,6 +333,73 @@ class App {
       const isLight = document.body.classList.contains('light-theme');
       toggleBtn.innerHTML = isLight ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
     });
+  }
+
+  bindFontSizeControls() {
+    const FONT_STORAGE_KEY = 'miley_font_scale_level';
+    // Font scale levels: 100% (標準), 115% (舒適中大), 130% (清晰大字), 145% (特大), 160% (超大)
+    const levels = [
+      { scale: 1.0, label: '100%' },
+      { scale: 1.15, label: '115%' },
+      { scale: 1.30, label: '130%' },
+      { scale: 1.45, label: '145%' },
+      { scale: 1.60, label: '160%' }
+    ];
+
+    let currentIdx = 0;
+    const savedLevel = localStorage.getItem(FONT_STORAGE_KEY);
+    if (savedLevel !== null && !isNaN(parseInt(savedLevel, 10))) {
+      currentIdx = Math.max(0, Math.min(levels.length - 1, parseInt(savedLevel, 10)));
+    }
+
+    const applyFontScale = (idx) => {
+      currentIdx = Math.max(0, Math.min(levels.length - 1, idx));
+      const lvl = levels[currentIdx];
+      document.documentElement.style.setProperty('--content-font-scale', lvl.scale);
+      localStorage.setItem(FONT_STORAGE_KEY, currentIdx.toString());
+
+      // Update UI indicators
+      const headerIndicator = document.getElementById('font-scale-indicator');
+      if (headerIndicator) headerIndicator.innerText = lvl.label;
+
+      const reviewIndicator = document.getElementById('review-font-indicator');
+      if (reviewIndicator) reviewIndicator.innerText = lvl.label;
+    };
+
+    // Apply initial font scale immediately
+    applyFontScale(currentIdx);
+
+    // Top Header Buttons
+    const btnInc = document.getElementById('btn-font-increase');
+    const btnDec = document.getElementById('btn-font-decrease');
+    if (btnInc) {
+      btnInc.addEventListener('click', (e) => {
+        e.stopPropagation();
+        applyFontScale(currentIdx + 1);
+      });
+    }
+    if (btnDec) {
+      btnDec.addEventListener('click', (e) => {
+        e.stopPropagation();
+        applyFontScale(currentIdx - 1);
+      });
+    }
+
+    // Review Toolbar Inline Buttons
+    const btnReviewInc = document.getElementById('btn-review-font-inc');
+    const btnReviewDec = document.getElementById('btn-review-font-dec');
+    if (btnReviewInc) {
+      btnReviewInc.addEventListener('click', (e) => {
+        e.stopPropagation();
+        applyFontScale(currentIdx + 1);
+      });
+    }
+    if (btnReviewDec) {
+      btnReviewDec.addEventListener('click', (e) => {
+        e.stopPropagation();
+        applyFontScale(currentIdx - 1);
+      });
+    }
   }
 
   bindResetData() {
