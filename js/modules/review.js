@@ -116,7 +116,7 @@ window.ReviewModule = {
 
       const btn = document.getElementById('btn-toggle-fullscreen');
       if (btn) {
-        btn.innerHTML = isFullscreen ? '<i class="fa-solid fa-compress"></i> 退出全螢幕' : '<i class="fa-solid fa-expand"></i> 全螢幕專注大畫面';
+        btn.innerHTML = isFullscreen ? '<i class="fa-solid fa-compress"></i> 退出全螢幕' : '<i class="fa-solid fa-expand"></i> 全螢幕';
       }
     });
 
@@ -126,7 +126,7 @@ window.ReviewModule = {
         document.body.classList.remove('fullscreen-review-mode');
         const btn = document.getElementById('btn-toggle-fullscreen');
         if (btn) {
-          btn.innerHTML = '<i class="fa-solid fa-expand"></i> 全螢幕專注大畫面';
+          btn.innerHTML = '<i class="fa-solid fa-expand"></i> 全螢幕';
         }
       }
     });
@@ -173,6 +173,13 @@ window.ReviewModule = {
     document.getElementById('scratch-close-btn')?.addEventListener('click', () => self.closeScratchpad());
     document.getElementById('scratch-clear-btn')?.addEventListener('click', () => self.clearScratchpad());
     document.getElementById('scratch-undo-btn')?.addEventListener('click', () => self.undoScratchpad());
+
+    // Similar Question Interactive Challenge Modal Actions
+    document.getElementById('btn-generate-similar-q')?.addEventListener('click', () => self.openSimilarQuestionModal());
+    document.getElementById('btn-close-similar-modal')?.addEventListener('click', () => self.closeSimilarQuestionModal());
+    document.getElementById('btn-dismiss-similar-question')?.addEventListener('click', () => self.dismissSimilarQuestion());
+    document.getElementById('btn-refresh-similar-question')?.addEventListener('click', () => self.refreshSimilarQuestion());
+    document.getElementById('btn-add-similar-to-wrong-book')?.addEventListener('click', () => self.addSimilarQuestionToWrongBook());
   },
 
   motivationalQuotes: [
@@ -687,5 +694,455 @@ window.ReviewModule = {
     } else if (this.scratchHistory.length === 1) {
       this.scratchCtx.clearRect(0, 0, this.scratchCanvas.width, this.scratchCanvas.height);
     }
+  },
+
+  /* ==================== SIMILAR QUESTION INTERACTIVE CHALLENGE MODULE ==================== */
+  currentSimilarQuestion: null,
+  similarQuestionAnswered: false,
+  similarQuestionAdded: false,
+  similarQuestionOffset: 0,
+
+  openSimilarQuestionModal: function() {
+    const q = this.activeQuestions[this.currentIndex];
+    if (!q) {
+      this.showToast('⚠️ 請先選擇上方科目或週次進入錯題卡片！');
+      return;
+    }
+
+    this.similarQuestionOffset = 0;
+    this.generateAndShowSimilarQuestion(q);
+    
+    const modal = document.getElementById('modal-similar-question');
+    if (modal) {
+      modal.classList.remove('hidden');
+    }
+  },
+
+  closeSimilarQuestionModal: function() {
+    document.getElementById('modal-similar-question')?.classList.add('hidden');
+  },
+
+  dismissSimilarQuestion: function() {
+    this.closeSimilarQuestionModal();
+    this.showToast('✨ 太棒了！本題觀念練習完畢，繼續衝刺！');
+  },
+
+  refreshSimilarQuestion: function() {
+    const q = this.activeQuestions[this.currentIndex];
+    if (!q) return;
+    this.similarQuestionOffset++;
+    this.generateAndShowSimilarQuestion(q);
+    this.showToast('🔄 已為您更換另一題同觀念類似題！');
+  },
+
+  generateAndShowSimilarQuestion: function(q) {
+    this.similarQuestionAnswered = false;
+    this.similarQuestionAdded = false;
+
+    const sq = this.getSimilarQuestionData(q, this.similarQuestionOffset);
+    this.currentSimilarQuestion = sq;
+    this.renderSimilarQuestionUI(sq);
+  },
+
+  renderSimilarQuestionUI: function(sq) {
+    // 1. Concept Tag
+    const conceptEl = document.getElementById('sq-modal-concept');
+    if (conceptEl) conceptEl.innerText = sq.concept || '核心觀念自我強化';
+
+    // 2. Question Stem
+    window.katexUtils.renderText('sq-stem-text', sq.stem);
+
+    // 3. Reset Options Grid
+    const optGrid = document.getElementById('sq-options-grid');
+    if (optGrid) {
+      optGrid.innerHTML = '';
+      sq.options.forEach((optText, idx) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'similar-opt-btn';
+        btn.innerHTML = `<span style="font-weight: 700; color: var(--accent-warning); min-width: 28px;">${['(A)', '(B)', '(C)', '(D)'][idx]}</span> <span>${optText}</span>`;
+        btn.addEventListener('click', () => this.handleSimilarOptionClick(idx));
+        optGrid.appendChild(btn);
+      });
+    }
+
+    // 4. Reset Solution Box
+    const solBox = document.getElementById('sq-solution-box');
+    if (solBox) solBox.classList.add('hidden');
+
+    const resultBanner = document.getElementById('sq-result-banner');
+    if (resultBanner) {
+      resultBanner.className = 'sq-result-banner';
+      resultBanner.innerHTML = '';
+    }
+
+    // 5. Reset Footer Buttons
+    const addBtn = document.getElementById('btn-add-similar-to-wrong-book');
+    if (addBtn) {
+      addBtn.innerHTML = '<i class="fa-solid fa-bookmark"></i> 加入錯題本';
+      addBtn.classList.remove('btn-secondary');
+      addBtn.classList.add('btn-primary', 'btn-accent-glow');
+    }
+  },
+
+  handleSimilarOptionClick: function(chosenIdx) {
+    if (this.similarQuestionAnswered) return;
+    this.similarQuestionAnswered = true;
+
+    const sq = this.currentSimilarQuestion;
+    if (!sq) return;
+
+    const optButtons = document.querySelectorAll('#sq-options-grid .similar-opt-btn');
+    optButtons.forEach(btn => btn.disabled = true);
+
+    const isCorrect = (chosenIdx === sq.correctIndex);
+
+    // Style the chosen option
+    if (optButtons[chosenIdx]) {
+      optButtons[chosenIdx].classList.add(isCorrect ? 'opt-correct' : 'opt-incorrect');
+    }
+
+    // Always highlight the correct option
+    if (!isCorrect && optButtons[sq.correctIndex]) {
+      optButtons[sq.correctIndex].classList.add('opt-correct');
+    }
+
+    // Result banner
+    const resultBanner = document.getElementById('sq-result-banner');
+    if (resultBanner) {
+      if (isCorrect) {
+        resultBanner.className = 'sq-result-banner banner-correct';
+        resultBanner.innerHTML = '<i class="fa-solid fa-circle-check" style="font-size: 1.2rem;"></i> 🎉 太棒了，完全答對！核心觀念已透徹掌握！';
+        if (typeof confetti === 'function') {
+          confetti({
+            particleCount: 50,
+            spread: 60,
+            origin: { y: 0.6 }
+          });
+        }
+      } else {
+        resultBanner.className = 'sq-result-banner banner-incorrect';
+        resultBanner.innerHTML = '<i class="fa-solid fa-circle-xmark" style="font-size: 1.2rem;"></i> 💡 差一點點！這題有小陷阱，別灰心，快看下方詳解！';
+      }
+    }
+
+    // Reveal Solution
+    const solBox = document.getElementById('sq-solution-box');
+    if (solBox) solBox.classList.remove('hidden');
+
+    const ansEl = document.getElementById('sq-correct-answer');
+    if (ansEl) ansEl.innerText = sq.correctAnswer;
+
+    window.katexUtils.renderText('sq-explanation-text', sq.explanation);
+
+    // Scroll to solution smoothly
+    solBox?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  },
+
+  addSimilarQuestionToWrongBook: function() {
+    if (this.similarQuestionAdded) {
+      this.showToast('ℹ️ 此類似題剛才已成功加入錯題本囉！');
+      return;
+    }
+
+    const sq = this.currentSimilarQuestion;
+    if (!sq) return;
+
+    const currentQ = this.activeQuestions[this.currentIndex] || {};
+
+    const fullStem = sq.stem + '\n\n' + sq.options.map((opt, i) => `${['(A)', '(B)', '(C)', '(D)'][i]} ${opt}`).join('\n');
+
+    window.dataManager.addQuestion({
+      examPeriod: currentQ.examPeriod || '一段',
+      subject: sq.subject || currentQ.subject || '國文',
+      errorReason: '觀念不懂',
+      concept: sq.concept || currentQ.concept || '核心觀念強化',
+      stem: fullStem,
+      answer: sq.correctAnswer,
+      solution: sq.explanation,
+      mistakeNote: sq.mistakeNote || (`【類似題自主練習】${sq.concept}：${sq.correctAnswer}`),
+      isGuessedOrUnstable: true,
+      uploadDate: window.dataManager.getTodayDateStr()
+    });
+
+    this.similarQuestionAdded = true;
+
+    // Refresh app views
+    if (window.app) {
+      if (typeof window.app.renderWeeklyMondayBar === 'function') window.app.renderWeeklyMondayBar();
+      if (typeof window.app.updateSidebarCounts === 'function') window.app.updateSidebarCounts();
+      if (typeof window.app.renderDashboardStats === 'function') window.app.renderDashboardStats();
+    }
+
+    const addBtn = document.getElementById('btn-add-similar-to-wrong-book');
+    if (addBtn) {
+      addBtn.innerHTML = '<i class="fa-solid fa-check"></i> 已加入錯題本';
+      addBtn.classList.remove('btn-accent-glow');
+    }
+
+    this.showToast('🎉 已成功將此類似題加入本週錯題本！可在清單中進行複習。');
+    setTimeout(() => {
+      this.closeSimilarQuestionModal();
+    }, 1200);
+  },
+
+  /* Curated Similar Question Generator Pool */
+  getSimilarQuestionData: function(q, offset = 0) {
+    const concept = (q.concept || '').toLowerCase();
+    const stem = (q.stem || '').toLowerCase();
+    const subject = q.subject || '國文';
+
+    // 1. 闋與闕 / 詞的體制
+    if (concept.includes('闋') || concept.includes('闕') || concept.includes('體制') || stem.includes('闋') || stem.includes('闕')) {
+      const bank = [
+        {
+          concept: '國文 - 詞的體制、闋與闕的形音義分辨、詞牌與詞題',
+          subject: '國文',
+          stem: '關於宋詞體制與文字用詞，下列敘述何者完全正確？',
+          options: [
+            '詞以「闕」為計算篇數或片數的單位，例如「一闕詞」為最正統寫法',
+            '「闋」本義為樂曲終止，引申為歌曲一首或詞的一篇、上半闋或下半闋',
+            '詞牌名必須與詞的內容題材完全相符，不可偏離',
+            '詞的押韻規則比律詩更嚴格，全首詞絕對不能換韻'
+          ],
+          correctIndex: 1,
+          correctAnswer: '(B) 「闋」本義為樂曲終止，引申為歌曲一首或詞的一篇、上半闋或下半闋',
+          explanation: '1. **正字與量詞分辨**：\n計算詞的篇數與段落，正字為「**闋**」（門部，音ㄑㄩㄝˋ），例如「一闋詞」、「上闋」、「下闋」。「一闕詞」為常見訛誤通假字（「闕」本指宮殿門樓或缺漏）。\n2. **詞牌與詞題**：\n「詞牌」是曲調與格律格式（如《念奴嬌》），「詞題」才是具體內容（如《赤壁懷古》），兩者不一定相關。\n3. **押韻規定**：\n律詩多一韻到底，詞則依詞牌曲調允許平仄互換押韻（如《菩薩蠻》）。故選 **(B)**。',
+          mistakeNote: '正字為「闋」（門部，樂終），「闕」是宮闕或缺漏！'
+        },
+        {
+          concept: '國文 - 「闋」與「闕」字義精準辨析',
+          subject: '國文',
+          stem: '下列文句中的「闋」與「闕」字，何者使用完全正確？',
+          options: [
+            '他在台上深情朗誦了一闕辛棄疾的詞作',
+            '紫禁城宮闋巍峨，氣勢磅礡壯麗',
+            '《水調歌頭》上闋寫中秋飲酒賞月，下闋抒發思親懷抱',
+            '古代臣子入朝晉見，須於宮闋外肅立恭候'
+          ],
+          correctIndex: 2,
+          correctAnswer: '(C) 《水調歌頭》上闋寫中秋飲酒賞月，下闋抒發思親懷抱',
+          explanation: '1. (A) 詞的計量單位應作「一**闋**」。\n2. (B)、(D) 宮殿門樓城牆應作「宮**闕**」（門部闕）。\n3. (C) 詞的上下分段正字作「上**闋**」、「下**闋**」（或稱上片、下片），使用完全正確！選 **(C)**。',
+          mistakeNote: '「上闋/下闋」、「一闋詞」用「闋」；「宮闕」、「城闕」、「付之闕如」用「闕」！'
+        }
+      ];
+      return bank[offset % bank.length];
+    }
+
+    // 2. 李煜與辛棄疾 / 詞風
+    if (concept.includes('李煜') || concept.includes('辛棄疾') || concept.includes('詞風') || stem.includes('李煜') || stem.includes('辛棄疾')) {
+      const bank = [
+        {
+          concept: '國文 - 南唐李煜與南宋辛棄疾詞風及境遇差異',
+          subject: '國文',
+          stem: '南唐後主李煜與南宋辛棄疾皆為詞壇名家，關於兩人詞風與身世境遇之比較，下列何者正確？',
+          options: [
+            '李煜詞風始終蒼涼悲壯，充滿抗敵報國之壯志',
+            '辛棄疾為豪放派代表，詞中常抒發抗金救國之抱負與壯志難酬的悲憤',
+            '辛棄疾詞風以柔美婉約著稱，從不提及軍旅兵戈',
+            '李煜因亡國入宋後，詞作題材更加偏向宮廷享樂生活'
+          ],
+          correctIndex: 1,
+          correctAnswer: '(B) 辛棄疾為豪放派代表，詞中常抒發抗金救國之抱負與壯志難酬的悲憤',
+          explanation: '1. **李煜**：前後期風格截然不同。亡國前描寫江南宮廷奢靡生活，風格柔靡綺麗；亡國降宋後身為階下囚，詞風轉為深沉悲愴，血淚交織（如「剪不斷，理還亂」）。\n2. **辛棄疾**：南宋豪放派巨擘，力主抗金北伐，作品題材廣泛，豪邁悲壯，常用軍事典故（如「醉裡挑燈看劍，夢回吹角連營」）。故選 **(B)**。',
+          mistakeNote: '李煜由奢入悲，辛棄疾豪放報國、壯志難酬！'
+        },
+        {
+          concept: '國文 - 豪放派與婉約派詞風辨析',
+          subject: '國文',
+          stem: '宋代詞風分為「豪放派」與「婉約派」，下列詞人配對與代表風格何者完全正確？',
+          options: [
+            '蘇軾、辛棄疾 —— 婉約派代表，擅長書寫深閨離愁',
+            '柳永、李清照 —— 豪放派代表，常以北伐抗戰入詞',
+            '辛棄疾 —— 豪放派，詞風激昂慷慨，氣勢磅礡',
+            '周邦彥 —— 豪放派，詞風縱放不羈'
+          ],
+          correctIndex: 2,
+          correctAnswer: '(C) 辛棄疾 —— 豪放派，詞風激昂慷慨，氣勢磅礡',
+          explanation: '1. 蘇軾、辛棄疾並稱「蘇辛」，為**豪放派**代表。\n2. 柳永、李清照、周邦彥、晏殊為**婉約派**代表。\n3. 故正確者為 **(C)**。',
+          mistakeNote: '豪放派：蘇軾、辛棄疾；婉約派：柳永、李清照、周邦彥！'
+        }
+      ];
+      return bank[offset % bank.length];
+    }
+
+    // 3. 近體詩與詞比較
+    if (concept.includes('近體詩') || concept.includes('律詩') || concept.includes('絕句') || concept.includes('長短句')) {
+      const bank = [
+        {
+          concept: '國文 - 近體詩（律詩、絕句）與詞之韻律、句數與體制綜合比較',
+          subject: '國文',
+          stem: '比較近體詩（唐詩）與宋詞的文學體制，下列何者說明完全正確？',
+          options: [
+            '律詩與詞每句字數皆必須完全整齊一致',
+            '詞又稱「長短句」或「詩餘」，依詞牌規定字數與平仄，可視詞調換韻',
+            '律詩首聯與尾聯必須強制嚴格對仗',
+            '詞調名稱（詞牌）即為本首詞唯一不可變更的抒情主題'
+          ],
+          correctIndex: 1,
+          correctAnswer: '(B) 詞又稱「長短句」或「詩餘」，依詞牌規定字數與平仄，可視詞調換韻',
+          explanation: '1. (A) 律詩字數整齊（五言或七言），詞每句字數依詞牌長短不齊，故名長短句。\n2. (B) 正確！詞依詞牌填詞，可依調換韻。\n3. (C) 律詩必須對仗的是「頷聯（三四句）」與「頸聯（五六句）」，首聯與尾聯通常不對仗。\n4. (D) 詞牌僅規定曲調格式，內容由詞題或作者自定。故選 **(B)**。',
+          mistakeNote: '律詩字數整齊＋頷頸對仗＋一韻到底；詞長短句＋依調填詞＋可換韻！'
+        }
+      ];
+      return bank[offset % bank.length];
+    }
+
+    // 4. 三角形重心與內心
+    if (concept.includes('重心') || concept.includes('內心') || concept.includes('外心') || stem.includes('重心') || stem.includes('內心')) {
+      const bank = [
+        {
+          concept: '數學 - 三角形重心與內心之面積性質與比值計算',
+          subject: '數學',
+          stem: '$\\triangle ABC$ 中，$\\overline{AB} = 6$、$\\overline{BC} = 8$、$\\overline{AC} = 10$。若 $G$ 為重心，$I$ 為內心，則 $\\triangle BCG$ 與 $\\triangle ACI$ 的面積比為何？',
+          options: [
+            '4 : 5',
+            '1 : 1',
+            '5 : 4',
+            '3 : 5'
+          ],
+          correctIndex: 0,
+          correctAnswer: '(A) 4 : 5',
+          explanation: '1. **重心面積性質**：\n重心 $G$ 將三角形三等分，故 $\\triangle BCG = \\frac{1}{3} \\triangle ABC$。\n2. **內心面積性質**：\n內心到三邊垂直距離均為內切圓半徑 $r$。周長 $= 6 + 8 + 10 = 24$。\n小三角形面積與對應底邊長成正比：\n$$\\triangle ACI = \\frac{\\overline{AC}}{\\text{周長}} \\times \\triangle ABC = \\frac{10}{24} \\triangle ABC = \\frac{5}{12} \\triangle ABC$$\n3. **比值計算**：\n$$\\triangle BCG : \\triangle ACI = \\frac{1}{3} : \\frac{5}{12} = \\frac{4}{12} : \\frac{5}{12} = 4 : 5$$\n故選 **(A)**。',
+          mistakeNote: '重心面積均分為 1/3；內心小三角形面積與底邊長成正比！'
+        },
+        {
+          concept: '數學 - 三角形重心與三中線面積分割性質',
+          subject: '數學',
+          stem: '若 $\\triangle ABC$ 之面積為 36，$G$ 為重心，$D, E, F$ 分別為三邊中點，則四邊形 $AFGE$ 的面積為何？',
+          options: [
+            '9',
+            '12',
+            '18',
+            '6'
+          ],
+          correctIndex: 1,
+          correctAnswer: '(B) 12',
+          explanation: '1. 重心 $G$ 與三頂點及三邊中點連線，將原三角形等分為 6 個面積相等的小三角形：\n   $$\\text{每一小塊面積} = \\frac{36}{6} = 6$$\n2. 四邊形 $AFGE$ 由 $\\triangle AFG$ 與 $\\triangle AEG$ 兩個小三角形組成：\n   $$\\text{面積} = 6 + 6 = 12$$\n故正確答案選 **(B) 12**。',
+          mistakeNote: '三中線交於重心，將三角形面積六等分！四邊形佔其中兩小塊（1/3）！'
+        }
+      ];
+      return bank[offset % bank.length];
+    }
+
+    // 5. 不等式當選門檻
+    if (concept.includes('不等式') || concept.includes('當選') || concept.includes('門檻') || stem.includes('當選')) {
+      const bank = [
+        {
+          concept: '數學 - 一元一次不等式應用：複數候選人確定當選之最低得票數門檻',
+          subject: '數學',
+          stem: '某校舉辦學生自治會代表選舉，共有 6 位候選人角逐 3 個當選名額。本次開出的有效票共計 16000 張，若不考慮廢票，候選人至少需獲得多少票才能「確定當選」？',
+          options: [
+            '4000 票',
+            '4001 票',
+            '5334 票',
+            '2667 票'
+          ],
+          correctIndex: 1,
+          correctAnswer: '(B) 4001 票',
+          explanation: '1. **核心公式**：\n最低確定當選門檻票數：\n$$x > \\frac{\\text{總有效票數}}{\\text{應選名額 } N + 1}$$\n2. 本題應選 3 人，最激烈平手情境為 4 人平分選票：\n$$\\frac{16000}{3 + 1} = \\frac{16000}{4} = 4000 \\text{ 票}$$\n3. 若得 4000 票，可能 4 人同票而無法保證在前 3 名，因此必須嚴格大於 4000 票，正整數 $x \\ge 4001$ 票！故選 **(B)**。',
+          mistakeNote: '確定當選門檻分母是「應選名額 + 1」，算出來要嚴格大於（整數 + 1 票）！'
+        },
+        {
+          concept: '數學 - 不等式當選門檻之應用速算',
+          subject: '數學',
+          stem: '某社團要選出 2 位幹部，共有 4 位候選人。若有效票共有 15000 張，則候選人至少應得幾票才必定當選？',
+          options: [
+            '5000 票',
+            '5001 票',
+            '7501 票',
+            '3751 票'
+          ],
+          correctIndex: 1,
+          correctAnswer: '(B) 5001 票',
+          explanation: '1. 應選 2 人，最不利情境為有 3 人平分所有票數：\n   $$\\frac{15000}{2 + 1} = 5000 \\text{ 票}$$\n2. 票數必須嚴格大於 5000 票才能保證當選，故至少需 **5001 票**。選 **(B)**。',
+          mistakeNote: '門檻公式：總票數 / (應選名額 + 1)，整數嚴格大於故加 1！'
+        }
+      ];
+      return bank[offset % bank.length];
+    }
+
+    // 6. 算術平均數與中位數
+    if (concept.includes('平均數') || concept.includes('中位數') || stem.includes('中位數')) {
+      const bank = [
+        {
+          concept: '數學 - 算術平均數、中位數與未知數反推計算',
+          subject: '數學',
+          stem: '有一組由小到大排列的 7 個整數：$2, 4, 6, x, 12, 16, 20$。若這組資料的中位數等於算術平均數，則整數 $x$ 之值為何？',
+          options: [
+            '8',
+            '9',
+            '10',
+            '11'
+          ],
+          correctIndex: 2,
+          correctAnswer: '(C) 10',
+          explanation: '1. 7 個由小到大排列的整數，中位數為第 4 個數，即中位數 $= x$。\n2. 7 個數之總和 $= 2 + 4 + 6 + x + 12 + 16 + 20 = 60 + x$。\n3. 算術平均數 $= \\frac{60 + x}{7}$。\n4. 依題意中位數等於平均數：\n$$x = \\frac{60 + x}{7} \\implies 7x = 60 + x \\implies 6x = 60 \\implies x = 10$$\n檢查：$x=10$ 介於 6 與 12 之間，符合遞增順序！故選 **(C)**。',
+          mistakeNote: '由小到大排好找中位數，再依平均數定義列方程式求解！'
+        }
+      ];
+      return bank[offset % bank.length];
+    }
+
+    // 7. 浮力與阿基米德原理
+    if (concept.includes('浮力') || concept.includes('阿基米德') || concept.includes('沉浮') || stem.includes('浮力')) {
+      const bank = [
+        {
+          concept: '自然/理化 - 浮力原理（阿基米德原理）、物體沉浮條件與液體密度',
+          subject: '自然/理化',
+          stem: '將一質量為 300 g、體積為 $400\\text{ cm}^3$ 的木塊投入水中，木塊靜止浮在水面上。若改將此木塊投入密度為 $0.8\\text{ g/cm}^3$ 的油中，則木塊在油中所受的浮力為多少 gw？',
+          options: [
+            '240 gw',
+            '300 gw',
+            '320 gw',
+            '400 gw'
+          ],
+          correctIndex: 1,
+          correctAnswer: '(B) 300 gw',
+          explanation: '1. 木塊密度 $D = \\frac{M}{V} = \\frac{300\\text{ g}}{400\\text{ cm}^3} = 0.75\\text{ g/cm}^3$。\n2. 油的密度為 $0.8\\text{ g/cm}^3$。因木塊密度 $0.75 < 0.8$，木塊在油中依然為**浮體**！\n3. **浮體定律**：浮體所受之浮力必等於物體自身重量（$B = W$）！\n$$\\text{浮力 } B = 300\\text{ gw}$$\n故選 **(B) 300 gw**（切勿直接拿排開體積公式盲目計算，浮體直接看物重！）。',
+          mistakeNote: '只要是浮體，浮力就等於物重！沉體才看排開液體重！'
+        }
+      ];
+      return bank[offset % bank.length];
+    }
+
+    // 8. 牛頓第二運動定律與摩擦力
+    if (concept.includes('牛頓') || concept.includes('加速度') || concept.includes('摩擦力') || stem.includes('牛頓')) {
+      const bank = [
+        {
+          concept: '自然/理化 - 牛頓第二運動定律與摩擦力計算',
+          subject: '自然/理化',
+          stem: '一質量為 5 kg 的物體靜置於水平粗糙地面上，物體與地面間的動摩擦力為 10 N。若施加一水平向右外力 30 N 持續推動該物體，則該物體產生的加速度大小為多少 $\\text{m/s}^2$？',
+          options: [
+            '2 m/s²',
+            '4 m/s²',
+            '6 m/s²',
+            '8 m/s²'
+          ],
+          correctIndex: 1,
+          correctAnswer: '(B) 4 m/s²',
+          explanation: '1. **求水平方向合力**：\n水平向右推力 30 N，向左動摩擦力 10 N：\n$$F_{\\text{合力}} = 30\\text{ N} - 10\\text{ N} = 20\\text{ N}$$\n2. **套用牛頓第二運動定律 $F = ma$**：\n$$a = \\frac{F_{\\text{合力}}}{m} = \\frac{20\\text{ N}}{5\\text{ kg}} = 4\\text{ m/s}^2$$\n故正確答案選 **(B) 4 m/s²**。',
+          mistakeNote: '先求合力（扣除動摩擦力），再代入 F = ma！'
+        }
+      ];
+      return bank[offset % bank.length];
+    }
+
+    // Default Dynamic Concept Question Generator
+    return {
+      concept: q.concept || '核心概念綜合理解與陷阱辨析',
+      subject: subject,
+      stem: `【觀念變通延伸檢測】\n針對題目涉及之核心重點「${q.concept || '本題考點'}」，下列對於題意觀念之推論與分析，何者最為正確且能避免常見解題陷阱？`,
+      options: [
+        `只須死記公式數值，不須理會題目給予之邊界條件與題意定義`,
+        `應先判斷核心定義與關鍵條件（如正負符號、單位換算或正字用法），方可準確推導`,
+        `看到類似選項就直接依直覺猜測最常見的答案`,
+        `題目給予的輔助條件通常是多餘的，直接套用簡化公式即可`
+      ],
+      correctIndex: 1,
+      correctAnswer: '(B) 應先判斷核心定義與關鍵條件，方可準確推導',
+      explanation: `1. **核心概念解析**：\n本題核心為「${q.concept || '觀念釐清'}」。\n2. **原題關鍵盲點剖析**：\n${q.mistakeNote || '解題時務必確認定義細節，避免落入常見粗心陷阱！'}\n3. **結論**：解題首重先審清關鍵定義與限制條件，故選 **(B)**。`,
+      mistakeNote: `記住：審題時抓住核心定義與限制條件，是破解陷阱題的關鍵！`
+    };
   }
 };

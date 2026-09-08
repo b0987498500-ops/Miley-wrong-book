@@ -43,12 +43,12 @@
         });
       }
       // Force reload if legacy cached version is active
-      var currVer = localStorage.getItem('miley_purge_v57_final');
+      var currVer = localStorage.getItem('miley_purge_v58_similar_q');
       if (!currVer) {
-        localStorage.setItem('miley_purge_v57_final', 'true');
+        localStorage.setItem('miley_purge_v58_similar_q', 'true');
         if (window.location.search.indexOf('v=57') === -1) {
           console.log('Purging legacy browser cache and reloading...');
-          window.location.search = '?v=57_force_purge&t=' + Date.now();
+          window.location.search = '?v=58_force_purge&t=' + Date.now();
         }
       }
     })();
@@ -75,7 +75,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=110_font_scaling_solution_and_que_fix">
+  <link rel="stylesheet" href="styles.css?v=111_similar_questions_and_short_toolbar">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -517,14 +517,17 @@
                     </div>
 
                     <button id="btn-toggle-fullscreen" class="btn-accent-sm" title="切換全螢幕滿版大畫面">
-                      <i class="fa-solid fa-expand"></i> 全螢幕專注大畫面
+                      <i class="fa-solid fa-expand"></i> 全螢幕
                     </button>
-                    <button id="toggle-scratchpad-btn" class="btn-secondary">
-                      <i class="fa-solid fa-pen-ruler"></i> 開啟螢幕計算草稿區
+                    <button id="toggle-scratchpad-btn" class="btn-secondary" title="開啟螢幕計算草稿區">
+                      <i class="fa-solid fa-pen-ruler"></i> 草稿區
+                    </button>
+                    <button id="btn-generate-similar-q" class="btn-similar-question" title="根據目前題目的核心觀念，立即生成一題精準類似題測驗！">
+                      <i class="fa-solid fa-wand-magic-sparkles"></i> 出類似題
                     </button>
                     <div class="export-pdf-dropdown">
-                      <button id="export-pdf-main-btn" class="btn-primary">
-                        <i class="fa-solid fa-file-pdf"></i> 匯出 A4 雙 PDF 測驗卷 <i class="fa-solid fa-chevron-down"></i>
+                      <button id="export-pdf-main-btn" class="btn-primary" title="匯出 A4 雙 PDF 測驗卷">
+                        <i class="fa-solid fa-file-pdf"></i> 匯出 PDF <i class="fa-solid fa-chevron-down"></i>
                       </button>
                       <div class="pdf-dropdown-menu" id="pdf-dropdown-menu">
                         <button id="export-pdf-test-paper">
@@ -979,24 +982,85 @@
     </div>
   </div>
 
+    <!-- Similar Question Interactive Challenge Modal -->
+  <div id="modal-similar-question" class="modal-overlay hidden">
+    <div class="modal-content glass-panel similar-question-modal-content">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span class="badge badge-warning" id="sq-modal-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> 類似題實戰挑戰</span>
+          <h3 style="margin: 0; font-size: 1.15rem; color: var(--text-main); font-weight: 700;" id="sq-modal-title">相關核心觀念自我檢測</h3>
+        </div>
+        <button type="button" class="modal-close-btn" id="btn-close-similar-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="similar-modal-body">
+        <!-- Target Concept Tag -->
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-secondary);">
+          <span>🎯 對應觀念：</span>
+          <strong id="sq-modal-concept" style="color: var(--accent-warning); background: rgba(245, 158, 11, 0.12); padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(245, 158, 11, 0.3);"></strong>
+        </div>
+
+        <!-- Question Stem -->
+        <div class="similar-stem-card">
+          <div class="similar-stem-header">
+            <span style="font-weight: 700; color: var(--accent-primary);"><i class="fa-regular fa-circle-question"></i> 實戰題目</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">請點擊下方選項作答</span>
+          </div>
+          <div id="sq-stem-text" style="font-size: calc(1.05rem * var(--content-font-scale, 1)); line-height: 1.7; color: var(--text-main); white-space: pre-wrap;"></div>
+        </div>
+
+        <!-- Dynamic Options Grid -->
+        <div id="sq-options-grid" class="similar-options-grid">
+          <!-- Options rendered via JS -->
+        </div>
+
+        <!-- Solution & Explanation Box (Shown after answering) -->
+        <div id="sq-solution-box" class="similar-solution-box hidden">
+          <div id="sq-result-banner" class="sq-result-banner"></div>
+          <div class="sq-answer-row">
+            <strong>✅ 正確答案：</strong> <span id="sq-correct-answer"></span>
+          </div>
+          <div class="sq-explanation-box">
+            <strong style="display: block; margin-bottom: 6px; color: var(--text-main);"><i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> 詳解與核心觀念突破：</strong>
+            <div id="sq-explanation-text" style="white-space: pre-wrap;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="similar-modal-footer">
+        <button type="button" id="btn-refresh-similar-question" class="btn-secondary" title="換一題同觀念類似題">
+          <i class="fa-solid fa-arrows-rotate"></i> 換一題類似題
+        </button>
+        <div class="similar-footer-right">
+          <button type="button" id="btn-dismiss-similar-question" class="btn-secondary" title="已理解掌握，不加入錯題">
+            <i class="fa-solid fa-check"></i> 我已搞懂，不需加入
+          </button>
+          <button type="button" id="btn-add-similar-to-wrong-book" class="btn-primary btn-accent-glow" title="將此題加入本週錯題本，納入後續複習週期">
+            <i class="fa-solid fa-bookmark"></i> 加入錯題本
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- PDF Export Hidden Render Container -->
   <div id="pdf-export-container" class="pdf-export-container"></div>
 
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=57"></script>
-  <script src="js/utils/katex_render.js?v=57"></script>
-  <script src="js/utils/pdf_export.js?v=57"></script>
-  <script src="js/modules/upload.js?v=57"></script>
-  <script src="js/modules/archive.js?v=57"></script>
-  <script src="js/modules/review.js?v=57"></script>
-  <script src="js/modules/sprint.js?v=57"></script>
-  <script src="js/modules/analytics.js?v=57"></script>
-  <script src="js/modules/calendar.js?v=57"></script>
-  <script src="js/modules/wisdom.js?v=57"></script>
-  <script src="js/modules/card.js?v=57"></script>
-  <script src="js/app.js?v=57"></script>
+  <script src="js/data.js?v=58"></script>
+  <script src="js/utils/katex_render.js?v=58"></script>
+  <script src="js/utils/pdf_export.js?v=58"></script>
+  <script src="js/modules/upload.js?v=58"></script>
+  <script src="js/modules/archive.js?v=58"></script>
+  <script src="js/modules/review.js?v=58"></script>
+  <script src="js/modules/sprint.js?v=58"></script>
+  <script src="js/modules/analytics.js?v=58"></script>
+  <script src="js/modules/calendar.js?v=58"></script>
+  <script src="js/modules/wisdom.js?v=58"></script>
+  <script src="js/modules/card.js?v=58"></script>
+  <script src="js/app.js?v=58"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => {
