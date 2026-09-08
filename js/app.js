@@ -18,6 +18,7 @@ class App {
       this.bindBrandHomeClick();
       this.renderWeeklyMondayBar();
       this.bindThemeToggle();
+      this.bindPageZoom();
       this.bindFontSizeControls();
       this.bindResetData();
       this.updateSidebarCounts();
@@ -333,6 +334,40 @@ class App {
       const isLight = document.body.classList.contains('light-theme');
       toggleBtn.innerHTML = isLight ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
     });
+  }
+
+  bindPageZoom() {
+    const ZOOM_KEY = 'miley_page_zoom_ratio';
+    const zoomLevels = [
+      { scale: '1.25', label: '125%' },
+      { scale: '1.0', label: '100%' },
+      { scale: '1.4', label: '140%' }
+    ];
+
+    let saved = localStorage.getItem(ZOOM_KEY) || '1.25';
+    let currentIdx = zoomLevels.findIndex(z => z.scale === saved);
+    if (currentIdx === -1) currentIdx = 0;
+
+    const applyZoom = (idx) => {
+      currentIdx = idx % zoomLevels.length;
+      const lvl = zoomLevels[currentIdx];
+      document.documentElement.style.zoom = lvl.scale;
+      localStorage.setItem(ZOOM_KEY, lvl.scale);
+
+      const badge = document.getElementById('page-zoom-badge');
+      if (badge) badge.innerText = lvl.label;
+      const btn = document.getElementById('page-zoom-toggle-btn');
+      if (btn) btn.title = `網頁縮放比例：${lvl.label}（點擊切換 125% / 100% / 140%）`;
+    };
+
+    applyZoom(currentIdx);
+
+    const btn = document.getElementById('page-zoom-toggle-btn');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        applyZoom(currentIdx + 1);
+      });
+    }
   }
 
   bindFontSizeControls() {

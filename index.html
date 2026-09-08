@@ -43,12 +43,17 @@
         });
       }
       // Force reload if legacy cached version is active
-      var currVer = localStorage.getItem('miley_purge_v66_clean_empty_state');
+      var currVer = localStorage.getItem('miley_purge_v67_default_zoom_125');
       if (!currVer) {
-        localStorage.setItem('miley_purge_v66_clean_empty_state', 'true');
+        localStorage.setItem('miley_purge_v67_default_zoom_125', 'true');
         console.log('Purging legacy browser cache and reloading...');
-        window.location.search = '?v=66_clean_empty_state&t=' + Date.now();
+        window.location.search = '?v=67_default_zoom_125&t=' + Date.now();
       }
+    })();
+    // Immediate page zoom initializer (default 125% as requested by Miley)
+    (function() {
+      var savedZoom = localStorage.getItem('miley_page_zoom_ratio') || '1.25';
+      document.documentElement.style.zoom = savedZoom;
     })();
     // Immediate date updater on load
     (function() {
@@ -73,7 +78,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=119_clean_empty_state">
+  <link rel="stylesheet" href="styles.css?v=120_default_zoom_125">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -259,6 +264,10 @@
               </div>
             </div>
 
+            <button id="page-zoom-toggle-btn" class="icon-btn zoom-indicator-btn" title="切換網頁全域縮放比例 (預設 125%)">
+              <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.8rem; margin-right: 2px;"></i>
+              <span id="page-zoom-badge" style="font-size: 0.8rem; font-weight: 800;">125%</span>
+            </button>
             <button id="theme-toggle-btn" class="icon-btn" title="切換深淺模式">
               <i class="fa-solid fa-moon"></i>
             </button>
@@ -1058,18 +1067,18 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=66"></script>
-  <script src="js/utils/katex_render.js?v=66"></script>
-  <script src="js/utils/pdf_export.js?v=66"></script>
-  <script src="js/modules/upload.js?v=66"></script>
-  <script src="js/modules/archive.js?v=66"></script>
-  <script src="js/modules/review.js?v=66"></script>
-  <script src="js/modules/sprint.js?v=66"></script>
-  <script src="js/modules/analytics.js?v=66"></script>
-  <script src="js/modules/calendar.js?v=66"></script>
-  <script src="js/modules/wisdom.js?v=66"></script>
-  <script src="js/modules/card.js?v=66"></script>
-  <script src="js/app.js?v=66"></script>
+  <script src="js/data.js?v=67"></script>
+  <script src="js/utils/katex_render.js?v=67"></script>
+  <script src="js/utils/pdf_export.js?v=67"></script>
+  <script src="js/modules/upload.js?v=67"></script>
+  <script src="js/modules/archive.js?v=67"></script>
+  <script src="js/modules/review.js?v=67"></script>
+  <script src="js/modules/sprint.js?v=67"></script>
+  <script src="js/modules/analytics.js?v=67"></script>
+  <script src="js/modules/calendar.js?v=67"></script>
+  <script src="js/modules/wisdom.js?v=67"></script>
+  <script src="js/modules/card.js?v=67"></script>
+  <script src="js/app.js?v=67"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => {
