@@ -8,6 +8,9 @@ window.ReviewModule = {
   activeQuestions: [],
   currentIndex: 0,
   isAnswerRevealed: false,
+  selectedChoice: null,
+  hasInteractiveOptions: false,
+  currentOptionsMap: null,
   scratchCanvas: null,
   scratchCtx: null,
   isScratchDrawing: false,
@@ -61,12 +64,31 @@ window.ReviewModule = {
     const mainCard = document.getElementById('main-flashcard');
     if (mainCard) {
       mainCard.addEventListener('click', (e) => {
-        if (e.target.closest('#fc-diagram-container') || e.target.closest('button') || e.target.closest('input') || e.target.closest('textarea')) return;
-        if (!self.isAnswerRevealed) {
+        if (e.target.closest('#fc-diagram-container') || 
+            e.target.closest('.fc-interactive-options') || 
+            e.target.closest('.fc-option-card') || 
+            e.target.closest('.card-action-bar') || 
+            e.target.closest('button') || 
+            e.target.closest('input') || 
+            e.target.closest('textarea')) return;
+        if (!self.hasInteractiveOptions && !self.isAnswerRevealed) {
           self.revealAnswer();
         }
       });
     }
+
+    // Interactive Choice Button & Retry Button
+    document.getElementById('fc-check-answer-btn')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      self.checkAnswer();
+    });
+
+    document.getElementById('btn-retry-question')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      self.retryQuestion();
+    });
 
     // Feedback Buttons (Mastered / Unmastered)
     document.getElementById('btn-mark-unmastered')?.addEventListener('click', () => self.handleFeedback(false));
@@ -139,10 +161,16 @@ window.ReviewModule = {
       // Only handle if in review tab
       if (!document.getElementById('view-review')?.classList.contains('active')) return;
 
-      if (e.code === 'Space' || e.code === 'Enter') {
+      if (['a', 'b', 'c', 'd', 'A', 'B', 'C', 'D'].includes(e.key) && !self.isAnswerRevealed && self.hasInteractiveOptions) {
+        self.selectChoice(e.key.toUpperCase());
+      } else if (e.code === 'Space' || e.code === 'Enter') {
         e.preventDefault();
         if (!self.isAnswerRevealed) {
-          self.revealAnswer();
+          if (self.hasInteractiveOptions) {
+            self.checkAnswer();
+          } else {
+            self.revealAnswer();
+          }
         }
       } else if (e.code === 'ArrowLeft') {
         e.preventDefault();
@@ -349,6 +377,201 @@ window.ReviewModule = {
     document.getElementById('review-progress-fill').style.width = `${fillPercent}%`;
   },
 
+  extractOptions: function(stem) {
+    if (!stem || typeof stem !== 'string') return { hasOptions: false, stemMain: stem, options: null };
+
+    let optStartIdx = stem.indexOf('○ (A)');
+    if (optStartIdx === -1) optStartIdx = stem.indexOf('(A)');
+    if (optStartIdx === -1) optStartIdx = stem.indexOf('○(A)');
+    
+    if (optStartIdx === -1) {
+      return { hasOptions: false, stemMain: stem, options: null };
+    }
+
+    const stemMain = stem.substring(0, optStartIdx).trim();
+    const optionsPart = stem.substring(optStartIdx).trim();
+
+    // Regex to match (A), (B), (C), (D) or ○ (A)
+    const regex = /(?:○\s*)?\(?([A-D])\)?[\s\.、]*(.*?)(?=(?:○\s*)?\(?[A-D]\)?[\s\.、]*|$)/gs;
+    const matches = [...optionsPart.matchAll(regex)];
+
+    if (matches && matches.length >= 2) {
+      const opts = {};
+      matches.forEach(m => {
+        const letter = m[1].toUpperCase();
+        const text = (m[2] || '').trim();
+        if (letter && text) {
+          opts[letter] = text;
+        }
+      });
+
+      if (Object.keys(opts).length >= 2) {
+        return { hasOptions: true, stemMain: stemMain, options: opts };
+      }
+    }
+
+    return { hasOptions: false, stemMain: stem, options: null };
+  },
+
+  selectChoice: function(choice) {
+    if (this.isAnswerRevealed) return;
+    this.selectedChoice = choice;
+
+    const cards = document.querySelectorAll('.fc-option-card');
+    cards.forEach(card => {
+      const c = card.getAttribute('data-choice');
+      if (c === choice) {
+        card.classList.add('selected');
+        card.setAttribute('aria-checked', 'true');
+      } else {
+        card.classList.remove('selected');
+        card.setAttribute('aria-checked', 'false');
+      }
+    });
+
+    // Hide any previous warning banner
+    const banner = document.getElementById('fc-check-result-banner');
+    if (banner && banner.classList.contains('banner-warning')) {
+      banner.classList.add('hidden');
+    }
+
+    // Dynamic button update
+    const checkBtn = document.getElementById('fc-check-answer-btn');
+    if (checkBtn) {
+      checkBtn.classList.add('ready-to-check');
+      checkBtn.innerHTML = `<i class="fa-solid fa-circle-check"></i> 對答案 (已選 ${choice})`;
+    }
+  },
+
+  checkAnswer: function() {
+    if (this.isAnswerRevealed) return;
+
+    const q = this.activeQuestions[this.currentIndex];
+    if (!q) return;
+
+    // Check if fill-in question without multiple choice options
+    if (!this.hasInteractiveOptions) {
+      this.revealAnswer();
+      return;
+    }
+
+    if (!this.selectedChoice) {
+      const banner = document.getElementById('fc-check-result-banner');
+      if (banner) {
+        banner.className = 'fc-check-result-banner banner-warning';
+        banner.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> <span>請先點選一個選項 (A / B / C / D) 再對答案喔！</span>';
+        banner.classList.remove('hidden');
+      }
+      const optsContainer = document.getElementById('fc-interactive-options');
+      if (optsContainer) {
+        optsContainer.classList.add('shake-animation');
+        setTimeout(() => optsContainer.classList.remove('shake-animation'), 600);
+      }
+      return;
+    }
+
+    // Extract target letter from standard answer
+    const ansMatch = (q.answer || '').match(/\(([A-D])\)/i) || (q.answer || '').match(/^([A-D])(?:\b|[^\w])/i);
+    const targetLetter = ansMatch ? ansMatch[1].toUpperCase() : null;
+
+    const userChoice = this.selectedChoice.toUpperCase();
+    const isCorrect = (targetLetter && userChoice === targetLetter);
+
+    // Style option cards
+    const cards = document.querySelectorAll('.fc-option-card');
+    cards.forEach(card => {
+      const choice = card.getAttribute('data-choice');
+      const badgeSlot = card.querySelector('.fc-option-badge-slot');
+
+      if (choice === userChoice) {
+        if (isCorrect) {
+          card.classList.add('is-correct');
+          if (badgeSlot) badgeSlot.innerHTML = '<span class="fc-status-pill pill-correct"><i class="fa-solid fa-check"></i> 答對了！</span>';
+        } else {
+          card.classList.add('is-wrong');
+          if (badgeSlot) badgeSlot.innerHTML = '<span class="fc-status-pill pill-wrong"><i class="fa-solid fa-xmark"></i> 妳選的</span>';
+        }
+      }
+
+      if (!isCorrect && choice === targetLetter) {
+        card.classList.add('is-actual-target');
+        if (badgeSlot) badgeSlot.innerHTML = '<span class="fc-status-pill pill-target"><i class="fa-solid fa-check"></i> 正確答案</span>';
+      }
+    });
+
+    // Show result banner
+    const banner = document.getElementById('fc-check-result-banner');
+    if (banner) {
+      if (isCorrect) {
+        banner.className = 'fc-check-result-banner banner-correct';
+        banner.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>太棒了，答對了！🎉 正確答案是 <strong>(${targetLetter})</strong></span>`;
+      } else {
+        banner.className = 'fc-check-result-banner banner-wrong';
+        banner.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> <span>這題答錯囉！妳選擇了 <strong>(${userChoice})</strong>，正確答案是 <strong>(${targetLetter || q.answer})</strong></span>`;
+      }
+      banner.classList.remove('hidden');
+    }
+
+    // Reveal answer and solutions
+    this.revealAnswer(isCorrect);
+  },
+
+  retryQuestion: function() {
+    this.isAnswerRevealed = false;
+    this.selectedChoice = null;
+
+    // Reset banner
+    const banner = document.getElementById('fc-check-result-banner');
+    if (banner) {
+      banner.className = 'fc-check-result-banner hidden';
+      banner.innerHTML = '';
+    }
+
+    // Reset option cards
+    const cards = document.querySelectorAll('.fc-option-card');
+    cards.forEach(card => {
+      card.classList.remove('selected', 'is-correct', 'is-wrong', 'is-actual-target');
+      card.setAttribute('aria-checked', 'false');
+      const badgeSlot = card.querySelector('.fc-option-badge-slot');
+      if (badgeSlot) badgeSlot.innerHTML = '';
+    });
+
+    // Reset split container & hide answer
+    document.querySelector('.card-grid-split')?.classList.remove('has-answer');
+    document.getElementById('fc-answer-container')?.classList.add('hidden');
+
+    // Reset buttons
+    if (this.hasInteractiveOptions) {
+      const checkBtn = document.getElementById('fc-check-answer-btn');
+      if (checkBtn) {
+        checkBtn.classList.remove('hidden', 'ready-to-check');
+        checkBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> 對答案';
+      }
+      const revealBtn = document.getElementById('fc-reveal-btn');
+      if (revealBtn) {
+        revealBtn.classList.remove('hidden');
+        revealBtn.classList.add('btn-reveal-secondary');
+        revealBtn.innerHTML = '<i class="fa-solid fa-eye"></i> 直接看解析';
+      }
+    } else {
+      document.getElementById('fc-check-answer-btn')?.classList.add('hidden');
+      const revealBtn = document.getElementById('fc-reveal-btn');
+      if (revealBtn) {
+        revealBtn.classList.remove('hidden', 'btn-reveal-secondary');
+        revealBtn.innerHTML = '<i class="fa-solid fa-eye"></i> 查看解析';
+      }
+    }
+    document.getElementById('fc-feedback-btns')?.classList.add('hidden');
+
+    // Reset fill-in inputs if any
+    const fillInputs = document.querySelectorAll('.fc-fill-in-input');
+    fillInputs.forEach(inp => {
+      inp.disabled = false;
+      inp.classList.remove('input-correct', 'input-wrong', 'input-revealed');
+      inp.value = '';
+    });
+  },
+
   renderCurrentCard: function() {
     const mainCard = document.getElementById('main-flashcard');
     if (!mainCard) return;
@@ -425,21 +648,21 @@ window.ReviewModule = {
       }
     }
 
-    // Separate Stem Text & Options for Middle Diagram Placement
-    let stemMain = q.stem;
-    let optionsText = '';
+    // Reset state & result banner
+    this.selectedChoice = null;
+    this.isAnswerRevealed = false;
+    this.currentOptionsMap = null;
 
-    const optionIndex = q.stem.indexOf('○ (A)');
-    if (optionIndex !== -1) {
-      stemMain = q.stem.substring(0, optionIndex).trim();
-      optionsText = q.stem.substring(optionIndex).trim();
-    } else {
-      const optionIndexAlt = q.stem.indexOf('(A)');
-      if (optionIndexAlt !== -1) {
-        stemMain = q.stem.substring(0, optionIndexAlt).trim();
-        optionsText = q.stem.substring(optionIndexAlt).trim();
-      }
+    const banner = document.getElementById('fc-check-result-banner');
+    if (banner) {
+      banner.className = 'fc-check-result-banner hidden';
+      banner.innerHTML = '';
     }
+
+    // Separate Stem Text & Options
+    const optExtraction = this.extractOptions(q.stem);
+    this.hasInteractiveOptions = optExtraction.hasOptions;
+    let stemMain = optExtraction.stemMain;
 
     // Interactive Fill-in-the-Blank Slot Converter (Line-by-line & Question-Number Aware)
     let slotIndex = 0;
@@ -474,15 +697,78 @@ window.ReviewModule = {
       diagContainer.classList.add('hidden');
     }
 
-    // 3. Render Bottom Options Text
-    window.katexUtils.renderText('fc-options-text', optionsText);
+    // 3. Render Interactive Options (or fallback)
+    const optionsTextEl = document.getElementById('fc-options-text');
+    if (this.hasInteractiveOptions && optionsTextEl) {
+      this.currentOptionsMap = optExtraction.options;
+      const letters = Object.keys(optExtraction.options).sort();
+      let html = '<div class="fc-interactive-options" id="fc-interactive-options" role="radiogroup" aria-label="選擇題選項">';
+      letters.forEach(letter => {
+        html += `
+          <div class="fc-option-card" data-choice="${letter}" tabindex="0" role="radio" aria-checked="false">
+            <div class="fc-option-indicator">
+              <span class="fc-option-pill">${letter}</span>
+            </div>
+            <div class="fc-option-content" id="fc-opt-text-${letter}"></div>
+            <div class="fc-option-badge-slot"></div>
+          </div>
+        `;
+      });
+      html += '</div>';
+      optionsTextEl.innerHTML = html;
+
+      // Render KaTeX for each option
+      letters.forEach(letter => {
+        window.katexUtils.renderText(`fc-opt-text-${letter}`, optExtraction.options[letter]);
+      });
+
+      // Bind click on option cards
+      const self = this;
+      optionsTextEl.querySelectorAll('.fc-option-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const choice = card.getAttribute('data-choice');
+          self.selectChoice(choice);
+        });
+      });
+
+      // Show "對答案" button and secondary "直接看解析"
+      const checkBtn = document.getElementById('fc-check-answer-btn');
+      if (checkBtn) {
+        checkBtn.classList.remove('hidden', 'ready-to-check');
+        checkBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> 對答案';
+      }
+      const revealBtn = document.getElementById('fc-reveal-btn');
+      if (revealBtn) {
+        revealBtn.classList.remove('hidden');
+        revealBtn.classList.add('btn-reveal-secondary');
+        revealBtn.innerHTML = '<i class="fa-solid fa-eye"></i> 直接看解析';
+      }
+    } else if (optionsTextEl) {
+      optionsTextEl.innerHTML = '';
+      
+      const checkBtn = document.getElementById('fc-check-answer-btn');
+      if (checkBtn) {
+        const hasFillIn = stemMain.includes('fc-fill-in-input') || q.stem.includes('【');
+        if (hasFillIn) {
+          checkBtn.classList.remove('hidden', 'ready-to-check');
+          checkBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> 對答案';
+        } else {
+          checkBtn.classList.add('hidden');
+        }
+      }
+      const revealBtn = document.getElementById('fc-reveal-btn');
+      if (revealBtn) {
+        revealBtn.classList.remove('hidden', 'btn-reveal-secondary');
+        revealBtn.innerHTML = '<i class="fa-solid fa-eye"></i> 查看解析';
+      }
+    }
 
     // Reset Split Container Class
     document.querySelector('.card-grid-split')?.classList.remove('has-answer');
 
     // Hide Answer Container initially
     document.getElementById('fc-answer-container').classList.add('hidden');
-    document.getElementById('fc-reveal-btn').classList.remove('hidden');
     document.getElementById('fc-feedback-btns').classList.add('hidden');
 
     // Set Fluorescent Yellow Mistake Note (AT THE VERY TOP)
@@ -496,7 +782,7 @@ window.ReviewModule = {
     window.katexUtils.renderText('fc-solution-steps', q.solution);
   },
 
-  revealAnswer: function() {
+  revealAnswer: function(isCorrect) {
     this.isAnswerRevealed = true;
     this.updateProgressDisplay();
     
@@ -505,6 +791,23 @@ window.ReviewModule = {
 
     const ansContainer = document.getElementById('fc-answer-container');
     if (ansContainer) ansContainer.classList.remove('hidden');
+
+    // If opened via "直接看解析" without answering, highlight target option
+    if (this.hasInteractiveOptions && isCorrect === undefined) {
+      const q = this.activeQuestions[this.currentIndex];
+      const ansMatch = (q.answer || '').match(/\(([A-D])\)/i) || (q.answer || '').match(/^([A-D])(?:\b|[^\w])/i);
+      const targetLetter = ansMatch ? ansMatch[1].toUpperCase() : null;
+      if (targetLetter) {
+        const cards = document.querySelectorAll('.fc-option-card');
+        cards.forEach(card => {
+          if (card.getAttribute('data-choice') === targetLetter) {
+            card.classList.add('is-actual-target');
+            const badgeSlot = card.querySelector('.fc-option-badge-slot');
+            if (badgeSlot) badgeSlot.innerHTML = '<span class="fc-status-pill pill-target"><i class="fa-solid fa-check"></i> 正確答案</span>';
+          }
+        });
+      }
+    }
 
     // Auto-check and reveal fill-in inputs against target characters
     const q = this.activeQuestions[this.currentIndex];
@@ -543,11 +846,26 @@ window.ReviewModule = {
       });
     }
 
-    const revealBtn = document.getElementById('fc-reveal-btn');
-    if (revealBtn) revealBtn.classList.add('hidden');
+    // Hide buttons
+    document.getElementById('fc-check-answer-btn')?.classList.add('hidden');
+    document.getElementById('fc-reveal-btn')?.classList.add('hidden');
 
+    // Show feedback buttons
     const fbBtns = document.getElementById('fc-feedback-btns');
-    if (fbBtns) fbBtns.classList.remove('hidden');
+    if (fbBtns) {
+      fbBtns.classList.remove('hidden');
+      const btnMastered = document.getElementById('btn-mark-mastered');
+      const btnUnmastered = document.getElementById('btn-mark-unmastered');
+      if (btnMastered && btnUnmastered) {
+        btnMastered.classList.remove('pulse-recommend');
+        btnUnmastered.classList.remove('pulse-recommend');
+        if (isCorrect === true) {
+          btnMastered.classList.add('pulse-recommend');
+        } else if (isCorrect === false) {
+          btnUnmastered.classList.add('pulse-recommend');
+        }
+      }
+    }
   },
 
   handleFeedback: function(isMastered) {

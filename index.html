@@ -43,11 +43,11 @@
         });
       }
       // Force reload if legacy cached version is active
-      var currVer = localStorage.getItem('miley_purge_v63_syntax_fixed');
+      var currVer = localStorage.getItem('miley_purge_v64_interactive_choices');
       if (!currVer) {
-        localStorage.setItem('miley_purge_v63_syntax_fixed', 'true');
+        localStorage.setItem('miley_purge_v64_interactive_choices', 'true');
         console.log('Purging legacy browser cache and reloading...');
-        window.location.search = '?v=63_force_purge&t=' + Date.now();
+        window.location.search = '?v=64_interactive_choices&t=' + Date.now();
       }
     })();
     // Immediate date updater on load
@@ -73,7 +73,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=116_syntax_fixed">
+  <link rel="stylesheet" href="styles.css?v=117_interactive_choices">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -596,13 +596,24 @@
                     </div>
                   </div>
 
+                  <!-- Interactive Answer Result Banner -->
+                  <div id="fc-check-result-banner" class="fc-check-result-banner hidden"></div>
+
                   <!-- Action Toolbar -->
                   <div class="card-action-bar">
-                    <button id="fc-reveal-btn" class="btn-reveal">
-                      <i class="fa-solid fa-eye"></i> 查看解析
-                    </button>
+                    <div class="fc-action-buttons-wrap" id="fc-action-buttons-wrap">
+                      <button id="fc-check-answer-btn" class="btn-check-answer hidden">
+                        <i class="fa-solid fa-circle-check"></i> 對答案
+                      </button>
+                      <button id="fc-reveal-btn" class="btn-reveal">
+                        <i class="fa-solid fa-eye"></i> 查看解析
+                      </button>
+                    </div>
 
                     <div id="fc-feedback-btns" class="feedback-btns-group hidden">
+                      <button id="btn-retry-question" class="btn-retry-card" title="重新作答本題">
+                        <i class="fa-solid fa-rotate-left"></i> 重測本題
+                      </button>
                       <button id="btn-mark-unmastered" class="btn-unmastered">
                         <i class="fa-solid fa-xmark"></i> 未擊敗 (按 1)
                       </button>
@@ -1047,18 +1058,18 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=63"></script>
-  <script src="js/utils/katex_render.js?v=63"></script>
-  <script src="js/utils/pdf_export.js?v=63"></script>
-  <script src="js/modules/upload.js?v=63"></script>
-  <script src="js/modules/archive.js?v=63"></script>
-  <script src="js/modules/review.js?v=63"></script>
-  <script src="js/modules/sprint.js?v=63"></script>
-  <script src="js/modules/analytics.js?v=63"></script>
-  <script src="js/modules/calendar.js?v=63"></script>
-  <script src="js/modules/wisdom.js?v=63"></script>
-  <script src="js/modules/card.js?v=63"></script>
-  <script src="js/app.js?v=63"></script>
+  <script src="js/data.js?v=64"></script>
+  <script src="js/utils/katex_render.js?v=64"></script>
+  <script src="js/utils/pdf_export.js?v=64"></script>
+  <script src="js/modules/upload.js?v=64"></script>
+  <script src="js/modules/archive.js?v=64"></script>
+  <script src="js/modules/review.js?v=64"></script>
+  <script src="js/modules/sprint.js?v=64"></script>
+  <script src="js/modules/analytics.js?v=64"></script>
+  <script src="js/modules/calendar.js?v=64"></script>
+  <script src="js/modules/wisdom.js?v=64"></script>
+  <script src="js/modules/card.js?v=64"></script>
+  <script src="js/app.js?v=64"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => {
