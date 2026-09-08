@@ -578,41 +578,19 @@ window.ReviewModule = {
     if (!mainCard) return;
 
     if (this.activeQuestions.length === 0) {
-      this.updateProgressDisplay();
       const activeSubj = (this.currentSubjectFilter && this.currentSubjectFilter !== 'ALL') ? this.currentSubjectFilter : '全部科目';
-      
-      const subjEl = document.getElementById('fc-subject');
-      if (subjEl) subjEl.innerText = activeSubj;
-      
-      const reasonEl = document.getElementById('fc-reason');
-      if (reasonEl) reasonEl.innerText = '尚無數據';
-      
-      const conceptEl = document.getElementById('fc-concept');
-      if (conceptEl) conceptEl.innerText = '# 尚無錯題';
-      
-      const badgeEl = document.getElementById('fc-mastery-badge');
-      if (badgeEl) {
-        badgeEl.className = 'mastery-status unmastered';
-        badgeEl.innerText = '未擊敗 (0 次)';
-      }
-      
-      const stageEl = document.getElementById('review-ebbinghaus-stage');
-      if (stageEl) stageEl.innerText = '艾賓浩斯週期: 第 - 週次';
 
-      const stemTextEl = document.getElementById('fc-stem-text');
-      if (stemTextEl) {
-        stemTextEl.innerHTML = `
-          <div style="text-align: center; padding: 40px 20px; color: var(--text-muted);">
-            <i class="fa-solid fa-folder-open" style="font-size: 3rem; margin-bottom: 12px; opacity: 0.5;"></i>
-            <h3>此科目 (${activeSubj}) / 週次目前尚無錯題數據</h3>
-            <p style="margin-top: 8px; font-size: 0.9rem;">您可以切換其它科目或點擊上方切換其它週次！</p>
-          </div>
-        `;
-      }
+      // 1. Hide navigation arrows
+      document.getElementById('fc-prev-btn')?.classList.add('hidden');
+      document.getElementById('fc-next-btn')?.classList.add('hidden');
 
-      const optionsTextEl = document.getElementById('fc-options-text');
-      if (optionsTextEl) optionsTextEl.innerHTML = '';
+      // 2. Hide card top meta bar (subject tag, reason, concept, mastery status, delete button)
+      document.querySelector('.card-top-bar')?.classList.add('hidden');
 
+      // 3. Hide progress bar tracker
+      document.querySelector('.review-progress-bar-container')?.classList.add('hidden');
+
+      // 4. Hide all interactive controls, diagrams, answers, action buttons
       document.getElementById('fc-diagram-container')?.classList.add('hidden');
       document.getElementById('fc-answer-container')?.classList.add('hidden');
       document.getElementById('fc-reveal-btn')?.classList.add('hidden');
@@ -621,17 +599,37 @@ window.ReviewModule = {
       document.getElementById('fc-check-result-banner')?.classList.add('hidden');
       document.getElementById('fc-action-buttons-wrap')?.classList.add('hidden');
       document.getElementById('btn-retry-question')?.classList.add('hidden');
-      
+
+      const optionsTextEl = document.getElementById('fc-options-text');
+      if (optionsTextEl) optionsTextEl.innerHTML = '';
+
+      const stemTextEl = document.getElementById('fc-stem-text');
+      if (stemTextEl) {
+        stemTextEl.innerHTML = `
+          <div class="empty-subject-box" style="text-align: center; padding: 60px 20px; color: var(--text-muted);">
+            <div style="width: 76px; height: 76px; margin: 0 auto 18px; border-radius: 50%; background: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center;">
+              <i class="fa-solid fa-folder-open" style="font-size: 2.3rem; color: var(--accent-purple, #8b5cf6); opacity: 0.85;"></i>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main, #f1f5f9); margin-bottom: 8px;">此科目 (${activeSubj}) 目前尚無錯題</h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted, #94a3b8); max-width: 420px; margin: 0 auto; line-height: 1.6;">
+              太棒了！這個分類目前沒有需要複習的題目。<br>您可以切換其它科目複習，或在左側選單拍照上傳新錯題！
+            </p>
+          </div>
+        `;
+      }
+
       this.selectedChoice = null;
       this.hasInteractiveOptions = false;
       this.isAnswerRevealed = false;
-      
-      const noteTextEl = document.getElementById('fc-mistake-note-text');
-      if (noteTextEl) noteTextEl.innerText = '尚無防錯筆記';
 
       return;
     }
 
+    // Restore navigation arrows, card top bar, progress tracker, action wrap when questions exist
+    document.getElementById('fc-prev-btn')?.classList.remove('hidden');
+    document.getElementById('fc-next-btn')?.classList.remove('hidden');
+    document.querySelector('.card-top-bar')?.classList.remove('hidden');
+    document.querySelector('.review-progress-bar-container')?.classList.remove('hidden');
     document.getElementById('fc-action-buttons-wrap')?.classList.remove('hidden');
 
     const q = this.activeQuestions[this.currentIndex];

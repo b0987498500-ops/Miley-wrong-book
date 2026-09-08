@@ -43,11 +43,11 @@
         });
       }
       // Force reload if legacy cached version is active
-      var currVer = localStorage.getItem('miley_purge_v65_hide_buttons_on_empty');
+      var currVer = localStorage.getItem('miley_purge_v66_clean_empty_state');
       if (!currVer) {
-        localStorage.setItem('miley_purge_v65_hide_buttons_on_empty', 'true');
+        localStorage.setItem('miley_purge_v66_clean_empty_state', 'true');
         console.log('Purging legacy browser cache and reloading...');
-        window.location.search = '?v=65_hide_buttons_on_empty&t=' + Date.now();
+        window.location.search = '?v=66_clean_empty_state&t=' + Date.now();
       }
     })();
     // Immediate date updater on load
@@ -73,7 +73,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=118_hide_buttons_on_empty">
+  <link rel="stylesheet" href="styles.css?v=119_clean_empty_state">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -1058,18 +1058,18 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=65"></script>
-  <script src="js/utils/katex_render.js?v=65"></script>
-  <script src="js/utils/pdf_export.js?v=65"></script>
-  <script src="js/modules/upload.js?v=65"></script>
-  <script src="js/modules/archive.js?v=65"></script>
-  <script src="js/modules/review.js?v=65"></script>
-  <script src="js/modules/sprint.js?v=65"></script>
-  <script src="js/modules/analytics.js?v=65"></script>
-  <script src="js/modules/calendar.js?v=65"></script>
-  <script src="js/modules/wisdom.js?v=65"></script>
-  <script src="js/modules/card.js?v=65"></script>
-  <script src="js/app.js?v=65"></script>
+  <script src="js/data.js?v=66"></script>
+  <script src="js/utils/katex_render.js?v=66"></script>
+  <script src="js/utils/pdf_export.js?v=66"></script>
+  <script src="js/modules/upload.js?v=66"></script>
+  <script src="js/modules/archive.js?v=66"></script>
+  <script src="js/modules/review.js?v=66"></script>
+  <script src="js/modules/sprint.js?v=66"></script>
+  <script src="js/modules/analytics.js?v=66"></script>
+  <script src="js/modules/calendar.js?v=66"></script>
+  <script src="js/modules/wisdom.js?v=66"></script>
+  <script src="js/modules/card.js?v=66"></script>
+  <script src="js/app.js?v=66"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => {
