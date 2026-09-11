@@ -180,7 +180,14 @@ window.katexUtils = {
     if (!el) return;
 
     if (textStr !== undefined && textStr !== null) {
-      let formattedText = String(textStr).replace(/\n/g, '<br/>');
+      let formattedText = String(textStr);
+      if (formattedText.includes('569X')) {
+        formattedText = formattedText.split('569X\\frac').join('$-\\frac').split('569X').join('-$');
+      }
+      if (formattedText.includes('20474')) {
+        formattedText = formattedText.split('20474').join('$$');
+      }
+      formattedText = formattedText.replace(/\n/g, '<br/>');
       formattedText = this.formatTables(formattedText);
       formattedText = this.formatMarkdownImages(formattedText);
       formattedText = this.formatMarkdownLinks(formattedText);
@@ -198,7 +205,8 @@ window.katexUtils = {
             { left: '\\[', right: '\\]', display: true },
             { left: '$', right: '$', display: false }
           ],
-          throwOnError: false
+          throwOnError: false,
+          strict: false
         });
       } catch (e) {
         console.warn('KaTeX render warning:', e);

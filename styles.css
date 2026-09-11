@@ -635,7 +635,7 @@ body {
 
 /* Views wrapper */
 .views-wrapper {
-  padding: 28px 32px;
+  padding: 16px 28px;
   flex: 1;
 }
 
@@ -1720,12 +1720,38 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.review-mode-info {
+  flex-shrink: 0;
+}
+
+.review-mode-info h3 {
+  white-space: nowrap !important;
+  margin: 0;
+  font-size: 1.18rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .review-top-actions {
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.review-top-actions button,
+.review-top-actions .btn-secondary,
+.review-top-actions .btn-accent-sm,
+.review-top-actions .btn-similar-question,
+.review-top-actions .btn-primary,
+.review-top-actions .export-pdf-dropdown button {
+  white-space: nowrap !important;
+  flex-shrink: 0;
 }
 
 .export-pdf-dropdown {
@@ -1774,7 +1800,7 @@ body {
 .flashcard-stage-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
 }
 
 .review-progress-bar-container {
@@ -2736,11 +2762,11 @@ body {
   background: var(--bg-secondary);
   border: var(--glass-border);
   border-radius: var(--radius-lg);
-  padding: 32px;
-  min-height: 380px;
+  padding: 24px;
+  min-height: 320px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -2748,6 +2774,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 24px 4px 24px;
 }
 
 .card-meta-tags {
@@ -2986,8 +3013,8 @@ body {
 .fc-interactive-options {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 18px;
+  gap: 10px;
+  margin-top: 14px;
   margin-bottom: 8px;
   width: 100%;
 }
@@ -2996,10 +3023,10 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 14px 20px;
+  padding: 12px 20px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
   cursor: pointer;
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
@@ -3008,8 +3035,8 @@ body {
 }
 
 .fc-option-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(139, 92, 246, 0.45);
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(139, 92, 246, 0.5);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
@@ -3019,9 +3046,9 @@ body {
 }
 
 .fc-option-card.selected {
-  background: rgba(99, 102, 241, 0.15) !important;
+  background: rgba(99, 102, 241, 0.18) !important;
   border-color: #818cf8 !important;
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.35) !important;
+  box-shadow: 0 0 22px rgba(99, 102, 241, 0.4) !important;
   transform: translateY(-1px);
 }
 
@@ -3033,15 +3060,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   font-weight: 800;
-  font-size: 1.05rem;
+  font-size: 1.42rem;
   color: var(--text-main, #f8fafc);
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .fc-option-card:hover .fc-option-pill {
@@ -3059,8 +3087,10 @@ body {
 .fc-option-content {
   flex: 1;
   color: var(--text-main, #f1f5f9);
-  font-size: calc(1.05rem * var(--content-font-scale, 1));
-  line-height: 1.65;
+  font-size: calc(1.58rem * var(--content-font-scale, 1)) !important;
+  line-height: 1.34 !important;
+  letter-spacing: -0.015em !important;
+  word-spacing: normal !important;
   word-break: break-word;
 }
 
@@ -4089,7 +4119,7 @@ body.fullscreen-review-mode .main-content::-webkit-scrollbar-thumb:hover {
 .flashcard-stage-main .flashcard-card {
   flex: 1;
   width: 100%;
-  padding: 24px 72px; /* Padding to ensure text does not overlap with top-left & top-right floating buttons */
+  padding: 18px 48px; /* Optimized padding giving stem & options more horizontal room */
 }
 
 .fc-nav-arrow {
@@ -4873,34 +4903,21 @@ body.light-theme .fc-nav-arrow:hover {
   text-align: center;
 }
 
-/* Scaled Typography for Stem, Options, Answers, Notes, and Cards */
+/* Scaled Typography for Stem, Answers, Notes, and Cards */
 .stem-katex-text,
-.stem-katex-text *,
 .options-katex-text,
-.options-katex-text *,
-#fc-stem-text,
-#fc-stem-text *,
-#fc-options-text,
-#fc-options-text *,
 .card-stem-text,
 .card-stem,
 .solution-content,
 .mistake-note-content,
 #fc-answer-container,
-#fc-answer-container *,
 .solution-content-box,
-.solution-content-box *,
 .sol-answer,
-.sol-answer *,
 #fc-std-answer,
 .sol-steps,
-.sol-steps *,
 #fc-solution-steps,
-#fc-solution-steps *,
 .steps-katex-text,
-.steps-katex-text *,
 .mistake-note-container,
-.mistake-note-container *,
 #fc-mistake-note-text,
 .katex-rendered-preview,
 .flip-card-front,
@@ -4912,18 +4929,74 @@ body.light-theme .fc-nav-arrow:hover {
 .table-reading-view,
 .fc-step-item,
 .fc-explanation-box {
-  font-size: calc(1rem * var(--content-font-scale, 1)) !important;
-  line-height: calc(1.75 * var(--content-font-scale, 1)) !important;
+  font-size: calc(1.22rem * var(--content-font-scale, 1)) !important;
+  line-height: calc(1.5 * var(--content-font-scale, 1)) !important;
+  letter-spacing: -0.01em !important;
+  word-spacing: normal !important;
 }
 
-/* KaTeX formula font adjustments */
+#fc-stem-text {
+  font-size: calc(1.46rem * var(--content-font-scale, 1)) !important;
+  line-height: calc(1.42 * var(--content-font-scale, 1)) !important;
+  letter-spacing: -0.015em !important;
+  word-spacing: normal !important;
+}
+
+/* Allow text paragraphs and spans inside stem/solutions to scale cleanly without affecting KaTeX math */
+.stem-katex-text p,
+.stem-katex-text div:not(.katex):not(.katex-display):not(.fc-option-card):not(.fc-interactive-options):not(.table-wrapper),
+.stem-katex-text span:not(.katex):not([class*="katex"]):not([class*="vlist"]):not([class*="mord"]):not([class*="pstrut"]),
+.options-katex-text span:not(.katex):not([class*="katex"]):not([class*="vlist"]):not([class*="mord"]):not([class*="pstrut"]),
+#fc-stem-text p,
+#fc-stem-text span:not(.katex):not([class*="katex"]):not([class*="vlist"]):not([class*="mord"]):not([class*="pstrut"]),
+.steps-katex-text p,
+.steps-katex-text div:not(.katex):not(.katex-display):not(.table-wrapper),
+.steps-katex-text span:not(.katex):not([class*="katex"]):not([class*="vlist"]):not([class*="mord"]):not([class*="pstrut"]) {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: normal !important;
+}
+
+/* KaTeX formula typography & layout preservation - Clean, proportional rendering without squashing fractions */
+.katex {
+  font-size: calc(1.24em * var(--content-font-scale, 1)) !important;
+  letter-spacing: normal !important;
+  text-rendering: auto;
+  line-height: 1.2 !important;
+}
+
+.katex,
+.katex * {
+  line-height: 1.2 !important;
+}
+
+.katex .mfrac .frac-line {
+  border-bottom-width: 0.06em !important;
+}
+
 .stem-katex-text .katex,
 .options-katex-text .katex,
 #fc-stem-text .katex,
 #fc-options-text .katex,
 #fc-answer-container .katex,
-#fc-solution-steps .katex {
-  font-size: calc(1.15em * var(--content-font-scale, 1)) !important;
+#fc-solution-steps .katex,
+.card-stem-text .katex,
+.steps-katex-text .katex {
+  display: inline-block;
+  vertical-align: -0.12em;
+  margin: 0 1px;
+}
+
+.fc-option-content .katex {
+  font-size: calc(1.18em * var(--content-font-scale, 1)) !important;
+}
+
+.katex-display {
+  margin: 0.7em 0 !important;
+}
+
+.katex-display .katex {
+  font-size: calc(1.22em * var(--content-font-scale, 1)) !important;
 }
 
 /* Table scaling inside explanation */
@@ -5169,25 +5242,4 @@ body.light-theme .fc-fill-in-input {
 body.light-theme .fc-fill-in-input:focus {
   background: #ffffff;
   color: #1e293b;
-}
-
-.zoom-indicator-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  padding: 6px 12px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: var(--text-main);
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.zoom-indicator-btn:hover {
-  background: rgba(139, 92, 246, 0.2);
-  border-color: #8b5cf6;
-  color: #c084fc;
-  transform: scale(1.04);
 }
