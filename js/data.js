@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v76';
+const STORAGE_KEY = 'miley_wrong_questions_v77';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1038,6 +1038,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-11"
+  },
+  {
+    "id": "q_math_parallel_reciprocal_sum_proof_021",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "平行線截比例線段與相似形：梯形內平行線倒數和定理（Crossed Ladders Theorem）",
+    "uploadDate": "2026-09-11",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "梯形對角線交點之平行線倒數和定理：$\\frac{1}{\\overline{AB}} + \\frac{1}{\\overline{CD}} = \\frac{1}{\\overline{EF}}$！亦即 $\\overline{EF} = \\frac{\\overline{AB} \\times \\overline{CD}}{\\overline{AB} + \\overline{CD}}$（如電阻並聯積除以和）！代入 $AB=6, CD=3$ 得 $EF = \\frac{18}{9} = 2$！",
+    "stem": "如圖，$\\overline{AB} // \\overline{EF} // \\overline{CD}$，$\\overline{AD}$、$\\overline{BC}$ 相交於 $E$ 點，$F$ 點在 $\\overline{BD}$ 上。\n小麥欲說明 $\\frac{1}{\\overline{AB}} + \\frac{1}{\\overline{CD}} = \\frac{1}{\\overline{EF}}$ 的關係式，整理了以下推導步驟：\n步驟一：在 $\\triangle ABD$ 中，因 $\\overline{EF} // \\overline{AB}$，可得 $\\frac{\\overline{EF}}{\\overline{AB}} = \\frac{\\overline{DF}}{\\overline{BD}}$\n步驟二：在 $\\triangle BCD$ 中，因 $\\overline{EF} // \\overline{CD}$，可得 $\\frac{\\overline{EF}}{\\overline{CD}} = \\frac{\\overline{BF}}{\\overline{BD}}$\n步驟三：將步驟一與步驟二兩式相加，得 $\\frac{\\overline{EF}}{\\overline{AB}} + \\frac{\\overline{EF}}{\\overline{CD}} = \\frac{\\overline{DF} + \\overline{BF}}{\\overline{BD}} = \\frac{\\overline{BD}}{\\overline{BD}} = 1$\n步驟四：等號兩邊同除以 $\\overline{EF}$，得 $\\frac{1}{\\overline{AB}} + \\frac{1}{\\overline{CD}} = \\frac{1}{\\overline{EF}}$。\n若已知 $\\overline{AB} = 6$，$\\overline{CD} = 3$，則中間線段 $\\overline{EF}$ 的長度為何？\n\n○ (A) 1\n○ (B) 2\n○ (C) $\\frac{9}{2}$\n○ (D) $\\sqrt{18}$",
+    "answer": "(B) 2",
+    "diagramUrl": "assets/questions/q_math_parallel_reciprocal_sum_proof_021.png",
+    "solution": "1. **定理推導完整證明（梯形交叉平行線倒數和定理）**：\n   - 在 $\\triangle ABD$ 中，因 $\\overline{EF} // \\overline{AB}$：\n     由平行線截比例線段與相似形性質，$\\triangle DEF \\sim \\triangle DAB$：\n     $$\\frac{\\overline{EF}}{\\overline{AB}} = \\frac{\\overline{DF}}{\\overline{BD}} \\quad \\cdots\\cdots ①$$\n   - 在 $\\triangle BCD$ 中，因 $\\overline{EF} // \\overline{CD}$：\n     由平行線截比例線段與相似形性質，$\\triangle BEF \\sim \\triangle BCD$：\n     $$\\frac{\\overline{EF}}{\\overline{CD}} = \\frac{\\overline{BF}}{\\overline{BD}} \\quad \\cdots\\cdots ②$$\n   - 將 $①$ 式與 $②$ 式相加：\n     $$\\frac{\\overline{EF}}{\\overline{AB}} + \\frac{\\overline{EF}}{\\overline{CD}} = \\frac{\\overline{DF}}{\\overline{BD}} + \\frac{\\overline{BF}}{\\overline{BD}} = \\frac{\\overline{DF} + \\overline{BF}}{\\overline{BD}}$$\n   - 因為 $F$ 點在線段 $\\overline{BD}$ 上，所以 $\\overline{DF} + \\overline{BF} = \\overline{BD}$：\n     $$\\frac{\\overline{EF}}{\\overline{AB}} + \\frac{\\overline{EF}}{\\overline{CD}} = \\frac{\\overline{BD}}{\\overline{BD}} = 1$$\n   - 等號兩邊同乘以 $\\frac{1}{\\overline{EF}}$（即同除以 $\\overline{EF}$）：\n     $$\\frac{1}{\\overline{AB}} + \\frac{1}{\\overline{CD}} = \\frac{1}{\\overline{EF}}$$\n     ★ **得證此經典公式**！\n\n2. **數值計算求 $\\overline{EF}$**：\n   - 將 $\\overline{AB} = 6$、$\\overline{CD} = 3$ 代入倒數和公式：\n     $$\\frac{1}{6} + \\frac{1}{3} = \\frac{1}{\\overline{EF}}$$\n     $$\\frac{1}{6} + \\frac{2}{6} = \\frac{3}{6} = \\frac{1}{2} = \\frac{1}{\\overline{EF}}$$\n     $$\\therefore \\overline{EF} = 2$$\n   - **秒殺口訣公式（積除以和，同電阻並聯）**：\n     $$\\overline{EF} = \\frac{\\overline{AB} \\times \\overline{CD}}{\\overline{AB} + \\overline{CD}} = \\frac{6 \\times 3}{6 + 3} = \\frac{18}{9} = 2$$\n\n3. **結論**：正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-11"
   }
 ];
 
@@ -1070,7 +1094,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v75') ||
+      stored = localStorage.getItem('miley_wrong_questions_v76') ||
+               localStorage.getItem('miley_wrong_questions_v75') ||
                localStorage.getItem('miley_wrong_questions_v74') ||
                localStorage.getItem('miley_wrong_questions_v73') ||
                localStorage.getItem('miley_wrong_questions_v72') ||
