@@ -173,6 +173,18 @@ class App {
         this.startReviewWithFilter(subject, this.currentMondayFilter || 'ALL', false);
       });
     });
+
+    const ebbBox = document.querySelector('.ebbinghaus-summary-box');
+    if (ebbBox) {
+      ebbBox.addEventListener('click', () => {
+        subjectBtns.forEach(b => b.classList.remove('active'));
+        this.currentSubjectFilter = 'ALL';
+        if (window.ArchiveModule) {
+          window.ArchiveModule.currentSubject = 'ALL';
+        }
+        this.startReviewWithFilter('ALL', this.currentMondayFilter || 'ALL', false);
+      });
+    }
   }
 
   bindBrandHomeClick() {
