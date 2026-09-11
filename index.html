@@ -80,7 +80,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=130">
+  <link rel="stylesheet" href="styles.css?v=131">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -104,17 +104,6 @@
         </div>
         <button id="sidebar-toggle-btn" class="sidebar-toggle-btn" title="收合/展開側邊欄">
           <i class="fa-solid fa-bars-staggered"></i>
-        </button>
-      </div>
-
-      <!-- Single Learning Flashcard Feature Button -->
-      <div class="sidebar-section">
-        <button class="nav-item sidebar-learning-card-btn" data-tab="card" title="點擊進入翻轉填空學習卡">
-          <div class="btn-left">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <span>翻轉學習卡</span>
-          </div>
-          <span class="new-tag">NEW</span>
         </button>
       </div>
 
@@ -783,100 +772,6 @@
                 <!-- Top 3 Weaknesses rendered via JS -->
               </div>
             </div>
-          </div>
-        </section>
-
-        <!-- ==================== MODULE 6: FILL-IN-THE-BLANK FLIP FLASHCARDS ==================== -->
-        <section id="view-card" class="tab-view">
-          <div class="glass-panel card-module-container" style="padding: 32px 28px;">
-            
-            <!-- Subject Filter Bar at Top -->
-            <div class="card-subject-chips">
-              <button class="card-subject-chip active" data-subject="ALL"><i class="fa-solid fa-shapes"></i> 全部科目</button>
-              <button class="card-subject-chip" data-subject="國文"><span class="subj-badge subj-zh">國</span> 國文</button>
-              <button class="card-subject-chip" data-subject="英文"><span class="subj-badge subj-en">英</span> 英文</button>
-              <button class="card-subject-chip" data-subject="數學"><span class="subj-badge subj-math">數</span> 數學</button>
-              <button class="card-subject-chip" data-subject="自然/理化"><span class="subj-badge subj-sci">自</span> 自然/理化</button>
-              <button class="card-subject-chip" data-subject="社會"><span class="subj-badge subj-soc">社</span> 社會</button>
-            </div>
-
-            <!-- Initial Welcome Screen (When no subject is chosen yet) -->
-            <div id="card-subject-welcome" class="card-subject-welcome-panel">
-              <div style="text-align: center; margin-bottom: 24px;">
-                <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">
-                  <i class="fa-solid fa-graduation-cap" style="color: #f59e0b;"></i> 選擇科目進行【填空學習卡】特訓
-                </h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">
-                  點選下方科目或上方標籤，翻轉卡片學習關鍵字與記憶點！
-                </p>
-              </div>
-
-              <div class="card-subject-grid">
-                <div class="card-subj-welcome-card" onclick="window.CardModule.selectSubject('國文')">
-                  <div class="subj-badge subj-zh" style="width: 48px; height: 48px; font-size: 1.4rem; margin: 0 auto 12px;">國</div>
-                  <h4 style="font-weight: 700; color: var(--text-main);">國文填空卡</h4>
-                  <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">成語填空、古文注音與名句特訓</p>
-                </div>
-                <div class="card-subj-welcome-card" onclick="window.CardModule.selectSubject('英文')">
-                  <div class="subj-badge subj-en" style="width: 48px; height: 48px; font-size: 1.4rem; margin: 0 auto 12px;">英</div>
-                  <h4 style="font-weight: 700; color: var(--text-main);">英文填空卡</h4>
-                  <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">文法介系詞、核心單字與句型</p>
-                </div>
-                <div class="card-subj-welcome-card" onclick="window.CardModule.selectSubject('數學')">
-                  <div class="subj-badge subj-math" style="width: 48px; height: 48px; font-size: 1.4rem; margin: 0 auto 12px;">數</div>
-                  <h4 style="font-weight: 700; color: var(--text-main);">數學填空卡</h4>
-                  <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">韋達定理、畢氏定理與核心公式</p>
-                </div>
-                <div class="card-subj-welcome-card" onclick="window.CardModule.selectSubject('自然/理化')">
-                  <div class="subj-badge subj-sci" style="width: 48px; height: 48px; font-size: 1.4rem; margin: 0 auto 12px;">自</div>
-                  <h4 style="font-weight: 700; color: var(--text-main);">自然/理化卡</h4>
-                  <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">牛頓定律、光合作用與理化概念</p>
-                </div>
-                <div class="card-subj-welcome-card" onclick="window.CardModule.selectSubject('社會')">
-                  <div class="subj-badge subj-soc" style="width: 48px; height: 48px; font-size: 1.4rem; margin: 0 auto 12px;">社</div>
-                  <h4 style="font-weight: 700; color: var(--text-main);">社會填空卡</h4>
-                  <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">歷史事件、地理緯度與公民法條</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Interactive 3D Flip Flashcard Stage Panel -->
-            <div id="card-stage-panel" class="card-stage-panel hidden">
-              <div class="card-stage-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <button id="card-prev-top-btn" class="btn-secondary btn-sm" title="上一張 (快捷鍵 ←)">
-                    <i class="fa-solid fa-chevron-left"></i> 上一張
-                  </button>
-                  <h3 id="card-stage-title" style="font-size: 1.1rem; font-weight: 800; color: var(--text-main); margin: 0;">填空學習卡</h3>
-                </div>
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <span id="card-counter-display" class="stage-tag" style="background: rgba(99, 102, 241, 0.2); color: #a5b4fc; font-weight: 700;">卡片 1 / 1</span>
-                  <button id="card-next-top-btn" class="btn-secondary btn-sm" title="下一張 (快捷鍵 →)">
-                    下一張 <i class="fa-solid fa-chevron-right"></i>
-                  </button>
-                </div>
-              </div>
-
-              <!-- 3D Flip Card Container -->
-              <div id="flip-card-container" class="flip-card-container" title="點擊翻轉查看答案與解析">
-                <!-- Rendered dynamically via JS -->
-              </div>
-
-              <!-- Nav Actions Footer -->
-              <div class="card-nav-bar">
-                <button id="card-prev-btn" class="btn-secondary" title="上一張 (快捷鍵 ←)">
-                  <i class="fa-solid fa-chevron-left"></i> 上一張
-                </button>
-                <button id="btn-flip-card" class="btn-primary" style="padding: 10px 28px; background: linear-gradient(135deg, #f59e0b, #d97706); border: none;">
-                  <i class="fa-solid fa-rotate"></i> 翻轉卡片看答案 (Space)
-                </button>
-                <button id="card-next-btn" class="btn-secondary" title="下一張 (快捷鍵 →)">
-                  下一張 <i class="fa-solid fa-chevron-right"></i>
-                </button>
-              </div>
-            </div>
-
-          </div>
         </section>
       </div>
     </main>
@@ -1075,8 +970,7 @@
   <script src="js/modules/analytics.js?v=76"></script>
   <script src="js/modules/calendar.js?v=76"></script>
   <script src="js/modules/wisdom.js?v=76"></script>
-  <script src="js/modules/card.js?v=76"></script>
-  <script src="js/app.js?v=78"></script>
+  <script src="js/app.js?v=79"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => {

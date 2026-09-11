@@ -34,7 +34,6 @@ class App {
     try { if (window.AnalyticsModule) window.AnalyticsModule.init(); } catch (e) { console.error(e); }
     try { if (window.CalendarModule) window.CalendarModule.init(); } catch (e) { console.error(e); }
     try { if (window.WisdomModule) window.WisdomModule.init(); } catch (e) { console.error(e); }
-    try { if (window.CardModule) window.CardModule.init(); } catch (e) { console.error(e); }
 
     // Load monster battle home page on launch
     try {
@@ -302,7 +301,6 @@ class App {
     // Page Titles Update
     const titles = {
       review: { title: '麥麥錯題本', sub: '' },
-      card: { title: '翻轉填空學習卡', sub: '選擇科目進行重點填空特訓，點擊卡片自由 3D 翻轉觀看解答與記憶點' },
       upload: { title: '錯題上傳與處理', sub: '' },
       archive: { title: '階層分類與樹狀目錄管理', sub: '段考 ➔ 週一日期樹狀歸檔、標籤與 AI 概念聚類' },
       sprint: { title: '段考高頻衝刺與隨身卡', sub: '錯誤≥2次高頻題篩選、15分鐘 Swipe UI 隨身卡、AI 變形題驗收' },
