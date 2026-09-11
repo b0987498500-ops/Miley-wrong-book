@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v67';
+const STORAGE_KEY = 'miley_wrong_questions_v76';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -428,8 +428,8 @@ const INITIAL_SEED_DATA = [
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
-    "mistakeNote": "正三角形核心幾何性質：「三邊長皆相等」！由 x - 3y = 4x + y = 5x - 1$ 列出二元一次聯立方程式，整理得 $\\begin{cases} 2x - 4y = 0 \\implies x = 2y \\ 4x + y = 5x - 1 \\implies x - y = 1 \\end{cases}$，代入即可秒解  = 1, x = 2$！最後題目問的是  + y = 2 + 1 = 3$，切勿只算到 $ 或 $ 就急著選答案！",
-    "stem": "如圖為一個正三角形，若 x - 3y$、x + y$、x - 1$ 分別表示三邊的長，則  + y = ?$\n\n○ (A) 2\n○ (B) 3\n○ (C) 4\n○ (D) 5",
+    "mistakeNote": "正三角形核心幾何性質：「三邊長皆相等」！由 $2x - 3y = 4x + y = 5x - 1$ 列出二元一次聯立方程式，整理得 $\\begin{cases} 2x - 4y = 0 \\implies x = 2y \\\\ 4x + y = 5x - 1 \\implies x - y = 1 \\end{cases}$，代入即可秒解 $y = 1, x = 2$！最後題目問的是 $x + y = 2 + 1 = 3$，切勿只算到 $x$ 或 $y$ 就急著選答案！",
+    "stem": "如圖為一個正三角形，若 $2x - 3y$、$4x + y$、$5x - 1$ 分別表示三邊的長，則 $x + y = ?$\n\n○ (A) 2\n○ (B) 3\n○ (C) 4\n○ (D) 5",
     "answer": "(B) 3",
     "diagramUrl": "assets/questions/q_math_equilateral_triangle_linear_system_009.png",
     "solution": "1. 正三角形三邊長相等：$2x+y = 3x-y = x+2y-1$。\n2. 解聯立得 $x=3, y=1$，三邊長皆為 7，選 **(B)**。",
@@ -452,7 +452,7 @@ const INITIAL_SEED_DATA = [
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
-    "mistakeNote": "注意縱軸單位為「百萬元」！折線圖實線為「狠郝賺」、虛線圈為「泰匯賺」。下半年總營業額：泰匯賺  41 + 43 + 59 + 45 + 40 + 58 = 286$ 百萬元；狠郝賺  53 + 38 + 72 + 89 + 58 + 36 = 346$ 百萬元。兩家差額  346 - 286 = 60$ 百萬元  6000$ 萬元！故泰匯賺比狠郝賺少 6000 萬元，選 (C)！",
+    "mistakeNote": "注意縱軸單位為「百萬元」！折線圖實線為「狠郝賺」、虛線圈為「泰匯賺」。下半年總營業額：泰匯賺 $41 + 43 + 59 + 45 + 40 + 58 = 286$ 百萬元；狠郝賺 $53 + 38 + 72 + 89 + 58 + 36 = 346$ 百萬元。兩家差額 $346 - 286 = 60$ 百萬元 $= 6000$ 萬元！故泰匯賺比狠郝賺少 6000 萬元，選 (C)！",
     "stem": "如圖為泰匯賺與狠郝賺兩家科技公司下半年來每個月的營業額分配折線圖，請問下列敘述何者正確？\n\n○ (A) 泰匯賺平均每月營業額超過 5000 萬元\n○ (B) 狠郝賺平均每月營業額超過 6000 萬元\n○ (C) 泰匯賺公司下半年的營業額比狠郝賺公司少 6000 萬元\n○ (D) 泰匯賺公司下半年的營業額比狠郝賺公司少 3000 萬元",
     "answer": "(C) 泰匯賺公司下半年的營業額比狠郝賺公司少 6000 萬元",
     "diagramUrl": "assets/questions/q_math_line_chart_revenue_comparison_010.png",
@@ -476,7 +476,7 @@ const INITIAL_SEED_DATA = [
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
-    "mistakeNote": "設特價時沐浴乳一瓶 $ 元、香皂一塊 $ 元。特價花費： + 2y = 156$；恢復原價多了 20% 即原價為 .2x$；此時為香皂的 8 倍：.2x = 8y \\implies x = \\frac{20}{3}y$。代入消去求得  = 18$ 元！注意特價與原價為 (1 + 0.2) = 1.2x$！",
+    "mistakeNote": "設特價時沐浴乳一瓶 $x$ 元、香皂一塊 $y$ 元。特價花費：$x + 2y = 156$；恢復原價多了 20% 即原價為 $1.2x$；此時為香皂的 8 倍：$1.2x = 8y \\implies x = \\frac{20}{3}y$。代入消去求得 $y = 18$ 元！注意特價與原價為 $(1 + 0.2)x = 1.2x$！",
     "stem": "志玲趁商店折扣時，買了一瓶沐浴乳和兩塊香皂共花了 156 元，後來沐浴乳恢復原價，價格較特價時多了 20%，而香皂價格不變，此時沐浴乳價格為香皂單價的 8 倍，則香皂一塊多少元？\n\n○ (A) 12\n○ (B) 16\n○ (C) 18\n○ (D) 20",
     "answer": "(C) 18",
     "diagramUrl": "",
@@ -500,16 +500,208 @@ const INITIAL_SEED_DATA = [
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
-    "mistakeNote": "最簡分數定義：分子與分母的最大公因數為 1（互質）！注意質數倍數陷阱：=2\\times 31$ 與 =3\\times 31$ 有公因數 31；=19^2$ 與 19 有公因數 19；$ 各數位和為 6 可被 33 約分！(B) =3^4, 121=11^2$，質因數 3 與 11 互質，為最簡分數！",
-    "stem": "下列何者是最簡分數？\n\n○ (A) 569X\\frac{62}{93}$\n○ (B) $\\frac{81}{121}$\n○ (C) 569X\\frac{19}{361}$\n○ (D) $\\frac{33}{111111}$",
+    "mistakeNote": "最簡分數定義：分子與分母的最大公因數為 1（互質）！注意質數倍數陷阱：62 與 93 有公因數 31；19 與 361 有公因數 19；111111 各位數字和為 6 可被 33 約分！(B) 81 = 3^4, 121 = 11^2，質因數 3 與 11 互質，為最簡分數！",
+    "stem": "下列何者是最簡分數？\n\n○ (A) $-\\frac{62}{93}$\n○ (B) $\\frac{81}{121}$\n○ (C) $-\\frac{19}{361}$\n○ (D) $\\frac{33}{111111}$",
     "answer": "(B) $\\frac{81}{121}$",
     "diagramUrl": "",
-    "solution": "1. 最簡分數判定條件：分子與分母**互質**（最大公因數為 1）。\n2. $105 = 3 \\times 5 \\times 7$。\n3. 選項中與 105 互質者為 16（因數僅有 2），選 **(A)**。",
+    "solution": "1. **最簡分數的定義**：\n- 分數的分子與分母（不看負號）互質，即最大公因數為 1 時，稱為**最簡分數**。\n\n2. **逐一檢驗各選項之因數分解與約分**：\n- **(A) $-\\frac{62}{93}$（非最簡分數）**：\n  $62 = 2 \\times 31$\n  $93 = 3 \\times 31$\n  $\\gcd(62, 93) = 31 \\ne 1$\n  可約分：$-\\frac{62}{93} = -\\frac{2}{3}$。\n- **(B) $\\frac{81}{121}$（最簡分數，正確）**：\n  $81 = 3^4$\n  $121 = 11^2$\n  81 的質因數只有 3；121 的質因數只有 11。\n  $\\gcd(81, 121) = 1$\n  分子與分母互質，無法再約分，為**最簡分數**。\n- **(C) $-\\frac{19}{361}$（非最簡分數）**：\n  $361 = 19^2 = 19 \\times 19$\n  $\\gcd(19, 361) = 19 \\ne 1$\n  可約分：$-\\frac{19}{361} = -\\frac{1}{19}$。\n- **(D) $\\frac{33}{111111}$（非最簡分數）**：\n  分子 $33 = 3 \\times 11$\n  分母 111111 各位數字和為 $1+1+1+1+1+1 = 6$（為 3 的倍數），且 $111111 = 33 \\times 3367$\n  可約分：$\\frac{33}{111111} = \\frac{1}{3367}$。\n\n3. **結論**：最簡分數為 **(B) $\\frac{81}{121}$**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-07"
+  },
+  {
+    "id": "q_math_triangle_angle_bisector_af_013",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "直角三角形商高定理、斜邊上的高與內角平分線性質",
+    "uploadDate": "2026-09-09",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "直角三角形斜邊上的高 $\\overline{AD} = \\frac{\\text{兩股相乘}}{\\text{斜邊}} = \\frac{3 \\times 4}{5} = \\frac{12}{5}$；再由畢氏定理求得 $\\overline{BD} = \\frac{16}{5}$。接著在 $\\triangle ABD$ 中，$\\overline{BF}$ 為角平分線，利用內角平分線性質：$\\overline{AF} : \\overline{FD} = \\overline{AB} : \\overline{BD} = 4 : \\frac{16}{5} = 5 : 4$，得 $\\overline{AF} = \\overline{AD} \\times \\frac{5}{5+4} = \\frac{4}{3}$！",
+    "stem": "如右圖，在 $\\triangle ABC$ 中，$\\angle BAC = 90^\\circ$，$\\overline{AD} \\perp \\overline{BC}$，$\\overline{BE}$ 為 $\\angle ABC$ 的角平分線，且交 $\\overline{AC}$ 於 $E$ 點，$\\overline{AD}$ 和 $\\overline{BE}$ 的交點為 $F$。若 $\\overline{AB} = 4$，$\\overline{AC} = 3$，則 $\\overline{AF} = ?$",
+    "answer": "$\\frac{4}{3}$",
+    "diagramUrl": "assets/questions/q_math_triangle_angle_bisector_af_013.png",
+    "solution": "1. **利用畢氏定理求斜邊 $\\overline{BC}$**：\n   $\\because \\overline{AB} = 4, \\overline{AC} = 3$\n   $\\therefore \\overline{BC} = \\sqrt{3^2 + 4^2} = 5$\n\n2. **求斜邊上的高 $\\overline{AD}$ 與底段 $\\overline{BD}$**：\n   - 由面積相等（兩股積 = 斜邊 $\\times$ 高）：\n     $\\overline{AD} = \\frac{3 \\times 4}{5} = \\frac{12}{5}$\n   - 在直角 $\\triangle ABD$ 中，由畢氏定理：\n     $\\overline{BD} = \\sqrt{4^2 - \\left(\\frac{12}{5}\\right)^2} = \\sqrt{\\frac{400 - 144}{25}} = \\sqrt{\\frac{256}{25}} = \\frac{16}{5}$\n\n3. **利用角平分線性質求 $\\overline{AF}$**：\n   - 在 $\\triangle ABD$ 中，$\\overline{BF}$ 為 $\\angle ABD$ 的角平分線，交 $\\overline{AD}$ 於 $F$：\n     $\\therefore \\overline{AF} : \\overline{FD} = \\overline{AB} : \\overline{BD} = 4 : \\frac{16}{5} = 5 : 4$\n   - 故 $\\overline{AF} = \\overline{AD} \\times \\frac{5}{5 + 4} = \\frac{12}{5} \\times \\frac{5}{9} = \\frac{4}{3}$。\n\n4. **結論**：$\\overline{AF} = \\mathbf{\\frac{4}{3}}$。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-09"
+  },
+  {
+    "id": "q_math_triangle_angle_bisector_ad_014",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "三角形角平分線全等性質（SAS）與同高三角形面積比等於底邊比",
+    "uploadDate": "2026-09-09",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "連接 $\\overline{DE}$，利用 $\\overline{BE}$ 為角平分線及 $\\overline{BC} = \\overline{BD} = 6$，證出 $\\triangle BDE \\cong \\triangle BCE$ (SAS)，得 $\\angle BDE = \\angle C = 90^\\circ$ 且兩者面積相等！由 $\\triangle ABC$ 面積是 $\\triangle ADE$ 的 4 倍，推得 $\\triangle ADE$ 面積與 $\\triangle BDE$ 面積比為 $2 : 3$。因同高（$\\overline{DE}$），底邊比 $\\overline{AD} : \\overline{BD} = 2 : 3$，即可求出 $\\overline{AD} = 4$！",
+    "stem": "如右圖，在 $\\triangle ABC$ 中，$\\angle C = 90^\\circ$，$\\overline{BE}$ 平分 $\\angle ABC$，$D$ 為斜邊 $\\overline{AB}$ 上一點。若 $\\overline{BC} = \\overline{BD} = 6$，$\\triangle ABC$ 面積是 $\\triangle ADE$ 面積的 4 倍，則 $\\overline{AD} =$ ______。",
+    "answer": "4",
+    "diagramUrl": "assets/questions/q_math_triangle_angle_bisector_ad_014.png",
+    "solution": "1. **連接 $\\overline{DE}$，證明 $\\triangle BDE \\cong \\triangle BCE$**：\n   - $\\overline{BC} = \\overline{BD} = 6$（已知）\n   - $\\angle DBE = \\angle CBE$（$\\overline{BE}$ 平分 $\\angle ABC$）\n   - $\\overline{BE} = \\overline{BE}$（公用邊）\n   - 由 **SAS 全等性質**：$\\triangle BDE \\cong \\triangle BCE$。\n   - 因此 $\\angle BDE = \\angle C = 90^\\circ$（即 $\\overline{DE} \\perp \\overline{AB}$），且兩三角形面積相等：\n     $\\text{Area}(\\triangle BDE) = \\text{Area}(\\triangle BCE)$\n\n2. **分析面積比例關係**：\n   - 全體面積：\n     $\\text{Area}(\\triangle ABC) = \\text{Area}(\\triangle ADE) + \\text{Area}(\\triangle BDE) + \\text{Area}(\\triangle BCE)$\n     $= \\text{Area}(\\triangle ADE) + 2 \\times \\text{Area}(\\triangle BDE)$\n   - 題目已知 $\\text{Area}(\\triangle ABC) = 4 \\times \\text{Area}(\\triangle ADE)$：\n     $4 \\times \\text{Area}(\\triangle ADE) = \\text{Area}(\\triangle ADE) + 2 \\times \\text{Area}(\\triangle BDE)$\n     $\\implies 3 \\times \\text{Area}(\\triangle ADE) = 2 \\times \\text{Area}(\\triangle BDE)$\n     $\\implies \\frac{\\text{Area}(\\triangle ADE)}{\\text{Area}(\\triangle BDE)} = \\frac{2}{3}$\n\n3. **利用同高三角形面積比求 $\\overline{AD}$**：\n   - $\\triangle ADE$ 與 $\\triangle BDE$ 在邊 $\\overline{AB}$ 上以 $D$ 為分界，且高均為 $\\overline{DE}$（$\\because \\overline{DE} \\perp \\overline{AB}$）：\n     $\\frac{\\overline{AD}}{\\overline{BD}} = \\frac{\\text{Area}(\\triangle ADE)}{\\text{Area}(\\triangle BDE)} = \\frac{2}{3}$\n   - 已知 $\\overline{BD} = 6$：\n     $\\frac{\\overline{AD}}{6} = \\frac{2}{3} \\implies \\overline{AD} = 6 \\times \\frac{2}{3} = 4$\n\n4. **結論**：$\\overline{AD} = \\mathbf{4}$。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-09"
+  },
+  {
+    "id": "q_math_parallel_ratio_proof_015",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "平行線截比例線段性質與兩組平行線比例傳遞證明",
+    "uploadDate": "2026-09-09",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "遇到兩組平行線時，尋找共同比例中間橋樑（$\\overline{AE} : \\overline{AC}$）！在 $\\triangle ABC$ 中，$\\overline{DE} // \\overline{BC} \\implies \\overline{AE} : \\overline{AC} = \\overline{AD} : \\overline{AB}$；在 $\\triangle ADC$ 中，$\\overline{EF} // \\overline{CD} \\implies \\overline{AE} : \\overline{AC} = \\overline{AF} : \\overline{AD}$。兩式相等得 $\\overline{AD} : \\overline{AB} = \\overline{AF} : \\overline{AD} \\implies \\overline{AD}^2 = \\overline{AF} \\times \\overline{AB}$！",
+    "stem": "如右圖，在 $\\triangle ABC$ 中，$D$、$F$ 兩點在 $\\overline{AB}$ 上，$E$ 點在 $\\overline{AC}$ 上。若 $\\overline{DE} // \\overline{BC}$，$\\overline{EF} // \\overline{CD}$，試說明 $\\overline{AD}^2 = \\overline{AF} \\times \\overline{AB}$。",
+    "answer": "見詳細說明（利用 $\\overline{AE} : \\overline{AC}$ 為橋樑推導得 $\\overline{AD}^2 = \\overline{AF} \\times \\overline{AB}$）",
+    "diagramUrl": "assets/questions/q_math_parallel_ratio_proof_015.png",
+    "solution": "**【詳細證明步驟】**\n\n1. **第一組平行線（在 $\\triangle ABC$ 中）**：\n   - $\\because \\overline{DE} // \\overline{BC}$\n   - 由平行線截比例線段性質：\n     $\\overline{AE} : \\overline{AC} = \\overline{AD} : \\overline{AB} \\quad \\cdots\\cdots ①$\n\n2. **第二組平行線（在 $\\triangle ADC$ 中）**：\n   - $\\because \\overline{EF} // \\overline{CD}$\n   - 由平行線截比例線段性質：\n     $\\overline{AE} : \\overline{AC} = \\overline{AF} : \\overline{AD} \\quad \\cdots\\cdots ②$\n\n3. **利用等量公理綜合 ①、② 兩式**：\n   - 兩式左邊皆為 $\\overline{AE} : \\overline{AC}$，故右邊亦相等：\n     $\\overline{AD} : \\overline{AB} = \\overline{AF} : \\overline{AD}$\n   - 交叉相乘（內項積等於外項積）：\n     $\\overline{AD} \\times \\overline{AD} = \\overline{AF} \\times \\overline{AB}$\n     $\\therefore \\mathbf{\\overline{AD}^2 = \\overline{AF} \\times \\overline{AB}}$（得證）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-09"
+  },
+  {
+    "id": "q_math_parallel_ratio_calc_016",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "計算錯誤",
+    "concept": "平行線截比例線段性質、比例中項求長度與相似三角形對應邊比",
+    "uploadDate": "2026-09-09",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "1. 由兩組平行線性質可知 $\\overline{AD}^2 = \\overline{AF} \\times \\overline{AB}$，代入 $6^2 = \\overline{AF} \\times 9 \\implies \\overline{AF} = 4$！\n2. 求底邊 $\\overline{BC}$ 時需用「小三角形邊比大三角形邊」：$\\overline{AD} : \\overline{AB} = \\overline{DE} : \\overline{BC} \\implies 6 : 9 = 8 : \\overline{BC} \\implies \\overline{BC} = 12$！切勿誤用 $\\overline{BD}$ 作比！",
+    "stem": "如右圖，在 $\\triangle ABC$ 中，$D$、$F$ 兩點在 $\\overline{AB}$ 上，$E$ 點在 $\\overline{AC}$ 上。若 $\\overline{DE} // \\overline{BC}$，$\\overline{EF} // \\overline{CD}$，其中 $\\overline{AD} = 6$，$\\overline{AB} = 9$，$\\overline{DE} = 8$，則 $\\overline{AF}$、$\\overline{BC}$ 的長分別為何？",
+    "answer": "$\\overline{AF} = 4$、$\\overline{BC} = 12$",
+    "diagramUrl": "assets/questions/q_math_parallel_ratio_calc_016.png",
+    "solution": "1. **利用兩組平行線之比例性質求 $\\overline{AF}$**：\n   - $\\because \\overline{DE} // \\overline{BC}$ 且 $\\overline{EF} // \\overline{CD}$\n   - 由上題證明結論：\n     $\\overline{AD}^2 = \\overline{AF} \\times \\overline{AB}$\n   - 將已知數值 $\\overline{AD} = 6$、$\\overline{AB} = 9$ 代入：\n     $6^2 = \\overline{AF} \\times 9$\n     $36 = 9\\overline{AF} \\implies \\mathbf{\\overline{AF} = 4}$\n\n2. **利用平行線對應邊比求 $\\overline{BC}$**：\n   - $\\because \\overline{DE} // \\overline{BC}$\n   - 在 $\\triangle ADE$ 與 $\\triangle ABC$ 中，對應邊成比例：\n     $\\overline{AD} : \\overline{AB} = \\overline{DE} : \\overline{BC}$\n   - 代入數值 $\\overline{AD} = 6$、$\\overline{AB} = 9$、$\\overline{DE} = 8$：\n     $6 : 9 = 8 : \\overline{BC}$\n     $2 : 3 = 8 : \\overline{BC}$\n     $2 \\times \\overline{BC} = 24 \\implies \\mathbf{\\overline{BC} = 12}$\n\n3. **結論**：\n   $\\mathbf{\\overline{AF} = 4}，\\mathbf{\\overline{BC} = 12}$。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-09"
+  },
+  {
+    "id": "q_math_parallel_ext_bisector_df_017",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "平行線截比例線段性質、外角平分線與等腰三角形邊長轉換",
+    "uploadDate": "2026-09-09",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "核心關鍵在於將 $\\overline{DF}$ 拆成 $\\overline{DE} + \\overline{EF}$！\n1. $\\overline{DE} // \\overline{BC} \\implies \\overline{DE} : \\overline{BC} = \\overline{AD} : \\overline{AB} = 1 : (1+3) = 1 : 4$，得 $\\overline{DE} = 16 \\times \\frac{1}{4} = 4$。\n2. 因 $\\overline{DF} // \\overline{BG}$，內錯角 $\\angle EFC = \\angle FCG$；又 $\\overline{CF}$ 為角平分線 $\\implies \\angle ECF = \\angle FCG$。兩底角相等故 $\\triangle ECF$ 為等腰三角形，$\\overline{EF} = \\overline{CE} = 10$！\n3. $\\overline{DF} = 4 + 10 = 14$！",
+    "stem": "如右圖，$\\triangle ABC$ 中，$D$、$E$ 兩點分別在 $\\overline{AB}$、$\\overline{AC}$ 上，且 $\\overline{DE} // \\overline{BC}$，$\\overline{CF}$ 平分 $\\angle ACG$，交 $\\overline{DE}$ 延長線於 $F$ 點。若 $\\overline{AD} : \\overline{DB} = 1 : 3$，$\\overline{BC} = 16$，$\\overline{CE} = 10$，則 $\\overline{DF} =$ ______。",
+    "answer": "14",
+    "diagramUrl": "assets/questions/q_math_parallel_ext_bisector_df_017.png",
+    "solution": "1. **利用平行線比例求 $\\overline{DE}$**：\n   - $\\because \\overline{AD} : \\overline{DB} = 1 : 3$\n   - $\\therefore \\overline{AD} : \\overline{AB} = 1 : (1 + 3) = 1 : 4$\n   - 又 $\\overline{DE} // \\overline{BC}$，在 $\\triangle ADE$ 與 $\\triangle ABC$ 中：\n     $\\overline{DE} : \\overline{BC} = \\overline{AD} : \\overline{AB} = 1 : 4$\n   - 代入 $\\overline{BC} = 16$：\n     $\\overline{DE} = 16 \\times \\frac{1}{4} = 4$\n\n2. **利用平行線內錯角與角平分線證明等腰 $\\triangle ECF$ 求 $\\overline{EF}$**：\n   - $\\because \\overline{DF} // \\overline{BG}$（$F$ 在 $\\overline{DE}$ 延長線上，$G$ 在 $\\overline{BC}$ 延長線上）\n   - 由內錯角相等：$\\angle EFC = \\angle FCG$\n   - 又已知 $\\overline{CF}$ 平分外角 $\\angle ACG$：$\\angle ECF = \\angle FCG$\n   - 因此 $\\angle EFC = \\angle ECF$\n   - 故 $\\triangle ECF$ 為等腰三角形，兩腰長相等：\n     $\\overline{EF} = \\overline{CE} = 10$\n\n3. **計算線段長度 $\\overline{DF}$**：\n   - $\\overline{DF} = \\overline{DE} + \\overline{EF} = 4 + 10 = 14$\n\n4. **結論**：$\\overline{DF} = \\mathbf{14}$。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-09"
+  },
+  {
+    "id": "q_math_triangle_cevian_area_ratio_018",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "三角形同高面積比等於底邊比與共頂點分割三角形面積比例推導",
+    "uploadDate": "2026-09-09",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "同高三角形面積比等於底邊比！\n1. 由 $\\overline{AO} : \\overline{OD} = 1 : 1$，得 $\\triangle AOB = \\triangle BOD = a$、$\\triangle AOC = \\triangle COD = b$。\n2. 底邊 $\\overline{BD} : \\overline{BC} = 3 : 7 \\implies \\overline{BD} : \\overline{CD} = 3 : (7-3) = 3 : 4$。\n3. $\\triangle ABD : \\triangle ADC = 2a : 2b = 3 : 4 \\implies a : b = 3 : 4$。\n4. 設 $a = 3r, b = 4r$，則 $\\triangle AOB : \\triangle BOC : \\triangle AOC = a : (a+b) : b = 3r : (3r+4r) : 4r = 3 : 7 : 4$！",
+    "stem": "如右圖，在 $\\triangle ABC$ 中，$D$、$E$、$F$ 分別為三邊上的一點，$O$ 為 $\\overline{AD}$、$\\overline{BE}$、$\\overline{CF}$ 的交點。若 $\\overline{AO} : \\overline{OD} = 1 : 1$，$BD : BC = 3 : 7$，則 $\\triangle AOB$、$\\triangle BOC$、$\\triangle AOC$ 的面積比為何？",
+    "answer": "3 : 7 : 4",
+    "diagramUrl": "assets/questions/q_math_triangle_cevian_area_ratio_018.png",
+    "solution": "1. **利用 $\\overline{AO} : \\overline{OD} = 1 : 1$ 設未知數**：\n   - $\\because \\overline{AO} : \\overline{OD} = 1 : 1$\n   - 在 $\\triangle ABD$ 中，同高且底等長：\n     $\\text{Area}(\\triangle AOB) = \\text{Area}(\\triangle BOD) = a$\n   - 在 $\\triangle ACD$ 中，同高且底等長：\n     $\\text{Area}(\\triangle AOC) = \\text{Area}(\\triangle COD) = b$\n\n2. **利用底邊比求 $a$ 與 $b$ 的比例**：\n   - $\\because \\overline{BD} : \\overline{BC} = 3 : 7$\n   - $\\therefore \\overline{BD} : \\overline{CD} = 3 : (7 - 3) = 3 : 4$\n   - $\\triangle ABD$ 與 $\\triangle ADC$ 擁有共同頂點 $A$ 與同高：\n     $\\text{Area}(\\triangle ABD) : \\text{Area}(\\triangle ADC) = \\overline{BD} : \\overline{CD} = 3 : 4$\n   - 即 $(a + a) : (b + b) = 2a : 2b = a : b = 3 : 4$\n   - 令 $a = 3r$，$b = 4r$（其中 $r > 0$）\n\n3. **計算三塊三角形面積比**：\n   - $\\text{Area}(\\triangle AOB) = a = 3r$\n   - $\\text{Area}(\\triangle BOC) = \\text{Area}(\\triangle BOD) + \\text{Area}(\\triangle COD) = a + b = 3r + 4r = 7r$\n   - $\\text{Area}(\\triangle AOC) = b = 4r$\n   - 故面積比為：\n     $$\\text{Area}(\\triangle AOB) : \\text{Area}(\\triangle BOC) : \\text{Area}(\\triangle AOC) = 3r : 7r : 4r = 3 : 7 : 4$$\n\n4. **結論**：面積比為 **$3 : 7 : 4$**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-09"
+  },
+  {
+    "id": "q_math_rhombus_angle_bisector_be_019",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "菱形幾何性質（對角線平分內角）、三角形內角平分線性質與相似形邊長比",
+    "uploadDate": "2026-09-10",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "看到菱形內接於三角形，秒用兩大幾何利器！\n1.【秒殺法・內角平分線】：菱形對角線平分對角，故連接 $\\overline{AE}$ 即為 $\\angle BAC$ 之角平分線！由角平分線定理：$\\overline{BE} : \\overline{EC} = \\overline{AB} : \\overline{AC} = 14 : 10 = 7 : 5$，直接求得 $\\overline{BE} = 12 \\times \\frac{7}{7+5} = 7$！\n2.【相似形法】：設菱形邊長為 $x$，由 $\\overline{DE} // \\overline{AC}$ 知 $\\triangle BDE \\sim \\triangle BAC$，$\\frac{x}{10} = \\frac{14-x}{14} \\implies x = \\frac{35}{6}$，再由 $\\overline{BE} = 12 \\times \\frac{x}{10} = 7$！",
+    "stem": "如右圖，在 $\\triangle ABC$ 中，$D$、$E$、$F$ 分別為三邊上的一點，若四邊形 $ADEF$ 為菱形，$\\overline{AB} = 14$，$\\overline{BC} = 12$，$\\overline{AC} = 10$，則 $\\overline{BE} =$ ______。",
+    "answer": "7",
+    "diagramUrl": "assets/questions/q_math_rhombus_angle_bisector_be_019.png",
+    "solution": "1. **方法一：利用菱形對角線為角平分線（秒殺技巧）**：\n   - $\\because$ 四邊形 $ADEF$ 為菱形，四邊等長且對角線平分各對角。\n   - 若連接對角線 $\\overline{AE}$，則 $\\overline{AE}$ 必平分頂角 $\\angle BAC$，即 $\\overline{AE}$ 為 $\\triangle ABC$ 中 $\\angle A$ 的**內角平分線**。\n   - 依據**三角形內角平分線性質**：\n     $$\\overline{BE} : \\overline{EC} = \\overline{AB} : \\overline{AC}$$\n   - 代入已知邊長 $\\overline{AB} = 14$、$\\overline{AC} = 10$：\n     $$\\overline{BE} : \\overline{EC} = 14 : 10 = 7 : 5$$\n   - 已知底邊全長 $\\overline{BC} = 12$，可直接求出 $\\overline{BE}$：\n     $$\\overline{BE} = \\overline{BC} \\times \\frac{7}{7 + 5} = 12 \\times \\frac{7}{12} = \\mathbf{7}$$\n\n2. **方法二：利用平行線與相似三角形（標準幾何推導）**：\n   - 設菱形邊長為 $x$，則 $\\overline{AD} = \\overline{DE} = \\overline{EF} = \\overline{AF} = x$。\n   - $\\because$ 菱形對邊平行，$\\overline{DE} // \\overline{AC}$。\n   - 在 $\\triangle ABC$ 中，$\\triangle BDE \\sim \\triangle BAC$，對應邊成比例：\n     $$\\frac{\\overline{DE}}{\\overline{AC}} = \\frac{\\overline{BD}}{\\overline{BA}}$$\n   - 其中 $\\overline{BD} = \\overline{AB} - \\overline{AD} = 14 - x$，代入方程式：\n     $$\\frac{x}{10} = \\frac{14 - x}{14}$$\n   - 交叉相乘求 $x$：\n     $$14x = 10(14 - x) \\implies 14x = 140 - 10x \\implies 24x = 140 \\implies x = \\frac{35}{6}$$\n   - 再利用對應底邊比例：\n     $$\\frac{\\overline{BE}}{\\overline{BC}} = \\frac{\\overline{DE}}{\\overline{AC}} = \\frac{35/6}{10} = \\frac{7}{12}$$\n   - 得 $\\overline{BE} = 12 \\times \\frac{7}{12} = \\mathbf{7}$。\n\n3. **結論**：$\\overline{BE} = \\mathbf{7}$。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-10"
+  },
+  {
+    "id": "q_math_parallel_lines_trapezoid_ef_cf_020",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "平行線截比例線段性質、平行輔助線分割（平行四邊形＋相似三角形）與梯形比例求長",
+    "uploadDate": "2026-09-10",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "兩大考點重點歸納：\n1.【平行線截比例線段】：直線 $L_1 // L_2 // L_3$ 時，截線左右對應段成比例：$\\overline{AB} : \\overline{BC} = \\overline{DE} : \\overline{EF} \\implies 12 : 18 = 10 : \\overline{EF} \\implies \\overline{EF} = 15$！\n2.【梯形內部橫線求解（兩種方法）】：\n  - 方法一（作平行線分割）：作 $\\overline{AG} // \\overline{DF}$，右側成平行四邊形得 $\\overline{HE} = \\overline{GF} = 20$，左側三角形底邊 $\\overline{BH} = 30 - 20 = 10$。由 $\\triangle ABH \\sim \\triangle ACG$ 得 $\\frac{10}{\\overline{CG}} = \\frac{12}{12+18} = \\frac{2}{5} \\implies \\overline{CG} = 25$。總長 $\\overline{CF} = 25 + 20 = 45$！\n  - 方法二（秒殺分點公式）：中間線長 $\\overline{BE} = \\frac{18 \\times \\overline{AD} + 12 \\times \\overline{CF}}{12 + 18} \\implies 30 = \\frac{360 + 12\\overline{CF}}{30} \\implies \\overline{CF} = 45$！",
+    "stem": "如右圖，直線 $L_1 // L_2 // L_3$，若 $\\overline{AB} = 12$，$\\overline{BC} = 18$，$\\overline{DE} = 10$，$\\overline{AD} = 20$，$\\overline{BE} = 30$，則：\n(1) $\\overline{EF} = ?$\n(2) $\\overline{CF} = ?$",
+    "answer": "(1) 15；(2) 45",
+    "diagramUrl": "assets/questions/q_math_parallel_lines_trapezoid_ef_cf_020.png",
+    "solution": "1. **第 (1) 小題：利用「平行線截等比例線段性質」求 $\\overline{EF}$**：\n   - $\\because L_1 // L_2 // L_3$\n   - 兩截線被三平行線所截出的線段長成比例：\n     $$\\overline{AB} : \\overline{BC} = \\overline{DE} : \\overline{EF}$$\n   - 將題目已知數值代入：\n     $$12 : 18 = 10 : \\overline{EF}$$\n     $$2 : 3 = 10 : \\overline{EF}$$\n     $$2 \\times \\overline{EF} = 30 \\implies \\mathbf{\\overline{EF} = 15}$$\n\n2. **第 (2) 小題：作平行輔助線（平行四邊形 ＋ 相似三角形法）求 $\\overline{CF}$**：\n   - **作輔助線**：過 $A$ 點作 $\\overline{AG} // \\overline{DF}$，分別交直線 $L_2$ 於 $H$ 點、交直線 $L_3$ 於 $G$ 點。\n   - **利用平行四邊形對邊等長**：\n     四邊形 $ADHE$ 與四邊形 $ADGF$ 皆為平行四邊形，故對邊等長：\n     $$\\overline{HE} = \\overline{AD} = 20，\\quad \\overline{GF} = \\overline{AD} = 20$$\n   - **計算小三角形底邊 $\\overline{BH}$**：\n     已知整段 $\\overline{BE} = 30$：\n     $$\\overline{BH} = \\overline{BE} - \\overline{HE} = 30 - 20 = 10$$\n   - **利用 $\\triangle ABH \\sim \\triangle ACG$ 求底邊 $\\overline{CG}$**：\n     在 $\\triangle ACG$ 中，$\\because \\overline{BH} // \\overline{CG}$，由對應邊成比例：\n     $$\\frac{\\overline{BH}}{\\overline{CG}} = \\frac{\\overline{AB}}{\\overline{AC}} = \\frac{\\overline{AB}}{\\overline{AB} + \\overline{BC}}$$\n     $$\\frac{10}{\\overline{CG}} = \\frac{12}{12 + 18} = \\frac{12}{30} = \\frac{2}{5}$$\n     $$2 \\times \\overline{CG} = 50 \\implies \\overline{CG} = 25$$\n   - **計算總長 $\\overline{CF}$**：\n     $$\\overline{CF} = \\overline{CG} + \\overline{GF} = 25 + 20 = \\mathbf{45}$$\n\n3. **第 (2) 小題秒殺技巧：梯形比例分點公式（驗算法）**：\n   - 中間橫線長度等於「交叉相乘加權平均」：\n     $$\\overline{BE} = \\frac{\\overline{BC} \\times \\overline{AD} + \\overline{AB} \\times \\overline{CF}}{\\overline{AB} + \\overline{BC}}$$\n     $$30 = \\frac{18 \\times 20 + 12 \\times \\overline{CF}}{12 + 18} = \\frac{360 + 12\\overline{CF}}{30}$$\n     $$900 = 360 + 12\\overline{CF} \\implies 12\\overline{CF} = 540 \\implies \\mathbf{\\overline{CF} = 45}$$\n\n4. **結論**：\n   (1) $\\mathbf{\\overline{EF} = 15}$；(2) $\\mathbf{\\overline{CF} = 45}$。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-10"
   },
   {
     "id": "q_chinese_part_of_speech_comparison_006",
@@ -726,6 +918,126 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-08"
+  },
+  {
+    "id": "q_chinese_syntax_inversion_007",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "古典詩詞倒裝句修辭判斷（辛棄疾《清平樂·村居》）",
+    "uploadDate": "2026-09-09",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "辛棄疾《清平樂·村居》中的「白髮誰家翁媼」，正常語序應為「誰家白髮翁媼」（定語修飾語前置倒裝），因詞牌格律平仄與押韻（好、媼、草、老）需求而倒裝！其他選項皆為自然常規語序。",
+    "stem": "下列文句，何者使用「倒裝」句法？\n\n○ (A) 樓上晴天碧四垂，樓前芳草接天涯\n○ (B) 新筍已成堂下竹，落花都上燕巢泥\n○ (C) 醉裡吳音相媚好，白髮誰家翁媼\n○ (D) 最喜小兒亡賴，溪頭臥剝蓮蓬。",
+    "answer": "(C) 醉裡吳音相媚好，白髮誰家翁媼",
+    "diagramUrl": "",
+    "solution": "1. **(C) 正確（使用「倒裝」）**：\n   - 出處：辛棄疾《清平樂·村居》。\n   - 原句：「白髮誰家翁媼」，還原正常語序為**「誰家白髮翁媼」**（那是哪一家的白髮老爺爺老奶奶呢？）。\n   - 倒裝原因：為配合詞牌格律與押韻（好、媼），並將「白髮」特徵前置突出老人形象，屬於**修飾語（定語）倒裝**。\n\n2. **其他選項分析（皆為正常語序，無倒裝）**：\n   - **(A) 樓上晴天碧四垂，樓前芳草接天涯**：出自周邦彥《浣溪沙》，晴空蔚藍四垂、芳草連綿天際，為標準主謂賓敘述，無倒裝。\n   - **(B) 新筍已成堂下竹，落花都上燕巢泥**：出自周邦彥《浣溪沙》，新筍長成翠竹、殘花混入燕泥，為順應時序變化之自然敘述，無倒裝。\n   - **(D) 最喜小兒亡賴，溪頭臥剝蓮蓬**：出自辛棄疾《清平樂·村居》，承前省略主語「小兒」，依動作順序敘述，無倒裝。\n\n3. **結論**：正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-09"
+  },
+  {
+    "id": "q_chinese_homophone_shape_wu_015",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "國文會考核心字形辨析：形似同音成語（趨之若『鶩』vs. 好高『騖』遠、嘆『惋』、企『盼』）",
+    "uploadDate": "2026-09-11",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "1. 趨之若「鶩」是「鳥部」（像野鴨爭食搶翻天）！\n2. 好高「騖」遠是「馬部」（像野馬奔馳不知返，比喻不切實際）！\n3. 嘆「惋」是「忄心部」（心裡惋惜哀傷）。\n4. 企「盼」是「目部」（轉動眼睛踮起腳盼望）。",
+    "stem": "下列文句「　」中的成語與詞語，何者字形【完全正確】？\n\n○ (A) 這項新推出的限量公仔引發搶購熱潮，各路收藏家趨之若「騖」\n○ (B) 做學問應當腳踏實地循序漸進，切忌好高「鶩」遠、不切實際\n○ (C) 面對英年早逝的抗疫英雄，全國民眾無不深感痛心嘆「惋」\n○ (D) 離鄉背井求學多年，他日夜企「叛」著能早日返鄉與家人團聚。",
+    "answer": "(C) 面對英年早逝的抗疫英雄，全國民眾無不深感痛心嘆「惋」",
+    "diagramUrl": "",
+    "solution": "1. **(C) 正確（正解）**：\n   - 痛心嘆「惋」：**惋**（忄心部），音 ㄨㄢˇ，指感嘆、惋惜悲痛。\n\n2. **其他選項除錯與字形辨析**：\n   - **(A) 趨之若「騖」❌** 應改為**「鶩」**。\n     - 「鶩」為**鳥部**，本義為野鴨。像成群野鴨爭搶食物般奔向目標，形容許多人爭相搶奪或前往。\n   - **(B) 好高「騖」遠❌** 應改為**「騖」**。\n     - 「騖」為**馬部**，本義為縱馬奔馳。比喻不切實際，一味追求過高過遠的目標。\n   - **(D) 企「叛」❌** 應改為**「盼」**。\n     - 「盼」為**目部**，本義是轉動眼睛看，引申為盼望、期望。「企盼」即踮起腳尖殷切盼望。\n\n★ **秒記口訣**：\n- 🦆 **鴨子搶食（鳥部）** ➔ 趨之若**鶩**\n- 🐎 **野馬奔馳（馬部）** ➔ 好高**騖**遠、馳**騁**\n- 👁️ **眼睛期盼（目部）** ➔ 企**盼**\n- ❤️ **心中哀痛（心部）** ➔ 嘆**惋**",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-11"
+  },
+  {
+    "id": "q_chinese_phonetics_stroke_you_que_016",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "國文會考核心字音辨析：成語與常考字音（生死『攸』關、付之『闕』如、『矢』口否認、『矇』混過關）",
+    "uploadDate": "2026-09-11",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "1. 生死「攸」關：音 ㄧㄡ（關係、所繫），非 ㄒㄧㄡ。\n2. 付之「闕」如：音 ㄑㄩㄝ（一聲陰平），通「缺」，非 ㄐㄩㄝˊ 也非 ㄑㄩㄝˋ！\n3. 「矢」口否認：音 ㄕˇ（三聲上聲），像發誓般堅決否定，非 ㄕˋ。\n4. 「矇」混過關：教育部標準音 ㄇㄥ（一聲陰平），欺瞞矇蔽之意，非 ㄇㄥˊ。",
+    "stem": "下列文句「　」中字的讀音，何者標示【完全正確】？\n\n○ (A) 這次手術關係到病患的性命，可謂生死「攸」關／ㄧㄡ\n○ (B) 這份研究報告的核心實驗數據付之「闕」如，難以令人信服／ㄐㄩㄝˊ\n○ (C) 面對警方的鐵證與監視錄影，嫌犯依然「矢」口否認犯行／ㄕˋ\n○ (D) 他想靠小聰明在重要證照考場中「矇」混過關，當場被監考官識破／ㄇㄥˊ。",
+    "answer": "(A) 這次手術關係到病患的性命，可謂生死「攸」關／ㄧㄡ",
+    "diagramUrl": "",
+    "solution": "1. **(A) 正確（正解）**：\n   - 生死「攸」關：讀音為 **ㄧㄡ**。「攸」為所、關係之意，比喻生死存亡緊密相扣，關係重大。\n\n2. **其他選項讀音除錯**：\n   - **(B) 付之「闕」如 ❌**：讀音應為 **ㄑㄩㄝ**（陰平一聲），不可讀作 ㄐㄩㄝˊ 或 ㄑㄩㄝˋ！\n     - 「闕」通「缺」，指殘缺空缺。「付之闕如」指缺漏不備、未有著落。\n   - **(C) 「矢」口否認 ❌**：讀音應為 **ㄕˇ**（上聲三聲），不可讀作 ㄕˋ！\n     - 「矢」本義為箭，引申為立誓、堅決如箭直射直言，形容一口咬定、堅決否定。\n   - **(D) 「矇」混過關 ❌**：教育部標準音為 **ㄇㄥ**（陰平一聲），不可讀作 ㄇㄥˊ！\n     - 「矇」在此指欺騙、遮蔽真相（如矇混過關、矇騙欺瞞皆讀 ㄇㄥ；而「濛濛細雨」讀 ㄇㄥˊ；「啟蒙教育」讀 ㄇㄥˊ）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-11"
+  },
+  {
+    "id": "q_chinese_character_spelling_kan_zhen_fu_017",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "記憶混淆",
+    "concept": "國文會考核心字形辨析：同音字與部首精選（『勘』測、『斟』酌、『俘』虜、『幽』暗、『綿』薄之力）",
+    "uploadDate": "2026-09-11",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "1. 「勘」測是「力部」（查考校核用力測量），不是土部「堪」。\n2. 「斟」酌是「斗部」（衡量容量），斟酌損益、滿斟皆同字。\n3. 「俘」虜是「亻人部」（抓獲的戰俘），不是水部「浮」。\n4. 「幽」暗是「幺部」（幽閉昏暗深邃），與生死「攸」關（攸）不同！\n5. 「綿」薄之力多作「糹（綿）」，亦可通「木（棉）」，指微薄之力。",
+    "stem": "下列各組文句「　」中的注音，寫成國字後何者字形【兩兩相同】？\n\n○ (A) 工程團隊實地「ㄎㄢ」測地形／連番受挫，情況「ㄎㄢ」慮\n○ (B) 凡事多加「ㄓㄣ」酌再作決定／為遠道而來的貴賓滿「ㄓㄣ」美酒\n○ (C) 兩軍交戰大獲全勝並生「ㄈㄨˊ」敵將／池塘水面上「ㄈㄨˊ」萍飄動\n○ (D) 此案事關重大、生死「ㄧㄡ」關／山間曲徑「ㄧㄡ」深、環境靜謐。",
+    "answer": "(B) 凡事多加「ㄓㄣ」酌再作決定／為遠道而來的貴賓滿「ㄓㄣ」美酒",
+    "diagramUrl": "",
+    "solution": "1. **(B) 字形完全相同（正解）**：\n   - 凡事多加「斟」酌：**斟**（斗部，反覆衡量權衡，語出《出師表》「斟酌損益」）。\n   - 滿「斟」美酒：**斟**（斗部，倒酒、注入液體）。兩者國字皆為「斟」，選 **(B)**。\n\n2. **其他選項辨析**：\n   - **(A) 勘 vs. 堪（不同）**：\n     - 實地「勘」測：**勘**（力部，審查、校核踏勘）。\n     - 情況「堪」慮：**堪**（土部，能、可以承受）。\n   - **(C) 俘 vs. 浮（不同）**：\n     - 生「俘」敵將：**俘**（亻人部，戰爭中捕獲的敵軍人犯）。\n     - 「浮」萍飄動：**浮**（氵水部，浮在水面）。\n   - **(D) 攸 vs. 幽（不同）**：\n     - 生死「攸」關：**攸**（攸部，所、所繫關聯）。\n     - 曲徑「幽」深：**幽**（幺部，昏暗、深遠靜謐）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-11"
+  },
+  {
+    "id": "q_chinese_idiom_comprehensive_13_018",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "國文一段段考常考字音字形：13大考點全景檢測（攸、幽、鶩、騖、矢、矇、惋、綿、闕、勘、斟、俘、盼）",
+    "uploadDate": "2026-09-11",
+    "mondayDate": "2026-09-07",
+    "mondayDates": [
+      "2026-09-07"
+    ],
+    "weekLabel": "2026-09-07 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "13大核心字音字形考點對照表：\n17. 企「盼」：目部\n32. 付之「闕」如：ㄑㄩㄝ\n33. 「勘」測：力部\n34. 「斟」酌：斗部\n37. 生死「攸」關：ㄧㄡ\n38. 「幽」暗：幺部\n40. 趨之若「鶩」：鳥部\n41. 好高「騖」遠：馬部\n43. 「矢」口否認：ㄕˇ\n45. 「矇」混過關：ㄇㄥ\n47. 嘆「惋」：心部\n48. 「綿（棉）」薄之力：ㄇㄧㄢˊ\n50. 「俘」虜：人部",
+    "stem": "段考複習時，小麥整理了本次國文段考卷中的13大核心字音字形考點，下列哪一位同學的筆記【完全正確】？\n\n○ (A) 麥麥：「好高ㄠˋ遠」與「趨之若ㄠˋ」都是追求目標的意思，所以底下的部首都是「馬」部\n○ (B) 晨晨：企「ㄆㄢˋ」寫作「盼」（目部）；感嘆嘆「ㄨㄢˇ」寫作「惋」（心部），部首掌握得完全正確\n○ (C) 涵涵：「付之闕如」的「闕」讀作「ㄑㄩㄝˋ」，意思是指古代宮門外的觀樓\n○ (D) 欣欣：「矢口否認」的「矢」讀作「ㄕˋ」，意思是發誓說謊話。",
+    "answer": "(B) 晨晨：企「ㄆㄢˋ」寫作「盼」（目部）；感嘆嘆「ㄨㄢˇ」寫作「惋」（心部），部首掌握得完全正確",
+    "diagramUrl": "",
+    "solution": "1. **(B) 正確（正解）**：\n   - 企「盼」：寫作「盼」（目部，轉眼盼望）。\n   - 嘆「惋」：寫作「惋」（忄心部，惋惜驚嘆）。兩者用字與部首皆完全正確，選 **(B)**。\n\n2. **其他選項除錯**：\n   - **(A) 錯誤**：\n     - 趨之若「鶩」：是**「鳥部」**（野鴨成群搶食）。\n     - 好高「騖」遠：才是**「馬部」**（狂馬奔馳，比喻不切實際）。兩者部首截然不同！\n   - **(C) 錯誤**：\n     - 「付之闕如」的「闕」讀作 **ㄑㄩㄝ**（陰平一聲），在此通「缺」，指殘缺空缺，非宮闕之意。\n   - **(D) 錯誤**：\n     - 「矢口否認」的「矢」讀作 **ㄕˇ**（上聲三聲，非ㄕˋ），本義如箭射出直言，引申為一口咬定、立誓堅決否定。\n\n---\n### 📖 段考精選 13 題考點速查對照表：\n| 題號 | 題目考點 | 正確字音／字形 | 核心部首與字義重點 |\n| :---: | :--- | :---: | :--- |\n| **17** | 企「ㄆㄢˋ」 | **盼** | **目部**（翹首期盼） |\n| **32** | 付之「闕」如 | **ㄑㄩㄝ** | **門部**（通「缺」，缺漏不備） |\n| **33** | 「ㄎㄢ」測 | **勘** | **力部**（校核、踏勘審視） |\n| **34** | 「ㄓㄣ」酌 | **斟** | **斗部**（反覆衡量、倒酒） |\n| **37** | 生死「攸」關 | **ㄧㄡ** | **攸部**（所、關係） |\n| **38** | 「ㄧㄡ」暗 | **幽** | **幺部**（深邃昏暗幽靜） |\n| **40** | 趨之若「ㄠˋ」 | **鶩** | **鳥部**（野鴨搶食爭奪） |\n| **41** | 好高「ㄠˋ」遠 | **騖** | **馬部**（野馬狂奔、不切實際） |\n| **43** | 「矢」口否認 | **ㄕˇ** | **矢部**（如箭直言、一口咬定） |\n| **45** | 「矇」混過關 | **ㄇㄥ** | **目部**（矇蔽、欺瞞真相） |\n| **47** | 嘆「ㄨㄢˇ」 | **惋** | **忄部**（惋惜悲嘆） |\n| **48** | 「ㄇㄧㄢˊ」薄之力 | **綿／棉** | **糸部／木部**（自謙力量微小） |\n| **50** | 「ㄈㄨˊ」虜 | **俘** | **亻部**（擒獲戰俘） |",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-11"
   }
 ];
 
@@ -758,7 +1070,16 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v66') ||
+      stored = localStorage.getItem('miley_wrong_questions_v75') ||
+               localStorage.getItem('miley_wrong_questions_v74') ||
+               localStorage.getItem('miley_wrong_questions_v73') ||
+               localStorage.getItem('miley_wrong_questions_v72') ||
+               localStorage.getItem('miley_wrong_questions_v71') ||
+               localStorage.getItem('miley_wrong_questions_v70') ||
+               localStorage.getItem('miley_wrong_questions_v69') ||
+               localStorage.getItem('miley_wrong_questions_v68') ||
+               localStorage.getItem('miley_wrong_questions_v67') ||
+               localStorage.getItem('miley_wrong_questions_v66') ||
                localStorage.getItem('miley_wrong_questions_v65') ||
                localStorage.getItem('miley_wrong_questions_v64') ||
                localStorage.getItem('miley_wrong_questions_v63') ||
@@ -787,10 +1108,33 @@ class DataManager {
       this.save();
     }
 
+    // Comprehensive split-join cleaner to purge any legacy 569X or 20474 corruption
+    const cleanCorruptText = (text) => {
+      if (typeof text !== 'string') return text;
+      let s = text;
+      if (s.includes('569X')) {
+        s = s.split('569X\\frac').join('$-\\frac')
+             .split('569X').join('-$');
+      }
+      if (s.includes('20474')) {
+        s = s.split('20474').join('$$');
+      }
+      return s;
+    };
+
+    if (Array.isArray(this.questions)) {
+      this.questions.forEach(q => {
+        if (!q) return;
+        ['stem', 'solution', 'concept', 'mistakeNote', 'answer'].forEach(field => {
+          if (q[field]) q[field] = cleanCorruptText(q[field]);
+        });
+      });
+    }
+
     // Auto-sync any newly added system seed questions or seed content updates
     INITIAL_SEED_DATA.forEach(seed => {
       if (Array.isArray(this.deletedIds) && this.deletedIds.includes(seed.id)) return;
-      const idx = this.questions.findIndex(q => q && q.id === seed.id);
+      const idx = this.questions.findIndex(q => q && (q.id === seed.id || (q.stem && seed.stem && q.stem.includes('下列何者是最簡分數') && seed.stem.includes('下列何者是最簡分數'))));
       if (idx === -1) {
         this.questions.push(JSON.parse(JSON.stringify(seed)));
       } else {
