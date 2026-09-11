@@ -642,7 +642,7 @@ window.ReviewModule = {
     // Meta Tags & Mastery
     document.getElementById('fc-subject').innerText = q.subject;
     document.getElementById('fc-reason').innerText = q.errorReason;
-    document.getElementById('fc-concept').innerHTML = `<i class="fa-regular fa-lightbulb" style="margin-right: 5px; color: #fbbf24; font-size: 0.85em;"></i>${q.concept || ''}`;
+    document.getElementById('fc-concept').innerText = `# ${q.concept}`;
     
     const badgeEl = document.getElementById('fc-mastery-badge');
     if (badgeEl) {
@@ -711,9 +711,7 @@ window.ReviewModule = {
     if (this.hasInteractiveOptions && optionsTextEl) {
       this.currentOptionsMap = optExtraction.options;
       const letters = Object.keys(optExtraction.options).sort();
-      const maxOptLen = Math.max(...letters.map(l => (optExtraction.options[l] || '').length));
-      const isShort = maxOptLen <= 26;
-      let html = `<div class="fc-interactive-options ${isShort ? 'options-grid-2x2' : 'options-stack'}" id="fc-interactive-options" role="radiogroup" aria-label="選擇題選項">`;
+      let html = '<div class="fc-interactive-options" id="fc-interactive-options" role="radiogroup" aria-label="選擇題選項">';
       letters.forEach(letter => {
         html += `
           <div class="fc-option-card" data-choice="${letter}" tabindex="0" role="radio" aria-checked="false">
