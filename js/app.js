@@ -102,7 +102,8 @@ class App {
     const topbarTriggerBtn = document.getElementById('topbar-sidebar-trigger');
 
     if (toggleBtn && sidebar) {
-      toggleBtn.addEventListener('click', () => {
+      toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         sidebar.classList.toggle('collapsed');
         const isCollapsed = sidebar.classList.contains('collapsed');
         toggleBtn.setAttribute('title', isCollapsed ? '展開側邊欄' : '收合側邊欄');
