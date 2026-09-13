@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v78';
+const STORAGE_KEY = 'miley_wrong_questions_v79';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -789,7 +789,7 @@ const INITIAL_SEED_DATA = [
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
     "mistakeNote": "【國字注音常考陷阱筆記】：\n2. 兜【鍪】（矛＋攴＋金，古代頭盔）；\n8. 【悠】然神往（攸＋心，神思嚮往，非「幽」）；\n9. 【休】戚與共（休是喜慶，戚是憂患，非「修」）；\n10. 一【闋】詞（門＋癸，計算詞的單位，切勿誤寫為「闕」）！",
-    "stem": "【國字注音寫字填空測驗】\n請依題幹注音在各題括號中寫出正確國字（可於框內鍵入，或點擊上方「草稿區」手寫練習）：\n\n2. 兜 ㄇㄠˋ 【　　】\n8. 一 ㄧㄡ 然神往 【　　】\n9. ㄒㄧㄡ 戚與共 【　　】\n10. 一 ㄑㄩㄝˋ 詞 【　　】",
+    "stem": "【國字注音寫字填空測驗】\n請依題幹注音在各題括號中寫出正確國字（可於框內鍵入，或點擊上方「草稿區」手寫練習）：\n\n2. 兜 ㄇㄡˊ 【　　】\n8. 一 ㄧㄡ 然神往 【　　】\n9. ㄒㄧㄡ 戚與共 【　　】\n10. 一 ㄑㄩㄝˋ 詞 【　　】",
     "answer": "2. 【鍪】（兜鍪）\n8. 【悠】（悠然神往）\n9. 【休】（休戚與共）\n10. 【闋】（一闋詞）",
     "diagramUrl": "assets/questions/q_chinese_fill_in_characters_009_test.png",
     "solution": "![考卷紅字答案照](assets/questions/q_chinese_fill_in_characters_009_answer.png)\n\n- **2. 【鍪】**：金部（上矛＋攴、下金），古代頭盔；辛棄疾「年少萬兜鍪」借指戰士。\n- **8. 【悠】**：心部（攸＋心），心神嚮往（非「幽」）。\n- **9. 【休】**：人部，休是喜慶、戚是憂患（非「修」）。\n- **10. 【闋】**：門部（門＋癸），計算詞的單位（量詞）；**切勿誤寫為宮殿城樓的「闕」**！",
@@ -1094,7 +1094,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v76') ||
+      stored = localStorage.getItem('miley_wrong_questions_v78') ||
+               localStorage.getItem('miley_wrong_questions_v76') ||
                localStorage.getItem('miley_wrong_questions_v75') ||
                localStorage.getItem('miley_wrong_questions_v74') ||
                localStorage.getItem('miley_wrong_questions_v73') ||

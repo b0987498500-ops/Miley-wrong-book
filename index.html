@@ -80,7 +80,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=133">
+  <link rel="stylesheet" href="styles.css?v=134">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -510,6 +510,26 @@
                       <button type="button" id="btn-review-font-inc" class="btn-secondary font-quick-btn" title="題目字體放大"><i class="fa-solid fa-font" style="font-size: 1.05rem;"></i> +</button>
                     </div>
 
+                    <!-- Progress Bookmark Button (進度標籤 / 各科記憶) -->
+                    <div class="review-bookmark-dropdown-wrap">
+                      <button type="button" id="btn-review-bookmark-hub" class="btn-bookmark-hub" title="進度標籤：記錄與跳轉至各科最後複習題號">
+                        <i class="fa-solid fa-bookmark bookmark-gold-icon"></i>
+                        <span class="bookmark-btn-label">進度標籤</span>
+                        <span id="bookmark-current-tag" class="bookmark-current-tag">第 1 題</span>
+                      </button>
+                      <div id="review-bookmark-popover" class="review-bookmark-popover hidden">
+                        <div class="bookmark-popover-header">
+                          <div class="bookmark-header-title">
+                            <i class="fa-solid fa-bookmark" style="color: #f59e0b;"></i>
+                            <span>各科複習進度標籤</span>
+                          </div>
+                          <button type="button" id="btn-close-bookmark-popover" class="bookmark-popover-close" title="關閉">&times;</button>
+                        </div>
+                        <p class="bookmark-popover-desc">自動記錄您在各科目上次複習的題號，點擊即可一秒跳轉繼續做題！</p>
+                        <div id="bookmark-popover-content" class="bookmark-popover-content"></div>
+                      </div>
+                    </div>
+
                     <button id="btn-toggle-fullscreen" class="btn-accent-sm" title="切換全螢幕滿版大畫面">
                       <i class="fa-solid fa-expand"></i> 全螢幕
                     </button>
@@ -537,7 +557,14 @@
                 <!-- Ebbinghaus Progress Tracker -->
                 <div class="review-progress-bar-container">
                 <div class="progress-info">
-                  <span id="review-current-index">題目 1 / 5</span>
+                  <div class="progress-info-left">
+                    <span id="review-current-index">題目 1 / 5</span>
+                    <div id="bookmark-resume-chip" class="bookmark-resume-chip hidden">
+                      <i class="fa-solid fa-clock-rotate-left"></i>
+                      <span id="bookmark-resume-text">上次停在第 16 題</span>
+                      <button type="button" id="btn-resume-jump" class="btn-resume-jump-link">跳轉 <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                  </div>
                   <span id="review-ebbinghaus-stage" class="stage-tag">艾賓浩斯週期: 1 週次</span>
                 </div>
                 <div class="progress-track">
@@ -561,6 +588,9 @@
                       <span class="tag-concept" id="fc-concept">連通管原理</span>
                     </div>
                     <div class="card-top-actions">
+                      <button type="button" id="btn-card-pin-bookmark" class="btn-card-pin-bookmark" title="標記/收藏此題書籤">
+                        <i class="fa-regular fa-bookmark"></i> <span class="card-pin-label">標籤此題</span>
+                      </button>
                       <span class="mastery-status unmastered" id="fc-mastery-badge">未擊敗 (1 次)</span>
                       <button id="btn-delete-this-week" class="btn-delete-week" title="僅從本週移除此錯題">
                         <i class="fa-solid fa-trash-can"></i> 僅在本週刪除
@@ -960,17 +990,17 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=78"></script>
+  <script src="js/data.js?v=79"></script>
   <script src="js/utils/katex_render.js?v=76"></script>
   <script src="js/utils/pdf_export.js?v=76"></script>
   <script src="js/modules/upload.js?v=76"></script>
   <script src="js/modules/archive.js?v=76"></script>
-  <script src="js/modules/review.js?v=77"></script>
+  <script src="js/modules/review.js?v=78"></script>
   <script src="js/modules/sprint.js?v=76"></script>
   <script src="js/modules/analytics.js?v=76"></script>
   <script src="js/modules/calendar.js?v=76"></script>
   <script src="js/modules/wisdom.js?v=76"></script>
-  <script src="js/app.js?v=80"></script>
+  <script src="js/app.js?v=81"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => {

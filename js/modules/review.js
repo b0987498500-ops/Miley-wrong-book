@@ -21,6 +21,7 @@ window.ReviewModule = {
     this.bindEvents();
     this.bindWelcomeEvents();
     this.initScratchpad();
+    this.bindBookmarkEvents();
     this.loadReviewQueue(null, null);
   },
 
@@ -212,6 +213,322 @@ window.ReviewModule = {
     document.getElementById('btn-add-similar-to-wrong-book')?.addEventListener('click', () => self.addSimilarQuestionToWrongBook());
   },
 
+  BOOKMARK_STORAGE_KEY: 'miley_review_bookmarks_v2',
+
+  getBookmarks: function() {
+    try {
+      const raw = localStorage.getItem(this.BOOKMARK_STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === 'object') {
+          if (!parsed.subjects) parsed.subjects = {};
+          if (!Array.isArray(parsed.pinnedQuestionIds)) parsed.pinnedQuestionIds = [];
+          return parsed;
+        }
+      }
+    } catch (e) {
+      console.warn('Failed to parse bookmarks', e);
+    }
+    return { subjects: {}, pinnedQuestionIds: [], lastActiveSubject: null };
+  },
+
+  saveBookmarkData: function(data) {
+    try {
+      localStorage.setItem(this.BOOKMARK_STORAGE_KEY, JSON.stringify(data));
+    } catch (e) {}
+  },
+
+  saveCurrentBookmark: function() {
+    if (!this.activeQuestions || this.activeQuestions.length === 0) {
+      this.updateBookmarkHubUI();
+      return;
+    }
+    const q = this.activeQuestions[this.currentIndex];
+    if (!q) return;
+
+    const data = this.getBookmarks();
+    const currentSubj = (this.currentSubjectFilter && this.currentSubjectFilter !== 'ALL')
+      ? this.currentSubjectFilter
+      : (q.subject || '全科');
+
+    data.subjects[currentSubj] = {
+      subject: currentSubj,
+      questionId: q.id,
+      index: this.currentIndex,
+      displayNum: this.currentIndex + 1,
+      total: this.activeQuestions.length,
+      concept: q.concept || '',
+      monday: this.currentMondayFilter || 'ALL',
+      timestamp: Date.now()
+    };
+    data.lastActiveSubject = currentSubj;
+
+    this.saveBookmarkData(data);
+    this.updateBookmarkHubUI();
+  },
+
+  updateBookmarkHubUI: function() {
+    const tagEl = document.getElementById('bookmark-current-tag');
+    if (tagEl) {
+      if (this.activeQuestions && this.activeQuestions.length > 0) {
+        tagEl.innerText = `第 ${this.currentIndex + 1} 題`;
+        tagEl.style.display = 'inline-block';
+      } else {
+        tagEl.style.display = 'none';
+      }
+    }
+
+    // Update card pin button
+    const pinBtn = document.getElementById('btn-card-pin-bookmark');
+    if (pinBtn) {
+      if (this.activeQuestions && this.activeQuestions[this.currentIndex]) {
+        pinBtn.style.display = 'inline-flex';
+        const q = this.activeQuestions[this.currentIndex];
+        const data = this.getBookmarks();
+        const isPinned = Array.isArray(data.pinnedQuestionIds) && data.pinnedQuestionIds.includes(q.id);
+        if (isPinned) {
+          pinBtn.classList.add('pinned');
+          pinBtn.innerHTML = '<i class="fa-solid fa-bookmark"></i> <span class="card-pin-label">已標籤</span>';
+          pinBtn.setAttribute('title', '已加入標籤，點擊取消');
+        } else {
+          pinBtn.classList.remove('pinned');
+          pinBtn.innerHTML = '<i class="fa-regular fa-bookmark"></i> <span class="card-pin-label">標籤此題</span>';
+          pinBtn.setAttribute('title', '點擊將此題加入標籤');
+        }
+      } else {
+        pinBtn.style.display = 'none';
+      }
+    }
+  },
+
+  togglePinCurrentQuestion: function() {
+    if (!this.activeQuestions || !this.activeQuestions[this.currentIndex]) return;
+    const q = this.activeQuestions[this.currentIndex];
+    const data = this.getBookmarks();
+    if (!Array.isArray(data.pinnedQuestionIds)) data.pinnedQuestionIds = [];
+
+    const idx = data.pinnedQuestionIds.indexOf(q.id);
+    if (idx >= 0) {
+      data.pinnedQuestionIds.splice(idx, 1);
+      window.UploadModule?.showToast?.(`已取消此題標籤`);
+    } else {
+      data.pinnedQuestionIds.push(q.id);
+      window.UploadModule?.showToast?.(`已標籤此題！隨時可在「進度標籤」中查看`, 'success');
+    }
+    this.saveBookmarkData(data);
+    this.updateBookmarkHubUI();
+  },
+
+  toggleBookmarkPopover: function(forceState = null) {
+    const popover = document.getElementById('review-bookmark-popover');
+    if (!popover) return;
+    const isHidden = popover.classList.contains('hidden');
+    const shouldShow = forceState !== null ? forceState : isHidden;
+
+    if (shouldShow) {
+      this.renderBookmarkPopover();
+      popover.classList.remove('hidden');
+    } else {
+      popover.classList.add('hidden');
+    }
+  },
+
+  renderBookmarkPopover: function() {
+    const container = document.getElementById('bookmark-popover-content');
+    if (!container) return;
+
+    const data = this.getBookmarks();
+    const activeSubj = (this.currentSubjectFilter && this.currentSubjectFilter !== 'ALL')
+      ? this.currentSubjectFilter
+      : ((this.activeQuestions && this.activeQuestions[this.currentIndex]?.subject) || '全科');
+
+    let html = '';
+
+    // 1. Current Subject Progress Highlight Card
+    if (this.activeQuestions && this.activeQuestions.length > 0) {
+      const q = this.activeQuestions[this.currentIndex];
+      html += `
+        <div class="bm-current-subject-card">
+          <div class="bm-card-head">
+            <span class="bm-subj-pill ${activeSubj}">${activeSubj}</span>
+            <span class="bm-progress-text">目前題號：第 ${this.currentIndex + 1} / ${this.activeQuestions.length} 題</span>
+          </div>
+          <div class="bm-concept-snippet" title="${q.concept || ''}">
+            <i class="fa-solid fa-lightbulb" style="color: #fbbf24; margin-right: 4px;"></i>${q.concept || '題目複習中'}
+          </div>
+          <button type="button" class="bm-jump-btn" id="btn-bm-stay-current">
+            <i class="fa-solid fa-circle-check"></i> 目前正在此題（已自動記錄進度）
+          </button>
+        </div>
+      `;
+    }
+
+    // 2. All Subjects Progress List
+    html += `
+      <div class="bm-section-title">
+        <i class="fa-solid fa-layer-group"></i> 各科目上次複習進度標籤
+      </div>
+    `;
+
+    const standardSubjects = ['國文', '數學', '理化', '自然', '社會', '英文'];
+    const allKnownSubjs = Array.from(new Set([...standardSubjects, ...Object.keys(data.subjects)]));
+
+    let rowsHtml = '';
+    allKnownSubjs.forEach(subj => {
+      const bm = data.subjects[subj];
+      if (!bm) return;
+
+      const timeAgo = this.formatRelativeTime(bm.timestamp);
+      rowsHtml += `
+        <div class="bm-subject-row">
+          <div class="bm-row-left">
+            <span class="bm-subj-pill ${subj}">${subj}</span>
+            <div class="bm-row-info">
+              <div class="bm-row-progress">第 ${bm.displayNum || (bm.index + 1)} 題 <span style="font-size: 0.74rem; font-weight: normal; color: var(--text-muted);">/ 共 ${bm.total} 題</span></div>
+              <div class="bm-row-concept" title="${bm.concept || ''}">${bm.concept ? '#' + bm.concept : timeAgo}</div>
+            </div>
+          </div>
+          <button type="button" class="bm-row-jump-btn" data-jump-subject="${subj}">
+            跳轉 <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      `;
+    });
+
+    if (rowsHtml) {
+      html += rowsHtml;
+    } else {
+      html += `
+        <div class="bm-empty-hint">
+          <i class="fa-solid fa-bookmark" style="font-size: 1.5rem; color: #475569; margin-bottom: 6px; display: block;"></i>
+          尚無其他科目的進度標籤<br>只要瀏覽題目，系統就會自動為您記憶題號！
+        </div>
+      `;
+    }
+
+    container.innerHTML = html;
+
+    // Bind jumps
+    container.querySelectorAll('[data-jump-subject]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetSubj = btn.getAttribute('data-jump-subject');
+        this.jumpToSubjectBookmark(targetSubj);
+      });
+    });
+
+    const stayBtn = container.querySelector('#btn-bm-stay-current');
+    if (stayBtn) {
+      stayBtn.addEventListener('click', () => {
+        this.toggleBookmarkPopover(false);
+      });
+    }
+  },
+
+  jumpToSubjectBookmark: function(targetSubj) {
+    const data = this.getBookmarks();
+    const bm = data.subjects[targetSubj];
+    this.toggleBookmarkPopover(false);
+
+    if (!bm) return;
+
+    const currentSubj = this.currentSubjectFilter || 'ALL';
+    const isSameSubj = (currentSubj === targetSubj) || (targetSubj === '全科' && currentSubj === 'ALL');
+
+    if (isSameSubj && this.activeQuestions.length > 0) {
+      this.currentIndex = Math.min(Math.max(0, bm.index || 0), this.activeQuestions.length - 1);
+      this.renderCurrentCard();
+      this.scrollToCardTop();
+      window.UploadModule?.showToast?.(`已跳轉至 ${targetSubj} 第 ${this.currentIndex + 1} 題`, 'success');
+    } else {
+      if (window.app) {
+        window.app.startReviewWithFilter(targetSubj, bm.monday || 'ALL', false, bm.index || 0);
+        window.UploadModule?.showToast?.(`已切換至 ${targetSubj} 並跳轉至第 ${(bm.index || 0) + 1} 題`, 'success');
+      }
+    }
+  },
+
+  checkResumePrompt: function() {
+    const chip = document.getElementById('bookmark-resume-chip');
+    if (!chip) return;
+
+    if (!this.activeQuestions || this.activeQuestions.length === 0) {
+      chip.classList.add('hidden');
+      return;
+    }
+
+    const data = this.getBookmarks();
+    const activeSubj = (this.currentSubjectFilter && this.currentSubjectFilter !== 'ALL')
+      ? this.currentSubjectFilter
+      : 'ALL';
+
+    const bm = data.subjects[activeSubj] || data.subjects[this.activeQuestions[0]?.subject];
+    if (bm && bm.index > 0 && this.currentIndex === 0 && bm.total === this.activeQuestions.length) {
+      const textEl = document.getElementById('bookmark-resume-text');
+      if (textEl) {
+        textEl.innerText = `上次停在第 ${bm.displayNum || (bm.index + 1)} 題`;
+      }
+      chip.classList.remove('hidden');
+
+      const jumpBtn = document.getElementById('btn-resume-jump');
+      if (jumpBtn) {
+        jumpBtn.onclick = (e) => {
+          e.stopPropagation();
+          this.currentIndex = Math.min(bm.index, this.activeQuestions.length - 1);
+          this.renderCurrentCard();
+          this.scrollToCardTop();
+          chip.classList.add('hidden');
+          window.UploadModule?.showToast?.(`已回到第 ${this.currentIndex + 1} 題繼續作答！`, 'success');
+        };
+      }
+    } else {
+      chip.classList.add('hidden');
+    }
+  },
+
+  formatRelativeTime: function(timestamp) {
+    if (!timestamp) return '';
+    const diffMs = Date.now() - timestamp;
+    const diffMin = Math.floor(diffMs / 60000);
+    if (diffMin < 1) return '剛剛';
+    if (diffMin < 60) return `${diffMin} 分鐘前`;
+    const diffHours = Math.floor(diffMin / 60);
+    if (diffHours < 24) return `${diffHours} 小時前`;
+    const diffDays = Math.floor(diffHours / 24);
+    return `${diffDays} 天前`;
+  },
+
+  bindBookmarkEvents: function() {
+    const self = this;
+
+    // Hub button toggle
+    const hubBtn = document.getElementById('btn-review-bookmark-hub');
+    const popover = document.getElementById('review-bookmark-popover');
+    if (hubBtn && popover) {
+      hubBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        self.toggleBookmarkPopover();
+      });
+
+      document.getElementById('btn-close-bookmark-popover')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        self.toggleBookmarkPopover(false);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.review-bookmark-dropdown-wrap')) {
+          self.toggleBookmarkPopover(false);
+        }
+      });
+    }
+
+    // Card Pin Bookmark
+    document.getElementById('btn-card-pin-bookmark')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      self.togglePinCurrentQuestion();
+    });
+  },
+
   motivationalQuotes: [
     '✨ 每一道弄懂的錯題，都是離滿分更近一步的勳章！戰勝盲點，未來的你會感謝現在堅持的自己 🚀',
     '🔥 錯題是最好的老師！今天搞懂一個觀念，明天考試就多拿幾分 💪',
@@ -231,7 +548,7 @@ window.ReviewModule = {
   currentSubjectFilter: null,
   currentMondayFilter: null,
 
-  loadReviewQueue: function(subjectFilter = null, mondayFilter = null) {
+  loadReviewQueue: function(subjectFilter = null, mondayFilter = null, targetIndex = null) {
     if (subjectFilter !== undefined) this.currentSubjectFilter = subjectFilter;
     if (mondayFilter !== undefined) {
       this.currentMondayFilter = mondayFilter;
@@ -283,9 +600,14 @@ window.ReviewModule = {
     }
 
     this.activeQuestions = list;
-    this.currentIndex = 0;
+    if (targetIndex !== null && typeof targetIndex === 'number' && list.length > 0) {
+      this.currentIndex = Math.min(Math.max(0, targetIndex), list.length - 1);
+    } else {
+      this.currentIndex = 0;
+    }
     this.updateMotivationalQuote();
     this.renderCurrentCard();
+    this.checkResumePrompt();
   },
 
   renderWelcomeHero: function() {
@@ -689,6 +1011,7 @@ window.ReviewModule = {
       this.selectedChoice = null;
       this.hasInteractiveOptions = false;
       this.isAnswerRevealed = false;
+      this.updateBookmarkHubUI();
 
       return;
     }
@@ -705,6 +1028,7 @@ window.ReviewModule = {
 
     // Update Progress Bar & Counter (0 / Total before answer reveal)
     this.updateProgressDisplay();
+    this.saveCurrentBookmark();
     document.getElementById('review-ebbinghaus-stage').innerText = `艾賓浩斯週期: 第 ${q.ebbinghausStage || 1} 週次`;
 
     // Meta Tags & Mastery

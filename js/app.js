@@ -130,7 +130,7 @@ class App {
     }
   }
 
-  startReviewWithFilter(subject = null, monday = null, enableFullscreen = false) {
+  startReviewWithFilter(subject = null, monday = null, enableFullscreen = false, targetIndex = null) {
     this.currentSubjectFilter = subject;
     this.currentMondayFilter = monday;
 
@@ -139,7 +139,7 @@ class App {
 
     // Load review queue with filter
     if (window.ReviewModule) {
-      window.ReviewModule.loadReviewQueue(this.currentSubjectFilter, this.currentMondayFilter);
+      window.ReviewModule.loadReviewQueue(this.currentSubjectFilter, this.currentMondayFilter, targetIndex);
     }
 
     // Enter fullscreen review mode only if explicitly requested

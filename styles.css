@@ -5055,3 +5055,369 @@ body.light-theme .fc-fill-in-input:focus {
   background: #ffffff;
   color: #1e293b;
 }
+
+/* =========================================================
+   Review Mode Bookmark Hub & Resume System (各科複習進度標籤)
+   ========================================================= */
+.review-bookmark-dropdown-wrap {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.btn-bookmark-hub {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+  padding: 6px 12px;
+  border-radius: var(--radius-md, 8px);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap !important;
+}
+
+.btn-bookmark-hub:hover {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: rgba(245, 158, 11, 0.6);
+  color: #fef08a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
+}
+
+.btn-bookmark-hub .bookmark-gold-icon {
+  color: #f59e0b;
+  font-size: 0.95rem;
+}
+
+.bookmark-current-tag {
+  background: rgba(245, 158, 11, 0.25);
+  color: #fef3c7;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 9999px;
+  letter-spacing: 0.2px;
+}
+
+/* Bookmark Popover Panel */
+.review-bookmark-popover {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), 0 0 1px rgba(255, 255, 255, 0.2);
+  padding: 16px;
+  z-index: 1000;
+  animation: bookmarkFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes bookmarkFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.bookmark-popover-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.bookmark-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.bookmark-popover-close {
+  background: transparent;
+  border: none;
+  color: var(--text-muted, #94a3b8);
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  transition: color 0.15s ease;
+}
+
+.bookmark-popover-close:hover {
+  color: #ffffff;
+}
+
+.bookmark-popover-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted, #94a3b8);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.bookmark-popover-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+/* Custom Scrollbar for Popover */
+.bookmark-popover-content::-webkit-scrollbar {
+  width: 5px;
+}
+.bookmark-popover-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+/* Current Subject Card Highlight */
+.bm-current-subject-card {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.16), rgba(99, 102, 241, 0.12));
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.bm-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.bm-subj-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: rgba(99, 102, 241, 0.25);
+  color: #a5b4fc;
+}
+
+.bm-subj-pill.國文 { background: rgba(139, 92, 246, 0.25); color: #c4b5fd; }
+.bm-subj-pill.數學 { background: rgba(16, 185, 129, 0.25); color: #6ee7b7; }
+.bm-subj-pill.理化, .bm-subj-pill.自然 { background: rgba(245, 158, 11, 0.25); color: #fcd34d; }
+.bm-subj-pill.社會 { background: rgba(236, 72, 153, 0.25); color: #f472b6; }
+.bm-subj-pill.英文 { background: rgba(59, 130, 246, 0.25); color: #93c5fd; }
+
+.bm-progress-text {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fbbf24;
+}
+
+.bm-concept-snippet {
+  font-size: 0.78rem;
+  color: var(--text-muted, #94a3b8);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 8px;
+}
+
+.bm-jump-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #f59e0b;
+  color: #0f172a;
+  border: none;
+  border-radius: 7px;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.bm-jump-btn:hover {
+  background: #fbbf24;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Other Subjects List */
+.bm-section-title {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-muted, #94a3b8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.bm-subject-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  transition: all 0.15s ease;
+}
+
+.bm-subject-row:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.bm-row-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.bm-row-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.bm-row-progress {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.bm-row-concept {
+  font-size: 0.72rem;
+  color: var(--text-muted, #94a3b8);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.bm-row-jump-btn {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+  border-radius: 6px;
+  padding: 4px 9px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.bm-row-jump-btn:hover {
+  background: #f59e0b;
+  color: #0f172a;
+}
+
+.bm-empty-hint {
+  text-align: center;
+  padding: 16px;
+  font-size: 0.82rem;
+  color: var(--text-muted, #94a3b8);
+}
+
+/* Resume Chip inside Progress Bar Container */
+.progress-info-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bookmark-resume-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245, 158, 11, 0.14);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 9999px;
+  padding: 2px 10px;
+  color: #fbbf24;
+  font-size: 0.78rem;
+  font-weight: 500;
+  animation: chipPulse 3s infinite ease-in-out;
+}
+
+@keyframes chipPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+  50% {
+    box-shadow: 0 0 10px 2px rgba(245, 158, 11, 0.25);
+  }
+}
+
+.btn-resume-jump-link {
+  background: transparent;
+  border: none;
+  color: #fef08a;
+  font-weight: 700;
+  font-size: 0.78rem;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 2px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.btn-resume-jump-link:hover {
+  color: #ffffff;
+}
+
+/* Card Header Pin Button */
+.btn-card-pin-bookmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-muted, #94a3b8);
+  border-radius: 6px;
+  padding: 4px 9px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-card-pin-bookmark:hover {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+}
+
+.btn-card-pin-bookmark.pinned {
+  background: rgba(245, 158, 11, 0.22);
+  border-color: #f59e0b;
+  color: #fef3c7;
+  font-weight: 600;
+}
+
+.btn-card-pin-bookmark.pinned i {
+  color: #f59e0b;
+}
