@@ -2832,6 +2832,84 @@ body {
   flex-shrink: 0;
 }
 
+/* Elimination Button (刪去法按鈕) */
+.fc-eliminate-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted, #94a3b8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.fc-eliminate-btn:hover {
+  background: rgba(239, 68, 68, 0.18);
+  border-color: rgba(239, 68, 68, 0.55);
+  color: #ef4444;
+  transform: scale(1.15);
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.35);
+}
+
+.fc-eliminate-btn:active {
+  transform: scale(0.95);
+}
+
+.fc-eliminate-btn.active {
+  background: rgba(239, 68, 68, 0.3);
+  border-color: #ef4444;
+  color: #fca5a5;
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.5);
+  transform: scale(1.05);
+}
+
+/* Option Card Eliminated State (刪去劃掉狀態) */
+.fc-option-card.is-eliminated {
+  opacity: 0.42 !important;
+  background: rgba(255, 255, 255, 0.015) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.fc-option-card.is-eliminated .fc-option-pill {
+  opacity: 0.45;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+}
+
+.fc-option-card.is-eliminated .fc-option-content,
+.fc-option-card.is-eliminated .fc-option-content * {
+  text-decoration: line-through !important;
+  text-decoration-color: #ef4444 !important;
+  text-decoration-thickness: 2.5px !important;
+  color: var(--text-muted, #94a3b8) !important;
+}
+
+/* Gentle hint shake if user clicks an eliminated option directly */
+@keyframes shakeEliminated {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+
+.fc-option-card.shake-eliminated {
+  animation: shakeEliminated 0.35s ease-in-out;
+}
+
 .fc-status-pill {
   display: inline-flex;
   align-items: center;

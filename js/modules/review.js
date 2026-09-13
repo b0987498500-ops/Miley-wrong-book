@@ -9,6 +9,7 @@ window.ReviewModule = {
   currentIndex: 0,
   isAnswerRevealed: false,
   selectedChoice: null,
+  eliminatedChoices: new Set(),
   hasInteractiveOptions: false,
   currentOptionsMap: null,
   scratchCanvas: null,
@@ -416,6 +417,15 @@ window.ReviewModule = {
 
   selectChoice: function(choice) {
     if (this.isAnswerRevealed) return;
+    if (this.eliminatedChoices && this.eliminatedChoices.has(choice)) {
+      // Subtle hint shake that this option is eliminated, tap ✖ to restore
+      const card = document.querySelector(`.fc-option-card[data-choice="${choice}"]`);
+      if (card) {
+        card.classList.add('shake-eliminated');
+        setTimeout(() => card.classList.remove('shake-eliminated'), 350);
+      }
+      return;
+    }
     this.selectedChoice = choice;
 
     const cards = document.querySelectorAll('.fc-option-card');
@@ -441,6 +451,46 @@ window.ReviewModule = {
     if (checkBtn) {
       checkBtn.classList.add('ready-to-check');
       checkBtn.innerHTML = `<i class="fa-solid fa-circle-check"></i> 對答案 (已選 ${choice})`;
+    }
+  },
+
+  toggleElimination: function(choice) {
+    if (this.isAnswerRevealed) return;
+    if (!choice) return;
+    if (!this.eliminatedChoices) this.eliminatedChoices = new Set();
+
+    const card = document.querySelector(`.fc-option-card[data-choice="${choice}"]`);
+    const btn = document.querySelector(`.fc-eliminate-btn[data-eliminate="${choice}"]`);
+    if (!card) return;
+
+    if (this.eliminatedChoices.has(choice)) {
+      // Restore option (取消劃掉)
+      this.eliminatedChoices.delete(choice);
+      card.classList.remove('is-eliminated');
+      if (btn) {
+        btn.classList.remove('active');
+        btn.setAttribute('title', '刪去法：劃掉此選項（再次點擊恢復）');
+      }
+    } else {
+      // Eliminate option (劃掉選項)
+      this.eliminatedChoices.add(choice);
+      card.classList.add('is-eliminated');
+      if (btn) {
+        btn.classList.add('active');
+        btn.setAttribute('title', '已劃掉（點擊恢復此選項）');
+      }
+
+      // If this option was selected, unselect it
+      if (this.selectedChoice === choice) {
+        this.selectedChoice = null;
+        card.classList.remove('selected');
+        card.setAttribute('aria-checked', 'false');
+        const checkBtn = document.getElementById('fc-check-answer-btn');
+        if (checkBtn) {
+          checkBtn.classList.remove('ready-to-check');
+          checkBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> 對答案';
+        }
+      }
     }
   },
 
@@ -484,6 +534,10 @@ window.ReviewModule = {
       const choice = card.getAttribute('data-choice');
       const badgeSlot = card.querySelector('.fc-option-badge-slot');
 
+      if (choice === targetLetter) {
+        card.classList.remove('is-eliminated');
+      }
+
       if (choice === userChoice) {
         if (isCorrect) {
           card.classList.add('is-correct');
@@ -498,6 +552,11 @@ window.ReviewModule = {
         card.classList.add('is-actual-target');
         if (badgeSlot) badgeSlot.innerHTML = '<span class="fc-status-pill pill-target"><i class="fa-solid fa-check"></i> 正確答案</span>';
       }
+    });
+
+    // Disable and hide eliminate buttons once answer is checked
+    document.querySelectorAll('.fc-eliminate-btn').forEach(btn => {
+      btn.style.display = 'none';
     });
 
     // Show result banner
@@ -520,6 +579,7 @@ window.ReviewModule = {
   retryQuestion: function() {
     this.isAnswerRevealed = false;
     this.selectedChoice = null;
+    this.eliminatedChoices = new Set();
 
     // Reset banner
     const banner = document.getElementById('fc-check-result-banner');
@@ -531,10 +591,18 @@ window.ReviewModule = {
     // Reset option cards
     const cards = document.querySelectorAll('.fc-option-card');
     cards.forEach(card => {
-      card.classList.remove('selected', 'is-correct', 'is-wrong', 'is-actual-target');
+      card.classList.remove('selected', 'is-correct', 'is-wrong', 'is-actual-target', 'is-eliminated');
       card.setAttribute('aria-checked', 'false');
       const badgeSlot = card.querySelector('.fc-option-badge-slot');
       if (badgeSlot) badgeSlot.innerHTML = '';
+      const elimBtn = card.querySelector('.fc-eliminate-btn');
+      if (elimBtn) {
+        elimBtn.classList.remove('active');
+        elimBtn.style.display = 'flex';
+        elimBtn.style.pointerEvents = 'auto';
+        elimBtn.style.opacity = '1';
+        elimBtn.setAttribute('title', '刪去法：劃掉此選項（再次點擊恢復）');
+      }
     });
 
     // Reset split container & hide answer
@@ -661,6 +729,7 @@ window.ReviewModule = {
     this.selectedChoice = null;
     this.isAnswerRevealed = false;
     this.currentOptionsMap = null;
+    this.eliminatedChoices = new Set();
 
     const banner = document.getElementById('fc-check-result-banner');
     if (banner) {
@@ -720,6 +789,9 @@ window.ReviewModule = {
             </div>
             <div class="fc-option-content" id="fc-opt-text-${letter}"></div>
             <div class="fc-option-badge-slot"></div>
+            <button type="button" class="fc-eliminate-btn" data-eliminate="${letter}" title="刪去法：劃掉此選項（再次點擊恢復）" aria-label="刪去選項 ${letter}">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
           </div>
         `;
       });
@@ -735,9 +807,19 @@ window.ReviewModule = {
       const self = this;
       optionsTextEl.querySelectorAll('.fc-option-card').forEach(card => {
         card.addEventListener('click', (e) => {
+          if (e.target.closest('.fc-eliminate-btn')) return;
           e.stopPropagation();
           const choice = card.getAttribute('data-choice');
           self.selectChoice(choice);
+        });
+      });
+
+      // Bind click on eliminate buttons
+      optionsTextEl.querySelectorAll('.fc-eliminate-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const choice = btn.getAttribute('data-eliminate');
+          self.toggleElimination(choice);
         });
       });
 
@@ -810,6 +892,7 @@ window.ReviewModule = {
         const cards = document.querySelectorAll('.fc-option-card');
         cards.forEach(card => {
           if (card.getAttribute('data-choice') === targetLetter) {
+            card.classList.remove('is-eliminated');
             card.classList.add('is-actual-target');
             const badgeSlot = card.querySelector('.fc-option-badge-slot');
             if (badgeSlot) badgeSlot.innerHTML = '<span class="fc-status-pill pill-target"><i class="fa-solid fa-check"></i> 正確答案</span>';
@@ -817,6 +900,11 @@ window.ReviewModule = {
         });
       }
     }
+
+    // Hide eliminate buttons once answer is revealed
+    document.querySelectorAll('.fc-eliminate-btn').forEach(btn => {
+      btn.style.display = 'none';
+    });
 
     // Auto-check and reveal fill-in inputs against target characters
     const q = this.activeQuestions[this.currentIndex];
