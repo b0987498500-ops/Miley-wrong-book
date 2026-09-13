@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v80';
+const STORAGE_KEY = 'miley_wrong_questions_v81';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -72,7 +72,7 @@ const INITIAL_SEED_DATA = [
     "stem": "已知 $1 \\sim 99$ 中有 49 個偶數，從這 49 個偶數中取出 48 個數，其平均數為 $49\\frac{5}{12}$，則未取的數字為何？【98.基測 I】\n\n○ (A) 20\n○ (B) 28\n○ (C) 72\n○ (D) 78",
     "answer": "(D) 78",
     "diagramUrl": "",
-    "solution": "○ 算式步驟\n\n1. 計算 49 個偶數的總和：\n   這 49 個偶數為 $2, 4, 6, \\dots, 98$，為等差數列。\n   $$\\text{總和} = \\frac{(\\text{首項} + \\text{末項}) \\times \\text{項數}}{2} = \\frac{(2 + 98) \\times 49}{2} = 50 \\times 49 = 2450$$\n\n2. 計算取出的 48 個數之總和：\n   $$\\text{取出的總和} = 48 \\times 49\\frac{5}{12} = 48 \\times \\left(49 + \\frac{5}{12}\\right) = 48 \\times 49 + 48 \\times \\frac{5}{12} = 2352 + 20 = 2372$$\n\n3. 求未取的數字：\n   $$\\text{未取的數} = 2450 - 2372 = 78$$\n\n○ 速算小技巧\n   將兩式相減時，直接利用分配律提出 49：\n   $$\\text{未取的數} = 50 \\times 49 - 48 \\times \\left(49 + \\frac{5}{12}\\right) = (50 - 48) \\times 49 - 48 \\times \\frac{5}{12} = 2 \\times 49 - 20 = 98 - 20 = 78$$\n\n正確選項為 (D)。",
+    "solution": "○ 算式步驟\n\n1. 計算 49 個偶數的總和：\n   這 49 個偶數為 $2, 4, 6, \\dots, 98$，為等差數列。\n   $$\\text{總和} = \\frac{(2 + 98) \\times 49}{2} = 50 \\times 49 = 2450$$\n\n2. 計算取出的 48 個數之總和：\n   $$\\text{取出的總和} = 48 \\times 49\\frac{5}{12} = 48 \\times \\left(49 + \\frac{5}{12}\\right)$$\n   $$= 48 \\times 49 + 48 \\times \\frac{5}{12} = 2352 + 20 = 2372$$\n\n3. 求未取的數字：\n   $$\\text{未取的數} = 2450 - 2372 = 78$$\n\n○ 速算小技巧\n   將兩式相減時，直接利用分配律提出 49：\n   $$\\text{未取的數} = 50 \\times 49 - 48 \\times \\left(49 + \\frac{5}{12}\\right)$$\n   $$= (50 - 48) \\times 49 - 48 \\times \\frac{5}{12} = 98 - 20 = 78$$\n\n正確選項為 (D)。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
@@ -96,7 +96,7 @@ const INITIAL_SEED_DATA = [
     "stem": "若 $\\frac{1}{x} : \\frac{2}{y} : \\frac{3}{z} = 3 : 4 : 5$，則 $x : y : z = ?$",
     "answer": "10 : 15 : 18",
     "diagramUrl": "",
-    "solution": "1. 設 $x : y : z = \\frac{1}{2} : \\frac{1}{3} : \\frac{1}{4}$。\n2. 同乘公倍數 12 化為最簡整數比：$x : y : z = 6 : 4 : 3$。\n3. 代入所求算式即可求得正確比值，選 **(A)**。",
+    "solution": "○ 詳細解題步驟：\n\n1. **利用比例常數設式**：\n   設 $\\frac{1}{x} = 3k$、$\\frac{2}{y} = 4k$、$\\frac{3}{z} = 5k$（其中 $k \\neq 0$）。\n\n2. **分別求出 $x$、$y$、$z$**：\n   - 由 $\\frac{1}{x} = 3k \\implies x = \\frac{1}{3k}$\n   - 由 $\\frac{2}{y} = 4k \\implies y = \\frac{2}{4k} = \\frac{1}{2k}$\n   - 由 $\\frac{3}{z} = 5k \\implies z = \\frac{3}{5k}$\n\n3. **求連比並化為最簡整數比**：\n   $$x : y : z = \\frac{1}{3k} : \\frac{1}{2k} : \\frac{3}{5k} = \\frac{1}{3} : \\frac{1}{2} : \\frac{3}{5}$$\n   各項同乘以分母最小公倍數 $30$：\n   $$x : y : z = \\left(\\frac{1}{3} \\times 30\\right) : \\left(\\frac{1}{2} \\times 30\\right) : \\left(\\frac{3}{5} \\times 30\\right) = 10 : 15 : 18$$\n\n標準答案為 $10 : 15 : 18$。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
@@ -1094,7 +1094,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v79') ||
+      stored = localStorage.getItem('miley_wrong_questions_v80') ||
+               localStorage.getItem('miley_wrong_questions_v79') ||
                localStorage.getItem('miley_wrong_questions_v78') ||
                localStorage.getItem('miley_wrong_questions_v76') ||
                localStorage.getItem('miley_wrong_questions_v75') ||

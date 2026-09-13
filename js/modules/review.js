@@ -213,7 +213,7 @@ window.ReviewModule = {
     document.getElementById('btn-add-similar-to-wrong-book')?.addEventListener('click', () => self.addSimilarQuestionToWrongBook());
   },
 
-  BOOKMARK_STORAGE_KEY: 'miley_review_bookmarks_v2',
+  BOOKMARK_STORAGE_KEY: 'miley_user_bookmarks_v3',
 
   getBookmarks: function() {
     try {
@@ -222,14 +222,13 @@ window.ReviewModule = {
         const parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
           if (!parsed.subjects) parsed.subjects = {};
-          if (!Array.isArray(parsed.pinnedQuestionIds)) parsed.pinnedQuestionIds = [];
           return parsed;
         }
       }
     } catch (e) {
       console.warn('Failed to parse bookmarks', e);
     }
-    return { subjects: {}, pinnedQuestionIds: [], lastActiveSubject: null };
+    return { subjects: {} };
   },
 
   saveBookmarkData: function(data) {
@@ -238,84 +237,95 @@ window.ReviewModule = {
     } catch (e) {}
   },
 
-  saveCurrentBookmark: function() {
-    if (!this.activeQuestions || this.activeQuestions.length === 0) {
-      this.updateBookmarkHubUI();
-      return;
-    }
-    const q = this.activeQuestions[this.currentIndex];
-    if (!q) return;
-
+  updateBookmarkHubUI: function() {
     const data = this.getBookmarks();
     const currentSubj = (this.currentSubjectFilter && this.currentSubjectFilter !== 'ALL')
       ? this.currentSubjectFilter
-      : (q.subject || '全科');
+      : ((this.activeQuestions && this.activeQuestions[this.currentIndex]?.subject) || '全科');
 
-    data.subjects[currentSubj] = {
-      subject: currentSubj,
-      questionId: q.id,
-      index: this.currentIndex,
-      displayNum: this.currentIndex + 1,
-      total: this.activeQuestions.length,
-      concept: q.concept || '',
-      monday: this.currentMondayFilter || 'ALL',
-      timestamp: Date.now()
-    };
-    data.lastActiveSubject = currentSubj;
+    const bm = data.subjects[currentSubj];
 
-    this.saveBookmarkData(data);
-    this.updateBookmarkHubUI();
-  },
-
-  updateBookmarkHubUI: function() {
+    // Top hub button visual state
     const hubBtn = document.getElementById('btn-review-bookmark-hub');
     if (hubBtn) {
-      if (this.activeQuestions && this.activeQuestions.length > 0) {
-        hubBtn.setAttribute('title', `標籤：目前第 ${this.currentIndex + 1} 題（點擊查看與跳轉各科進度）`);
+      if (bm) {
+        hubBtn.classList.add('has-active-bookmark');
+        hubBtn.setAttribute('title', `【${currentSubj}】已標籤第 ${bm.displayNum || (bm.index + 1)} 題（點擊跳轉或查看各科）`);
       } else {
-        hubBtn.setAttribute('title', '標籤：查看與跳轉各科複習進度');
+        hubBtn.classList.remove('has-active-bookmark');
+        hubBtn.setAttribute('title', '標籤：查看與跳轉各科標籤題目');
       }
     }
 
-    // Update card pin button
+    // Card pin button on current question
     const pinBtn = document.getElementById('btn-card-pin-bookmark');
     if (pinBtn) {
       if (this.activeQuestions && this.activeQuestions[this.currentIndex]) {
         pinBtn.style.display = 'inline-flex';
         const q = this.activeQuestions[this.currentIndex];
-        const data = this.getBookmarks();
-        const isPinned = Array.isArray(data.pinnedQuestionIds) && data.pinnedQuestionIds.includes(q.id);
-        if (isPinned) {
+        const isThisQuestionBookmarked = bm && (bm.questionId === q.id || bm.index === this.currentIndex);
+
+        if (isThisQuestionBookmarked) {
           pinBtn.classList.add('pinned');
-          pinBtn.innerHTML = '<i class="fa-solid fa-bookmark"></i> <span class="card-pin-label">已標籤</span>';
-          pinBtn.setAttribute('title', '已加入標籤，點擊取消');
+          pinBtn.innerHTML = '<i class="fa-solid fa-bookmark"></i> <span class="card-pin-label">已標籤此題</span>';
+          pinBtn.setAttribute('title', `此題目前已設定為【${currentSubj}】的研讀標籤（點擊取消）`);
         } else {
           pinBtn.classList.remove('pinned');
           pinBtn.innerHTML = '<i class="fa-regular fa-bookmark"></i> <span class="card-pin-label">標籤此題</span>';
-          pinBtn.setAttribute('title', '點擊將此題加入標籤');
+          pinBtn.setAttribute('title', `點擊將此題設為【${currentSubj}】的研讀標籤`);
         }
       } else {
         pinBtn.style.display = 'none';
       }
     }
+
+    // Check resume prompt chip
+    this.checkResumePrompt();
   },
 
   togglePinCurrentQuestion: function() {
     if (!this.activeQuestions || !this.activeQuestions[this.currentIndex]) return;
     const q = this.activeQuestions[this.currentIndex];
     const data = this.getBookmarks();
-    if (!Array.isArray(data.pinnedQuestionIds)) data.pinnedQuestionIds = [];
+    const currentSubj = (this.currentSubjectFilter && this.currentSubjectFilter !== 'ALL')
+      ? this.currentSubjectFilter
+      : (q.subject || '全科');
 
-    const idx = data.pinnedQuestionIds.indexOf(q.id);
-    if (idx >= 0) {
-      data.pinnedQuestionIds.splice(idx, 1);
-      window.UploadModule?.showToast?.(`已取消此題標籤`);
+    const existing = data.subjects[currentSubj];
+
+    if (existing && (existing.questionId === q.id || existing.index === this.currentIndex)) {
+      // Toggle off
+      delete data.subjects[currentSubj];
+      this.saveBookmarkData(data);
+      this.updateBookmarkHubUI();
+      window.UploadModule?.showToast?.(`已取消【${currentSubj}】第 ${this.currentIndex + 1} 題的標籤`);
     } else {
-      data.pinnedQuestionIds.push(q.id);
-      window.UploadModule?.showToast?.(`已標籤此題！隨時可在「進度標籤」中查看`, 'success');
+      // Set/update bookmark to this question
+      data.subjects[currentSubj] = {
+        subject: currentSubj,
+        questionId: q.id,
+        index: this.currentIndex,
+        displayNum: this.currentIndex + 1,
+        total: this.activeQuestions.length,
+        concept: q.concept || '',
+        monday: this.currentMondayFilter || 'ALL',
+        timestamp: Date.now()
+      };
+      this.saveBookmarkData(data);
+      this.updateBookmarkHubUI();
+      window.UploadModule?.showToast?.(`已將【${currentSubj}】標籤設在「第 ${this.currentIndex + 1} 題」！`, 'success');
     }
-    this.saveBookmarkData(data);
-    this.updateBookmarkHubUI();
+  },
+
+  deleteBookmark: function(subj) {
+    const data = this.getBookmarks();
+    if (data.subjects[subj]) {
+      delete data.subjects[subj];
+      this.saveBookmarkData(data);
+      this.updateBookmarkHubUI();
+      this.renderBookmarkPopover();
+      window.UploadModule?.showToast?.(`已移除【${subj}】的標籤記錄`);
+    }
   },
 
   toggleBookmarkPopover: function(forceState = null) {
@@ -337,72 +347,90 @@ window.ReviewModule = {
     if (!container) return;
 
     const data = this.getBookmarks();
-    const activeSubj = (this.currentSubjectFilter && this.currentSubjectFilter !== 'ALL')
+    const currentSubj = (this.currentSubjectFilter && this.currentSubjectFilter !== 'ALL')
       ? this.currentSubjectFilter
       : ((this.activeQuestions && this.activeQuestions[this.currentIndex]?.subject) || '全科');
 
+    const bm = data.subjects[currentSubj];
+
     let html = '';
 
-    // 1. Current Subject Progress Highlight Card
-    if (this.activeQuestions && this.activeQuestions.length > 0) {
-      const q = this.activeQuestions[this.currentIndex];
+    // 1. Current Subject Bookmark Card
+    if (bm) {
+      const isCurrentlyOnBookmark = (bm.index === this.currentIndex);
       html += `
         <div class="bm-current-subject-card">
           <div class="bm-card-head">
-            <span class="bm-subj-pill ${activeSubj}">${activeSubj}</span>
-            <span class="bm-progress-text">目前題號：第 ${this.currentIndex + 1} / ${this.activeQuestions.length} 題</span>
+            <span class="bm-subj-pill ${currentSubj}">${currentSubj}</span>
+            <span class="bm-progress-text">已標籤題目：第 ${bm.displayNum || (bm.index + 1)} / ${bm.total || this.activeQuestions.length} 題</span>
           </div>
-          <div class="bm-concept-snippet" title="${q.concept || ''}">
-            <i class="fa-solid fa-lightbulb" style="color: #fbbf24; margin-right: 4px;"></i>${q.concept || '題目複習中'}
+          <div class="bm-concept-snippet" title="${bm.concept || ''}">
+            <i class="fa-solid fa-bookmark" style="color: #fbbf24; margin-right: 4px;"></i>${bm.concept ? '#' + bm.concept : '標籤題目'}
           </div>
-          <button type="button" class="bm-jump-btn" id="btn-bm-stay-current">
-            <i class="fa-solid fa-circle-check"></i> 目前正在此題（已自動記錄進度）
-          </button>
+          ${isCurrentlyOnBookmark ? `
+            <button type="button" class="bm-jump-btn active-stay" id="btn-bm-stay-current">
+              <i class="fa-solid fa-circle-check"></i> 目前正在此標籤題目（第 ${bm.displayNum || (bm.index + 1)} 題）
+            </button>
+          ` : `
+            <button type="button" class="bm-jump-btn" data-jump-subject="${currentSubj}">
+              <i class="fa-solid fa-location-arrow"></i> 立即跳轉至【${currentSubj}】標籤（第 ${bm.displayNum || (bm.index + 1)} 題）➔
+            </button>
+          `}
+        </div>
+      `;
+    } else {
+      html += `
+        <div class="bm-current-subject-card bm-unbookmarked">
+          <div class="bm-card-head">
+            <span class="bm-subj-pill ${currentSubj}">${currentSubj}</span>
+            <span class="bm-progress-text" style="color: var(--text-muted); font-weight: normal;">尚未設定標籤</span>
+          </div>
+          <div class="bm-concept-snippet">
+            <i class="fa-regular fa-bookmark" style="margin-right: 4px; opacity: 0.7;"></i>遇到想記錄的題目時，點擊卡片右上角「標籤此題」即可標記！
+          </div>
+          ${this.activeQuestions && this.activeQuestions.length > 0 ? `
+            <button type="button" class="bm-jump-btn" id="btn-bm-set-now" style="background: rgba(245, 158, 11, 0.18); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4);">
+              <i class="fa-solid fa-bookmark"></i> 將目前這題（第 ${this.currentIndex + 1} 題）設為標籤
+            </button>
+          ` : ''}
         </div>
       `;
     }
 
-    // 2. All Subjects Progress List
-    html += `
-      <div class="bm-section-title">
-        <i class="fa-solid fa-layer-group"></i> 各科目上次複習進度標籤
-      </div>
-    `;
+    // 2. All Bookmarked Subjects List
+    const allBookmarkedSubjs = Object.keys(data.subjects).filter(s => s !== currentSubj);
 
-    const standardSubjects = ['國文', '數學', '理化', '自然', '社會', '英文'];
-    const allKnownSubjs = Array.from(new Set([...standardSubjects, ...Object.keys(data.subjects)]));
+    if (allBookmarkedSubjs.length > 0) {
+      html += `
+        <div class="bm-section-title">
+          <i class="fa-solid fa-layer-group"></i> 其他科目已標籤題目
+        </div>
+      `;
 
-    let rowsHtml = '';
-    allKnownSubjs.forEach(subj => {
-      const bm = data.subjects[subj];
-      if (!bm) return;
-
-      const timeAgo = this.formatRelativeTime(bm.timestamp);
-      rowsHtml += `
-        <div class="bm-subject-row">
-          <div class="bm-row-left">
-            <span class="bm-subj-pill ${subj}">${subj}</span>
-            <div class="bm-row-info">
-              <div class="bm-row-progress">第 ${bm.displayNum || (bm.index + 1)} 題 <span style="font-size: 0.74rem; font-weight: normal; color: var(--text-muted);">/ 共 ${bm.total} 題</span></div>
-              <div class="bm-row-concept" title="${bm.concept || ''}">${bm.concept ? '#' + bm.concept : timeAgo}</div>
+      allBookmarkedSubjs.forEach(subj => {
+        const otherBm = data.subjects[subj];
+        if (!otherBm) return;
+        const timeAgo = this.formatRelativeTime(otherBm.timestamp);
+        html += `
+          <div class="bm-subject-row">
+            <div class="bm-row-left">
+              <span class="bm-subj-pill ${subj}">${subj}</span>
+              <div class="bm-row-info">
+                <div class="bm-row-progress">第 ${otherBm.displayNum || (otherBm.index + 1)} 題 <span style="font-size: 0.74rem; font-weight: normal; color: var(--text-muted);">/ 共 ${otherBm.total} 題</span></div>
+                <div class="bm-row-concept" title="${otherBm.concept || ''}">${otherBm.concept ? '#' + otherBm.concept : timeAgo}</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <button type="button" class="bm-row-jump-btn" data-jump-subject="${subj}">
+                跳轉 <i class="fa-solid fa-arrow-right"></i>
+              </button>
+              <button type="button" class="bm-delete-btn" data-delete-subject="${subj}" title="刪除此科標籤">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
             </div>
           </div>
-          <button type="button" class="bm-row-jump-btn" data-jump-subject="${subj}">
-            跳轉 <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-      `;
-    });
-
-    if (rowsHtml) {
-      html += rowsHtml;
-    } else {
-      html += `
-        <div class="bm-empty-hint">
-          <i class="fa-solid fa-bookmark" style="font-size: 1.5rem; color: #475569; margin-bottom: 6px; display: block;"></i>
-          尚無其他科目的進度標籤<br>只要瀏覽題目，系統就會自動為您記憶題號！
-        </div>
-      `;
+        `;
+      });
     }
 
     container.innerHTML = html;
@@ -415,6 +443,25 @@ window.ReviewModule = {
         this.jumpToSubjectBookmark(targetSubj);
       });
     });
+
+    // Bind deletes
+    container.querySelectorAll('[data-delete-subject]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetSubj = btn.getAttribute('data-delete-subject');
+        this.deleteBookmark(targetSubj);
+      });
+    });
+
+    // Bind set now
+    const setNowBtn = container.querySelector('#btn-bm-set-now');
+    if (setNowBtn) {
+      setNowBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.togglePinCurrentQuestion();
+        this.renderBookmarkPopover();
+      });
+    }
 
     const stayBtn = container.querySelector('#btn-bm-stay-current');
     if (stayBtn) {
@@ -438,11 +485,11 @@ window.ReviewModule = {
       this.currentIndex = Math.min(Math.max(0, bm.index || 0), this.activeQuestions.length - 1);
       this.renderCurrentCard();
       this.scrollToCardTop();
-      window.UploadModule?.showToast?.(`已跳轉至 ${targetSubj} 第 ${this.currentIndex + 1} 題`, 'success');
+      window.UploadModule?.showToast?.(`已跳轉至【${targetSubj}】標籤（第 ${this.currentIndex + 1} 題）！`, 'success');
     } else {
       if (window.app) {
         window.app.startReviewWithFilter(targetSubj, bm.monday || 'ALL', false, bm.index || 0);
-        window.UploadModule?.showToast?.(`已切換至 ${targetSubj} 並跳轉至第 ${(bm.index || 0) + 1} 題`, 'success');
+        window.UploadModule?.showToast?.(`已切換至【${targetSubj}】並跳轉至標籤（第 ${(bm.index || 0) + 1} 題）！`, 'success');
       }
     }
   },
@@ -457,15 +504,15 @@ window.ReviewModule = {
     }
 
     const data = this.getBookmarks();
-    const activeSubj = (this.currentSubjectFilter && this.currentSubjectFilter !== 'ALL')
+    const currentSubj = (this.currentSubjectFilter && this.currentSubjectFilter !== 'ALL')
       ? this.currentSubjectFilter
-      : 'ALL';
+      : ((this.activeQuestions && this.activeQuestions[this.currentIndex]?.subject) || '全科');
 
-    const bm = data.subjects[activeSubj] || data.subjects[this.activeQuestions[0]?.subject];
-    if (bm && bm.index > 0 && this.currentIndex === 0 && bm.total === this.activeQuestions.length) {
+    const bm = data.subjects[currentSubj];
+    if (bm && bm.index !== this.currentIndex) {
       const textEl = document.getElementById('bookmark-resume-text');
       if (textEl) {
-        textEl.innerText = `上次停在第 ${bm.displayNum || (bm.index + 1)} 題`;
+        textEl.innerText = `標籤記在第 ${bm.displayNum || (bm.index + 1)} 題`;
       }
       chip.classList.remove('hidden');
 
@@ -473,11 +520,8 @@ window.ReviewModule = {
       if (jumpBtn) {
         jumpBtn.onclick = (e) => {
           e.stopPropagation();
-          this.currentIndex = Math.min(bm.index, this.activeQuestions.length - 1);
-          this.renderCurrentCard();
-          this.scrollToCardTop();
+          this.jumpToSubjectBookmark(currentSubj);
           chip.classList.add('hidden');
-          window.UploadModule?.showToast?.(`已回到第 ${this.currentIndex + 1} 題繼續作答！`, 'success');
         };
       }
     } else {
@@ -1027,7 +1071,7 @@ window.ReviewModule = {
 
     // Update Progress Bar & Counter (0 / Total before answer reveal)
     this.updateProgressDisplay();
-    this.saveCurrentBookmark();
+    this.updateBookmarkHubUI();
     document.getElementById('review-ebbinghaus-stage').innerText = `艾賓浩斯週期: 第 ${q.ebbinghausStage || 1} 週次`;
 
     // Meta Tags & Mastery

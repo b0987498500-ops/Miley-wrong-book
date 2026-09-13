@@ -2664,6 +2664,9 @@ body {
   border-radius: var(--radius-md);
   padding: 20px;
   border: var(--glass-border);
+  overflow-x: auto;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .sol-answer {
@@ -2671,11 +2674,25 @@ body {
   color: var(--accent-success);
   margin-bottom: 12px;
   white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .sol-steps {
   font-size: 0.95rem;
   line-height: 1.6;
+  overflow-x: auto;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.solution-content-box .katex-display,
+.sol-steps .katex-display {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: 6px 0 !important;
+  margin: 0.5em 0 !important;
+  -webkit-overflow-scrolling: touch;
 }
 
 .card-action-bar {
@@ -5420,4 +5437,40 @@ body.light-theme .fc-fill-in-input:focus {
 
 .btn-card-pin-bookmark.pinned i {
   color: #f59e0b;
+}
+
+.btn-bookmark-hub.has-active-bookmark {
+  border-color: rgba(245, 158, 11, 0.7);
+  background: rgba(245, 158, 11, 0.2);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+  color: #fef08a;
+}
+
+.bm-delete-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted, #64748b);
+  cursor: pointer;
+  padding: 4px 6px;
+  font-size: 0.82rem;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.bm-delete-btn:hover {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.15);
+}
+
+.bm-jump-btn.active-stay {
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  color: #34d399;
+  cursor: default;
+}
+
+.bm-jump-btn.active-stay:hover {
+  background: rgba(16, 185, 129, 0.18);
+  transform: none;
+  box-shadow: none;
 }
