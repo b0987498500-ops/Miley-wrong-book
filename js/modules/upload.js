@@ -1138,21 +1138,29 @@ window.UploadModule = {
     const resetZoom = () => {
       self._setLightboxScale(1.0);
       if (lightboxBody) {
-        lightboxBody.scrollLeft = (lightboxBody.scrollWidth - lightboxBody.clientWidth) / 2;
-        lightboxBody.scrollTop = (lightboxBody.scrollHeight - lightboxBody.clientHeight) / 2;
+        setTimeout(() => {
+          lightboxBody.scrollLeft = Math.max(0, (lightboxBody.scrollWidth - lightboxBody.clientWidth) / 2);
+          lightboxBody.scrollTop = Math.max(0, (lightboxBody.scrollHeight - lightboxBody.clientHeight) / 2);
+        }, 30);
       }
     };
 
     const fitZoom = () => {
       if (!imgEl || !lightboxBody) return;
-      const naturalW = imgEl.naturalWidth || 400;
-      const naturalH = imgEl.naturalHeight || 300;
+      const naturalW = imgEl.naturalWidth || 600;
+      const naturalH = imgEl.naturalHeight || 400;
       const bodyW = lightboxBody.clientWidth - 48;
       const bodyH = lightboxBody.clientHeight - 48;
-      const scaleW = bodyW / naturalW;
-      const scaleH = bodyH / naturalH;
+      const renderedW = imgEl.offsetWidth || naturalW;
+      const renderedH = imgEl.offsetHeight || naturalH;
+      const scaleW = bodyW / renderedW;
+      const scaleH = bodyH / renderedH;
       const fitScale = Math.min(scaleW, scaleH, 3.0);
-      self._setLightboxScale(Math.max(1.0, fitScale));
+      self._setLightboxScale(Math.max(0.5, fitScale));
+      setTimeout(() => {
+        lightboxBody.scrollLeft = Math.max(0, (lightboxBody.scrollWidth - lightboxBody.clientWidth) / 2);
+        lightboxBody.scrollTop = Math.max(0, (lightboxBody.scrollHeight - lightboxBody.clientHeight) / 2);
+      }, 30);
     };
 
     if (zoomInBtn) {
@@ -1385,35 +1393,31 @@ window.UploadModule = {
     const modal = document.getElementById('image-lightbox-modal');
     const titleEl = document.getElementById('lightbox-title');
     const imgEl = document.getElementById('lightbox-img');
+    const lightboxBody = document.getElementById('lightbox-body');
 
     if (!modal || !imgEl) return;
 
     if (titleEl) titleEl.innerHTML = `<i class="fa-solid fa-magnifying-glass-plus" style="color: var(--accent-secondary);"></i> ${title}`;
     
     // Clear previous transform and prepare image
-    imgEl.style.transform = 'scale(1.0)';
+    if (typeof this._setLightboxScale === 'function') {
+      this._setLightboxScale(1.0);
+    } else {
+      imgEl.style.transform = 'scale(1.0)';
+    }
     imgEl.src = imgSrc;
     modal.classList.remove('hidden');
 
-    // Auto-fit to viewport
+    // On load, reset scale and center scroll
     imgEl.onload = () => {
       if (typeof this._setLightboxScale === 'function') {
-        const lightboxBody = document.getElementById('lightbox-body');
-        if (lightboxBody) {
-          const bodyW = lightboxBody.clientWidth - 64;
-          const bodyH = lightboxBody.clientHeight - 64;
-          const nw = imgEl.naturalWidth || 400;
-          const nh = imgEl.naturalHeight || 300;
-          
-          // Calculate scale so image fills ~75% to 85% of modal view
-          const scaleW = bodyW / nw;
-          const scaleH = bodyH / nh;
-          let bestScale = Math.min(scaleW, scaleH);
-          
-          // Clamp bestScale between 1.0 and 2.5
-          bestScale = Math.max(1.0, Math.min(bestScale, 2.5));
-          this._setLightboxScale(bestScale);
-        }
+        this._setLightboxScale(1.0);
+      }
+      if (lightboxBody) {
+        setTimeout(() => {
+          lightboxBody.scrollLeft = Math.max(0, (lightboxBody.scrollWidth - lightboxBody.clientWidth) / 2);
+          lightboxBody.scrollTop = Math.max(0, (lightboxBody.scrollHeight - lightboxBody.clientHeight) / 2);
+        }, 30);
       }
     };
   },

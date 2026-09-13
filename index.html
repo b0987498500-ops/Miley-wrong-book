@@ -80,7 +80,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=137">
+  <link rel="stylesheet" href="styles.css?v=138">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -145,6 +145,9 @@
         </div>
       </div>
     </aside>
+
+    <!-- Sidebar Draggable Resizer Splitter (側邊欄寬度可拖曳交界調整條) -->
+    <div id="sidebar-resizer" class="sidebar-resizer" role="separator" aria-orientation="vertical" title="按住並左右拖曳可調整側邊欄寬度（雙擊還原預設寬度）"></div>
 
     <!-- Main Content Area -->
     <main class="main-content">
@@ -973,14 +976,14 @@
   <script src="js/data.js?v=83"></script>
   <script src="js/utils/katex_render.js?v=76"></script>
   <script src="js/utils/pdf_export.js?v=76"></script>
-  <script src="js/modules/upload.js?v=76"></script>
+  <script src="js/modules/upload.js?v=77"></script>
   <script src="js/modules/archive.js?v=76"></script>
   <script src="js/modules/review.js?v=80"></script>
   <script src="js/modules/sprint.js?v=76"></script>
   <script src="js/modules/analytics.js?v=76"></script>
   <script src="js/modules/calendar.js?v=76"></script>
   <script src="js/modules/wisdom.js?v=76"></script>
-  <script src="js/app.js?v=81"></script>
+  <script src="js/app.js?v=82"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => {

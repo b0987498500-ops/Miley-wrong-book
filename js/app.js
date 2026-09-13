@@ -13,6 +13,7 @@ class App {
 
       this.bindNavigation();
       this.bindSidebarToggle();
+      this.initSidebarResizer();
       this.bindTopbarToggle();
       this.bindSidebarSubjectFilter();
       this.bindBrandHomeClick();
@@ -115,6 +116,94 @@ class App {
         sidebar.classList.toggle('collapsed');
       });
     }
+  }
+
+  initSidebarResizer() {
+    const resizer = document.getElementById('sidebar-resizer');
+    const sidebar = document.getElementById('sidebar');
+    if (!resizer || !sidebar) return;
+
+    // Restore saved width from localStorage if on desktop
+    try {
+      const savedWidth = localStorage.getItem('miley_sidebar_width');
+      if (savedWidth && window.innerWidth > 1024) {
+        const parsed = parseInt(savedWidth, 10);
+        if (!isNaN(parsed) && parsed >= 190 && parsed <= 500) {
+          document.documentElement.style.setProperty('--sidebar-width', `${parsed}px`);
+        }
+      }
+    } catch (e) {
+      console.warn('Could not read sidebar width from localStorage:', e);
+    }
+
+    let isResizing = false;
+    let startX = 0;
+    let startWidth = 280;
+
+    const onPointerMove = (e) => {
+      if (!isResizing) return;
+      e.preventDefault();
+
+      const clientX = (e.clientX !== undefined) ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+      const deltaX = clientX - startX;
+      let newWidth = startWidth + deltaX;
+
+      const minWidth = 190;
+      const maxWidth = Math.min(500, Math.floor(window.innerWidth * 0.45));
+      newWidth = Math.max(minWidth, Math.min(newWidth, maxWidth));
+
+      document.documentElement.style.setProperty('--sidebar-width', `${newWidth}px`);
+    };
+
+    const onPointerUp = () => {
+      if (!isResizing) return;
+      isResizing = false;
+      document.body.classList.remove('sidebar-resizing');
+
+      window.removeEventListener('mousemove', onPointerMove);
+      window.removeEventListener('mouseup', onPointerUp);
+      window.removeEventListener('touchmove', onPointerMove);
+      window.removeEventListener('touchend', onPointerUp);
+
+      const finalWidth = Math.round(sidebar.getBoundingClientRect().width);
+      if (finalWidth >= 190 && finalWidth <= 500) {
+        try {
+          localStorage.setItem('miley_sidebar_width', finalWidth);
+        } catch (e) {
+          console.warn('Could not save sidebar width:', e);
+        }
+      }
+    };
+
+    const onPointerDown = (e) => {
+      // Only trigger on primary mouse button (0) or touch
+      if (e.type === 'mousedown' && e.button !== 0) return;
+      if (sidebar.classList.contains('collapsed')) return;
+      if (window.innerWidth <= 1024) return;
+
+      isResizing = true;
+      startX = (e.clientX !== undefined) ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+      startWidth = sidebar.getBoundingClientRect().width;
+
+      document.body.classList.add('sidebar-resizing');
+
+      window.addEventListener('mousemove', onPointerMove, { passive: false });
+      window.addEventListener('mouseup', onPointerUp);
+      window.addEventListener('touchmove', onPointerMove, { passive: false });
+      window.addEventListener('touchend', onPointerUp);
+      e.preventDefault();
+    };
+
+    resizer.addEventListener('mousedown', onPointerDown);
+    resizer.addEventListener('touchstart', onPointerDown, { passive: false });
+
+    // Double click to restore default 280px width
+    resizer.addEventListener('dblclick', () => {
+      document.documentElement.style.setProperty('--sidebar-width', '280px');
+      try {
+        localStorage.setItem('miley_sidebar_width', 280);
+      } catch (e) {}
+    });
   }
 
   bindTopbarToggle() {
