@@ -80,7 +80,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=136">
+  <link rel="stylesheet" href="styles.css?v=137">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -161,13 +161,6 @@
             </div>
           </div>
           <div class="header-right">
-            <!-- Global Font Size Quick Adjuster (移至此列避免複習工具列過長) -->
-            <div class="review-font-control-inline" title="快速調整題目與解析字體大小">
-              <button type="button" id="btn-review-font-dec" class="btn-secondary font-quick-btn" title="題目字體縮小"><i class="fa-solid fa-font" style="font-size: 0.72rem;"></i> -</button>
-              <span id="review-font-indicator" class="review-font-tag">100%</span>
-              <button type="button" id="btn-review-font-inc" class="btn-secondary font-quick-btn" title="題目字體放大"><i class="fa-solid fa-font" style="font-size: 1.05rem;"></i> +</button>
-            </div>
-
             <div class="wisdom-popover-wrapper">
               <button id="btn-open-wisdom-modal" class="wisdom-nav-btn" title="擊敗錯題怪解鎖的名言與心理學小知識">
                 <i class="fa-solid fa-lightbulb"></i>
@@ -510,23 +503,11 @@
                   </div>
 
                   <div class="review-top-actions">
-                    <!-- Bookmark Hub Button (簡化為圖示+標籤，不佔過多寬度) -->
-                    <div class="review-bookmark-dropdown-wrap">
-                      <button type="button" id="btn-review-bookmark-hub" class="btn-bookmark-hub" title="標籤：查看與跳轉各科最後複習進度">
-                        <i class="fa-solid fa-bookmark bookmark-gold-icon"></i>
-                        <span class="bookmark-btn-label">標籤</span>
-                      </button>
-                      <div id="review-bookmark-popover" class="review-bookmark-popover hidden">
-                        <div class="bookmark-popover-header">
-                          <div class="bookmark-header-title">
-                            <i class="fa-solid fa-bookmark" style="color: #f59e0b;"></i>
-                            <span>各科複習進度標籤</span>
-                          </div>
-                          <button type="button" id="btn-close-bookmark-popover" class="bookmark-popover-close" title="關閉">&times;</button>
-                        </div>
-                        <p class="bookmark-popover-desc">自動記錄您在各科目上次複習的題號，點擊即可一秒跳轉繼續做題！</p>
-                        <div id="bookmark-popover-content" class="bookmark-popover-content"></div>
-                      </div>
+                    <!-- Inline Font Size Quick Adjuster (精簡小巧不佔位) -->
+                    <div class="review-font-control-inline" title="快速調整題目與解析字體大小">
+                      <button type="button" id="btn-review-font-dec" class="btn-secondary font-quick-btn" title="題目字體縮小"><i class="fa-solid fa-font" style="font-size: 0.72rem;"></i> -</button>
+                      <span id="review-font-indicator" class="review-font-tag">100%</span>
+                      <button type="button" id="btn-review-font-inc" class="btn-secondary font-quick-btn" title="題目字體放大"><i class="fa-solid fa-font" style="font-size: 1.02rem;"></i> +</button>
                     </div>
 
                     <button id="btn-toggle-fullscreen" class="btn-accent-sm" title="切換全螢幕滿版大畫面">
@@ -559,8 +540,8 @@
                   <div class="progress-info-left">
                     <span id="review-current-index">題目 1 / 5</span>
                     <div id="bookmark-resume-chip" class="bookmark-resume-chip hidden">
-                      <i class="fa-solid fa-clock-rotate-left"></i>
-                      <span id="bookmark-resume-text">上次停在第 16 題</span>
+                      <i class="fa-solid fa-bookmark" style="color: #f59e0b;"></i>
+                      <span id="bookmark-resume-text">標籤記在第 1 題</span>
                       <button type="button" id="btn-resume-jump" class="btn-resume-jump-link">跳轉 <i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                   </div>
@@ -989,7 +970,7 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=81"></script>
+  <script src="js/data.js?v=82"></script>
   <script src="js/utils/katex_render.js?v=76"></script>
   <script src="js/utils/pdf_export.js?v=76"></script>
   <script src="js/modules/upload.js?v=76"></script>

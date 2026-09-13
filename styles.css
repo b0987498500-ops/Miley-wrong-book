@@ -2679,10 +2679,30 @@ body {
 
 .sol-steps {
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.85;
   overflow-x: auto;
   max-width: 100%;
   word-break: break-word;
+}
+
+.sol-steps p {
+  margin: 10px 0;
+  line-height: 1.85;
+}
+
+.sol-steps ul,
+.sol-steps ol {
+  margin: 10px 0;
+  padding-left: 22px;
+}
+
+.sol-steps li {
+  margin: 12px 0;
+  line-height: 2.1;
+}
+
+.sol-steps .katex {
+  line-height: 1.3;
 }
 
 .solution-content-box .katex-display,
@@ -2690,8 +2710,8 @@ body {
   max-width: 100% !important;
   overflow-x: auto !important;
   overflow-y: hidden !important;
-  padding: 6px 0 !important;
-  margin: 0.5em 0 !important;
+  padding: 8px 0 !important;
+  margin: 0.65em 0 !important;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -4702,34 +4722,43 @@ body.light-theme .fc-nav-arrow:hover {
   border-radius: 12px;
 }
 
-/* Inline Font Control in Review Toolbar */
+/* Inline Font Control in Review Toolbar (精簡小巧不佔位) */
 .review-font-control-inline {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(255, 255, 255, 0.06);
+  gap: 3px;
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 4px 8px;
+  padding: 1px 5px;
   border-radius: var(--radius-sm);
+  height: 28px;
+  box-sizing: border-box;
+}
+
+body.light-theme .review-font-control-inline {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
 }
 
 .font-quick-btn {
-  padding: 4px 8px !important;
-  font-size: 0.82rem !important;
-  min-width: 28px;
-  height: 28px;
+  padding: 0 4px !important;
+  font-size: 0.74rem !important;
+  min-width: 22px;
+  height: 22px;
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
   font-weight: 700;
+  border-radius: 4px;
 }
 
 .review-font-tag {
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--accent-warning);
-  min-width: 40px;
+  min-width: 32px;
   text-align: center;
+  user-select: none;
 }
 
 /* Scaled Typography for Stem, Answers, Notes, and Cards */

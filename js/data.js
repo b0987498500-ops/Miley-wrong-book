@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v81';
+const STORAGE_KEY = 'miley_wrong_questions_v82';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -96,7 +96,7 @@ const INITIAL_SEED_DATA = [
     "stem": "若 $\\frac{1}{x} : \\frac{2}{y} : \\frac{3}{z} = 3 : 4 : 5$，則 $x : y : z = ?$",
     "answer": "10 : 15 : 18",
     "diagramUrl": "",
-    "solution": "○ 詳細解題步驟：\n\n1. **利用比例常數設式**：\n   設 $\\frac{1}{x} = 3k$、$\\frac{2}{y} = 4k$、$\\frac{3}{z} = 5k$（其中 $k \\neq 0$）。\n\n2. **分別求出 $x$、$y$、$z$**：\n   - 由 $\\frac{1}{x} = 3k \\implies x = \\frac{1}{3k}$\n   - 由 $\\frac{2}{y} = 4k \\implies y = \\frac{2}{4k} = \\frac{1}{2k}$\n   - 由 $\\frac{3}{z} = 5k \\implies z = \\frac{3}{5k}$\n\n3. **求連比並化為最簡整數比**：\n   $$x : y : z = \\frac{1}{3k} : \\frac{1}{2k} : \\frac{3}{5k} = \\frac{1}{3} : \\frac{1}{2} : \\frac{3}{5}$$\n   各項同乘以分母最小公倍數 $30$：\n   $$x : y : z = \\left(\\frac{1}{3} \\times 30\\right) : \\left(\\frac{1}{2} \\times 30\\right) : \\left(\\frac{3}{5} \\times 30\\right) = 10 : 15 : 18$$\n\n標準答案為 $10 : 15 : 18$。",
+    "solution": "○ 詳細解題步驟：\n\n1. **利用比例常數設式**：\n   設 $\\frac{1}{x} = 3k$、$\\frac{2}{y} = 4k$、$\\frac{3}{z} = 5k$（其中 $k \\neq 0$）。\n\n2. **分別求出 $x$、$y$、$z$**：\n   - 求 $x$：由 $\\frac{1}{x} = 3k \\implies x = \\frac{1}{3k}$\n\n   - 求 $y$：由 $\\frac{2}{y} = 4k \\implies y = \\frac{2}{4k} = \\frac{1}{2k}$\n\n   - 求 $z$：由 $\\frac{3}{z} = 5k \\implies z = \\frac{3}{5k}$\n\n3. **求連比並化為最簡整數比**：\n   $$x : y : z = \\frac{1}{3k} : \\frac{1}{2k} : \\frac{3}{5k} = \\frac{1}{3} : \\frac{1}{2} : \\frac{3}{5}$$\n   各項同乘以分母最小公倍數 $30$：\n   $$x : y : z = \\left(\\frac{1}{3} \\times 30\\right) : \\left(\\frac{1}{2} \\times 30\\right) : \\left(\\frac{3}{5} \\times 30\\right) = 10 : 15 : 18$$\n\n標準答案為 $10 : 15 : 18$。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
@@ -120,7 +120,7 @@ const INITIAL_SEED_DATA = [
     "stem": "若 $(x + 3) : (y - 2) : z = 4 : 2 : 3$，且 $x + y + z = 44$，則 $x - y = ?$",
     "answer": "5",
     "diagramUrl": "",
-    "solution": "1. 設參數 $x = 2r, y = 3r, z = 4r$ ($r \\ne 0$)。\n2. 代入分子與分母，$r$ 互相抵消即可求得純數值，選 **(B)**。",
+    "solution": "○ 詳細解題步驟：\n\n1. **依比例設參數 $r$**：\n   依題意 $(x + 3) : (y - 2) : z = 4 : 2 : 3$，令：\n   - $x + 3 = 4r \\implies x = 4r - 3$\n\n   - $y - 2 = 2r \\implies y = 2r + 2$\n\n   - $z = 3r$\n\n   （其中 $r \\neq 0$）\n\n2. **代入總和條件求 $r$**：\n   已知 $x + y + z = 44$，將各項代入：\n   $$(4r - 3) + (2r + 2) + 3r = 44$$\n   $$9r - 1 = 44 \\implies 9r = 45 \\implies r = 5$$\n\n3. **求出 $x - y$ 之值**：\n   - 代入 $x, y$ 的表示式：\n     $$x - y = (4r - 3) - (2r + 2) = 2r - 5$$\n   - 代入 $r = 5$：\n     $$x - y = 2 \\times 5 - 5 = 10 - 5 = 5$$\n   - （亦可分別求出各數值：$x = 17$、$y = 12$、$z = 15$，得 $x - y = 17 - 12 = 5$）\n\n標準答案為 **5**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
@@ -144,7 +144,7 @@ const INITIAL_SEED_DATA = [
     "stem": "如圖，在長方形 $ABCD$ 中，$\\overline{EF}$、$\\overline{GH}$ 將長方形 $ABCD$ 分割成甲、乙、丙三個長方形區域，若甲、乙、丙的面積比為 $3 : 4 : 5$，且長方形 $ABCD$ 的周長為 34，甲、乙、丙的長、寬皆為整數，則甲、乙、丙的周長比為何？",
     "answer": "11 : 10 : 11",
     "diagramUrl": "assets/questions/q_math_rect_area_ratio_perimeter_006.png",
-    "solution": "1. 依面積比與邊長比列出方程式，設比例參數 $r$。\n2. 由長寬皆為正整數條件求出整數解，計算周長比為 $5 : 4$，選 **(C)**。",
+    "solution": "這題的核心概念就是利用「面積比」推「長寬比」，再湊出整數邊長：\n\n○ 第一步：看邊長比例\n- 乙和丙共用底邊，面積比 4 : 5 ⟹ 高的比為 4 : 5（整塊大長方形的高共 9 份）。\n- 甲和（乙+丙）高相同，面積比為 3 : (4 + 5) = 3 : 9 = 1 : 3 ⟹ 底邊長比為 1 : 3（整塊大長方形的底共 4 份）。\n\n○ 第二步：求出實際數字\n- 大長方形周長 34 ⟹ 長加寬 = 17。\n- 也就是：$9 \\times (\\text{高的每份}) + 4 \\times (\\text{底的每份}) = 17$。\n- 因為邊長都是整數，只有一種組合符合：\n  * 高的每份是 1（大長方形高 = 9）\n  * 底的每份是 2（大長方形底 = 8）\n\n○ 第三步：算各自周長\n- 甲（寬 2、高 9）：周長 $= (2 + 9) \\times 2 = 22$\n- 乙（底 6、高 4）：周長 $= (6 + 4) \\times 2 = 20$\n- 丙（底 6、高 5）：周長 $= (6 + 5) \\times 2 = 22$\n\n周長比為 $22 : 20 : 22 = 11 : 10 : 11$。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
@@ -1094,7 +1094,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v80') ||
+      stored = localStorage.getItem('miley_wrong_questions_v81') ||
+               localStorage.getItem('miley_wrong_questions_v80') ||
                localStorage.getItem('miley_wrong_questions_v79') ||
                localStorage.getItem('miley_wrong_questions_v78') ||
                localStorage.getItem('miley_wrong_questions_v76') ||
