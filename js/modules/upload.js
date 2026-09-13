@@ -1138,10 +1138,8 @@ window.UploadModule = {
     const resetZoom = () => {
       self._setLightboxScale(1.0);
       if (lightboxBody) {
-        setTimeout(() => {
-          lightboxBody.scrollLeft = Math.max(0, (lightboxBody.scrollWidth - lightboxBody.clientWidth) / 2);
-          lightboxBody.scrollTop = Math.max(0, (lightboxBody.scrollHeight - lightboxBody.clientHeight) / 2);
-        }, 30);
+        lightboxBody.scrollLeft = 0;
+        lightboxBody.scrollTop = 0;
       }
     };
 
@@ -1157,10 +1155,10 @@ window.UploadModule = {
       const scaleH = bodyH / renderedH;
       const fitScale = Math.min(scaleW, scaleH, 3.0);
       self._setLightboxScale(Math.max(0.5, fitScale));
-      setTimeout(() => {
-        lightboxBody.scrollLeft = Math.max(0, (lightboxBody.scrollWidth - lightboxBody.clientWidth) / 2);
-        lightboxBody.scrollTop = Math.max(0, (lightboxBody.scrollHeight - lightboxBody.clientHeight) / 2);
-      }, 30);
+      if (lightboxBody) {
+        lightboxBody.scrollLeft = 0;
+        lightboxBody.scrollTop = 0;
+      }
     };
 
     if (zoomInBtn) {
@@ -1405,19 +1403,23 @@ window.UploadModule = {
     } else {
       imgEl.style.transform = 'scale(1.0)';
     }
+
+    if (lightboxBody) {
+      lightboxBody.scrollLeft = 0;
+      lightboxBody.scrollTop = 0;
+    }
+
     imgEl.src = imgSrc;
     modal.classList.remove('hidden');
 
-    // On load, reset scale and center scroll
+    // On load, ensure 1.0 scale and reset scroll coordinates
     imgEl.onload = () => {
       if (typeof this._setLightboxScale === 'function') {
         this._setLightboxScale(1.0);
       }
       if (lightboxBody) {
-        setTimeout(() => {
-          lightboxBody.scrollLeft = Math.max(0, (lightboxBody.scrollWidth - lightboxBody.clientWidth) / 2);
-          lightboxBody.scrollTop = Math.max(0, (lightboxBody.scrollHeight - lightboxBody.clientHeight) / 2);
-        }, 30);
+        lightboxBody.scrollLeft = 0;
+        lightboxBody.scrollTop = 0;
       }
     };
   },

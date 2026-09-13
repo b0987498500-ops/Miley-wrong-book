@@ -4475,18 +4475,17 @@ body.light-theme .fc-nav-arrow:hover {
 /* ==================== MODAL OVERLAY STYLES ==================== */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.75);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.78);
   backdrop-filter: blur(10px);
   z-index: 2000;
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 16px;
 }
 
 .modal-overlay.hidden {
@@ -4506,46 +4505,56 @@ body.light-theme .fc-nav-arrow:hover {
 }
 
 /* Image Lightbox Modal */
-/* Image Lightbox Modal */
 .lightbox-modal-content {
-  background: rgba(15, 23, 42, 0.98);
+  background: rgba(11, 15, 25, 0.98);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-lg);
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9);
-  width: 96vw;
-  max-width: 1280px;
-  height: 92vh;
-  max-height: 92vh;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.95);
+  width: min(94vw, 1120px);
+  max-width: 1120px;
+  height: min(90vh, 880px);
+  max-height: 90vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  margin: auto;
+  box-sizing: border-box;
   animation: modalScaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .lightbox-header {
-  padding: 14px 20px;
+  padding: 12px 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(30, 41, 59, 0.7);
-  backdrop-filter: blur(12px);
+  gap: 12px;
+  background: rgba(22, 30, 46, 0.88);
+  backdrop-filter: blur(14px);
   z-index: 10;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .lightbox-title {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--text-primary);
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1;
 }
 
 .lightbox-controls {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .lightbox-tool-btn {
@@ -4577,15 +4586,14 @@ body.light-theme .fc-nav-arrow:hover {
 
 .lightbox-body {
   flex: 1;
+  width: 100%;
+  height: 100%;
   padding: 24px;
   overflow: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
   background: #020617;
   position: relative;
   cursor: grab;
-  text-align: center;
   box-sizing: border-box;
 }
 
@@ -4594,11 +4602,22 @@ body.light-theme .fc-nav-arrow:hover {
   user-select: none;
 }
 
+.lightbox-stage {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
 .lightbox-body img {
   display: block;
   margin: auto !important;
-  max-width: 86%;
-  max-height: 78vh;
+  max-width: min(84vw, 860px);
+  max-height: min(70vh, 580px);
   width: auto;
   height: auto;
   object-fit: contain;
@@ -4608,6 +4627,7 @@ body.light-theme .fc-nav-arrow:hover {
   padding: 16px;
   transition: transform 0.15s ease-out;
   transform-origin: center center;
+  pointer-events: auto;
   flex-shrink: 0;
   box-sizing: border-box;
 }
