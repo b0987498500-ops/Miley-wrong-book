@@ -268,13 +268,12 @@ window.ReviewModule = {
   },
 
   updateBookmarkHubUI: function() {
-    const tagEl = document.getElementById('bookmark-current-tag');
-    if (tagEl) {
+    const hubBtn = document.getElementById('btn-review-bookmark-hub');
+    if (hubBtn) {
       if (this.activeQuestions && this.activeQuestions.length > 0) {
-        tagEl.innerText = `第 ${this.currentIndex + 1} 題`;
-        tagEl.style.display = 'inline-block';
+        hubBtn.setAttribute('title', `標籤：目前第 ${this.currentIndex + 1} 題（點擊查看與跳轉各科進度）`);
       } else {
-        tagEl.style.display = 'none';
+        hubBtn.setAttribute('title', '標籤：查看與跳轉各科複習進度');
       }
     }
 

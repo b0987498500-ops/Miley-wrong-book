@@ -80,7 +80,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=134">
+  <link rel="stylesheet" href="styles.css?v=135">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -161,6 +161,13 @@
             </div>
           </div>
           <div class="header-right">
+            <!-- Global Font Size Quick Adjuster (移至此列避免複習工具列過長) -->
+            <div class="review-font-control-inline" title="快速調整題目與解析字體大小">
+              <button type="button" id="btn-review-font-dec" class="btn-secondary font-quick-btn" title="題目字體縮小"><i class="fa-solid fa-font" style="font-size: 0.72rem;"></i> -</button>
+              <span id="review-font-indicator" class="review-font-tag">100%</span>
+              <button type="button" id="btn-review-font-inc" class="btn-secondary font-quick-btn" title="題目字體放大"><i class="fa-solid fa-font" style="font-size: 1.05rem;"></i> +</button>
+            </div>
+
             <div class="wisdom-popover-wrapper">
               <button id="btn-open-wisdom-modal" class="wisdom-nav-btn" title="擊敗錯題怪解鎖的名言與心理學小知識">
                 <i class="fa-solid fa-lightbulb"></i>
@@ -503,19 +510,11 @@
                   </div>
 
                   <div class="review-top-actions">
-                    <!-- Inline Font Size Quick Adjuster -->
-                    <div class="review-font-control-inline" title="快速調整題目與解析字體大小">
-                      <button type="button" id="btn-review-font-dec" class="btn-secondary font-quick-btn" title="題目字體縮小"><i class="fa-solid fa-font" style="font-size: 0.72rem;"></i> -</button>
-                      <span id="review-font-indicator" class="review-font-tag">100%</span>
-                      <button type="button" id="btn-review-font-inc" class="btn-secondary font-quick-btn" title="題目字體放大"><i class="fa-solid fa-font" style="font-size: 1.05rem;"></i> +</button>
-                    </div>
-
-                    <!-- Progress Bookmark Button (進度標籤 / 各科記憶) -->
+                    <!-- Bookmark Hub Button (簡化為圖示+標籤，不佔過多寬度) -->
                     <div class="review-bookmark-dropdown-wrap">
-                      <button type="button" id="btn-review-bookmark-hub" class="btn-bookmark-hub" title="進度標籤：記錄與跳轉至各科最後複習題號">
+                      <button type="button" id="btn-review-bookmark-hub" class="btn-bookmark-hub" title="標籤：查看與跳轉各科最後複習進度">
                         <i class="fa-solid fa-bookmark bookmark-gold-icon"></i>
-                        <span class="bookmark-btn-label">進度標籤</span>
-                        <span id="bookmark-current-tag" class="bookmark-current-tag">第 1 題</span>
+                        <span class="bookmark-btn-label">標籤</span>
                       </button>
                       <div id="review-bookmark-popover" class="review-bookmark-popover hidden">
                         <div class="bookmark-popover-header">
@@ -995,7 +994,7 @@
   <script src="js/utils/pdf_export.js?v=76"></script>
   <script src="js/modules/upload.js?v=76"></script>
   <script src="js/modules/archive.js?v=76"></script>
-  <script src="js/modules/review.js?v=78"></script>
+  <script src="js/modules/review.js?v=79"></script>
   <script src="js/modules/sprint.js?v=76"></script>
   <script src="js/modules/analytics.js?v=76"></script>
   <script src="js/modules/calendar.js?v=76"></script>
