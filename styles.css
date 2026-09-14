@@ -43,7 +43,7 @@
   --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --content-font-scale: 1;
-  --sidebar-width: 280px;
+  --sidebar-width: 205px;
 }
 
 /* Light Theme Variables */
@@ -91,7 +91,7 @@ body {
 
 /* ==================== SIDEBAR ==================== */
 .sidebar {
-  width: var(--sidebar-width, 280px);
+  width: var(--sidebar-width, 205px);
   min-width: 190px;
   max-width: 520px;
   background-color: var(--bg-secondary);

@@ -123,14 +123,17 @@ class App {
     const sidebar = document.getElementById('sidebar');
     if (!resizer || !sidebar) return;
 
-    // Restore saved width from localStorage if on desktop
+    // Restore saved width from localStorage if on desktop, default to 205px (Miley's preferred compact width)
     try {
-      const savedWidth = localStorage.getItem('miley_sidebar_width');
-      if (savedWidth && window.innerWidth > 1024) {
+      const savedWidth = localStorage.getItem('miley_sidebar_width_v2') || localStorage.getItem('miley_sidebar_width');
+      if (savedWidth && savedWidth !== '280' && window.innerWidth > 1024) {
         const parsed = parseInt(savedWidth, 10);
         if (!isNaN(parsed) && parsed >= 190 && parsed <= 500) {
           document.documentElement.style.setProperty('--sidebar-width', `${parsed}px`);
         }
+      } else if (window.innerWidth > 1024) {
+        document.documentElement.style.setProperty('--sidebar-width', '205px');
+        try { localStorage.setItem('miley_sidebar_width_v2', '205'); } catch (e) {}
       }
     } catch (e) {
       console.warn('Could not read sidebar width from localStorage:', e);
@@ -138,7 +141,7 @@ class App {
 
     let isResizing = false;
     let startX = 0;
-    let startWidth = 280;
+    let startWidth = 205;
 
     const onPointerMove = (e) => {
       if (!isResizing) return;
@@ -168,6 +171,7 @@ class App {
       const finalWidth = Math.round(sidebar.getBoundingClientRect().width);
       if (finalWidth >= 190 && finalWidth <= 500) {
         try {
+          localStorage.setItem('miley_sidebar_width_v2', finalWidth);
           localStorage.setItem('miley_sidebar_width', finalWidth);
         } catch (e) {
           console.warn('Could not save sidebar width:', e);
@@ -197,11 +201,12 @@ class App {
     resizer.addEventListener('mousedown', onPointerDown);
     resizer.addEventListener('touchstart', onPointerDown, { passive: false });
 
-    // Double click to restore default 280px width
+    // Double click to restore default 205px width
     resizer.addEventListener('dblclick', () => {
-      document.documentElement.style.setProperty('--sidebar-width', '280px');
+      document.documentElement.style.setProperty('--sidebar-width', '205px');
       try {
-        localStorage.setItem('miley_sidebar_width', 280);
+        localStorage.setItem('miley_sidebar_width_v2', 205);
+        localStorage.setItem('miley_sidebar_width', 205);
       } catch (e) {}
     });
   }
@@ -225,6 +230,9 @@ class App {
 
     // Switch to review tab directly
     this.switchTab('review');
+
+    // Update sidebar counts so subject badges reflect the filter state
+    this.updateSidebarCounts();
 
     // Load review queue with filter
     if (window.ReviewModule) {
@@ -266,12 +274,18 @@ class App {
     const ebbBox = document.querySelector('.ebbinghaus-summary-box');
     if (ebbBox) {
       ebbBox.addEventListener('click', () => {
+        const thisWeekMonday = window.dataManager ? window.dataManager.getCurrentMondayDate() : '2026-09-14';
         subjectBtns.forEach(b => b.classList.remove('active'));
         this.currentSubjectFilter = 'ALL';
+        this.currentMondayFilter = thisWeekMonday;
         if (window.ArchiveModule) {
           window.ArchiveModule.currentSubject = 'ALL';
+          window.ArchiveModule.currentMonday = thisWeekMonday;
         }
-        this.startReviewWithFilter('ALL', this.currentMondayFilter || 'ALL', false);
+        document.querySelectorAll('.monday-chip').forEach(c => {
+          c.classList.toggle('active', c.dataset.monday === thisWeekMonday);
+        });
+        this.startReviewWithFilter('ALL', thisWeekMonday, false);
       });
     }
   }
@@ -292,6 +306,7 @@ class App {
       
       this.switchTab('review');
       this.renderWeeklyMondayBar();
+      this.updateSidebarCounts(); // Ensure subject badges are hidden when returning home
       if (window.ReviewModule) {
         window.ReviewModule.loadReviewQueue(null, null);
       }
@@ -498,56 +513,76 @@ class App {
   }
 
   updateSidebarCounts() {
-    let pendingQuestions = window.dataManager.getPendingReviewQuestions();
-    if (this.currentMondayFilter && this.currentMondayFilter !== 'ALL') {
-      pendingQuestions = pendingQuestions.filter(q => window.dataManager.isQuestionInMonday(q, this.currentMondayFilter));
-    }
-    const dueCountEl = document.getElementById('due-review-count');
-    if (dueCountEl) dueCountEl.innerText = pendingQuestions.length;
+    // 1. 本週待複習 (Due Review Count):
+    // 依麥麥指示，「本週待複習」應嚴格僅統計「本週」（當週週一，即 2026-09-14）的所有待複習題目，不跨週加總！
+    const currentMonday = window.dataManager ? window.dataManager.getCurrentMondayDate() : '2026-09-14';
+    let pendingQuestions = window.dataManager ? window.dataManager.getPendingReviewQuestions() : [];
+    const thisWeekPending = pendingQuestions.filter(q => window.dataManager && window.dataManager.isQuestionInMonday(q, currentMonday));
 
-    const sprintQuestions = window.dataManager.getHighFrequencyQuestions('ALL');
+    const dueCountEl = document.getElementById('due-review-count');
+    if (dueCountEl) dueCountEl.innerText = thisWeekPending.length;
+
+    const sprintQuestions = window.dataManager ? window.dataManager.getHighFrequencyQuestions('ALL') : [];
     const sprintBadge = document.getElementById('sprint-badge');
     if (sprintBadge) sprintBadge.innerText = sprintQuestions.length;
 
-    // Filter questions by currently selected Monday week filter
-    let targetQuestions = window.dataManager.getAll();
-    if (this.currentMondayFilter && this.currentMondayFilter !== 'ALL') {
-      targetQuestions = targetQuestions.filter(q => window.dataManager.isQuestionInMonday(q, this.currentMondayFilter));
-    }
-
-    const isSubjMatch = (qSubj, targetSubj) => {
-      if (!targetSubj || targetSubj === 'ALL') return true;
-      if (!qSubj) return false;
-      const q = String(qSubj).trim();
-      const t = String(targetSubj).trim();
-      if (q === t) return true;
-      if (t === '國文') return q === '國文' || q.includes('國文');
-      if (t === '英文') return q === '英文' || q.includes('英文');
-      if (t === '數學') return q === '數學' || q.includes('數學');
-      if (t === '社會') return q.includes('社會') || q.includes('公民') || q.includes('地理') || q.includes('歷史');
-      if (t === '自然/理化' || t === '自然') return q.includes('自然') || q.includes('理化') || q.includes('生物') || q.includes('地科');
-      return q === t;
-    };
-
-    const subjectCounts = {
-      'ALL': targetQuestions.length,
-      '國文': targetQuestions.filter(q => isSubjMatch(q.subject, '國文')).length,
-      '英文': targetQuestions.filter(q => isSubjMatch(q.subject, '英文')).length,
-      '數學': targetQuestions.filter(q => isSubjMatch(q.subject, '數學')).length,
-      '自然/理化': targetQuestions.filter(q => isSubjMatch(q.subject, '自然/理化')).length,
-      '社會': targetQuestions.filter(q => isSubjMatch(q.subject, '社會')).length
-    };
+    // 2. 科目題數顯示規則：
+    // 依麥麥指示：一進來首頁時，尚未選好特定週次，不應該顯示全部加總的科目題數！
+    // 必須等到麥麥選好週次之後（例如點選 9/7 或本週 9/14），才顯示該週每一科的題數。
+    const hasSelectedWeek = Boolean(this.currentMondayFilter && this.currentMondayFilter !== 'ALL');
 
     document.querySelectorAll('.sidebar-subject-btn').forEach(btn => {
-      const subj = btn.dataset.subject;
       let badge = btn.querySelector('.subj-count-badge');
-      if (!badge) {
-        badge = document.createElement('span');
-        badge.className = 'subj-count-badge';
-        btn.appendChild(badge);
+      if (!hasSelectedWeek) {
+        if (badge) {
+          badge.style.display = 'none';
+          badge.innerText = '';
+        }
+      } else {
+        if (!badge) {
+          badge = document.createElement('span');
+          badge.className = 'subj-count-badge';
+          btn.appendChild(badge);
+        }
+        badge.style.display = '';
       }
-      badge.innerText = `${subjectCounts[subj] || 0}題`;
     });
+
+    if (hasSelectedWeek) {
+      let targetQuestions = window.dataManager.getAll();
+      targetQuestions = targetQuestions.filter(q => window.dataManager.isQuestionInMonday(q, this.currentMondayFilter));
+
+      const isSubjMatch = (qSubj, targetSubj) => {
+        if (!targetSubj || targetSubj === 'ALL') return true;
+        if (!qSubj) return false;
+        const q = String(qSubj).trim();
+        const t = String(targetSubj).trim();
+        if (q === t) return true;
+        if (t === '國文') return q === '國文' || q.includes('國文');
+        if (t === '英文') return q === '英文' || q.includes('英文');
+        if (t === '數學') return q === '數學' || q.includes('數學');
+        if (t === '社會') return q.includes('社會') || q.includes('公民') || q.includes('地理') || q.includes('歷史');
+        if (t === '自然/理化' || t === '自然') return q.includes('自然') || q.includes('理化') || q.includes('生物') || q.includes('地科');
+        return q === t;
+      };
+
+      const subjectCounts = {
+        'ALL': targetQuestions.length,
+        '國文': targetQuestions.filter(q => isSubjMatch(q.subject, '國文')).length,
+        '英文': targetQuestions.filter(q => isSubjMatch(q.subject, '英文')).length,
+        '數學': targetQuestions.filter(q => isSubjMatch(q.subject, '數學')).length,
+        '自然/理化': targetQuestions.filter(q => isSubjMatch(q.subject, '自然/理化')).length,
+        '社會': targetQuestions.filter(q => isSubjMatch(q.subject, '社會')).length
+      };
+
+      document.querySelectorAll('.sidebar-subject-btn').forEach(btn => {
+        const subj = btn.dataset.subject;
+        let badge = btn.querySelector('.subj-count-badge');
+        if (badge) {
+          badge.innerText = `${subjectCounts[subj] || 0}題`;
+        }
+      });
+    }
 
     if (window.WisdomModule) {
       window.WisdomModule.updateHeaderBadge();
