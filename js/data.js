@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v85';
+const STORAGE_KEY = 'miley_wrong_questions_v86';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1182,6 +1182,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-14"
+  },
+  {
+    "id": "q_math_triangle_midpoint_trisect_df_028",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "平行線截比例線段與相似形：三角形兩邊中點連線定理之雙重嵌套應用",
+    "uploadDate": "2026-09-14",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【關鍵破題思路 — 尋找隱藏的「中點連線」】：\n看到「三等分點」與「中點」，馬上聯想「中點連線平行且長度為底邊一半」！\n本題有兩個嵌套的三角形：\n1. 先看 $\\triangle AEC$：$D$ 為 $\\overline{AE}$ 中點、$F$ 為 $\\overline{AC}$ 中點 $\\implies \\overline{DF} \\parallel \\overline{CE}$ 且 $\\overline{DF} = \\frac{1}{2}\\overline{EC}$。\n2. 再看 $\\triangle BDF$：$E$ 為 $\\overline{BD}$ 中點，且 $\\overline{EP} \\parallel \\overline{DF} \\implies P$ 為 $\\overline{BF}$ 中點，$\\overline{EP} = \\frac{1}{2}\\overline{DF}$。\n3. 設未知數貫穿兩式：設 $\\overline{DF} = x \\implies \\overline{EP} = \\frac{1}{2}x$。\n   則整段 $\\overline{EC} = \\overline{EP} + \\overline{PC} = \\frac{1}{2}x + 3$。\n   由第一式 $x = \\frac{1}{2}(\\frac{1}{2}x + 3)$，輕鬆解出 $x = 2$！",
+    "stem": "如圖，在 $\\triangle ABC$ 中，$D$、$E$ 將 $\\overline{AB}$ 三等分（即 $\\overline{AD} = \\overline{DE} = \\overline{EB}$），$F$ 為 $\\overline{AC}$ 中點。連接 $\\overline{DF}$ 與 $\\overline{EC}$，$\\overline{BF}$ 與 $\\overline{EC}$ 相交於 $P$ 點。若 $\\overline{CP} = 3$，則 $\\overline{DF} = $ ？",
+    "answer": "2",
+    "diagramUrl": "assets/questions/q_math_triangle_midpoint_trisect_df_028.png",
+    "solution": "1. **步驟一：觀察 $\\triangle AEC$，找出第一組中點連線**：\n   - 因 $D$、$E$ 三等分 $\\overline{AB}$，故 $\\overline{AD} = \\overline{DE}$，即 $D$ 為 $\\overline{AE}$ 的中點。\n   - 題目已知 $F$ 為 $\\overline{AC}$ 的中點（$\\overline{AF} = \\overline{FC}$）。\n   - 根據**三角形兩邊中點連線定理**：\n     $$\\overline{DF} \\parallel \\overline{EC} \\quad \\text{且} \\quad \\overline{DF} = \\frac{1}{2}\\overline{EC}$$\n\n2. **步驟二：觀察 $\\triangle BDF$，找出第二組中點連線**：\n   - 同樣由三等分可知 $\\overline{DE} = \\overline{EB}$，即 $E$ 為 $\\overline{BD}$ 的中點。\n   - 因為由步驟一已證得 $\\overline{DF} \\parallel \\overline{EC}$，而 $P$ 在 $\\overline{EC}$ 上，所以 $\\overline{EP} \\parallel \\overline{DF}$。\n   - 在 $\\triangle BDF$ 中，過一邊中點 $E$ 作底邊 $\\overline{DF}$ 的平行線，必平分另一邊 $\\overline{BF}$（即 $P$ 為 $\\overline{BF}$ 中點），且：\n     $$\\overline{EP} = \\frac{1}{2}\\overline{DF}$$\n\n3. **步驟三：設未知數列方程式求解**：\n   - 設所求 $\\overline{DF} = x$。\n   - 由步驟二可得：\n     $$\\overline{EP} = \\frac{1}{2}\\overline{DF} = \\frac{1}{2}x$$\n   - 整段線段 $\\overline{EC} = \\overline{EP} + \\overline{CP}$，題目已知 $\\overline{CP} = 3$：\n     $$\\overline{EC} = \\frac{1}{2}x + 3$$\n   - 代回步驟一的關係式 $\\overline{DF} = \\frac{1}{2}\\overline{EC}$：\n     $$x = \\frac{1}{2}\\left(\\frac{1}{2}x + 3\\right)$$\n   - 兩邊同乘以 $2$：\n     $$2x = \\frac{1}{2}x + 3$$\n   - 移項化簡：\n     $$\\frac{3}{2}x = 3 \\implies x = 3 \\times \\frac{2}{3} = \\mathbf{2}$$\n\n因此，$\\overline{DF} = \\mathbf{2}$。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-14"
   }
 ];
 
@@ -1214,7 +1238,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v84') ||
+      stored = localStorage.getItem('miley_wrong_questions_v85') ||
+               localStorage.getItem('miley_wrong_questions_v84') ||
                localStorage.getItem('miley_wrong_questions_v83') ||
                localStorage.getItem('miley_wrong_questions_v82') ||
                localStorage.getItem('miley_wrong_questions_v81') ||
