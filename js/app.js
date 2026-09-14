@@ -123,17 +123,34 @@ class App {
     const sidebar = document.getElementById('sidebar');
     if (!resizer || !sidebar) return;
 
-    // Restore saved width from localStorage if on desktop, default to 205px (Miley's preferred compact width)
+    // Helper: obtain current document zoom scale (defaults to 1.25 as set in styles.css)
+    const getZoomRatio = () => {
+      try {
+        const z = parseFloat(getComputedStyle(document.documentElement).zoom);
+        return (!isNaN(z) && z > 0) ? z : 1.25;
+      } catch (e) {
+        return 1.25;
+      }
+    };
+
+    // Target on-screen rendered width: exactly 196px (matches Miley's screenshot)
+    // In CSS pixels with 1.25 zoom: 196 / 1.25 = 157px
+    const TARGET_SCREEN_WIDTH = 196;
+    const DEFAULT_CSS_WIDTH = Math.round(TARGET_SCREEN_WIDTH / getZoomRatio()); // 157px
+
+    // Restore saved width from localStorage if on desktop, default strictly to 157px
     try {
-      const savedWidth = localStorage.getItem('miley_sidebar_width_v2') || localStorage.getItem('miley_sidebar_width');
-      if (savedWidth && savedWidth !== '280' && window.innerWidth > 1024) {
+      const savedWidth = localStorage.getItem('miley_sidebar_width_v4');
+      if (savedWidth && window.innerWidth > 1024) {
         const parsed = parseInt(savedWidth, 10);
-        if (!isNaN(parsed) && parsed >= 190 && parsed <= 500) {
+        if (!isNaN(parsed) && parsed >= 145 && parsed <= 400) {
           document.documentElement.style.setProperty('--sidebar-width', `${parsed}px`);
+        } else {
+          document.documentElement.style.setProperty('--sidebar-width', `${DEFAULT_CSS_WIDTH}px`);
         }
       } else if (window.innerWidth > 1024) {
-        document.documentElement.style.setProperty('--sidebar-width', '205px');
-        try { localStorage.setItem('miley_sidebar_width_v2', '205'); } catch (e) {}
+        document.documentElement.style.setProperty('--sidebar-width', `${DEFAULT_CSS_WIDTH}px`);
+        try { localStorage.setItem('miley_sidebar_width_v4', DEFAULT_CSS_WIDTH); } catch (e) {}
       }
     } catch (e) {
       console.warn('Could not read sidebar width from localStorage:', e);
@@ -141,18 +158,19 @@ class App {
 
     let isResizing = false;
     let startX = 0;
-    let startWidth = 205;
+    let startWidth = DEFAULT_CSS_WIDTH;
 
     const onPointerMove = (e) => {
       if (!isResizing) return;
       e.preventDefault();
 
       const clientX = (e.clientX !== undefined) ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
-      const deltaX = clientX - startX;
-      let newWidth = startWidth + deltaX;
+      const zoom = getZoomRatio();
+      const deltaX = (clientX - startX) / zoom;
+      let newWidth = Math.round(startWidth + deltaX);
 
-      const minWidth = 190;
-      const maxWidth = Math.min(500, Math.floor(window.innerWidth * 0.45));
+      const minWidth = 145; // ~181px on screen
+      const maxWidth = Math.min(400, Math.floor((window.innerWidth / zoom) * 0.45));
       newWidth = Math.max(minWidth, Math.min(newWidth, maxWidth));
 
       document.documentElement.style.setProperty('--sidebar-width', `${newWidth}px`);
@@ -168,11 +186,13 @@ class App {
       window.removeEventListener('touchmove', onPointerMove);
       window.removeEventListener('touchend', onPointerUp);
 
-      const finalWidth = Math.round(sidebar.getBoundingClientRect().width);
-      if (finalWidth >= 190 && finalWidth <= 500) {
+      const zoom = getZoomRatio();
+      const finalScreenW = sidebar.getBoundingClientRect().width;
+      const finalCssW = Math.round(finalScreenW / zoom);
+
+      if (finalCssW >= 145 && finalCssW <= 400) {
         try {
-          localStorage.setItem('miley_sidebar_width_v2', finalWidth);
-          localStorage.setItem('miley_sidebar_width', finalWidth);
+          localStorage.setItem('miley_sidebar_width_v4', finalCssW);
         } catch (e) {
           console.warn('Could not save sidebar width:', e);
         }
@@ -187,7 +207,9 @@ class App {
 
       isResizing = true;
       startX = (e.clientX !== undefined) ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
-      startWidth = sidebar.getBoundingClientRect().width;
+      
+      const zoom = getZoomRatio();
+      startWidth = Math.round(sidebar.getBoundingClientRect().width / zoom);
 
       document.body.classList.add('sidebar-resizing');
 
@@ -201,12 +223,13 @@ class App {
     resizer.addEventListener('mousedown', onPointerDown);
     resizer.addEventListener('touchstart', onPointerDown, { passive: false });
 
-    // Double click to restore default 205px width
+    // Double click to restore Miley's default compact width (196px on screen / 157px CSS)
     resizer.addEventListener('dblclick', () => {
-      document.documentElement.style.setProperty('--sidebar-width', '205px');
+      const zoom = getZoomRatio();
+      const defaultW = Math.round(TARGET_SCREEN_WIDTH / zoom);
+      document.documentElement.style.setProperty('--sidebar-width', `${defaultW}px`);
       try {
-        localStorage.setItem('miley_sidebar_width_v2', 205);
-        localStorage.setItem('miley_sidebar_width', 205);
+        localStorage.setItem('miley_sidebar_width_v4', defaultW);
       } catch (e) {}
     });
   }

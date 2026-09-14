@@ -57,6 +57,15 @@
         document.documentElement.style.zoom = '';
       } catch (e) {}
     })();
+    // Enforce Miley's preferred compact sidebar width (196px rendered on screen / 157px CSS) immediately on launch
+    (function() {
+      try {
+        var savedW = localStorage.getItem('miley_sidebar_width_v4');
+        var w = savedW ? parseInt(savedW, 10) : 157;
+        if (!w || isNaN(w) || w < 145 || w > 400) w = 157;
+        document.documentElement.style.setProperty('--sidebar-width', w + 'px');
+      } catch (e) {}
+    })();
     // Immediate date updater on load
     (function() {
       function syncCurrentDateDisplay() {
@@ -80,7 +89,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=140">
+  <link rel="stylesheet" href="styles.css?v=141">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -985,7 +994,7 @@
   <script src="js/modules/analytics.js?v=76"></script>
   <script src="js/modules/calendar.js?v=76"></script>
   <script src="js/modules/wisdom.js?v=76"></script>
-  <script src="js/app.js?v=85"></script>
+  <script src="js/app.js?v=86"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => {
