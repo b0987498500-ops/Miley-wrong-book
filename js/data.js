@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v83';
+const STORAGE_KEY = 'miley_wrong_questions_v84';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1062,6 +1062,126 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-11"
+  },
+  {
+    "id": "q_math_polynomial_expansion_coeff_abs_023",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "計算粗心",
+    "concept": "乘法公式：多項式完全平方式展開、負號變號技巧與一次項係數對照求絕對值",
+    "uploadDate": "2026-09-14",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "兩大易錯陷阱：\n1.【提負號變號法】：$(-7x - a)^2 = [-(7x + a)]^2 = (7x + a)^2 = 49x^2 + 14ax + a^2$。\n2.【係數對照與雙解討論】：對照 $49x^2 - bx + 9$ 得 $a^2 = 9 \\implies a = \\pm 3$；一次項 $+14a = -b \\implies b = -14a$。\n  - 若 $a = 3 \\implies b = -42 \\implies a + b = -39 \\implies |a + b| = 39$\n  - 若 $a = -3 \\implies b = 42 \\implies a + b = 39 \\implies |a + b| = 39$\n無論哪一種情況，$|a + b|$ 恆為 39！",
+    "stem": "若 $(-7x - a)^2 = 49x^2 - bx + 9$，則 $|a + b|$ 之值為何？\n\n○ (A) 18\n○ (B) 24\n○ (C) 39\n○ (D) 45",
+    "answer": "(C) 39",
+    "diagramUrl": "",
+    "solution": "1. **步驟一：展開左式（善用提負號平方技巧）**：\n   括號內兩項皆為負號，提出負號後平方：\n   $$(-7x - a)^2 = [-(7x + a)]^2 = (7x + a)^2$$\n   利用和的平方公式 $(A + B)^2 = A^2 + 2AB + B^2$ 展開：\n   $$(7x + a)^2 = (7x)^2 + 2 \\cdot (7x) \\cdot a + a^2 = \\mathbf{49x^2 + 14ax + a^2}$$\n\n2. **步驟二：對照多項式各項係數**：\n   已知 $49x^2 + 14ax + a^2 = 49x^2 - bx + 9$：\n   - 常數項相等：$a^2 = 9 \\implies a = 3 \\text{ 或 } a = -3$\n   - 一次項相等：$+14a = -b \\implies b = -14a$\n\n3. **步驟三：分類討論計算 $|a + b|$**：\n   - **情況 ①**：若 $a = 3$，則 $b = -14 \\times 3 = -42$\n     $$a + b = 3 + (-42) = -39 \\implies |a + b| = |-39| = \\mathbf{39}$$\n   - **情況 ②**：若 $a = -3$，則 $b = -14 \\times (-3) = 42$\n     $$a + b = (-3) + 42 = 39 \\implies |a + b| = |39| = \\mathbf{39}$$\n   - 結論：無論 $a$ 是 $3$ 或 $-3$，$|a + b|$ 的值恆為 **39**。\n\n故選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-14"
+  },
+  {
+    "id": "q_math_mixed_fraction_diff_squares_024",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "乘法公式：帶分數平方差公式速算、正純小數/真分數借位分離",
+    "uploadDate": "2026-09-14",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "兩大關鍵核心：\n1.【平均中心點基準數】：$24\\frac{9}{10} = 25 - \\frac{1}{10}$、$25\\frac{1}{10} = 25 + \\frac{1}{10}$，平方差得 $25^2 - (\\frac{1}{10})^2 = 625 - \\frac{1}{100}$。\n2.【⚠️ 最易扣分陷阱（向整數借 1）】：題目規定 $0 < b < 1$（$b$ 必須為正純小數/正真分數），不能寫 $a=625, b=-\\frac{1}{100}$！必須向 625 借 1：$625 - \\frac{1}{100} = 624 + (1 - \\frac{1}{100}) = 624 + \\frac{99}{100}$，故 $a = 624$！",
+    "stem": "$24\\frac{9}{10} \\times 25\\frac{1}{10} = a + b$，若 $a$ 為正整數且 $0 < b < 1$，則 $a =$ ？",
+    "answer": "624",
+    "diagramUrl": "",
+    "solution": "1. **尋找基準整數，套用平方差公式**：\n   觀察兩帶分數的平均中心為 $25$：\n   $$24\\frac{9}{10} = 25 - \\frac{1}{10}$$\n   $$25\\frac{1}{10} = 25 + \\frac{1}{10}$$\n   套用平方差公式 $(A - B)(A + B) = A^2 - B^2$：\n   $$24\\frac{9}{10} \\times 25\\frac{1}{10} = \\left(25 - \\frac{1}{10}\\right)\\left(25 + \\frac{1}{10}\\right) = 25^2 - \\left(\\frac{1}{10}\\right)^2 = 625 - \\frac{1}{100}$$\n\n2. **滿足 $a$ 為正整數且 $0 < b < 1$ 的關鍵拆解**：\n   $\\because b$ 必須介於 $0$ 與 $1$ 之間（正真分數），若取 $a=625$，則 $b=-\\frac{1}{100} < 0$ 不合！\n   因此需向整數 $625$ **「借 1」** 轉化為正小數：\n   $$625 - \\frac{1}{100} = 624 + \\left(1 - \\frac{1}{100}\\right) = \\mathbf{624} + \\mathbf{\\frac{99}{100}}$$\n   - 正整數部分：$a = \\mathbf{624}$\n   - 純小數部分：$b = \\frac{99}{100}$（滿足 $0 < \\frac{99}{100} < 1$）\n\n故填 **624**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-14"
+  },
+  {
+    "id": "q_math_bittest_diff_squares_compare_025",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "解題技巧不足",
+    "concept": "乘法公式：歷屆基測經典題——平方差公式展開與公因數基準比較法",
+    "uploadDate": "2026-09-14",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "秒殺思維：千萬不要硬乘出六位數！\n1. 套用平方差 $(A+B)(A-B)$。\n2. 統一基準數 804：\n  - (A) $750 \\times 804$\n  - (B) $900 \\times 804$\n  - (C) $1600 \\times 402 = 800 \\times 804$\n  - (D) $1610 \\times 402 = 805 \\times 804$\n大家都有 $\\times 804$，比較係數 $900 > 805 > 800 > 750$，一眼秒殺 (B)！",
+    "stem": "下列四個式子，哪一個值最大？〔96.基測 II〕\n\n○ (A) $777^2 - 27^2$\n○ (B) $852^2 - 48^2$\n○ (C) $1001^2 - 599^2$\n○ (D) $1006^2 - 604^2$",
+    "answer": "(B) $852^2 - 48^2$",
+    "diagramUrl": "",
+    "solution": "1. **利用平方差公式 $A^2 - B^2 = (A + B)(A - B)$ 展開各選項**：\n   - **(A)** $(777 + 27)(777 - 27) = \\mathbf{750} \\times \\mathbf{804}$\n   - **(B)** $(852 + 48)(852 - 48) = \\mathbf{900} \\times \\mathbf{804}$\n   - **(C)** $(1001 + 599)(1001 - 599) = 1600 \\times 402$\n     巧妙借 $2$ 給 $402$ 統一基準：\n     $$= (800 \\times 2) \\times 402 = \\mathbf{800} \\times \\mathbf{804}$$\n   - **(D)** $(1006 + 604)(1006 - 604) = 1610 \\times 402$\n     同樣借 $2$ 給 $402$：\n     $$= (805 \\times 2) \\times 402 = \\mathbf{805} \\times \\mathbf{804}$$\n\n2. **同乘基準數 804，直接比係數大小**：\n   因為四個式子皆化為「$\\text{某數} \\times 804$」，直接比較前面的因數：\n   $$\\mathbf{900} > 805 > 800 > 750$$\n   因此 (B) 的值最大。\n\n故選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-14"
+  },
+  {
+    "id": "q_math_diff_squares_plus_minus_trap_026",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "審題不清",
+    "concept": "乘法公式：平方差求未知數、負數平方正負雙解陷阱",
+    "uploadDate": "2026-09-14",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "⚠️ 超級大陷阱：\n題目只給 $2000^2 - a^2 = b$，完全沒有限制 $a > 0$！\n$a^2 = 36 \\implies a = \\pm 6$（正負 6 都要寫！）。\n求 $b$ 時用 $2000^2 - 36 = 4000000 - 36 = 3999964$ 秒殺，千萬不要硬筆算直式乘法！",
+    "stem": "若 $1994 \\times 2006 = 2000^2 - a^2 = b$，則 $a =$ ？；$b =$ ？",
+    "answer": "$a = \\pm 6$；$b = 3999964$",
+    "diagramUrl": "",
+    "solution": "1. **步驟一：以 2000 為中心套用平方差公式**：\n   $$1994 = 2000 - 6$$\n   $$2006 = 2000 + 6$$\n   $$1994 \\times 2006 = (2000 - 6)(2000 + 6) = 2000^2 - 6^2$$\n\n2. **步驟二：求 $a$ 之值（注意正負雙解陷阱）**：\n   對照式子 $2000^2 - a^2 = 2000^2 - 6^2$：\n   $$a^2 = 6^2 = 36$$\n   ⚠️ **關鍵注意**：題目未限定 $a$ 為正數，而 $6^2 = 36$ 且 $(-6)^2 = 36$：\n   $$\\mathbf{a = \\pm 6} \\quad (\\text{或寫 } 6 \\text{ 或 } -6)$$\n\n3. **步驟三：求 $b$ 之值**：\n   $$b = 2000^2 - 36 = 4,000,000 - 36 = \\mathbf{3,999,964}$$\n\n故答：$a = \\pm 6$；$b = 3999964$。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-14"
+  },
+  {
+    "id": "q_math_overlapping_squares_area_027",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "解題技巧不足",
+    "concept": "乘法公式：重疊正方形面積求法、平方差公式消去分數技巧",
+    "uploadDate": "2026-09-14",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "極致美感平方差題：\n1. 面積公式：大正方形 + 小正方形 - 重疊部分 = $30^2 + (22\\frac{1}{2})^2 - (7\\frac{1}{2})^2$。\n2. 後兩項平方差分數全消：$(22\\frac{1}{2} + 7\\frac{1}{2})(22\\frac{1}{2} - 7\\frac{1}{2}) = 30 \\times 15$。\n3. 提公因數 30：$30(30 + 15) = 30 \\times 45 = 1350$（平方公分）！整題不需任何分數計算！",
+    "stem": "如右圖，將兩張大小不同的正方形紙張重疊，如果重疊部分是一個邊長為 $7\\frac{1}{2}$ 公分的正方形，已知原來兩正方形的邊長分別是 $30$ 公分、$22\\frac{1}{2}$ 公分，則重疊後的圖形其面積為多少平方公分？\n\n○ (A) 1250\n○ (B) 1350\n○ (C) 1400\n○ (D) 1450",
+    "answer": "(B) 1350",
+    "diagramUrl": "assets/questions/q_math_overlapping_squares_area_022.png",
+    "solution": "1. **步驟一：依重疊面積原理列出幾何算式**：\n   重疊後圖形總面積等於「兩正方形面積和減去重複計算的重疊面積」：\n   $$\\text{總面積} = 30^2 + \\left(22\\frac{1}{2}\\right)^2 - \\left(7\\frac{1}{2}\\right)^2$$\n\n2. **步驟二：觀察後兩項，套用平方差公式神速化簡**：\n   千萬不要硬算分數平方！將後兩項結合為 $A^2 - B^2 = (A + B)(A - B)$：\n   $$\\left(22\\frac{1}{2}\\right)^2 - \\left(7\\frac{1}{2}\\right)^2 = \\left(22\\frac{1}{2} + 7\\frac{1}{2}\\right)\\left(22\\frac{1}{2} - 7\\frac{1}{2}\\right)$$\n   - 和：$22.5 + 7.5 = \\mathbf{30}$（分數直接相加變為整數！）\n   - 差：$22.5 - 7.5 = \\mathbf{15}$\n   故後兩項平方差即為：$30 \\times 15$！\n\n3. **步驟三：提出公因數 30，心算秒殺答案**：\n   原算式改寫為：\n   $$30^2 + 30 \\times 15 = 30 \\times (30 + 15) = 30 \\times 45 = \\mathbf{1350}\\text{ (平方公分)}$$\n\n故選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-14"
   }
 ];
 
@@ -1094,7 +1214,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v82') ||
+      stored = localStorage.getItem('miley_wrong_questions_v83') ||
+               localStorage.getItem('miley_wrong_questions_v82') ||
                localStorage.getItem('miley_wrong_questions_v81') ||
                localStorage.getItem('miley_wrong_questions_v80') ||
                localStorage.getItem('miley_wrong_questions_v79') ||
@@ -1180,7 +1301,7 @@ class DataManager {
 
     // Strictly purge questions before 2026-09-07 as requested by user
     if (Array.isArray(this.questions)) {
-      this.questions = this.questions.filter(q => q && (q.mondayDate === '2026-09-07' || (Array.isArray(q.mondayDates) && q.mondayDates.includes('2026-09-07'))));
+      this.questions = this.questions.filter(q => q && (q.mondayDate >= '2026-09-07' || (Array.isArray(q.mondayDates) && q.mondayDates.some(m => m >= '2026-09-07'))));
     }
 
     // Sanitize & auto-repair legacy or corrupt date values without overriding user edits
