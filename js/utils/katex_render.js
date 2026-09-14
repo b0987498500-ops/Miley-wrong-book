@@ -121,35 +121,54 @@ window.katexUtils = {
   },
 
   formatTables: function(textStr) {
-    if (!textStr) return '';
+    if (!textStr || !textStr.includes('|')) return textStr;
     
     const lines = textStr.split('<br/>');
     let inTable = false;
     let tableHtml = '';
     let resultLines = [];
 
-    lines.forEach(line => {
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
       let trimmed = line.trim();
-      if (trimmed.includes('|') && trimmed.split('|').length >= 3) {
-        if (trimmed.startsWith('|')) trimmed = trimmed.slice(1);
-        if (trimmed.endsWith('|')) trimmed = trimmed.slice(0, -1);
 
-        const cells = trimmed.split('|').map(c => c.trim());
+      // Check if this line is a table separator row: e.g. | :---: | --- |
+      const isSeparator = trimmed.startsWith('|') && trimmed.endsWith('|') &&
+        trimmed.slice(1, -1).split('|').length >= 2 &&
+        trimmed.slice(1, -1).split('|').every(c => /^:?-+:?$/.test(c.trim()));
 
-        // Check if this row is just markdown table alignment separator row (e.g. :---:, ---, :--, --:)
-        const isSeparatorRow = cells.length > 0 && cells.every(c => /^:?-+:?$/.test(c));
-        if (isSeparatorRow) {
-          return;
-        }
+      // Check if this line looks like a table row: starts with '|', ends with '|', at least 2 columns
+      const isCandidateTableRow = trimmed.startsWith('|') && trimmed.endsWith('|') &&
+        trimmed.slice(1, -1).split('|').length >= 2;
+
+      if (isSeparator) {
+        // Skip separator row
+        continue;
+      }
+
+      if (isCandidateTableRow) {
+        const cells = trimmed.slice(1, -1).split('|').map(c => c.trim());
 
         if (!inTable) {
-          inTable = true;
-          tableHtml = '<div class="table-wrapper"><table class="katex-formatted-table"><thead><tr>';
-          cells.forEach(cell => {
-            tableHtml += `<th>${cell}</th>`;
-          });
-          tableHtml += '</tr></thead><tbody>';
+          // To start a table, the next line MUST be a separator row!
+          const nextTrimmed = (i + 1 < lines.length) ? lines[i + 1].trim() : '';
+          const nextIsSeparator = nextTrimmed.startsWith('|') && nextTrimmed.endsWith('|') &&
+            nextTrimmed.slice(1, -1).split('|').length >= 2 &&
+            nextTrimmed.slice(1, -1).split('|').every(c => /^:?-+:?$/.test(c.trim()));
+
+          if (nextIsSeparator) {
+            inTable = true;
+            tableHtml = '<div class="table-wrapper"><table class="katex-formatted-table"><thead><tr>';
+            cells.forEach(cell => {
+              tableHtml += `<th>${cell}</th>`;
+            });
+            tableHtml += '</tr></thead><tbody>';
+          } else {
+            // Not a markdown table header (no separator row immediately after)
+            resultLines.push(line);
+          }
         } else {
+          // Inside an active table body
           tableHtml += '<tr>';
           cells.forEach(cell => {
             tableHtml += `<td>${cell}</td>`;
@@ -165,7 +184,7 @@ window.katexUtils = {
         }
         resultLines.push(line);
       }
-    });
+    }
 
     if (inTable) {
       tableHtml += '</tbody></table></div>';
