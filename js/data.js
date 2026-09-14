@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v86';
+const STORAGE_KEY = 'miley_wrong_questions_v87';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1206,6 +1206,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-14"
+  },
+  {
+    "id": "q_soc_persian_zoroastrianism_map_029",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "西亞古文明：波斯帝國之發源地（伊朗高原）與祆教（拜火教）善惡二元論信仰特色",
+    "uploadDate": "2026-09-14",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【地理位置與宗教速記關鍵】：\n1. 關鍵特徵識別：「崇拜光明、以火為尊、善惡對立」= 祆教（拜火教 / 瑣羅亞斯德教）。\n2. 附圖文明發源地對照：\n   - 甲（巴爾幹半島/希臘）：古希臘文明（多神信仰、宙斯、民主哲學）。\n   - 乙（尼羅河流域/埃及）：古埃及文明（太陽神拉、金字塔、木乃伊與來世觀）。\n   - 丙（兩河流域/美索不達米亞）：蘇美、巴比倫、亞述等（多神信仰、吉爾伽美什史詩）。\n   - 丁（伊朗高原/波斯）：波斯帝國發源核心，創立並盛行祆教！\n3. 趣味連結：金庸小說《倚天屠龍記》中張無忌統領的「明教（摩尼教）」，正是起源於波斯、承襲拜火與光明善惡對立觀念的宗教！",
+    "stem": "無忌信仰的宗教其特色是崇拜光明、以火為尊，並講究善惡的對立。請問：無忌所信仰的宗教應該源自於附圖中何處？\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁",
+    "answer": "(D) 丁",
+    "diagramUrl": "assets/questions/q_soc_persian_zoroastrianism_map_029.png",
+    "solution": "1. **步驟一：由宗教特色判斷宗教種類**：\n   - 題目提及：「**崇拜光明、以火為尊、講究善惡對立**」。\n   - 此為古代波斯人創立的宗教——**祆（ㄒㄧㄢ）教**（又稱**拜火教**、**瑣羅亞斯德教**）。\n   - 其核心教義為「光明善神（阿胡拉·馬茲達）」與「黑暗惡神（阿里曼）」的善惡二元對立，並相信世界末日會有最後審判，善人升天堂、惡人下地獄（對後來的猶太教、基督教、伊斯蘭教產生深遠影響）。\n\n2. **步驟二：判讀地圖代號地理位置**：\n   - **甲**：**巴爾幹半島（希臘）**，為古希臘愛琴文明、城邦文明發源地。\n   - **乙**：**尼羅河流域（埃及）**，為古埃及文明，崇拜太陽神與冥王，相信靈魂不滅。\n   - **丙**：**兩河流域（美索不達米亞平原）**，底格里斯河與幼發拉底河，蘇美、巴比倫文明發源地。\n   - **丁**：**伊朗高原（波斯）**，此處即為古波斯人興起之地，也是**祆教**的發源核心！\n\n3. **步驟三：總結**：\n   - 祆教盛行並發源於**伊朗高原（丁）**，故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-14"
   }
 ];
 
@@ -1238,7 +1262,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v85') ||
+      stored = localStorage.getItem('miley_wrong_questions_v86') ||
+               localStorage.getItem('miley_wrong_questions_v85') ||
                localStorage.getItem('miley_wrong_questions_v84') ||
                localStorage.getItem('miley_wrong_questions_v83') ||
                localStorage.getItem('miley_wrong_questions_v82') ||
