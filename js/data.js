@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v89';
+const STORAGE_KEY = 'miley_wrong_questions_v90';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1302,6 +1302,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-15"
+  },
+  {
+    "id": "q_math_triangle_midpoint_perimeter_area_033",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "三角形中點連線段性質：相似比、周長比與面積比（4倍）",
+    "uploadDate": "2026-09-15",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【中點三角形兩大核心比例關係】：\n1.【周長比等於邊長比（2倍）】：中點連線段長度為第三邊的一半，故 $\\triangle ABC$ 各邊長皆為 $\\triangle DEF$ 的 2 倍，周長 $= 24 \\times 2 = 48$！\n2.【⚠️ 最易扣分盲點：面積比是邊長比的平方（4倍）】：相似形面積比為對應邊長比的平方（$2^2 = 4$ 倍）！三邊中點相連將大三角形分成 4 個面積相等的小三角形，故 $\\triangle ABC$ 面積 $= 24 \\times 4 = 96$，絕不能誤乘 2！",
+    "stem": "若 $D$、$E$、$F$ 為 $\\triangle ABC$ 三邊中點，且 $\\triangle DEF$ 的三邊長分別為 $6$、$8$、$10$，則 $\\triangle ABC$ 的周長為何？$\\triangle ABC$ 的面積為何？",
+    "answer": "周長為 48，面積為 96",
+    "diagramUrl": "",
+    "solution": "○ 詳細解題步驟：\n\n1. **步驟一：由中點連線段性質求邊長比與周長**：\n   - 設 $D, E, F$ 為 $\\triangle ABC$ 三邊中點。\n   - 由三角形中點連線段定理：連接兩邊中點的線段平行於第三邊且長度等於第三邊的一半。\n     $$\\overline{DE} = \\frac{1}{2}\\overline{AC}, \\quad \\overline{EF} = \\frac{1}{2}\\overline{AB}, \\quad \\overline{DF} = \\frac{1}{2}\\overline{BC}$$\n   - 因此 $\\triangle ABC$ 的三邊長分別為 $\\triangle DEF$ 三邊長的 $2$ 倍：\n     $$2 \\times 6 = 12, \\quad 2 \\times 8 = 16, \\quad 2 \\times 10 = 20$$\n   - $\\triangle ABC$ 的周長為：\n     $$\\text{周長} = 12 + 16 + 20 = 48$$\n     （亦可由周長比等於邊長比直接計算：$(6 + 8 + 10) \\times 2 = 24 \\times 2 = 48$）。\n\n2. **步驟二：判斷 $\\triangle DEF$ 形狀並計算面積**：\n   - 檢驗 $\\triangle DEF$ 的三邊長 $6, 8, 10$：\n     $$6^2 + 8^2 = 36 + 64 = 100 = 10^2$$\n   - 滿足畢氏定理，故 $\\triangle DEF$ 為以 $6$ 和 $8$ 為兩股的**直角三角形**。\n   - $\\triangle DEF$ 的面積為：\n     $$\\text{面積}_{\\triangle DEF} = \\frac{1}{2} \\times 6 \\times 8 = 24$$\n\n3. **步驟三：利用面積比求 $\\triangle ABC$ 的面積**：\n   - 相似三角形的面積比等於對應邊長比的平方：\n     $$\\frac{\\text{面積}_{\\triangle ABC}}{\\text{面積}_{\\triangle DEF}} = \\left(\\frac{2}{1}\\right)^2 = 4$$\n   - $\\triangle ABC$ 的面積為：\n     $$\\text{面積}_{\\triangle ABC} = 4 \\times 24 = 96$$\n\n標準答案：周長為 **48**，面積為 **96**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-15"
   }
 ];
 
@@ -1334,7 +1358,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v88') ||
+      stored = localStorage.getItem('miley_wrong_questions_v89') ||
+               localStorage.getItem('miley_wrong_questions_v88') ||
                localStorage.getItem('miley_wrong_questions_v87') ||
                localStorage.getItem('miley_wrong_questions_v86') ||
                localStorage.getItem('miley_wrong_questions_v85') ||
