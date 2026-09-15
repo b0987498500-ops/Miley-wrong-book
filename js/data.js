@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v87';
+const STORAGE_KEY = 'miley_wrong_questions_v89';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1230,6 +1230,78 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-14"
+  },
+  {
+    "id": "q_bio_cancer_cell_division_mitosis_030",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "細胞分裂（有絲分裂）之染色體行為與姐妹染色分體分離",
+    "uploadDate": "2026-09-15",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【體細胞增生 vs. 產生配子關鍵對比】：\n1. 癌細胞是大腸的「體細胞」異常增生，進行的是「細胞分裂（有絲分裂）」，絕非產生生殖細胞的「減數分裂」！\n2. 細胞分裂過程：染色體複製 1 次，分裂 1 次。後期是著絲點分開，「姐妹染色分體」分別移向兩端。\n3. 母細胞有 2 對（4 條，2長2短）染色體，故分裂時兩端各自分配到完整的 4 條（2長2短）單分體，子細胞染色體數目與母細胞完全相同（2n → 2n）！\n4. 選項陷阱：(A) 圖是減數分裂第一次分裂後期（同源染色體分離，每端僅 1長1短）；(B) 圖才是細胞分裂（姐妹染色分體分離，每端均有 2長2短）！",
+    "stem": "癌細胞的特性是細胞的生長不受調節，進而不斷進行「細胞分裂」而增生。若大腸內之癌細胞的 2 對染色體如圖所示，則當此癌細胞增生時，會出現下列哪一種分裂形式？\n\n○ (A) 分裂時同源染色體分離，每側分配 1 長 1 短之二分體\n○ (B) 分裂時姐妹染色分體分離，每側分配 2 長 2 短共 4 條染色體",
+    "answer": "(B)",
+    "diagramUrl": "assets/questions/q_bio_cancer_cell_division_001.png",
+    "solution": "1. **步驟一：確認分裂類型**：\n   - 癌細胞是大腸「體細胞」的病變增生，題目也特別註明進行「細胞分裂（有絲分裂）」，而不是生殖細胞形成的「減數分裂」。\n\n2. **步驟二：分析母細胞染色體數目與形態**：\n   - 母細胞內有 **2 對（共 4 條）** 染色體（2 條較長、2 條較短）。\n\n3. **步驟三：分析細胞分裂各階段特徵**：\n   - **染色體複製**：每條染色體複製成由兩條姐妹染色分體組成的二分體。\n   - **後期分離**：著絲點分裂，**姐妹染色分體分離**並分別移向細胞兩端。\n   - **分配結果**：細胞兩端各自分配到完整的 2 對染色體（**2 長 + 2 短，共 4 條**），維持子細胞與母細胞相同的染色體套數（$2n \\to 2n$）。\n\n4. **步驟四：各選項判讀**：\n   - **(A)**：兩端各只有 1 長 1 短，且染色體為「X」形二分體，此為**減數分裂第一階段（同源染色體分離）**，錯誤。\n   - **(B)**：兩端各有 2 長 2 短（共 4 條分開的染色體），正是**細胞分裂（有絲分裂）後期姐妹染色分體分離**的特徵，故為正解。\n\n正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-15"
+  },
+  {
+    "id": "q_bio_sexual_reproduction_characteristics_031",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "有性生殖與無性生殖之特徵比較、受精方式與染色體套數變化",
+    "uploadDate": "2026-09-15",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【有性生殖 vs. 無性生殖核心判斷】：\n1. 配子產生方式：必須先經過「減數分裂」（2n → 1n）形成配子（精卵），非細胞分裂！\n2. 受精地點：分為「體內受精」（如鳥類、哺乳類）與「體外受精」（如魚類、兩生類），並非都在雌性體內！\n3. 遺傳變異（關鍵正解）：因精卵隨機結合，基因重新組合，故「子代遺傳特性與親代不同」，有利適應多變環境！\n4. 染色體套數：親代為雙套（2n），配子單套（1n），受精後子代又恢復雙套（2n），故親代與子代的染色體套數是「相同」的！",
+    "stem": "關於有性生殖的敘述，下列何者正確？\n\n○ (A) 需先經細胞分裂產生配子\n○ (B) 雌雄配子的結合，都在雌性體內進行\n○ (C) 子代的遺傳特性與親代不同\n○ (D) 親代的染色體套數與子代不同",
+    "answer": "(C) 子代的遺傳特性與親代不同",
+    "diagramUrl": "",
+    "solution": "○ 詳細解析：\n\n1. **選項逐一檢驗**：\n   - **(A) 錯誤**：產生配子（精子、卵子）需經過**減數分裂**（染色體數目減半，$2n \\to 1n$），而非一般細胞分裂。\n   - **(B) 錯誤**：雌雄配子結合稱為「受精」，分為**體內受精**（如哺乳類、鳥類、爬蟲類）與**體外受精**（如多數魚類、兩生類），並非全部都在體內。\n   - **(C) 正確**：有性生殖結合了雙親的遺傳物質，且減數分裂與受精過程具有基因重組，使得**子代的遺傳特性與親代不同**（具有個別差異，利於演化與適應環境變異）。\n   - **(D) 錯誤**：親代為雙套（$2n$），形成的配子為單套（$1n$）；受精卵結合後恢復為雙套（$2n$），因此**親代與子代的染色體套數相同**。\n\n2. **重點結論**：\n   - 正確答案為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-15"
+  },
+  {
+    "id": "q_bio_meiosis_chimpanzee_chromosomes_032",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "審題不清",
+    "concept": "減數分裂之複製次數、分裂次數與配子染色體數目（單套不成對）",
+    "uploadDate": "2026-09-15",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【減數分裂兩大最易失分盲點】：\n1.【複製次數陷阱】：減數分裂雖然「連續分裂 2 次」，但「染色體只複製 1 次」！絕不是分裂兩次就複製兩次！\n2.【「條」vs.「對」陷阱（必考！）】：配子（精子、卵子）為「單套（$1n$）」，裡面的染色體皆已分離獨立，沒有同源染色體成雙成對！黑猩猩體細胞 $2n = 48$ 條（24 對），減數分裂後精子含 $1n = 24$「條」，絕不能說成「12 對」！",
+    "stem": "已知黑猩猩的體細胞有 48 條染色體，當雄性黑猩猩體內行減數分裂產生精子時，有關染色體的敘述，下列何者正確？\n\n○ (A) 染色體複製 1 次，精子內含 24 條染色體\n○ (B) 染色體複製 2 次，精子內含 48 條染色體\n○ (C) 染色體複製 1 次，精子內含 12 對染色體\n○ (D) 染色體複製 2 次，精子內含 24 對染色體",
+    "answer": "(A) 染色體複製 1 次，精子內含 24 條染色體",
+    "diagramUrl": "",
+    "solution": "○ 詳細解析：\n\n1. **黑猩猩染色體基本分析**：\n   - 黑猩猩為雙倍體生物，**體細胞**（雙套 $2n$）含有 **48 條染色體（24 對）**。\n\n2. **減數分裂特徵**：\n   - **複製次數**：染色體**僅複製 1 次**。\n   - **分裂次數**：連續**分裂 2 次**（第一次分裂同源染色體分離，第二次分裂姐妹染色分體分離）。\n   - **結果**：形成 4 個子細胞（精子），每個精子含有**單套（$1n$）**染色體，數目減半為 **24 條**。\n\n3. **選項盲點逐一檢視**：\n   - **(A) 正確**：染色體複製 1 次，形成的精子含有體細胞一半的染色體（$48 \\div 2 = 24$ 條）。\n   - **(B) 錯誤**：染色體只複製 1 次，不是 2 次；精子染色體數為 24 條，非 48 條。\n   - **(C) 錯誤**：精子是**單套（$1n$）**，染色體單獨存在，**不成對**！不能稱作「12 對」，應為「24 條」。\n   - **(D) 錯誤**：複製僅 1 次，且精子為單套，不成對。\n\n故正確答案為 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-15"
   }
 ];
 
@@ -1262,7 +1334,9 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v86') ||
+      stored = localStorage.getItem('miley_wrong_questions_v88') ||
+               localStorage.getItem('miley_wrong_questions_v87') ||
+               localStorage.getItem('miley_wrong_questions_v86') ||
                localStorage.getItem('miley_wrong_questions_v85') ||
                localStorage.getItem('miley_wrong_questions_v84') ||
                localStorage.getItem('miley_wrong_questions_v83') ||
