@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v90';
+const STORAGE_KEY = 'miley_wrong_questions_v91';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1326,6 +1326,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-15"
+  },
+  {
+    "id": "q_math_triangle_midpoint_ratio_ae_ef_034",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "解題技巧不足",
+    "concept": "三角形中點與平行線輔助線：中點連線段逆用與比例線段（求線段比 AE : EF）",
+    "uploadDate": "2026-09-15",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【解題關鍵：作平行線輔助線轉化中點比例】：\n1.【構造輔助線破題】：遇到交錯的兩條線段與中點，過已知中點 $D$ 作與截線平行的輔助線 $\\overline{DG} \\parallel \\overline{AF}$，交 $\\overline{BC}$ 於 $G$！\n2.【兩次利用中點連線性質轉化】：\n   - 在 $\\triangle AFC$ 中：$D$ 為 $\\overline{AC}$ 中點，$\\overline{DG} \\parallel \\overline{AF} \\implies \\overline{DG} = \\frac{1}{2} \\overline{AF}$。\n   - 在 $\\triangle BDG$ 中：$E$ 為 $\\overline{BD}$ 中點，$\\overline{EF} \\parallel \\overline{DG} \\implies \\overline{EF} = \\frac{1}{2} \\overline{DG} = \\frac{1}{4} \\overline{AF}$。\n3.【最後求比例】：$\\overline{AE} = \\overline{AF} - \\overline{EF} = \\frac{3}{4} \\overline{AF}$，故 $\\overline{AE} : \\overline{EF} = \\frac{3}{4} : \\frac{1}{4} = 3 : 1$！",
+    "stem": "如右圖，在 $\\triangle ABC$ 中，$D$、$E$ 分別為 $\\overline{AC}$、$\\overline{BD}$ 的中點，連接 $\\overline{AE}$，並延長 $\\overline{AE}$ 交 $\\overline{BC}$ 於 $F$ 點，則 $\\overline{AE} : \\overline{EF} = ?$ \n\n（點擊附圖可放大檢視幾何圖形與輔助線構造）",
+    "answer": "3 : 1",
+    "diagramUrl": "assets/questions/q_math_triangle_midpoint_ratio_ae_ef_034.png",
+    "solution": "○ 詳細解題步驟：\n\n1. **步驟一：作輔助線（構造中點平行線）**：\n   - 過點 $D$ 作 $\\overline{DG} \\parallel \\overline{AF}$，交 $\\overline{BC}$ 於 $G$ 點。\n\n2. **步驟二：在 $\\triangle AFC$ 中分析**：\n   - $\\because D$ 為 $\\overline{AC}$ 的中點，且 $\\overline{DG} \\parallel \\overline{AF}$（同位角相等，$\\triangle CDG \\sim \\triangle CAF$）。\n   - 由三角形中點連線性質：\n     $$\\overline{DG} = \\frac{1}{2}\\overline{AF}, \\quad \\overline{CG} = \\overline{GF}$$\n\n3. **步驟三：在 $\\triangle BDG$ 中分析**：\n   - $\\because E$ 為 $\\overline{BD}$ 的中點，且 $\\overline{EF} \\parallel \\overline{DG}$（$\\because \\overline{AF} \\parallel \\overline{DG}$ 且 $E, F$ 分別在 $\\overline{AF}$ 及其直線上）。\n   - 由三角形中點連線段性質：\n     $$\\overline{EF} = \\frac{1}{2}\\overline{DG} = \\frac{1}{2} \\times \\left(\\frac{1}{2}\\overline{AF}\\right) = \\frac{1}{4}\\overline{AF}$$\n     （且 $\\overline{BF} = \\overline{FG}$，可得 $\\overline{BF} : \\overline{FG} : \\overline{GC} = 1 : 1 : 1$）。\n\n4. **步驟四：計算線段比 $\\overline{AE} : \\overline{EF}$**：\n   - 已知整段 $\\overline{AF}$ 中，$\\overline{EF} = \\frac{1}{4}\\overline{AF}$：\n     $$\\overline{AE} = \\overline{AF} - \\overline{EF} = \\overline{AF} - \\frac{1}{4}\\overline{AF} = \\frac{3}{4}\\overline{AF}$$\n   - 兩線段長度比為：\n     $$\\overline{AE} : \\overline{EF} = \\left(\\frac{3}{4}\\overline{AF}\\right) : \\left(\\frac{1}{4}\\overline{AF}\\right) = 3 : 1$$\n\n○ **速解小技巧（孟氏定理 Menelaus's Theorem）**：\n   以 $\\triangle BCD$ 與截線 $A-E-F$ 套用孟氏定理：\n   $$\\frac{\\overline{BF}}{\\overline{FC}} \\times \\frac{\\overline{CA}}{\\overline{AD}} \\times \\frac{\\overline{DE}}{\\overline{EB}} = 1$$\n   由前面中點比例得 $\\overline{BF} : \\overline{FC} = 1 : 2$，$\\frac{\\overline{CA}}{\\overline{AD}} = \\frac{2}{1}$，$\\frac{\\overline{DE}}{\\overline{EB}} = 1$。\n   再以 $\\triangle BDG$ 截線計算，亦可瞬間得出 $\\overline{AE} : \\overline{EF} = 3 : 1$！\n\n標準答案為 **3 : 1**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-15"
   }
 ];
 
@@ -1358,7 +1382,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v89') ||
+      stored = localStorage.getItem('miley_wrong_questions_v90') ||
+               localStorage.getItem('miley_wrong_questions_v89') ||
                localStorage.getItem('miley_wrong_questions_v88') ||
                localStorage.getItem('miley_wrong_questions_v87') ||
                localStorage.getItem('miley_wrong_questions_v86') ||
