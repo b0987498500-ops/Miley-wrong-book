@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v96';
+const STORAGE_KEY = 'miley_wrong_questions_v97';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1494,6 +1494,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-16"
+  },
+  {
+    "id": "q_math_parallel_angle_bisector_perimeter_041",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "平行線截角平分線之等腰三角形性質與相似三角形邊長比例（求 △ADE 周長）",
+    "uploadDate": "2026-09-16",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【「平行線 + 角平分線 $\\to$ 必出等腰三角形」幾何秒殺模型】：\n1.【破題關鍵】：\n   - $\\overline{BD}$ 是角平分線：$\\angle 1 = \\angle 2$\n   - $\\overline{DE} \\parallel \\overline{BC}$（內錯角相等）：$\\angle 2 = \\angle 3$\n   - $\\implies \\angle 1 = \\angle 3 \\implies \\triangle EBD$ 為等腰三角形，$\\overline{EB} = \\overline{ED}$！\n2.【列比例求長度】：\n   設 $\\overline{EB} = \\overline{ED} = x$，則 $\\overline{AE} = 12 - x$。\n   由相似形 $\\frac{\\overline{AE}}{\\overline{AB}} = \\frac{\\overline{DE}}{\\overline{BC}} \\implies \\frac{12 - x}{12} = \\frac{x}{4} \\implies x = 3$！\n3.【求周長速算絕招】：\n   - 方法一（各邊相加）：$\\overline{AE} = 9$、$\\overline{AD} = 9$、$\\overline{DE} = 3$，周長 $= 9 + 9 + 3 = 21$！\n   - 方法二（相似比 $\\times$ 原周長）：相似比 $= \\frac{9}{12} = \\frac{3}{4}$，原周長 $= 12 + 12 + 4 = 28$，$\\triangle ADE$ 周長 $= 28 \\times \\frac{3}{4} = 21$！",
+    "stem": "如右圖，在 $\\triangle ABC$ 中，$\\overline{AB} = \\overline{AC} = 12$，$\\overline{BC} = 4$，$\\overline{BD}$ 為 $\\angle ABC$ 的角平分線，且 $\\overline{DE} \\parallel \\overline{BC}$，則 $\\triangle ADE$ 的周長為何？\n\n（點擊附圖可放大檢視幾何圖形）\n\n○ (A) 24\n○ (B) 21\n○ (C) 19\n○ (D) 18",
+    "answer": "(B) 21",
+    "diagramUrl": "assets/questions/q_math_parallel_angle_bisector_perimeter_041.png",
+    "solution": "○ 詳細解題步驟：\n\n1. **步驟一：識別「平行線 + 角平分線」導出等腰三角形**：\n   - 已知 $\\overline{BD}$ 平分 $\\angle ABC$，故 $\\angle EBD = \\angle DBC$。\n   - 又已知 $\\overline{DE} \\parallel \\overline{BC}$，由兩平行線內錯角相等得：\n     $$\\angle EDB = \\angle DBC$$\n   - 因此 $\\angle EBD = \\angle EDB$，可知 $\\triangle EBD$ 為**等腰三角形**，兩腰相等：\n     $$\\overline{EB} = \\overline{ED}$$\n\n2. **步驟二：設未知數並利用相似三角形列比例式求邊長**：\n   - 設 $\\overline{EB} = \\overline{ED} = x$。\n   - 則 $\\overline{AE} = \\overline{AB} - \\overline{EB} = 12 - x$。\n   - 由 $\\overline{DE} \\parallel \\overline{BC}$，可知 $\\triangle ADE \\sim \\triangle ABC$（$AA$ 相似），對應邊成比例：\n     $$\\frac{\\overline{AE}}{\\overline{AB}} = \\frac{\\overline{DE}}{\\overline{BC}}$$\n   - 代入已知數據：\n     $$\\frac{12 - x}{12} = \\frac{x}{4}$$\n   - 兩邊同乘以 12：\n     $$12 - x = 3x \\implies 4x = 12 \\implies x = 3$$\n   - 故得 $\\overline{DE} = 3$，$\\overline{AE} = 12 - 3 = 9$。\n\n3. **步驟三：求 $\\triangle ADE$ 的周長**：\n   - 因為原三角形 $\\overline{AB} = \\overline{AC} = 12$ 為等腰三角形，且 $\\overline{DE} \\parallel \\overline{BC}$，故 $\\triangle ADE$ 亦為等腰三角形，$\\overline{AD} = \\overline{AE} = 9$。\n   - $\\triangle ADE$ 的周長為：\n     $$\\text{周長} = \\overline{AE} + \\overline{AD} + \\overline{DE} = 9 + 9 + 3 = 21$$\n   - **【速算法（相似形周長比等於對應邊長比）】**：\n     $\\triangle ABC$ 周長 $= 12 + 12 + 4 = 28$。\n     對應邊長比 $= \\frac{\\overline{AE}}{\\overline{AB}} = \\frac{9}{12} = \\frac{3}{4}$。\n     $$\\triangle ADE \\text{ 周長} = 28 \\times \\frac{3}{4} = 21$$\n\n標準答案為 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-16"
   }
 ];
 
@@ -1526,7 +1550,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v95') ||
+      stored = localStorage.getItem('miley_wrong_questions_v96') ||
+               localStorage.getItem('miley_wrong_questions_v95') ||
                localStorage.getItem('miley_wrong_questions_v94') ||
                localStorage.getItem('miley_wrong_questions_v93') ||
                localStorage.getItem('miley_wrong_questions_v92') ||
