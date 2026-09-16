@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v94';
+const STORAGE_KEY = 'miley_wrong_questions_v95';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1422,6 +1422,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-16"
+  },
+  {
+    "id": "q_bio_flower_structure_haploid_gametes_038",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "開花植物（被子植物）的花朵構造與減數分裂產生單套 (n) 生殖細胞部位（花藥與胚珠）",
+    "uploadDate": "2026-09-16",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【花朵構造與染色體套數（單套 n vs 雙套 2n）超高頻考點】：\n1.【單套 (n) 生殖細胞的產生部位（僅兩處！）】：\n   -「甲（雄蕊花藥）」：內含花粉囊，經【減數分裂】產生單套 ($n$) 的花粉粒（內含精細胞）。\n   -「丙（雌蕊胚珠）」：位於子房內部，經【減數分裂】產生單套 ($n$) 的卵細胞（雌配子）。\n2.【其餘皆為母體雙套 (2n) 體細胞組織】：\n   - 乙（柱頭/花柱）：接收花粉並引導花粉管生長，為 $2n$。\n   - 丁（花瓣）：吸引昆蟲傳粉，為 $2n$。\n   - 戊（子房壁）：將來發育成果皮/果肉，為母體 $2n$ 組織！\n   - 己（花萼）：保護花蕾，為 $2n$。\n3.【⚠️ 常見易錯陷阱】：很多同學誤選「戊（子房）」，注意子房是母體組織（雙套 $2n$），只有子房裡面的「丙（胚珠）」才能產生單套卵細胞！",
+    "stem": "阿民觀察花的構造，然後畫出一張如附圖示意圖，請問圖中哪兩個部位可產生單套染色體的細胞？\n\n（點擊附圖可放大檢視花朵剖面構造與各代號部位）\n\n○ (A) 乙己\n○ (B) 甲丁\n○ (C) 乙戊\n○ (D) 甲丙",
+    "answer": "(D) 甲丙",
+    "diagramUrl": "assets/questions/q_bio_flower_structure_haploid_gametes_038.png",
+    "solution": "○ 詳細破題解析：\n\n1. **圖中各代號構造精確判讀**：\n   - **甲**：雄蕊頂端的**花藥**（Anther），內含花粉囊。\n   - **乙**：雌蕊的**柱頭與花柱**（Stigma & Style），負責黏附花粉與引導花粉管萌發。\n   - **丙**：雌蕊子房內部的**胚珠**（Ovule）。\n   - **丁**：**花瓣**（Petal），組成花冠吸引傳粉昆蟲。\n   - **戊**：雌蕊基部膨大的**子房**（Ovary）。\n   - **己**：花朵最外層的**花萼**（Sepal），花苞期具保護功能。\n\n2. **單套染色體細胞（生殖細胞）的產生機制**：\n   - 植物體細胞染色體為雙套（$2n$），只有在製造**生殖細胞（配子）**時，才在特定生殖器官中進行**減數分裂**，產生染色體套數減半的單套細胞（$n$）：\n     - **甲（花藥）**：花粉囊中的花粉母細胞進行減數分裂，產生單套（$n$）的**花粉粒**（內含雄配子：精細胞）。\n     - **丙（胚珠）**：胚珠內部的大孢子母細胞進行減數分裂，發育產生單套（$n$）的**卵細胞**（雌配子）。\n   - **乙、丁、戊、己**皆由母體體細胞有絲分裂構成，染色體套數皆為雙套（$2n$）。\n     - 特別注意：**戊（子房）**受精後發育為果實，果肉與果皮皆來自母體子房壁，為雙套（$2n$），不可與內部產生卵細胞的「丙（胚珠）」混淆。\n\n因此能產生單套染色體細胞的部位為 **甲、丙**，標準答案為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-16"
   }
 ];
 
@@ -1454,7 +1478,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v93') ||
+      stored = localStorage.getItem('miley_wrong_questions_v94') ||
+               localStorage.getItem('miley_wrong_questions_v93') ||
                localStorage.getItem('miley_wrong_questions_v92') ||
                localStorage.getItem('miley_wrong_questions_v91') ||
                localStorage.getItem('miley_wrong_questions_v90') ||
