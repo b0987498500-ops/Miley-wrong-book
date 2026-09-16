@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v95';
+const STORAGE_KEY = 'miley_wrong_questions_v96';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1446,6 +1446,54 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-16"
+  },
+  {
+    "id": "q_math_triangle_ratio_abe_abc_039",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "等高三角形之底邊比等於面積比：連續比例轉化（求 △ABE 與 △ABC 面積比）",
+    "uploadDate": "2026-09-16",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【等高三角形「連乘比例」拆解心法】：\n1.【第一層大三角形切割】：由同高性質，底邊比即面積比。$\\overline{BD} : \\overline{CD} = 3 : 4 \\implies \\overline{BD} : \\overline{BC} = 3 : 7$，故 $\\triangle ABD$ 佔全部的 $\\frac{3}{7}$！\n2.【第二層小三角形切割】：在 $\\triangle ABD$ 內，頂點為 $B$，底邊為 $\\overline{AD}$。$\\overline{AE} : \\overline{DE} = 2 : 3 \\implies \\overline{AE} : \\overline{AD} = 2 : 5$，故 $\\triangle ABE$ 佔 $\\triangle ABD$ 的 $\\frac{2}{5}$！\n3.【兩層連乘得出答案】：$\\triangle ABE = \\frac{2}{5} \\times \\frac{3}{7} \\triangle ABC = \\frac{6}{35} \\triangle ABC$，比值即為 $6 : 35$！注意不要將分母誤加或比值顛倒！",
+    "stem": "如右圖，在 $\\triangle ABC$ 中，$D$、$F$ 分別在 $\\overline{BC}$、$\\overline{AC}$ 上，$\\overline{AD}$、$\\overline{BF}$ 交於 $E$ 點，若 $\\overline{BD} : \\overline{CD} = 3 : 4$，$\\overline{AE} : \\overline{DE} = 2 : 3$，則 $\\triangle ABE$ 與 $\\triangle ABC$ 的面積比為何？\n\n（點擊附圖可放大檢視幾何圖形）\n\n○ (A) 5 : 12\n○ (B) 3 : 10\n○ (C) 6 : 35\n○ (D) 7 : 20",
+    "answer": "(C) 6 : 35",
+    "diagramUrl": "assets/questions/q_math_triangle_ratio_abe_abc_039.png",
+    "solution": "○ 詳細解題步驟：\n\n1. **步驟一：分析大三角形的底邊分割與面積比**：\n   - 在 $\\triangle ABC$ 中，線段 $\\overline{AD}$ 將 $\\triangle ABC$ 分割為 $\\triangle ABD$ 與 $\\triangle ACD$。\n   - 兩者頂點同為 $A$，高相等，面積比等於底邊長度比：\n     $$\\frac{\\triangle ABD \\text{ 面積}}{\\triangle ABC \\text{ 面積}} = \\frac{\\overline{BD}}{\\overline{BC}} = \\frac{3}{3 + 4} = \\frac{3}{7}$$\n     即 $\\triangle ABD \\text{ 面積} = \\frac{3}{7} \\triangle ABC \\text{ 面積}$。\n\n2. **步驟二：在 $\\triangle ABD$ 內部進行二次面積分割**：\n   - 在 $\\triangle ABD$ 中，線段 $\\overline{BE}$ 將其分割為 $\\triangle ABE$ 與 $\\triangle BDE$。\n   - 兩者頂點同為 $B$，高相等，底邊在同一條直線 $\\overline{AD}$ 上：\n     $$\\frac{\\triangle ABE \\text{ 面積}}{\\triangle ABD \\text{ 面積}} = \\frac{\\overline{AE}}{\\overline{AD}} = \\frac{2}{2 + 3} = \\frac{2}{5}$$\n     即 $\\triangle ABE \\text{ 面積} = \\frac{2}{5} \\triangle ABD \\text{ 面積}$。\n\n3. **步驟三：連乘比例求出面積比**：\n   - 代入 $\\triangle ABD$ 的比例關係：\n     $$\\triangle ABE \\text{ 面積} = \\frac{2}{5} \\times \\left(\\frac{3}{7} \\triangle ABC \\text{ 面積}\\right) = \\frac{6}{35} \\triangle ABC \\text{ 面積}$$\n   - 故兩者面積比為：\n     $$\\triangle ABE \\text{ 面積} : \\triangle ABC \\text{ 面積} = 6 : 35$$\n\n標準答案為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-16"
+  },
+  {
+    "id": "q_math_parallel_segments_triangle_area_040",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "平行線截比例線段與同高/同底三角形面積轉換（求 △BDE 面積）",
+    "uploadDate": "2026-09-16",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【平行線截線段比例與面積方程解題關鍵】：\n1.【平行線兩大面積性質】：\n   - 性質一（平行線截比例）：$\\overline{DE} \\parallel \\overline{BC} \\implies \\frac{\\overline{AD}}{\\overline{DB}} = \\frac{\\overline{AE}}{\\overline{EC}}$。\n   - 性質二（同底等高面積相等）：$\\triangle BDE$ 與 $\\triangle CDE$ 底同為 $\\overline{DE}$ 且平行線間高相等，故面積相等！\n2.【設未知數列方程】：\n   設 $\\triangle BDE$ 面積 $= x$。\n   - 在 $\\triangle ABE$ 中（頂點 $E$）：$\\frac{\\overline{AD}}{\\overline{DB}} = \\frac{\\triangle ADE}{\\triangle BDE} = \\frac{9}{x}$。\n   - 在 $\\triangle ABC$ 中看底邊 $\\overline{AC}$（頂點 $B$）：$\\frac{\\triangle ABE}{\\triangle BCE} = \\frac{\\overline{AE}}{\\overline{EC}}$。\n   - 因為 $\\frac{\\overline{AE}}{\\overline{EC}} = \\frac{\\overline{AD}}{\\overline{DB}} = \\frac{9}{x}$，且 $\\triangle ABE = 9 + x$、$\\triangle BCE = 40$：\n     $$\\frac{9 + x}{40} = \\frac{9}{x} \\implies x^2 + 9x - 360 = 0 \\implies (x - 15)(x + 24) = 0$$\n   - 面積為正，故 $x = 15$！",
+    "stem": "如右圖，在 $\\triangle ABC$ 中，$\\overline{DE} \\parallel \\overline{BC}$，若 $\\triangle ADE$ 的面積為 $9$，$\\triangle BCE$ 的面積為 $40$，則 $\\triangle BDE$ 的面積為何？\n\n（點擊附圖可放大檢視幾何圖形）\n\n○ (A) 15\n○ (B) 20\n○ (C) 27\n○ (D) 35",
+    "answer": "(A) 15",
+    "diagramUrl": "assets/questions/q_math_parallel_segments_triangle_area_040.png",
+    "solution": "○ 詳細解題步驟：\n\n1. **步驟一：設未知數並利用等高三角形列線段比**：\n   - 設 $\\triangle BDE$ 的面積為 $x$（$x > 0$）。\n   - 觀察 $\\triangle ADE$ 與 $\\triangle BDE$，兩者皆以點 $E$ 為頂點，底邊 $\\overline{AD}$ 與 $\\overline{BD}$ 在同一條直線上（高相等）：\n     $$\\frac{\\overline{AD}}{\\overline{BD}} = \\frac{\\triangle ADE \\text{ 面積}}{\\triangle BDE \\text{ 面積}} = \\frac{9}{x}$$\n\n2. **步驟二：利用平行線截比例線段性質轉移至另一邊**：\n   - 已知 $\\overline{DE} \\parallel \\overline{BC}$，根據平行線截比例線段性質：\n     $$\\frac{\\overline{AE}}{\\overline{EC}} = \\frac{\\overline{AD}}{\\overline{BD}} = \\frac{9}{x}$$\n\n3. **步驟三：利用頂點 $B$ 與底邊 $\\overline{AC}$ 列面積比例方程**：\n   - 觀察 $\\triangle ABE$ 與 $\\triangle BCE$，兩者頂點同為 $B$，底邊 $\\overline{AE}$ 與 $\\overline{EC}$ 在同一條直線上：\n     $$\\frac{\\triangle ABE \\text{ 面積}}{\\triangle BCE \\text{ 面積}} = \\frac{\\overline{AE}}{\\overline{EC}}$$\n   - 其中 $\\triangle ABE \\text{ 面積} = \\triangle ADE \\text{ 面積} + \\triangle BDE \\text{ 面積} = 9 + x$。\n   - 題目給定 $\\triangle BCE \\text{ 面積} = 40$。\n   - 代入線段比建立方程式：\n     $$\\frac{9 + x}{40} = \\frac{9}{x}$$\n\n4. **步驟四：解一元二次方程式**：\n   - 交叉相乘展開：\n     $$x(9 + x) = 9 \\times 40$$\n     $$x^2 + 9x = 360$$\n     $$x^2 + 9x - 360 = 0$$\n   - 因式分解十字交乘（尋找兩數乘積為 $-360$，相差為 $9$：$24 \\times 15 = 360$）：\n     $$(x + 24)(x - 15) = 0$$\n   - 解得 $x = 15$ 或 $x = -24$（負不合）。\n   - 因此 $\\triangle BDE$ 的面積為 **15**。\n\n標準答案為 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-16"
   }
 ];
 
@@ -1478,7 +1526,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v94') ||
+      stored = localStorage.getItem('miley_wrong_questions_v95') ||
+               localStorage.getItem('miley_wrong_questions_v94') ||
                localStorage.getItem('miley_wrong_questions_v93') ||
                localStorage.getItem('miley_wrong_questions_v92') ||
                localStorage.getItem('miley_wrong_questions_v91') ||
