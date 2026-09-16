@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v93';
+const STORAGE_KEY = 'miley_wrong_questions_v94';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1398,6 +1398,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-16"
+  },
+  {
+    "id": "q_bio_animal_reproductive_behavior_seahorse_037",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "動物的求偶、生殖行為與育幼方式（海馬雄性育兒囊、蛙類鳴叫、鳥類飾羽與育幼）",
+    "uploadDate": "2026-09-16",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【動物求偶、生殖行為與育幼關鍵易混淆盲點】：\n1.【⚠️ 海馬的「育兒囊」在雄海馬身上（極高頻考點）】：海馬是罕見由「雄性」負責懷孕育幼的動物！交配時雌海馬將卵產在「雄海馬」下腹部的育兒囊中，由雄海馬受精、孵化並產出小海馬，絕非雌海馬！\n2.【求偶行為對照】：\n   - 青蛙：由「雄蛙」鼓起鳴囊發出鳴叫聲，目的為吸引雌蛙前來假交配。\n   - 白鷺鷥（鳥類）：繁殖期雄鳥長出特殊的繁殖羽（如頭後飾羽、背部蓑羽），展現健康體態以吸引雌鳥。\n3.【育幼行為對照】：五色鳥、燕子等親鳥啄食昆蟲回巢餵食幼鳥，屬於親代撫育（育幼行為），可大幅提高幼體存活率。",
+    "stem": "雷老師請四位同學觀察動物生殖行為後，發表所觀察到的有趣經驗，哪一位同學的敘述與真實的動物行為有異？\n\n○ (A) 奈特：夜間在草叢中看到小雨蛙鼓起鳴囊鳴叫，以吸引雌蛙\n○ (B) 筱菲：在春夏繁殖季到來時，用望遠鏡看到雄白鷺鷥頭部的後方有2～3根長飾羽，以吸引雌性\n○ (C) 宗史：看到五色鳥將小蟲啄回樹洞巢中餵食幼鳥\n○ (D) 美佳：雌海馬的下腹前方有個育兒囊，這是放卵、孵化及產子的地方",
+    "answer": "(D) 美佳：雌海馬的下腹前方有個育兒囊，這是放卵、孵化及產子的地方",
+    "diagramUrl": "",
+    "solution": "○ 詳細破題解析：\n\n1. **各選項動物生殖與育幼行為逐一剖析**：\n   - **(A) 敘述正確**：雄蛙具有鳴囊（通常位於咽喉兩側或下頜），在繁殖季節會藉由充氣鳴叫來宣示領域並吸引雌蛙進行假交配。\n   - **(B) 敘述正確**：許多鳥類在春夏繁殖季節會換上鮮豔或具特殊裝飾的「繁殖羽」（婚羽），例如雄白鷺鷥頭後方會長出 2～3 根細長如絲的飾羽，用於求偶炫耀以吸引雌鳥。\n   - **(C) 敘述正確**：五色鳥常於枯木上鑿洞築巢，幼鳥孵化後親鳥會捕捉小昆蟲回樹洞巢中餵食，屬於典型的**育幼行為**。\n   - **(D) 敘述錯誤（與真實行為有異，為本題正解）**：\n     - 海馬屬於硬骨魚類，其最著名的生殖特徵為**由雄性懷胎育兒**。\n     - 具有「育兒囊」（孵卵囊）的是**雄海馬**而非雌海馬！交配時雌海馬會將成熟卵子排入雄海馬腹部的育兒囊中，在囊內受精、吸取母體與雄性囊壁提供的養分發育，最後由**雄海馬**產出孵化成熟的小海馬。\n\n標準答案為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-16"
   }
 ];
 
@@ -1430,7 +1454,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v92') ||
+      stored = localStorage.getItem('miley_wrong_questions_v93') ||
+               localStorage.getItem('miley_wrong_questions_v92') ||
                localStorage.getItem('miley_wrong_questions_v91') ||
                localStorage.getItem('miley_wrong_questions_v90') ||
                localStorage.getItem('miley_wrong_questions_v89') ||
