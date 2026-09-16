@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v91';
+const STORAGE_KEY = 'miley_wrong_questions_v93';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1350,6 +1350,54 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-15"
+  },
+  {
+    "id": "q_bio_fern_vegetative_reproduction_035",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "蕨類植物的地下莖營養器官繁殖與無性生殖特性",
+    "uploadDate": "2026-09-16",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【蕨類繁殖與無性生殖三大核心考點與盲點對照】：\n1.【乙構造是「地下莖」（營養器官）】：蕨類在地面上常見的是羽狀複葉，埋在土壤中的橫走部分為「地下莖」（營養器官），下方長出不定根。利用乙截段長出丙植株，屬於「營養器官繁殖（無性生殖）」。\n2.【無性生殖 vs 有性生殖機制對照】：\n   - 分裂方式：僅經過「細胞分裂（有絲分裂）」，絕不經過「減數分裂」與受精作用！\n   - 遺傳特性：不考慮突變下，丙植株的基因型與親代甲植株完全相同，無法增加「遺傳多樣性」（基因多樣性）！\n3.【⚠️ 陷阱選項 (C) 偷換概念】：蕨類植物是「孢子繁殖」的維管束植物，屬於「無花植物」（不開花、不結種子），根本沒有花朵！看到「花朵顏色基因型」直接排除！",
+    "stem": "附圖是小林繁殖校園蕨類植物的過程示意圖，根據此圖，在不考慮突變的情況下，從圖中乙構造置入培養土中到丙植株成長的過程，下列敘述何者正確？\n\n（點擊附圖可放大檢視蕨類地下莖繁殖示意圖）\n\n○ (A) 此繁殖過程須經過減數分裂\n○ (B) 丙植株是由營養器官所形成\n○ (C) 丙植株的花朵顏色基因型與甲植株相同\n○ (D) 有利於增加此種蕨類植物的遺傳多樣性",
+    "answer": "(B) 丙植株是由營養器官所形成",
+    "diagramUrl": "assets/questions/q_bio_fern_vegetative_reproduction_035.png",
+    "solution": "○ 詳細破題解析：\n\n1. **圖意判讀與構造確認**：\n   - 甲植株為蕨類植物，其地上部分為羽狀複葉，土壤橫向生長之構造「乙」為**地下莖**（莖屬於營養器官，植物的根、莖、葉皆為營養器官）。\n   - 將乙截取一段置入培養土中，經一段時間長成丙植株，此過程為利用地下莖發育成新個體，屬於**營養器官繁殖**，為**無性生殖**的一種。\n\n2. **各選項逐一剖析**：\n   - **(A) 錯誤**：無性生殖過程是由體細胞透過**細胞分裂（有絲分裂）**增殖與分化產生新植株，**不須經過減數分裂**（減數分裂僅發生於形成配子或孢子的有性生殖/生活史特定階段）。\n   - **(B) 正確**：乙構造為地下莖，屬於植物的**營養器官**，因此丙植株是由營養器官所繁殖形成。\n   - **(C) 錯誤**：蕨類植物屬於**無花植物**（以孢子繁殖，不開花、不產生種子），因此**不會開花**，更無花朵顏色基因型可言。\n   - **(D) 錯誤**：無性生殖過程中未涉及雌雄配子結合與遺傳物質重組，在不考慮突變的情況下，丙植株的基因型與親代甲植株完全相同，**無法增加遺傳多樣性**（若環境劇烈改變，所有個體可能同時面臨滅絕風險）。\n\n標準答案為 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-16"
+  },
+  {
+    "id": "q_bio_platypus_oviparous_mammal_036",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "卵生哺乳類（鴨嘴獸、針鼴）之生殖發育、呼吸方式與卵黃養分比較",
+    "uploadDate": "2026-09-16",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【哺乳類三大類群生殖方式與卵大小核心考點】：\n1.【哺乳類生殖三大類群對照】：\n   -「單孔目（卵生）」：鴨嘴獸、針鼴。體內受精、體外卵生孵化，無胎盤、無乳頭（分泌乳汁供幼獸舔食）。受精卵在母體外發育，胚胎所需養分「完全由卵黃提供」，因此【卵較大、含大量卵黃】！\n   -「有袋類（胎生但無真正胎盤）」：袋鼠、無尾熊。幼獸早產，爬入育兒袋吸吮乳頭長大。\n   -「真獸類（胎盤類）」：人類、犬、鯨等。受精卵著床於子宮，藉由「胎盤與臍帶」由母體持續供應養分，因此【卵極小、幾乎不含卵黃】！\n2.【⚠️ 卵的大小本質比較】：卵生動物（如鴨嘴獸、鳥類、爬蟲類）的卵因必須自帶胚胎發育全程所需的全部養分，故卵大、卵黃極多；而胎生動物（如無尾熊、人）的胚胎由母體持續補給，故卵極小！\n3.【⚠️ 呼吸器官陷阱】：鴨嘴獸是「哺乳類」，終生皆用「肺」呼吸，絕非兩生類的變態發育（用鰓呼吸）！",
+    "stem": "鴨嘴獸為澳洲產的一種特有的動物，關於此動物的敘述，下列何者正確？\n\n○ (A) 鴨嘴獸為一種有袋的哺乳類動物，胎盤發育不完全\n○ (B) 喜歡棲息在河川中，幼時用鰓呼吸，成體用肺呼吸\n○ (C) 鴨嘴獸受精卵發育時所需的養分由母親提供\n○ (D) 鴨嘴獸的卵較無尾熊大",
+    "answer": "(D) 鴨嘴獸的卵較無尾熊大",
+    "diagramUrl": "",
+    "solution": "○ 詳細破題解析：\n\n1. **鴨嘴獸的生物分類與生理特徵**：\n   - 鴨嘴獸（Platypus）屬於脊椎動物門哺乳綱**單孔目**，是極少數現存的**卵生哺乳類**（另一代表為針鼴）。\n   - 雖然會產卵，但母體腹部有乳腺（無明顯乳頭），幼獸孵化後會舔食母獸腹部毛皮滲出的乳汁。\n   - 鴨嘴獸為恆溫動物、用**肺呼吸**，並非兩生類，終生均不具有鰓。\n\n2. **各選項逐一剖析**：\n   - **(A) 錯誤**：鴨嘴獸為「**卵生哺乳類**」，沒有育兒袋，也沒有胎盤；有育兒袋、胎盤發育不完全者為「**有袋類**」（如袋鼠、無尾熊）。\n   - **(B) 錯誤**：鴨嘴獸雖長年在水中覓食、棲息於水域環境，但身為哺乳動物，**終生皆以肺呼吸**，潛水時閉氣，幼體亦無鰓。\n   - **(C) 錯誤**：鴨嘴獸為卵生，受精卵產出體外孵化，胚胎發育所需的養分**完全由卵內的卵黃提供**，而非由母體血液直接供應。\n   - **(D) 正確**：\n     - 鴨嘴獸為**卵生**，受精卵產出後獨立在外界發育，必須仰賴卵內的卵黃提供胚胎發育所需的全部養分，故**卵徑較大、富含卵黃**。\n     - 無尾熊為**胎生**哺乳類（有袋類），其卵只需提供受精初期極微量的養分，受精後胚胎即由母體提供養分（進入育兒袋吸乳長大），故**卵非常微小**。\n     - 因此鴨嘴獸的卵遠比無尾熊的卵大。\n\n標準答案為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-16"
   }
 ];
 
@@ -1382,7 +1430,9 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v90') ||
+      stored = localStorage.getItem('miley_wrong_questions_v92') ||
+               localStorage.getItem('miley_wrong_questions_v91') ||
+               localStorage.getItem('miley_wrong_questions_v90') ||
                localStorage.getItem('miley_wrong_questions_v89') ||
                localStorage.getItem('miley_wrong_questions_v88') ||
                localStorage.getItem('miley_wrong_questions_v87') ||
