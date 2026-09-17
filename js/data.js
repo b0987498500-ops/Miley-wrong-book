@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v107';
+const STORAGE_KEY = 'miley_wrong_questions_v108';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1830,6 +1830,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-17"
+  },
+  {
+    "id": "q_soc_geo_mediterranean_climate_italy_055",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "世界氣候分佈：溫帶地中海型氣候之特徵（夏乾冬雨、西風帶與副熱帶高壓交替）與威尼斯冬季水患應用",
+    "uploadDate": "2026-09-17",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【「地中海型氣候」會考秒殺黃金口訣——「夏乾冬雨」】：\n1.【氣候成因與季節特徵】：\n   - 夏季（6～8 月）：行星風系北移，受【副熱帶高氣壓帶】籠罩下沉氣流影響 $\\to$ 炎熱、乾燥少雨（夏乾）。\n   - 冬季（11～2 月）：行星風系南移，受【盛行西風帶】由海洋吹向陸地及鋒面氣旋影響 $\\to$ 溫和多雨（冬雨）！\n2.【地理情境破題】：\n   - 義大利（威尼斯、羅馬等）位於南歐地中海沿岸，屬地中海型氣候。\n   - 題幹明確提示「威尼斯正值雨季，地勢低窪易積水」，必為【冬季】！\n   - 選項 (A) 5月（春末）、(B) 7月（盛夏乾季）、(C) 9月（初秋）、(D) 12月（冬季雨季），故秒選 (D)！",
+    "stem": "猛虎旅行社在行程出發前告知團員：尊敬的旅客大家好：本次旅行團將前往義大利，進行 12 天的旅行。此時威尼斯正值雨季，由於地勢低窪容易積水，請做好準備。請問：該旅行團出發的日期最可能為下列何者？\n\n○ (A) 5月8日\n○ (B) 7月19日\n○ (C) 9月30日\n○ (D) 12月6日",
+    "answer": "(D) 12月6日",
+    "diagramUrl": "",
+    "solution": "○ 詳細解題觀念與背景剖析：\n\n1. **判斷義大利所屬氣候類型**：\n   - 義大利位於南歐、地中海北岸，屬於典型的**溫帶地中海型氣候**。\n\n2. **地中海型氣候之成因與降水特徵**：\n   - **夏季（約 6～8 月）**：氣壓帶與風系隨太陽直射點北移，受到**副熱帶高壓帶**下沉氣流籠罩，氣候**炎熱乾燥、萬里無雲（夏乾）**。\n   - **冬季（約 11～2 月）**：氣壓帶與風系南移，副熱帶高壓退去，迎受來自大西洋的**盛行西風帶**吹拂，且鋒面氣旋活動頻繁，帶來豐沛降水，氣候**溫和濕潤多雨（冬雨）**。\n\n3. **威尼斯高水位水患（Acqua Alta）之季節**：\n   - 威尼斯地處亞得里亞海頂端之潟湖，由於地勢低窪，每逢**冬季雨季**，在西風吹拂、海潮高漲與氣壓偏低的共同作用下，極易發生海水倒灌與街區淹水積水現象。\n\n4. **選項日期比對分析**：\n   - (A) 5月8日：北半球春末初夏，副熱帶高壓逐漸北移，降水偏少。\n   - (B) 7月19日：北半球盛夏，副熱帶高壓完全籠罩，為全年最炎熱乾燥之乾季。\n   - (C) 9月30日：北半球初秋。\n   - (D) 12月6日：**北半球冬季**，正值盛行西風帶籠罩之典型雨季，符合題幹所述。\n\n故最可能的出發日期為 **(D) 12月6日**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-17"
   }
 ];
 
@@ -1862,7 +1886,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v106') ||
+      stored = localStorage.getItem('miley_wrong_questions_v107') ||
+               localStorage.getItem('miley_wrong_questions_v106') ||
                localStorage.getItem('miley_wrong_questions_v105') ||
                localStorage.getItem('miley_wrong_questions_v104') ||
                localStorage.getItem('miley_wrong_questions_v103') ||
