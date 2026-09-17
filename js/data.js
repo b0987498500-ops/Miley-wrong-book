@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v103';
+const STORAGE_KEY = 'miley_wrong_questions_v104';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1686,6 +1686,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-17"
+  },
+  {
+    "id": "q_math_rectangle_area_ratio_049",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "連比例與面積分割應用：大長方形面積依比例分配秒殺求局部面積差",
+    "uploadDate": "2026-09-17",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【「長方形切割面積比」秒殺破題法——別傻傻設邊長未知數】：\n1.【直觀秒殺大絕招（整體比例分配）】：\n   - 甲、乙、丙剛好完整拼成整個大長方形 $ABCD$！\n   - 大長方形總面積 $= \\overline{AB} \\times \\overline{AD} = 12 \\times 21 = 252$！\n   - 總份數 $= 3 + 1 + 5 = 9$ 份 $\\implies$ 每 $1$ 份面積 $= \\frac{252}{9} = 28$！\n   - 甲佔 3 份、丙佔 5 份，相差 $5 - 3 = 2$ 份！\n   - 所求面積差 $= 2 \\times 28 = 56$（心算 10 秒得出正解）！\n2.【常見徒勞彎路】：\n   - 設邊長未知數去解聯立方程，既費時又極容易計算錯誤。記住：「求面積差且已有各塊比例時，直接按總面積比例分配最快！」",
+    "stem": "如右圖，$\\overline{EF}$、$\\overline{GH}$ 將長方形 $ABCD$ 分成面積比為 $3 : 1 : 5$ 的甲、乙、丙三個長方形。已知 $\\overline{AB} = 12$，$\\overline{AD} = 21$，則甲、丙兩個長方形的面積相差為何？\n\n（點擊附圖可放大檢視長方形分割圖形）\n\n○ (A) 56\n○ (B) 64\n○ (C) 48\n○ (D) 42",
+    "answer": "(A) 56",
+    "diagramUrl": "assets/questions/q_math_rectangle_area_ratio_049.png",
+    "solution": "○ 詳細解題觀念與秒殺算式：\n\n1. **方法一：總面積比例分配法（最推薦，神速秒殺）**：\n   - 觀察圖形，甲、乙、丙三個小長方形完整拼成大長方形 $ABCD$。\n   - 計算大長方形 $ABCD$ 的總面積：\n     $$\\text{總面積} = \\overline{AB} \\times \\overline{AD} = 12 \\times 21 = 252$$\n   - 已知甲、乙、丙的面積比為 $3 : 1 : 5$，總份數為：\n     $$\\text{總份數} = 3 + 1 + 5 = 9 \\text{ 份}$$\n   - 計算每一份對應的面積值：\n     $$\\text{每份面積} = \\frac{252}{9} = 28$$\n   - 題目所求為「甲、丙兩長方形的面積差」：\n     - 丙佔 5 份，甲佔 3 份，兩者相差 $5 - 3 = 2$ 份。\n     - 故面積差為：\n       $$\\text{面積差} = 2 \\times 28 = 56$$\n\n2. **方法二：分別求出各塊面積後相減（驗算）**：\n   - 甲的面積 $= 252 \\times \\frac{3}{9} = 84$\n   - 乙的面積 $= 252 \\times \\frac{1}{9} = 28$\n   - 丙的面積 $= 252 \\times \\frac{5}{9} = 140$\n   - 甲、丙面積相差：\n     $$140 - 84 = 56$$\n\n3. **幾何邊長驗證（鞏固觀念）**：\n   - 甲的高 $\\overline{AE} = \\frac{84}{12} = 7$。\n   - 乙、丙共用的高 $= 21 - 7 = 14$。\n   - 乙的底 $\\overline{CH} = \\frac{28}{14} = 2$。\n   - 丙的底 $\\overline{HD} = \\frac{140}{14} = 10$。\n   - 總底長 $\\overline{CD} = 2 + 10 = 12 = \\overline{AB}$，數據完美吻合！\n\n標準答案為 **56**（選 **(A)**）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-17"
   }
 ];
 
@@ -1718,7 +1742,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v102') ||
+      stored = localStorage.getItem('miley_wrong_questions_v103') ||
+               localStorage.getItem('miley_wrong_questions_v102') ||
                localStorage.getItem('miley_wrong_questions_v101') ||
                localStorage.getItem('miley_wrong_questions_v100') ||
                localStorage.getItem('miley_wrong_questions_v99') ||
