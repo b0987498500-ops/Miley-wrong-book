@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v97';
+const STORAGE_KEY = 'miley_wrong_questions_v98';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1518,6 +1518,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-16"
+  },
+  {
+    "id": "q_bio_animal_reproduction_fertilization_042",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "動物生殖方式：受精環境（體內/體外受精）與卵生/胎生之辨析及特例",
+    "uploadDate": "2026-09-17",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【動物生殖觀念核心盲點陷阱——絕對詞「均/皆」破解指南】：\n1. 看到「水中動物均為體外受精」❌：水生哺乳類（鯨魚、海豚）以及鯊魚、部分魟魚都是【體內受精】！\n2. 看到「卵生動物均為體外受精」❌：爬蟲類（蛇、龜）、鳥類（雞、麻雀）、昆蟲以及鴨嘴獸都是【體內受精＋卵生】！\n3. 看到「可行有性生殖者均不進行無性生殖」❌：水螅平時行【出芽生殖（無性）】，逆境時會產生精卵進行【有性生殖】！\n4. 看到「有性生殖均需水為媒介」❌：只有【體外受精】需要水為媒介；體內受精動物靠母體生殖道分泌液體，不依賴外界水！\n5. 【唯一正確的全稱敘述】：適應陸地生活的動物為防止精子脫水，【均為體內受精】！",
+    "stem": "小巍列出關於動物生殖方式的五個想法，下列哪些是正確的？\n(甲) 適應陸地生活的動物均為體內受精；\n(乙) 動物在進行有性生殖時，精、卵均需以水為媒介受精；\n(丙) 水中的動物均為體外受精；\n(丁) 可行有性生殖的動物均不會進行無性生殖；\n(戊) 卵生的動物可為體內受精或體外受精。\n\n○ (A) (甲)(戊)\n○ (B) (乙)(丁)\n○ (C) (甲)(丙)(戊)\n○ (D) (乙)(丙)(丁)(戊)",
+    "answer": "(A) (甲)(戊)",
+    "diagramUrl": "",
+    "solution": "○ 詳細觀念解析：\n\n1. **(甲) 敘述正確**：\n   - 陸生動物（如昆蟲、爬蟲類、鳥類、哺乳類）生活在陸地乾燥環境，精子若暴露於空氣中極易脫水死亡，因此**必須透過交配將精子直接送入雌性體內**，在濕潤的生殖道內完成受精，故適應陸地生活的動物**均為體內受精**。\n\n2. **(乙) 敘述錯誤**：\n   - 「以水為媒介」僅適用於**體外受精**的動物（如多數魚類、兩生類），牠們將精卵直接排入水中，精子藉由水游向卵。\n   - **體內受精**的動物（如爬蟲類、鳥類、哺乳類），精子在母體生殖器官的分泌液中游動，**不需要外界的水作為媒介**。\n\n3. **(丙) 敘述錯誤**：\n   - 生活在水中的動物**不一定**均為體外受精。\n   - 例如：生活在水中的**哺乳類**（鯨魚、海豚、海牛）以及**軟骨魚類**（鯊魚、魟魚）均進行**體內受精**。\n\n4. **(丁) 敘述錯誤**：\n   - 自然界中許多生物**兼具無性生殖與有性生殖**的能力。\n   - 例如：**水螅**在環境適宜、養分充足時進行「出芽生殖（無性）」；而在環境惡劣或季節交替時，則會形成睪丸與卵巢產生精卵進行「有性生殖」以度過逆境。\n   - 渦蟲、海葵、蚜蟲等亦具備雙女生殖/無性與有性交替的能力。\n\n5. **(戊) 敘述正確**：\n   - 卵生動物的受精方式有兩種：\n     - **體外受精 ＋ 卵生**：如硬骨魚類、青蛙、蟾蜍。\n     - **體內受精 ＋ 卵生**：如昆蟲、爬蟲類（蛇、蜥蜴、龜）、鳥類（雞、鴨、企鵝），以及原始哺乳動物（鴨嘴獸、針鼴）。\n   - 故卵生動物可為體內受精或體外受精。\n\n綜合以上分析，正確的說法只有 **(甲)(戊)**，標準答案為 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-17"
   }
 ];
 
@@ -1550,7 +1574,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v96') ||
+      stored = localStorage.getItem('miley_wrong_questions_v97') ||
+               localStorage.getItem('miley_wrong_questions_v96') ||
                localStorage.getItem('miley_wrong_questions_v95') ||
                localStorage.getItem('miley_wrong_questions_v94') ||
                localStorage.getItem('miley_wrong_questions_v93') ||
