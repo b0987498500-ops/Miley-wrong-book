@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v102';
+const STORAGE_KEY = 'miley_wrong_questions_v103';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1662,6 +1662,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-17"
+  },
+  {
+    "id": "q_math_marathon_constant_speed_ratio_048",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "比與比例式應用：三人賽跑定速問題（相同時間所跑路程比等於速率比之同時間路程推求）",
+    "uploadDate": "2026-09-17",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【「定速路跑差距」常見直覺致命錯誤】：\n1. ❌【超大陷阱】：直接相減 $4 - 2.5 = 1.5$ 公里！\n   - 錯因剖析：威利跑剩下 $2.5$ 公里到達終點需要花時間！在這段時間內妙麗「並不是停在原地」，她也在繼續往前跑！\n2. ✅【破題秒殺黃金準則】：\n   - 「定速運動中，相同時間內所跑的【距離比】＝【速率比】」！\n   - 當洛基跑完 10 公里時：\n     - 妙麗跑了 $10 - 4 = 6$ 公里\n     - 威利跑了 $10 - 2.5 = 7.5$ 公里\n     - 兩人速率比：$\\text{妙麗} : \\text{威利} = 6 : 7.5 = 4 : 5$！\n   - 當威利抵達終點跑完 10 公里時，妙麗跑了 $10 \\times \\frac{4}{5} = 8$ 公里。\n   - 故妙麗離終點還差 $10 - 8 = 2$ 公里！",
+    "stem": "洛基、妙麗和威利三人參加 2024 年新北萬金石 10 公里馬拉松路跑，假設全程三人維持一定速率，當洛基抵達終點時，妙麗和威利離終點分別還差 4 公里及 2.5 公里，則當威利抵達終點時，妙麗離終點還差多少公里？\n\n○ (A) 1.5 公里\n○ (B) 2 公里\n○ (C) 2.5 公里\n○ (D) 3 公里",
+    "answer": "(B) 2 公里",
+    "diagramUrl": "",
+    "solution": "○ 詳細解題觀念與算式步驟：\n\n1. **計算「洛基到達終點時」，妙麗與威利各自已跑的距離**：\n   - 全程共 $10$ 公里。\n   - 當洛基抵達終點時（洛基跑了 $10$ 公里）：\n     - 妙麗離終點還差 $4$ 公里 $\\implies$ 妙麗跑了 $10 - 4 = 6$ 公里。\n     - 威利離終點還差 $2.5$ 公里 $\\implies$ 威利跑了 $10 - 2.5 = 7.5$ 公里。\n\n2. **求出妙麗與威利的「速率比（距離比）」**：\n   - 因為全程三人皆維持「一定速率」，在相同時間內，所跑的距離與速率成正比：\n     $$v_{\\text{妙}} : v_{\\text{威}} = 6 : 7.5 = 12 : 15 = 4 : 5$$\n   - 即：威利每跑 $5$ 公里，妙麗在此相同時間內跑 $4$ 公里。\n\n3. **計算「威利抵達終點時」，妙麗所跑的總距離**：\n   - 當威利抵達終點時，威利總共跑了 $10$ 公里。\n   - 設此時妙麗總共跑了 $x$ 公里，列出比例式：\n     $$\\frac{\\text{妙麗跑的距離}}{\\text{威利跑的距離}} = \\frac{x}{10} = \\frac{4}{5}$$\n     $$5x = 40 \\implies x = 8 \\text{ (公里)}$$\n\n4. **求妙麗離終點還差的距離**：\n   $$\\text{距離終點} = 10 - 8 = 2 \\text{ (公里)}$$\n\n標準答案為 **2 公里**（選 **(B)**）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-17"
   }
 ];
 
@@ -1694,7 +1718,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v101') ||
+      stored = localStorage.getItem('miley_wrong_questions_v102') ||
+               localStorage.getItem('miley_wrong_questions_v101') ||
                localStorage.getItem('miley_wrong_questions_v100') ||
                localStorage.getItem('miley_wrong_questions_v99') ||
                localStorage.getItem('miley_wrong_questions_v98') ||
