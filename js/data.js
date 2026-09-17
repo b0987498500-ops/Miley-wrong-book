@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v108';
+const STORAGE_KEY = 'miley_wrong_questions_v109';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1854,6 +1854,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-17"
+  },
+  {
+    "id": "q_soc_geo_finland_lake_telecom_056",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐洲地理環境：北歐芬蘭「千湖國」冰蝕湖地形、地廣人稀特徵與無線通訊產業（Nokia）發展因果〔102試辦會考〕",
+    "uploadDate": "2026-09-17",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【北歐各國「冰河地形與產業特徵」會考經典對照】：\n1.【芬蘭 $\\to$ 千湖國（湖泊眾多、地廣人稀）】：\n   - 大陸冰河侵蝕造成境內擁有十幾萬個【冰蝕湖】。\n   - 因湖泊阻隔、聚落分散，拉實體電話線成本過高，促使芬蘭轉而發展【點狀無線通訊基地台】，造就諾基亞（Nokia）奇蹟！\n2.【挪威 $\\to$ 峽灣發達、海岸曲折】：\n   - 冰河槽谷遭海水淹沒形成「峽灣」，有利航運、漁業、水力發電與觀光（注意：峽灣是挪威，不是芬蘭）！\n3.【冰島 $\\to$ 冰火之島】：位於大西洋中洋脊，火山、地熱、溫泉與冰河共存。\n4.【丹麥 $\\to$ 歐洲農牧業模範生】：地勢平坦，風力發電與乳酪肉品發達。",
+    "stem": "「……芬蘭在這種限制下，要架設多少電線桿、拉多少電話線，才能構成完整的通訊網？解決之道就是發展無線通訊網路（行動電話），只需成本低廉的『點狀』基地臺，不必高成本的『線狀』電話線。」根據芬蘭的地理條件，上文所提到的「限制」最有可能指下列何者？【102.試辦會考】\n\n○ (A) 土壤貧瘠、地質脆弱\n○ (B) 山勢陡峭、河短流急\n○ (C) 湖泊眾多、地廣人稀\n○ (D) 峽灣發達、海岸曲折",
+    "answer": "(C) 湖泊眾多、地廣人稀",
+    "diagramUrl": "",
+    "solution": "○ 詳細地理觀念與背景剖析：\n\n1. **芬蘭自然地理特徵：冰蝕地形與「千湖國」稱號**：\n   - 芬蘭位於北歐波羅的海沿岸，在地質上屬於古老結晶地盾，地形起伏平緩。\n   - 第四紀大冰期時全境受到**大陸冰河**劇烈侵蝕，冰河消退後地表坑洞積水形成密集的**冰蝕湖**與冰磧湖。全境湖泊數量超過 18 萬個，因而擁有**「千湖國」**之美稱。\n\n2. **人文環境限制與無線通訊突破**：\n   - 湖泊星羅棋布、森林密布，造成芬蘭人口分散，屬於典型的**「地廣人稀」**國家。\n   - 若要建立傳統有線電話網，必須橫跨無數湖泊與原始森林，架設電線桿與鋪設線路之成本極其龐大，後續風雪維護更是困難。\n   - 因此，芬蘭選擇跳過傳統電話線，全力發展僅需建設『點狀』基地台的**無線行動通訊網絡**，進而孕育出全球通訊巨頭**諾基亞（Nokia）**！\n\n3. **其他選項地理特徵診斷排除**：\n   - (A) 土壤貧瘠：北歐受冰河刮蝕確實土壤貧瘠，但並非拉電話線的最大地形障礙。\n   - (B) 山勢陡峭、河短流急：為板塊擠壓之新褶曲山地（如臺灣、日本、瑞士阿爾卑斯山）之特徵，芬蘭地勢起伏平緩。\n   - (D) 峽灣發達、海岸曲折：為**挪威**的大西洋海岸特徵（谷冰川侵蝕後海水倒灌），芬蘭位於波羅的海內側，非峽灣海岸。\n\n故最合理的選項為 **(C) 湖泊眾多、地廣人稀**。\n\n🔗 **延伸學習影音推薦**：[觀看芬蘭地理與科技發展解說影片](https://www.youtube.com/watch?v=kQfe2qxbyik&t=120s)",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-17"
   }
 ];
 
@@ -1886,7 +1910,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v107') ||
+      stored = localStorage.getItem('miley_wrong_questions_v108') ||
+               localStorage.getItem('miley_wrong_questions_v107') ||
                localStorage.getItem('miley_wrong_questions_v106') ||
                localStorage.getItem('miley_wrong_questions_v105') ||
                localStorage.getItem('miley_wrong_questions_v104') ||
