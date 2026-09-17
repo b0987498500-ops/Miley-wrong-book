@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v101';
+const STORAGE_KEY = 'miley_wrong_questions_v102';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1614,6 +1614,54 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-17"
+  },
+  {
+    "id": "q_bio_fruitfly_gamete_combinations_046",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "細胞分裂與遺傳：減數分裂同源染色體分離與自由配合（配子染色體組合數計算 2^n）",
+    "uploadDate": "2026-09-17",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【「配子最多具有幾種染色體組合？」秒殺公式與陷阱】：\n1.【破題公式】：配子染色體組合數 $= 2^n$（其中 $n$ 為「同源染色體的對數」或「配子中的染色體條數」）！\n   - 本題配子具有 4 條染色體（$n = 4$ 對同源染色體） $\\implies 2^4 = 16$ 種！\n2.【常犯陷阱】：\n   - ❌ 誤算成 $2 \\times 4 = 8$（混淆乘法與指數）。\n   - ❌ 誤算成 $4^2 = 16$（雖然本題數字湊巧相同，但若遇到人體 23 對染色體，公式是 $2^{23}$ 種高達 838 萬種，不可用底數錯誤的算式）！",
+    "stem": "已知果蠅的配子內具有 4 條染色體，如附圖的甲細胞，而乙細胞為其一般體細胞。\n(1) 果蠅生殖母細胞進行減數分裂時，所產生的配子最多具有幾種染色體的組合？\n\n（點擊附圖可放大檢視甲、乙細胞之染色體型態示意圖）\n\n○ (A) 32\n○ (B) 16\n○ (C) 4\n○ (D) 1",
+    "answer": "(B) 16",
+    "diagramUrl": "assets/questions/q_bio_fruitfly_chromosome_set_046.png",
+    "solution": "○ 詳細解題觀念與計算步驟：\n\n1. **判讀染色體套數與對數**：\n   - 題目說明「甲細胞為配子，具有 4 條染色體」，且圖中 4 條染色體大小形狀皆不同（不成對），故為**單套（$n = 4$）**。\n   - 「乙細胞為一般體細胞」，共有 8 條染色體，且大小形狀兩兩成對，故為**雙套（$2n = 8$）**，即具有 **$4$ 對同源染色體**。\n\n2. **減數分裂同源染色體分離與自由配合（獨立分配）**：\n   - 生殖母細胞（$2n$）在減數分裂第一次分裂時，**同源染色體彼此分離**，分別進入不同的子細胞。\n   - 每一對同源染色體的分離是獨立的，每對同源染色體中究竟是哪一條（來自父方或母方）進入同一個配子，皆有 $2$ 種獨立等可能的選擇。\n   - 果蠅體細胞具有 $4$ 對同源染色體，根據乘法原理：\n     $$\\text{配子染色體組合數} = 2 \\times 2 \\times 2 \\times 2 = 2^4 = 16 \\text{ 種}$$\n\n標準答案為 **(B) 16**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-17"
+  },
+  {
+    "id": "q_bio_fruitfly_gamete_somatic_comparison_047",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "染色體套數與對數辨析：配子（單套/不成對/0對）與體細胞（雙套/成對）之觀念陷阱",
+    "uploadDate": "2026-09-17",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【「套數」vs「對數」生物月考特級大陷阱】：\n1. 看到「乙的對數是甲的兩倍」立刻打 ❌！\n   - 配子（甲）只有單套，染色體【不成對】（0 對）！\n   - 只有【套數（2N 是 1N 的兩倍）】或【總條數（8 條是 4 條的兩倍）】才是兩倍！\n2. 只要配子出現「成對」或「對數」的描述，一律為重大觀念錯誤！",
+    "stem": "已知果蠅的配子內具有 4 條染色體，如附圖的甲細胞，而乙細胞為其一般體細胞。\n(2) 有關甲、乙兩細胞的敘述，下列何者錯誤？\n\n（點擊附圖可放大檢視甲、乙細胞之染色體型態示意圖）\n\n○ (A) 甲細胞為 1N，乙細胞為 2N\n○ (B) 乙細胞形成的過程中，複製染色體會進行分離\n○ (C) 乙細胞染色體的對數是甲細胞的兩倍\n○ (D) 生殖母細胞減數分裂後會產生四個甲細胞",
+    "answer": "(C) 乙細胞染色體的對數是甲細胞的兩倍",
+    "diagramUrl": "assets/questions/q_bio_fruitfly_chromosome_set_046.png",
+    "solution": "○ 各選項深度觀念剖析：\n\n- **(A) 甲細胞為 1N，乙細胞為 2N**：**正確**。\n  甲為配子（精子或卵），同源染色體已分離，故為單套（$1N = 4$ 條）；乙為體細胞，具成對同源染色體，為雙套（$2N = 8$ 條）。\n\n- **(B) 乙細胞形成的過程中，複製染色體會進行分離**：**正確**。\n  乙為一般體細胞，是由受精卵進行「細胞分裂（有絲分裂）」增殖而來。細胞分裂的過程中，染色體複製一次、分裂一次，在分裂後期**複製的同胞染色體（姐妹染色單體）會互相分離**進入兩個子細胞。\n\n- **(C) 乙細胞染色體的對數是甲細胞的兩倍**：**錯誤（為本題所求）**。\n  - **核心文字陷阱**：\n    - 乙細胞（體細胞）有 8 條染色體，共 **4 對**同源染色體。\n    - 甲細胞（配子）只有 4 條染色體，每條皆單獨存在、**根本不成對（對數為 0 對）**！\n    - 因此，乙的「**條數**」是甲的兩倍（$8$ 條 vs $4$ 條），乙的「**套數**」是甲的兩倍（$2N$ vs $1N$），但**絕不能說「對數是甲的兩倍」**（因為甲根本沒有成對的同源染色體）！\n\n- **(D) 生殖母細胞減數分裂後會產生四個甲細胞**：**正確**。\n  一個雙套（$2N$）的生殖母細胞經過減數分裂（連續分裂兩次），最終會形成 $4$ 個單套（$1N$）的配子（精子或卵／極體）。\n\n故錯誤的敘述為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-17"
   }
 ];
 
@@ -1646,7 +1694,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v100') ||
+      stored = localStorage.getItem('miley_wrong_questions_v101') ||
+               localStorage.getItem('miley_wrong_questions_v100') ||
                localStorage.getItem('miley_wrong_questions_v99') ||
                localStorage.getItem('miley_wrong_questions_v98') ||
                localStorage.getItem('miley_wrong_questions_v97') ||
