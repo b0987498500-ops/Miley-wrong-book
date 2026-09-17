@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v106';
+const STORAGE_KEY = 'miley_wrong_questions_v107';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1782,6 +1782,54 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-17"
+  },
+  {
+    "id": "q_math_ice_shop_revenue_ratio_053",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "連比例應用：固定成本相同時之各月營業額連比化簡",
+    "uploadDate": "2026-09-17",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【「相同固定成本」求連比破題關鍵】：\n1.【核心等式】：固定成本皆相同，設為 $K$（或 $1$）：\n   $$\\frac{1}{4}a = \\frac{2}{5}b = \\frac{2}{3}c = K$$\n2.【求連比（倒數比）】：\n   $$a : b : c = \\frac{1}{\\frac{1}{4}} : \\frac{1}{\\frac{2}{5}} : \\frac{1}{\\frac{2}{3}} = 4 : \\frac{5}{2} : \\frac{3}{2}$$\n   同乘以 2 得最簡整數比：$8 : 5 : 3$！\n3.【常見陷阱】：\n   ❌ 誤把分數直接當成比值：寫成 $\\frac{1}{4} : \\frac{2}{5} : \\frac{2}{3} = 15 : 24 : 40$！\n   記住：所佔「比例越小」的月份（如 7 月只佔 $\\frac{1}{4}$），代表其「總營業額越大」！",
+    "stem": "右圖為清涼冰店 7 月到 9 月的營業額長條圖，若每個月的固定成本皆相同，分別占當月總營業額的 $\\frac{1}{4}$、$\\frac{2}{5}$、$\\frac{2}{3}$。\n(1) 7 月到 9 月的營業額比為多少？\n\n（點擊附圖可放大檢視營業額長條圖）\n\n○ (A) 8 : 5 : 3\n○ (B) 4 : 5 : 3\n○ (C) 15 : 24 : 40\n○ (D) 3 : 5 : 8",
+    "answer": "(A) 8 : 5 : 3",
+    "diagramUrl": "assets/questions/q_math_ice_shop_bar_chart_053.png",
+    "solution": "○ 詳細解題觀念與步驟：\n\n1. **步驟一：依題意列出固定成本等式**：\n   - 設 7 月、8 月、9 月的總營業額分別為 $a$ 萬元、$b$ 萬元、$c$ 萬元。\n   - 已知每個月的固定成本皆相同，且分別占當月總營業額的 $\\frac{1}{4}$、$\\frac{2}{5}$、$\\frac{2}{3}$：\n     $$\\frac{1}{4}a = \\frac{2}{5}b = \\frac{2}{3}c$$\n\n2. **步驟二：利用倒數比求營業額連比**：\n   - 由等式可求出 $a : b : c$：\n     $$a : b : c = \\frac{1}{\\frac{1}{4}} : \\frac{1}{\\frac{2}{5}} : \\frac{1}{\\frac{2}{3}} = 4 : \\frac{5}{2} : \\frac{3}{2}$$\n   - 各項同乘以分母 2，化為最簡整數比：\n     $$a : b : c = (4 \\times 2) : \\left(\\frac{5}{2} \\times 2\\right) : \\left(\\frac{3}{2} \\times 2\\right) = 8 : 5 : 3$$\n\n故 7 月到 9 月的營業額比為 **8 : 5 : 3**（選 **(A)**）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-17"
+  },
+  {
+    "id": "q_math_ice_shop_fixed_cost_054",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "連比例應用：由營業額總和與連比推求個別營業額及固定成本",
+    "uploadDate": "2026-09-17",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【「求固定成本」計算步驟與單位陷阱】：\n1.【設比例常數 $r$ 求各月營業額】：\n   - 營業額比為 $8 : 5 : 3$，設為 $8r, 5r, 3r$。\n   - 總和 $8r + 5r + 3r = 16r = 64 \\implies r = 4$（萬元）。\n2.【求固定成本】：\n   - 7 月營業額 $= 8 \\times 4 = 32$ 萬元 $\\implies$ 固定成本 $= 32 \\times \\frac{1}{4} = 8$ 萬元！\n   - 驗算 8 月：$20 \\times \\frac{2}{5} = 8$ 萬元！\n   - 驗算 9 月：$12 \\times \\frac{2}{3} = 8$ 萬元！三個月完全一致！\n3.【注意題目問的是「固定成本」而不是「某月份營業額」】！",
+    "stem": "右圖為清涼冰店 7 月到 9 月的營業額長條圖，若每個月的固定成本皆相同，分別占當月總營業額的 $\\frac{1}{4}$、$\\frac{2}{5}$、$\\frac{2}{3}$。\n(2) 承 (1)，若 7 月到 9 月的營業額總和為 64 萬元，則每個月的固定成本為多少元？\n\n（點擊附圖可放大檢視營業額長條圖）\n\n○ (A) 8 萬元（80,000 元）\n○ (B) 10 萬元（100,000 元）\n○ (C) 12 萬元（120,000 元）\n○ (D) 16 萬元（160,000 元）",
+    "answer": "(A) 8 萬元（80,000 元）",
+    "diagramUrl": "assets/questions/q_math_ice_shop_bar_chart_053.png",
+    "solution": "○ 詳細解題觀念與步驟：\n\n1. **步驟一：設比例常數表示各月營業額**：\n   - 由第 (1) 小題已知 7 月到 9 月營業額比為 $8 : 5 : 3$。\n   - 設 7 月、8 月、9 月營業額分別為 $8r$ 萬元、$5r$ 萬元、$3r$ 萬元（其中 $r \\neq 0$）。\n\n2. **步驟二：利用營業額總和求出 $r$**：\n   - 7 月到 9 月營業額總和為 64 萬元：\n     $$8r + 5r + 3r = 64 \\implies 16r = 64 \\implies r = 4$$\n\n3. **步驟三：求各月營業額並計算固定成本**：\n   - 7 月營業額 $= 8r = 8 \\times 4 = 32$（萬元）。\n   - 8 月營業額 $= 5r = 5 \\times 4 = 20$（萬元）。\n   - 9 月營業額 $= 3r = 3 \\times 4 = 12$（萬元）。\n   - 計算每個月的固定成本（任選一月計算即可）：\n     $$\\text{固定成本} = \\frac{1}{4} \\times 32 = \\mathbf{8} \\text{ (萬元)} = \\mathbf{80,000} \\text{ (元)}$$\n   - 驗算：\n     - 8 月固定成本 $= 20 \\times \\frac{2}{5} = 8$ 萬元。\n     - 9 月固定成本 $= 12 \\times \\frac{2}{3} = 8$ 萬元。\n     - 三個月固定成本完全相符！\n\n標準答案為 **8 萬元（80,000 元）**（選 **(A)**）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-17"
   }
 ];
 
@@ -1814,7 +1862,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v105') ||
+      stored = localStorage.getItem('miley_wrong_questions_v106') ||
+               localStorage.getItem('miley_wrong_questions_v105') ||
                localStorage.getItem('miley_wrong_questions_v104') ||
                localStorage.getItem('miley_wrong_questions_v103') ||
                localStorage.getItem('miley_wrong_questions_v102') ||
