@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v98';
+const STORAGE_KEY = 'miley_wrong_questions_v99';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1542,6 +1542,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-17"
+  },
+  {
+    "id": "q_bio_egg_structure_043",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "鳥類卵生生殖：未受精蛋內部構造（胚盤、卵黃、繫帶、蛋白、蛋殼、氣室）與來源器官（卵巢 vs 輸卵管）辨析",
+    "uploadDate": "2026-09-17",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【「一顆蛋到底是不是一個細胞？」生物常考大陷阱】：\n1.【真正屬於一個「卵細胞」的只有蛋黃部分（含胚盤）】：\n   - A（胚盤）：含有「細胞核」及少許細胞質，受精後胚胎發育的起點。\n   - B（卵黃／蛋黃）：屬於卵細胞的「細胞質」，儲存發育所需的主要營養。\n   - 卵黃表面薄膜：卵細胞的「細胞膜」。\n   👉 只有 A 與 B 是由【卵巢】製造產生的真正卵細胞！\n2.【輸卵管分泌包裹的保護／輔助構造】：\n   - 卵細胞受精（若有）後下移通過輸卵管時，由【輸卵管壁】依序分泌分泌物包裹上去：\n     - C（繫帶）：濃稠蛋白質扭結而成，將卵黃固定於中央，防止滾動震盪。\n     - D（蛋白）：提供水分、養分與緩衝保護。\n     - E（蛋殼）：碳酸鈣硬殼，保護防脫水，具氣孔以供氣體交換。\n     - F（氣室）：在蛋的「鈍端」，由內外兩層殼膜分離形成，供胚胎呼吸。\n3.【新鮮度判斷】：\n   - 蛋存放越久，蛋白水分經由蛋殼氣孔蒸發，氣室 F 就【越大】；因此「氣室越小＝蛋越新鮮」！",
+    "stem": "如右圖為未受精蛋的內部構造，則下列敘述何者錯誤？\n\n（點擊附圖可放大檢視蛋的內部構造示意圖）\n\n○ (A) 細胞核位於 A\n○ (B) 要判斷蛋是否新鮮可由 F 處得之\n○ (C) C 部分可固定卵細胞的位置\n○ (D) 由卵巢所分泌的部位是 F、D",
+    "answer": "(D) 由卵巢所分泌的部位是 F、D",
+    "diagramUrl": "assets/questions/q_bio_egg_structure_043.png",
+    "solution": "○ 構造名稱與對應功能對照表：\n\n| 代號 | 構造名稱 | 產生器官來源 | 主要功能與特性 |\n| :---: | :---: | :---: | :--- |\n| **A** | **胚盤** | **卵巢**（卵細胞一部份） | 內含**細胞核**。受精後由此處開始進行細胞分裂發育為胚胎。 |\n| **B** | **卵黃**（蛋黃） | **卵巢**（卵細胞一部份） | 為卵細胞的**細胞質**，富含脂質與蛋白質，為胚胎發育最主要的營養來源。 |\n| **C** | **繫帶** | **輸卵管**分泌 | 由濃稠的蛋白質扭結而成，將卵黃固定在蛋的中央，使胚盤朝上並緩衝震動。 |\n| **D** | **蛋白**（卵白） | **輸卵管**分泌 | 提供胚胎水分、養分，並具備緩衝與保護作用。 |\n| **E** | **卵殼**（蛋殼） | **輸卵管**分泌 | 含有碳酸鈣硬殼，具保護防脫水功能，表面有許多微小氣孔可透氣。 |\n| **F** | **氣室** | **輸卵管**形成之殼膜分離處 | 位於蛋的「鈍端」，提供胚胎發育初期呼吸所需之氧氣。蛋存放越久，水分蒸發使**氣室越大**。 |\n\n○ 各選項詳細分析：\n- **(A) 正確**：胚盤（A）為細胞核所在位置，若未受精則染色體為單套（$n$）。\n- **(B) 正確**：氣室（F）的大小可做為判斷新鮮度的指標。剛生下的蛋氣室極小，存放時間越長，蛋白中的水分經由蛋殼氣孔蒸發，氣室便會逐漸擴大。\n- **(C) 正確**：繫帶（C）懸吊固定卵細胞（蛋黃），避免蛋滾動時卵黃碰撞蛋殼受損。\n- **(D) 錯誤**：由**卵巢**產生的部位只有真正屬於卵細胞的 **A（胚盤／細胞核）** 與 **B（蛋黃／細胞質）**！而 **F（氣室）**、**D（蛋白）**、**C（繫帶）**、**E（蛋殼）** 皆為卵細胞通過**輸卵管**時由管壁分泌包裹形成。故 (D) 敘述錯誤，為本題所求。\n\n標準答案為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-17"
   }
 ];
 
@@ -1574,7 +1598,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v97') ||
+      stored = localStorage.getItem('miley_wrong_questions_v98') ||
+               localStorage.getItem('miley_wrong_questions_v97') ||
                localStorage.getItem('miley_wrong_questions_v96') ||
                localStorage.getItem('miley_wrong_questions_v95') ||
                localStorage.getItem('miley_wrong_questions_v94') ||
