@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v104';
+const STORAGE_KEY = 'miley_wrong_questions_v105';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1710,6 +1710,54 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-17"
+  },
+  {
+    "id": "q_math_gear_turn_inverse_ratio_050",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "連比例與反比應用：嚙合齒輪之齒數與轉動圈數成反比",
+    "uploadDate": "2026-09-17",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【「齒輪嚙合圈數比」最常見致命盲點】：\n1. ❌【絕對不能寫正比】：誤寫為 $60 : 50 : 40 = 6 : 5 : 4$（大錯特錯）！\n2. ✅【核心物理機制】：齒輪相互接合時，轉過的【總齒數】一定完全相同！\n   $$\\text{總齒數} = \\text{齒數} \\times \\text{轉動圈數} = \\text{定值}$$ \n   故「齒數」與「圈數」成【反比】！齒數越多的齒輪轉得越慢、圈數越少！\n3.【反比化簡技巧】：\n   $60x = 50y = 40z \\implies 6x = 5y = 4z$。\n   $$x : y : z = \\frac{1}{6} : \\frac{1}{5} : \\frac{1}{4} = 10 : 12 : 15$$（同乘最小公倍數 60）！",
+    "stem": "甲、乙、丙三個齒輪由左而右緊密接合，甲有 60 齒、乙有 50 齒、丙有 40 齒，若甲、乙、丙同時轉動，則三個齒輪同一時間轉動圈數比為何？\n\n○ (A) 10 : 12 : 15\n○ (B) 6 : 5 : 4\n○ (C) 15 : 12 : 10\n○ (D) 4 : 5 : 6",
+    "answer": "(A) 10 : 12 : 15",
+    "diagramUrl": "",
+    "solution": "○ 詳細解題觀念與算式步驟：\n\n1. **分析物理機制：嚙合齒輪轉過的總齒數必相同**：\n   - 因為甲、乙、丙三個齒輪相互緊密接合，齒與齒一對一推動，在相同時間內，每個齒輪轉過的「總齒數」必然相等。\n   - 總齒數公式：\n     $$\\text{總齒數} = \\text{齒數} \\times \\text{轉動圈數}$$\n   - 因此，當總齒數固定時，**齒數與轉動圈數成「反比」**。\n\n2. **列出等式求連比**：\n   - 設甲、乙、丙在同一時間內轉動的圈數分別為 $x$、$y$、$z$ 圈。\n   - 由總齒數相同可得：\n     $$60 \\times x = 50 \\times y = 40 \\times z$$\n   - 各項同除以 10：\n     $$6x = 5y = 4z$$\n\n3. **利用倒數求最簡整數比**：\n   - 由 $6x = 5y = 4z$，可知 $x : y : z$ 等於係數的倒數比：\n     $$x : y : z = \\frac{1}{6} : \\frac{1}{5} : \\frac{1}{4}$$\n   - 取分母 $6, 5, 4$ 的最小公倍數 $[6, 5, 4] = 60$，各項同乘以 60：\n     $$x : y : z = \\left(\\frac{1}{6} \\times 60\\right) : \\left(\\frac{1}{5} \\times 60\\right) : \\left(\\frac{1}{4} \\times 60\\right) = 10 : 12 : 15$$\n\n標準答案為 **10 : 12 : 15**（選 **(A)**）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-17"
+  },
+  {
+    "id": "q_math_wire_squares_area_sum_051",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "計算錯誤",
+    "concept": "連比例應用：鐵線剪段圍成正方形之周長比、邊長比與面積和計算",
+    "uploadDate": "2026-09-17",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【「鐵線圍成正方形面積和」解題關鍵與易錯陷阱】：\n1.【周長與邊長轉換】：鐵線剪成的長度是「周長」，正方形周長要【除以 4】才是「邊長」！千萬別直接拿鐵線長度去平方！\n2.【一步步穩扎穩打】：\n   - 總份數 $= 3 + 4 + 5 = 12$ 份 $\\implies$ 每份長度 $= \\frac{96}{12} = 8$ 公分。\n   - 三段周長分別為：$24$、$32$、$40$ 公分。\n   - 三正方形邊長分別為：$6$、$8$、$10$ 公分（勾股數組，邊長比也是 $3:4:5$）！\n   - 面積和 $= 6^2 + 8^2 + 10^2 = 36 + 64 + 100 = 200$ 平方公分！\n3.【速算巧思】：邊長比 $= 3 : 4 : 5$，每份邊長 $= \\frac{8}{4} = 2$ 公分 $\\implies$ 面積和 $= (3^2 + 4^2 + 5^2) \\times 2^2 = 50 \\times 4 = 200$！",
+    "stem": "有一鐵線全長 96 公分，若按 $3 : 4 : 5$ 的比例剪成 3 段，每段均圍成一個正方形，則此三個正方形的面積和為多少平方公分？\n\n○ (A) 200\n○ (B) 192\n○ (C) 216\n○ (D) 240",
+    "answer": "(A) 200",
+    "diagramUrl": "",
+    "solution": "○ 詳細解題步驟：\n\n1. **步驟一：求出三段鐵線的長度（即三個正方形的周長）**：\n   - 鐵線總長 $= 96$ 公分，按 $3 : 4 : 5$ 剪成三段。\n   - 總比例份數：\n     $$\\text{總份數} = 3 + 4 + 5 = 12 \\text{ 份}$$\n   - 每 $1$ 份的長度：\n     $$\\text{每份長度} = \\frac{96}{12} = 8 \\text{ (公分)}$$\n   - 三段鐵線的長度（三個正方形的周長）：\n     - 第一段周長 $= 3 \\times 8 = 24$ 公分\n     - 第二段周長 $= 4 \\times 8 = 32$ 公分\n     - 第三段周長 $= 5 \\times 8 = 40$ 公分\n\n2. **步驟二：由周長求各正方形的邊長**：\n   - 正方形邊長 $= \\frac{\\text{周長}}{4}$：\n     - 第一個正方形邊長 $= \\frac{24}{4} = 6$ 公分\n     - 第二個正方形邊長 $= \\frac{32}{4} = 8$ 公分\n     - 第三個正方形邊長 $= \\frac{40}{4} = 10$ 公分\n\n3. **步驟三：求三個正方形的面積和**：\n   $$\\text{面積和} = 6^2 + 8^2 + 10^2 = 36 + 64 + 100 = 200 \\text{ (平方公分)}$$\n\n○ 速算方法（比例平方倍數法）：\n   - 周長比 $= 3 : 4 : 5 \\implies$ 邊長比亦為 $3 : 4 : 5$。\n   - 每個比例份數對應的邊長為 $\\frac{8}{4} = 2$ 公分。\n   - 面積和 $= (3^2 + 4^2 + 5^2) \\times 2^2 = (9 + 16 + 25) \\times 4 = 50 \\times 4 = 200$ 平方公分。\n\n標準答案為 **200** 平方公分（選 **(A)**）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-17"
   }
 ];
 
@@ -1742,7 +1790,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v103') ||
+      stored = localStorage.getItem('miley_wrong_questions_v104') ||
+               localStorage.getItem('miley_wrong_questions_v103') ||
                localStorage.getItem('miley_wrong_questions_v102') ||
                localStorage.getItem('miley_wrong_questions_v101') ||
                localStorage.getItem('miley_wrong_questions_v100') ||
