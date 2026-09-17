@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v105';
+const STORAGE_KEY = 'miley_wrong_questions_v106';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1758,6 +1758,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-17"
+  },
+  {
+    "id": "q_math_clothing_production_ratio_workdays_052",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "連比例與工作工時應用：利用工時比設比例常數計算每天總產能與訂單所需天數",
+    "uploadDate": "2026-09-17",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【「連比例工程工時」破題秒殺大招】：\n1.【比例常數法（最穩健清晰）】：\n   看到「時間比為 1 : 2 : 3」，立刻設各別工時為 $r, 2r, 3r$（$r > 0$）！\n   - 每天固定產能總工時 $= 4(r) + 3(2r) + 2(3r) = 16r$。\n   - 新訂單各 8 件總工時 $= 8(r + 2r + 3r) = 48r$。\n   - 所需工作天數 $= \\frac{48r}{16r} = 3$ 個工作天！\n2.【特值速算法（令 r = 1 秒殺）】：\n   因為計算完工天數時比例常數 $r$ 必定於分子分母相約消去，可直接假設一件上衣耗時 1 小時、長褲 2 小時、外套 3 小時：\n   - 每天總工時 $= 4(1) + 3(2) + 2(3) = 16$ 小時。\n   - 訂單總工時 $= 8 \\times (1 + 2 + 3) = 48$ 小時。\n   - 天數 $= \\frac{48}{16} = 3$ 天！",
+    "stem": "已知該店每天的總工作時間固定，製作 1 件上衣、1 件長褲與 1 件外套所需的時間比為 1 : 2 : 3，且每天的產能剛好可以完成 4 件上衣、3 件長褲與 2 件外套。若今天店家接到一張訂單，需要訂製上衣、長褲與外套各 8 件，在產能可自由調配的情況下，這張訂單至少需要多少個工作天才能全數完工？\n\n○ (A) 3 個工作天\n○ (B) 4 個工作天\n○ (C) 5 個工作天\n○ (D) 6 個工作天",
+    "answer": "(A) 3 個工作天",
+    "diagramUrl": "",
+    "solution": "○ 詳細解題觀念與算式步驟：\n\n1. **步驟一：設比例常數表示單件衣物所需工時**：\n   - 已知製作 1 件上衣、1 件長褲、1 件外套所需時間比為 $1 : 2 : 3$。\n   - 設製作 1 件上衣需 $r$ 單位時間、1 件長褲需 $2r$ 單位時間、1 件外套需 $3r$ 單位時間（其中 $r > 0$）。\n\n2. **步驟二：計算每天固定產能的「總工時」**：\n   - 每天產能剛好可完成 4 件上衣、3 件長褲與 2 件外套：\n     $$\\text{每天總工時} = 4 \\times r + 3 \\times (2r) + 2 \\times (3r)$$\n     $$= 4r + 6r + 6r = 16r$$\n\n3. **步驟三：計算新訂單所需的「總工時」**：\n   - 訂單需要上衣、長褲、外套各 8 件：\n     $$\\text{訂單總工時} = 8 \\times r + 8 \\times (2r) + 8 \\times (3r)$$\n     $$= 8 \\times (r + 2r + 3r) = 8 \\times 6r = 48r$$\n\n4. **步驟四：求完成訂單至少所需的工作天數**：\n   $$\\text{所需天數} = \\frac{\\text{訂單總工時}}{\\text{每天總工時}} = \\frac{48r}{16r} = 3 \\text{ (天)}$$\n\n標準答案為 **3 個工作天**（選 **(A)**）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-17"
   }
 ];
 
@@ -1790,7 +1814,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v104') ||
+      stored = localStorage.getItem('miley_wrong_questions_v105') ||
+               localStorage.getItem('miley_wrong_questions_v104') ||
                localStorage.getItem('miley_wrong_questions_v103') ||
                localStorage.getItem('miley_wrong_questions_v102') ||
                localStorage.getItem('miley_wrong_questions_v101') ||
