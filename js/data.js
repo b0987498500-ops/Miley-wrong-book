@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v99';
+const STORAGE_KEY = 'miley_wrong_questions_v100';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1566,6 +1566,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-17"
+  },
+  {
+    "id": "q_bio_strawberry_fruit_reproduction_044",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "被子植物有性生殖：花朵構造與發育對應（子房發育為果實、胚珠發育為種子、草莓瘦果與假果特性）〔112會考〕",
+    "uploadDate": "2026-09-17",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【「草莓到底吃的是果實還是花托？」生物常考生活陷阱】：\n1.【破題秒殺金律（定義永遠不變）】：\n   - 【子房】發育 $\\to$ 必為【果實】！\n   - 【胚珠】發育 $\\to$ 必為【種子】！\n   👉 題目開宗明義寫「$*$ 構造是由草莓的【子房】發育而成」，直接鎖定【果實】！\n2.【草莓的生物學真實結構（聚合果／假果）】：\n   - 我們平時吃下肚、紅潤酸甜多汁的部分：是由【花托】膨大發育而來的，稱為「假果」！\n   - 草莓表面上一粒粒像黑芝麻的小顆粒（$*$）：不是種子，而是由各個獨立雌蕊的【子房】發育而成的【瘦果（真正的果實）】！\n   - 剝開每一粒瘦果（小黑點）裡面包裹著的，才是由【胚珠】發育而成的【真正種子】！",
+    "stem": "圖(一)為草莓花朵構造及其發育的示意圖，已知草莓是由花托處膨大而來，若圖(二)中的 $*$ 構造是由草莓的子房發育而成，則此 $*$ 構造應稱為下列何者？【112.會考】\n\n（點擊附圖可放大檢視草莓花朵構造及其發育示意圖）\n\n○ (A) 胚珠\n○ (B) 種子\n○ (C) 果實\n○ (D) 花粉",
+    "answer": "(C) 果實",
+    "diagramUrl": "assets/questions/q_bio_strawberry_fruit_reproduction_044.png",
+    "solution": "○ 詳細解題觀念剖析：\n\n1. **基本發育對應關係（植物生殖黃金法則）**：\n   - 被子植物在完成傳粉與受精作用後：\n     - **子房** $\\to$ 發育為 **果實**（提供保護、協助散播）。\n     - **胚珠** $\\to$ 發育為 **種子**（內含受精卵發育成的胚與提供養分的胚乳或子葉）。\n     - **受精卵** $\\to$ 發育為 **胚**（新植物體幼體）。\n     - **花瓣、雄蕊** $\\to$ 通常枯萎脫落。\n\n2. **題意鎖定破題**：\n   - 題目明確指出：『若圖(二)中的 $*$ 構造是由草莓的**子房**發育而成』。\n   - 根據上述生物學定義，凡是由「子房」發育而成的構造，其名稱即為**果實**，故此 $*$ 構造即為果實（選 **(C)**）。\n\n3. **草莓的特殊構造補充（會考跨章節熱門題）**：\n   - 一朵草莓花中央的花托上長著許多密密麻麻的「離生雌蕊」（如圖一所示）。\n   - 受精後，**花托**迅速膨大肉質化，變為我們日常食用鮮紅多汁的部分（非子房發育，生物學上稱為「假果」）。\n   - 花托上密生的一顆顆雌蕊，其**子房**各自發育為一粒粒細小的**瘦果**（如圖二的 $*$ 構造，屬於聚合瘦果）。\n   - 每一粒小瘦果內部才包含著一粒由**胚珠**發育而成的**種子**。\n\n正確答案為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-17"
   }
 ];
 
@@ -1598,7 +1622,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v98') ||
+      stored = localStorage.getItem('miley_wrong_questions_v99') ||
+               localStorage.getItem('miley_wrong_questions_v98') ||
                localStorage.getItem('miley_wrong_questions_v97') ||
                localStorage.getItem('miley_wrong_questions_v96') ||
                localStorage.getItem('miley_wrong_questions_v95') ||
