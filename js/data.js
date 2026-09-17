@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v100';
+const STORAGE_KEY = 'miley_wrong_questions_v101';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1590,6 +1590,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-17"
+  },
+  {
+    "id": "q_bio_animal_classification_tree_045",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "脊椎動物門檢索分類：體溫調節（內溫vs外溫）、受精方式（體內vs體外）、呼吸器官與生殖方式（卵生vs胎生）〔110會考〕",
+    "uploadDate": "2026-09-17",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【「生物分類檢索表」會考滿分破解口訣——先標「綱別與四大特徵」】：\n1.【五種臺灣特有生物特徵全剖析】：\n   - 臺灣鈍頭蛇（爬蟲綱）：外溫、體內受精、卵生、肺呼吸\n   - 臺北樹蛙（兩生綱）：外溫、體外受精、卵生、成體用肺與皮膚呼吸\n   - 臺灣馬口魚（硬骨魚綱）：外溫、體外受精、卵生、鰓呼吸\n   - 臺灣藍鵲（鳥綱）：內溫（恆溫）、體內受精、卵生、肺與氣囊呼吸\n   - 臺灣野兔（哺乳綱）：內溫（恆溫）、體內受精、胎生、肺呼吸\n2.【倒推檢索節點依據（非黑即白二分法）】：\n   - 甲節點：上組（蛇、蛙、魚）全為【外溫動物】；下組（藍鵲、野兔）全為【內溫動物】 $\\implies$ 甲是「體溫是否恆定（內溫／外溫）」！\n   - 乙節點：上支【臺灣鈍頭蛇（體內受精）】；下支【臺北樹蛙、臺灣馬口魚（體外受精）】 $\\implies$ 乙是「是否為體內受精」！（直接秒殺選 B）\n   - 丙節點：樹蛙與馬口魚全都是【卵生】，故丙不可能為「是否卵生」，而是「呼吸器官（肺vs鰓）」或「生活環境」！\n   - 丁節點：藍鵲與野兔全都是【體內受精】，故丁不可能為「是否體內受精」，而是「生殖方式（卵生vs胎生）」！",
+    "stem": "小杰將五種臺灣特有種生物進行分類，如右圖所示，甲、乙、丙、丁分別代表不同的分類依據，關於甲、乙、丙、丁的敘述，下列何者最合理？【110.會考】（註：臺灣藍鵲為一種鳥類）\n\n（點擊附圖可放大檢視生物分類檢索樹狀圖）\n\n○ (A) 甲：是否為卵生動物\n○ (B) 乙：是否為體內受精\n○ (C) 丙：是否為卵生動物\n○ (D) 丁：是否為體內受精",
+    "answer": "(B) 乙：是否為體內受精",
+    "diagramUrl": "assets/questions/q_bio_animal_classification_tree_045.png",
+    "solution": "○ 五種臺灣特有種動物所屬分類群與核心生理特徵對照表：\n\n| 動物名稱 | 所屬分類群 | 體溫調節（內溫/外溫） | 受精方式（體內/體外） | 生殖方式（卵生/胎生） | 主要呼吸器官 |\n| :--- | :---: | :---: | :---: | :---: | :---: |\n| **臺灣鈍頭蛇** | 爬蟲綱 | **外溫**（變溫） | **體內受精** | 卵生 | 肺 |\n| **臺北樹蛙** | 兩生綱 | **外溫**（變溫） | **體外受精** | 卵生 | 幼體鰓；成體肺與皮膚 |\n| **臺灣馬口魚** | 硬骨魚綱 | **外溫**（變溫） | **體外受精** | 卵生 | 鰓 |\n| **臺灣藍鵲** | 鳥綱 | **內溫**（恆溫） | **體內受精** | 卵生 | 肺（輔以氣囊） |\n| **臺灣野兔** | 哺乳綱 | **內溫**（恆溫） | **體內受精** | **胎生** | 肺 |\n\n○ 檢索樹狀分支節點（甲、乙、丙、丁）逐一推論：\n1. **甲節點**：\n   - 將「臺灣鈍頭蛇、臺北樹蛙、臺灣馬口魚」與「臺灣藍鵲、臺灣野兔」區分開來。\n   - 前三者均為**外溫動物**，後兩者均為**內溫動物**。\n   - 故甲的分類依據應為：**「是否為內溫動物（體溫是否恆定）」**。\n   - 鈍頭蛇、樹蛙、馬口魚、藍鵲均為卵生，只有野兔為胎生，故甲無法以「是否卵生」來二分，選項 (A) 不合理。\n\n2. **乙節點**：\n   - 將「臺灣鈍頭蛇」與「臺北樹蛙、臺灣馬口魚」區分開來。\n   - 鈍頭蛇（爬蟲類）為**體內受精**；樹蛙（兩生類）與馬口魚（魚類）皆為**體外受精**。\n   - 故乙的分類依據應為：**「是否為體內受精」**，選項 **(B) 最合理**。\n\n3. **丙節點**：\n   - 將「臺北樹蛙」與「臺灣馬口魚」區分開來。\n   - 兩者皆為**外溫動物、體外受精、卵生**。\n   - 差異在於呼吸器官（成體樹蛙用**肺與皮膚**；馬口魚用**鰓**）或生活環境（陸生/水生）。\n   - 兩者皆為卵生，故丙絕不可能為「是否為卵生」，選項 (C) 不合理。\n\n4. **丁節點**：\n   - 將「臺灣藍鵲」與「臺灣野兔」區分開來。\n   - 兩者皆為**內溫動物、體內受精**。\n   - 差異在於生殖方式：藍鵲為**卵生**；野兔為**胎生**。\n   - 故丁的分類依據應為：**「是否為卵生（或是否為胎生）」**。\n   - 兩者皆為體內受精，無法以「是否體內受精」區分，選項 (D) 不合理。\n\n綜合以上推論，最合理之敘述為 **(B) 乙：是否為體內受精**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-17"
   }
 ];
 
@@ -1622,7 +1646,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v99') ||
+      stored = localStorage.getItem('miley_wrong_questions_v100') ||
+               localStorage.getItem('miley_wrong_questions_v99') ||
                localStorage.getItem('miley_wrong_questions_v98') ||
                localStorage.getItem('miley_wrong_questions_v97') ||
                localStorage.getItem('miley_wrong_questions_v96') ||
