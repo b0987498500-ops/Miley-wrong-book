@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v109';
+const STORAGE_KEY = 'miley_wrong_questions_v110';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1878,6 +1878,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-17"
+  },
+  {
+    "id": "q_soc_geo_maritime_silk_road_monsoon_057",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "海上絲路與季風貿易：依貨物特產（中國紙墨絲瓷）判斷起點、依冬季東北季風（向西南航行）判斷出發時節〔102試辦會考〕",
+    "uploadDate": "2026-09-18",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【「海上絲路與季風貿易」秒殺解題兩大步驟】：\n1.【看貨物定起點】：\n   - 載運「紙張、墨、絲綢、瓷器」 $\\to$ 中國古代特產 $\\to$ 船隻必由【甲地（中國東南沿海）】出發前往西方，排除 (C)、(D)！\n2.【看季風定出發季節（古代帆船順風航行）】：\n   - 由甲地向西南航向波斯灣（乙地） $\\to$ 必須藉助**冬季【東北季風】**推動才能順風航行，故為【冬季由甲地出發】！\n   - 若是【夏季】，盛行**西南季風**（由西南吹向東北），則適合由波斯灣返航回中國！",
+    "stem": "附圖為九世紀時往返於中國與波斯灣之間的海上絲路主要航線，此交通網配合盛行風的週期，讓東方和西方的商品可以互相交流。若在當時有一艘滿載紙張、墨、絲綢、瓷器的帆船，乘著盛行風出發至另一地進行貿易，則根據該船所載貨物來源及盛行風風向判斷，下列關於此船航行的描述何者正確？【102.試辦會考】\n\n（點擊附圖可放大檢視航線圖）\n\n○ (A) 於夏季由甲地出發\n○ (B) 於冬季由甲地出發\n○ (C) 於夏季由乙地出發\n○ (D) 於冬季由乙地出發",
+    "answer": "(B) 於冬季由甲地出發",
+    "diagramUrl": "assets/questions/q_soc_geo_maritime_silk_road_monsoon_057.png",
+    "solution": "○ 詳細解題觀念與背景深度剖析：\n\n1. **步驟一：依「所載貨物」判定船隻出發地（甲地 vs 乙地）**：\n   - 題幹明確指出帆船上滿載**「紙張、墨、絲綢、瓷器」**。\n   - 這些均為中國古代舉世聞名的精緻工藝品與文化發明；附圖中**「甲地」**位於中國東南沿海港口（唐代廣州、泉州一帶），**「乙地」**位於波斯灣（西亞大食帝國）。\n   - 因此，載滿中國特產向外貿易的船隻，起點必為**中國（甲地）**，欲前往波斯灣（乙地）進行貿易，可直接排除選項 (C)、(D)。\n\n2. **步驟二：配合「盛行風（季風風向）」判斷出發季節（夏季 vs 冬季）**：\n   - 九世紀的遠洋帆船完全仰賴風力推動，必須順風航行以確保航速與航行安全：\n     - **冬季（約 11 月至次年 2 月）**：亞洲大陸冷高壓發育，東亞至南亞、印度洋海域盛行**東北季風**（風向由東北吹向西南）。由甲地（中國）前往西南方的南洋群島、印度洋及波斯灣，正屬於**順風航行**，故應於**冬季由甲地出發**。\n     - **夏季（約 5 月至 8 月）**：印度洋與亞洲海域盛行**西南季風**（風向由西南吹向東北），則適合商船由波斯灣（乙地）出發順風返回中國（甲地）。\n\n3. **歷史與地理跨科整合（會考高頻背景）**：\n   - **歷史背景**：九世紀為唐朝後期，當時中國對外陸上絲路受阻，海上絲路（**廣州通海夷道**）空前繁榮，廣州首設「市舶司」管理對外貿易。\n   - **考古實證**：印尼勿里洞島外海打撈出著名的「黑石號」阿拉伯沉船，船上載滿數萬件唐代長沙窯瓷器，正是此條海上絲路貿易的歷史見證！\n\n故正確選項為 **(B) 於冬季由甲地出發**。\n\n🔗 **延伸學習影音推薦**：[觀看李天豪老師地理試題演練解說影片](https://www.youtube.com/watch?v=jxYk_HWoWwo)",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-18"
   }
 ];
 
@@ -1910,7 +1934,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v108') ||
+      stored = localStorage.getItem('miley_wrong_questions_v109') ||
+               localStorage.getItem('miley_wrong_questions_v108') ||
                localStorage.getItem('miley_wrong_questions_v107') ||
                localStorage.getItem('miley_wrong_questions_v106') ||
                localStorage.getItem('miley_wrong_questions_v105') ||
