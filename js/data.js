@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v116';
+const STORAGE_KEY = 'miley_wrong_questions_v117';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2022,6 +2022,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-19"
+  },
+  {
+    "id": "q_eng_prep_with_map_church_063",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "介系詞 with 表示「藉由／使用工具或媒介」之用法與關係子句語意判讀〔會考高頻文法〕",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【介系詞 with 的核心功能與陷阱排查】：\n1.【with 表示「藉由、使用工具／媒介」】：\n   - 當句意為「靠著某物／用某項工具達成目標」時，介系詞首選 **with**！\n   - 題幹意為「**靠著／用** Ryan 為我們畫的地圖（**With** the map...）」，我們才順利找到老教堂。\n2.【常見固定搭配快速對照】：\n   - *With your help, ...*（藉著你的幫忙……）\n   - *With this map, ...*（靠著這張地圖……）\n   - *write with a pen*（用筆書寫）\n   - *cut with a knife*（用刀切）\n3.【其他選項文意完全不符】：\n   - About（關於）：About the map 意為「關於這張地圖」，無法表達找到教堂的工具手段。\n   - Beside（在……旁邊）、Under（在……下方）：純屬物理空間位置，不能用來說明達成任務的憑藉。",
+    "stem": "______ the map that Ryan had drawn for us, we were able to find this beautiful old church.\n\n○ (A) About\n○ (B) Beside\n○ (C) Under\n○ (D) With",
+    "answer": "(D) With",
+    "diagramUrl": "",
+    "solution": "○ 詳細文法與介系詞深度剖析：\n\n1. **句意脈絡與介系詞 with 的工具/媒介功能**：\n   - 句型結構：`[ ______ the map (that Ryan had drawn for us) ], we were able to find this beautiful old church.`\n   - 主要子句 `we were able to find this beautiful old church`（我們得以找到這座美麗的老教堂），說明最後順利達成了尋找教堂的結果。\n   - 前方介系詞片語引導出達成這項任務的**工具與媒介**：正是 Ryan 事先畫給我們的那張地圖。\n   - 在英文中，表示「**使用某工具、藉助某事物、靠著某憑據**」時，必須使用介系詞 **With**（字首大寫）。\n\n2. **四個選項介系詞核心意義診斷與排除**：\n   - **(A) About（關於、有關）**：用來引導主題（例：a book about animals），不能表示利用工具達成結果。\n   - **(B) Beside（在……旁邊 = next to）**：表示相對空間位置，若說「在 Ryan 畫的地圖旁邊，我們找到了教堂」，語意邏輯完全荒謬。\n   - **(C) Under（在……下方）**：表示在物體正下方，與文意不合。\n   - **(D) With（用、藉由、靠著）［正解］**：精準表達「靠著／利用這張地圖」達成找到教堂的目標。\n\n3. **會考進階文法彩蛋：過去完成式與關係代名詞**：\n   - `that Ryan had drawn for us` 是**關係代名詞子句**，用來修飾先行詞 `the map`。\n   - 為什麼用 **had drawn（過去完成式）**？\n     - 因為 Ryan「畫地圖」的動作，發生在我們「找到教堂（were able to find，過去式）」**之前**。「過去的過去」必須使用過去完成式（had + p.p.）。\n\n故正確答案為 **(D) With**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19"
   }
 ];
 
@@ -2054,7 +2078,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v115') ||
+      stored = localStorage.getItem('miley_wrong_questions_v116') ||
+               localStorage.getItem('miley_wrong_questions_v115') ||
                localStorage.getItem('miley_wrong_questions_v114') ||
                localStorage.getItem('miley_wrong_questions_v113') ||
                localStorage.getItem('miley_wrong_questions_v112') ||
