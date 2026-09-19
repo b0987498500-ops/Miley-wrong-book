@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v112';
+const STORAGE_KEY = 'miley_wrong_questions_v113';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1926,6 +1926,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-19"
+  },
+  {
+    "id": "q_eng_adj_mean_boss_office_059",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "英文形容詞字義辨析：個性特徵 mean（刻薄／凶惡）與上下文語意判讀〔會考精選單字〕",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【國中英文核心形容詞辨析（mean / bitter / dirty / wise）】：\n1.【mean 作形容詞（刻薄的、不友善的）】：\n   - 常考句型：`be mean to sb`（對某人很刻薄、凶狠）。\n   - 題幹提到 `treats his workers badly`（惡劣對待員工），語意直接對應「刻薄的（mean）」。\n   - 注意：mean 作動詞時為「意指、意味著（mean - meant - meant）」，作名詞為「平均數」，作形容詞才是「刻薄的／吝嗇的」！\n2.【bitter（苦澀的、充滿怨恨的）】：\n   - 形容食物苦（bitter coffee）、酷寒天氣（bitter cold）或人感到痛苦委屈（feel bitter），不直接用來形容老闆對待員工苛刻的性格。\n3.【dirty（骯髒的、下流的）】：\n   - 指衛生不潔或卑鄙手段，與 badly 對待員工的性格語境不符。\n4.【wise（明智的、有智慧的）】：\n   - 正面褒義詞，與下文的 badly 完全相反。",
+    "stem": "No one in our office wants to work for our boss, Mr. Lin. He is ______ and treats his workers badly.\n\n○ (A) dirty\n○ (B) mean\n○ (C) bitter\n○ (D) wise",
+    "answer": "(B) mean",
+    "diagramUrl": "",
+    "solution": "○ 詳細文法與字義深度剖析：\n\n1. **文意脈絡與對等連接詞 and 的同向關係**：\n   - 題幹第一句：`No one in our office wants to work for our boss, Mr. Lin.`（我們辦公室裡沒有任何人想為老闆林先生工作。） $\\to$ 奠定強烈的負面評價基調。\n   - 題幹第二句：`He is ______ and treats his workers badly.`\n     - 由對等連接詞 `and` 連接兩個同向敘述：\n     - 後半句為 `treats his workers badly`（以非常差劣、刻薄的態度對待其員工）。\n     - 因此空格處所填之形容詞，必須能精準描述「對待他人刻薄、不友善、壞心」的個性特質，故選 **mean**。\n\n2. **四個選項核心詞彙深度診斷與排除**：\n   - **(A) dirty [ˈdɜːrti] (adj.) 骯髒的、不潔的**：描述環境或物品不乾淨，或指卑劣手段（dirty tricks），不能直接修飾形容老闆刻薄員工的個性。\n   - **(B) mean [miːn] (adj.) 刻薄的、惡意的、小氣的（正解）**：形容人的性格惡劣、不友善、愛刁難人。例：*Don't be so mean to your sister!*（不要對妳妹妹那麼兇、那麼刻薄！）與下文 *treats his workers badly* 形成完美語意呼應。\n   - **(C) bitter [ˈbɪtər] (adj.) 苦的、怨恨痛苦的**：指味決苦澀、天候酷寒，或經歷挫折後「心懷怨懟（feel bitter about sth）」，主詞通常是承受痛苦的一方，而非施加刻薄對待的老闆。\n   - **(D) wise [waɪz] (adj.) 明智的、有智慧的**：褒義詞，若老闆 wise，員工必然樂於追隨，與前後句意完全矛盾。\n\n3. **會考關鍵詞彙延伸充電站**：\n   - `work for sb`：替某人工作、在某人手下任職。\n   - `treat sb badly / well`：對待某人惡劣／友善。\n   - `mean` 的常見多重身分：\n     - (adj.) 刻薄的、壞心的（be mean to...）；小氣的（mean with money）。\n     - (v.) 意指、意味著（What does this word mean?）。\n     - (n.) 平均數、中間值（the mean score）。\n\n故正確答案為 **(B) mean**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19"
   }
 ];
 
@@ -1958,7 +1982,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v111') ||
+      stored = localStorage.getItem('miley_wrong_questions_v112') ||
+               localStorage.getItem('miley_wrong_questions_v111') ||
                localStorage.getItem('miley_wrong_questions_v110') ||
                localStorage.getItem('miley_wrong_questions_v109') ||
                localStorage.getItem('miley_wrong_questions_v108') ||
