@@ -559,8 +559,15 @@
                   </div>
                   <span id="review-ebbinghaus-stage" class="stage-tag">艾賓浩斯週期: 1 週次</span>
                 </div>
-                <div class="progress-track">
-                  <div id="review-progress-fill" class="progress-fill" style="width: 20%;"></div>
+                <div class="progress-track-wrapper" id="review-progress-wrapper" title="拖曳或點擊可磁吸切換題目">
+                  <div class="progress-track" id="review-progress-track">
+                    <div id="review-progress-fill" class="progress-fill" style="width: 0%;"></div>
+                    <div id="review-progress-ticks" class="progress-ticks"></div>
+                    <div id="review-progress-thumb" class="progress-thumb">
+                      <div class="thumb-core"></div>
+                    </div>
+                  </div>
+                  <div id="review-scrub-tooltip" class="scrub-tooltip hidden">第 1 題</div>
                 </div>
               </div>
 

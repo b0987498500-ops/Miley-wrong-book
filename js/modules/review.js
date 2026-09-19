@@ -19,6 +19,7 @@ window.ReviewModule = {
 
   init: function() {
     this.bindEvents();
+    this.bindProgressScrubberEvents();
     this.bindWelcomeEvents();
     this.initScratchpad();
     this.bindBookmarkEvents();
@@ -730,18 +731,166 @@ window.ReviewModule = {
   },
 
   updateProgressDisplay: function() {
-    if (this.activeQuestions.length === 0) {
-      document.getElementById('review-current-index').innerText = `題目 0 / 0`;
-      document.getElementById('review-progress-fill').style.width = `0%`;
+    const total = this.activeQuestions ? this.activeQuestions.length : 0;
+    const currentIndexEl = document.getElementById('review-current-index');
+    const fillEl = document.getElementById('review-progress-fill');
+    const thumbEl = document.getElementById('review-progress-thumb');
+
+    if (total === 0) {
+      if (currentIndexEl) currentIndexEl.innerText = `題目 0 / 0`;
+      if (fillEl) fillEl.style.width = `0%`;
+      if (thumbEl) thumbEl.style.left = `0%`;
+      this.renderProgressTicks();
       return;
     }
 
-    const completed = this.isAnswerRevealed ? (this.currentIndex + 1) : this.currentIndex;
-    const total = this.activeQuestions.length;
-    const fillPercent = Math.min((completed / total) * 100, 100);
+    const currentNum = Math.min(this.currentIndex + 1, total);
+    if (currentIndexEl) currentIndexEl.innerText = `題目 ${currentNum} / ${total}`;
 
-    document.getElementById('review-current-index').innerText = `題目 ${completed} / ${total}`;
-    document.getElementById('review-progress-fill').style.width = `${fillPercent}%`;
+    const percent = total > 1 ? (this.currentIndex / (total - 1)) * 100 : 100;
+    if (fillEl) fillEl.style.width = `${percent}%`;
+    if (thumbEl) thumbEl.style.left = `${percent}%`;
+
+    this.renderProgressTicks();
+  },
+
+  renderProgressTicks: function() {
+    const ticksContainer = document.getElementById('review-progress-ticks');
+    if (!ticksContainer) return;
+    
+    const total = this.activeQuestions ? this.activeQuestions.length : 0;
+    if (total <= 1 || total > 45) {
+      ticksContainer.innerHTML = '';
+      return;
+    }
+
+    // Only rebuild DOM if tick count changed
+    if (ticksContainer.children.length !== total) {
+      ticksContainer.innerHTML = '';
+      for (let i = 0; i < total; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'progress-tick-dot';
+        const percent = (i / (total - 1)) * 100;
+        dot.style.left = `${percent}%`;
+        dot.dataset.index = i;
+        ticksContainer.appendChild(dot);
+      }
+    }
+
+    // Update active / passed classes on dots
+    const dots = ticksContainer.querySelectorAll('.progress-tick-dot');
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('passed', idx <= this.currentIndex);
+      dot.classList.toggle('current', idx === this.currentIndex);
+    });
+  },
+
+  bindProgressScrubberEvents: function() {
+    const self = this;
+    const wrapper = document.getElementById('review-progress-wrapper');
+    const track = document.getElementById('review-progress-track');
+    const thumb = document.getElementById('review-progress-thumb');
+    const tooltip = document.getElementById('review-scrub-tooltip');
+    if (!wrapper || !track) return;
+
+    let isDragging = false;
+
+    function getIndexFromPointer(clientX) {
+      const rect = track.getBoundingClientRect();
+      const total = self.activeQuestions ? self.activeQuestions.length : 0;
+      if (total <= 1 || rect.width === 0) return 0;
+
+      const offsetX = Math.max(0, Math.min(clientX - rect.left, rect.width));
+      const fraction = offsetX / rect.width;
+      // Snap to nearest discrete question index (0 to total - 1)
+      const nearest = Math.round(fraction * (total - 1));
+      return Math.max(0, Math.min(total - 1, nearest));
+    }
+
+    function updateTooltip(targetIndex) {
+      if (!tooltip) return;
+      const total = self.activeQuestions ? self.activeQuestions.length : 0;
+      if (total === 0) return;
+
+      const q = self.activeQuestions[targetIndex];
+      const subj = q?.subject ? ` · ${q.subject}` : '';
+      tooltip.innerHTML = `🧲 <strong>題目 ${targetIndex + 1} / ${total}</strong>${subj}`;
+      
+      const targetPercent = total > 1 ? (targetIndex / (total - 1)) * 100 : 100;
+      tooltip.style.left = `${targetPercent}%`;
+      tooltip.classList.remove('hidden');
+    }
+
+    function handleScrub(e, isFinal = false) {
+      const total = self.activeQuestions ? self.activeQuestions.length : 0;
+      if (total <= 1) return;
+
+      const targetIndex = getIndexFromPointer(e.clientX);
+      updateTooltip(targetIndex);
+
+      if (targetIndex !== self.currentIndex) {
+        self.currentIndex = targetIndex;
+        self.renderCurrentCard();
+        
+        // Trigger magnetic snap visual bump on thumb
+        if (thumb) {
+          thumb.classList.remove('snap-bounce');
+          void thumb.offsetWidth; // trigger reflow
+          thumb.classList.add('snap-bounce');
+        }
+      } else {
+        self.updateProgressDisplay();
+      }
+
+      if (isFinal) {
+        self.scrollToCardTop();
+      }
+    }
+
+    wrapper.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      isDragging = true;
+      wrapper.classList.add('dragging');
+      wrapper.setPointerCapture(e.pointerId);
+      handleScrub(e, false);
+    });
+
+    wrapper.addEventListener('pointermove', (e) => {
+      if (isDragging) {
+        e.preventDefault();
+        handleScrub(e, false);
+      } else {
+        const total = self.activeQuestions ? self.activeQuestions.length : 0;
+        if (total > 1) {
+          const targetIndex = getIndexFromPointer(e.clientX);
+          updateTooltip(targetIndex);
+        }
+      }
+    });
+
+    wrapper.addEventListener('pointerup', (e) => {
+      if (isDragging) {
+        isDragging = false;
+        wrapper.classList.remove('dragging');
+        try { wrapper.releasePointerCapture(e.pointerId); } catch(err) {}
+        handleScrub(e, true);
+        setTimeout(() => {
+          if (!isDragging) tooltip?.classList.add('hidden');
+        }, 800);
+      }
+    });
+
+    wrapper.addEventListener('pointercancel', (e) => {
+      isDragging = false;
+      wrapper.classList.remove('dragging');
+      tooltip?.classList.add('hidden');
+    });
+
+    wrapper.addEventListener('mouseleave', () => {
+      if (!isDragging) {
+        tooltip?.classList.add('hidden');
+      }
+    });
   },
 
   extractOptions: function(stem) {
