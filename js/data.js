@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v110';
+const STORAGE_KEY = 'miley_wrong_questions_v111';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1934,7 +1934,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v109') ||
+      stored = localStorage.getItem('miley_wrong_questions_v110') ||
+               localStorage.getItem('miley_wrong_questions_v109') ||
                localStorage.getItem('miley_wrong_questions_v108') ||
                localStorage.getItem('miley_wrong_questions_v107') ||
                localStorage.getItem('miley_wrong_questions_v106') ||
@@ -2062,6 +2063,9 @@ class DataManager {
         if (!Array.isArray(q.mondayDates) || q.mondayDates.length === 0 || q.mondayDates.some(m => !m || typeof m !== 'string' || !m.includes('-'))) {
           q.mondayDates = [q.mondayDate];
         }
+        if (!Array.isArray(q.reviewedMondays)) {
+          q.reviewedMondays = [];
+        }
       });
     }
 
@@ -2182,9 +2186,32 @@ class DataManager {
     return mondays.includes(targetMonday);
   }
 
-  updateQuestionMastery(id, isMastered) {
+  updateQuestionMastery(id, isMastered, mondayDate = null) {
     const q = this.getById(id);
     if (!q) return null;
+
+    const currentMonday = mondayDate || this.getCurrentMondayDate();
+
+    // Record review decision trace for this week (作答痕跡與複習紀錄)
+    if (!Array.isArray(q.reviewedMondays)) {
+      q.reviewedMondays = [];
+    }
+    if (!q.reviewedMondays.includes(currentMonday)) {
+      q.reviewedMondays.push(currentMonday);
+    }
+    q.lastReviewedMonday = currentMonday;
+    q.lastReviewedDate = this.getTodayDateStr();
+    q.lastReviewDecision = isMastered ? 'mastered' : 'unmastered';
+
+    if (!Array.isArray(q.reviewHistory)) {
+      q.reviewHistory = [];
+    }
+    q.reviewHistory.push({
+      monday: currentMonday,
+      date: this.getTodayDateStr(),
+      isMastered: isMastered,
+      timestamp: Date.now()
+    });
 
     if (isMastered) {
       q.consecutiveMastered = (q.consecutiveMastered || 0) + 1;
@@ -2199,11 +2226,11 @@ class DataManager {
       q.errorCount = (q.errorCount || 0) + 1;
       q.ebbinghausStage = 1; // Reset Ebbinghaus repetition cycle to 1st week
       
-      const currentMonday = q.mondayDate || this.getCurrentMondayDate();
+      const qMonday = q.mondayDate || currentMonday;
       if (!Array.isArray(q.mondayDates)) {
-        q.mondayDates = [currentMonday];
+        q.mondayDates = [qMonday];
       }
-      const nextMonday = this.getNextMondayDate(currentMonday);
+      const nextMonday = this.getNextMondayDate(qMonday);
       if (!q.mondayDates.includes(nextMonday)) {
         q.mondayDates.push(nextMonday);
       }
@@ -2292,9 +2319,20 @@ class DataManager {
     });
   }
 
-  // Get Active Pending Review Questions (Not yet formally archived)
-  getPendingReviewQuestions() {
-    return this.questions.filter(q => !q.isArchived);
+  // Check if a question is pending review in a specific week
+  isQuestionPendingReview(q, targetMonday = null) {
+    if (!q || q.isArchived) return false;
+    const m = targetMonday || this.getCurrentMondayDate();
+    if (!this.isQuestionInMonday(q, m)) return false;
+    if (q.lastReviewedMonday === m) return false;
+    if (Array.isArray(q.reviewedMondays) && q.reviewedMondays.includes(m)) return false;
+    return true;
+  }
+
+  // Get Active Pending Review Questions (Not yet archived, and not yet reviewed in target week)
+  getPendingReviewQuestions(targetMonday = null) {
+    const m = targetMonday || this.getCurrentMondayDate();
+    return this.questions.filter(q => this.isQuestionPendingReview(q, m));
   }
 
   // Get Tree Structure: Exam -> Monday Date (Includes current and next week folders)

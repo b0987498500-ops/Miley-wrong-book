@@ -539,11 +539,32 @@ class App {
     // 1. 本週待複習 (Due Review Count):
     // 依麥麥指示，「本週待複習」應嚴格僅統計「本週」（當週週一，即 2026-09-14）的所有待複習題目，不跨週加總！
     const currentMonday = window.dataManager ? window.dataManager.getCurrentMondayDate() : '2026-09-14';
-    let pendingQuestions = window.dataManager ? window.dataManager.getPendingReviewQuestions() : [];
+    let pendingQuestions = window.dataManager ? window.dataManager.getPendingReviewQuestions(currentMonday) : [];
     const thisWeekPending = pendingQuestions.filter(q => window.dataManager && window.dataManager.isQuestionInMonday(q, currentMonday));
 
     const dueCountEl = document.getElementById('due-review-count');
-    if (dueCountEl) dueCountEl.innerText = thisWeekPending.length;
+    const dueDescEl = document.querySelector('.ebbinghaus-summary-box .ebb-desc');
+
+    if (dueCountEl) {
+      const oldCount = parseInt(dueCountEl.innerText, 10);
+      const newCount = thisWeekPending.length;
+      dueCountEl.innerText = newCount;
+      if (!isNaN(oldCount) && oldCount !== newCount) {
+        dueCountEl.classList.remove('count-updated-bump');
+        void dueCountEl.offsetWidth; // trigger reflow
+        dueCountEl.classList.add('count-updated-bump');
+      }
+    }
+
+    if (dueDescEl) {
+      if (thisWeekPending.length === 0) {
+        dueDescEl.innerText = '🎉 本週已全數複習完畢！';
+        dueDescEl.style.color = '#10b981';
+      } else {
+        dueDescEl.innerText = '艾賓浩斯週期追蹤中';
+        dueDescEl.style.color = '';
+      }
+    }
 
     const sprintQuestions = window.dataManager ? window.dataManager.getHighFrequencyQuestions('ALL') : [];
     const sprintBadge = document.getElementById('sprint-badge');

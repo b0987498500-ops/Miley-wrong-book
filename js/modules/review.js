@@ -1483,7 +1483,10 @@ window.ReviewModule = {
 
   handleFeedback: function(isMastered) {
     const q = this.activeQuestions[this.currentIndex];
-    const updatedQ = window.dataManager.updateQuestionMastery(q.id, isMastered);
+    const currentMonday = window.app?.currentMondayFilter && window.app.currentMondayFilter !== 'ALL'
+      ? window.app.currentMondayFilter
+      : (window.dataManager?.getCurrentMondayDate() || '2026-09-14');
+    const updatedQ = window.dataManager.updateQuestionMastery(q.id, isMastered, currentMonday);
 
     if (!isMastered && updatedQ) {
       const nextDate = updatedQ.mondayDate;
