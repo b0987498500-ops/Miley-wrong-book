@@ -195,18 +195,11 @@ window.katexUtils = {
   },
 
   isCleanTextModeActive: function() {
-    try {
-      const val = localStorage.getItem('miley_clean_text_mode_v1');
-      return val !== 'false'; // Default ON
-    } catch (e) {
-      return true;
-    }
+    return true; // 系統永久標準：文字永遠保持純淨清晰、零奇怪代碼與符號
   },
 
   setCleanTextMode: function(active) {
-    try {
-      localStorage.setItem('miley_clean_text_mode_v1', active ? 'true' : 'false');
-    } catch (e) {}
+    // 系統永久內建標準，不提供關閉
   },
 
   repairMathDelimiters: function(text) {

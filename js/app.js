@@ -19,7 +19,6 @@ class App {
       this.bindBrandHomeClick();
       this.renderWeeklyMondayBar();
       this.bindThemeToggle();
-      this.bindCleanTextToggle();
       this.bindFontSizeControls();
       this.bindResetData();
       this.updateSidebarCounts();
@@ -471,45 +470,6 @@ class App {
       document.body.classList.toggle('light-theme');
       const isLight = document.body.classList.contains('light-theme');
       toggleBtn.innerHTML = isLight ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-    });
-  }
-
-  bindCleanTextToggle() {
-    const cleanBtn = document.getElementById('clean-text-toggle-btn');
-    if (!cleanBtn) return;
-
-    const updateBtnState = () => {
-      const active = window.katexUtils ? window.katexUtils.isCleanTextModeActive() : true;
-      if (active) {
-        cleanBtn.classList.add('active');
-        cleanBtn.title = '防亂碼／清楚文字模式（已啟動：全面過濾代碼符號，以清楚文字顯示）';
-        cleanBtn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles" style="color: #10b981;"></i>';
-      } else {
-        cleanBtn.classList.remove('active');
-        cleanBtn.title = '防亂碼／清楚文字模式（已關閉，點擊立即開啟）';
-        cleanBtn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles" style="opacity: 0.4;"></i>';
-      }
-    };
-
-    updateBtnState();
-
-    cleanBtn.addEventListener('click', () => {
-      if (!window.katexUtils) return;
-      const current = window.katexUtils.isCleanTextModeActive();
-      const next = !current;
-      window.katexUtils.setCleanTextMode(next);
-      updateBtnState();
-
-      if (next) {
-        window.UploadModule?.showToast?.('✨ 清楚文字模式已開啟！所有奇怪符號與代碼已全面淨化。', 'success');
-      } else {
-        window.UploadModule?.showToast?.('清楚文字模式已關閉', 'info');
-      }
-
-      // Re-render current review card if in review tab
-      if (window.ReviewModule && window.ReviewModule.activeQuestions && window.ReviewModule.activeQuestions.length > 0) {
-        window.ReviewModule.renderCurrentCard();
-      }
     });
   }
 
