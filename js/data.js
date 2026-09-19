@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v118';
+const STORAGE_KEY = 'miley_wrong_questions_v119';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2070,7 +2070,79 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-19"
-  }
+  },
+{
+  "id": "q_sci_phy_car_east_west_acceleration_065",
+  "examPeriod": "一段",
+  "subject": "自然/理化",
+  "errorReason": "審題不清",
+  "concept": "直線運動學：速度與加速度之正負號方向性（向量運算）",
+  "uploadDate": "2026-09-19",
+  "mondayDate": "2026-09-14",
+  "mondayDates": [
+    "2026-09-14"
+  ],
+  "weekLabel": "2026-09-14 (本週最新題)",
+  "isGuessedOrUnstable": true,
+  "mistakeNote": "【向量正負號超級大陷阱——速度是向量，非純量！】：\n1. 很多同學看到「初速 20，末速 20」，直接直覺相減 20 - 20 = 0，誤選 (A) 0！\n2. 速度具有「大小」與「方向」，方向相反必須賦予不同正負號！\n   - 若設向東為正（+）：初速度 v₁ = +20 m/s，向西末速度 v₂ = -20 m/s。\n   - 速度變化量 Δv = v₂ - v₁ = (-20) - (+20) = -40 m/s（負號代表向西）。\n3. 平均加速度 a = Δv / Δt = -40 / 5 = -8 m/s²。\n   題目問「平均加速度大小」，故取絕對值為 8 m/s²！",
+  "stem": "某車開始時的初速度為向東 20m / s，經過 5 秒後，速度變成向西 20m / s，則在加速的過程中，該車的平均加速度大小為下列何者？\n\n○ (A) 0\n○ (B) 4m / s²\n○ (C) 5m / s²\n○ (D) 8m / s²",
+  "answer": "(D) 8m / s²",
+  "diagramUrl": "",
+  "solution": "○ 詳細物理觀念與向量運算深度解析：\n\n1. **核心觀念：速度（Velocity）是「向量」，兼具「大小」與「方向」**：\n   - 在一直線上運動，通常以「正負號」來代表運動方向。\n   - 規定基準方向：**設向東為正（+），向西為負（-）**。\n\n2. **物理量條列與速度變化量 Δv 計算**：\n   - 初速度 v₁ = +20 m/s（向東）\n   - 末速度 v₂ = -20 m/s（向西）\n   - 經過時間 Δt = 5 秒\n   - 速度變化量定義為「末速度 − 初速度」：\n     Δv = v₂ - v₁ = (-20) - (+20) = -40 m/s\n     （負號代表速度變化量的方向朝向「西方」）\n\n3. **平均加速度 ā 與大小**：\n   - 由平均加速度定義式：\n     ā = Δv / Δt = (-40 m/s) / 5 s = -8 m/s²\n   - 表示此車具有**向西 8 m/s²** 的平均加速度。\n   - 題目詢問的是「平均加速度大小」，純量量值取絕對值：\n     |ā| = 8 m/s²\n\n4. **各選項分析與診斷**：\n   - **(A) 0**：【最常犯典型錯誤】忽略方向，直接用純量 20 - 20 = 0 計算。\n   - **(B) 4m / s²**：計算或公式帶入錯誤。\n   - **(C) 5m / s²**：誤用時間數值。\n   - **(D) 8m / s²**：正確，|-20 - 20| / 5 = 8 m/s²。\n\n故正確答案為 **(D)**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-09-19"
+},
+{
+  "id": "q_sci_phy_ticker_tape_bd_avg_vel_066",
+  "examPeriod": "一段",
+  "subject": "自然/理化",
+  "errorReason": "計算粗心",
+  "concept": "直線運動學：打點計時器（紙帶軌跡）之時間間隔與平均速度計算",
+  "uploadDate": "2026-09-19",
+  "mondayDate": "2026-09-14",
+  "mondayDates": [
+    "2026-09-14"
+  ],
+  "weekLabel": "2026-09-14 (本週最新題)",
+  "isGuessedOrUnstable": true,
+  "mistakeNote": "【打點計時器／紙帶軌跡四大破題核心重點】：\n1.【數「間隔」而非數「點數」】：\n   - 啟動點到 E 點共有 5 個時間間隔（啟動點~A、A~B、B~C、C~D、D~E）。\n   - 總時間 0.5 秒，故每個間隔的時間 Δt = 0.5 / 5 = 0.1 秒！\n2.【B、D 間的位移與時間計算】：\n   - B 到 D 包含兩個區間：BC 段（3.5 cm）與 CD 段（5.5 cm），合計位移 Δx = 3.5 + 5.5 = 9.0 cm。\n   - B 到 D 經歷 2 個時間間隔，時間 t = 2 × 0.1 = 0.2 秒。\n3.【平均速度公式帶入】：\n   - v̄ = Δx / Δt = 9.0 cm / 0.2 s = 45 cm/s！",
+  "stem": "右圖為某物體在固定時間間隔下所捕捉到的運動軌跡點。已知啟動點至 E 點共歷時 0.5 秒，請問 B、D 兩點間的平均速度大小為何？\n\n○ (A) 20cm / s\n○ (B) 35cm / s\n○ (C) 40cm / s\n○ (D) 45cm / s",
+  "answer": "(D) 45cm / s",
+  "diagramUrl": "assets/questions/q_sci_phy_ticker_tape_bd_avg_vel_066.png",
+  "solution": "○ 詳細物理步驟與軌跡分析：\n\n1. **求各相鄰兩點間的時間間隔（頻率與週期概念）**：\n   - 題目給定：由「啟動點」移動至「E 點」共歷時 0.5 秒。\n   - 觀察紙帶上的相鄰區間：\n     - 啟動點 → A（第 1 個間隔）\n     - A → B（第 2 個間隔）\n     - B → C（第 3 個間隔）\n     - C → D（第 4 個間隔）\n     - D → E（第 5 個間隔）\n   - 總共包含 5 個相等的時間間隔：\n     Δt = 0.5 秒 / 5 = 0.1 秒\n\n2. **求 B 點至 D 點的位移 Δx_BD**：\n   - 由圖中標示的相鄰兩點間距：\n     - B 到 C 距離 = 3.5 cm\n     - C 到 D 距離 = 5.5 cm\n   - B 到 D 的總位移：\n     Δx_BD = 3.5 + 5.5 = 9.0 cm\n\n3. **求 B 點至 D 點所歷經的時間 Δt_BD**：\n   - B 到 D 共有 2 個時間間隔（BC 與 CD）：\n     Δt_BD = 2 × 0.1 秒 = 0.2 秒\n\n4. **計算 B、D 兩點間的平均速度大小 v̄**：\n   - 由平均速度定義式：\n     v̄ = 位移 / 時間 = 9.0 cm / 0.2 秒 = 45 cm/s\n\n故正確答案為 **(D)**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-09-19"
+},
+{
+  "id": "q_sci_phy_train_brake_stopping_distance_067",
+  "examPeriod": "一段",
+  "subject": "自然/理化",
+  "errorReason": "觀念不懂",
+  "concept": "等加速度直線運動：火車煞車滑行時間、加速度、v-t 圖面積與完全煞停距離計算",
+  "uploadDate": "2026-09-19",
+  "mondayDate": "2026-09-14",
+  "mondayDates": [
+    "2026-09-14"
+  ],
+  "weekLabel": "2026-09-14 (本週最新題)",
+  "isGuessedOrUnstable": true,
+  "mistakeNote": "【等加速度運動公式與 v-t 圖面積雙解法核心】：\n1.【第一階段（30 到 10 m/s 滑行 400 m）求時間與加速度】：\n   - 利用平均速度求時間：x = [(v₀ + v)/2] × t ⟹ 400 = [(30 + 10)/2] × t ⟹ t = 20 秒（選項 A 正確）。\n   - 加速度 a = (v - v₀) / t = (10 - 30) / 20 = -1 m/s²（選項 B 正確）。\n2.【第二階段：火車完全煞停（末速 v = 0）】：\n   - 總煞停時間：0 = 30 + (-1) × t_總 ⟹ t_總 = 30 秒（選項 C 正確）。\n   - 總煞停距離（v-t 圖三角形面積）：x_總 = (初速 × 總時間) / 2 = (30 × 30) / 2 = 450 m。\n3.【錯誤陷阱】：\n   - (D) 敘述「需在 600 m 前開始煞車」錯誤，正確只需在 **450 m** 前開始煞車即可！",
+  "stem": "一列火車進站前車速為 30m / s，煞車到車速為 10m / s 時，滑行 400m 的距離，下列敘述何者錯誤？\n\n○ (A) 此段煞車時間為 20 秒\n○ (B) 煞車時的加速度為 -1m / s²\n○ (C) 歷時 30 秒，火車才能停靠月臺\n○ (D) 火車準確停靠月臺，需在 600m 前開始煞車",
+  "answer": "(D) 火車準確停靠月臺，需在 600m 前開始煞車",
+  "diagramUrl": "",
+  "solution": "○ 詳細等加速度運動觀念與逐步推導（公式解法 vs. v-t 圖幾何解法）：\n\n1. **分析第一階段煞車（由 30 m/s 減速至 10 m/s，位移 400 m）**：\n   - 初速度 v₀ = 30 m/s\n   - 減速後末速度 v = 10 m/s\n   - 滑行位移 x₁ = 400 m\n   - **(A) 求此段煞車時間 t₁**：\n     利用等加速度直線運動平均速度公式：\n     x₁ = [(v₀ + v) / 2] × t₁ ⟹ 400 = [(30 + 10) / 2] × t₁ = 20 × t₁ ⟹ t₁ = 20 秒\n     故 **(A) 此段煞車時間為 20 秒** 是正確的。\n\n   - **(B) 求煞車時的加速度 a**：\n     a = (v - v₀) / t₁ = (10 - 30) / 20 = -20 / 20 = -1 m/s²\n     （負號表示加速度方向與運動方向相反，為減速運動）\n     故 **(B) 煞車時的加速度為 -1 m/s²** 是正確的。\n\n2. **分析第二階段：由車速 30 m/s 完全煞停至靜止（v_末 = 0）**：\n   - **(C) 火車完全停靠月臺所需的總時間 t_總**：\n     v_末 = v₀ + a · t_總 ⟹ 0 = 30 + (-1) × t_總 ⟹ t_總 = 30 秒\n     故 **(C) 歷時 30 秒，火車才能停靠月臺** 是正確的。\n\n   - **(D) 火車準確停靠月臺所需煞車總距離 S_總**：\n     - **方法一（v-t 圖三角形面積法）**：\n       以縱軸為速度 v、橫軸為時間 t 畫出直角三角形，底為總時間 30 秒，高為初速度 30 m/s：\n       S_總 = (底 × 高) / 2 = (30 × 30) / 2 = 450 公尺\n     - **方法二（無時間公式 v² = v₀² + 2as）**：\n       0² = 30² + 2 × (-1) × S_總 ⟹ 0 = 900 - 2 S_總 ⟹ S_總 = 450 公尺\n     - 故火車欲準確停靠月臺，必須在 **450 公尺** 前開始煞車，而非 600 公尺。\n     故 **(D) 敘述錯誤**，為本題應選答案。\n\n故正確答案為 **(D)**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-09-19"
+}
 ];
 
 const DELETED_KEYS_STORAGE = 'miley_deleted_question_ids_v31';
@@ -2102,7 +2174,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v117') ||
+      stored = localStorage.getItem('miley_wrong_questions_v118') ||
+               localStorage.getItem('miley_wrong_questions_v117') ||
                localStorage.getItem('miley_wrong_questions_v116') ||
                localStorage.getItem('miley_wrong_questions_v115') ||
                localStorage.getItem('miley_wrong_questions_v114') ||
