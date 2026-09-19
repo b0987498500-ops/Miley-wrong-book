@@ -194,6 +194,118 @@ window.katexUtils = {
     return resultLines.join('<br/>');
   },
 
+  isCleanTextModeActive: function() {
+    try {
+      const val = localStorage.getItem('miley_clean_text_mode_v1');
+      return val !== 'false'; // Default ON
+    } catch (e) {
+      return true;
+    }
+  },
+
+  setCleanTextMode: function(active) {
+    try {
+      localStorage.setItem('miley_clean_text_mode_v1', active ? 'true' : 'false');
+    } catch (e) {}
+  },
+
+  repairMathDelimiters: function(text) {
+    if (!text || typeof text !== 'string') return text;
+    // Auto-repair unclosed single '$' if odd number
+    const count = (text.match(/(?<!\\)\$/g) || []).length;
+    if (count % 2 !== 0) {
+      text = text + '$';
+    }
+    return text;
+  },
+
+  cleanMathGarble: function(textStr) {
+    if (!textStr || typeof textStr !== 'string') return '';
+    let s = textStr;
+    // 1. Line segments: \overline{AB} -> <span class="math-overline">AB</span>
+    s = s.replace(/\\overline\{([^}]+)\}/g, '<span class="math-overline">$1</span>');
+    // 2. Geometry shapes
+    s = s.replace(/\\triangle\s*([A-Za-z0-9]+)?/g, '△$1');
+    s = s.replace(/\\angle\s*([A-Za-z0-9]+)?/g, '∠$1');
+    // 3. Fractions: \frac{a}{b} -> (a / b)
+    s = s.replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '($1 / $2)');
+    // 4. Common operators and math symbols
+    s = s.replace(/\\times/g, '×')
+         .replace(/\\div/g, '÷')
+         .replace(/\\pm/g, '±')
+         .replace(/\\pi/g, 'π')
+         .replace(/\\degree/g, '°')
+         .replace(/\\neq/g, '≠')
+         .replace(/\\leq/g, '≤')
+         .replace(/\\geq/g, '≥')
+         .replace(/\\implies/g, '⟹')
+         .replace(/\\iff/g, '⟺')
+         .replace(/\\dots/g, '…')
+         .replace(/\\cdots/g, '…')
+         .replace(/\\cdot/g, '·')
+         .replace(/\\perp/g, '⊥')
+         .replace(/\\parallel/g, '//')
+         .replace(/\\text\{([^}]+)\}/g, '$1')
+         .replace(/\\mathbf\{([^}]+)\}/g, '$1');
+    // 5. Remove orphan delimiters and dangling backslashes
+    s = s.replace(/\$\$/g, '').replace(/\$/g, '');
+    s = s.replace(/\\([a-zA-Z]+)/g, '$1');
+    return s;
+  },
+
+  postCleanGarbleInElement: function(el) {
+    if (!el || typeof document === 'undefined') return;
+    try {
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+        acceptNode: function(node) {
+          if (node.parentElement && (
+            node.parentElement.closest('.katex') ||
+            node.parentElement.closest('.fc-fill-in-input') ||
+            node.parentElement.tagName === 'SCRIPT' ||
+            node.parentElement.tagName === 'STYLE'
+          )) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+
+      const nodesToReplace = [];
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        if (node.nodeValue && (
+          node.nodeValue.includes('\\overline') ||
+          node.nodeValue.includes('\\frac') ||
+          node.nodeValue.includes('\\triangle') ||
+          node.nodeValue.includes('\\angle') ||
+          node.nodeValue.includes('\\times') ||
+          node.nodeValue.includes('\\div') ||
+          node.nodeValue.includes('\\pm') ||
+          node.nodeValue.includes('\\sim') ||
+          node.nodeValue.includes('\\cong') ||
+          node.nodeValue.includes('\\implies') ||
+          node.nodeValue.includes('\\dots') ||
+          node.nodeValue.includes('\\cdot') ||
+          node.nodeValue.includes('$$') ||
+          node.nodeValue.includes('$')
+        )) {
+          nodesToReplace.push(node);
+        }
+      }
+
+      nodesToReplace.forEach(node => {
+        const cleaned = this.cleanMathGarble(node.nodeValue);
+        if (cleaned !== node.nodeValue && node.parentNode) {
+          const span = document.createElement('span');
+          span.innerHTML = cleaned;
+          node.parentNode.replaceChild(span, node);
+        }
+      });
+    } catch (e) {
+      console.warn('postCleanGarbleInElement warning:', e);
+    }
+  },
+
   renderText: function(elementOrId, textStr) {
     let el = typeof elementOrId === 'string' ? document.getElementById(elementOrId) : elementOrId;
     if (!el) return;
@@ -206,6 +318,10 @@ window.katexUtils = {
       if (formattedText.includes('20474')) {
         formattedText = formattedText.split('20474').join('$$');
       }
+
+      // Repair delimiters before KaTeX
+      formattedText = this.repairMathDelimiters(formattedText);
+
       formattedText = formattedText.replace(/\n/g, '<br/>');
       formattedText = this.formatTables(formattedText);
       formattedText = this.formatMarkdownImages(formattedText);
@@ -231,5 +347,8 @@ window.katexUtils = {
         console.warn('KaTeX render warning:', e);
       }
     }
+
+    // Post-render Anti-Garble Sweep: Clean any remaining raw LaTeX
+    this.postCleanGarbleInElement(el);
   }
 };

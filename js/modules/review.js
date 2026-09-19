@@ -894,30 +894,25 @@ window.ReviewModule = {
   extractOptions: function(stem) {
     if (!stem || typeof stem !== 'string') return { hasOptions: false, stemMain: stem, options: null };
 
-    let optStartIdx = stem.indexOf('○ (A)');
-    if (optStartIdx === -1) optStartIdx = stem.indexOf('(A)');
-    if (optStartIdx === -1) optStartIdx = stem.indexOf('○(A)');
-    
-    if (optStartIdx === -1) {
-      return { hasOptions: false, stemMain: stem, options: null };
-    }
-
-    const stemMain = stem.substring(0, optStartIdx).trim();
-    const optionsPart = stem.substring(optStartIdx).trim();
-
-    // Regex to match (A), (B), (C), (D) or ○ (A)
-    const regex = /(?:○\s*)?\(?([A-D])\)?[\s\.、]*(.*?)(?=(?:○\s*)?\(?[A-D]\)?[\s\.、]*|$)/gs;
-    const matches = [...optionsPart.matchAll(regex)];
+    // Strict Option Delimiter:
+    // Matches option markers like '○ (A)', '(A)', '○ A.', 'A.' preceded by start of string, newline, or '○'
+    // It MUST NOT match capital letters inside formulas, words or LaTeX commands (e.g. \overline{AB})
+    const optDelimRegex = /(?:^|\n|\r)\s*(?:(?:[○●]\s*\(?([A-D])\)?)|(?:\(([A-D])\))|(?:([A-D])[\.、]))\s*/g;
+    const matches = [...stem.matchAll(optDelimRegex)];
 
     if (matches && matches.length >= 2) {
+      const stemMain = stem.substring(0, matches[0].index).trim();
       const opts = {};
-      matches.forEach(m => {
-        const letter = m[1].toUpperCase();
-        const text = (m[2] || '').trim();
+      for (let i = 0; i < matches.length; i++) {
+        const m = matches[i];
+        const letter = (m[1] || m[2] || m[3]).toUpperCase();
+        const start = m.index + m[0].length;
+        const end = (i + 1 < matches.length) ? matches[i + 1].index : stem.length;
+        const text = stem.substring(start, end).trim();
         if (letter && text) {
           opts[letter] = text;
         }
-      });
+      }
 
       if (Object.keys(opts).length >= 2) {
         return { hasOptions: true, stemMain: stemMain, options: opts };
