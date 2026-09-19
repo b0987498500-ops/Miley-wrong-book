@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v120';
+const STORAGE_KEY = 'miley_wrong_questions_v121';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2190,6 +2190,30 @@ const INITIAL_SEED_DATA = [
   "consecutiveMastered": 0,
   "isArchived": false,
   "nextReviewDate": "2026-09-19"
+},
+{
+  "id": "q_soc_his_egypt_memphis_pyramid_070",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "古埃及古王國時期文明特徵（金字塔時代、孟斐斯、法老王權與陵墓興建）與世界古文明辨析〔93基測II〕",
+  "uploadDate": "2026-09-19",
+  "mondayDate": "2026-09-14",
+  "mondayDates": [
+    "2026-09-14"
+  ],
+  "weekLabel": "2026-09-14 (本週最新題)",
+  "isGuessedOrUnstable": true,
+  "mistakeNote": "【世界古代歷史四大古文明考點速記口訣】：\n1.【古埃及（尼羅河下游孟斐斯／金字塔）】：\n   - 古王國時代（約西元前 27～22 世紀）定都尼羅河下游的「孟斐斯」，國王稱為「法老」，生前即大興土木徵召人民建造「金字塔（大型國王陵墓）」，故古王國時期又稱「金字塔時期」！\n2.【常見選項陷阱辨析】：\n   - ❌ 廣場民主政治公共討論：古希臘城邦（如西元前 6～5 世紀之雅典），非埃及！\n   - ❌ 楔形文字與泥版紀錄：兩河流域（美索不達米亞文明，如蘇美、巴比倫），埃及使用的是草紙與象形文字！\n   - ❌ 傳播《聖經》信上帝得永生：基督教文明（西元 1 世紀於羅馬帝國統治下的巴勒斯坦興起），西元前 2500 年尚未出現！",
+  "stem": "西元前 2500 年左右，有一位商人旅行到埃及 尼羅河下游的孟斐斯，他在這個城市中最可能看到下列何種景象？【93年第2次基測】\n\n○ (A) 人們不時接獲官員徵召去興建大型國王陵墓\n○ (B) 許多男性公民趕赴廣場參與公共事務的討論\n○ (C) 人們將交易往來紀錄用楔形文字刻在泥版上\n○ (D) 有人熱忱傳播《聖經》，宣揚信上帝可得永生。",
+  "answer": "(A) 人們不時接獲官員徵召去興建大型國王陵墓",
+  "diagramUrl": "",
+  "solution": "○ 詳細解題觀念與歷史背景剖析：\n\n1. **時空定位：古埃及古王國時代與首都孟斐斯**：\n   - **時間**：西元前 2500 年左右，正值古埃及的「古王國時期」（約西元前 2686 ～ 前 2181 年）。\n   - **地點**：孟斐斯（Memphis）位於尼羅河下游三角洲頂端，為古王國時期的政經宗教首都。\n   - **時代特色**：古王國時期中央集權極盛，法老被視為神在人間的化身，掌管全埃及。法老會在生前動員龐大人力物力修建雄偉的金字塔作為陵墓，因此古王國時期亦被稱為「金字塔時期（Pyramid Age）」。在尼羅河氾濫的農閒期間，人民經常受官員徵召前往工廠與陵寢工地從事大型石造陵墓的建造工程。因此在孟斐斯最容易目睹的景象為 (A)。\n\n2. **逐一診斷錯誤選項**：\n   - **(B) 許多男性公民趕赴廣場參與公共事務的討論**：\n     - 此為**古希臘城邦（如雅典）的民主政治特色**。雅典男性公民在公民大會（廣場）行使直接民主權利，時間大約在西元前 6 世紀至西元前 4 世紀，地理位置在地中海愛琴海地區，與西元前 2500 年的埃及神權專制完全不符。\n   - **(C) 人們將交易往來紀錄用楔形文字刻在泥版上**：\n     - 楔形文字與泥版是**兩河流域（美索不達米亞文明）**的標誌性發明（蘇美人在西元前 3000 多年發明）。埃及使用的書寫系統為「象形文字（聖書體）」，書寫載體多為「紙莎草紙（Papyrus）」或鐫刻於石柱神廟石壁上，並非泥版。\n   - **(D) 有人熱忱傳播《聖經》，宣揚信上帝可得永生**：\n     - 《聖經》（新約）與傳播基督信仰、信上帝得永生是**基督教**的核心教義。基督教於**西元 1 世紀**發源於羅馬帝國統治下的巴勒斯坦地區。西元前 2500 年時基督教根本尚未誕生（此時距耶穌降生尚有約兩千五百年之遙）。\n\n故正確答案為 **(A)**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-09-19"
 }
 ];
 
@@ -2222,7 +2246,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v119') ||
+      stored = localStorage.getItem('miley_wrong_questions_v120') ||
+               localStorage.getItem('miley_wrong_questions_v119') ||
                localStorage.getItem('miley_wrong_questions_v118') ||
                localStorage.getItem('miley_wrong_questions_v117') ||
                localStorage.getItem('miley_wrong_questions_v116') ||
