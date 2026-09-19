@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v128';
+const STORAGE_KEY = 'miley_wrong_questions_v129';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2414,7 +2414,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v127') ||
+      stored = localStorage.getItem('miley_wrong_questions_v128') ||
+               localStorage.getItem('miley_wrong_questions_v127') ||
                localStorage.getItem('miley_wrong_questions_v126') ||
                localStorage.getItem('miley_wrong_questions_v125') ||
                localStorage.getItem('miley_wrong_questions_v124') ||
@@ -2683,6 +2684,19 @@ class DataManager {
     return mondays.includes(targetMonday);
   }
 
+  isQuestionReviewed(q, mondayDate = null) {
+    if (!q) return false;
+    const currentMonday = mondayDate || this.getCurrentMondayDate();
+    if (currentMonday && currentMonday !== 'ALL') {
+      return (Array.isArray(q.reviewedMondays) && q.reviewedMondays.includes(currentMonday)) ||
+             q.lastReviewedMonday === currentMonday;
+    }
+    return q.isReviewed === true ||
+           q.reviewStatus === 'reviewed' ||
+           (Array.isArray(q.reviewedMondays) && q.reviewedMondays.length > 0) ||
+           !!q.lastReviewDecision;
+  }
+
   updateQuestionMastery(id, isMastered, mondayDate = null) {
     const q = this.getById(id);
     if (!q) return null;
@@ -2699,6 +2713,8 @@ class DataManager {
     q.lastReviewedMonday = currentMonday;
     q.lastReviewedDate = this.getTodayDateStr();
     q.lastReviewDecision = isMastered ? 'mastered' : 'unmastered';
+    q.isReviewed = true;
+    q.reviewStatus = 'reviewed';
 
     if (!Array.isArray(q.reviewHistory)) {
       q.reviewHistory = [];

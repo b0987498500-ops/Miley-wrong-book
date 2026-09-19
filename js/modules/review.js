@@ -16,6 +16,7 @@ window.ReviewModule = {
   scratchCtx: null,
   isScratchDrawing: false,
   scratchHistory: [],
+  sessionReviewedIds: new Set(),
 
   init: function() {
     this.bindEvents();
@@ -91,6 +92,18 @@ window.ReviewModule = {
       e.preventDefault();
       e.stopPropagation();
       self.retryQuestion();
+    });
+
+    // Skip For Later Button (先跳過，晚點做)
+    document.getElementById('fc-skip-later-btn')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const currentQ = self.activeQuestions[self.currentIndex];
+      if (currentQ && self.isQuestionReviewed(currentQ)) {
+        self.nextQuestion();
+      } else {
+        self.skipCurrentQuestion();
+      }
     });
 
     // Feedback Buttons (Mastered / Unmastered)
@@ -186,6 +199,9 @@ window.ReviewModule = {
         if (self.isAnswerRevealed) self.handleFeedback(false);
       } else if (e.key === '2') {
         if (self.isAnswerRevealed) self.handleFeedback(true);
+      } else if (e.key === 'x' || e.key === 'X' || e.key === 'j' || e.key === 'J') {
+        e.preventDefault();
+        self.skipCurrentQuestion();
       } else if (e.key === 's' || e.key === 'S') {
         e.preventDefault();
         const scratchOverlay = document.getElementById('scratchpad-overlay');
@@ -643,11 +659,16 @@ window.ReviewModule = {
       list = list.filter(q => window.dataManager.isQuestionInMonday(q, targetMonday));
     }
 
-    this.activeQuestions = list;
-    if (targetIndex !== null && typeof targetIndex === 'number' && list.length > 0) {
-      this.currentIndex = Math.min(Math.max(0, targetIndex), list.length - 1);
+    // Miley's sorting rule: reviewed questions in front, unreviewed questions after
+    const reviewed = list.filter(q => this.isQuestionReviewed(q));
+    const unreviewed = list.filter(q => !this.isQuestionReviewed(q));
+    this.activeQuestions = [...reviewed, ...unreviewed];
+
+    if (targetIndex !== null && typeof targetIndex === 'number' && this.activeQuestions.length > 0) {
+      this.currentIndex = Math.min(Math.max(0, targetIndex), this.activeQuestions.length - 1);
     } else {
-      this.currentIndex = 0;
+      // Direct focus onto the first unreviewed question
+      this.currentIndex = (reviewed.length < this.activeQuestions.length) ? reviewed.length : 0;
     }
     this.updateMotivationalQuote();
     this.renderCurrentCard();
@@ -720,6 +741,69 @@ window.ReviewModule = {
     this.scrollToCardTop();
   },
 
+  isQuestionReviewed: function(q) {
+    if (!q) return false;
+    if (this.sessionReviewedIds && this.sessionReviewedIds.has(q.id)) return true;
+    const currentMonday = this.currentMondayFilter || window.app?.currentMondayFilter;
+    if (window.dataManager && typeof window.dataManager.isQuestionReviewed === 'function') {
+      return window.dataManager.isQuestionReviewed(q, currentMonday);
+    }
+    return q.isReviewed === true || q.reviewStatus === 'reviewed' || (Array.isArray(q.reviewedMondays) && q.reviewedMondays.length > 0) || !!q.lastReviewDecision;
+  },
+
+  reorderQueueReviewedFirst: function() {
+    if (!this.activeQuestions || this.activeQuestions.length <= 1) return;
+    const reviewed = [];
+    const unreviewed = [];
+
+    for (let i = 0; i < this.activeQuestions.length; i++) {
+      const q = this.activeQuestions[i];
+      if (this.isQuestionReviewed(q)) {
+        reviewed.push(q);
+      } else {
+        unreviewed.push(q);
+      }
+    }
+
+    this.activeQuestions = [...reviewed, ...unreviewed];
+  },
+
+  skipCurrentQuestion: function() {
+    if (!this.activeQuestions || this.activeQuestions.length <= 1) {
+      this.showToast('ℹ️ 目前只有 1 道題目，無法再往後排囉！');
+      return;
+    }
+
+    const currentQ = this.activeQuestions[this.currentIndex];
+    if (!currentQ) return;
+
+    const isReviewed = this.isQuestionReviewed(currentQ);
+    if (isReviewed) {
+      this.showToast('ℹ️ 本題已是【已複習】狀態，直接前往下一題！');
+      this.nextQuestion();
+      return;
+    }
+
+    // Unreviewed question: Miley says:
+    // "就假說我跳過了這題，那這題可能就會往後面排一個，然後我就會先到下一題看那個題目"
+    if (this.currentIndex < this.activeQuestions.length - 1) {
+      const [item] = this.activeQuestions.splice(this.currentIndex, 1);
+      this.activeQuestions.splice(this.currentIndex + 1, 0, item);
+      this.showToast('⏭️ 已將本題往後排一個（未複習），先看下一題！');
+    } else {
+      const firstUnrevIdx = this.activeQuestions.findIndex((q, i) => i !== this.currentIndex && !this.isQuestionReviewed(q));
+      if (firstUnrevIdx !== -1) {
+        this.currentIndex = firstUnrevIdx;
+        this.showToast('⏭️ 已循環至前面的未複習題目！');
+      } else {
+        this.showToast('⏭️ 本題已在隊列最後，準備開始攻克！');
+      }
+    }
+
+    this.renderCurrentCard();
+    this.scrollToCardTop();
+  },
+
   scrollToCardTop: function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     const mainContent = document.querySelector('.main-content');
@@ -744,12 +828,31 @@ window.ReviewModule = {
       return;
     }
 
+    const reviewedCount = this.activeQuestions.filter(q => this.isQuestionReviewed(q)).length;
+    const unreviewedCount = total - reviewedCount;
     const currentNum = Math.min(this.currentIndex + 1, total);
-    if (currentIndexEl) currentIndexEl.innerText = `題目 ${currentNum} / ${total}`;
 
-    const percent = total > 1 ? (this.currentIndex / (total - 1)) * 100 : 100;
-    if (fillEl) fillEl.style.width = `${percent}%`;
-    if (thumbEl) thumbEl.style.left = `${percent}%`;
+    if (currentIndexEl) {
+      currentIndexEl.innerHTML = `
+        <span class="idx-text">題目 ${currentNum} / ${total}</span>
+        <span class="review-status-counter-chips">
+          <span class="chip-reviewed" title="已完成複習"><i class="fa-solid fa-circle-check"></i> 已複習 ${reviewedCount}</span>
+          <span class="chip-unreviewed" title="尚未作答複習"><i class="fa-solid fa-hourglass-half"></i> 待複習 ${unreviewedCount}</span>
+        </span>
+      `;
+    }
+
+    // Train progress: Miley requested:
+    // "然後火車的進度就會到以複習"
+    const reviewedPercent = (reviewedCount / total) * 100;
+    const currentPercent = total > 1 ? (this.currentIndex / (total - 1)) * 100 : 100;
+
+    if (fillEl) {
+      fillEl.style.width = `${Math.max(reviewedPercent, (this.currentIndex / Math.max(total - 1, 1)) * 100)}%`;
+    }
+    if (thumbEl) {
+      thumbEl.style.left = `${currentPercent}%`;
+    }
 
     this.renderProgressTicks();
   },
@@ -777,11 +880,16 @@ window.ReviewModule = {
       }
     }
 
-    // Update active / passed classes on dots
+    // Update active / passed / reviewed classes on dots
     const dots = ticksContainer.querySelectorAll('.progress-tick-dot');
     dots.forEach((dot, idx) => {
+      const q = this.activeQuestions[idx];
+      const isRev = q ? this.isQuestionReviewed(q) : false;
+      dot.classList.toggle('tick-reviewed', isRev);
+      dot.classList.toggle('tick-unreviewed', !isRev);
       dot.classList.toggle('passed', idx <= this.currentIndex);
       dot.classList.toggle('current', idx === this.currentIndex);
+      dot.title = `第 ${idx + 1} 題：${isRev ? '已複習' : '未複習'}`;
     });
   },
 
@@ -1221,6 +1329,21 @@ window.ReviewModule = {
     document.getElementById('fc-reason').innerText = q.errorReason;
     document.getElementById('fc-concept').innerText = `# ${q.concept}`;
     
+    // Miley's Review Status Badge (已複習 / 未複習)
+    const reviewStatusBadgeEl = document.getElementById('fc-review-status-badge');
+    if (reviewStatusBadgeEl) {
+      const isReviewed = this.isQuestionReviewed(q);
+      if (isReviewed) {
+        reviewStatusBadgeEl.className = 'review-status-badge reviewed';
+        reviewStatusBadgeEl.innerHTML = `<i class="fa-solid fa-circle-check"></i> 已複習`;
+        reviewStatusBadgeEl.title = '此題已經在此輪/本週複習過';
+      } else {
+        reviewStatusBadgeEl.className = 'review-status-badge unreviewed';
+        reviewStatusBadgeEl.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> 未複習`;
+        reviewStatusBadgeEl.title = '此題尚未作答複習（可先跳過往後排）';
+      }
+    }
+
     const badgeEl = document.getElementById('fc-mastery-badge');
     if (badgeEl) {
       const isMastered = (q.consecutiveMastered || 0) > 0 || q.isArchived;
@@ -1364,6 +1487,20 @@ window.ReviewModule = {
       }
     }
 
+    // Update skip button in action bar
+    const skipBtn = document.getElementById('fc-skip-later-btn');
+    if (skipBtn) {
+      skipBtn.classList.remove('hidden');
+      const isReviewed = this.isQuestionReviewed(q);
+      if (isReviewed) {
+        skipBtn.title = '本題已是【已複習】狀態，點擊前往下一題';
+        skipBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i> 下一題';
+      } else {
+        skipBtn.title = '這題較複雜，先跳過往後排一個，稍後再回來挑戰';
+        skipBtn.innerHTML = '<i class="fa-solid fa-forward-step"></i> 先跳過，晚點做';
+      }
+    }
+
     // Reset Split Container Class
     document.querySelector('.card-grid-split')?.classList.remove('has-answer');
 
@@ -1455,6 +1592,7 @@ window.ReviewModule = {
     // Hide buttons
     document.getElementById('fc-check-answer-btn')?.classList.add('hidden');
     document.getElementById('fc-reveal-btn')?.classList.add('hidden');
+    document.getElementById('fc-skip-later-btn')?.classList.add('hidden');
 
     // Show feedback buttons
     const fbBtns = document.getElementById('fc-feedback-btns');
@@ -1476,29 +1614,48 @@ window.ReviewModule = {
 
   handleFeedback: function(isMastered) {
     const q = this.activeQuestions[this.currentIndex];
+    if (!q) return;
+
     const currentMonday = window.app?.currentMondayFilter && window.app.currentMondayFilter !== 'ALL'
       ? window.app.currentMondayFilter
       : (window.dataManager?.getCurrentMondayDate() || '2026-09-14');
+
+    // 1. Mark as reviewed in session and in question object
+    this.sessionReviewedIds.add(q.id);
+    q.isReviewed = true;
+    q.reviewStatus = 'reviewed';
+
     const updatedQ = window.dataManager.updateQuestionMastery(q.id, isMastered, currentMonday);
 
     if (!isMastered && updatedQ) {
       const nextDate = updatedQ.mondayDate;
       const parts = nextDate.split('-');
       const formatted = parts.length === 3 ? `${parseInt(parts[1], 10)}/${parseInt(parts[2], 10)}` : nextDate;
-      this.showToast(`📌 已將此題移至下週 (${formatted}) 重新複習！`);
+      this.showToast(`📌 已標為【已複習】，並排至下週 (${formatted}) 重新複習！`);
+    } else {
+      this.showToast(`✨ 本題已標為【已複習】！`);
     }
 
     if (window.app && window.app.renderWeeklyMondayBar) {
       window.app.renderWeeklyMondayBar();
     }
 
-    // Advance to next card
-    this.currentIndex++;
-    if (this.currentIndex >= this.activeQuestions.length) {
-      alert('🎉 恭喜！已完成本次週末線上抽認卡複習測驗！');
-      this.loadReviewQueue(window.app?.currentSubjectFilter, window.app?.currentMondayFilter);
-    } else {
+    // 2. Re-order queue: Miley requested:
+    // "在複習的過程中，我我想要你把以複習的就把它排在前面，然後火車的進度就會到以複習"
+    this.reorderQueueReviewedFirst();
+
+    // 3. Find next unreviewed question
+    const firstUnreviewedIdx = this.activeQuestions.findIndex(item => !this.isQuestionReviewed(item));
+
+    if (firstUnreviewedIdx === -1) {
+      // All questions in queue have been reviewed!
+      this.currentIndex = this.activeQuestions.length - 1;
       this.renderCurrentCard();
+      alert('🎉 恭喜麥麥！本輪所有題目已全部複習完成！');
+    } else {
+      this.currentIndex = firstUnreviewedIdx;
+      this.renderCurrentCard();
+      this.scrollToCardTop();
     }
 
     // Update global sidebar badge
