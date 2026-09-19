@@ -2357,6 +2357,12 @@ body.fullscreen-review-mode .sidebar-resizer {
   border: 1px solid rgba(245, 158, 11, 0.25);
 }
 
+.wisdom-card.latest-unlocked {
+  border: 1px solid rgba(245, 158, 11, 0.55);
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.16);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(255, 255, 255, 0.04) 100%);
+}
+
 .wisdom-card.locked {
   background: rgba(0, 0, 0, 0.2);
   border: 1px dashed rgba(255, 255, 255, 0.15);
@@ -2368,6 +2374,26 @@ body.fullscreen-review-mode .sidebar-resizer {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
+}
+
+.wisdom-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.wisdom-badge-newest {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #f59e0b, #ec4899);
+  padding: 2px 8px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(236, 72, 153, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .wisdom-badge-tier {

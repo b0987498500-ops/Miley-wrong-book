@@ -241,6 +241,9 @@ window.WisdomModule = {
       }
     }
 
+    // Sort from newest to oldest: highest requiredCount at the top, earlier ones below!
+    unlocked.sort((a, b) => b.requiredCount - a.requiredCount);
+
     return unlocked;
   },
 
@@ -515,7 +518,7 @@ window.WisdomModule = {
 
     let html = '';
 
-    // Render ONLY unlocked cards!
+    // Render ONLY unlocked cards (newest to oldest)!
     unlockedItems.forEach(item => {
       const isFav = validFavs.includes(item.id);
 
@@ -524,10 +527,18 @@ window.WisdomModule = {
       const favIcon = isFav ? '<i class="fa-solid fa-heart" style="color: #ef4444;"></i>' : '<i class="fa-regular fa-heart"></i>';
       const favClass = isFav ? 'active' : '';
 
+      // Check if this item is the absolute newest unlocked quote
+      const isNewest = unlockedItems.length > 0 && item.id === unlockedItems[0].id;
+      const newestBadge = isNewest ? '<span class="wisdom-badge-newest"><i class="fa-solid fa-wand-magic-sparkles"></i> 最新獲得</span>' : '';
+      const cardClass = isNewest ? 'wisdom-card unlocked latest-unlocked glass-panel' : 'wisdom-card unlocked glass-panel';
+
       html += `
-        <div class="wisdom-card unlocked glass-panel">
+        <div class="${cardClass}">
           <div class="wisdom-card-header">
-            <span class="wisdom-badge-tier"><i class="fa-solid fa-trophy"></i> 討伐 ${item.requiredCount} 題解鎖</span>
+            <div class="wisdom-badge-group">
+              <span class="wisdom-badge-tier"><i class="fa-solid fa-trophy"></i> 討伐 ${item.requiredCount} 題解鎖</span>
+              ${newestBadge}
+            </div>
             <span class="wisdom-category">${item.category}</span>
             <button class="wisdom-fav-btn ${favClass}" data-id="${item.id}" title="${isFav ? '取消收藏' : '收藏此金句'}">
               ${favIcon}
