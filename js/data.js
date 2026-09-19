@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v114';
+const STORAGE_KEY = 'miley_wrong_questions_v115';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1974,6 +1974,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-19"
+  },
+  {
+    "id": "q_eng_verb_matter_taipei_trip_061",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "英文動詞字義辨析：經典口語句型 It doesn't matter（沒關係／不要緊）與情境判讀〔會考高頻單字〕",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【動詞 matter 的核心句型與「一字多義」辨析】：\n1.【matter 作不及物動詞（要緊、重要、有關係）】：\n   - 核心經典口語：`It doesn't matter.`（沒關係／無所謂／不要緊）。\n   - 題幹提到原本期待對方明天同行，但現在對方不能去，「沒關係了，我自己去就好（now it doesn't matter. I'll go by myself）」，語意極為自然流暢。\n   - 疑問句常用：`Does it matter?`（這重要嗎？／要緊嗎？）\n2.【matter 作名詞（事情、問題、物質）】：\n   - 常見片語：`What's the matter?`（怎麼了？／出了什麼事？）；`as a matter of fact`（事實上）。\n3.【其他選項深入診斷】：\n   - (B) define（定義、界定）：及物動詞，在此句缺少受詞且語意荒謬。\n   - (C) pass（通過、經過）：放在句中 it doesn't pass 意為「它沒有通過」，與「我自己去」毫無邏輯關聯。\n   - (D) win（贏得、獲勝）：指比賽獲勝，用在此處語意不通。",
+    "stem": "I expected that you can go to Taipei with me tomorrow, but now it doesn't ______. I'll go by myself.\n\n○ (A) matter\n○ (B) define\n○ (C) pass\n○ (D) win",
+    "answer": "(A) matter",
+    "diagramUrl": "",
+    "solution": "○ 詳細文法與字義深度剖析：\n\n1. **上下文語意與情境邏輯分析**：\n   - 前句：`I expected that you can go to Taipei with me tomorrow`（我原本預期你明天能和我一起去臺北）。\n   - 轉折句：`but now it doesn't ______`（但現在已經不……了）。\n   - 後句：`I'll go by myself.`（我自己一個人去就可以了）。\n   - 由轉折詞 `but` 與後句「決定自己去」可推知：說話者釋懷或接受現狀，表示對方能不能同行已經「**無所謂／不要緊／不重要了**」，因此使用英文最常用的動詞 **matter**。\n\n2. **動詞 matter 的核心用法解析**：\n   - **matter [ˈmætər]** 作為不及物動詞時，意思是「**要緊、有重大關係、重要**」：\n     - 句型：`It doesn't matter.` 是日常生活中與會考口語極高頻的表達，意為「沒關係、不打緊、無關緊要」。\n     - 否定助動詞 `doesn't` 後面接**原形動詞** `matter`。\n\n3. **其餘選項詞義診斷與排除**：\n   - **(B) define [dɪˈfaɪn] (v.) 下定義、界定**：及物動詞，通常接詞彙或範圍（如 define the terms），在此句缺少受詞且語意不合。\n   - **(C) pass [pæs] (v.) 通過、及格、傳球**：與轉折後表達心態的語境不符。\n   - **(D) win [wɪn] (v.) 贏、獲勝**：指在競爭、球賽或獎項中獲勝，無法與 it doesn't win 搭配來表示「沒關係」。\n\n4. **會考關鍵句型延伸充電站**：\n   - `It doesn't matter to me.`（這對我來說無所謂／無關緊要。）\n   - `No matter what happens...`（無論發生什麼事……）\n   - `by myself`（靠我自己、獨自一人 = on my own / alone）。\n\n故正確答案為 **(A) matter**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19"
   }
 ];
 
@@ -2006,7 +2030,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v113') ||
+      stored = localStorage.getItem('miley_wrong_questions_v114') ||
+               localStorage.getItem('miley_wrong_questions_v113') ||
                localStorage.getItem('miley_wrong_questions_v112') ||
                localStorage.getItem('miley_wrong_questions_v111') ||
                localStorage.getItem('miley_wrong_questions_v110') ||
