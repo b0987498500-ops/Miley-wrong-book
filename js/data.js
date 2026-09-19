@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v121';
+const STORAGE_KEY = 'miley_wrong_questions_v122';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2214,6 +2214,30 @@ const INITIAL_SEED_DATA = [
   "consecutiveMastered": 0,
   "isArchived": false,
   "nextReviewDate": "2026-09-19"
+},
+{
+  "id": "q_soc_his_hammurabi_code_babylon_071",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "兩河流域古巴比倫文明：《漢摩拉比法典》之階級劃分、以牙還牙報復原則與楔形文字辨析",
+  "uploadDate": "2026-09-19",
+  "mondayDate": "2026-09-14",
+  "mondayDates": [
+    "2026-09-14"
+  ],
+  "weekLabel": "2026-09-14 (本週最新題)",
+  "isGuessedOrUnstable": true,
+  "mistakeNote": "【《漢摩拉比法典》必考三大核心特徵與常考陷阱】：\n1.【統治者與文明歸屬（陷阱重災區）】：\n   - 為「古巴比倫王國」國王「漢摩拉比（Hammurabi）」所頒布，屬於「兩河流域（美索不達米亞）」文明！\n   - ❌ 常見陷阱：誤植為「波斯國王」或「亞述國王」！波斯是後來的統一帝國，與巴比倫相隔千年以上。\n2.【文字與載體】：\n   - 全文使用「楔形文字」鐫刻於「玄武岩石碑」上（即著名的漢摩拉比法典石碑），非古埃及的象形文字！\n3.【法典兩大精神】：\n   - ①【階級概念鮮明（身分不平等）】：貴族、平民（自由民）、奴隸階級分明。同罪不同罰（如傷害貴族處以嚴刑重罰，打奴隸或平民則處罰輕微；奴隸打自由民割耳）。\n   - ②【以牙還牙、以眼還眼（同態復仇原則）】：在同階級之間強調同態報復（傷人眼者還傷其眼，折人手足者還折其手足）。",
+  "stem": "下列為老師介紹的法典部分內容，由此法典的內容判斷，何者敘述正確？\n(甲) 由條文可見當時有階級概念\n(乙) 強調「以牙還牙」的報復原則\n(丙) 為波斯國王漢摩拉比下令編訂\n(丁) 法典的原文應是由象形文字寫成\n\n【法典內容節錄】：\n・196 條：如果一個人傷了貴族的眼睛，還傷其眼。\n・197 條：如果一個人折了貴族的手足，還折其手足。\n・203 條：如果貴族階層的人打了貴族出身的人，須罰銀一明納。\n・205 條：如果任何人的奴隸打了自由民出身的人，處割耳之刑。\n\n○ (A) 甲乙\n○ (B) 乙丙\n○ (C) 甲丙\n○ (D) 丙丁",
+  "answer": "(A) 甲乙",
+  "diagramUrl": "",
+  "solution": "○ 詳細題意解析與法典條文深度剖析：\n\n1. **判斷法典名稱與出處**：\n   - 由引文「傷了貴族的眼睛，還傷其眼」、「折了貴族的手足，還折其手足」、「奴隸打了自由民...處割耳之刑」等條文，可確定此法典為世界現存最早完備的成文法典之一——**《漢摩拉比法典》（Code of Hammurabi）**。\n\n2. **逐項檢驗題目敘述**：\n   - **(甲) 由條文可見當時有階級概念**：**正確**。\n     - 條文中明確區分「貴族」、「自由民（平民）」與「奴隸」三種不同的社會階級。\n     - 刑罰標準因被害者與加害者的階級地位而有極大差異（例如傷害貴族須以同等肉體傷害報復；奴隸犯上則處以嚴酷割耳之刑；貴族內部互傷則罰銀）。這充分體現了當時社會「法律保障特定統治階層」且「身分等級森嚴」的階級社會特質。\n   - **(乙) 強調「以牙還牙」的報復原則**：**正確**。\n     - 第 196 條「傷人眼，還傷其眼」、第 197 條「折人手足，還折其手足」，即為法學上著名的**同態復仇原則（以牙還牙、以眼還眼，Lex Talionis）**。\n   - **(丙) 為波斯國王漢摩拉比下令編訂**：**錯誤**。\n     - 漢摩拉比是**古巴比倫王國（位於美索不達米亞／兩河流域）**的國王，於約西元前 18 世紀統一兩河流域後下令編訂法典，**並非「波斯」國王**（波斯帝國興起於西元前 6 世紀，兩者相隔逾千年）。\n   - **(丁) 法典的原文應是由象形文字寫成**：**錯誤**。\n     - 兩河流域文明使用的書寫文字為蘇美人所創發的**「楔形文字（釘頭字）」**。《漢摩拉比法典》原文是用阿卡德語楔形文字刻在黑色玄武岩圓柱石碑上，**並非埃及的「象形文字」**。\n\n3. **結論**：\n   - 敘述正確者為 **(甲)** 與 **(乙)**。\n\n故正確答案為 **(A) 甲乙**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-09-19"
 }
 ];
 
@@ -2246,7 +2270,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v120') ||
+      stored = localStorage.getItem('miley_wrong_questions_v121') ||
+               localStorage.getItem('miley_wrong_questions_v120') ||
                localStorage.getItem('miley_wrong_questions_v119') ||
                localStorage.getItem('miley_wrong_questions_v118') ||
                localStorage.getItem('miley_wrong_questions_v117') ||
