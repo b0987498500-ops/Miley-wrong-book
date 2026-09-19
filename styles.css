@@ -2611,14 +2611,13 @@ body.fullscreen-review-mode .sidebar-resizer {
 
 .card-top-bar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   margin: 0 24px 4px 24px;
 }
 
 .card-meta-tags {
-  display: flex;
-  gap: 8px;
+  display: none !important; /* Removed/hidden per Miley's request (this line of text is not helpful during review) */
 }
 
 .mastery-status {
