@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v119';
+const STORAGE_KEY = 'miley_wrong_questions_v120';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2142,6 +2142,54 @@ const INITIAL_SEED_DATA = [
   "consecutiveMastered": 0,
   "isArchived": false,
   "nextReviewDate": "2026-09-19"
+},
+{
+  "id": "q_sci_phy_car_brake_vt_graph_acceleration_068",
+  "examPeriod": "一段",
+  "subject": "自然/理化",
+  "errorReason": "審題不清",
+  "concept": "直線運動學：v-t 圖判讀、減速煞車加速度大小與向量方向（向北為正，負號即向南）",
+  "uploadDate": "2026-09-19",
+  "mondayDate": "2026-09-14",
+  "mondayDates": [
+    "2026-09-14"
+  ],
+  "weekLabel": "2026-09-14 (本週最新題)",
+  "isGuessedOrUnstable": true,
+  "mistakeNote": "【v-t 圖斜率與正負方向判讀陷阱】：\n1.【鎖定題目要求的時段】：「減速煞車時」是指圖中 t = 10 ～ 20 秒的這一段（速度由 20 m/s 降為 0 m/s）！\n2.【求加速度】：a = Δv / Δt = (0 - 20) / (20 - 10) = -20 / 10 = -2 m/s²。\n3.【方向轉換】：\n   - 題目規定「汽車向北行駛」（向北為正 +）。\n   - 算出的加速度為負值（-2 m/s²），負號就代表「向南」！\n   - 加速度量值為 2 m/s²，方向為「向南」。千萬別漏看方向！",
+  "stem": "一汽車在直線公路上向北行駛，其速度（v）與時間（t）的關係圖，如圖所示，試問此汽車在減速煞車時加速度的量值及方向為何？\n\n○ (A) 2m / s²，向北\n○ (B) 2m / s²，向南\n○ (C) 1m / s²，向北\n○ (D) 1m / s²，向南",
+  "answer": "(B) 2m / s²，向南",
+  "diagramUrl": "assets/questions/q_sci_phy_car_brake_vt_graph_acceleration_068.png",
+  "solution": "○ 詳細物理步驟與 v-t 圖深度解析：\n\n1. **觀察 v-t 圖之運動各階段分析**：\n   - 0 ～ 10 秒：水平直線，速度維持 +20 m/s（向北等速度運動）。\n   - **10 ～ 20 秒**：斜向右下直線，速度由 +20 m/s 降至 0 m/s（**此階段即為題目所指的「減速煞車時」**）。\n   - 20 ～ 25 秒：速度為 0 m/s（靜止狀態）。\n   - 25 ～ 35 秒：斜向右上直線，速度由 0 m/s 增加至 +25 m/s（向北加速運動）。\n   - 35 ～ 50 秒：速度維持 +25 m/s（向北等速度運動）。\n\n2. **計算減速煞車時的加速度**：\n   - 初速度 v₁ = +20 m/s（向北）\n   - 末速度 v₂ = 0 m/s\n   - 經歷時間 Δt = 20 - 10 = 10 秒\n   - 根據加速度公式：\n     a = Δv / Δt = (v₂ - v₁) / Δt = (0 - 20) / 10 = -20 / 10 = -2 m/s²\n\n3. **判斷量值與方向**：\n   - **量值（大小）**：取絕對值 |a| = 2 m/s²。\n   - **方向**：題目設定向北為正（+），故計算出的負號（-）代表方向**向南**。\n   - 因此此車減速煞車時的加速度為 **2 m/s²，向南**。\n\n故正確答案為 **(B)**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-09-19"
+},
+{
+  "id": "q_sci_phy_four_motion_graphs_speed_comparison_069",
+  "examPeriod": "一段",
+  "subject": "自然/理化",
+  "errorReason": "觀念不懂",
+  "concept": "運動圖表判讀與轉換：x-t 圖、v-t 圖、a-t 圖在特定時刻之瞬間速度比較",
+  "uploadDate": "2026-09-19",
+  "mondayDate": "2026-09-14",
+  "mondayDates": [
+    "2026-09-14"
+  ],
+  "weekLabel": "2026-09-14 (本週最新題)",
+  "isGuessedOrUnstable": true,
+  "mistakeNote": "【四種運動圖形瞬時速度判讀必勝心法】：\n1.【看清縱軸座標代表什麼物理量】：\n   - 甲（x-t 圖）：在第 3 秒末時位於水平線上（x 停在 20 m 不動），故瞬間速度 v_甲 = 0 m/s！\n   - 乙（x-t 圖）：整段為斜直線（等速度運動），速度為斜率 v_乙 = 20 / 5 = 4 m/s！第 3 秒末速度仍為 4 m/s。\n   - 丙（v-t 圖）：等加速度直線，加速度 a = 5 / 5 = 1 m/s²，第 3 秒末的瞬時速度直接看高度：v_丙(3) = 1 × 3 = 3 m/s。\n   - 丁（a-t 圖）：水平線代表等加速度 a = 1 m/s²，由靜止啟動（v₀ = 0），第 3 秒末速度為面積：v_丁(3) = 0 + 1 × 3 = 3 m/s。\n2.【比較大小】：\n   - 乙 (4) > 丙 (3) = 丁 (3) > 甲 (0)，故最大者為【乙】！",
+  "stem": "已知甲、乙、丙、丁四個運動體均由靜止啟動，後續運動情形分別記錄如下各圖示，試問四者啟動後第 3 秒末瞬間的速度，以何者最大？\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁",
+  "answer": "(B) 乙",
+  "diagramUrl": "assets/questions/q_sci_phy_four_motion_graphs_speed_comparison_069.png",
+  "solution": "○ 詳細圖表判讀與逐一運算深度解析：\n\n題目詢問啟動後**第 3 秒末瞬間的速度**（瞬時速度），我們分別針對甲、乙、丙、丁四張圖深入分析：\n\n1. **【甲圖：x-t 位置與時間關係圖】**：\n   - 0 ～ 2 秒：等速度運動，由 0 m 移動至 20 m。\n   - **2 ～ 5 秒**：呈現**水平直線**，代表物體的位置始終停留在 x = 20 m，處於**靜止狀態**。\n   - 因此第 3 秒末瞬間的速度：\n     v_甲 = 0 m/s\n\n2. **【乙圖：x-t 位置與時間關係圖】**：\n   - 圖形為一條過原點的**傾斜直線**，代表物體正在進行**等速度直線運動**。\n   - x-t 圖的斜率即為速度：\n     v_乙 = Δx / Δt = (20 - 0) / (5 - 0) = 4 m/s\n   - 因為是等速度運動，全程速度皆相同，故第 3 秒末瞬間的速度：\n     v_乙 = 4 m/s\n\n3. **【丙圖：v-t 速度與時間關係圖】**：\n   - 圖形為過原點的傾斜直線，代表物體由靜止出發做**等加速度運動**。\n   - 加速度（斜率）：a_丙 = (5 - 0) / (5 - 0) = 1 m/s²。\n   - 在第 3 秒末時的瞬時速度：\n     v_丙 = a_丙 × t = 1 m/s² × 3 s = 3 m/s\n\n4. **【丁圖：a-t 加速度與時間關係圖】**：\n   - 圖形為一條水平直線，表示物體的加速度恆為 a = 1 m/s²（等加速度運動）。\n   - 題目說明由「靜止啟動」（初速度 v₀ = 0）。\n   - 在第 3 秒末時的速度（或由 a-t 圖 0 ～ 3 秒的面積求速度變化量）：\n     v_丁 = v₀ + a × t = 0 + 1 m/s² × 3 s = 3 m/s\n\n5. **【綜合比較第 3 秒末瞬間速度大小】**：\n   - v_甲 = 0 m/s\n   - v_乙 = 4 m/s\n   - v_丙 = 3 m/s\n   - v_丁 = 3 m/s\n   - 比較大小順序：v_乙 (4) > v_丙 (3) = v_丁 (3) > v_甲 (0)。\n   - 故速度最大者為 **乙**。\n\n故正確答案為 **(B)**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-09-19"
 }
 ];
 
@@ -2174,7 +2222,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v118') ||
+      stored = localStorage.getItem('miley_wrong_questions_v119') ||
+               localStorage.getItem('miley_wrong_questions_v118') ||
                localStorage.getItem('miley_wrong_questions_v117') ||
                localStorage.getItem('miley_wrong_questions_v116') ||
                localStorage.getItem('miley_wrong_questions_v115') ||
