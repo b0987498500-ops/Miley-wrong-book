@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v125';
+const STORAGE_KEY = 'miley_wrong_questions_v126';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2286,6 +2286,30 @@ const INITIAL_SEED_DATA = [
   "consecutiveMastered": 0,
   "isArchived": false,
   "nextReviewDate": "2026-09-19"
+},
+{
+  "id": "q_sci_phy_free_fall_tower_time_speed_074",
+  "examPeriod": "一段",
+  "subject": "自然/理化",
+  "errorReason": "觀念不懂",
+  "concept": "自由落體運動：已知下落高度反求著地時間（h = 1/2 gt²）與著地瞬間末速度（v = gt）",
+  "uploadDate": "2026-09-19",
+  "mondayDate": "2026-09-14",
+  "mondayDates": [
+    "2026-09-14"
+  ],
+  "weekLabel": "2026-09-14 (本週最新題)",
+  "isGuessedOrUnstable": true,
+  "mistakeNote": "【自由落體「已知高度反求時間與末速」速算必勝技巧】：\n1.【小數除法巧算神招】：\n   - 代入公式 $h = \\frac{1}{2}gt^2 = 4.9t^2$\n   - $t^2 = \\frac{78.4}{4.9}$，分子分母同乘 10 變整數：$\\frac{784}{49}$！\n   - 觀察 $49 = 7^2$，$784 = 28^2$，故 $t^2 = \\left(\\frac{28}{7}\\right)^2 = 4^2 = 16 \\implies t = 4$ 秒（完全不用拿筆除得滿頭大汗）！\n2.【第二小題末速度秒殺】：\n   - 著地末速 $v = gt = 9.8 \\times 4 = 39.2\\text{ m/s}$（方向向下）。\n3.【常見致命陷阱】：\n   - ❌ 誤將 $g = 9.8$ 記成 $4.9$ 當作重力加速度（$4.9$ 是 $\\frac{1}{2}g$，算末速時請乘上真正的 $g = 9.8$）。\n   - ❌ (2) 題未標單位，速度單位是 $\\text{m/s}$（公尺/秒），切勿寫成 $\\text{m/s}^2$（加速度單位）！",
+  "stem": "若一物體自 78.4 公尺的高塔自由掉落，則：（g = 9.8 m / s²）\n(1) 經幾秒後會著地？\n(2) 著地時的速度為何？",
+  "answer": "(1) 4 秒（或 4s）；(2) 39.2 公尺/秒（或 39.2 m/s）",
+  "diagramUrl": "",
+  "solution": "○ 詳細解題觀念與步驟解析：\n\n1. **題目物理條件分析**：\n   - 「自由掉落」：初速度 $v_0 = 0\\text{ m/s}$，只受重力作用進行等加速度直線運動。\n   - 重力加速度：$g = 9.8\\text{ m/s}^2$。\n   - 下落高度（位移）：$h = 78.4\\text{ 公尺}$。\n\n2. **第 (1) 小題：求經幾秒後會著地（著地時間 $t$）**：\n   - **方法一：v-t 圖面積推導法（核心觀念）**：\n     - 自由落體由靜止開始下落，經過 $t$ 秒時的瞬間末速度為 $v = gt = 9.8t\\text{ (m/s)}$。\n     - 繪出物體的 v-t 關係圖為過原點的直角三角形，線下斜線面積代表下落高度：\n       $$\\text{塔高 } h = \\frac{\\text{底 } \\times \\text{高}}{2} = \\frac{t \\times (9.8t)}{2} = 4.9t^2$$\n     - 代入塔高 $h = 78.4\\text{ 公尺}$：\n       $$4.9t^2 = 78.4 \\implies t^2 = \\frac{78.4}{4.9} = \\frac{784}{49} = 16$$\n     - 開根號得：\n       $$t = 4\\text{ 秒 (s)}$$（時間取正值）。\n\n3. **第 (2) 小題：求著地時的速度（瞬間末速度 $v$）**：\n   - 蘋果經過 $4$ 秒著地，根據等加速度運動速度公式：\n     $$v = v_0 + gt = 0 + 9.8 \\times 4 = \\mathbf{39.2}\\text{ 公尺/秒 (m/s)}$$\n   - （亦可用末速與位移公式驗算：$v^2 = 2gh = 2 \\times 9.8 \\times 78.4 = 1536.64 \\implies v = 39.2\\text{ m/s}$）。\n\n標準答案為：\n**(1) 4 秒（4s）**；\n**(2) 39.2 公尺/秒（39.2 m/s）**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-09-19"
 }
 ];
 
@@ -2318,7 +2342,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v124') ||
+      stored = localStorage.getItem('miley_wrong_questions_v125') ||
+               localStorage.getItem('miley_wrong_questions_v124') ||
                localStorage.getItem('miley_wrong_questions_v123') ||
                localStorage.getItem('miley_wrong_questions_v122') ||
                localStorage.getItem('miley_wrong_questions_v121') ||
