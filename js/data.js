@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v111';
+const STORAGE_KEY = 'miley_wrong_questions_v112';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1902,6 +1902,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-18"
+  },
+  {
+    "id": "q_eng_voc_experience_engineer_shop_058",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "英文名詞字義辨析：工作資歷與實務經驗 (experience) 之情境應用〔會考精選字彙〕",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【國中英文核心名詞辨析（experience / knowledge / chance / hobby）】：\n1.【experience（經驗、歷練）】：\n   - 指「親身實踐、累積的工作或生活經歷」。\n   - 題幹提到 Edward「當了 10 年電腦工程師（worked as a computer engineer for ten years）」，這是一段具體的工作資歷，創業開店時這份「實務經驗（experience）」給予他極大幫助。\n2.【knowledge（知識、學識）】：\n   - 指書本所學或理論層面的認知。強調過去職涯累積的整體資歷與實作歷練時，英文最精確自然的是 experience！\n3.【chance（機會、機遇）】：\n   - 指碰巧遇到的機會或可能性（= opportunity）。十年工程師是已經發生且具體累積的歷程，不是「機會」。\n4.【hobby（嗜好、休閒愛好）】：\n   - 指正職以外的休閒娛樂活動（如聽音樂、打球），工程師為專業正職工作（profession），非 hobby。",
+    "stem": "Edward had worked as a computer engineer for ten years. This ______ helped him a lot when he started his own computer shop.\n\n○ (A) chance\n○ (B) experience\n○ (C) hobby\n○ (D) knowledge",
+    "answer": "(B) experience",
+    "diagramUrl": "",
+    "solution": "○ 詳細文法與字義深度剖析：\n\n1. **文意脈絡與語法結構分析**：\n   - 第一句：`Edward had worked as a computer engineer for ten years.`\n     - 使用**過去完成式（had worked）**，表示在自行創業開店（started his own shop）這件過去的事情**之前**，他已經持續累積了長達十年的工程師工作生涯。\n   - 第二句：`This ______ helped him a lot when he started his own computer shop.`\n     - 代名詞 `This ______` 指涉前文「當了十年電腦工程師」的這段資歷歷程。\n     - 在自己開設電腦店（computer shop）時，過去長年累積的**「工作經驗與實務歷練（experience）」**對他助益良多。\n\n2. **四個選項核心字義深度診斷與排除**：\n   - **(A) chance [tʃæns] (n.) 機會、運氣**：指做某事的良機（如 have a chance to do sth）。長達十年的工程師工作是已累積的事實歷程，非「機會」。\n   - **(B) experience [ɪkˈspɪriəns] (n.) 經驗、歷練（正解）**：指在職場或生活中親身累積的實作經驗（work experience）。放入句中最符合語境與邏輯！\n   - **(C) hobby [ˈhɑːbi] (n.) 嗜好、業餘愛好**：指休閒娛樂消遣，全職工程師工作是職業（job / career），不可稱作 hobby。\n   - **(D) knowledge [ˈnɑːlɪdʒ] (n.) 知識、學理**：指理論或書本學識。在此句強調十年職場累積的「實戰歷練」語境下，experience 比 knowledge 更為道地且精確。\n\n3. **會考關鍵字詞延伸筆記**：\n   - `work as + 職業`：擔任……工作（例如：She works as a doctor.）。\n   - `start one's own business / shop`：自行創業、開設自己的店面。\n   - `experience` 的用法：\n     - 當「經驗、歷練」時，為**不可數名詞**（He has plenty of experience.）。\n     - 當「特定的一次生活遭遇、經歷」時，為**可數名詞**（Traveling alone was an amazing experience.）。\n\n故正確答案為 **(B) experience**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19"
   }
 ];
 
@@ -1934,7 +1958,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v110') ||
+      stored = localStorage.getItem('miley_wrong_questions_v111') ||
+               localStorage.getItem('miley_wrong_questions_v110') ||
                localStorage.getItem('miley_wrong_questions_v109') ||
                localStorage.getItem('miley_wrong_questions_v108') ||
                localStorage.getItem('miley_wrong_questions_v107') ||
