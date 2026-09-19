@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v122';
+const STORAGE_KEY = 'miley_wrong_questions_v123';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2238,6 +2238,30 @@ const INITIAL_SEED_DATA = [
   "consecutiveMastered": 0,
   "isArchived": false,
   "nextReviewDate": "2026-09-19"
+},
+{
+  "id": "q_math_parallel_segments_ratio_trapezoid_072",
+  "examPeriod": "一段",
+  "subject": "數學",
+  "errorReason": "觀念不懂",
+  "concept": "平行線截比例線段與相似三角形：交叉平行線模型（EF//AB//CD）線段比例推導與經典公式",
+  "uploadDate": "2026-09-19",
+  "mondayDate": "2026-09-14",
+  "mondayDates": [
+    "2026-09-14"
+  ],
+  "weekLabel": "2026-09-14 (本週最新題)",
+  "isGuessedOrUnstable": true,
+  "mistakeNote": "【「交叉平行線 / 雙三角模型」秒殺口訣與陷阱】：\n1.【破題關鍵三部曲】：\n   - ① 看 $\\triangle BCD$（利用 $\\overline{EF} // \\overline{CD}$）：\n     $$\\overline{BF} : \\overline{BC} = \\overline{EF} : \\overline{CD} = 2 : 5 \\implies \\overline{BF} : \\overline{CF} = 2 : 3$$\n   - ② 轉看 $\\triangle CAB$（利用 $\\overline{EF} // \\overline{AB}$）：\n     $$\\overline{EF} : \\overline{AB} = \\overline{CF} : \\overline{CB} = 3 : (2+3) = 3 : 5$$\n   - ③ 兩側比例轉換：\n     $\\overline{BE} : \\overline{ED} = \\overline{BF} : \\overline{FC} = 2 : 3$（頂點 $B$ 端佔 2 份、底端 $C$ 佔 3 份，千萬別顛倒寫成 $3:2$）！\n2.【經典倒數和公式（秒殺驗算神技）】：\n   $$\\frac{1}{\\overline{EF}} = \\frac{1}{\\overline{AB}} + \\frac{1}{\\overline{CD}}$$\n   中間平行線長度的倒數，等於兩側平行線長度的倒數和！",
+  "stem": "如圖，$\\overline{AB} // \\overline{EF} // \\overline{CD}$，若 $\\overline{EF} : \\overline{CD} = 2 : 5$，則下列何者正確？\n\n（點擊附圖可放大檢視幾何圖形）\n\n○ (A) $\\overline{EF} : \\overline{AB} = 3 : 5$\n○ (B) $\\overline{BE} : \\overline{BD} = 3 : 5$\n○ (C) $\\overline{BE} : \\overline{DE} = 3 : 2$\n○ (D) $\\overline{AB} : \\overline{CD} = 1 : 1$",
+  "answer": "(A) $\\overline{EF} : \\overline{AB} = 3 : 5$",
+  "diagramUrl": "assets/questions/q_math_parallel_segments_ratio_trapezoid_072.png",
+  "solution": "○ 詳細解題幾何推導與比例分析：\n\n1. **利用 $\\triangle BCD$ 中的平行線求底邊分割比**：\n   - 題目給定 $\\overline{EF} // \\overline{CD}$，在 $\\triangle BCD$ 中：\n     $$\\triangle BEF \\sim \\triangle BDC$$\n   - 由對應邊成比例：\n     $$\\frac{\\overline{BF}}{\\overline{BC}} = \\frac{\\overline{BE}}{\\overline{BD}} = \\frac{\\overline{EF}}{\\overline{CD}} = \\frac{2}{5}$$\n   - 即 $\\overline{BF}$ 佔 2 份，全段 $\\overline{BC}$ 佔 5 份：\n     $$\\overline{CF} = \\overline{BC} - \\overline{BF} = 5 - 2 = 3 \\text{ 份}$$\n     $$\\implies \\overline{BF} : \\overline{CF} = 2 : 3$$\n     $$\\implies \\overline{CF} : \\overline{BC} = 3 : 5$$\n\n2. **利用 $\\triangle CAB$ 求 $\\overline{EF} : \\overline{AB}$ 的比值**：\n   - 因為 $\\overline{EF} // \\overline{AB}$，在 $\\triangle CAB$ 中：\n     $$\\triangle CEF \\sim \\triangle CAB$$\n   - 由對應邊成比例：\n     $$\\frac{\\overline{EF}}{\\overline{AB}} = \\frac{\\overline{CF}}{\\overline{CB}} = \\frac{\\overline{CE}}{\\overline{CA}}$$\n   - 代入剛剛求得的 $\\overline{CF} : \\overline{CB} = 3 : 5$：\n     $$\\overline{EF} : \\overline{AB} = 3 : 5$$\n   - **選項 (A) 完全正確！**\n\n3. **逐一檢驗其他選項之錯誤**：\n   - **(B) $\\overline{BE} : \\overline{BD}$**：\n     由第 1 步推導可知 $\\overline{BE} : \\overline{BD} = \\overline{EF} : \\overline{CD} = \\mathbf{2 : 5}$（非 $3 : 5$），故 (B) 錯誤。\n   - **(C) $\\overline{BE} : \\overline{DE}$**：\n     因為 $\\overline{BE}$ 佔 2 份、全段 $\\overline{BD}$ 佔 5 份，故 $\\overline{DE} = 5 - 2 = 3$ 份：\n     $$\\overline{BE} : \\overline{DE} = \\mathbf{2 : 3} \\text{ （非 } 3 : 2 \\text{）}$$，故 (C) 錯誤。\n   - **(D) $\\overline{AB} : \\overline{CD}$**：\n     - 設 $\\overline{EF} = 6k$（取 2 與 3 的公倍數方可整除）：\n       - 由 $\\overline{EF} : \\overline{CD} = 2 : 5 \\implies \\overline{CD} = 6k \\times \\frac{5}{2} = 15k$\n       - 由 $\\overline{EF} : \\overline{AB} = 3 : 5 \\implies \\overline{AB} = 6k \\times \\frac{5}{3} = 10k$\n     - 故：\n       $$\\overline{AB} : \\overline{CD} = 10k : 15k = \\mathbf{2 : 3} \\neq 1 : 1$$，故 (D) 錯誤。\n\n4. **經典公式快速驗證（延伸學習）**：\n   在交叉平行線模型中，恆有倒數和公式：\n   $$\\frac{1}{\\overline{EF}} = \\frac{1}{\\overline{AB}} + \\frac{1}{\\overline{CD}}$$\n   代入 $\\overline{EF} = 6$、$\\overline{AB} = 10$、$\\overline{CD} = 15$：\n   $$\\frac{1}{10} + \\frac{1}{15} = \\frac{3 + 2}{30} = \\frac{5}{30} = \\frac{1}{6}$$，完全吻合！\n\n故正確答案為 **(A)**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-09-19"
 }
 ];
 
@@ -2270,7 +2294,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v121') ||
+      stored = localStorage.getItem('miley_wrong_questions_v122') ||
+               localStorage.getItem('miley_wrong_questions_v121') ||
                localStorage.getItem('miley_wrong_questions_v120') ||
                localStorage.getItem('miley_wrong_questions_v119') ||
                localStorage.getItem('miley_wrong_questions_v118') ||
