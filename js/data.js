@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v117';
+const STORAGE_KEY = 'miley_wrong_questions_v118';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2046,6 +2046,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-19"
+  },
+  {
+    "id": "q_soc_geo_eastern_europe_eu_fdi_064",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐洲區域發展：東歐民主化轉型後吸引外資設廠之區位優勢（廉價充沛勞工、加入歐盟免關稅）〔會考核心經典考點〕",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【會考東歐經濟轉型與歐盟產業分工必考核心】：\n1.【東歐吸引西歐外資設廠雙核心】=「工資便宜（甲）」+「加入歐盟免關稅（丙）」：\n   - 西歐跨國企業（如德國汽車工業福斯、BMW 等）面臨國內工資高昂，轉將組裝代工與製造產線移往東歐（如波蘭、捷克、斯洛伐克、匈牙利）。\n   - 東歐工資僅約西歐的 1/3 ~ 1/2，且加入歐盟後享有「單一市場零關稅」待遇，製成品銷往西歐暢行無阻！\n2.【常見選項陷阱逐一排除】：\n   - 看到「農礦產豐富（乙）」不要選：外資大舉湧入主要是投資「汽車、電子、機械製造代工業」，並非為了採礦或農業。\n   - 看到「政治穩定（丁）」不要選：東歐在轉型期政經劇變（如前南斯拉夫解體內戰），且地緣上長年面臨俄羅斯政治威脅，並非以政治穩定見長。",
+    "stem": "自東歐廢除共產體制後，經濟改革開放，加入歐盟後，更吸引「外國企業」進行投資，2008年外資投資金額相當於東歐諸國GDP的36%。請問東歐諸國吸引外資進入最主要的因素有哪些？(甲)廉價勞工、(乙)農礦產豐富、(丙)減免關稅、(丁)政治穩定\n\n○ (A) (甲)(乙)\n○ (B) (丙)(丁)\n○ (C) (甲)(丙)\n○ (D) (乙)(丁)",
+    "answer": "(C) (甲)(丙)",
+    "diagramUrl": "",
+    "solution": "○ 詳細地理觀念與經濟轉型深度剖析：\n\n1. **東歐轉型歷史背景與跨國企業投資動機**：\n   - 1990 年代東歐劇變、蘇聯解體後，東歐各國（如波蘭、捷克、斯洛伐克、匈牙利、羅馬尼亞等）紛紛擺脫共產計畫經濟，推行自由市場經濟改革。\n   - 2004 年起東歐多國相繼加入**歐洲聯盟（EU）**，引發西歐跨國企業的大規模直接投資（FDI）浪潮。\n\n2. **吸引外資進駐的兩大核心關鍵區位優勢**：\n   - **(甲) 廉價且高素質的勞工**：\n     - 西歐（英、法、德等國）經濟高度發達、社會福利優渥，勞動工資與土地成本極高。\n     - 東歐勞工工資水準遠低於西歐（通常僅西歐的 1/3 至 1/2），且基礎教育紮實、工藝技術良好，具備極高性價比（CP值）。\n   - **(丙) 減免關稅（歐盟單一市場與經濟整合）**：\n     - 加入歐盟後，會員國之間消除貿易壁壘，實現商品、勞務、人員與資金的自由流通。\n     - 外資在東歐生產的商品出口至西歐及歐盟廣大市場，**享有完全免徵關稅**的極大優勢，大幅降低生產與物流成本。\n   - 結合以上兩點，西歐跨國企業（特別是**德國汽車工業**與電子組裝業）紛紛將生產組裝工廠遷往東歐，東歐因而成為歐洲新興的「製造代工基地」。\n\n3. **其他選項為何非主要吸引外資因素**：\n   - **(乙) 農礦產豐富**：外資投資主要集中於**精密機械、汽車組裝、電子零件等製造業**，並非初級原料加工業；且東歐各國礦產分布不均，非推動 2008 年外資佔比達 GDP 36% 的關鍵。\n   - **(丁) 政治穩定**：東歐民主轉型初期社會動盪、政黨輪替頻繁，部分巴爾幹半島國家甚至爆發內戰；加上與俄羅斯的地緣政治角力長期存在，因此「政治高度穩定」絕非其吸引外資的主因。\n\n故正確選項為 **(C) (甲)(丙)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19"
   }
 ];
 
@@ -2078,7 +2102,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v116') ||
+      stored = localStorage.getItem('miley_wrong_questions_v117') ||
+               localStorage.getItem('miley_wrong_questions_v116') ||
                localStorage.getItem('miley_wrong_questions_v115') ||
                localStorage.getItem('miley_wrong_questions_v114') ||
                localStorage.getItem('miley_wrong_questions_v113') ||
