@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v124';
+const STORAGE_KEY = 'miley_wrong_questions_v125';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2262,6 +2262,30 @@ const INITIAL_SEED_DATA = [
   "consecutiveMastered": 0,
   "isArchived": false,
   "nextReviewDate": "2026-09-19"
+},
+{
+  "id": "q_sci_phy_free_fall_pisa_height_073",
+  "examPeriod": "一段",
+  "subject": "自然/理化",
+  "errorReason": "觀念不懂",
+  "concept": "直線運動與自由落體：重力加速度（g = 9.8 m/s²）、v-t 圖面積求位移與下落高度計算",
+  "uploadDate": "2026-09-19",
+  "mondayDate": "2026-09-14",
+  "mondayDates": [
+    "2026-09-14"
+  ],
+  "weekLabel": "2026-09-14 (本週最新題)",
+  "isGuessedOrUnstable": true,
+  "mistakeNote": "【自由落體運動必背三大觀念與防錯口訣】：\n1.【核心物理條件】：\n   -「由靜止釋放」表示初速度 $v_0 = 0$ m/s！\n   - 只受重力作用，加速度為定值 $g = 9.8\\text{ m/s}^2$（等加速度運動）。\n2.【著地末速度】：\n   - 每秒速度增加 $9.8\\text{ m/s}$，經歷 $3$ 秒著地：\n     $$v = g \\times t = 9.8 \\times 3 = 29.4\\text{ m/s}$$\n3.【求下落高度（斜塔高度）兩種神技】：\n   - 方法一（v-t 圖面積法，最直觀）：\n     由靜止出發的 v-t 圖為過原點的三角形，面積代表位移（下落高度）：\n     $$\\text{高度 } h = \\frac{\\text{底 } t \\times \\text{高 } v}{2} = \\frac{3 \\times 29.4}{2} = 44.1\\text{ 公尺}$$\n   - 方法二（秒殺公式法）：\n     $$h = \\frac{1}{2}gt^2 = \\frac{1}{2} \\times 9.8 \\times 3^2 = 4.9 \\times 9 = 44.1\\text{ 公尺}$$\n4.【常見致命陷阱】：\n   - ❌ 粗心忘記「除以 2」算成 $29.4 \\times 3 = 88.2$（誤算成等速長方形面積）。\n   - ❌ 題目明訂 $g = 9.8$，切勿自行偷換成 $10$！",
+  "stem": "阿翰在比薩斜塔上某處，將蘋果由靜止往下釋放，並測量時間，結果發現蘋果在 3 秒後落地，請問阿翰所在處的高度為多少公尺？（g = 9.8 m / s²）",
+  "answer": "44.1 公尺（或 44.1 m）",
+  "diagramUrl": "",
+  "solution": "○ 詳細物理觀念與步驟解析：\n\n1. **基本物理條件分析**：\n   - 「由靜止往下釋放」：初速度 $v_0 = 0\\text{ m/s}$。\n   - 物體僅受地球重力作用，進行等加速度運動（自由落體）。\n   - 重力加速度：$g = 9.8\\text{ m/s}^2$。\n   - 下落總時間：$t = 3\\text{ 秒}$。\n\n2. **第一步：計算蘋果著地時的瞬間末速度**：\n   - 根據速度公式（每經過 1 秒速度增加 9.8 m/s）：\n     $$v = v_0 + gt = 0 + 9.8 \\times 3 = 29.4\\text{ m/s}$$\n   - 故經過 3 秒落地時，蘋果的瞬間速度為 $29.4\\text{ m/s}$。\n\n3. **第二步：利用 v-t 圖面積求下落高度（位移）**：\n   - 畫出蘋果運動的速度—時間關係圖（v-t 圖）：\n     - 橫軸（時間 $t$）：從 $0$ 到 $3$ 秒，底邊長度 $= 3$。\n     - 縱軸（速度 $v$）：從 $0$ 增加到 $29.4\\text{ m/s}$，三角形高 $= 29.4$。\n   - v-t 圖線下所圍成的三角形面積，即代表物體移動的距離（阿翰所在處的高度）：\n     $$\\text{高度 } h = \\frac{\\text{底 } \\times \\text{高}}{2} = \\frac{3 \\times 29.4}{2} = 1.5 \\times 29.4 = \\mathbf{44.1}\\text{ 公尺}$$\n\n4. **公式法直接驗算（等加速度運動位移公式）**：\n   - 代入自由落體位移公式：\n     $$h = v_0 t + \\frac{1}{2}gt^2$$\n   - 因為 $v_0 = 0$：\n     $$h = \\frac{1}{2} \\times 9.8 \\times 3^2 = 4.9 \\times 9 = \\mathbf{44.1}\\text{ 公尺}$$\n\n標準答案為 **44.1 公尺**（或 **44.1 m**）。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-09-19"
 }
 ];
 
@@ -2294,7 +2318,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v123') ||
+      stored = localStorage.getItem('miley_wrong_questions_v124') ||
+               localStorage.getItem('miley_wrong_questions_v123') ||
                localStorage.getItem('miley_wrong_questions_v122') ||
                localStorage.getItem('miley_wrong_questions_v121') ||
                localStorage.getItem('miley_wrong_questions_v120') ||
