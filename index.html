@@ -563,8 +563,76 @@
                   <div class="progress-track" id="review-progress-track">
                     <div id="review-progress-fill" class="progress-fill" style="width: 0%;"></div>
                     <div id="review-progress-ticks" class="progress-ticks"></div>
-                    <div id="review-progress-thumb" class="progress-thumb">
-                      <div class="thumb-core"></div>
+                    <div id="review-progress-thumb" class="progress-thumb progress-train-thumb" aria-label="學習前進號火車頭">
+                      <div class="train-steam-container">
+                        <span class="steam-puff p1"></span>
+                        <span class="steam-puff p2"></span>
+                        <span class="steam-puff p3"></span>
+                      </div>
+                      <div class="train-body-wrapper" title="學習前進列車 🚂">
+                        <svg class="train-locomotive-svg" viewBox="0 0 46 30" width="46" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <defs>
+                            <linearGradient id="trainBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#ec4899" />
+                              <stop offset="45%" stop-color="#d946ef" />
+                              <stop offset="100%" stop-color="#8b5cf6" />
+                            </linearGradient>
+                            <linearGradient id="trainCabGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#f43f5e" />
+                              <stop offset="100%" stop-color="#be185d" />
+                            </linearGradient>
+                            <linearGradient id="trainRoofGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop offset="0%" stop-color="#fbbf24" />
+                              <stop offset="100%" stop-color="#f59e0b" />
+                            </linearGradient>
+                            <filter id="headlightGlow" x="-50%" y="-50%" width="200%" height="200%">
+                              <feGaussianBlur stdDeviation="2.5" result="blur" />
+                              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                          </defs>
+
+                          <!-- Headlight Beam Cone (照射前方的光束) -->
+                          <polygon points="40,16 46,12 46,20" fill="rgba(253, 224, 71, 0.45)" class="train-headlight-cone" />
+
+                          <!-- Cowcatcher / Front Pilot (前排障器) -->
+                          <polygon points="37,24 43,24 39,18 37,18" fill="#475569" stroke="#1e293b" stroke-width="0.8" />
+
+                          <!-- Main Boiler Body (車身鍋爐) -->
+                          <rect x="15" y="11" width="22" height="11" rx="3.5" fill="url(#trainBodyGrad)" stroke="#ffffff" stroke-width="0.9" />
+
+                          <!-- Front Headlight (車前明亮大燈) -->
+                          <rect x="37" y="13.5" width="3.5" height="5" rx="1.2" fill="#fbbf24" stroke="#d97706" stroke-width="0.6" />
+                          <circle cx="39" cy="16" r="1.5" fill="#ffffff" filter="url(#headlightGlow)" />
+
+                          <!-- Driver's Cabin (駕駛艙) -->
+                          <rect x="4" y="7" width="13" height="15" rx="3" fill="url(#trainCabGrad)" stroke="#ffffff" stroke-width="0.9" />
+
+                          <!-- Cabin Roof (圓弧車頂) -->
+                          <path d="M2 7.5 C2 5.2, 4.5 4.8, 10.5 4.8 C16.5 4.8, 19 5.2, 19 7.5 Z" fill="url(#trainRoofGrad)" stroke="#b45309" stroke-width="0.7" />
+
+                          <!-- Cabin Window (藍色車窗與光澤) -->
+                          <rect x="7" y="9.5" width="7" height="6.5" rx="1.5" fill="#e0f2fe" stroke="#38bdf8" stroke-width="0.7" />
+                          <line x1="8" y1="14" x2="12.5" y2="9.5" stroke="#ffffff" stroke-width="0.9" stroke-linecap="round" opacity="0.85" />
+
+                          <!-- Smokestack Chimney (排煙煙囪) -->
+                          <path d="M26.5 11 L25 5.5 L31 5.5 L29.5 11 Z" fill="#334155" stroke="#ffffff" stroke-width="0.7" />
+                          <ellipse cx="28" cy="5.5" rx="3.2" ry="1.2" fill="#fbbf24" />
+
+                          <!-- Wheels (滾動車輪與精緻連桿) -->
+                          <!-- Rear Big Wheel (後方大動輪) -->
+                          <circle cx="10.5" cy="22" r="4.8" fill="#0f172a" stroke="#fbbf24" stroke-width="1.1" />
+                          <circle cx="10.5" cy="22" r="2.2" fill="#ec4899" />
+                          <!-- Front Wheel 1 (前方小輪) -->
+                          <circle cx="23" cy="23.2" r="3.6" fill="#0f172a" stroke="#fbbf24" stroke-width="0.9" />
+                          <circle cx="23" cy="23.2" r="1.5" fill="#ec4899" />
+                          <!-- Front Wheel 2 (最前小輪) -->
+                          <circle cx="32.5" cy="23.2" r="3.6" fill="#0f172a" stroke="#fbbf24" stroke-width="0.9" />
+                          <circle cx="32.5" cy="23.2" r="1.5" fill="#ec4899" />
+
+                          <!-- Connecting Side Rod (連動鋼桿) -->
+                          <line x1="10.5" y1="23.2" x2="32.5" y2="23.2" stroke="#cbd5e1" stroke-width="1.1" stroke-linecap="round" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                   <div id="review-scrub-tooltip" class="scrub-tooltip hidden">第 1 題</div>

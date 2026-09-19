@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v115';
+const STORAGE_KEY = 'miley_wrong_questions_v116';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1998,6 +1998,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-19"
+  },
+  {
+    "id": "q_eng_prep_in_the_front_of_classroom_062",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "空間介系詞片語辨析：in the front of（在內部的前端） vs. in front of（在外部的前方）〔會考核心易混淆點〕",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【會考必考「內部 vs 外部」空間介系詞大對決】：\n1.【in the front of（在「內部」的前方）】：\n   - 有定冠詞「the」！表示主體身處於該空間的「內部前面部分」。\n   - 老師坐在教室內部講台前 $\\to$ 人在教室室內，必須用 in the front of the classroom！\n   - 司機坐在公車前座 $\\to$ The driver sits in the front of the bus.\n2.【in front of（在「外部」的前面）】：\n   - 沒有「the」！表示主體位於該建築物或空間的「外部前方（室外）」。\n   - 樹在教室外面正前方 $\\to$ A tree stands in front of the classroom.\n3.【秒記口訣】：\n   - 「有 the 在室內裡面，沒 the 在室外前方」！",
+    "stem": "The teacher is sitting ______ the classroom.\n\n○ (A) in the front of\n○ (B) in front of\n○ (C) across from\n○ (D) next to",
+    "answer": "(A) in the front of",
+    "diagramUrl": "",
+    "solution": "○ 詳細文法與空間介系詞深度剖析：\n\n1. **核心空間概念辨析：in the front of vs. in front of**：\n   - **in the front of + 地點名詞（正解）**：\n     - 含有定冠詞 `the`，指位於封閉空間或建築物**「內部的前端／前排部分」**。\n     - 老師在教室內授課或坐著備課，位置處於教室**室內**，因此必須使用 **in the front of the classroom**。\n   - **in front of + 地點名詞**：\n     - 不含 `the`，指位於某建築物或物件**「外部的前方」**。\n     - 若填入 in front of the classroom，意思會變成「老師坐在教室門外的走廊或庭院前方（室外）」，不合常態教學情境。\n\n2. **其他選項深入診斷與排除**：\n   - **(C) across from（在……的對面）**：指隔著走道或馬路的相對位置（例：The library is across from the classroom.），此處受詞為單一教室，語意不通。\n   - **(D) next to（在……旁邊）**：指兩者相鄰（例：next to the window），老師不可能坐在「教室的隔壁」上課。\n\n3. **會考常見經典空間對比情境整理**：\n   - **車輛情境**：\n     - The driver is sitting **in the front of** the taxi.（司機坐在計程車「內部前座」）。\n     - The cat is sleeping **in front of** the car.（貓咪睡在汽車「外面的車頭前方」）。\n   - **教室與校園情境**：\n     - The teacher's desk is **in the front of** the classroom.（講桌在教室「內部的前方」）。\n     - We play basketball **in front of** the classroom.（我們在教室「外面的空地」打球）。\n\n故正確答案為 **(A) in the front of**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19"
   }
 ];
 
@@ -2030,7 +2054,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v114') ||
+      stored = localStorage.getItem('miley_wrong_questions_v115') ||
+               localStorage.getItem('miley_wrong_questions_v114') ||
                localStorage.getItem('miley_wrong_questions_v113') ||
                localStorage.getItem('miley_wrong_questions_v112') ||
                localStorage.getItem('miley_wrong_questions_v111') ||

@@ -814,7 +814,7 @@ window.ReviewModule = {
 
       const q = self.activeQuestions[targetIndex];
       const subj = q?.subject ? ` · ${q.subject}` : '';
-      tooltip.innerHTML = `🧲 <strong>題目 ${targetIndex + 1} / ${total}</strong>${subj}`;
+      tooltip.innerHTML = `🚂 <strong>學習號列車 · 題目 ${targetIndex + 1} / ${total}</strong>${subj}`;
       
       const targetPercent = total > 1 ? (targetIndex / (total - 1)) * 100 : 100;
       tooltip.style.left = `${targetPercent}%`;
