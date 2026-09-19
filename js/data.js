@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v126';
+const STORAGE_KEY = 'miley_wrong_questions_v127';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2310,6 +2310,78 @@ const INITIAL_SEED_DATA = [
   "consecutiveMastered": 0,
   "isArchived": false,
   "nextReviewDate": "2026-09-19"
+},
+{
+  "id": "q_sci_phy_free_fall_characteristics_075",
+  "examPeriod": "一段",
+  "subject": "自然/理化",
+  "errorReason": "觀念不懂",
+  "concept": "自由落體運動之核心定義與特徵辨析（只受重力作用、等加速度運動、速度均勻增加、位移隨時間平方增加）",
+  "uploadDate": "2026-09-19",
+  "mondayDate": "2026-09-14",
+  "mondayDates": [
+    "2026-09-14"
+  ],
+  "weekLabel": "2026-09-14 (本週最新題)",
+  "isGuessedOrUnstable": true,
+  "mistakeNote": "【自由落體核心特徵常考四大概念辨析】：\n1.【全程只受重力作用】：不受外力或不計空氣阻力時的理想落體運動（選項 D 包括）。\n2.【等加速度運動】：地表附近重力加速度 $g = 9.8\\text{ m/s}^2$ 為定值（選項 B 包括）。\n3.【單位時間內「速度變化量」一定】：加速度定義為 $a = \\frac{\\Delta v}{\\Delta t}$，等加速度即每秒速度變化量相同（選項 C 包括）。\n4.【大陷阱（不包括的項目）】：\n   - ❌ 自由落體「越掉越快」，位移與時間平方成正比（$h = \\frac{1}{2}gt^2$），每 1 秒掉落的距離越來越長（第 1 秒 4.9m、第 2 秒 14.7m……），絕對不是「單位時間內位移量一定」！\n   - 「單位時間內位移量一定」是【等速度運動】的特徵，自由落體絕非等速度運動！",
+  "stem": "有關自由落體運動的特徵，不包括下列哪一項？\n\n○ (A) 單位時間內的位移量一定\n○ (B) 等加速度運動\n○ (C) 單位時間內的速度變化量一定\n○ (D) 全程只受重力作用",
+  "answer": "(A) 單位時間內的位移量一定",
+  "diagramUrl": "",
+  "solution": "○ 詳細物理觀念與各選項剖析：\n\n1. **自由落體之物理本質**：\n   - 定義：物體由靜止出發（$v_0 = 0$），在空中僅受地球引力（重力）作用而垂直下落的運動。\n   - 特徵：受定值重力，產生定值重力加速度 $g = 9.8\\text{ m/s}^2$。\n\n2. **逐項檢視選項特徵**：\n   - **(A)「單位時間內的位移量一定」：不包括（為本題所求）**。\n     - 「單位時間內的位移量」即為**速度（$v = \\frac{\\Delta x}{\\Delta t}$）**。\n     - 自由落體下落時速度持續均勻增加（$v = gt$），下落距離隨時間平方倍增（$h = \\frac{1}{2}gt^2$）。在每個相等的 1 秒內，下落的位移量分別為 $4.9\\text{ m}$、$14.7\\text{ m}$、$24.5\\text{ m}$……越掉越快、位移越來越大，並非常數！\n     - 只有在「等速度運動」中，單位時間內的位移量才會固定。\n   - **(B)「等加速度運動」：包括**。\n     - 全程加速度恆為 $g = 9.8\\text{ m/s}^2$（大小與方向皆固定），故確為等加速度運動。\n   - **(C)「單位時間內的速度變化量一定」：包括**。\n     - 根據加速度定義 $a = \\frac{\\Delta v}{\\Delta t}$，加速度為常數即表示單位時間（每 1 秒）內的速度增加量恆為 $9.8\\text{ m/s}$。\n   - **(D)「全程只受重力作用」：包括**。\n     - 自由落體的定義即在於不受手推力、支撐力或空氣阻力等其他外力，全程僅受地球引力。\n\n故不包括之敘述為 **(A)**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-09-19"
+},
+{
+  "id": "q_sci_phy_free_fall_vt_graph_options_076",
+  "examPeriod": "一段",
+  "subject": "自然/理化",
+  "errorReason": "觀念不懂",
+  "concept": "自由落體運動之 v-t 圖形判讀（初速為零、等加速度、過原點斜向右上直線）",
+  "uploadDate": "2026-09-19",
+  "mondayDate": "2026-09-14",
+  "mondayDates": [
+    "2026-09-14"
+  ],
+  "weekLabel": "2026-09-14 (本週最新題)",
+  "isGuessedOrUnstable": true,
+  "mistakeNote": "【自由落體 v-t 圖秒殺兩大鐵律】：\n1.【過原點 (0, 0)】：「自由掉落」代表由靜止釋放，初速度 $v_0 = 0$！在 $t = 0$ 時 $v = 0$，圖形起點一定在原點！\n2.【斜直線（斜率為定值 g）】：只受重力作用，加速度 $a = g = 9.8\\text{ m/s}^2$ 為正的定值！v-t 圖的斜率就是加速度，因此必為一條過原點向右上延伸的傾斜直線！\n3.【其餘圖形代表的運動】：\n   - 圖 (B) 水平線：速度不變（等速度運動）。\n   - 圖 (C) 往右下斜直線：具有初速度的等減速度運動（如鉛直上拋上升過程）。\n   - 圖 (D) 曲線下彎：加速度隨時間變化的變加速度運動。",
+  "stem": "一物體自高處自由落下，若不考慮空氣阻力，其掉落時速度（v）與時間（t）的關係圖為下列何者？\n\n（點擊附圖可放大檢視 (A)(B)(C)(D) 四個速度與時間關係圖）\n\n○ (A) 圖 (A)：通過原點向右上傾斜之斜直線（等加速度運動）\n○ (B) 圖 (B)：水平直線（等速度運動）\n○ (C) 圖 (C)：由某一正速度隨時間直線減速至 0\n○ (D) 圖 (D)：先等速後向下彎曲之曲線",
+  "answer": "(A) 圖 (A)：通過原點向右上傾斜之斜直線（等加速度運動）",
+  "diagramUrl": "assets/questions/q_sci_phy_free_fall_vt_graph_options_076.png",
+  "solution": "○ 詳細運動圖表深度解析：\n\n1. **分析「自由落下」的物理條件**：\n   - ① **初速度為零（$v_0 = 0$）**：\n     在出發時刻 $t = 0$ 時，速度 $v = 0$。因此在以時間 $t$ 為橫軸、速度 $v$ 為縱軸的 v-t 圖中，函數圖形必須**通過原點 $(0, 0)$**。\n   - ② **等加速度運動（加速度 $a = g = 9.8\\text{ m/s}^2$ 為正的定值）**：\n     在 v-t 圖中，**圖形的「斜率（傾斜程度）」代表物體的加速度**。\n     因為重力加速度大小與方向固定不變，故斜率必為**固定正值**。\n   - 綜合以上兩點，速度隨時間的函數式為 $v = gt$，其圖形必為**一條通過原點且向右上方傾斜的直線**（即選項 (A)）。\n\n2. **逐一檢討各選項圖形代表之運動狀態**：\n   - **圖 (A)**：通過原點向右上延伸之直線，表示初速為 0、加速度為定值的等加速度運動，**完全符合自由落體**，為正確答案。\n   - **圖 (B)**：呈現一條水平直線，表示速度隨時間完全不變（加速度 $a = 0$），代表「等速度直線運動」。\n   - **圖 (C)**：在 $t = 0$ 時具有較大的初速度，且隨著時間增加速度直線遞減至 0，代表「具有初速的等減速度運動」（例如鉛直向上拋出之物體在上升過程的速率變化）。\n   - **圖 (D)**：圖形為曲線且斜率越來越陡，表示加速度並非固定常數，不符合自由落體定值重力加速度的特徵。\n\n故正確答案為 **(A)**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-09-19"
+},
+{
+  "id": "q_sci_phy_vertical_throw_gravity_acceleration_constant_077",
+  "examPeriod": "一段",
+  "subject": "自然/理化",
+  "errorReason": "觀念不懂",
+  "concept": "鉛直上拋運動之受力與加速度分析：空中運動全程加速度恆等於重力加速度 g（大小與方向皆固定）",
+  "uploadDate": "2026-09-19",
+  "mondayDate": "2026-09-14",
+  "mondayDates": [
+    "2026-09-14"
+  ],
+  "weekLabel": "2026-09-14 (本週最新題)",
+  "isGuessedOrUnstable": true,
+  "mistakeNote": "【鉛直上拋在空中「加速度」三大考試大陷阱】：\n1. ❌【陷阱一：誤以為「剛離手時手推力最大，所以加速度最大」】：\n   - 錯！球「離開手掌」的瞬間，手對球的作用力立刻變成 0！在空中球只受到地球向下的重力！\n2. ❌【陷阱二：誤以為「最高點瞬時速度為 0，所以加速度也是 0」】：\n   - 錯！最高點瞬間雖然「速度 $v = 0$」，但重力依然存在，加速度依然是 $g = 9.8\\text{ m/s}^2$ 向下！若加速度為 0，球就會停在半空中掉不下來了！\n3. ❌【陷阱三：誤以為「快墜地時速度最快，所以加速度最大」】：\n   - 錯！速度大不等於加速度大！加速度是「速度變化的快慢」，每秒速度都固定增加 $9.8\\text{ m/s}$！\n👉【破題秒殺口訣】：只要在空中且不計阻力，全程合力只有重力，加速度【全程皆相同】，永遠等於 $9.8\\text{ m/s}^2$ 向下！",
+  "stem": "阿翰把一棒球拋向天空，試問在不計空氣阻力下，棒球在空中何時有最大的加速度？\n\n○ (A) 離開手後的那一剎那\n○ (B) 到最高點時\n○ (C) 墜地前\n○ (D) 全程皆相同",
+  "answer": "(D) 全程皆相同",
+  "diagramUrl": "",
+  "solution": "○ 詳細解題觀念與受力深度分析：\n\n1. **根據牛頓第二運動定律分析棒球在空中的受力情形**：\n   - 棒球被拋出「離開手」之後，在空中運動期間（無論是上升中、到達最高點瞬間、還是下落過程中），在題目設定「不計空氣阻力」的前提下：\n     - 棒球**全程只受到唯一的力——地球引力（重力 $W = mg$）**，方向恆垂直向下。\n     - 手的作用力在球離手的瞬間就已經完全消失，手無法隔空對球施力。\n\n2. **推求棒球在各階段的加速度**：\n   - 根據牛頓第二定律 $F_{\\text{合}} = ma$：\n     $$a = \\frac{F_{\\text{合}}}{m} = \\frac{mg}{m} = g = 9.8\\text{ m/s}^2$$\n   - 方向：恆垂直向下。\n   - 因此：\n     - **剛離開手時**：合力為重力，加速度 $= 9.8\\text{ m/s}^2$ 向下。\n     - **上升途中**：合力為重力，加速度 $= 9.8\\text{ m/s}^2$ 向下。\n     - **到達最高點瞬間**：雖然瞬間速度 $v = 0$，但地球依然拉著球，合力仍為重力，加速度**依然是 $9.8\\text{ m/s}^2$ 向下**！\n     - **下落與墜地前**：合力仍為重力，加速度 $= 9.8\\text{ m/s}^2$ 向下。\n   - 故在空中的任何時刻，加速度的大小均為定值 $g$，**全程皆相同**。\n\n3. **常見概念混淆澄清**：\n   - 題目問的是「**加速度**」（速度變化的快慢），不是問「速度」！\n   - 速度雖然在不同時刻會改變（最高點為 0、墜地前最快），但加速度全程保持不變。\n\n故正確答案為 **(D) 全程皆相同**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-09-19"
 }
 ];
 
@@ -2342,7 +2414,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v125') ||
+      stored = localStorage.getItem('miley_wrong_questions_v126') ||
+               localStorage.getItem('miley_wrong_questions_v125') ||
                localStorage.getItem('miley_wrong_questions_v124') ||
                localStorage.getItem('miley_wrong_questions_v123') ||
                localStorage.getItem('miley_wrong_questions_v122') ||
