@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v113';
+const STORAGE_KEY = 'miley_wrong_questions_v114';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1950,6 +1950,30 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-19"
+  },
+  {
+    "id": "q_eng_idiom_if_all_else_fails_tv_060",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "英文常用慣用語辨析：經典片語 if all else fails（若其他辦法都行不通／作為備案）與動詞單複數判讀〔會考精選常考片語〕",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【會考與生活英語高頻片語：「If all else fails」】：\n1.【if all else fails（如果其他計畫或辦法都行不通的話／退而求其次）】：\n   - `all else` 在此指「所有其他嘗試過或想到的備選方案（計劃 A、B、C……）」，視為單數主詞概念。\n   - `fail` 在此作不及物動詞，意為「失敗、行不通、無效」，依現在簡單式第三人稱單數加 `s` $\\to$ `fails`。\n   - 用於提出最後的備用保底方案（Plan B / backup plan）。例如：「如果所有的出遊行程都泡湯了，我們至少還能待在家裡看電視」。\n2.【其他選項常見語法與文意盲點】：\n   - (A) pass（通過、流逝）：`if all else passes` 語意不通（若其他都順利通過何必退而求其次待在家）。\n   - (B) allow（允許）：allow 通常為及物動詞需加受詞（例：if time allows 如果時間允許；if circumstances allow）。主詞是 all else 時不可直接用 allows 表被允許。\n   - (C) expect（期待、預期）：及物動詞需由人發出期待，事物名詞 all else 無法主動 expect。",
+    "stem": "If all else ______, we can always stay at home and watch TV.\n\n○ (A) passes\n○ (B) allows\n○ (C) expects\n○ (D) fails",
+    "answer": "(D) fails",
+    "diagramUrl": "",
+    "solution": "○ 詳細文法與片語深入剖析：\n\n1. **經典慣用片語「if all else fails」之來源與核心語意**：\n   - `if all else fails` 是英文中極為地道且高頻的**固定成語句型（idiomatic expression）**。\n   - **字面結構**：如果（if）所有其他的事情／方案（all else）都行不通、失敗了（fails）。\n   - **情境引申**：指「如果其他方法都不管用」、「萬一其他計畫都告吹」、「退而求其次作為最後備案」時所使用的句型。\n   - 題幹後半句提到 `we can always stay at home and watch TV`（我們總是可以退一步待在家裡看電視），正是在說明若其他活動方案都無法成行時的「最保底備選計畫」，與 `if all else fails` 完美契合。\n\n2. **主詞與動詞單複數一致性（Subject-Verb Agreement）**：\n   - 句中主詞為 `all else`（其餘的所有事物），在英語文法習慣中視為**第三人稱單數**概念。\n   - 條件句為現在簡單式，故不及物動詞 fail 需加上單數動詞字尾 `s` $\\to$ **fails**。\n\n3. **四個動詞選項全面體檢與辨析**：\n   - **(A) passes (v.) 通過、流逝**：常用於時間流逝（time passes）或通過考試（pass the exam），放在此處語意不通。\n   - **(B) allows (v.) 允許**：通常搭配句型 `if weather allows`（如果天候許可）或 `if time allows`（如果時間允許），且多有具體的許可條件或及物受詞，不可搭配 all else。\n   - **(C) expects (v.) 期待、盼望**：為及物動詞（expect sb to do sth），事物名詞 all else 無法主動執行 expect（期待）這個動作。\n   - **(D) fails (v.) 失敗、行不通（正解）**：不及物動詞，表示計畫或機器失效、泡湯，構成固定片語 `if all else fails`。\n\n4. **會考常見延伸例句**：\n   - *If all else fails, you can always call me for help.*（如果其他辦法都行不通，你隨時可以打電話向我求助。）\n   - *We hope it won't rain, but if all else fails, the party will move indoors.*（我們希望不要下雨，但萬一其他備案都不行，派對就移到室內。）\n\n故正確答案為 **(D) fails**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19"
   }
 ];
 
@@ -1982,7 +2006,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v112') ||
+      stored = localStorage.getItem('miley_wrong_questions_v113') ||
+               localStorage.getItem('miley_wrong_questions_v112') ||
                localStorage.getItem('miley_wrong_questions_v111') ||
                localStorage.getItem('miley_wrong_questions_v110') ||
                localStorage.getItem('miley_wrong_questions_v109') ||
