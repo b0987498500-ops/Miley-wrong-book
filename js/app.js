@@ -360,8 +360,8 @@ class App {
         const parts = dateStr.split('-');
         let formattedDate = dateStr;
         if (parts.length === 3) {
-          const month = parseInt(parts[1], 10);
-          const day = parseInt(parts[2], 10);
+          const month = String(parseInt(parts[1], 10)).padStart(2, '0');
+          const day = String(parseInt(parts[2], 10)).padStart(2, '0');
           formattedDate = `${month}/${day}`;
         }
 

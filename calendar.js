@@ -30,13 +30,25 @@ window.CalendarModule = {
     this.updateTopDateDisplay();
   },
 
-  updateTopDateDisplay: function() {
+  updateTopDateDisplay: function(customDateStr = null) {
     const displayEl = document.getElementById('current-date-display');
+    const labelEl = document.getElementById('current-date-label');
     if (!displayEl) return;
-    const d = new Date();
-    const month = d.getMonth() + 1;
-    const day = d.getDate();
-    displayEl.innerText = `${month}月${day}日`;
+
+    const todayStr = this.getTodayDateStr();
+    const targetStr = customDateStr || this.selectedDateStr || todayStr;
+    const parts = targetStr.split('-');
+    const m = parts[1] ? String(parseInt(parts[1], 10)).padStart(2, '0') : '09';
+    const d = parts[2] ? String(parseInt(parts[2], 10)).padStart(2, '0') : '20';
+    const formatted = `${m}/${d}`;
+
+    const isToday = targetStr === todayStr;
+    const prefix = isToday ? '今日' : '自訂';
+
+    if (labelEl) {
+      labelEl.innerText = prefix;
+    }
+    displayEl.innerText = formatted;
   },
 
   bindEvents: function() {
@@ -218,6 +230,7 @@ window.CalendarModule = {
         self.selectedDateStr = dateStr;
         self.renderDaysGrid();
         self.renderSelectedDayEvents(dateStr);
+        self.updateTopDateDisplay(dateStr);
       });
     });
   },
