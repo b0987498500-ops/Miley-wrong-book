@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v132';
+const STORAGE_KEY = 'miley_wrong_questions_v133';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -3014,6 +3014,64 @@ const INITIAL_SEED_DATA = [
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
     "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_civ_job_opportunity_cost_comparison_078",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "審題不清",
+    "concept": "公民與社會：機會成本核心定義（放棄選項中價值最高者）與多重選擇機會成本比較排序",
+    "uploadDate": "2026-09-21",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-14",
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【機會成本三大常考陷阱與秒解心法】：\n1. ❌【陷阱一：誤把「薪資高低排序」當成「機會成本排序」】：\n   - 題目問的是「機會成本排序」，不是「薪資大小」！若選了 (B) 甲 > 丙 > 乙，就掉入看錯題目的陷阱！\n2. ❌【陷阱二：忽略「未被選上的選項，其機會成本皆為第一名薪資」】：\n   - 當大雄選甲時，放棄的最高價值是「丙的薪資」；\n   - 但若大雄改選乙，放棄的最高價值是「甲的薪資」；\n   - 若大雄改選丙，放棄的最高價值同樣是「甲的薪資」！\n   - 故乙和丙的機會成本【完全相等】，皆為甲的薪資！\n3. 👉【破題秒殺邏輯】：\n   - 薪資高低：甲 > 丙 > 乙。\n   - 機會成本比較：甲的機會成本（丙） < 乙的機會成本（甲） = 丙的機會成本（甲）。\n   - 答案必為：甲 < 丙 = 乙（或 甲 < 乙 = 丙）。",
+    "stem": "大雄在社群網路中貼文分享自己最近的求職經歷：「我昨天獲得了甲乙兩個工作機會，我的最佳選擇為甲工作；今天我又收到丙工作機會，我再三考量後，甲工作仍是最佳選擇，但是我的機會成本增加了。」若大雄僅以薪資高低作為選擇依據，上述甲、乙、丙三個工作機會的機會成本排序應為下列何者？\n\n○ (A) 甲 < 乙 < 丙\n○ (B) 甲 > 丙 > 乙\n○ (C) 甲 > 乙 = 丙\n○ (D) 甲 < 丙 = 乙",
+    "answer": "(D) 甲 < 丙 = 乙",
+    "diagramUrl": "",
+    "solution": "○ 詳細解題觀念與深度剖析：\n\n1. **核心概念：機會成本的定義**：\n   - 機會成本（Opportunity Cost）是指在面臨多個互斥的選擇時，**「所放棄的所有其他選擇中，價值（薪資）最高的那一個」**。\n\n2. **第一步：由題目條件推導甲、乙、丙三份工作的「薪資高低順序」**：\n   - **昨天（甲 vs 乙）**：\n     大雄最佳選擇為甲工作，表示大雄認為甲的價值最高，即：**甲的薪資 > 乙的薪資**。\n     此時若選擇甲，放棄的只有乙，故甲的機會成本為「乙的薪資」。\n   - **今天（加入丙工作）**：\n     大雄再三考量後，「甲工作仍是最佳選擇」，表示甲的價值依然最高，即：**甲的薪資 > 丙的薪資**。\n     但大雄特別提到「**甲工作的機會成本增加了**」，這說明原本選甲放棄的最高代價是「乙的薪資」，現在變成放棄價值更高的「丙的薪資」，因此：**丙的薪資 > 乙的薪資**。\n   - **綜合三者薪資大小排序**：\n     **甲工作薪資 > 丙工作薪資 > 乙工作薪資**。\n\n3. **第二步：分別計算「選擇甲、乙、丙」三者的機會成本**：\n   - ① **若選擇「甲工作」**：\n     放棄的選項有乙和丙，其中價值最高者為丙，因此：\n     **甲的機會成本 = 丙工作的薪資**。\n   - ② **若選擇「乙工作」**：\n     放棄的選項有甲和丙，其中價值最高者為甲，因此：\n     **乙的機會成本 = 甲工作的薪資**。\n   - ③ **若選擇「丙工作」**：\n     放棄的選項有甲和乙，其中價值最高者為甲，因此：\n     **丙的機會成本 = 甲工作的薪資**。\n\n4. **第三步：比較三者的機會成本大小**：\n   - 乙的機會成本（甲薪資） = 丙的機會成本（甲薪資）。\n   - 因為「甲工作的薪資 > 丙工作的薪資」，所以：\n     甲的機會成本（丙薪資） < 乙的機會成本（甲薪資） = 丙的機會成本（甲薪資）。\n   - 排序為：**甲 < 丙 = 乙**（即 甲 < 乙 = 丙）。\n\n故正確答案為 **(D) 甲 < 丙 = 乙**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-21",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_civ_trip_opportunity_cost_explicit_implicit_079",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "公民與社會：機會成本計算（外顯成本＋隱藏成本）與非成本項目（利益贈品）辨析",
+    "uploadDate": "2026-09-21",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-14",
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【機會成本計算兩大得分黃金法則】：\n1.【機會成本計算公式】：\n   - 機會成本 ＝ 外顯成本（實際掏錢支付的會計成本）＋ 隱藏成本（因選擇而放棄的潛在收益或薪資）。\n   - 本題外顯成本：團費 40,000 元 ＋ 名產 3,000 元 ＝ 43,000 元。\n   - 本題隱藏成本：請假 5 天少賺的薪資 8,800 元。\n   - 總機會成本 ＝ 43,000 ＋ 8,800 ＝ 51,800 元。\n2. ❌【超常見致命陷阱：好友送的 1,000 元公仔】：\n   - 好友贈送的生日禮物屬於旅遊過程中所「獲得的額外利益（贈品）」，並非小櫻為了參加旅遊而「付出的代價」或「放棄的選擇」！\n   - 機會成本只計算「付出的代價」，絕不能將贈品價值加進去（誤選 D 52,800 元），也不可當作折扣扣除！",
+    "stem": "小櫻與好友相約參加旅行社的 5 天 4 夜日本賞櫻團，此次出遊的團費為 4 萬元，她還因此向公司請了 5 天假少賺 8,800 元，並在旅途中購買 3,000 元的名產要分享給同事，好友另送給她一個要價 1,000 元的公仔當生日禮物。根據上述內容判斷，小櫻此次旅遊的機會成本應為下列何者？\n\n○ (A) 40,000 元\n○ (B) 48,800 元\n○ (C) 51,800 元\n○ (D) 52,800 元",
+    "answer": "(C) 51,800 元",
+    "diagramUrl": "",
+    "solution": "○ 詳細解題步驟與成本分類剖析：\n\n1. **核心經濟學觀念：機會成本的構成**：\n   - 在經濟學中，**機會成本 ＝ 外顯成本（Explicit Cost）＋ 隱藏成本（Implicit Cost）**。\n   - **外顯成本**：因這項決策而「實際支付的金錢（看得見的支出）」。\n   - **隱藏成本**：因這項決策而「放棄的其他利益或收益（看不見的代價）」。\n\n2. **逐項檢視小櫻出遊過程中的各項金錢與利益**：\n   - ① **賞櫻團團費 40,000 元**：\n     屬於實際掏錢支付的旅遊費用，計入**外顯成本**（40,000 元）。\n   - ② **購買名產 3,000 元**：\n     在旅途中因旅遊而實際支出的費用，計入**外顯成本**（3,000 元）。\n   - ③ **請假 5 天少賺薪資 8,800 元**：\n     如果不出遊去上班原本可以領到的薪水，為了出遊而選擇放棄，計入**隱藏成本**（8,800 元）。\n   - ④ **好友送的要價 1,000 元公仔**：\n     這是好友贈送的生日禮物，屬於此趟旅程獲得的**額外福利或利益（贈品）**，並非小櫻為了旅遊所承擔的「犧牲或代價」，因此**不屬於機會成本**，不可計入成本！\n\n3. **計算總機會成本**：\n   - 外顯成本 ＝ 40,000 ＋ 3,000 ＝ 43,000 元\n   - 隱藏成本 ＝ 8,800 元\n   - 總機會成本 ＝ 43,000 ＋ 8,800 ＝ **51,800 元**。\n\n故正確答案為 **(C) 51,800 元**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-21",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   }
 ];
 
@@ -3046,7 +3104,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v131') ||
+      stored = localStorage.getItem('miley_wrong_questions_v132') ||
+               localStorage.getItem('miley_wrong_questions_v131') ||
                localStorage.getItem('miley_wrong_questions_v130') ||
                localStorage.getItem('miley_wrong_questions_v129') ||
                localStorage.getItem('miley_wrong_questions_v128') ||
