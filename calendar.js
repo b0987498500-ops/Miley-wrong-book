@@ -42,8 +42,7 @@ window.CalendarModule = {
     const d = parts[2] ? String(parseInt(parts[2], 10)).padStart(2, '0') : '20';
     const formatted = `${m}/${d}`;
 
-    const isToday = targetStr === todayStr;
-    const prefix = isToday ? '今日' : '自訂';
+    const prefix = '日曆';
 
     if (labelEl) {
       labelEl.innerText = prefix;
