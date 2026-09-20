@@ -6437,11 +6437,13 @@ html.is-pwa-standalone #app-bottom-bar {
     border-right: none;
     border-bottom: var(--glass-border);
     padding: 8px 12px;
-    background: rgba(15, 23, 42, 0.92);
-    backdrop-filter: blur(16px);
+    background: #0f172a !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000 !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
   }
 
   .sidebar .brand {
@@ -6500,37 +6502,44 @@ html.is-pwa-standalone #app-bottom-bar {
     display: none !important;
   }
 
-  /* 2. 頂部列 (Top Header) 手機適配 */
+  /* 2. 頂部列 (Top Header) 手機適配：作為一般內容捲動圖層，滑動時自然沒入固定頂端列下方 */
   .top-header {
     position: relative;
-    padding: 8px 12px;
+    padding: 10px 12px;
     gap: 8px;
     background: transparent;
-    z-index: 2000 !important;
+    z-index: 1;
+  }
+
+  /* 僅在日曆彈窗打開時提升頂部欄層級，使彈窗浮於最上層 */
+  .top-header:has(.calendar-popover.show),
+  body.calendar-modal-open .top-header {
+    z-index: 99999 !important;
   }
 
   .header-main-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: nowrap;
-    gap: 8px;
+    gap: 12px;
     position: static;
   }
 
   .header-left {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 6px;
+    justify-content: center;
+    gap: 12px;
     flex-wrap: nowrap;
     min-width: 0;
+    width: 100%;
     position: static;
   }
 
+  /* 手機端隱藏次級重複的麥麥錯題本標題，畫面極致簡潔大氣 */
   .header-left h1 {
-    font-size: 1.22rem;
-    white-space: nowrap;
+    display: none !important;
   }
 
   .header-right {

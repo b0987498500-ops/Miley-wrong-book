@@ -69,7 +69,10 @@ window.CalendarModule = {
         }
         popover.classList.toggle('show');
         if (popover.classList.contains('show')) {
+          document.body.classList.add('calendar-modal-open');
           self.renderCalendar();
+        } else {
+          document.body.classList.remove('calendar-modal-open');
         }
       };
 
@@ -79,12 +82,14 @@ window.CalendarModule = {
         if (popover && popover.classList.contains('show')) {
           if (!popover.contains(e.target) && !triggerBtn.contains(e.target)) {
             popover.classList.remove('show');
+            document.body.classList.remove('calendar-modal-open');
           }
         }
       });
       document.getElementById('cal-close-btn')?.addEventListener('click', (e) => {
         e.stopPropagation();
         popover.classList.remove('show');
+        document.body.classList.remove('calendar-modal-open');
       });
     }
 
