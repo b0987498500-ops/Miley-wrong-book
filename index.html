@@ -25,29 +25,38 @@
   <meta name="apple-mobile-web-app-title" content="麥麥錯題本">
   <link rel="apple-touch-icon" href="assets/icon-192.png">
 
-  <!-- Cache Prevention Meta Tags & Auto Unregister SW -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
+  <!-- PWA Standalone & Service Worker Initialization -->
   <script>
     (function() {
-      // Unregister Service Workers & clear Cache Storage
+      try {
+        var ua = (navigator.userAgent || '').toLowerCase();
+        if (ua.indexOf('line') > -1 && window.location.search.indexOf('openExternalBrowser=1') === -1) {
+          var sep = window.location.href.indexOf('?') > -1 ? '&' : '?';
+          window.location.href = window.location.href + sep + 'openExternalBrowser=1';
+        }
+        var isPWA = (window.matchMedia && (
+                        window.matchMedia('(display-mode: standalone)').matches ||
+                        window.matchMedia('(display-mode: fullscreen)').matches ||
+                        window.matchMedia('(display-mode: minimal-ui)').matches
+                    )) ||
+                    window.navigator.standalone === true ||
+                    window.location.search.indexOf('source=pwa') !== -1 ||
+                    (document.referrer && document.referrer.indexOf('android-app://') === 0) ||
+                    localStorage.getItem('miley_pwa_installed') === 'true';
+        if (isPWA) {
+          document.documentElement.classList.add('is-pwa-standalone');
+        }
+      } catch(e) {}
+
+      // Register Service Worker
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(function(regs) {
-          regs.forEach(function(r) { r.unregister(); });
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('sw.js').then(function(reg) {
+            console.log('PWA ServiceWorker registered:', reg.scope);
+          }).catch(function(err) {
+            console.warn('PWA ServiceWorker registration failed:', err);
+          });
         });
-      }
-      if ('caches' in window) {
-        caches.keys().then(function(names) {
-          names.forEach(function(n) { caches.delete(n); });
-        });
-      }
-      // Force reload if legacy cached version is active
-      var currVer = localStorage.getItem('miley_purge_v72_math_update');
-      if (!currVer) {
-        localStorage.setItem('miley_purge_v72_math_update', 'true');
-        console.log('Purging legacy browser cache and reloading...');
-        window.location.search = '?v=72_math_update&t=' + Date.now();
       }
     })();
     // Reset and cleanup any legacy page zoom
@@ -98,8 +107,50 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-</head>
 <body>
+  <!-- LINE 內嵌瀏覽器跳出導引彈窗 (防呆圖文教學) -->
+  <div id="lineGuideModal" class="guide-modal hidden">
+    <div class="line-title">⚠️ 請在瀏覽器中開啟</div>
+    <div class="line-steps">
+      為了確保錯題複習順暢與排程保存：<br><br>
+      1. 請點擊右上角的 <strong style="color:#ef4444;">[⋮]</strong> 或 <strong style="color:#ef4444;">[≡]</strong><br>
+      2. 選擇 <strong style="color:#38bdf8;">「以其他應用程式開啟」</strong> 或 <strong style="color:#38bdf8;">「在預設瀏覽器中開啟」</strong>
+    </div>
+    <img src="assets/z_img_line.png" alt="LINE 開啟瀏覽器教學" style="width: 80%; max-width: 320px; margin: 20px auto; border-radius: 12px; display: block; border: 2px solid #38bdf8;">
+    <button id="lineCloseBtn" class="btn-guide-close" onclick="document.getElementById('lineGuideModal').classList.add('hidden')">關閉提示</button>
+  </div>
+
+  <!-- Android 專屬安裝 App 教學彈窗 -->
+  <div id="androidInstallGuideModal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <h3 class="guide-modal-title">🤖 Android 安裝 App 教學</h3>
+      <div class="guide-steps-box">
+        <p>1. 點擊瀏覽器右上角的 <strong>「選單」圖示 ⋮</strong></p>
+        <p>2. 點選 <strong>「安裝應用程式」</strong> 或 <strong>「加到主畫面」 📲</strong></p>
+        <div style="background: rgba(99, 102, 241, 0.15); border: 1px solid #6366f1; border-radius: 8px; padding: 10px; margin-top: 12px;">
+          <p style="font-size: 14px; color: #fef08a; margin: 0; line-height: 1.5;">
+            💡 <strong>若在 LINE 中開啟：</strong><br>
+            請點右上角 <strong>「⋮」</strong> ➜ 點選 <strong>「在預設瀏覽器中開啟」</strong>（Chrome），即可一鍵安裝到桌面！
+          </p>
+        </div>
+      </div>
+      <button class="btn-primary-close" style="margin-top: 18px;" onclick="document.getElementById('androidInstallGuideModal').classList.add('hidden')">我知道了 👍</button>
+    </div>
+  </div>
+
+  <!-- iOS Safari 加入主畫面教學彈窗 -->
+  <div id="iosInstallModal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <h3 class="guide-modal-title">🍏 iPhone / iPad 加入桌面教學</h3>
+      <div class="guide-steps-box">
+        <p>1. 點擊 Safari 瀏覽器下方的 <strong>「分享」圖示 📤</strong></p>
+        <p>2. 往下滑動，點選 <strong>「加入主畫面」 ➕</strong></p>
+        <p>3. 點擊右上角 <strong>「新增」</strong> 即可像 App 一樣在桌面秒開使用！</p>
+      </div>
+      <button class="btn-primary-close" style="margin-top: 18px;" onclick="document.getElementById('iosInstallModal').classList.add('hidden')">我知道了 👍</button>
+    </div>
+  </div>
+
   <div id="app" class="app-container">
     <!-- Sidebar / Navigation -->
     <aside class="sidebar" id="sidebar">
@@ -262,10 +313,14 @@
                   <div class="events-box-title" id="cal-selected-day-title">今日安排</div>
                   <div class="events-list" id="cal-events-list">
                     <!-- Dynamic Event items -->
-                  </div>
                 </div>
               </div>
             </div>
+
+            <!-- PWA 一鍵安裝按鈕 (頂端列常駐，支援 Chrome/Android/iOS/電腦版桌面安裝) -->
+            <button id="btn-header-install" class="btn-header-install" title="將 麥麥錯題本 安裝至桌面或手機主畫面" onclick="triggerPWAInstall()">
+              <i class="fa-solid fa-cloud-arrow-down"></i> 📲 安裝App
+            </button>
 
             <button id="theme-toggle-btn" class="icon-btn" title="切換深淺模式">
               <i class="fa-solid fa-moon"></i>

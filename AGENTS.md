@@ -40,8 +40,10 @@
    - 將新題目追加至 `INITIAL_SEED_DATA` 陣列中。
    - 升級 `STORAGE_KEY`（如 `v88` $\to$ `v89`），並在 `init()` 保留前版 fallback 相容鏈，確保使用者重新整理網頁時能即時無痛同步載入，不遺失原有作答統計與複習排程。
 
-4. **Checkpoint 存檔規範**：
-   - 每次完成題目收錄、圖片管理或功能微調後，主動執行 Git commit 建立專案進度存檔點（Checkpoint），保留規範清晰的 commit message（例如：`feat: add meiosis chromosome question (A) to 2026-09-14 review list`）。
+4. **Checkpoint 存檔與 GitHub 雲端網站即時同步規範**：
+   - 每次完成題目收錄、圖片管理或功能微調後，主動執行 Git commit 建立專案進度存檔點，保留規範清晰的 commit message（例如：`feat: add meiosis chromosome question (A) to 2026-09-14 review list`）。
+   - **必須同步執行 `git push origin main`**：將所有更新即刻推送至 GitHub 倉庫，確保 GitHub Pages 線上網站（https://b0987498500-ops.github.io/Miley-wrong-book/）永遠與本機題庫保持 100% 同步！
+   - 同步更新專案根目錄的 `Checkpoints.md`，詳實紀錄版本進度。
 
 5. **對話回覆要求**：
    - 回覆題目正解、核心破題思路與易錯觀念對照。

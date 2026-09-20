@@ -653,3 +653,85 @@ class App {
 document.addEventListener('DOMContentLoaded', () => {
   window.app = new App();
 });
+
+// ==========================================
+// PWA 一鍵安裝機制 (頂端列「📲 安裝App」專用)
+// ==========================================
+window.deferredPrompt = null;
+
+function updatePWAInstallVisibility() {
+  const isPWA = (window.matchMedia && (
+                  window.matchMedia('(display-mode: standalone)').matches ||
+                  window.matchMedia('(display-mode: fullscreen)').matches ||
+                  window.matchMedia('(display-mode: minimal-ui)').matches
+              )) ||
+              window.navigator.standalone === true ||
+              window.location.search.indexOf('source=pwa') !== -1 ||
+              (document.referrer && document.referrer.indexOf('android-app://') === 0) ||
+              localStorage.getItem('miley_pwa_installed') === 'true';
+
+  const btnHeader = document.getElementById('btn-header-install');
+  if (isPWA) {
+    document.documentElement.classList.add('is-pwa-standalone');
+    if (btnHeader) btnHeader.classList.add('hidden');
+  }
+}
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  window.deferredPrompt = e;
+  if (!window.matchMedia('(display-mode: standalone)').matches && !window.navigator.standalone) {
+    localStorage.removeItem('miley_pwa_installed');
+    document.documentElement.classList.remove('is-pwa-standalone');
+    const btnHeader = document.getElementById('btn-header-install');
+    if (btnHeader) btnHeader.classList.remove('hidden');
+  }
+});
+
+window.triggerPWAInstall = function triggerPWAInstall() {
+  const ua = (navigator.userAgent || '').toLowerCase();
+  const isIOS = /ipad|iphone|ipod/.test(ua) && !window.MSStream;
+
+  // 1. 若瀏覽器已捕獲原生 PWA 安裝事件 (Chrome / Edge / Android)
+  if (window.deferredPrompt) {
+    window.deferredPrompt.prompt();
+    window.deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult && choiceResult.outcome === 'accepted') {
+        localStorage.setItem('miley_pwa_installed', 'true');
+        document.documentElement.classList.add('is-pwa-standalone');
+        const btnHeader = document.getElementById('btn-header-install');
+        if (btnHeader) btnHeader.classList.add('hidden');
+      }
+      window.deferredPrompt = null;
+    });
+    return;
+  }
+
+  // 2. 若為 iOS 裝置 (Safari 分享引導)
+  if (isIOS) {
+    const iosModal = document.getElementById('iosInstallModal');
+    if (iosModal) iosModal.classList.remove('hidden');
+    return;
+  }
+
+  // 3. Android / 其他瀏覽器備援引導
+  const androidModal = document.getElementById('androidInstallGuideModal');
+  if (androidModal) {
+    androidModal.classList.remove('hidden');
+  } else {
+    alert('📲 請點擊瀏覽器右上角「⋮」➜ 選擇「安裝應用程式」或「加到主畫面」即可安裝到桌面！');
+  }
+};
+
+window.addEventListener('appinstalled', () => {
+  localStorage.setItem('miley_pwa_installed', 'true');
+  document.documentElement.classList.add('is-pwa-standalone');
+  const btnHeader = document.getElementById('btn-header-install');
+  if (btnHeader) btnHeader.classList.add('hidden');
+  window.deferredPrompt = null;
+});
+
+// 初始化即刻檢測
+updatePWAInstallVisibility();
+window.addEventListener('DOMContentLoaded', updatePWAInstallVisibility);
+

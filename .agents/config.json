@@ -1,0 +1,13 @@
+{
+  "projectName": "麥麥錯題網站",
+  "mainRepository": {
+    "account": "b0987498500-ops",
+    "remoteName": "origin",
+    "branch": "main",
+    "url": "https://github.com/b0987498500-ops/Miley-wrong-book.git"
+  },
+  "siteUrl": "https://b0987498500-ops.github.io/Miley-wrong-book/",
+  "checkpointLogPath": "Checkpoints.md",
+  "archiveRulesPath": ".agents/archive_rules/",
+  "versionFormat": "vX.XX"
+}
