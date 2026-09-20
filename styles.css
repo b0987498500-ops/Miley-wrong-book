@@ -535,7 +535,7 @@ body.fullscreen-review-mode .sidebar-resizer {
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(168, 85, 247, 0.08));
   border: 1px solid rgba(99, 102, 241, 0.28);
   border-radius: var(--radius-md);
-  padding: 12px 14px;
+  padding: 10px 12px;
   cursor: pointer;
   transition: all var(--transition-fast);
 }
@@ -546,17 +546,39 @@ body.fullscreen-review-mode .sidebar-resizer {
   transform: translateY(-1px);
 }
 
+.ebb-inline-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+}
+
 .ebb-title {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   color: var(--accent-primary);
-  font-weight: 600;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.ebb-title i {
+  font-size: 0.8rem;
 }
 
 .ebb-count {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 800;
   color: var(--text-main);
-  margin: 2px 0;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.ebb-count span,
+.ebb-count strong {
+  color: #10b981;
 }
 
 .count-updated-bump {
@@ -571,9 +593,9 @@ body.fullscreen-review-mode .sidebar-resizer {
 }
 
 .ebb-desc {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
-  transition: color 0.3s ease;
+  margin-top: 4px;
 }
 
 .btn-ghost-sm {
@@ -618,15 +640,17 @@ body.fullscreen-review-mode .sidebar-resizer {
 
 .header-main-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  position: relative;
   width: 100%;
 }
 
 .header-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
@@ -650,9 +674,20 @@ body.fullscreen-review-mode .sidebar-resizer {
 }
 
 .header-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.sidebar-trigger-btn {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* Collapsible Topbar */
@@ -682,10 +717,10 @@ body.fullscreen-review-mode .sidebar-resizer {
   display: none;
 }
 
-/* Weekly Monday Dates Bar */
 .weekly-monday-bar {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -704,7 +739,8 @@ body.fullscreen-review-mode .sidebar-resizer {
 .weekly-monday-chips {
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 10px;
   overflow-x: auto;
   padding-bottom: 2px;
   scrollbar-width: thin;
@@ -714,17 +750,16 @@ body.fullscreen-review-mode .sidebar-resizer {
   background: var(--bg-card);
   border: 1.5px solid var(--border-color);
   color: var(--text-sub);
-  padding: 4px 14px;
-  border-radius: 12px;
+  padding: 6px 18px;
+  border-radius: 9999px;
   cursor: pointer;
   white-space: nowrap;
   transition: all var(--transition-fast);
   display: inline-flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  line-height: 1.25;
-  min-width: 62px;
+  gap: 8px;
+  line-height: 1;
 }
 
 .monday-chip:hover {
@@ -742,7 +777,7 @@ body.fullscreen-review-mode .sidebar-resizer {
 }
 
 .monday-chip .chip-week-title {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--text-muted);
 }
@@ -6419,14 +6454,17 @@ html.is-pwa-standalone #app-bottom-bar {
     justify-content: space-between;
     flex-wrap: nowrap;
     gap: 8px;
+    position: static;
   }
 
   .header-left {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 6px;
     flex-wrap: nowrap;
     min-width: 0;
+    position: static;
   }
 
   .header-left h1 {
@@ -6435,8 +6473,31 @@ html.is-pwa-standalone #app-bottom-bar {
   }
 
   .header-right {
+    position: static;
+    transform: none;
     gap: 4px;
     flex-shrink: 0;
+  }
+
+  .sidebar-trigger-btn {
+    position: static;
+    transform: none;
+  }
+
+  .weekly-monday-bar {
+    justify-content: flex-start;
+  }
+
+  .weekly-monday-chips {
+    justify-content: flex-start;
+  }
+
+  .monday-chip {
+    flex-direction: column;
+    padding: 4px 10px;
+    border-radius: 10px;
+    min-width: 52px;
+    gap: 2px;
   }
 
   /* 行動端智慧心靈寶庫與日曆按鈕微型化 */
