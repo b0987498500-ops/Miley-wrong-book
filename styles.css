@@ -6205,11 +6205,18 @@ body.light-theme .fc-fill-in-input:focus {
 }
 
 .bottom-bar-brand {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  display: flex;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
+  letter-spacing: 0.3px;
+}
+
+.bottom-bar-brand i {
+  font-size: 1.18rem;
+  color: var(--accent-secondary);
 }
 
 /* 底端列 安裝 App 按鈕 (翡翠綠大膠囊按鈕) */
@@ -6436,7 +6443,7 @@ html.is-pwa-standalone #app-bottom-bar {
     max-width: 100% !important;
     border-right: none;
     border-bottom: var(--glass-border);
-    padding: 8px 12px;
+    padding: 6px 12px 6px 12px;
     background: #0f172a !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -6444,15 +6451,31 @@ html.is-pwa-standalone #app-bottom-bar {
     top: 0;
     z-index: 1000 !important;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    transition: padding 0.25s ease;
   }
 
   .sidebar .brand {
-    padding: 4px 6px;
-    margin-bottom: 6px;
+    padding: 2px 4px;
+    margin-bottom: 2px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
+  .sidebar .brand .logo-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  /* 標題大幅放大至與學士帽等高，展現大氣感 */
   .sidebar .brand-text h2 {
-    font-size: 1.05rem;
+    font-size: 1.40rem !important;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1;
   }
 
   .sidebar .brand-text .sub-title {
@@ -6463,32 +6486,107 @@ html.is-pwa-standalone #app-bottom-bar {
     display: none;
   }
 
-  /* 科目按鈕在手機上單列等寬並列五格，零滾動零溢出 */
+  .sidebar-section {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 手機端漢堡按鈕升級為向上/向下收合展開箭頭 */
+  .sidebar-toggle-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-left: auto;
+  }
+
+  .sidebar-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+  }
+
+  /* 預設為向上三角形箭頭 (fa-chevron-up)，提示可將科目列收起 */
+  .sidebar .sidebar-toggle-btn i::before {
+    content: "\f077" !important;
+    font-family: "Font Awesome 6 Free", sans-serif;
+    font-weight: 900;
+  }
+
+  /* 收合狀態轉為向下三角形箭頭 (fa-chevron-down)，點擊可重新拉開 */
+  .sidebar.collapsed-mobile .sidebar-toggle-btn i::before {
+    content: "\f078" !important;
+  }
+
+  /* 手機端收合時隱藏科目分類行，整齊將頂端列高度壓縮至極限 */
+  .sidebar.collapsed-mobile .sidebar-section,
+  .sidebar.collapsed-mobile .sidebar-subject-group {
+    display: none !important;
+  }
+
+  .sidebar.collapsed-mobile {
+    padding-bottom: 4px !important;
+  }
+
+  /* 科目按鈕在手機上單列等寬並列五格，緊湊行距 */
   .sidebar-subject-group {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 6px;
     width: 100%;
-    padding: 2px 0;
+    padding: 2px 0 0 0;
+    margin: 0 !important;
   }
 
-  .sidebar-subject-btn {
-    padding: 5px 2px;
+  /* 去除外層灰色累贅容器，只保留帶專屬淡彩底色的純粹按鈕膠囊 */
+  .sidebar-subject-btn,
+  .sidebar-subject-btn:hover,
+  .sidebar-subject-btn:focus,
+  .sidebar-subject-btn:active,
+  .sidebar-subject-btn.active {
+    padding: 0 !important;
+    margin: 0 !important;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 9px;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
     min-width: 0;
     width: 100%;
   }
 
   .sidebar-subject-btn .subj-char {
-    font-size: 1.15rem;
+    font-size: 1.16rem;
+    font-weight: 800;
     width: 100%;
-    height: 32px;
-    border-radius: 8px;
+    height: 34px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
   }
+
+  .sidebar-subject-btn .subj-zh { background: rgba(245, 158, 11, 0.16); color: #f59e0b; }
+  .sidebar-subject-btn .subj-en { background: rgba(236, 72, 153, 0.16); color: #ec4899; }
+  .sidebar-subject-btn .subj-math { background: rgba(59, 130, 246, 0.16); color: #3b82f6; }
+  .sidebar-subject-btn .subj-sci { background: rgba(16, 185, 129, 0.16); color: #10b981; }
+  .sidebar-subject-btn .subj-soc { background: rgba(168, 85, 247, 0.16); color: #a855f7; }
+
+  .sidebar-subject-btn.active .subj-zh { background: #f59e0b !important; color: #ffffff !important; box-shadow: 0 0 12px rgba(245, 158, 11, 0.6); }
+  .sidebar-subject-btn.active .subj-en { background: #ec4899 !important; color: #ffffff !important; box-shadow: 0 0 12px rgba(236, 72, 153, 0.6); }
+  .sidebar-subject-btn.active .subj-math { background: #3b82f6 !important; color: #ffffff !important; box-shadow: 0 0 12px rgba(59, 130, 246, 0.6); }
+  .sidebar-subject-btn.active .subj-sci { background: #10b981 !important; color: #ffffff !important; box-shadow: 0 0 12px rgba(16, 185, 129, 0.6); }
+  .sidebar-subject-btn.active .subj-soc { background: #a855f7 !important; color: #ffffff !important; box-shadow: 0 0 12px rgba(168, 85, 247, 0.6); }
 
   .sidebar-subject-btn .subj-count-badge {
     display: none;
@@ -6630,21 +6728,45 @@ html.is-pwa-standalone #app-bottom-bar {
   }
 
   .app-bottom-bar {
-    padding: 12px 16px 20px 16px;
-    margin-top: 20px;
+    padding: 8px 16px 14px 16px !important;
+    margin-top: 16px !important;
   }
 
   .bottom-bar-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    text-align: left !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .bottom-bar-brand {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    color: #f1f5f9 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.3px !important;
+  }
+
+  .bottom-bar-brand i {
+    font-size: 1.18rem !important;
+    color: var(--accent-secondary) !important;
   }
 
   .btn-bottom-install {
-    width: 100%;
-    justify-content: center;
-    padding: 10px 16px;
-    font-size: 0.88rem;
+    width: auto !important;
+    justify-content: center !important;
+    padding: 6px 14px !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    border-radius: 9999px !important;
   }
 
   /* 彈窗在手機上全幅居中且絕不溢出 */

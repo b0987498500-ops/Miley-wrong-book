@@ -102,18 +102,46 @@ class App {
     const toggleBtn = document.getElementById('sidebar-toggle-btn');
     const topbarTriggerBtn = document.getElementById('topbar-sidebar-trigger');
 
+    const updateToggleIcon = () => {
+      if (!toggleBtn || !sidebar) return;
+      const icon = toggleBtn.querySelector('i');
+      if (!icon) return;
+      const isMobile = window.innerWidth <= 768;
+      if (isMobile) {
+        const isCollapsed = sidebar.classList.contains('collapsed-mobile');
+        icon.className = isCollapsed 
+          ? 'fa-solid fa-chevron-down sidebar-toggle-icon' 
+          : 'fa-solid fa-chevron-up sidebar-toggle-icon';
+        toggleBtn.setAttribute('title', isCollapsed ? '展開科目分類' : '收合科目分類');
+      } else {
+        const isCollapsed = sidebar.classList.contains('collapsed');
+        icon.className = isCollapsed 
+          ? 'fa-solid fa-bars sidebar-toggle-icon' 
+          : 'fa-solid fa-bars-staggered sidebar-toggle-icon';
+        toggleBtn.setAttribute('title', isCollapsed ? '展開側邊欄' : '收合側邊欄');
+      }
+    };
+
     if (toggleBtn && sidebar) {
       toggleBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        sidebar.classList.toggle('collapsed');
-        const isCollapsed = sidebar.classList.contains('collapsed');
-        toggleBtn.setAttribute('title', isCollapsed ? '展開側邊欄' : '收合側邊欄');
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+          sidebar.classList.toggle('collapsed-mobile');
+        } else {
+          sidebar.classList.toggle('collapsed');
+        }
+        updateToggleIcon();
       });
+
+      window.addEventListener('resize', updateToggleIcon);
+      updateToggleIcon();
     }
 
     if (topbarTriggerBtn && sidebar) {
       topbarTriggerBtn.addEventListener('click', () => {
         sidebar.classList.toggle('collapsed');
+        updateToggleIcon();
       });
     }
   }
