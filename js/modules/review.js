@@ -784,20 +784,15 @@ window.ReviewModule = {
       return;
     }
 
-    // Unreviewed question: Miley says:
-    // "就假說我跳過了這題，那這題可能就會往後面排一個，然後我就會先到下一題看那個題目"
-    if (this.currentIndex < this.activeQuestions.length - 1) {
-      const [item] = this.activeQuestions.splice(this.currentIndex, 1);
-      this.activeQuestions.splice(this.currentIndex + 1, 0, item);
-      this.showToast('⏭️ 已將本題往後排一個（未複習），先看下一題！');
-    } else {
-      const firstUnrevIdx = this.activeQuestions.findIndex((q, i) => i !== this.currentIndex && !this.isQuestionReviewed(q));
-      if (firstUnrevIdx !== -1) {
-        this.currentIndex = firstUnrevIdx;
-        this.showToast('⏭️ 已循環至前面的未複習題目！');
-      } else {
-        this.showToast('⏭️ 本題已在隊列最後，準備開始攻克！');
-      }
+    // Unreviewed question: Miley requested:
+    // "我希望我選擇『等一下再複習』的題目呢，是可以跳到最後一個的！等我先做完所有的題目，我再開始來做我剛才有跳過的題目！"
+    const [item] = this.activeQuestions.splice(this.currentIndex, 1);
+    this.activeQuestions.push(item);
+    this.showToast('⏭️ 已將本題移至【隊列最後一題】，先做其它題目再來挑戰！');
+
+    // 原本 currentIndex 後方的題目自動遞補上來，若已超出長度則回到第 0 題
+    if (this.currentIndex >= this.activeQuestions.length) {
+      this.currentIndex = 0;
     }
 
     this.renderCurrentCard();

@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v131';
+const STORAGE_KEY = 'miley_wrong_questions_v132';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -206,9 +206,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "生物體的個體組成層次差異（動物 vs. 植物）",
     "uploadDate": "2026-09-07",
-    "mondayDate": "2026-09-07",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-07"
+      "2026-09-07",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
@@ -234,9 +235,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "物體位置之精確描述三要素（參考點、方向、距離）",
     "uploadDate": "2026-09-07",
-    "mondayDate": "2026-09-07",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-07"
+      "2026-09-07",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
@@ -262,9 +264,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "計算錯誤",
     "concept": "往返平均速率之計算（總路徑長除以總時間）",
     "uploadDate": "2026-09-07",
-    "mondayDate": "2026-09-07",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-07"
+      "2026-09-07",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
@@ -290,9 +293,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "等加速度運動 v-t 圖與梯形面積求位移",
     "uploadDate": "2026-09-07",
-    "mondayDate": "2026-09-07",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-07"
+      "2026-09-07",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
@@ -897,10 +901,11 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "平行線截比例線段性質、平行輔助線分割（平行四邊形＋相似三角形）與梯形比例求長",
     "uploadDate": "2026-09-10",
-    "mondayDate": "2026-09-07",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
       "2026-09-07",
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
@@ -1374,10 +1379,11 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "平行線截比例線段與相似形：梯形內平行線倒數和定理（Crossed Ladders Theorem）",
     "uploadDate": "2026-09-11",
-    "mondayDate": "2026-09-07",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
       "2026-09-07",
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
@@ -1403,9 +1409,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "計算粗心",
     "concept": "乘法公式：多項式完全平方式展開、負號變號技巧與一次項係數對照求絕對值",
     "uploadDate": "2026-09-14",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1431,9 +1438,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "乘法公式：帶分數平方差公式速算、正純小數/真分數借位分離",
     "uploadDate": "2026-09-14",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1459,9 +1467,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "解題技巧不足",
     "concept": "乘法公式：歷屆基測經典題——平方差公式展開與公因數基準比較法",
     "uploadDate": "2026-09-14",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1487,9 +1496,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "審題不清",
     "concept": "乘法公式：平方差求未知數、負數平方正負雙解陷阱",
     "uploadDate": "2026-09-14",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1515,9 +1525,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "解題技巧不足",
     "concept": "乘法公式：重疊正方形面積求法、平方差公式消去分數技巧",
     "uploadDate": "2026-09-14",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1543,9 +1554,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "平行線截比例線段與相似形：三角形兩邊中點連線定理之雙重嵌套應用",
     "uploadDate": "2026-09-14",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1571,9 +1583,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "西亞古文明：波斯帝國之發源地（伊朗高原）與祆教（拜火教）善惡二元論信仰特色",
     "uploadDate": "2026-09-14",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1599,9 +1612,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "細胞分裂（有絲分裂）之染色體行為與姐妹染色分體分離",
     "uploadDate": "2026-09-15",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1627,9 +1641,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "有性生殖與無性生殖之特徵比較、受精方式與染色體套數變化",
     "uploadDate": "2026-09-15",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1655,9 +1670,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "審題不清",
     "concept": "減數分裂之複製次數、分裂次數與配子染色體數目（單套不成對）",
     "uploadDate": "2026-09-15",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1683,9 +1699,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "三角形中點連線段性質：相似比、周長比與面積比（4倍）",
     "uploadDate": "2026-09-15",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1711,9 +1728,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "解題技巧不足",
     "concept": "三角形中點與平行線輔助線：中點連線段逆用與比例線段（求線段比 AE : EF）",
     "uploadDate": "2026-09-15",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1739,9 +1757,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "蕨類植物的地下莖營養器官繁殖與無性生殖特性",
     "uploadDate": "2026-09-16",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1767,9 +1786,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "卵生哺乳類（鴨嘴獸、針鼴）之生殖發育、呼吸方式與卵黃養分比較",
     "uploadDate": "2026-09-16",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1795,9 +1815,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "動物的求偶、生殖行為與育幼方式（海馬雄性育兒囊、蛙類鳴叫、鳥類飾羽與育幼）",
     "uploadDate": "2026-09-16",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1823,9 +1844,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "開花植物（被子植物）的花朵構造與減數分裂產生單套 (n) 生殖細胞部位（花藥與胚珠）",
     "uploadDate": "2026-09-16",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1851,9 +1873,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "等高三角形之底邊比等於面積比：連續比例轉化（求 △ABE 與 △ABC 面積比）",
     "uploadDate": "2026-09-16",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1879,9 +1902,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "平行線截比例線段與同高/同底三角形面積轉換（求 △BDE 面積）",
     "uploadDate": "2026-09-16",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1907,9 +1931,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "平行線截角平分線之等腰三角形性質與相似三角形邊長比例（求 △ADE 周長）",
     "uploadDate": "2026-09-16",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1935,9 +1960,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "動物生殖方式：受精環境（體內/體外受精）與卵生/胎生之辨析及特例",
     "uploadDate": "2026-09-17",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1963,9 +1989,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "鳥類卵生生殖：未受精蛋內部構造（胚盤、卵黃、繫帶、蛋白、蛋殼、氣室）與來源器官（卵巢 vs 輸卵管）辨析",
     "uploadDate": "2026-09-17",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -1991,9 +2018,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "被子植物有性生殖：花朵構造與發育對應（子房發育為果實、胚珠發育為種子、草莓瘦果與假果特性）〔112會考〕",
     "uploadDate": "2026-09-17",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2019,9 +2047,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "脊椎動物門檢索分類：體溫調節（內溫vs外溫）、受精方式（體內vs體外）、呼吸器官與生殖方式（卵生vs胎生）〔110會考〕",
     "uploadDate": "2026-09-17",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2047,9 +2076,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "細胞分裂與遺傳：減數分裂同源染色體分離與自由配合（配子染色體組合數計算 2^n）",
     "uploadDate": "2026-09-17",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2075,9 +2105,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "染色體套數與對數辨析：配子（單套/不成對/0對）與體細胞（雙套/成對）之觀念陷阱",
     "uploadDate": "2026-09-17",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2103,9 +2134,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "比與比例式應用：三人賽跑定速問題（相同時間所跑路程比等於速率比之同時間路程推求）",
     "uploadDate": "2026-09-17",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2131,9 +2163,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "連比例與面積分割應用：大長方形面積依比例分配秒殺求局部面積差",
     "uploadDate": "2026-09-17",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2159,9 +2192,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "連比例與反比應用：嚙合齒輪之齒數與轉動圈數成反比",
     "uploadDate": "2026-09-17",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2187,9 +2221,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "計算錯誤",
     "concept": "連比例應用：鐵線剪段圍成正方形之周長比、邊長比與面積和計算",
     "uploadDate": "2026-09-17",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2215,9 +2250,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "連比例與工作工時應用：利用工時比設比例常數計算每天總產能與訂單所需天數",
     "uploadDate": "2026-09-17",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2243,9 +2279,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "連比例應用：固定成本相同時之各月營業額連比化簡",
     "uploadDate": "2026-09-17",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2271,9 +2308,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "連比例應用：由營業額總和與連比推求個別營業額及固定成本",
     "uploadDate": "2026-09-17",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2299,9 +2337,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "世界氣候分佈：溫帶地中海型氣候之特徵（夏乾冬雨、西風帶與副熱帶高壓交替）與威尼斯冬季水患應用",
     "uploadDate": "2026-09-17",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2327,9 +2366,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "歐洲地理環境：北歐芬蘭「千湖國」冰蝕湖地形、地廣人稀特徵與無線通訊產業（Nokia）發展因果〔102試辦會考〕",
     "uploadDate": "2026-09-17",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2355,9 +2395,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "海上絲路與季風貿易：依貨物特產（中國紙墨絲瓷）判斷起點、依冬季東北季風（向西南航行）判斷出發時節〔102試辦會考〕",
     "uploadDate": "2026-09-18",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2575,9 +2616,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "歐洲區域發展：東歐民主化轉型後吸引外資設廠之區位優勢（廉價充沛勞工、加入歐盟免關稅）〔會考核心經典考點〕",
     "uploadDate": "2026-09-19",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2603,9 +2645,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "審題不清",
     "concept": "直線運動學：速度與加速度之正負號方向性（向量運算）",
     "uploadDate": "2026-09-19",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2631,9 +2674,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "計算粗心",
     "concept": "直線運動學：打點計時器（紙帶軌跡）之時間間隔與平均速度計算",
     "uploadDate": "2026-09-19",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2659,9 +2703,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "等加速度直線運動：火車煞車滑行時間、加速度、v-t 圖面積與完全煞停距離計算",
     "uploadDate": "2026-09-19",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2687,9 +2732,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "審題不清",
     "concept": "直線運動學：v-t 圖判讀、減速煞車加速度大小與向量方向（向北為正，負號即向南）",
     "uploadDate": "2026-09-19",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2715,9 +2761,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "運動圖表判讀與轉換：x-t 圖、v-t 圖、a-t 圖在特定時刻之瞬間速度比較",
     "uploadDate": "2026-09-19",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2743,9 +2790,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "古埃及古王國時期文明特徵（金字塔時代、孟斐斯、法老王權與陵墓興建）與世界古文明辨析〔93基測II〕",
     "uploadDate": "2026-09-19",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2771,9 +2819,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "兩河流域古巴比倫文明：《漢摩拉比法典》之階級劃分、以牙還牙報復原則與楔形文字辨析",
     "uploadDate": "2026-09-19",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2799,9 +2848,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "平行線截比例線段與相似三角形：交叉平行線模型（EF//AB//CD）線段比例推導與經典公式",
     "uploadDate": "2026-09-19",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2827,9 +2877,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "直線運動與自由落體：重力加速度（g = 9.8 m/s²）、v-t 圖面積求位移與下落高度計算",
     "uploadDate": "2026-09-19",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2855,9 +2906,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "自由落體運動：已知下落高度反求著地時間（h = 1/2 gt²）與著地瞬間末速度（v = gt）",
     "uploadDate": "2026-09-19",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2883,9 +2935,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "自由落體運動之核心定義與特徵辨析（只受重力作用、等加速度運動、速度均勻增加、位移隨時間平方增加）",
     "uploadDate": "2026-09-19",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2911,9 +2964,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "自由落體運動之 v-t 圖形判讀（初速為零、等加速度、過原點斜向右上直線）",
     "uploadDate": "2026-09-19",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2939,9 +2993,10 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "鉛直上拋運動之受力與加速度分析：空中運動全程加速度恆等於重力加速度 g（大小與方向皆固定）",
     "uploadDate": "2026-09-19",
-    "mondayDate": "2026-09-14",
+    "mondayDate": "2026-09-21",
     "mondayDates": [
-      "2026-09-14"
+      "2026-09-14",
+      "2026-09-21"
     ],
     "weekLabel": "2026-09-14 (本週最新題)",
     "isGuessedOrUnstable": true,
@@ -2991,7 +3046,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v130') ||
+      stored = localStorage.getItem('miley_wrong_questions_v131') ||
+               localStorage.getItem('miley_wrong_questions_v130') ||
                localStorage.getItem('miley_wrong_questions_v129') ||
                localStorage.getItem('miley_wrong_questions_v128') ||
                localStorage.getItem('miley_wrong_questions_v127') ||
@@ -3350,11 +3406,11 @@ class DataManager {
       q.errorCount = (q.errorCount || 0) + 1;
       q.ebbinghausStage = 1; // Reset Ebbinghaus repetition cycle to 1st week
       
-      const qMonday = q.mondayDate || currentMonday;
+      const baseMonday = currentMonday || this.getCurrentMondayDate();
+      const nextMonday = this.getNextMondayDate(baseMonday);
       if (!Array.isArray(q.mondayDates)) {
-        q.mondayDates = [qMonday];
+        q.mondayDates = [q.mondayDate || baseMonday];
       }
-      const nextMonday = this.getNextMondayDate(qMonday);
       if (!q.mondayDates.includes(nextMonday)) {
         q.mondayDates.push(nextMonday);
       }
