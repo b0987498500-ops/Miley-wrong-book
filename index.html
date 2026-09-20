@@ -175,24 +175,24 @@
         </div>
         <div class="sidebar-subject-group" id="sidebar-subject-group">
           <button class="sidebar-subject-btn" data-subject="國文" title="國文">
-            <span class="subj-badge subj-zh">國</span>
-            <span class="subj-name">國文</span>
+            <span class="subj-char subj-zh">國</span>
+            <span class="subj-count-badge">0題</span>
           </button>
           <button class="sidebar-subject-btn" data-subject="英文" title="英文">
-            <span class="subj-badge subj-en">英</span>
-            <span class="subj-name">英文</span>
+            <span class="subj-char subj-en">英</span>
+            <span class="subj-count-badge">0題</span>
           </button>
           <button class="sidebar-subject-btn" data-subject="數學" title="數學">
-            <span class="subj-badge subj-math">數</span>
-            <span class="subj-name">數學</span>
+            <span class="subj-char subj-math">數</span>
+            <span class="subj-count-badge">0題</span>
           </button>
-          <button class="sidebar-subject-btn" data-subject="自然/理化" title="自然/理化">
-            <span class="subj-badge subj-sci">自</span>
-            <span class="subj-name">自然/理化</span>
+          <button class="sidebar-subject-btn" data-subject="自然" title="自然">
+            <span class="subj-char subj-sci">自</span>
+            <span class="subj-count-badge">0題</span>
           </button>
           <button class="sidebar-subject-btn" data-subject="社會" title="社會">
-            <span class="subj-badge subj-soc">社</span>
-            <span class="subj-name">社會</span>
+            <span class="subj-char subj-soc">社</span>
+            <span class="subj-count-badge">0題</span>
           </button>
         </div>
       </div>
@@ -222,12 +222,12 @@
             <button id="topbar-sidebar-trigger" class="icon-btn sidebar-trigger-btn hidden" title="展開側邊欄">
               <i class="fa-solid fa-bars"></i>
             </button>
-            <div>
+            <div class="brand-heading-group">
               <h1 id="page-title">麥麥錯題本</h1>
               <p id="page-subtitle" class="subtitle" style="display: none;"></p>
             </div>
-          </div>
-          <div class="header-right">
+
+            <!-- 智慧寶庫按鈕 (緊鄰麥麥錯題本標題) -->
             <div class="wisdom-popover-wrapper">
               <button id="btn-open-wisdom-modal" class="wisdom-nav-btn" title="擊敗錯題怪解鎖的名言與心理學小知識">
                 <i class="fa-solid fa-lightbulb"></i>
@@ -270,14 +270,13 @@
                 </div>
               </div>
             </div>
+
+            <!-- 精簡日期下拉選單 (緊鄰智慧寶庫，顯示當天月日，點擊開啟學習進度與段考日曆) -->
             <div class="calendar-popover-wrapper">
-              <div class="current-date-chip" id="calendar-trigger-btn" title="點擊開啟學習進度與段考標記日曆">
+              <div class="current-date-chip compact-date-chip" id="calendar-trigger-btn" title="點擊開啟學習進度與段考標記日曆">
                 <i class="fa-regular fa-calendar-check"></i>
-                <div class="date-chip-text-group">
-                  <span id="current-date-display">2026-09-05 (週六)</span>
-                  <span id="header-study-plan-subtext" class="header-study-plan-subtext">📖 點擊標記學習目標</span>
-                </div>
-                <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px; opacity: 0.7;"></i>
+                <span id="current-date-display">9月20日</span>
+                <i class="fa-solid fa-chevron-down date-dropdown-arrow"></i>
               </div>
 
               <!-- Calendar Dropdown Popover -->
@@ -285,7 +284,7 @@
                 <!-- Nearest Exam Countdown Banner -->
                 <div class="calendar-countdown-banner" id="cal-countdown-banner">
                   <i class="fa-solid fa-bullseye" style="color: #f59e0b;"></i>
-                  <span id="cal-countdown-text">距離「自然/理化第一次段考」還有 7 天！</span>
+                  <span id="cal-countdown-text">距離「自然第一次段考」還有 7 天！</span>
                 </div>
 
                 <!-- Calendar Month Nav Header -->
@@ -317,13 +316,13 @@
                   <div class="events-box-title" id="cal-selected-day-title">今日安排</div>
                   <div class="events-list" id="cal-events-list">
                     <!-- Dynamic Event items -->
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <button id="theme-toggle-btn" class="icon-btn" title="切換深淺模式">
-              <i class="fa-solid fa-moon"></i>
-            </button>
+          <div class="header-right">
             <button id="topbar-toggle-btn" class="icon-btn" title="收合/展開頂部欄">
               <i class="fa-solid fa-chevron-up"></i>
             </button>

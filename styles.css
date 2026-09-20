@@ -447,30 +447,36 @@ body.fullscreen-review-mode .sidebar-resizer {
   color: #ffffff;
 }
 
-.subj-badge {
-  width: 22px;
-  height: 22px;
-  border-radius: 6px;
-  background: var(--bg-secondary);
+.subj-char {
+  font-size: 1.15rem;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--text-muted);
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
   flex-shrink: 0;
+  transition: all var(--transition-fast);
 }
 
-.sidebar-subject-btn.active .subj-badge {
-  background: var(--accent-primary);
-  color: #fff;
-}
+.subj-zh { color: #f59e0b; background: rgba(245, 158, 11, 0.14); border: 1px solid rgba(245, 158, 11, 0.35); }
+.subj-en { color: #ec4899; background: rgba(236, 72, 153, 0.14); border: 1px solid rgba(236, 72, 153, 0.35); }
+.subj-math { color: #3b82f6; background: rgba(59, 130, 246, 0.14); border: 1px solid rgba(59, 130, 246, 0.35); }
+.subj-sci { color: #10b981; background: rgba(16, 185, 129, 0.14); border: 1px solid rgba(16, 185, 129, 0.35); }
+.subj-soc { color: #a855f7; background: rgba(168, 85, 247, 0.14); border: 1px solid rgba(168, 85, 247, 0.35); }
 
-.subj-zh { color: #f59e0b; }
-.subj-en { color: #ec4899; }
-.subj-math { color: #3b82f6; }
-.subj-sci { color: #10b981; }
-.subj-soc { color: #8b5cf6; }
+.sidebar-subject-btn:hover .subj-zh { background: rgba(245, 158, 11, 0.25); box-shadow: 0 0 8px rgba(245, 158, 11, 0.4); }
+.sidebar-subject-btn:hover .subj-en { background: rgba(236, 72, 153, 0.25); box-shadow: 0 0 8px rgba(236, 72, 153, 0.4); }
+.sidebar-subject-btn:hover .subj-math { background: rgba(59, 130, 246, 0.25); box-shadow: 0 0 8px rgba(59, 130, 246, 0.4); }
+.sidebar-subject-btn:hover .subj-sci { background: rgba(16, 185, 129, 0.25); box-shadow: 0 0 8px rgba(16, 185, 129, 0.4); }
+.sidebar-subject-btn:hover .subj-soc { background: rgba(168, 85, 247, 0.25); box-shadow: 0 0 8px rgba(168, 85, 247, 0.4); }
+
+.sidebar-subject-btn.active .subj-zh { background: #f59e0b; color: #ffffff; box-shadow: 0 0 12px rgba(245, 158, 11, 0.6); }
+.sidebar-subject-btn.active .subj-en { background: #ec4899; color: #ffffff; box-shadow: 0 0 12px rgba(236, 72, 153, 0.6); }
+.sidebar-subject-btn.active .subj-math { background: #3b82f6; color: #ffffff; box-shadow: 0 0 12px rgba(59, 130, 246, 0.6); }
+.sidebar-subject-btn.active .subj-sci { background: #10b981; color: #ffffff; box-shadow: 0 0 12px rgba(16, 185, 129, 0.6); }
+.sidebar-subject-btn.active .subj-soc { background: #a855f7; color: #ffffff; box-shadow: 0 0 12px rgba(168, 85, 247, 0.6); }
 
 .nav-menu {
   display: flex;
@@ -621,12 +627,20 @@ body.fullscreen-review-mode .sidebar-resizer {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
+}
+
+.brand-heading-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .top-header h1 {
   font-size: 1.4rem;
   font-weight: 700;
   transition: font-size 0.2s ease;
+  white-space: nowrap;
 }
 
 .top-header .subtitle {
@@ -698,44 +712,84 @@ body.fullscreen-review-mode .sidebar-resizer {
 
 .monday-chip {
   background: var(--bg-card);
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--border-color);
   color: var(--text-sub);
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
+  padding: 4px 14px;
+  border-radius: 12px;
   cursor: pointer;
   white-space: nowrap;
-  transition: var(--transition-fast);
-  display: flex;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  line-height: 1.25;
+  min-width: 62px;
 }
 
 .monday-chip:hover {
   background: var(--bg-card-hover);
   color: var(--text-main);
   border-color: var(--accent-primary);
+  transform: translateY(-1px);
 }
 
 .monday-chip.active {
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-hover));
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.2));
   color: #ffffff;
   border-color: var(--accent-primary);
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.35);
 }
 
-.current-date-chip {
+.monday-chip .chip-week-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.monday-chip.active .chip-week-title {
+  color: #a5b4fc;
+}
+
+.monday-chip .chip-week-date {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.5px;
+}
+
+.monday-chip.active .chip-week-date {
+  color: #ffffff;
+}
+
+.current-date-chip,
+.compact-date-chip {
   background-color: var(--bg-card);
   border: var(--glass-border);
-  padding: 8px 14px;
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.85rem;
+  font-weight: 600;
   color: var(--text-sub);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.current-date-chip:hover,
+.compact-date-chip:hover {
+  background-color: var(--bg-card-hover);
+  color: var(--text-main);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
+}
+
+.date-dropdown-arrow {
+  font-size: 0.7rem;
+  opacity: 0.7;
 }
 
 .icon-btn {
@@ -6312,26 +6366,35 @@ html.is-pwa-standalone #app-bottom-bar {
     display: none;
   }
 
-  /* 科目按鈕在手機上變為流暢橫向滾動列 */
+  /* 科目按鈕在手機上單列等寬並列五格，零滾動零溢出 */
   .sidebar-subject-group {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 6px;
-    padding-bottom: 4px;
-    scrollbar-width: none;
-  }
-
-  .sidebar-subject-group::-webkit-scrollbar {
-    display: none;
+    width: 100%;
+    padding: 2px 0;
   }
 
   .sidebar-subject-btn {
-    flex: 0 0 auto;
-    padding: 6px 12px;
-    font-size: 0.82rem;
-    border-radius: 9999px;
+    padding: 5px 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .sidebar-subject-btn .subj-char {
+    font-size: 1.15rem;
+    width: 100%;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .sidebar-subject-btn .subj-count-badge {
+    display: none;
   }
 
   .sidebar-footer {
@@ -6345,36 +6408,51 @@ html.is-pwa-standalone #app-bottom-bar {
   /* 2. 頂部列 (Top Header) 手機適配 */
   .top-header {
     position: relative;
-    padding: 10px 14px;
+    padding: 8px 12px;
     gap: 8px;
     background: transparent;
   }
 
   .header-main-row {
-    flex-wrap: wrap;
-    gap: 8px;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: nowrap;
+    min-width: 0;
   }
 
   .header-left h1 {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
+    white-space: nowrap;
   }
 
   .header-right {
-    gap: 6px;
-    flex-wrap: wrap;
+    gap: 4px;
+    flex-shrink: 0;
   }
 
   /* 行動端智慧心靈寶庫與日曆按鈕微型化 */
   .wisdom-nav-btn {
-    padding: 5px 9px;
+    padding: 5px 8px;
     font-size: 0.78rem;
     gap: 4px;
+    white-space: nowrap;
   }
 
+  .compact-date-chip,
   .current-date-chip {
-    padding: 4px 8px;
+    padding: 5px 8px;
     font-size: 0.76rem;
+    gap: 4px;
+    white-space: nowrap;
   }
 
   .header-study-plan-subtext {
@@ -6432,9 +6510,17 @@ html.is-pwa-standalone #app-bottom-bar {
 
   .monday-chip {
     flex: 0 0 auto;
-    font-size: 0.78rem;
-    padding: 5px 11px;
-    border-radius: 9999px;
+    padding: 4px 10px;
+    border-radius: 10px;
+    min-width: 52px;
+  }
+
+  .monday-chip .chip-week-title {
+    font-size: 0.68rem;
+  }
+
+  .monday-chip .chip-week-date {
+    font-size: 0.82rem;
   }
 
   /* 4. 主要複習區 (Review Stage & Flashcard) 手機端滿版優化 */

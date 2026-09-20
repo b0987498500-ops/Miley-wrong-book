@@ -365,18 +365,23 @@ class App {
           formattedDate = `${month}/${day}`;
         }
 
-        let badgeLabel = formattedDate;
+        let weekTitle = '週次';
         if (dateStr === currentMonday) {
-          badgeLabel = '本週 (' + formattedDate + ')';
+          weekTitle = '本週';
         } else if (dateStr === nextMonday) {
-          badgeLabel = '下週 (' + formattedDate + ')';
+          weekTitle = '下週';
+        } else if (dateStr < currentMonday) {
+          weekTitle = '前週';
+        } else {
+          weekTitle = formattedDate + '週';
         }
 
         const isActive = dateStr === this.currentMondayFilter ? 'active' : '';
 
         html += `
-          <button class="monday-chip ${isActive}" data-monday="${dateStr}">
-            <i class="fa-regular fa-calendar-check"></i> ${badgeLabel}
+          <button class="monday-chip ${isActive}" data-monday="${dateStr}" title="${weekTitle} (${dateStr})">
+            <span class="chip-week-title">${weekTitle}</span>
+            <span class="chip-week-date">${formattedDate}</span>
           </button>
         `;
       });
@@ -610,12 +615,14 @@ class App {
         return q === t;
       };
 
+      const sciCount = targetQuestions.filter(q => isSubjMatch(q.subject, '自然/理化') || isSubjMatch(q.subject, '自然')).length;
       const subjectCounts = {
         'ALL': targetQuestions.length,
         '國文': targetQuestions.filter(q => isSubjMatch(q.subject, '國文')).length,
         '英文': targetQuestions.filter(q => isSubjMatch(q.subject, '英文')).length,
         '數學': targetQuestions.filter(q => isSubjMatch(q.subject, '數學')).length,
-        '自然/理化': targetQuestions.filter(q => isSubjMatch(q.subject, '自然/理化')).length,
+        '自然': sciCount,
+        '自然/理化': sciCount,
         '社會': targetQuestions.filter(q => isSubjMatch(q.subject, '社會')).length
       };
 

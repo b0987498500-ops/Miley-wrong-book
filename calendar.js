@@ -34,12 +34,9 @@ window.CalendarModule = {
     const displayEl = document.getElementById('current-date-display');
     if (!displayEl) return;
     const d = new Date();
-    const year = d.getFullYear();
-    const month = String(d.getMonth() + 1).padStart(2, '0');
-    const day = String(d.getDate()).padStart(2, '0');
-    const days = ['週日', '週一', '週二', '週三', '週四', '週五', '週六'];
-    const dayOfWeek = days[d.getDay()];
-    displayEl.innerText = `${year}-${month}-${day} (${dayOfWeek})`;
+    const month = d.getMonth() + 1;
+    const day = d.getDate();
+    displayEl.innerText = `${month}月${day}日`;
   },
 
   bindEvents: function() {
