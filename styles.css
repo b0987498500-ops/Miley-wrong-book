@@ -2597,6 +2597,16 @@ body.fullscreen-review-mode .sidebar-resizer {
   margin-top: 16px;
   font-size: 0.95rem;
   color: var(--text-muted);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.desktop-instruction {
+  display: inline-block;
+}
+
+.mobile-instruction {
+  display: none;
 }
 
 /* Wisdom Nav Button in Header */
@@ -6496,6 +6506,7 @@ html.is-pwa-standalone #app-bottom-bar {
     padding: 8px 12px;
     gap: 8px;
     background: transparent;
+    z-index: 2000 !important;
   }
 
   .header-main-row {
@@ -6641,18 +6652,30 @@ html.is-pwa-standalone #app-bottom-bar {
 
   .calendar-popover {
     position: fixed !important;
-    top: 50% !important;
+    top: calc(50% + 50px) !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
     width: min(340px, calc(100vw - 24px)) !important;
     max-width: calc(100vw - 24px) !important;
-    max-height: 88vh;
+    max-height: 80vh;
     box-sizing: border-box;
     overflow-y: auto;
-    z-index: 100000;
+    z-index: 100000 !important;
     padding: 12px 14px;
     border-radius: 16px;
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85);
+  }
+
+  .desktop-instruction {
+    display: none !important;
+  }
+
+  .mobile-instruction {
+    display: inline-block !important;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    text-align: center;
   }
 
   .calendar-popover.show {

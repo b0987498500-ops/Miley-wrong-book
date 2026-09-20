@@ -51,7 +51,7 @@
       // Register Service Worker
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('sw.js?v=105').then(function(reg) {
+          navigator.serviceWorker.register('sw.js?v=106').then(function(reg) {
             if (typeof reg.update === 'function') {
               reg.update();
             }
@@ -103,7 +103,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=152">
+  <link rel="stylesheet" href="styles.css?v=153">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -562,7 +562,12 @@
                       <i class="fa-solid fa-hand-fist"></i> 點擊揮刀打擊錯題怪！
                     </button>
                     <p class="battle-instruction">
-                      <i class="fa-solid fa-hand-point-left fa-bounce"></i> 請從左側選取<strong>【科目分類】</strong>或上方選擇<strong>【週次】</strong>開始錯題特訓！
+                      <span class="desktop-instruction">
+                        <i class="fa-solid fa-hand-point-left fa-bounce"></i> 請從左側選取<strong>【科目分類】</strong>，<br>或上方選擇<strong>【週次】</strong>開始錯題特訓！
+                      </span>
+                      <span class="mobile-instruction">
+                        <i class="fa-solid fa-hand-point-up fa-bounce"></i> 請從上方選取<strong>【科目分類】</strong>，<br>或上方選擇<strong>【週次】</strong>開始錯題特訓！
+                      </span>
                     </p>
                   </div>
                 </div>
