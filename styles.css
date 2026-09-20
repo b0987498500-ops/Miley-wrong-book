@@ -4788,63 +4788,88 @@ body.light-theme .fc-nav-arrow:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2px 0;
+  padding: 2px 0 6px 0;
+}
+
+.cal-month-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .cal-month-title {
-  font-weight: 700;
-  font-size: 0.84rem;
+  font-weight: 800;
+  font-size: 0.95rem;
   color: var(--text-main);
+  letter-spacing: 0.5px;
 }
 
 .cal-nav-btn {
-  background: transparent;
-  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: var(--text-muted);
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   transition: var(--transition-fast);
 }
 
 .cal-nav-btn:hover {
   background: var(--bg-card-hover);
   color: var(--text-main);
+  border-color: var(--accent-primary);
+}
+
+.cal-close-btn {
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.cal-close-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border-color: rgba(239, 68, 68, 0.4);
 }
 
 .cal-weekdays-row {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 0.76rem;
   font-weight: 700;
   color: var(--text-muted);
-  padding-bottom: 2px;
+  padding: 4px 0 2px 0;
 }
 
 .cal-days-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 2px;
+  gap: 3px;
 }
 
 .cal-day-cell {
-  height: 28px;
-  border-radius: 6px;
+  height: 32px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 0.92rem;
+  font-weight: 700;
   cursor: pointer;
   position: relative;
   transition: var(--transition-fast);
   color: var(--text-main);
+}
+
+.cal-day-cell .day-number {
+  font-size: 0.92rem;
+  font-weight: 700;
 }
 
 .cal-day-cell.empty {
@@ -4856,15 +4881,15 @@ body.light-theme .fc-nav-arrow:hover {
 }
 
 .cal-day-cell.is-today {
-  border: 1px solid var(--accent-primary);
-  font-weight: 700;
+  border: 1.5px solid var(--accent-primary);
+  font-weight: 800;
   color: var(--accent-primary);
 }
 
 .cal-day-cell.is-selected {
   background: var(--accent-primary) !important;
   color: #ffffff !important;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .cal-event-dots {
@@ -4886,16 +4911,20 @@ body.light-theme .fc-nav-arrow:hover {
 
 .cal-day-events-box {
   border-top: 1px solid var(--border-color);
-  padding-top: 6px;
+  padding-top: 8px;
   display: flex;
   flex-direction: column;
   gap: 4px;
+  align-items: center;
+  text-align: center;
 }
 
 .events-box-title {
-  font-size: 0.72rem;
+  font-size: 0.80rem;
   font-weight: 700;
   color: var(--text-muted);
+  text-align: center;
+  width: 100%;
 }
 
 .events-list {
@@ -4904,6 +4933,8 @@ body.light-theme .fc-nav-arrow:hover {
   gap: 4px;
   max-height: 100px;
   overflow-y: auto;
+  width: 100%;
+  align-items: center;
 }
 
 .cal-event-item {
@@ -6492,10 +6523,7 @@ html.is-pwa-standalone #app-bottom-bar {
   }
 
   .header-right {
-    position: static;
-    transform: none;
-    gap: 4px;
-    flex-shrink: 0;
+    display: none !important;
   }
 
   .sidebar-trigger-btn {
@@ -6520,18 +6548,19 @@ html.is-pwa-standalone #app-bottom-bar {
   }
 
   .monday-chip .chip-week-title {
-    font-size: 0.74rem;
+    font-size: 0.82rem;
+    font-weight: 700;
   }
 
   .monday-chip .chip-week-date {
-    font-size: 0.88rem;
+    font-size: 0.90rem;
     font-weight: 800;
   }
 
   /* 行動端智慧心靈寶庫與日曆按鈕微型化 */
   .wisdom-nav-btn {
     padding: 6px 10px;
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     gap: 5px;
     white-space: nowrap;
   }
@@ -6542,30 +6571,38 @@ html.is-pwa-standalone #app-bottom-bar {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 3px 8px;
+    padding: 3px 10px;
     min-width: 52px;
     gap: 1px;
     white-space: nowrap;
     border-radius: 12px;
   }
 
+  .compact-date-chip .cal-chip-icon,
+  .compact-date-chip .fa-calendar-check {
+    display: none !important;
+  }
+
   .date-chip-badge {
-    font-size: 0.68rem;
+    font-size: 0.82rem;
     font-weight: 700;
+    color: #a5b4fc;
     padding: 0;
     background: transparent;
     border: none;
-    line-height: 1.1;
+    line-height: 1.15;
   }
 
   .date-chip-val {
-    font-size: 0.85rem;
+    font-size: 0.90rem;
     font-weight: 800;
-    line-height: 1.1;
+    color: #ffffff;
+    line-height: 1.15;
+    letter-spacing: 0.5px;
   }
 
   .date-dropdown-arrow {
-    display: none;
+    display: none !important;
   }
 
   .header-study-plan-subtext {
@@ -6590,9 +6627,8 @@ html.is-pwa-standalone #app-bottom-bar {
     font-size: 0.88rem;
   }
 
-  /* 彈窗在手機上全幅居中 */
-  .wisdom-popover,
-  .calendar-popover {
+  /* 彈窗在手機上全幅居中且絕不溢出 */
+  .wisdom-popover {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -6601,6 +6637,82 @@ html.is-pwa-standalone #app-bottom-bar {
     max-width: 380px;
     max-height: 85vh;
     z-index: 100000;
+  }
+
+  .calendar-popover {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: min(340px, calc(100vw - 24px)) !important;
+    max-width: calc(100vw - 24px) !important;
+    max-height: 88vh;
+    box-sizing: border-box;
+    overflow-y: auto;
+    z-index: 100000;
+    padding: 12px 14px;
+    border-radius: 16px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.75);
+  }
+
+  .calendar-popover.show {
+    display: flex !important;
+    animation: mobileCalFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  }
+
+  @keyframes mobileCalFadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, calc(-50% - 14px)) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .cal-days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .cal-day-cell {
+    height: 35px;
+    border-radius: 8px;
+    font-size: 0.96rem;
+  }
+
+  .cal-day-cell .day-number {
+    font-size: 0.96rem;
+    font-weight: 700;
+  }
+
+  .cal-weekdays-row {
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 4px 0 2px 0;
+  }
+
+  .cal-day-events-box {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .events-box-title {
+    text-align: center !important;
+    font-size: 0.80rem;
+    font-weight: 700;
+    width: 100%;
+  }
+
+  .no-events-hint {
+    text-align: center !important;
+    font-size: 0.78rem;
+    width: 100%;
   }
 
   /* 消除手機上多層巢狀容器壓迫寬度的問題 */

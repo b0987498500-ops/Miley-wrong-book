@@ -82,6 +82,10 @@ window.CalendarModule = {
           }
         }
       });
+      document.getElementById('cal-close-btn')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        popover.classList.remove('show');
+      });
     }
 
     // Month Navigation
@@ -241,7 +245,9 @@ window.CalendarModule = {
     if (!titleEl || !listEl || !window.dataManager) return;
 
     const parts = dateStr.split('-');
-    const formattedTitle = `${parseInt(parts[1], 10)}月${parseInt(parts[2], 10)}日 安排事項`;
+    const m = parts[1] ? String(parseInt(parts[1], 10)).padStart(2, '0') : '09';
+    const d = parts[2] ? String(parseInt(parts[2], 10)).padStart(2, '0') : '20';
+    const formattedTitle = `${m}/${d} 安排事項`;
     titleEl.innerText = formattedTitle;
 
     const events = window.dataManager.getCalendarEvents().filter(e => e.date === dateStr);
