@@ -670,10 +670,10 @@ function updatePWAInstallVisibility() {
               (document.referrer && document.referrer.indexOf('android-app://') === 0) ||
               localStorage.getItem('miley_pwa_installed') === 'true';
 
-  const btnHeader = document.getElementById('btn-header-install');
+  const installEls = document.querySelectorAll('#btn-bottom-install, #btn-sidebar-install, #app-bottom-bar');
   if (isPWA) {
     document.documentElement.classList.add('is-pwa-standalone');
-    if (btnHeader) btnHeader.classList.add('hidden');
+    installEls.forEach(el => el.classList.add('hidden'));
   }
 }
 
@@ -683,8 +683,8 @@ window.addEventListener('beforeinstallprompt', (e) => {
   if (!window.matchMedia('(display-mode: standalone)').matches && !window.navigator.standalone) {
     localStorage.removeItem('miley_pwa_installed');
     document.documentElement.classList.remove('is-pwa-standalone');
-    const btnHeader = document.getElementById('btn-header-install');
-    if (btnHeader) btnHeader.classList.remove('hidden');
+    const installEls = document.querySelectorAll('#btn-bottom-install, #btn-sidebar-install, #app-bottom-bar');
+    installEls.forEach(el => el.classList.remove('hidden'));
   }
 });
 
@@ -699,8 +699,8 @@ window.triggerPWAInstall = function triggerPWAInstall() {
       if (choiceResult && choiceResult.outcome === 'accepted') {
         localStorage.setItem('miley_pwa_installed', 'true');
         document.documentElement.classList.add('is-pwa-standalone');
-        const btnHeader = document.getElementById('btn-header-install');
-        if (btnHeader) btnHeader.classList.add('hidden');
+        const installEls = document.querySelectorAll('#btn-bottom-install, #btn-sidebar-install, #app-bottom-bar');
+        installEls.forEach(el => el.classList.add('hidden'));
       }
       window.deferredPrompt = null;
     });
@@ -726,12 +726,13 @@ window.triggerPWAInstall = function triggerPWAInstall() {
 window.addEventListener('appinstalled', () => {
   localStorage.setItem('miley_pwa_installed', 'true');
   document.documentElement.classList.add('is-pwa-standalone');
-  const btnHeader = document.getElementById('btn-header-install');
-  if (btnHeader) btnHeader.classList.add('hidden');
+  const installEls = document.querySelectorAll('#btn-bottom-install, #btn-sidebar-install, #app-bottom-bar');
+  installEls.forEach(el => el.classList.add('hidden'));
   window.deferredPrompt = null;
 });
 
 // 初始化即刻檢測
 updatePWAInstallVisibility();
 window.addEventListener('DOMContentLoaded', updatePWAInstallVisibility);
+
 

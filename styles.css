@@ -6035,54 +6035,114 @@ body.light-theme .fc-fill-in-input:focus {
 /* ==========================================================================
    PWA 安裝按鈕 & 手機/電腦安裝導引彈窗
    ========================================================================== */
-.btn-header-install {
+/* 底端列 (App Bottom Bar) */
+.app-bottom-bar {
+  margin-top: 30px;
+  padding: 16px 24px;
+  border-top: var(--glass-border);
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  width: 100%;
+}
+
+.bottom-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bottom-bar-brand {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 底端列 安裝 App 按鈕 (翡翠綠大膠囊按鈕) */
+.btn-bottom-install {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   border: 1.5px solid #34d399;
   color: #ffffff;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 800;
-  padding: 6px 14px;
+  padding: 8px 20px;
   border-radius: 9999px;
   cursor: pointer;
-  box-shadow: 0 0 14px rgba(16, 185, 129, 0.4);
-  white-space: nowrap;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.45);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   letter-spacing: 0.3px;
 }
 
-.btn-header-install:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.6);
+.btn-bottom-install:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(16, 185, 129, 0.65);
   background: linear-gradient(135deg, #34d399 0%, #059669 100%);
 }
 
-.btn-header-install:active {
-  transform: scale(0.95);
+.btn-bottom-install:active {
+  transform: scale(0.96);
 }
 
-/* PWA Standalone Mode 隱藏安裝按鈕 */
-.is-pwa-standalone #btn-header-install,
-html.is-pwa-standalone #btn-header-install {
+/* 側邊欄底部安裝按鈕 */
+.btn-sidebar-install {
+  width: 100%;
+  margin-top: 10px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.3));
+  border: 1.5px solid rgba(52, 211, 153, 0.6);
+  color: #34d399;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-sidebar-install:hover {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.5);
+  transform: translateY(-1px);
+}
+
+/* PWA Standalone Mode 隱藏所有安裝按鈕 */
+.is-pwa-standalone .btn-bottom-install,
+.is-pwa-standalone .btn-sidebar-install,
+.is-pwa-standalone #btn-bottom-install,
+.is-pwa-standalone #btn-sidebar-install,
+.is-pwa-standalone #app-bottom-bar,
+html.is-pwa-standalone #btn-bottom-install,
+html.is-pwa-standalone #btn-sidebar-install,
+html.is-pwa-standalone #app-bottom-bar {
   display: none !important;
 }
 
 @media all and (display-mode: standalone) {
-  #btn-header-install {
+  #btn-bottom-install, #btn-sidebar-install, #app-bottom-bar {
     display: none !important;
   }
 }
 
 @media all and (display-mode: fullscreen) {
-  #btn-header-install {
+  #btn-bottom-install, #btn-sidebar-install, #app-bottom-bar {
     display: none !important;
   }
 }
 
 @media all and (display-mode: minimal-ui) {
-  #btn-header-install {
+  #btn-bottom-install, #btn-sidebar-install, #app-bottom-bar {
     display: none !important;
   }
 }
@@ -6321,10 +6381,22 @@ html.is-pwa-standalone #btn-header-install {
     display: none;
   }
 
-  .btn-header-install {
-    padding: 5px 10px;
-    font-size: 0.78rem;
-    gap: 4px;
+  .app-bottom-bar {
+    padding: 12px 16px 20px 16px;
+    margin-top: 20px;
+  }
+
+  .bottom-bar-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .btn-bottom-install {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 0.88rem;
   }
 
   /* 彈窗在手機上全幅居中 */

@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v129';
+const STORAGE_KEY = 'miley_wrong_questions_v130';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -616,7 +616,8 @@ const INITIAL_SEED_DATA = [
     "uploadDate": "2026-09-09",
     "mondayDate": "2026-09-07",
     "mondayDates": [
-      "2026-09-07"
+      "2026-09-07",
+      "2026-09-14"
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
@@ -640,7 +641,8 @@ const INITIAL_SEED_DATA = [
     "uploadDate": "2026-09-09",
     "mondayDate": "2026-09-07",
     "mondayDates": [
-      "2026-09-07"
+      "2026-09-07",
+      "2026-09-14"
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
@@ -664,7 +666,8 @@ const INITIAL_SEED_DATA = [
     "uploadDate": "2026-09-10",
     "mondayDate": "2026-09-07",
     "mondayDates": [
-      "2026-09-07"
+      "2026-09-07",
+      "2026-09-14"
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
@@ -688,7 +691,8 @@ const INITIAL_SEED_DATA = [
     "uploadDate": "2026-09-10",
     "mondayDate": "2026-09-07",
     "mondayDates": [
-      "2026-09-07"
+      "2026-09-07",
+      "2026-09-14"
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
@@ -1048,7 +1052,8 @@ const INITIAL_SEED_DATA = [
     "uploadDate": "2026-09-11",
     "mondayDate": "2026-09-07",
     "mondayDates": [
-      "2026-09-07"
+      "2026-09-07",
+      "2026-09-14"
     ],
     "weekLabel": "2026-09-07 (最新週次)",
     "isGuessedOrUnstable": true,
@@ -2414,7 +2419,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v128') ||
+      stored = localStorage.getItem('miley_wrong_questions_v129') ||
+               localStorage.getItem('miley_wrong_questions_v128') ||
                localStorage.getItem('miley_wrong_questions_v127') ||
                localStorage.getItem('miley_wrong_questions_v126') ||
                localStorage.getItem('miley_wrong_questions_v125') ||
@@ -2541,6 +2547,16 @@ class DataManager {
         this.questions[idx].mistakeNote = seed.mistakeNote;
         this.questions[idx].diagramUrl = seed.diagramUrl;
         this.questions[idx].answer = seed.answer;
+        if (Array.isArray(seed.mondayDates)) {
+          if (!Array.isArray(this.questions[idx].mondayDates)) {
+            this.questions[idx].mondayDates = [this.questions[idx].mondayDate || '2026-09-07'];
+          }
+          seed.mondayDates.forEach(m => {
+            if (!this.questions[idx].mondayDates.includes(m)) {
+              this.questions[idx].mondayDates.push(m);
+            }
+          });
+        }
       }
     });
 

@@ -203,6 +203,10 @@
           <div class="ebb-count"><span id="due-review-count">7</span> 題</div>
           <p class="ebb-desc">艾賓浩斯週期追蹤中</p>
         </div>
+        <!-- Sidebar Bottom PWA Install Button -->
+        <button id="btn-sidebar-install" class="btn-sidebar-install" title="將 麥麥錯題本 安裝至桌面或手機主畫面" onclick="triggerPWAInstall()">
+          <i class="fa-solid fa-cloud-arrow-down"></i> 📲 安裝 App
+        </button>
       </div>
     </aside>
 
@@ -316,11 +320,6 @@
                 </div>
               </div>
             </div>
-
-            <!-- PWA 一鍵安裝按鈕 (頂端列常駐，支援 Chrome/Android/iOS/電腦版桌面安裝) -->
-            <button id="btn-header-install" class="btn-header-install" title="將 麥麥錯題本 安裝至桌面或手機主畫面" onclick="triggerPWAInstall()">
-              <i class="fa-solid fa-cloud-arrow-down"></i> 📲 安裝App
-            </button>
 
             <button id="theme-toggle-btn" class="icon-btn" title="切換深淺模式">
               <i class="fa-solid fa-moon"></i>
@@ -932,6 +931,16 @@
             </div>
         </section>
       </div>
+
+      <!-- App Bottom Bar (底端列：常駐放置安裝App與系統狀態) -->
+      <footer class="app-bottom-bar" id="app-bottom-bar">
+        <div class="bottom-bar-content">
+          <span class="bottom-bar-brand"><i class="fa-solid fa-graduation-cap"></i> 麥麥錯題本 · 智慧複習系統</span>
+          <button id="btn-bottom-install" class="btn-bottom-install" title="將 麥麥錯題本 安裝至桌面或手機主畫面" onclick="triggerPWAInstall()">
+            <i class="fa-solid fa-cloud-arrow-down"></i> 📲 安裝至手機 / 桌面 App
+          </button>
+        </div>
+      </footer>
     </main>
   </div>
 
