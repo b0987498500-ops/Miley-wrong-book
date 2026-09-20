@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v130';
+const STORAGE_KEY = 'miley_wrong_questions_v131';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -26,10 +26,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **重心性質**：重心 $G$ 將面積三等分，$\\triangle ABG = \\frac{1}{3} \\triangle ABC$。\n2. **內心性質**：各小三角形面積與底邊長成正比，周長 $= 4+5+6 = 15$：\n   $$\\triangle ABI = \\frac{4}{15} \\triangle ABC$$\n3. **面積比**：\n   $$\\triangle ABG : \\triangle ABI = \\frac{1}{3} : \\frac{4}{15} = 5 : 4$$\n故選 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_inequality_election_threshold_002",
@@ -50,10 +58,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **當選門檻公式**：得票數 $x > \\frac{\\text{總有效票數}}{\\text{應選名額} + 1}$。\n2. 應選 2 人，平分票數為 $\\frac{12300}{2 + 1} = 4100$ 票。\n3. 得票數須嚴格大於 4100 票，故至少需 **4101 票**，選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_arithmetic_mean_missing_num_003",
@@ -74,10 +90,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 算式步驟\n\n1. 計算 49 個偶數的總和：\n   這 49 個偶數為 $2, 4, 6, \\dots, 98$，為等差數列。\n   $$\\text{總和} = \\frac{(2 + 98) \\times 49}{2} = 50 \\times 49 = 2450$$\n\n2. 計算取出的 48 個數之總和：\n   $$\\text{取出的總和} = 48 \\times 49\\frac{5}{12} = 48 \\times \\left(49 + \\frac{5}{12}\\right)$$\n   $$= 48 \\times 49 + 48 \\times \\frac{5}{12} = 2352 + 20 = 2372$$\n\n3. 求未取的數字：\n   $$\\text{未取的數} = 2450 - 2372 = 78$$\n\n○ 速算小技巧\n   將兩式相減時，直接利用分配律提出 49：\n   $$\\text{未取的數} = 50 \\times 49 - 48 \\times \\left(49 + \\frac{5}{12}\\right)$$\n   $$= (50 - 48) \\times 49 - 48 \\times \\frac{5}{12} = 98 - 20 = 78$$\n\n正確選項為 (D)。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_ratio_reciprocal_simplification_004",
@@ -98,10 +122,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解題步驟：\n\n1. **利用比例常數設式**：\n   設 $\\frac{1}{x} = 3k$、$\\frac{2}{y} = 4k$、$\\frac{3}{z} = 5k$（其中 $k \\neq 0$）。\n\n2. **分別求出 $x$、$y$、$z$**：\n   - 求 $x$：由 $\\frac{1}{x} = 3k \\implies x = \\frac{1}{3k}$\n\n   - 求 $y$：由 $\\frac{2}{y} = 4k \\implies y = \\frac{2}{4k} = \\frac{1}{2k}$\n\n   - 求 $z$：由 $\\frac{3}{z} = 5k \\implies z = \\frac{3}{5k}$\n\n3. **求連比並化為最簡整數比**：\n   $$x : y : z = \\frac{1}{3k} : \\frac{1}{2k} : \\frac{3}{5k} = \\frac{1}{3} : \\frac{1}{2} : \\frac{3}{5}$$\n   各項同乘以分母最小公倍數 $30$：\n   $$x : y : z = \\left(\\frac{1}{3} \\times 30\\right) : \\left(\\frac{1}{2} \\times 30\\right) : \\left(\\frac{3}{5} \\times 30\\right) = 10 : 15 : 18$$\n\n標準答案為 $10 : 15 : 18$。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_ratio_linear_substitution_005",
@@ -122,10 +154,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解題步驟：\n\n1. **依比例設參數 $r$**：\n   依題意 $(x + 3) : (y - 2) : z = 4 : 2 : 3$，令：\n   - $x + 3 = 4r \\implies x = 4r - 3$\n\n   - $y - 2 = 2r \\implies y = 2r + 2$\n\n   - $z = 3r$\n\n   （其中 $r \\neq 0$）\n\n2. **代入總和條件求 $r$**：\n   已知 $x + y + z = 44$，將各項代入：\n   $$(4r - 3) + (2r + 2) + 3r = 44$$\n   $$9r - 1 = 44 \\implies 9r = 45 \\implies r = 5$$\n\n3. **求出 $x - y$ 之值**：\n   - 代入 $x, y$ 的表示式：\n     $$x - y = (4r - 3) - (2r + 2) = 2r - 5$$\n   - 代入 $r = 5$：\n     $$x - y = 2 \\times 5 - 5 = 10 - 5 = 5$$\n   - （亦可分別求出各數值：$x = 17$、$y = 12$、$z = 15$，得 $x - y = 17 - 12 = 5$）\n\n標準答案為 **5**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_rect_area_ratio_perimeter_006",
@@ -146,10 +186,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_rect_area_ratio_perimeter_006.png",
     "solution": "這題的核心概念就是利用「面積比」推「長寬比」，再湊出整數邊長：\n\n○ 第一步：看邊長比例\n- 乙和丙共用底邊，面積比 4 : 5 ⟹ 高的比為 4 : 5（整塊大長方形的高共 9 份）。\n- 甲和（乙+丙）高相同，面積比為 3 : (4 + 5) = 3 : 9 = 1 : 3 ⟹ 底邊長比為 1 : 3（整塊大長方形的底共 4 份）。\n\n○ 第二步：求出實際數字\n- 大長方形周長 34 ⟹ 長加寬 = 17。\n- 也就是：$9 \\times (\\text{高的每份}) + 4 \\times (\\text{底的每份}) = 17$。\n- 因為邊長都是整數，只有一種組合符合：\n  * 高的每份是 1（大長方形高 = 9）\n  * 底的每份是 2（大長方形底 = 8）\n\n○ 第三步：算各自周長\n- 甲（寬 2、高 9）：周長 $= (2 + 9) \\times 2 = 22$\n- 乙（底 6、高 4）：周長 $= (6 + 4) \\times 2 = 20$\n- 丙（底 6、高 5）：周長 $= (6 + 5) \\times 2 = 22$\n\n周長比為 $22 : 20 : 22 = 11 : 10 : 11$。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_sci_bio_organism_hierarchy_001",
@@ -173,7 +221,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_sci_phy_position_description_002",
@@ -197,7 +249,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_sci_phy_round_trip_average_speed_003",
@@ -221,7 +277,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_sci_phy_car_vt_displacement_004",
@@ -245,7 +305,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_ratio_fraction_param_linear_007",
@@ -266,10 +330,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "這題用「設參數 $k$」來解最不容易出錯：\n\n○ **第一步：設參數表示 $x, y, z$**\n  令 $\\frac{x+3}{2} = \\frac{y-1}{4} = \\frac{z+1}{5} = k$，則：\n  - $x = 2k - 3$\n  - $y = 4k + 1$\n  - $z = 5k - 1$\n\n○ **第二步：代入已知條件求 $k$**\n  已知 $2z - x - y = 180$：\n  $$2(5k - 1) - (2k - 3) - (4k + 1) = 180$$\n\n  展開括號（特別注意負號變號）：\n  $$(10k - 2) - 2k + 3 - 4k - 1 = 180$$\n  $$(10k - 2k - 4k) + (-2 + 3 - 1) = 180$$\n  $$4k + 0 = 180$$\n  $$k = 45$$\n\n○ **第三步：計算 $x + y + z$**\n  將 $x, y, z$ 加起來：\n  $$x + y + z = (2k - 3) + (4k + 1) + (5k - 1)$$\n  $$= (2k + 4k + 5k) + (-3 + 1 - 1)$$\n  $$= 11k - 3$$\n\n  代入 $k = 45$：\n  $$x + y + z = 11 \\times 45 - 3 = 495 - 3 = \\mathbf{492}$$\n\n正確答案為 **(C)**。\n\n> 💡 **易錯點提醒**：在算 $11k - 3$ 時，如果只算了 $11 \\times 45 = 495$，或是常數項移項時正負號弄錯，就很容易選到 490 或 495 喔！",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_ratio_partnership_profit_weighted_008",
@@ -290,10 +362,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解題步驟：\n\n1. **計算合夥紅利分配權重**：\n   - 協議紅利按「投資金額 $\\times$ 投資期間」之乘積成正比分配。\n   - 投資金額比：甲 : 乙 : 丙 $= 7 : 5 : 11$\n   - 投資期間比：甲 : 乙 : 丙 $= 5 : x : 11$\n   - 各人分配比例權重：\n     - 甲：$7 \\times 5 = 35$\n     - 乙：$5 \\times x = 5x$\n     - 丙：$11 \\times 11 = 121$\n   - 總權重份數：$35 + 5x + 121 = 156 + 5x$\n\n2. **列方程式求 $x$**：\n   - 總紅利為 245000 元，乙分得 50000 元：\n     $$\\frac{5x}{156 + 5x} = \\frac{50000}{245000} = \\frac{10}{49}$$\n   - 交叉相乘：\n     $$49 \\times 5x = 10 \\times (156 + 5x)$$\n     $$245x = 1560 + 50x$$\n     $$195x = 1560 \\implies x = 8$$\n\n3. **求乙的投資期間（月份）**：\n   - 投資總期間為 2 年，即 $2 \\times 12 = 24$ 個月。\n   - 期間比為 $5 : x : 11 = 5 : 8 : 11$，總份數 $= 5 + 8 + 11 = 24$ 份。\n   - 每份剛好對應 $24 \\div 24 = 1$ 個月。\n   - 因此乙的投資期間為 $8 \\times 1 = \\mathbf{8}$ 個月。\n\n正確答案選 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_applied_recruitment_notice_001",
@@ -314,10 +394,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_chinese_applied_recruitment_notice_001.png",
     "solution": "○ 詳細題目解析：\n\n依據【徵才啟事】內容逐條比對選項：\n\n- **(A) 錯誤**：啟事載明「男生須役畢」，意指男性應徵者必須服完兵役，並未排除女性，故女性亦具應徵資格。\n- **(B) 正確（正解）**：啟事註明「意者請攜履歷及自傳**親洽**」。「親洽」指必須**本人親自前往面試洽談**，不可委託他人代為報名。\n- **(C) 錯誤**：啟事要求「大學相關科系畢業（如財金、經濟等），需有經驗」；「具外文能力者」僅為**優先錄取之加分條件**，非指外文系畢業即可應徵。\n- **(D) 錯誤**：啟事明訂「需有經驗」，無經驗者不予錄用。\n\n正確答案選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_compound_words_qian_mo_002",
@@ -338,10 +426,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "- **(A) 合義複詞（正解）**：「阡」（南北田埂）＋「陌」（東西田埂），兩字皆有獨立意義，選 **(A)**。\n- **(B)(C)(D) 聯綿詞**：「邂逅」、「蟋蟀」、「囫圇」單字不可拆開解釋，純為雙音節記錄聲音。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_phonetic_loan_interchangeable_003",
@@ -362,10 +458,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解析：\n\n題幹要求找出替換後**意義改變**（非通假字）的選項：\n\n- **(A) 民安所「錯」其手足 ➔ 措（意義不變）**：\n  出自《史記·張釋之列傳》。「錯」通「措」，安放、放置之意。\n\n- **(B) 「咨」爾多士，為民前鋒 ➔ 茲（意義改變，正解）**：\n  - 「咨」是**嘆詞**，相當於「嗟、啊」，用以呼告眾人。\n  - 「茲」是**指示代名詞**，意為「此、這」（如念茲在茲）。\n  兩者字義與詞性截然不同，替換後意思完全改變，故選 **(B)**。\n\n- **(C) 夜夜夜半啼，聞者淚沾「襟」 ➔ 衿（意義不變）**：\n  出自白居易〈慈烏夜啼〉。「襟」通「衿」，皆指衣服胸前的交領部位。\n\n- **(D) 水陸草木之花，可愛者甚「蕃」 ➔ 繁（意義不變）**：\n  出自周敦頤〈愛蓮說〉。「蕃」通「繁」，繁多之意。\n\n正確答案選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_rhetoric_pun_homophone_004",
@@ -386,10 +490,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解析：\n\n題幹說明「諧音雙關」為利用同音或音近之字造成字面與深層雙重意涵：\n\n- **(A)「日傳意外」**：指日本傳出意外，為平實敘述，無諧音雙關。\n- **(B)「楓華萬千」（正解）**：奧萬大以賞楓聞名，旅行社巧妙借用成語「**風**華萬千」之音，改為「**楓**華萬千」，兼指楓紅美景與風采華麗，為標準的**諧音雙關**，故選 **(B)**。\n- **(C)「氣蓋山河」**：借自「氣蓋世」之誇飾成語，極言聲勢雄壯，非諧音雙關。\n- **(D)「網連世界」**：依字面意思敘述網路互聯，非諧音雙關。\n\n正確答案選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_literature_confucius_analects_005",
@@ -410,10 +522,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_chinese_literature_confucius_analects_005.png",
     "solution": "○ 詳細對照解析：\n\n檢視四位學生對孔子與《論語》的表格筆記：\n\n- **(A) 琪琪（完全正確，正解）**：\n  - 孔子：生於春秋末期魯國，創立儒家學派。\n  - 《論語》：全書共二十篇，首篇為〈學而〉，末篇為〈堯曰〉，敘述完全正確，選 **(A)**。\n\n- **(B) 旻旻（錯誤）**：\n  - 《論語》是由「**孔子弟子及再傳弟子**」記錄編輯而成，**作者不包含孔子本人**！\n\n- **(C) 安安（錯誤）**：\n  - 孟子（戰國中期）與荀子（戰國末期）皆出生於孔子逝世多年之後，**絕非孔子的親授學生**！\n\n- **(D) 楚楚（錯誤）**：\n  - 授業不分貧富貴賤稱為「**有教無類**」；依學生個別資質能力指導才是「**因材施教**」，概念顛倒！\n\n正確答案選 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_equilateral_triangle_linear_system_009",
@@ -434,10 +554,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_equilateral_triangle_linear_system_009.png",
     "solution": "○ 詳細解題步驟：\n\n1. **依正三角形「三邊等長」列聯立方程式**：\n   正三角形三邊長皆相等，故：\n   $$6x - 3y = 4x + y = 5x - 1$$\n\n2. **聯立求解 $x$ 與 $y$**：\n   - 由前兩邊相等：\n     $$6x - 3y = 4x + y \\implies 2x - 4y = 0 \\implies x = 2y \\quad \\cdots\\cdots ①$$\n   - 由後兩邊相等：\n     $$4x + y = 5x - 1 \\implies 5x - 4x - y = 1 \\implies x - y = 1 \\quad \\cdots\\cdots ②$$\n   - 將 ① 式代入 ② 式：\n     $$2y - y = 1 \\implies y = 1$$\n   - 代回 ① 式求 $x$：\n     $$x = 2(1) = 2$$\n\n3. **檢驗三邊長並求 $x + y$**：\n   - 各邊長為：\n     - 左邊：$6(2) - 3(1) = 12 - 3 = 9$\n     - 右邊：$4(2) + 1 = 8 + 1 = 9$\n     - 底邊：$5(2) - 1 = 10 - 1 = 9$\n     （三邊皆為 9，完全正確！）\n   - 題目所求：\n     $$x + y = 2 + 1 = \\mathbf{3}$$\n\n正確答案選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_line_chart_revenue_comparison_010",
@@ -458,10 +586,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_line_chart_revenue_comparison_010.png",
     "solution": "○ 詳細解題步驟：\n\n1. **讀取折線圖兩家公司各月營業額（單位：百萬元）**：\n   - **狠郝賺**（實線黑點）：\n     - 7月：53、8月：38、9月：72、10月：89、11月：58、12月：36\n     - 下半年總營業額 $= 53 + 38 + 72 + 89 + 58 + 36 = 346$ 百萬元\n     - 月平均營業額 $= 346 \\div 6 \\approx 57.67$ 百萬元\n   - **泰匯賺**（虛線圓圈）：\n     - 7月：41、8月：43、9月：59、10月：45、11月：40、12月：58\n     - 下半年總營業額 $= 41 + 43 + 59 + 45 + 40 + 58 = 286$ 百萬元\n     - 月平均營業額 $= 286 \\div 6 \\approx 47.67$ 百萬元\n\n2. **逐一檢驗各選項**：\n   - **(A) 錯誤**：泰匯賺平均每月約 4767 萬元，未超過 5000 萬元。\n   - **(B) 錯誤**：狠郝賺平均每月約 5767 萬元，未超過 6000 萬元。\n   - **(C) 正解**：兩家總營業額差額為：\n     $$346 - 286 = 60 \\text{ 百萬元} = 6000 \\text{ 萬元}$$\n     因此泰匯賺公司下半年總營業額比狠郝賺公司少 6000 萬元。\n   - **(D) 錯誤**：差額為 6000 萬元，非 3000 萬元。\n\n正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_discount_soap_lotion_linear_system_011",
@@ -482,10 +618,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解題步驟：\n\n1. **設未知數**：\n   設特價時沐浴乳一瓶 $x$ 元、香皂一塊 $y$ 元。\n\n2. **依題意列出二元一次聯立方程式**：\n   - 特價時買 1 瓶沐浴乳和 2 塊香皂花了 156 元：\n     $$x + 2y = 156 \\quad \\cdots\\cdots ①$$\n   - 沐浴乳恢復原價較特價多 20%，即原價為：\n     $$x \\times (1 + 20\\%) = 1.2x$$\n   - 此時沐浴乳價格為香皂單價的 8 倍（香皂價格不變）：\n     $$1.2x = 8y \\implies x = \\frac{8}{1.2}y = \\frac{20}{3}y \\quad \\cdots\\cdots ②$$\n\n3. **代入求解香皂單價 $y$**：\n   - 將 ② 式代入 ① 式：\n     $$\\frac{20}{3}y + 2y = 156$$\n     $$\\frac{26}{3}y = 156$$\n     $$y = 156 \\times \\frac{3}{26} = 6 \\times 3 = 18$$\n\n4. **驗算**：\n   - 香皂一塊 18 元，沐浴乳特價 $x = \\frac{20}{3} \\times 18 = 120$ 元。\n   - 特價花費：$120 + 2 \\times 18 = 156$ 元（符合！）。\n   - 原價花費：$120 \\times 1.2 = 144$ 元，且 $144 \\div 18 = 8$ 倍（符合！）。\n\n香皂一塊為 **18 元**，正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_fraction_simplest_coprime_012",
@@ -506,10 +650,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **最簡分數的定義**：\n- 分數的分子與分母（不看負號）互質，即最大公因數為 1 時，稱為**最簡分數**。\n\n2. **逐一檢驗各選項之因數分解與約分**：\n- **(A) $-\\frac{62}{93}$（非最簡分數）**：\n  $62 = 2 \\times 31$\n  $93 = 3 \\times 31$\n  $\\gcd(62, 93) = 31 \\ne 1$\n  可約分：$-\\frac{62}{93} = -\\frac{2}{3}$。\n- **(B) $\\frac{81}{121}$（最簡分數，正確）**：\n  $81 = 3^4$\n  $121 = 11^2$\n  81 的質因數只有 3；121 的質因數只有 11。\n  $\\gcd(81, 121) = 1$\n  分子與分母互質，無法再約分，為**最簡分數**。\n- **(C) $-\\frac{19}{361}$（非最簡分數）**：\n  $361 = 19^2 = 19 \\times 19$\n  $\\gcd(19, 361) = 19 \\ne 1$\n  可約分：$-\\frac{19}{361} = -\\frac{1}{19}$。\n- **(D) $\\frac{33}{111111}$（非最簡分數）**：\n  分子 $33 = 3 \\times 11$\n  分母 111111 各位數字和為 $1+1+1+1+1+1 = 6$（為 3 的倍數），且 $111111 = 33 \\times 3367$\n  可約分：$\\frac{33}{111111} = \\frac{1}{3367}$。\n\n3. **結論**：最簡分數為 **(B) $\\frac{81}{121}$**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_triangle_angle_bisector_af_013",
@@ -530,10 +682,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_triangle_angle_bisector_af_013.png",
     "solution": "1. **利用畢氏定理求斜邊 $\\overline{BC}$**：\n   $\\because \\overline{AB} = 4, \\overline{AC} = 3$\n   $\\therefore \\overline{BC} = \\sqrt{3^2 + 4^2} = 5$\n\n2. **求斜邊上的高 $\\overline{AD}$ 與底段 $\\overline{BD}$**：\n   - 由面積相等（兩股積 = 斜邊 $\\times$ 高）：\n     $\\overline{AD} = \\frac{3 \\times 4}{5} = \\frac{12}{5}$\n   - 在直角 $\\triangle ABD$ 中，由畢氏定理：\n     $\\overline{BD} = \\sqrt{4^2 - \\left(\\frac{12}{5}\\right)^2} = \\sqrt{\\frac{400 - 144}{25}} = \\sqrt{\\frac{256}{25}} = \\frac{16}{5}$\n\n3. **利用角平分線性質求 $\\overline{AF}$**：\n   - 在 $\\triangle ABD$ 中，$\\overline{BF}$ 為 $\\angle ABD$ 的角平分線，交 $\\overline{AD}$ 於 $F$：\n     $\\therefore \\overline{AF} : \\overline{FD} = \\overline{AB} : \\overline{BD} = 4 : \\frac{16}{5} = 5 : 4$\n   - 故 $\\overline{AF} = \\overline{AD} \\times \\frac{5}{5 + 4} = \\frac{12}{5} \\times \\frac{5}{9} = \\frac{4}{3}$。\n\n4. **結論**：$\\overline{AF} = \\mathbf{\\frac{4}{3}}$。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-09"
+    "nextReviewDate": "2026-09-09",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_triangle_angle_bisector_ad_014",
@@ -554,10 +714,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_triangle_angle_bisector_ad_014.png",
     "solution": "1. **連接 $\\overline{DE}$，證明 $\\triangle BDE \\cong \\triangle BCE$**：\n   - $\\overline{BC} = \\overline{BD} = 6$（已知）\n   - $\\angle DBE = \\angle CBE$（$\\overline{BE}$ 平分 $\\angle ABC$）\n   - $\\overline{BE} = \\overline{BE}$（公用邊）\n   - 由 **SAS 全等性質**：$\\triangle BDE \\cong \\triangle BCE$。\n   - 因此 $\\angle BDE = \\angle C = 90^\\circ$（即 $\\overline{DE} \\perp \\overline{AB}$），且兩三角形面積相等：\n     $\\text{Area}(\\triangle BDE) = \\text{Area}(\\triangle BCE)$\n\n2. **分析面積比例關係**：\n   - 全體面積：\n     $\\text{Area}(\\triangle ABC) = \\text{Area}(\\triangle ADE) + \\text{Area}(\\triangle BDE) + \\text{Area}(\\triangle BCE)$\n     $= \\text{Area}(\\triangle ADE) + 2 \\times \\text{Area}(\\triangle BDE)$\n   - 題目已知 $\\text{Area}(\\triangle ABC) = 4 \\times \\text{Area}(\\triangle ADE)$：\n     $4 \\times \\text{Area}(\\triangle ADE) = \\text{Area}(\\triangle ADE) + 2 \\times \\text{Area}(\\triangle BDE)$\n     $\\implies 3 \\times \\text{Area}(\\triangle ADE) = 2 \\times \\text{Area}(\\triangle BDE)$\n     $\\implies \\frac{\\text{Area}(\\triangle ADE)}{\\text{Area}(\\triangle BDE)} = \\frac{2}{3}$\n\n3. **利用同高三角形面積比求 $\\overline{AD}$**：\n   - $\\triangle ADE$ 與 $\\triangle BDE$ 在邊 $\\overline{AB}$ 上以 $D$ 為分界，且高均為 $\\overline{DE}$（$\\because \\overline{DE} \\perp \\overline{AB}$）：\n     $\\frac{\\overline{AD}}{\\overline{BD}} = \\frac{\\text{Area}(\\triangle ADE)}{\\text{Area}(\\triangle BDE)} = \\frac{2}{3}$\n   - 已知 $\\overline{BD} = 6$：\n     $\\frac{\\overline{AD}}{6} = \\frac{2}{3} \\implies \\overline{AD} = 6 \\times \\frac{2}{3} = 4$\n\n4. **結論**：$\\overline{AD} = \\mathbf{4}$。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-09"
+    "nextReviewDate": "2026-09-09",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_parallel_ratio_proof_015",
@@ -578,10 +746,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_parallel_ratio_proof_015.png",
     "solution": "**【詳細證明步驟】**\n\n1. **第一組平行線（在 $\\triangle ABC$ 中）**：\n   - $\\because \\overline{DE} // \\overline{BC}$\n   - 由平行線截比例線段性質：\n     $\\overline{AE} : \\overline{AC} = \\overline{AD} : \\overline{AB} \\quad \\cdots\\cdots ①$\n\n2. **第二組平行線（在 $\\triangle ADC$ 中）**：\n   - $\\because \\overline{EF} // \\overline{CD}$\n   - 由平行線截比例線段性質：\n     $\\overline{AE} : \\overline{AC} = \\overline{AF} : \\overline{AD} \\quad \\cdots\\cdots ②$\n\n3. **利用等量公理綜合 ①、② 兩式**：\n   - 兩式左邊皆為 $\\overline{AE} : \\overline{AC}$，故右邊亦相等：\n     $\\overline{AD} : \\overline{AB} = \\overline{AF} : \\overline{AD}$\n   - 交叉相乘（內項積等於外項積）：\n     $\\overline{AD} \\times \\overline{AD} = \\overline{AF} \\times \\overline{AB}$\n     $\\therefore \\mathbf{\\overline{AD}^2 = \\overline{AF} \\times \\overline{AB}}$（得證）。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-09"
+    "nextReviewDate": "2026-09-09",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_parallel_ratio_calc_016",
@@ -602,10 +778,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_parallel_ratio_calc_016.png",
     "solution": "1. **利用兩組平行線之比例性質求 $\\overline{AF}$**：\n   - $\\because \\overline{DE} // \\overline{BC}$ 且 $\\overline{EF} // \\overline{CD}$\n   - 由上題證明結論：\n     $\\overline{AD}^2 = \\overline{AF} \\times \\overline{AB}$\n   - 將已知數值 $\\overline{AD} = 6$、$\\overline{AB} = 9$ 代入：\n     $6^2 = \\overline{AF} \\times 9$\n     $36 = 9\\overline{AF} \\implies \\mathbf{\\overline{AF} = 4}$\n\n2. **利用平行線對應邊比求 $\\overline{BC}$**：\n   - $\\because \\overline{DE} // \\overline{BC}$\n   - 在 $\\triangle ADE$ 與 $\\triangle ABC$ 中，對應邊成比例：\n     $\\overline{AD} : \\overline{AB} = \\overline{DE} : \\overline{BC}$\n   - 代入數值 $\\overline{AD} = 6$、$\\overline{AB} = 9$、$\\overline{DE} = 8$：\n     $6 : 9 = 8 : \\overline{BC}$\n     $2 : 3 = 8 : \\overline{BC}$\n     $2 \\times \\overline{BC} = 24 \\implies \\mathbf{\\overline{BC} = 12}$\n\n3. **結論**：\n   $\\mathbf{\\overline{AF} = 4}，\\mathbf{\\overline{BC} = 12}$。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-09"
+    "nextReviewDate": "2026-09-09",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_parallel_ext_bisector_df_017",
@@ -627,10 +811,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_parallel_ext_bisector_df_017.png",
     "solution": "1. **利用平行線比例求 $\\overline{DE}$**：\n   - $\\because \\overline{AD} : \\overline{DB} = 1 : 3$\n   - $\\therefore \\overline{AD} : \\overline{AB} = 1 : (1 + 3) = 1 : 4$\n   - 又 $\\overline{DE} // \\overline{BC}$，在 $\\triangle ADE$ 與 $\\triangle ABC$ 中：\n     $\\overline{DE} : \\overline{BC} = \\overline{AD} : \\overline{AB} = 1 : 4$\n   - 代入 $\\overline{BC} = 16$：\n     $\\overline{DE} = 16 \\times \\frac{1}{4} = 4$\n\n2. **利用平行線內錯角與角平分線證明等腰 $\\triangle ECF$ 求 $\\overline{EF}$**：\n   - $\\because \\overline{DF} // \\overline{BG}$（$F$ 在 $\\overline{DE}$ 延長線上，$G$ 在 $\\overline{BC}$ 延長線上）\n   - 由內錯角相等：$\\angle EFC = \\angle FCG$\n   - 又已知 $\\overline{CF}$ 平分外角 $\\angle ACG$：$\\angle ECF = \\angle FCG$\n   - 因此 $\\angle EFC = \\angle ECF$\n   - 故 $\\triangle ECF$ 為等腰三角形，兩腰長相等：\n     $\\overline{EF} = \\overline{CE} = 10$\n\n3. **計算線段長度 $\\overline{DF}$**：\n   - $\\overline{DF} = \\overline{DE} + \\overline{EF} = 4 + 10 = 14$\n\n4. **結論**：$\\overline{DF} = \\mathbf{14}$。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-09"
+    "nextReviewDate": "2026-09-09",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_triangle_cevian_area_ratio_018",
@@ -652,10 +844,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_triangle_cevian_area_ratio_018.png",
     "solution": "1. **利用 $\\overline{AO} : \\overline{OD} = 1 : 1$ 設未知數**：\n   - $\\because \\overline{AO} : \\overline{OD} = 1 : 1$\n   - 在 $\\triangle ABD$ 中，同高且底等長：\n     $\\text{Area}(\\triangle AOB) = \\text{Area}(\\triangle BOD) = a$\n   - 在 $\\triangle ACD$ 中，同高且底等長：\n     $\\text{Area}(\\triangle AOC) = \\text{Area}(\\triangle COD) = b$\n\n2. **利用底邊比求 $a$ 與 $b$ 的比例**：\n   - $\\because \\overline{BD} : \\overline{BC} = 3 : 7$\n   - $\\therefore \\overline{BD} : \\overline{CD} = 3 : (7 - 3) = 3 : 4$\n   - $\\triangle ABD$ 與 $\\triangle ADC$ 擁有共同頂點 $A$ 與同高：\n     $\\text{Area}(\\triangle ABD) : \\text{Area}(\\triangle ADC) = \\overline{BD} : \\overline{CD} = 3 : 4$\n   - 即 $(a + a) : (b + b) = 2a : 2b = a : b = 3 : 4$\n   - 令 $a = 3r$，$b = 4r$（其中 $r > 0$）\n\n3. **計算三塊三角形面積比**：\n   - $\\text{Area}(\\triangle AOB) = a = 3r$\n   - $\\text{Area}(\\triangle BOC) = \\text{Area}(\\triangle BOD) + \\text{Area}(\\triangle COD) = a + b = 3r + 4r = 7r$\n   - $\\text{Area}(\\triangle AOC) = b = 4r$\n   - 故面積比為：\n     $$\\text{Area}(\\triangle AOB) : \\text{Area}(\\triangle BOC) : \\text{Area}(\\triangle AOC) = 3r : 7r : 4r = 3 : 7 : 4$$\n\n4. **結論**：面積比為 **$3 : 7 : 4$**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-09"
+    "nextReviewDate": "2026-09-09",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_rhombus_angle_bisector_be_019",
@@ -677,10 +877,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_rhombus_angle_bisector_be_019.png",
     "solution": "1. **方法一：利用菱形對角線為角平分線（秒殺技巧）**：\n   - $\\because$ 四邊形 $ADEF$ 為菱形，四邊等長且對角線平分各對角。\n   - 若連接對角線 $\\overline{AE}$，則 $\\overline{AE}$ 必平分頂角 $\\angle BAC$，即 $\\overline{AE}$ 為 $\\triangle ABC$ 中 $\\angle A$ 的**內角平分線**。\n   - 依據**三角形內角平分線性質**：\n     $$\\overline{BE} : \\overline{EC} = \\overline{AB} : \\overline{AC}$$\n   - 代入已知邊長 $\\overline{AB} = 14$、$\\overline{AC} = 10$：\n     $$\\overline{BE} : \\overline{EC} = 14 : 10 = 7 : 5$$\n   - 已知底邊全長 $\\overline{BC} = 12$，可直接求出 $\\overline{BE}$：\n     $$\\overline{BE} = \\overline{BC} \\times \\frac{7}{7 + 5} = 12 \\times \\frac{7}{12} = \\mathbf{7}$$\n\n2. **方法二：利用平行線與相似三角形（標準幾何推導）**：\n   - 設菱形邊長為 $x$，則 $\\overline{AD} = \\overline{DE} = \\overline{EF} = \\overline{AF} = x$。\n   - $\\because$ 菱形對邊平行，$\\overline{DE} // \\overline{AC}$。\n   - 在 $\\triangle ABC$ 中，$\\triangle BDE \\sim \\triangle BAC$，對應邊成比例：\n     $$\\frac{\\overline{DE}}{\\overline{AC}} = \\frac{\\overline{BD}}{\\overline{BA}}$$\n   - 其中 $\\overline{BD} = \\overline{AB} - \\overline{AD} = 14 - x$，代入方程式：\n     $$\\frac{x}{10} = \\frac{14 - x}{14}$$\n   - 交叉相乘求 $x$：\n     $$14x = 10(14 - x) \\implies 14x = 140 - 10x \\implies 24x = 140 \\implies x = \\frac{35}{6}$$\n   - 再利用對應底邊比例：\n     $$\\frac{\\overline{BE}}{\\overline{BC}} = \\frac{\\overline{DE}}{\\overline{AC}} = \\frac{35/6}{10} = \\frac{7}{12}$$\n   - 得 $\\overline{BE} = 12 \\times \\frac{7}{12} = \\mathbf{7}$。\n\n3. **結論**：$\\overline{BE} = \\mathbf{7}$。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-10"
+    "nextReviewDate": "2026-09-10",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_parallel_lines_trapezoid_ef_cf_020",
@@ -705,7 +913,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-10"
+    "nextReviewDate": "2026-09-10",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_chinese_part_of_speech_comparison_006",
@@ -726,10 +938,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "- **(A) 形／副**：「蜿蜒」小路（形）／「蜿蜒」穿梭（副）。\n- **(B) 副／形**：「泛泛」論說（副）／「泛泛」之輩（形）。\n- **(C) 形／形（正解）**：「風流」人物（形）／性格「風流」（形），詞性相同，選 **(C)**。\n- **(D) 動／名**：極力「阿諛」（動）／臣子的「阿諛」（名）。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_rhetoric_rhetorical_question_007",
@@ -750,10 +970,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "- **(A) 疑問**：寒梅著花未？（心中真不知，求解答）。\n- **(B) 提問**：問君何能爾？心遠地自偏（自問自答）。\n- **(C) 激問/反問（正解）**：不亦君子乎？（答案在反面，強烈肯定「確實是君子」），選 **(C)**。\n- **(D) 提問**：飄飄何所似？天地一沙鷗（自問自答）。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-07"
+    "nextReviewDate": "2026-09-07",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_song_ci_famous_quotes_008",
@@ -774,10 +1002,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "- **(A) 恰當（正解）**：秦觀〈鵲橋仙〉「兩情若是久長時，又豈在朝朝暮暮」，指真情經得起時空分離考驗，安慰出國男友語境貼切，選 **(A)**。\n- **(B) 誤用**：「吹皺一池春水」出自馮延巳〈謁金門〉，比喻**事不關己而好管閒事**，不可用於形容寫作缺乏歷練；應改為辛棄疾「為賦新詞強說愁」。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-08"
+    "nextReviewDate": "2026-09-08",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_homophone_que_que_characters_009",
@@ -798,10 +1034,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_chinese_fill_in_characters_009_test.png",
     "solution": "![考卷紅字答案照](assets/questions/q_chinese_fill_in_characters_009_answer.png)\n\n- **2. 【鍪】**：金部（上矛＋攴、下金），古代頭盔；辛棄疾「年少萬兜鍪」借指戰士。\n- **8. 【悠】**：心部（攸＋心），心神嚮往（非「幽」）。\n- **9. 【休】**：人部，休是喜慶、戚是憂患（非「修」）。\n- **10. 【闋】**：門部（門＋癸），計算詞的單位（量詞）；**切勿誤寫為宮殿城樓的「闕」**！",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-08"
+    "nextReviewDate": "2026-09-08",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_classical_verse_comparison_010",
@@ -822,10 +1066,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "- **(A) 錯誤**：詞為「長短句」，字數依詞牌而定，非固定五七言。\n- **(B) 完全正確（正解）**：古詩、樂府可換韻；近體詩一韻到底不可換韻；詞則依各詞牌規定押韻，選 **(B)**。\n- **(C) 錯誤**：絕句不限對仗；律詩僅「頷聯、頸聯」必對仗。\n- **(D) 錯誤**：古詩別名「古風」；詞別名「長短句、詩餘」。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-08"
+    "nextReviewDate": "2026-09-08",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_liyu_xinqiji_dialogue_011",
@@ -846,10 +1098,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "- **(A)(C)(D) 對話皆適當**：李煜前期婉約清麗，以「亡國之痛」成婉約詞極致；辛棄疾豪邁雄渾，以「報國無門」成豪放詞高峰。\n- **(B) 不適當（正解）**：稱號張冠李戴！李煜為五代國君，降宋後抒發亡國血淚，被尊為**「詞中之帝／詞中之聖」**；辛棄疾一生抗金北伐，被譽為**「愛國詞人」**。選項將兩人稱號顛倒，選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-08"
+    "nextReviewDate": "2026-09-08",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_xinqiji_doumou_rhetoric_012",
@@ -870,10 +1130,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "- **題幹「兜鍪」**：借代戰士（修辭為**借代**）。\n- **(A) 借代**：「五斗米」借代微薄官俸。\n- **(B) 借代**：「孤帆」借代船隻。\n- **(C) 譬喻（正解）**：「恰似」為喻詞，將愁緒比作春水，為譬喻（**未用借代**），選 **(C)**。\n- **(D) 借代**：「桑梓」借代家鄉、故鄉。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-08"
+    "nextReviewDate": "2026-09-08",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_youyou_polysemy_013",
@@ -894,10 +1162,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "- **(A)** 憂思長久貌（《詩經》「悠悠我心」）。\n- **(B)** 從容徐緩、閒適慢行貌。\n- **(C) 正解**：高遠、遙遠貌（出自《詩經·黍離》「悠悠蒼天，此何人哉」），選 **(C)**。\n- **(D)** 眾多、凡俗貌（指世俗眾人之口）。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-08"
+    "nextReviewDate": "2026-09-08",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_word_meaning_evolution_014",
@@ -918,10 +1194,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "- **(A) 意思相同（正解）**：皆指翻湧、紛擾繁盛貌，選 **(A)**。\n- **(B) 不同**：流傳久遠年代／哀悼死者之輓辭（去世）。\n- **(C) 不同**：聰明伶俐／明白清楚、理解。\n- **(D) 不同**：風景景緻／榮耀光彩體面。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-08"
+    "nextReviewDate": "2026-09-08",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_syntax_inversion_007",
@@ -942,10 +1226,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **(C) 正確（使用「倒裝」）**：\n   - 出處：辛棄疾《清平樂·村居》。\n   - 原句：「白髮誰家翁媼」，還原正常語序為**「誰家白髮翁媼」**（那是哪一家的白髮老爺爺老奶奶呢？）。\n   - 倒裝原因：為配合詞牌格律與押韻（好、媼），並將「白髮」特徵前置突出老人形象，屬於**修飾語（定語）倒裝**。\n\n2. **其他選項分析（皆為正常語序，無倒裝）**：\n   - **(A) 樓上晴天碧四垂，樓前芳草接天涯**：出自周邦彥《浣溪沙》，晴空蔚藍四垂、芳草連綿天際，為標準主謂賓敘述，無倒裝。\n   - **(B) 新筍已成堂下竹，落花都上燕巢泥**：出自周邦彥《浣溪沙》，新筍長成翠竹、殘花混入燕泥，為順應時序變化之自然敘述，無倒裝。\n   - **(D) 最喜小兒亡賴，溪頭臥剝蓮蓬**：出自辛棄疾《清平樂·村居》，承前省略主語「小兒」，依動作順序敘述，無倒裝。\n\n3. **結論**：正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-09"
+    "nextReviewDate": "2026-09-09",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_homophone_shape_wu_015",
@@ -966,10 +1258,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **(C) 正確（正解）**：\n   - 痛心嘆「惋」：**惋**（忄心部），音 ㄨㄢˇ，指感嘆、惋惜悲痛。\n\n2. **其他選項除錯與字形辨析**：\n   - **(A) 趨之若「騖」❌** 應改為**「鶩」**。\n     - 「鶩」為**鳥部**，本義為野鴨。像成群野鴨爭搶食物般奔向目標，形容許多人爭相搶奪或前往。\n   - **(B) 好高「騖」遠❌** 應改為**「騖」**。\n     - 「騖」為**馬部**，本義為縱馬奔馳。比喻不切實際，一味追求過高過遠的目標。\n   - **(D) 企「叛」❌** 應改為**「盼」**。\n     - 「盼」為**目部**，本義是轉動眼睛看，引申為盼望、期望。「企盼」即踮起腳尖殷切盼望。\n\n★ **秒記口訣**：\n- 🦆 **鴨子搶食（鳥部）** ➔ 趨之若**鶩**\n- 🐎 **野馬奔馳（馬部）** ➔ 好高**騖**遠、馳**騁**\n- 👁️ **眼睛期盼（目部）** ➔ 企**盼**\n- ❤️ **心中哀痛（心部）** ➔ 嘆**惋**",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-11"
+    "nextReviewDate": "2026-09-11",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_phonetics_stroke_you_que_016",
@@ -990,10 +1290,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **(A) 正確（正解）**：\n   - 生死「攸」關：讀音為 **ㄧㄡ**。「攸」為所、關係之意，比喻生死存亡緊密相扣，關係重大。\n\n2. **其他選項讀音除錯**：\n   - **(B) 付之「闕」如 ❌**：讀音應為 **ㄑㄩㄝ**（陰平一聲），不可讀作 ㄐㄩㄝˊ 或 ㄑㄩㄝˋ！\n     - 「闕」通「缺」，指殘缺空缺。「付之闕如」指缺漏不備、未有著落。\n   - **(C) 「矢」口否認 ❌**：讀音應為 **ㄕˇ**（上聲三聲），不可讀作 ㄕˋ！\n     - 「矢」本義為箭，引申為立誓、堅決如箭直射直言，形容一口咬定、堅決否定。\n   - **(D) 「矇」混過關 ❌**：教育部標準音為 **ㄇㄥ**（陰平一聲），不可讀作 ㄇㄥˊ！\n     - 「矇」在此指欺騙、遮蔽真相（如矇混過關、矇騙欺瞞皆讀 ㄇㄥ；而「濛濛細雨」讀 ㄇㄥˊ；「啟蒙教育」讀 ㄇㄥˊ）。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-11"
+    "nextReviewDate": "2026-09-11",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_character_spelling_kan_zhen_fu_017",
@@ -1014,10 +1322,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **(B) 字形完全相同（正解）**：\n   - 凡事多加「斟」酌：**斟**（斗部，反覆衡量權衡，語出《出師表》「斟酌損益」）。\n   - 滿「斟」美酒：**斟**（斗部，倒酒、注入液體）。兩者國字皆為「斟」，選 **(B)**。\n\n2. **其他選項辨析**：\n   - **(A) 勘 vs. 堪（不同）**：\n     - 實地「勘」測：**勘**（力部，審查、校核踏勘）。\n     - 情況「堪」慮：**堪**（土部，能、可以承受）。\n   - **(C) 俘 vs. 浮（不同）**：\n     - 生「俘」敵將：**俘**（亻人部，戰爭中捕獲的敵軍人犯）。\n     - 「浮」萍飄動：**浮**（氵水部，浮在水面）。\n   - **(D) 攸 vs. 幽（不同）**：\n     - 生死「攸」關：**攸**（攸部，所、所繫關聯）。\n     - 曲徑「幽」深：**幽**（幺部，昏暗、深遠靜謐）。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-11"
+    "nextReviewDate": "2026-09-11",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_chinese_idiom_comprehensive_13_018",
@@ -1038,10 +1354,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **(B) 正確（正解）**：\n   - 企「盼」：寫作「盼」（目部，轉眼盼望）。\n   - 嘆「惋」：寫作「惋」（忄心部，惋惜驚嘆）。兩者用字與部首皆完全正確，選 **(B)**。\n\n2. **其他選項除錯**：\n   - **(A) 錯誤**：\n     - 趨之若「鶩」：是**「鳥部」**（野鴨成群搶食）。\n     - 好高「騖」遠：才是**「馬部」**（狂馬奔馳，比喻不切實際）。兩者部首截然不同！\n   - **(C) 錯誤**：\n     - 「付之闕如」的「闕」讀作 **ㄑㄩㄝ**（陰平一聲），在此通「缺」，指殘缺空缺，非宮闕之意。\n   - **(D) 錯誤**：\n     - 「矢口否認」的「矢」讀作 **ㄕˇ**（上聲三聲，非ㄕˋ），本義如箭射出直言，引申為一口咬定、立誓堅決否定。\n\n---\n### 📖 段考精選 13 題考點速查對照表：\n| 題號 | 題目考點 | 正確字音／字形 | 核心部首與字義重點 |\n| :---: | :--- | :---: | :--- |\n| **17** | 企「ㄆㄢˋ」 | **盼** | **目部**（翹首期盼） |\n| **32** | 付之「闕」如 | **ㄑㄩㄝ** | **門部**（通「缺」，缺漏不備） |\n| **33** | 「ㄎㄢ」測 | **勘** | **力部**（校核、踏勘審視） |\n| **34** | 「ㄓㄣ」酌 | **斟** | **斗部**（反覆衡量、倒酒） |\n| **37** | 生死「攸」關 | **ㄧㄡ** | **攸部**（所、關係） |\n| **38** | 「ㄧㄡ」暗 | **幽** | **幺部**（深邃昏暗幽靜） |\n| **40** | 趨之若「ㄠˋ」 | **鶩** | **鳥部**（野鴨搶食爭奪） |\n| **41** | 好高「ㄠˋ」遠 | **騖** | **馬部**（野馬狂奔、不切實際） |\n| **43** | 「矢」口否認 | **ㄕˇ** | **矢部**（如箭直言、一口咬定） |\n| **45** | 「矇」混過關 | **ㄇㄥ** | **目部**（矇蔽、欺瞞真相） |\n| **47** | 嘆「ㄨㄢˇ」 | **惋** | **忄部**（惋惜悲嘆） |\n| **48** | 「ㄇㄧㄢˊ」薄之力 | **綿／棉** | **糸部／木部**（自謙力量微小） |\n| **50** | 「ㄈㄨˊ」虜 | **俘** | **亻部**（擒獲戰俘） |",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-11"
+    "nextReviewDate": "2026-09-11",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_math_parallel_reciprocal_sum_proof_021",
@@ -1066,7 +1390,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-11"
+    "nextReviewDate": "2026-09-11",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_polynomial_expansion_coeff_abs_023",
@@ -1090,7 +1418,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-14"
+    "nextReviewDate": "2026-09-14",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_mixed_fraction_diff_squares_024",
@@ -1114,7 +1446,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-14"
+    "nextReviewDate": "2026-09-14",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_bittest_diff_squares_compare_025",
@@ -1138,7 +1474,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-14"
+    "nextReviewDate": "2026-09-14",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_diff_squares_plus_minus_trap_026",
@@ -1162,7 +1502,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-14"
+    "nextReviewDate": "2026-09-14",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_overlapping_squares_area_027",
@@ -1186,7 +1530,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-14"
+    "nextReviewDate": "2026-09-14",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_triangle_midpoint_trisect_df_028",
@@ -1210,7 +1558,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-14"
+    "nextReviewDate": "2026-09-14",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_soc_persian_zoroastrianism_map_029",
@@ -1234,7 +1586,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-14"
+    "nextReviewDate": "2026-09-14",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_bio_cancer_cell_division_mitosis_030",
@@ -1258,7 +1614,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-15"
+    "nextReviewDate": "2026-09-15",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_bio_sexual_reproduction_characteristics_031",
@@ -1282,7 +1642,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-15"
+    "nextReviewDate": "2026-09-15",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_bio_meiosis_chimpanzee_chromosomes_032",
@@ -1306,7 +1670,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-15"
+    "nextReviewDate": "2026-09-15",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_triangle_midpoint_perimeter_area_033",
@@ -1330,7 +1698,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-15"
+    "nextReviewDate": "2026-09-15",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_triangle_midpoint_ratio_ae_ef_034",
@@ -1354,7 +1726,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-15"
+    "nextReviewDate": "2026-09-15",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_bio_fern_vegetative_reproduction_035",
@@ -1378,7 +1754,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-16"
+    "nextReviewDate": "2026-09-16",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_bio_platypus_oviparous_mammal_036",
@@ -1402,7 +1782,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-16"
+    "nextReviewDate": "2026-09-16",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_bio_animal_reproductive_behavior_seahorse_037",
@@ -1426,7 +1810,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-16"
+    "nextReviewDate": "2026-09-16",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_bio_flower_structure_haploid_gametes_038",
@@ -1450,7 +1838,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-16"
+    "nextReviewDate": "2026-09-16",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_triangle_ratio_abe_abc_039",
@@ -1474,7 +1866,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-16"
+    "nextReviewDate": "2026-09-16",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_parallel_segments_triangle_area_040",
@@ -1498,7 +1894,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-16"
+    "nextReviewDate": "2026-09-16",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_parallel_angle_bisector_perimeter_041",
@@ -1522,7 +1922,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-16"
+    "nextReviewDate": "2026-09-16",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_bio_animal_reproduction_fertilization_042",
@@ -1546,7 +1950,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-17"
+    "nextReviewDate": "2026-09-17",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_bio_egg_structure_043",
@@ -1570,7 +1978,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-17"
+    "nextReviewDate": "2026-09-17",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_bio_strawberry_fruit_reproduction_044",
@@ -1594,7 +2006,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-17"
+    "nextReviewDate": "2026-09-17",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_bio_animal_classification_tree_045",
@@ -1618,7 +2034,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-17"
+    "nextReviewDate": "2026-09-17",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_bio_fruitfly_gamete_combinations_046",
@@ -1642,7 +2062,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-17"
+    "nextReviewDate": "2026-09-17",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_bio_fruitfly_gamete_somatic_comparison_047",
@@ -1666,7 +2090,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-17"
+    "nextReviewDate": "2026-09-17",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_marathon_constant_speed_ratio_048",
@@ -1690,7 +2118,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-17"
+    "nextReviewDate": "2026-09-17",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_rectangle_area_ratio_049",
@@ -1714,7 +2146,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-17"
+    "nextReviewDate": "2026-09-17",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_gear_turn_inverse_ratio_050",
@@ -1738,7 +2174,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-17"
+    "nextReviewDate": "2026-09-17",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_wire_squares_area_sum_051",
@@ -1762,7 +2202,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-17"
+    "nextReviewDate": "2026-09-17",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_clothing_production_ratio_workdays_052",
@@ -1786,7 +2230,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-17"
+    "nextReviewDate": "2026-09-17",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_ice_shop_revenue_ratio_053",
@@ -1810,7 +2258,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-17"
+    "nextReviewDate": "2026-09-17",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_math_ice_shop_fixed_cost_054",
@@ -1834,7 +2286,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-17"
+    "nextReviewDate": "2026-09-17",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_soc_geo_mediterranean_climate_italy_055",
@@ -1858,7 +2314,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-17"
+    "nextReviewDate": "2026-09-17",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_soc_geo_finland_lake_telecom_056",
@@ -1882,7 +2342,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-17"
+    "nextReviewDate": "2026-09-17",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_soc_geo_maritime_silk_road_monsoon_057",
@@ -1906,7 +2370,11 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-18"
+    "nextReviewDate": "2026-09-18",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
   {
     "id": "q_eng_voc_experience_engineer_shop_058",
@@ -1927,10 +2395,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細文法與字義深度剖析：\n\n1. **文意脈絡與語法結構分析**：\n   - 第一句：`Edward had worked as a computer engineer for ten years.`\n     - 使用**過去完成式（had worked）**，表示在自行創業開店（started his own shop）這件過去的事情**之前**，他已經持續累積了長達十年的工程師工作生涯。\n   - 第二句：`This ______ helped him a lot when he started his own computer shop.`\n     - 代名詞 `This ______` 指涉前文「當了十年電腦工程師」的這段資歷歷程。\n     - 在自己開設電腦店（computer shop）時，過去長年累積的**「工作經驗與實務歷練（experience）」**對他助益良多。\n\n2. **四個選項核心字義深度診斷與排除**：\n   - **(A) chance [tʃæns] (n.) 機會、運氣**：指做某事的良機（如 have a chance to do sth）。長達十年的工程師工作是已累積的事實歷程，非「機會」。\n   - **(B) experience [ɪkˈspɪriəns] (n.) 經驗、歷練（正解）**：指在職場或生活中親身累積的實作經驗（work experience）。放入句中最符合語境與邏輯！\n   - **(C) hobby [ˈhɑːbi] (n.) 嗜好、業餘愛好**：指休閒娛樂消遣，全職工程師工作是職業（job / career），不可稱作 hobby。\n   - **(D) knowledge [ˈnɑːlɪdʒ] (n.) 知識、學理**：指理論或書本學識。在此句強調十年職場累積的「實戰歷練」語境下，experience 比 knowledge 更為道地且精確。\n\n3. **會考關鍵字詞延伸筆記**：\n   - `work as + 職業`：擔任……工作（例如：She works as a doctor.）。\n   - `start one's own business / shop`：自行創業、開設自己的店面。\n   - `experience` 的用法：\n     - 當「經驗、歷練」時，為**不可數名詞**（He has plenty of experience.）。\n     - 當「特定的一次生活遭遇、經歷」時，為**可數名詞**（Traveling alone was an amazing experience.）。\n\n故正確答案為 **(B) experience**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-19"
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_eng_adj_mean_boss_office_059",
@@ -1951,10 +2427,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細文法與字義深度剖析：\n\n1. **文意脈絡與對等連接詞 and 的同向關係**：\n   - 題幹第一句：`No one in our office wants to work for our boss, Mr. Lin.`（我們辦公室裡沒有任何人想為老闆林先生工作。） $\\to$ 奠定強烈的負面評價基調。\n   - 題幹第二句：`He is ______ and treats his workers badly.`\n     - 由對等連接詞 `and` 連接兩個同向敘述：\n     - 後半句為 `treats his workers badly`（以非常差劣、刻薄的態度對待其員工）。\n     - 因此空格處所填之形容詞，必須能精準描述「對待他人刻薄、不友善、壞心」的個性特質，故選 **mean**。\n\n2. **四個選項核心詞彙深度診斷與排除**：\n   - **(A) dirty [ˈdɜːrti] (adj.) 骯髒的、不潔的**：描述環境或物品不乾淨，或指卑劣手段（dirty tricks），不能直接修飾形容老闆刻薄員工的個性。\n   - **(B) mean [miːn] (adj.) 刻薄的、惡意的、小氣的（正解）**：形容人的性格惡劣、不友善、愛刁難人。例：*Don't be so mean to your sister!*（不要對妳妹妹那麼兇、那麼刻薄！）與下文 *treats his workers badly* 形成完美語意呼應。\n   - **(C) bitter [ˈbɪtər] (adj.) 苦的、怨恨痛苦的**：指味決苦澀、天候酷寒，或經歷挫折後「心懷怨懟（feel bitter about sth）」，主詞通常是承受痛苦的一方，而非施加刻薄對待的老闆。\n   - **(D) wise [waɪz] (adj.) 明智的、有智慧的**：褒義詞，若老闆 wise，員工必然樂於追隨，與前後句意完全矛盾。\n\n3. **會考關鍵詞彙延伸充電站**：\n   - `work for sb`：替某人工作、在某人手下任職。\n   - `treat sb badly / well`：對待某人惡劣／友善。\n   - `mean` 的常見多重身分：\n     - (adj.) 刻薄的、壞心的（be mean to...）；小氣的（mean with money）。\n     - (v.) 意指、意味著（What does this word mean?）。\n     - (n.) 平均數、中間值（the mean score）。\n\n故正確答案為 **(B) mean**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-19"
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_eng_idiom_if_all_else_fails_tv_060",
@@ -1975,10 +2459,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細文法與片語深入剖析：\n\n1. **經典慣用片語「if all else fails」之來源與核心語意**：\n   - `if all else fails` 是英文中極為地道且高頻的**固定成語句型（idiomatic expression）**。\n   - **字面結構**：如果（if）所有其他的事情／方案（all else）都行不通、失敗了（fails）。\n   - **情境引申**：指「如果其他方法都不管用」、「萬一其他計畫都告吹」、「退而求其次作為最後備案」時所使用的句型。\n   - 題幹後半句提到 `we can always stay at home and watch TV`（我們總是可以退一步待在家裡看電視），正是在說明若其他活動方案都無法成行時的「最保底備選計畫」，與 `if all else fails` 完美契合。\n\n2. **主詞與動詞單複數一致性（Subject-Verb Agreement）**：\n   - 句中主詞為 `all else`（其餘的所有事物），在英語文法習慣中視為**第三人稱單數**概念。\n   - 條件句為現在簡單式，故不及物動詞 fail 需加上單數動詞字尾 `s` $\\to$ **fails**。\n\n3. **四個動詞選項全面體檢與辨析**：\n   - **(A) passes (v.) 通過、流逝**：常用於時間流逝（time passes）或通過考試（pass the exam），放在此處語意不通。\n   - **(B) allows (v.) 允許**：通常搭配句型 `if weather allows`（如果天候許可）或 `if time allows`（如果時間允許），且多有具體的許可條件或及物受詞，不可搭配 all else。\n   - **(C) expects (v.) 期待、盼望**：為及物動詞（expect sb to do sth），事物名詞 all else 無法主動執行 expect（期待）這個動作。\n   - **(D) fails (v.) 失敗、行不通（正解）**：不及物動詞，表示計畫或機器失效、泡湯，構成固定片語 `if all else fails`。\n\n4. **會考常見延伸例句**：\n   - *If all else fails, you can always call me for help.*（如果其他辦法都行不通，你隨時可以打電話向我求助。）\n   - *We hope it won't rain, but if all else fails, the party will move indoors.*（我們希望不要下雨，但萬一其他備案都不行，派對就移到室內。）\n\n故正確答案為 **(D) fails**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-19"
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_eng_verb_matter_taipei_trip_061",
@@ -1999,10 +2491,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細文法與字義深度剖析：\n\n1. **上下文語意與情境邏輯分析**：\n   - 前句：`I expected that you can go to Taipei with me tomorrow`（我原本預期你明天能和我一起去臺北）。\n   - 轉折句：`but now it doesn't ______`（但現在已經不……了）。\n   - 後句：`I'll go by myself.`（我自己一個人去就可以了）。\n   - 由轉折詞 `but` 與後句「決定自己去」可推知：說話者釋懷或接受現狀，表示對方能不能同行已經「**無所謂／不要緊／不重要了**」，因此使用英文最常用的動詞 **matter**。\n\n2. **動詞 matter 的核心用法解析**：\n   - **matter [ˈmætər]** 作為不及物動詞時，意思是「**要緊、有重大關係、重要**」：\n     - 句型：`It doesn't matter.` 是日常生活中與會考口語極高頻的表達，意為「沒關係、不打緊、無關緊要」。\n     - 否定助動詞 `doesn't` 後面接**原形動詞** `matter`。\n\n3. **其餘選項詞義診斷與排除**：\n   - **(B) define [dɪˈfaɪn] (v.) 下定義、界定**：及物動詞，通常接詞彙或範圍（如 define the terms），在此句缺少受詞且語意不合。\n   - **(C) pass [pæs] (v.) 通過、及格、傳球**：與轉折後表達心態的語境不符。\n   - **(D) win [wɪn] (v.) 贏、獲勝**：指在競爭、球賽或獎項中獲勝，無法與 it doesn't win 搭配來表示「沒關係」。\n\n4. **會考關鍵句型延伸充電站**：\n   - `It doesn't matter to me.`（這對我來說無所謂／無關緊要。）\n   - `No matter what happens...`（無論發生什麼事……）\n   - `by myself`（靠我自己、獨自一人 = on my own / alone）。\n\n故正確答案為 **(A) matter**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-19"
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_eng_prep_in_the_front_of_classroom_062",
@@ -2023,10 +2523,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細文法與空間介系詞深度剖析：\n\n1. **核心空間概念辨析：in the front of vs. in front of**：\n   - **in the front of + 地點名詞（正解）**：\n     - 含有定冠詞 `the`，指位於封閉空間或建築物**「內部的前端／前排部分」**。\n     - 老師在教室內授課或坐著備課，位置處於教室**室內**，因此必須使用 **in the front of the classroom**。\n   - **in front of + 地點名詞**：\n     - 不含 `the`，指位於某建築物或物件**「外部的前方」**。\n     - 若填入 in front of the classroom，意思會變成「老師坐在教室門外的走廊或庭院前方（室外）」，不合常態教學情境。\n\n2. **其他選項深入診斷與排除**：\n   - **(C) across from（在……的對面）**：指隔著走道或馬路的相對位置（例：The library is across from the classroom.），此處受詞為單一教室，語意不通。\n   - **(D) next to（在……旁邊）**：指兩者相鄰（例：next to the window），老師不可能坐在「教室的隔壁」上課。\n\n3. **會考常見經典空間對比情境整理**：\n   - **車輛情境**：\n     - The driver is sitting **in the front of** the taxi.（司機坐在計程車「內部前座」）。\n     - The cat is sleeping **in front of** the car.（貓咪睡在汽車「外面的車頭前方」）。\n   - **教室與校園情境**：\n     - The teacher's desk is **in the front of** the classroom.（講桌在教室「內部的前方」）。\n     - We play basketball **in front of** the classroom.（我們在教室「外面的空地」打球）。\n\n故正確答案為 **(A) in the front of**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-19"
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_eng_prep_with_map_church_063",
@@ -2047,10 +2555,18 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細文法與介系詞深度剖析：\n\n1. **句意脈絡與介系詞 with 的工具/媒介功能**：\n   - 句型結構：`[ ______ the map (that Ryan had drawn for us) ], we were able to find this beautiful old church.`\n   - 主要子句 `we were able to find this beautiful old church`（我們得以找到這座美麗的老教堂），說明最後順利達成了尋找教堂的結果。\n   - 前方介系詞片語引導出達成這項任務的**工具與媒介**：正是 Ryan 事先畫給我們的那張地圖。\n   - 在英文中，表示「**使用某工具、藉助某事物、靠著某憑據**」時，必須使用介系詞 **With**（字首大寫）。\n\n2. **四個選項介系詞核心意義診斷與排除**：\n   - **(A) About（關於、有關）**：用來引導主題（例：a book about animals），不能表示利用工具達成結果。\n   - **(B) Beside（在……旁邊 = next to）**：表示相對空間位置，若說「在 Ryan 畫的地圖旁邊，我們找到了教堂」，語意邏輯完全荒謬。\n   - **(C) Under（在……下方）**：表示在物體正下方，與文意不合。\n   - **(D) With（用、藉由、靠著）［正解］**：精準表達「靠著／利用這張地圖」達成找到教堂的目標。\n\n3. **會考進階文法彩蛋：過去完成式與關係代名詞**：\n   - `that Ryan had drawn for us` 是**關係代名詞子句**，用來修飾先行詞 `the map`。\n   - 為什麼用 **had drawn（過去完成式）**？\n     - 因為 Ryan「畫地圖」的動作，發生在我們「找到教堂（were able to find，過去式）」**之前**。「過去的過去」必須使用過去完成式（had + p.p.）。\n\n故正確答案為 **(D) With**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
-    "nextReviewDate": "2026-09-19"
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-19",
+    "reviewedMondays": [
+      "2026-09-14"
+    ]
   },
   {
     "id": "q_soc_geo_eastern_europe_eu_fdi_064",
@@ -2074,320 +2590,376 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-19"
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   },
-{
-  "id": "q_sci_phy_car_east_west_acceleration_065",
-  "examPeriod": "一段",
-  "subject": "自然/理化",
-  "errorReason": "審題不清",
-  "concept": "直線運動學：速度與加速度之正負號方向性（向量運算）",
-  "uploadDate": "2026-09-19",
-  "mondayDate": "2026-09-14",
-  "mondayDates": [
-    "2026-09-14"
-  ],
-  "weekLabel": "2026-09-14 (本週最新題)",
-  "isGuessedOrUnstable": true,
-  "mistakeNote": "【向量正負號超級大陷阱——速度是向量，非純量！】：\n1. 很多同學看到「初速 20，末速 20」，直接直覺相減 20 - 20 = 0，誤選 (A) 0！\n2. 速度具有「大小」與「方向」，方向相反必須賦予不同正負號！\n   - 若設向東為正（+）：初速度 v₁ = +20 m/s，向西末速度 v₂ = -20 m/s。\n   - 速度變化量 Δv = v₂ - v₁ = (-20) - (+20) = -40 m/s（負號代表向西）。\n3. 平均加速度 a = Δv / Δt = -40 / 5 = -8 m/s²。\n   題目問「平均加速度大小」，故取絕對值為 8 m/s²！",
-  "stem": "某車開始時的初速度為向東 20m / s，經過 5 秒後，速度變成向西 20m / s，則在加速的過程中，該車的平均加速度大小為下列何者？\n\n○ (A) 0\n○ (B) 4m / s²\n○ (C) 5m / s²\n○ (D) 8m / s²",
-  "answer": "(D) 8m / s²",
-  "diagramUrl": "",
-  "solution": "○ 詳細物理觀念與向量運算深度解析：\n\n1. **核心觀念：速度（Velocity）是「向量」，兼具「大小」與「方向」**：\n   - 在一直線上運動，通常以「正負號」來代表運動方向。\n   - 規定基準方向：**設向東為正（+），向西為負（-）**。\n\n2. **物理量條列與速度變化量 Δv 計算**：\n   - 初速度 v₁ = +20 m/s（向東）\n   - 末速度 v₂ = -20 m/s（向西）\n   - 經過時間 Δt = 5 秒\n   - 速度變化量定義為「末速度 − 初速度」：\n     Δv = v₂ - v₁ = (-20) - (+20) = -40 m/s\n     （負號代表速度變化量的方向朝向「西方」）\n\n3. **平均加速度 ā 與大小**：\n   - 由平均加速度定義式：\n     ā = Δv / Δt = (-40 m/s) / 5 s = -8 m/s²\n   - 表示此車具有**向西 8 m/s²** 的平均加速度。\n   - 題目詢問的是「平均加速度大小」，純量量值取絕對值：\n     |ā| = 8 m/s²\n\n4. **各選項分析與診斷**：\n   - **(A) 0**：【最常犯典型錯誤】忽略方向，直接用純量 20 - 20 = 0 計算。\n   - **(B) 4m / s²**：計算或公式帶入錯誤。\n   - **(C) 5m / s²**：誤用時間數值。\n   - **(D) 8m / s²**：正確，|-20 - 20| / 5 = 8 m/s²。\n\n故正確答案為 **(D)**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-09-19"
-},
-{
-  "id": "q_sci_phy_ticker_tape_bd_avg_vel_066",
-  "examPeriod": "一段",
-  "subject": "自然/理化",
-  "errorReason": "計算粗心",
-  "concept": "直線運動學：打點計時器（紙帶軌跡）之時間間隔與平均速度計算",
-  "uploadDate": "2026-09-19",
-  "mondayDate": "2026-09-14",
-  "mondayDates": [
-    "2026-09-14"
-  ],
-  "weekLabel": "2026-09-14 (本週最新題)",
-  "isGuessedOrUnstable": true,
-  "mistakeNote": "【打點計時器／紙帶軌跡四大破題核心重點】：\n1.【數「間隔」而非數「點數」】：\n   - 啟動點到 E 點共有 5 個時間間隔（啟動點~A、A~B、B~C、C~D、D~E）。\n   - 總時間 0.5 秒，故每個間隔的時間 Δt = 0.5 / 5 = 0.1 秒！\n2.【B、D 間的位移與時間計算】：\n   - B 到 D 包含兩個區間：BC 段（3.5 cm）與 CD 段（5.5 cm），合計位移 Δx = 3.5 + 5.5 = 9.0 cm。\n   - B 到 D 經歷 2 個時間間隔，時間 t = 2 × 0.1 = 0.2 秒。\n3.【平均速度公式帶入】：\n   - v̄ = Δx / Δt = 9.0 cm / 0.2 s = 45 cm/s！",
-  "stem": "右圖為某物體在固定時間間隔下所捕捉到的運動軌跡點。已知啟動點至 E 點共歷時 0.5 秒，請問 B、D 兩點間的平均速度大小為何？\n\n○ (A) 20cm / s\n○ (B) 35cm / s\n○ (C) 40cm / s\n○ (D) 45cm / s",
-  "answer": "(D) 45cm / s",
-  "diagramUrl": "assets/questions/q_sci_phy_ticker_tape_bd_avg_vel_066.png",
-  "solution": "○ 詳細物理步驟與軌跡分析：\n\n1. **求各相鄰兩點間的時間間隔（頻率與週期概念）**：\n   - 題目給定：由「啟動點」移動至「E 點」共歷時 0.5 秒。\n   - 觀察紙帶上的相鄰區間：\n     - 啟動點 → A（第 1 個間隔）\n     - A → B（第 2 個間隔）\n     - B → C（第 3 個間隔）\n     - C → D（第 4 個間隔）\n     - D → E（第 5 個間隔）\n   - 總共包含 5 個相等的時間間隔：\n     Δt = 0.5 秒 / 5 = 0.1 秒\n\n2. **求 B 點至 D 點的位移 Δx_BD**：\n   - 由圖中標示的相鄰兩點間距：\n     - B 到 C 距離 = 3.5 cm\n     - C 到 D 距離 = 5.5 cm\n   - B 到 D 的總位移：\n     Δx_BD = 3.5 + 5.5 = 9.0 cm\n\n3. **求 B 點至 D 點所歷經的時間 Δt_BD**：\n   - B 到 D 共有 2 個時間間隔（BC 與 CD）：\n     Δt_BD = 2 × 0.1 秒 = 0.2 秒\n\n4. **計算 B、D 兩點間的平均速度大小 v̄**：\n   - 由平均速度定義式：\n     v̄ = 位移 / 時間 = 9.0 cm / 0.2 秒 = 45 cm/s\n\n故正確答案為 **(D)**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-09-19"
-},
-{
-  "id": "q_sci_phy_train_brake_stopping_distance_067",
-  "examPeriod": "一段",
-  "subject": "自然/理化",
-  "errorReason": "觀念不懂",
-  "concept": "等加速度直線運動：火車煞車滑行時間、加速度、v-t 圖面積與完全煞停距離計算",
-  "uploadDate": "2026-09-19",
-  "mondayDate": "2026-09-14",
-  "mondayDates": [
-    "2026-09-14"
-  ],
-  "weekLabel": "2026-09-14 (本週最新題)",
-  "isGuessedOrUnstable": true,
-  "mistakeNote": "【等加速度運動公式與 v-t 圖面積雙解法核心】：\n1.【第一階段（30 到 10 m/s 滑行 400 m）求時間與加速度】：\n   - 利用平均速度求時間：x = [(v₀ + v)/2] × t ⟹ 400 = [(30 + 10)/2] × t ⟹ t = 20 秒（選項 A 正確）。\n   - 加速度 a = (v - v₀) / t = (10 - 30) / 20 = -1 m/s²（選項 B 正確）。\n2.【第二階段：火車完全煞停（末速 v = 0）】：\n   - 總煞停時間：0 = 30 + (-1) × t_總 ⟹ t_總 = 30 秒（選項 C 正確）。\n   - 總煞停距離（v-t 圖三角形面積）：x_總 = (初速 × 總時間) / 2 = (30 × 30) / 2 = 450 m。\n3.【錯誤陷阱】：\n   - (D) 敘述「需在 600 m 前開始煞車」錯誤，正確只需在 **450 m** 前開始煞車即可！",
-  "stem": "一列火車進站前車速為 30m / s，煞車到車速為 10m / s 時，滑行 400m 的距離，下列敘述何者錯誤？\n\n○ (A) 此段煞車時間為 20 秒\n○ (B) 煞車時的加速度為 -1m / s²\n○ (C) 歷時 30 秒，火車才能停靠月臺\n○ (D) 火車準確停靠月臺，需在 600m 前開始煞車",
-  "answer": "(D) 火車準確停靠月臺，需在 600m 前開始煞車",
-  "diagramUrl": "",
-  "solution": "○ 詳細等加速度運動觀念與逐步推導（公式解法 vs. v-t 圖幾何解法）：\n\n1. **分析第一階段煞車（由 30 m/s 減速至 10 m/s，位移 400 m）**：\n   - 初速度 v₀ = 30 m/s\n   - 減速後末速度 v = 10 m/s\n   - 滑行位移 x₁ = 400 m\n   - **(A) 求此段煞車時間 t₁**：\n     利用等加速度直線運動平均速度公式：\n     x₁ = [(v₀ + v) / 2] × t₁ ⟹ 400 = [(30 + 10) / 2] × t₁ = 20 × t₁ ⟹ t₁ = 20 秒\n     故 **(A) 此段煞車時間為 20 秒** 是正確的。\n\n   - **(B) 求煞車時的加速度 a**：\n     a = (v - v₀) / t₁ = (10 - 30) / 20 = -20 / 20 = -1 m/s²\n     （負號表示加速度方向與運動方向相反，為減速運動）\n     故 **(B) 煞車時的加速度為 -1 m/s²** 是正確的。\n\n2. **分析第二階段：由車速 30 m/s 完全煞停至靜止（v_末 = 0）**：\n   - **(C) 火車完全停靠月臺所需的總時間 t_總**：\n     v_末 = v₀ + a · t_總 ⟹ 0 = 30 + (-1) × t_總 ⟹ t_總 = 30 秒\n     故 **(C) 歷時 30 秒，火車才能停靠月臺** 是正確的。\n\n   - **(D) 火車準確停靠月臺所需煞車總距離 S_總**：\n     - **方法一（v-t 圖三角形面積法）**：\n       以縱軸為速度 v、橫軸為時間 t 畫出直角三角形，底為總時間 30 秒，高為初速度 30 m/s：\n       S_總 = (底 × 高) / 2 = (30 × 30) / 2 = 450 公尺\n     - **方法二（無時間公式 v² = v₀² + 2as）**：\n       0² = 30² + 2 × (-1) × S_總 ⟹ 0 = 900 - 2 S_總 ⟹ S_總 = 450 公尺\n     - 故火車欲準確停靠月臺，必須在 **450 公尺** 前開始煞車，而非 600 公尺。\n     故 **(D) 敘述錯誤**，為本題應選答案。\n\n故正確答案為 **(D)**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-09-19"
-},
-{
-  "id": "q_sci_phy_car_brake_vt_graph_acceleration_068",
-  "examPeriod": "一段",
-  "subject": "自然/理化",
-  "errorReason": "審題不清",
-  "concept": "直線運動學：v-t 圖判讀、減速煞車加速度大小與向量方向（向北為正，負號即向南）",
-  "uploadDate": "2026-09-19",
-  "mondayDate": "2026-09-14",
-  "mondayDates": [
-    "2026-09-14"
-  ],
-  "weekLabel": "2026-09-14 (本週最新題)",
-  "isGuessedOrUnstable": true,
-  "mistakeNote": "【v-t 圖斜率與正負方向判讀陷阱】：\n1.【鎖定題目要求的時段】：「減速煞車時」是指圖中 t = 10 ～ 20 秒的這一段（速度由 20 m/s 降為 0 m/s）！\n2.【求加速度】：a = Δv / Δt = (0 - 20) / (20 - 10) = -20 / 10 = -2 m/s²。\n3.【方向轉換】：\n   - 題目規定「汽車向北行駛」（向北為正 +）。\n   - 算出的加速度為負值（-2 m/s²），負號就代表「向南」！\n   - 加速度量值為 2 m/s²，方向為「向南」。千萬別漏看方向！",
-  "stem": "一汽車在直線公路上向北行駛，其速度（v）與時間（t）的關係圖，如圖所示，試問此汽車在減速煞車時加速度的量值及方向為何？\n\n○ (A) 2m / s²，向北\n○ (B) 2m / s²，向南\n○ (C) 1m / s²，向北\n○ (D) 1m / s²，向南",
-  "answer": "(B) 2m / s²，向南",
-  "diagramUrl": "assets/questions/q_sci_phy_car_brake_vt_graph_acceleration_068.png",
-  "solution": "○ 詳細物理步驟與 v-t 圖深度解析：\n\n1. **觀察 v-t 圖之運動各階段分析**：\n   - 0 ～ 10 秒：水平直線，速度維持 +20 m/s（向北等速度運動）。\n   - **10 ～ 20 秒**：斜向右下直線，速度由 +20 m/s 降至 0 m/s（**此階段即為題目所指的「減速煞車時」**）。\n   - 20 ～ 25 秒：速度為 0 m/s（靜止狀態）。\n   - 25 ～ 35 秒：斜向右上直線，速度由 0 m/s 增加至 +25 m/s（向北加速運動）。\n   - 35 ～ 50 秒：速度維持 +25 m/s（向北等速度運動）。\n\n2. **計算減速煞車時的加速度**：\n   - 初速度 v₁ = +20 m/s（向北）\n   - 末速度 v₂ = 0 m/s\n   - 經歷時間 Δt = 20 - 10 = 10 秒\n   - 根據加速度公式：\n     a = Δv / Δt = (v₂ - v₁) / Δt = (0 - 20) / 10 = -20 / 10 = -2 m/s²\n\n3. **判斷量值與方向**：\n   - **量值（大小）**：取絕對值 |a| = 2 m/s²。\n   - **方向**：題目設定向北為正（+），故計算出的負號（-）代表方向**向南**。\n   - 因此此車減速煞車時的加速度為 **2 m/s²，向南**。\n\n故正確答案為 **(B)**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-09-19"
-},
-{
-  "id": "q_sci_phy_four_motion_graphs_speed_comparison_069",
-  "examPeriod": "一段",
-  "subject": "自然/理化",
-  "errorReason": "觀念不懂",
-  "concept": "運動圖表判讀與轉換：x-t 圖、v-t 圖、a-t 圖在特定時刻之瞬間速度比較",
-  "uploadDate": "2026-09-19",
-  "mondayDate": "2026-09-14",
-  "mondayDates": [
-    "2026-09-14"
-  ],
-  "weekLabel": "2026-09-14 (本週最新題)",
-  "isGuessedOrUnstable": true,
-  "mistakeNote": "【四種運動圖形瞬時速度判讀必勝心法】：\n1.【看清縱軸座標代表什麼物理量】：\n   - 甲（x-t 圖）：在第 3 秒末時位於水平線上（x 停在 20 m 不動），故瞬間速度 v_甲 = 0 m/s！\n   - 乙（x-t 圖）：整段為斜直線（等速度運動），速度為斜率 v_乙 = 20 / 5 = 4 m/s！第 3 秒末速度仍為 4 m/s。\n   - 丙（v-t 圖）：等加速度直線，加速度 a = 5 / 5 = 1 m/s²，第 3 秒末的瞬時速度直接看高度：v_丙(3) = 1 × 3 = 3 m/s。\n   - 丁（a-t 圖）：水平線代表等加速度 a = 1 m/s²，由靜止啟動（v₀ = 0），第 3 秒末速度為面積：v_丁(3) = 0 + 1 × 3 = 3 m/s。\n2.【比較大小】：\n   - 乙 (4) > 丙 (3) = 丁 (3) > 甲 (0)，故最大者為【乙】！",
-  "stem": "已知甲、乙、丙、丁四個運動體均由靜止啟動，後續運動情形分別記錄如下各圖示，試問四者啟動後第 3 秒末瞬間的速度，以何者最大？\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁",
-  "answer": "(B) 乙",
-  "diagramUrl": "assets/questions/q_sci_phy_four_motion_graphs_speed_comparison_069.png",
-  "solution": "○ 詳細圖表判讀與逐一運算深度解析：\n\n題目詢問啟動後**第 3 秒末瞬間的速度**（瞬時速度），我們分別針對甲、乙、丙、丁四張圖深入分析：\n\n1. **【甲圖：x-t 位置與時間關係圖】**：\n   - 0 ～ 2 秒：等速度運動，由 0 m 移動至 20 m。\n   - **2 ～ 5 秒**：呈現**水平直線**，代表物體的位置始終停留在 x = 20 m，處於**靜止狀態**。\n   - 因此第 3 秒末瞬間的速度：\n     v_甲 = 0 m/s\n\n2. **【乙圖：x-t 位置與時間關係圖】**：\n   - 圖形為一條過原點的**傾斜直線**，代表物體正在進行**等速度直線運動**。\n   - x-t 圖的斜率即為速度：\n     v_乙 = Δx / Δt = (20 - 0) / (5 - 0) = 4 m/s\n   - 因為是等速度運動，全程速度皆相同，故第 3 秒末瞬間的速度：\n     v_乙 = 4 m/s\n\n3. **【丙圖：v-t 速度與時間關係圖】**：\n   - 圖形為過原點的傾斜直線，代表物體由靜止出發做**等加速度運動**。\n   - 加速度（斜率）：a_丙 = (5 - 0) / (5 - 0) = 1 m/s²。\n   - 在第 3 秒末時的瞬時速度：\n     v_丙 = a_丙 × t = 1 m/s² × 3 s = 3 m/s\n\n4. **【丁圖：a-t 加速度與時間關係圖】**：\n   - 圖形為一條水平直線，表示物體的加速度恆為 a = 1 m/s²（等加速度運動）。\n   - 題目說明由「靜止啟動」（初速度 v₀ = 0）。\n   - 在第 3 秒末時的速度（或由 a-t 圖 0 ～ 3 秒的面積求速度變化量）：\n     v_丁 = v₀ + a × t = 0 + 1 m/s² × 3 s = 3 m/s\n\n5. **【綜合比較第 3 秒末瞬間速度大小】**：\n   - v_甲 = 0 m/s\n   - v_乙 = 4 m/s\n   - v_丙 = 3 m/s\n   - v_丁 = 3 m/s\n   - 比較大小順序：v_乙 (4) > v_丙 (3) = v_丁 (3) > v_甲 (0)。\n   - 故速度最大者為 **乙**。\n\n故正確答案為 **(B)**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-09-19"
-},
-{
-  "id": "q_soc_his_egypt_memphis_pyramid_070",
-  "examPeriod": "一段",
-  "subject": "社會",
-  "errorReason": "觀念不懂",
-  "concept": "古埃及古王國時期文明特徵（金字塔時代、孟斐斯、法老王權與陵墓興建）與世界古文明辨析〔93基測II〕",
-  "uploadDate": "2026-09-19",
-  "mondayDate": "2026-09-14",
-  "mondayDates": [
-    "2026-09-14"
-  ],
-  "weekLabel": "2026-09-14 (本週最新題)",
-  "isGuessedOrUnstable": true,
-  "mistakeNote": "【世界古代歷史四大古文明考點速記口訣】：\n1.【古埃及（尼羅河下游孟斐斯／金字塔）】：\n   - 古王國時代（約西元前 27～22 世紀）定都尼羅河下游的「孟斐斯」，國王稱為「法老」，生前即大興土木徵召人民建造「金字塔（大型國王陵墓）」，故古王國時期又稱「金字塔時期」！\n2.【常見選項陷阱辨析】：\n   - ❌ 廣場民主政治公共討論：古希臘城邦（如西元前 6～5 世紀之雅典），非埃及！\n   - ❌ 楔形文字與泥版紀錄：兩河流域（美索不達米亞文明，如蘇美、巴比倫），埃及使用的是草紙與象形文字！\n   - ❌ 傳播《聖經》信上帝得永生：基督教文明（西元 1 世紀於羅馬帝國統治下的巴勒斯坦興起），西元前 2500 年尚未出現！",
-  "stem": "西元前 2500 年左右，有一位商人旅行到埃及 尼羅河下游的孟斐斯，他在這個城市中最可能看到下列何種景象？【93年第2次基測】\n\n○ (A) 人們不時接獲官員徵召去興建大型國王陵墓\n○ (B) 許多男性公民趕赴廣場參與公共事務的討論\n○ (C) 人們將交易往來紀錄用楔形文字刻在泥版上\n○ (D) 有人熱忱傳播《聖經》，宣揚信上帝可得永生。",
-  "answer": "(A) 人們不時接獲官員徵召去興建大型國王陵墓",
-  "diagramUrl": "",
-  "solution": "○ 詳細解題觀念與歷史背景剖析：\n\n1. **時空定位：古埃及古王國時代與首都孟斐斯**：\n   - **時間**：西元前 2500 年左右，正值古埃及的「古王國時期」（約西元前 2686 ～ 前 2181 年）。\n   - **地點**：孟斐斯（Memphis）位於尼羅河下游三角洲頂端，為古王國時期的政經宗教首都。\n   - **時代特色**：古王國時期中央集權極盛，法老被視為神在人間的化身，掌管全埃及。法老會在生前動員龐大人力物力修建雄偉的金字塔作為陵墓，因此古王國時期亦被稱為「金字塔時期（Pyramid Age）」。在尼羅河氾濫的農閒期間，人民經常受官員徵召前往工廠與陵寢工地從事大型石造陵墓的建造工程。因此在孟斐斯最容易目睹的景象為 (A)。\n\n2. **逐一診斷錯誤選項**：\n   - **(B) 許多男性公民趕赴廣場參與公共事務的討論**：\n     - 此為**古希臘城邦（如雅典）的民主政治特色**。雅典男性公民在公民大會（廣場）行使直接民主權利，時間大約在西元前 6 世紀至西元前 4 世紀，地理位置在地中海愛琴海地區，與西元前 2500 年的埃及神權專制完全不符。\n   - **(C) 人們將交易往來紀錄用楔形文字刻在泥版上**：\n     - 楔形文字與泥版是**兩河流域（美索不達米亞文明）**的標誌性發明（蘇美人在西元前 3000 多年發明）。埃及使用的書寫系統為「象形文字（聖書體）」，書寫載體多為「紙莎草紙（Papyrus）」或鐫刻於石柱神廟石壁上，並非泥版。\n   - **(D) 有人熱忱傳播《聖經》，宣揚信上帝可得永生**：\n     - 《聖經》（新約）與傳播基督信仰、信上帝得永生是**基督教**的核心教義。基督教於**西元 1 世紀**發源於羅馬帝國統治下的巴勒斯坦地區。西元前 2500 年時基督教根本尚未誕生（此時距耶穌降生尚有約兩千五百年之遙）。\n\n故正確答案為 **(A)**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-09-19"
-},
-{
-  "id": "q_soc_his_hammurabi_code_babylon_071",
-  "examPeriod": "一段",
-  "subject": "社會",
-  "errorReason": "觀念不懂",
-  "concept": "兩河流域古巴比倫文明：《漢摩拉比法典》之階級劃分、以牙還牙報復原則與楔形文字辨析",
-  "uploadDate": "2026-09-19",
-  "mondayDate": "2026-09-14",
-  "mondayDates": [
-    "2026-09-14"
-  ],
-  "weekLabel": "2026-09-14 (本週最新題)",
-  "isGuessedOrUnstable": true,
-  "mistakeNote": "【《漢摩拉比法典》必考三大核心特徵與常考陷阱】：\n1.【統治者與文明歸屬（陷阱重災區）】：\n   - 為「古巴比倫王國」國王「漢摩拉比（Hammurabi）」所頒布，屬於「兩河流域（美索不達米亞）」文明！\n   - ❌ 常見陷阱：誤植為「波斯國王」或「亞述國王」！波斯是後來的統一帝國，與巴比倫相隔千年以上。\n2.【文字與載體】：\n   - 全文使用「楔形文字」鐫刻於「玄武岩石碑」上（即著名的漢摩拉比法典石碑），非古埃及的象形文字！\n3.【法典兩大精神】：\n   - ①【階級概念鮮明（身分不平等）】：貴族、平民（自由民）、奴隸階級分明。同罪不同罰（如傷害貴族處以嚴刑重罰，打奴隸或平民則處罰輕微；奴隸打自由民割耳）。\n   - ②【以牙還牙、以眼還眼（同態復仇原則）】：在同階級之間強調同態報復（傷人眼者還傷其眼，折人手足者還折其手足）。",
-  "stem": "下列為老師介紹的法典部分內容，由此法典的內容判斷，何者敘述正確？\n(甲) 由條文可見當時有階級概念\n(乙) 強調「以牙還牙」的報復原則\n(丙) 為波斯國王漢摩拉比下令編訂\n(丁) 法典的原文應是由象形文字寫成\n\n【法典內容節錄】：\n・196 條：如果一個人傷了貴族的眼睛，還傷其眼。\n・197 條：如果一個人折了貴族的手足，還折其手足。\n・203 條：如果貴族階層的人打了貴族出身的人，須罰銀一明納。\n・205 條：如果任何人的奴隸打了自由民出身的人，處割耳之刑。\n\n○ (A) 甲乙\n○ (B) 乙丙\n○ (C) 甲丙\n○ (D) 丙丁",
-  "answer": "(A) 甲乙",
-  "diagramUrl": "",
-  "solution": "○ 詳細題意解析與法典條文深度剖析：\n\n1. **判斷法典名稱與出處**：\n   - 由引文「傷了貴族的眼睛，還傷其眼」、「折了貴族的手足，還折其手足」、「奴隸打了自由民...處割耳之刑」等條文，可確定此法典為世界現存最早完備的成文法典之一——**《漢摩拉比法典》（Code of Hammurabi）**。\n\n2. **逐項檢驗題目敘述**：\n   - **(甲) 由條文可見當時有階級概念**：**正確**。\n     - 條文中明確區分「貴族」、「自由民（平民）」與「奴隸」三種不同的社會階級。\n     - 刑罰標準因被害者與加害者的階級地位而有極大差異（例如傷害貴族須以同等肉體傷害報復；奴隸犯上則處以嚴酷割耳之刑；貴族內部互傷則罰銀）。這充分體現了當時社會「法律保障特定統治階層」且「身分等級森嚴」的階級社會特質。\n   - **(乙) 強調「以牙還牙」的報復原則**：**正確**。\n     - 第 196 條「傷人眼，還傷其眼」、第 197 條「折人手足，還折其手足」，即為法學上著名的**同態復仇原則（以牙還牙、以眼還眼，Lex Talionis）**。\n   - **(丙) 為波斯國王漢摩拉比下令編訂**：**錯誤**。\n     - 漢摩拉比是**古巴比倫王國（位於美索不達米亞／兩河流域）**的國王，於約西元前 18 世紀統一兩河流域後下令編訂法典，**並非「波斯」國王**（波斯帝國興起於西元前 6 世紀，兩者相隔逾千年）。\n   - **(丁) 法典的原文應是由象形文字寫成**：**錯誤**。\n     - 兩河流域文明使用的書寫文字為蘇美人所創發的**「楔形文字（釘頭字）」**。《漢摩拉比法典》原文是用阿卡德語楔形文字刻在黑色玄武岩圓柱石碑上，**並非埃及的「象形文字」**。\n\n3. **結論**：\n   - 敘述正確者為 **(甲)** 與 **(乙)**。\n\n故正確答案為 **(A) 甲乙**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-09-19"
-},
-{
-  "id": "q_math_parallel_segments_ratio_trapezoid_072",
-  "examPeriod": "一段",
-  "subject": "數學",
-  "errorReason": "觀念不懂",
-  "concept": "平行線截比例線段與相似三角形：交叉平行線模型（EF//AB//CD）線段比例推導與經典公式",
-  "uploadDate": "2026-09-19",
-  "mondayDate": "2026-09-14",
-  "mondayDates": [
-    "2026-09-14"
-  ],
-  "weekLabel": "2026-09-14 (本週最新題)",
-  "isGuessedOrUnstable": true,
-  "mistakeNote": "【「交叉平行線 / 雙三角模型」秒殺口訣與陷阱】：\n1.【破題關鍵三部曲】：\n   - ① 看 $\\triangle BCD$（利用 $\\overline{EF} // \\overline{CD}$）：\n     $$\\overline{BF} : \\overline{BC} = \\overline{EF} : \\overline{CD} = 2 : 5 \\implies \\overline{BF} : \\overline{CF} = 2 : 3$$\n   - ② 轉看 $\\triangle CAB$（利用 $\\overline{EF} // \\overline{AB}$）：\n     $$\\overline{EF} : \\overline{AB} = \\overline{CF} : \\overline{CB} = 3 : (2+3) = 3 : 5$$\n   - ③ 兩側比例轉換：\n     $\\overline{BE} : \\overline{ED} = \\overline{BF} : \\overline{FC} = 2 : 3$（頂點 $B$ 端佔 2 份、底端 $C$ 佔 3 份，千萬別顛倒寫成 $3:2$）！\n2.【經典倒數和公式（秒殺驗算神技）】：\n   $$\\frac{1}{\\overline{EF}} = \\frac{1}{\\overline{AB}} + \\frac{1}{\\overline{CD}}$$\n   中間平行線長度的倒數，等於兩側平行線長度的倒數和！",
-  "stem": "如圖，$\\overline{AB} // \\overline{EF} // \\overline{CD}$，若 $\\overline{EF} : \\overline{CD} = 2 : 5$，則下列何者正確？\n\n（點擊附圖可放大檢視幾何圖形）\n\n○ (A) $\\overline{EF} : \\overline{AB} = 3 : 5$\n○ (B) $\\overline{BE} : \\overline{BD} = 3 : 5$\n○ (C) $\\overline{BE} : \\overline{DE} = 3 : 2$\n○ (D) $\\overline{AB} : \\overline{CD} = 1 : 1$",
-  "answer": "(A) $\\overline{EF} : \\overline{AB} = 3 : 5$",
-  "diagramUrl": "assets/questions/q_math_parallel_segments_ratio_trapezoid_072.png",
-  "solution": "○ 詳細解題幾何推導與比例分析：\n\n1. **利用 $\\triangle BCD$ 中的平行線求底邊分割比**：\n   - 題目給定 $\\overline{EF} // \\overline{CD}$，在 $\\triangle BCD$ 中：\n     $$\\triangle BEF \\sim \\triangle BDC$$\n   - 由對應邊成比例：\n     $$\\frac{\\overline{BF}}{\\overline{BC}} = \\frac{\\overline{BE}}{\\overline{BD}} = \\frac{\\overline{EF}}{\\overline{CD}} = \\frac{2}{5}$$\n   - 即 $\\overline{BF}$ 佔 2 份，全段 $\\overline{BC}$ 佔 5 份：\n     $$\\overline{CF} = \\overline{BC} - \\overline{BF} = 5 - 2 = 3 \\text{ 份}$$\n     $$\\implies \\overline{BF} : \\overline{CF} = 2 : 3$$\n     $$\\implies \\overline{CF} : \\overline{BC} = 3 : 5$$\n\n2. **利用 $\\triangle CAB$ 求 $\\overline{EF} : \\overline{AB}$ 的比值**：\n   - 因為 $\\overline{EF} // \\overline{AB}$，在 $\\triangle CAB$ 中：\n     $$\\triangle CEF \\sim \\triangle CAB$$\n   - 由對應邊成比例：\n     $$\\frac{\\overline{EF}}{\\overline{AB}} = \\frac{\\overline{CF}}{\\overline{CB}} = \\frac{\\overline{CE}}{\\overline{CA}}$$\n   - 代入剛剛求得的 $\\overline{CF} : \\overline{CB} = 3 : 5$：\n     $$\\overline{EF} : \\overline{AB} = 3 : 5$$\n   - **選項 (A) 完全正確！**\n\n3. **逐一檢驗其他選項之錯誤**：\n   - **(B) $\\overline{BE} : \\overline{BD}$**：\n     由第 1 步推導可知 $\\overline{BE} : \\overline{BD} = \\overline{EF} : \\overline{CD} = \\mathbf{2 : 5}$（非 $3 : 5$），故 (B) 錯誤。\n   - **(C) $\\overline{BE} : \\overline{DE}$**：\n     因為 $\\overline{BE}$ 佔 2 份、全段 $\\overline{BD}$ 佔 5 份，故 $\\overline{DE} = 5 - 2 = 3$ 份：\n     $$\\overline{BE} : \\overline{DE} = \\mathbf{2 : 3} \\text{ （非 } 3 : 2 \\text{）}$$，故 (C) 錯誤。\n   - **(D) $\\overline{AB} : \\overline{CD}$**：\n     - 設 $\\overline{EF} = 6k$（取 2 與 3 的公倍數方可整除）：\n       - 由 $\\overline{EF} : \\overline{CD} = 2 : 5 \\implies \\overline{CD} = 6k \\times \\frac{5}{2} = 15k$\n       - 由 $\\overline{EF} : \\overline{AB} = 3 : 5 \\implies \\overline{AB} = 6k \\times \\frac{5}{3} = 10k$\n     - 故：\n       $$\\overline{AB} : \\overline{CD} = 10k : 15k = \\mathbf{2 : 3} \\neq 1 : 1$$，故 (D) 錯誤。\n\n4. **經典公式快速驗證（延伸學習）**：\n   在交叉平行線模型中，恆有倒數和公式：\n   $$\\frac{1}{\\overline{EF}} = \\frac{1}{\\overline{AB}} + \\frac{1}{\\overline{CD}}$$\n   代入 $\\overline{EF} = 6$、$\\overline{AB} = 10$、$\\overline{CD} = 15$：\n   $$\\frac{1}{10} + \\frac{1}{15} = \\frac{3 + 2}{30} = \\frac{5}{30} = \\frac{1}{6}$$，完全吻合！\n\n故正確答案為 **(A)**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-09-19"
-},
-{
-  "id": "q_sci_phy_free_fall_pisa_height_073",
-  "examPeriod": "一段",
-  "subject": "自然/理化",
-  "errorReason": "觀念不懂",
-  "concept": "直線運動與自由落體：重力加速度（g = 9.8 m/s²）、v-t 圖面積求位移與下落高度計算",
-  "uploadDate": "2026-09-19",
-  "mondayDate": "2026-09-14",
-  "mondayDates": [
-    "2026-09-14"
-  ],
-  "weekLabel": "2026-09-14 (本週最新題)",
-  "isGuessedOrUnstable": true,
-  "mistakeNote": "【自由落體運動必背三大觀念與防錯口訣】：\n1.【核心物理條件】：\n   -「由靜止釋放」表示初速度 $v_0 = 0$ m/s！\n   - 只受重力作用，加速度為定值 $g = 9.8\\text{ m/s}^2$（等加速度運動）。\n2.【著地末速度】：\n   - 每秒速度增加 $9.8\\text{ m/s}$，經歷 $3$ 秒著地：\n     $$v = g \\times t = 9.8 \\times 3 = 29.4\\text{ m/s}$$\n3.【求下落高度（斜塔高度）兩種神技】：\n   - 方法一（v-t 圖面積法，最直觀）：\n     由靜止出發的 v-t 圖為過原點的三角形，面積代表位移（下落高度）：\n     $$\\text{高度 } h = \\frac{\\text{底 } t \\times \\text{高 } v}{2} = \\frac{3 \\times 29.4}{2} = 44.1\\text{ 公尺}$$\n   - 方法二（秒殺公式法）：\n     $$h = \\frac{1}{2}gt^2 = \\frac{1}{2} \\times 9.8 \\times 3^2 = 4.9 \\times 9 = 44.1\\text{ 公尺}$$\n4.【常見致命陷阱】：\n   - ❌ 粗心忘記「除以 2」算成 $29.4 \\times 3 = 88.2$（誤算成等速長方形面積）。\n   - ❌ 題目明訂 $g = 9.8$，切勿自行偷換成 $10$！",
-  "stem": "阿翰在比薩斜塔上某處，將蘋果由靜止往下釋放，並測量時間，結果發現蘋果在 3 秒後落地，請問阿翰所在處的高度為多少公尺？（g = 9.8 m / s²）",
-  "answer": "44.1 公尺（或 44.1 m）",
-  "diagramUrl": "",
-  "solution": "○ 詳細物理觀念與步驟解析：\n\n1. **基本物理條件分析**：\n   - 「由靜止往下釋放」：初速度 $v_0 = 0\\text{ m/s}$。\n   - 物體僅受地球重力作用，進行等加速度運動（自由落體）。\n   - 重力加速度：$g = 9.8\\text{ m/s}^2$。\n   - 下落總時間：$t = 3\\text{ 秒}$。\n\n2. **第一步：計算蘋果著地時的瞬間末速度**：\n   - 根據速度公式（每經過 1 秒速度增加 9.8 m/s）：\n     $$v = v_0 + gt = 0 + 9.8 \\times 3 = 29.4\\text{ m/s}$$\n   - 故經過 3 秒落地時，蘋果的瞬間速度為 $29.4\\text{ m/s}$。\n\n3. **第二步：利用 v-t 圖面積求下落高度（位移）**：\n   - 畫出蘋果運動的速度—時間關係圖（v-t 圖）：\n     - 橫軸（時間 $t$）：從 $0$ 到 $3$ 秒，底邊長度 $= 3$。\n     - 縱軸（速度 $v$）：從 $0$ 增加到 $29.4\\text{ m/s}$，三角形高 $= 29.4$。\n   - v-t 圖線下所圍成的三角形面積，即代表物體移動的距離（阿翰所在處的高度）：\n     $$\\text{高度 } h = \\frac{\\text{底 } \\times \\text{高}}{2} = \\frac{3 \\times 29.4}{2} = 1.5 \\times 29.4 = \\mathbf{44.1}\\text{ 公尺}$$\n\n4. **公式法直接驗算（等加速度運動位移公式）**：\n   - 代入自由落體位移公式：\n     $$h = v_0 t + \\frac{1}{2}gt^2$$\n   - 因為 $v_0 = 0$：\n     $$h = \\frac{1}{2} \\times 9.8 \\times 3^2 = 4.9 \\times 9 = \\mathbf{44.1}\\text{ 公尺}$$\n\n標準答案為 **44.1 公尺**（或 **44.1 m**）。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-09-19"
-},
-{
-  "id": "q_sci_phy_free_fall_tower_time_speed_074",
-  "examPeriod": "一段",
-  "subject": "自然/理化",
-  "errorReason": "觀念不懂",
-  "concept": "自由落體運動：已知下落高度反求著地時間（h = 1/2 gt²）與著地瞬間末速度（v = gt）",
-  "uploadDate": "2026-09-19",
-  "mondayDate": "2026-09-14",
-  "mondayDates": [
-    "2026-09-14"
-  ],
-  "weekLabel": "2026-09-14 (本週最新題)",
-  "isGuessedOrUnstable": true,
-  "mistakeNote": "【自由落體「已知高度反求時間與末速」速算必勝技巧】：\n1.【小數除法巧算神招】：\n   - 代入公式 $h = \\frac{1}{2}gt^2 = 4.9t^2$\n   - $t^2 = \\frac{78.4}{4.9}$，分子分母同乘 10 變整數：$\\frac{784}{49}$！\n   - 觀察 $49 = 7^2$，$784 = 28^2$，故 $t^2 = \\left(\\frac{28}{7}\\right)^2 = 4^2 = 16 \\implies t = 4$ 秒（完全不用拿筆除得滿頭大汗）！\n2.【第二小題末速度秒殺】：\n   - 著地末速 $v = gt = 9.8 \\times 4 = 39.2\\text{ m/s}$（方向向下）。\n3.【常見致命陷阱】：\n   - ❌ 誤將 $g = 9.8$ 記成 $4.9$ 當作重力加速度（$4.9$ 是 $\\frac{1}{2}g$，算末速時請乘上真正的 $g = 9.8$）。\n   - ❌ (2) 題未標單位，速度單位是 $\\text{m/s}$（公尺/秒），切勿寫成 $\\text{m/s}^2$（加速度單位）！",
-  "stem": "若一物體自 78.4 公尺的高塔自由掉落，則：（g = 9.8 m / s²）\n(1) 經幾秒後會著地？\n(2) 著地時的速度為何？",
-  "answer": "(1) 4 秒（或 4s）；(2) 39.2 公尺/秒（或 39.2 m/s）",
-  "diagramUrl": "",
-  "solution": "○ 詳細解題觀念與步驟解析：\n\n1. **題目物理條件分析**：\n   - 「自由掉落」：初速度 $v_0 = 0\\text{ m/s}$，只受重力作用進行等加速度直線運動。\n   - 重力加速度：$g = 9.8\\text{ m/s}^2$。\n   - 下落高度（位移）：$h = 78.4\\text{ 公尺}$。\n\n2. **第 (1) 小題：求經幾秒後會著地（著地時間 $t$）**：\n   - **方法一：v-t 圖面積推導法（核心觀念）**：\n     - 自由落體由靜止開始下落，經過 $t$ 秒時的瞬間末速度為 $v = gt = 9.8t\\text{ (m/s)}$。\n     - 繪出物體的 v-t 關係圖為過原點的直角三角形，線下斜線面積代表下落高度：\n       $$\\text{塔高 } h = \\frac{\\text{底 } \\times \\text{高}}{2} = \\frac{t \\times (9.8t)}{2} = 4.9t^2$$\n     - 代入塔高 $h = 78.4\\text{ 公尺}$：\n       $$4.9t^2 = 78.4 \\implies t^2 = \\frac{78.4}{4.9} = \\frac{784}{49} = 16$$\n     - 開根號得：\n       $$t = 4\\text{ 秒 (s)}$$（時間取正值）。\n\n3. **第 (2) 小題：求著地時的速度（瞬間末速度 $v$）**：\n   - 蘋果經過 $4$ 秒著地，根據等加速度運動速度公式：\n     $$v = v_0 + gt = 0 + 9.8 \\times 4 = \\mathbf{39.2}\\text{ 公尺/秒 (m/s)}$$\n   - （亦可用末速與位移公式驗算：$v^2 = 2gh = 2 \\times 9.8 \\times 78.4 = 1536.64 \\implies v = 39.2\\text{ m/s}$）。\n\n標準答案為：\n**(1) 4 秒（4s）**；\n**(2) 39.2 公尺/秒（39.2 m/s）**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-09-19"
-},
-{
-  "id": "q_sci_phy_free_fall_characteristics_075",
-  "examPeriod": "一段",
-  "subject": "自然/理化",
-  "errorReason": "觀念不懂",
-  "concept": "自由落體運動之核心定義與特徵辨析（只受重力作用、等加速度運動、速度均勻增加、位移隨時間平方增加）",
-  "uploadDate": "2026-09-19",
-  "mondayDate": "2026-09-14",
-  "mondayDates": [
-    "2026-09-14"
-  ],
-  "weekLabel": "2026-09-14 (本週最新題)",
-  "isGuessedOrUnstable": true,
-  "mistakeNote": "【自由落體核心特徵常考四大概念辨析】：\n1.【全程只受重力作用】：不受外力或不計空氣阻力時的理想落體運動（選項 D 包括）。\n2.【等加速度運動】：地表附近重力加速度 $g = 9.8\\text{ m/s}^2$ 為定值（選項 B 包括）。\n3.【單位時間內「速度變化量」一定】：加速度定義為 $a = \\frac{\\Delta v}{\\Delta t}$，等加速度即每秒速度變化量相同（選項 C 包括）。\n4.【大陷阱（不包括的項目）】：\n   - ❌ 自由落體「越掉越快」，位移與時間平方成正比（$h = \\frac{1}{2}gt^2$），每 1 秒掉落的距離越來越長（第 1 秒 4.9m、第 2 秒 14.7m……），絕對不是「單位時間內位移量一定」！\n   - 「單位時間內位移量一定」是【等速度運動】的特徵，自由落體絕非等速度運動！",
-  "stem": "有關自由落體運動的特徵，不包括下列哪一項？\n\n○ (A) 單位時間內的位移量一定\n○ (B) 等加速度運動\n○ (C) 單位時間內的速度變化量一定\n○ (D) 全程只受重力作用",
-  "answer": "(A) 單位時間內的位移量一定",
-  "diagramUrl": "",
-  "solution": "○ 詳細物理觀念與各選項剖析：\n\n1. **自由落體之物理本質**：\n   - 定義：物體由靜止出發（$v_0 = 0$），在空中僅受地球引力（重力）作用而垂直下落的運動。\n   - 特徵：受定值重力，產生定值重力加速度 $g = 9.8\\text{ m/s}^2$。\n\n2. **逐項檢視選項特徵**：\n   - **(A)「單位時間內的位移量一定」：不包括（為本題所求）**。\n     - 「單位時間內的位移量」即為**速度（$v = \\frac{\\Delta x}{\\Delta t}$）**。\n     - 自由落體下落時速度持續均勻增加（$v = gt$），下落距離隨時間平方倍增（$h = \\frac{1}{2}gt^2$）。在每個相等的 1 秒內，下落的位移量分別為 $4.9\\text{ m}$、$14.7\\text{ m}$、$24.5\\text{ m}$……越掉越快、位移越來越大，並非常數！\n     - 只有在「等速度運動」中，單位時間內的位移量才會固定。\n   - **(B)「等加速度運動」：包括**。\n     - 全程加速度恆為 $g = 9.8\\text{ m/s}^2$（大小與方向皆固定），故確為等加速度運動。\n   - **(C)「單位時間內的速度變化量一定」：包括**。\n     - 根據加速度定義 $a = \\frac{\\Delta v}{\\Delta t}$，加速度為常數即表示單位時間（每 1 秒）內的速度增加量恆為 $9.8\\text{ m/s}$。\n   - **(D)「全程只受重力作用」：包括**。\n     - 自由落體的定義即在於不受手推力、支撐力或空氣阻力等其他外力，全程僅受地球引力。\n\n故不包括之敘述為 **(A)**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-09-19"
-},
-{
-  "id": "q_sci_phy_free_fall_vt_graph_options_076",
-  "examPeriod": "一段",
-  "subject": "自然/理化",
-  "errorReason": "觀念不懂",
-  "concept": "自由落體運動之 v-t 圖形判讀（初速為零、等加速度、過原點斜向右上直線）",
-  "uploadDate": "2026-09-19",
-  "mondayDate": "2026-09-14",
-  "mondayDates": [
-    "2026-09-14"
-  ],
-  "weekLabel": "2026-09-14 (本週最新題)",
-  "isGuessedOrUnstable": true,
-  "mistakeNote": "【自由落體 v-t 圖秒殺兩大鐵律】：\n1.【過原點 (0, 0)】：「自由掉落」代表由靜止釋放，初速度 $v_0 = 0$！在 $t = 0$ 時 $v = 0$，圖形起點一定在原點！\n2.【斜直線（斜率為定值 g）】：只受重力作用，加速度 $a = g = 9.8\\text{ m/s}^2$ 為正的定值！v-t 圖的斜率就是加速度，因此必為一條過原點向右上延伸的傾斜直線！\n3.【其餘圖形代表的運動】：\n   - 圖 (B) 水平線：速度不變（等速度運動）。\n   - 圖 (C) 往右下斜直線：具有初速度的等減速度運動（如鉛直上拋上升過程）。\n   - 圖 (D) 曲線下彎：加速度隨時間變化的變加速度運動。",
-  "stem": "一物體自高處自由落下，若不考慮空氣阻力，其掉落時速度（v）與時間（t）的關係圖為下列何者？\n\n（點擊附圖可放大檢視 (A)(B)(C)(D) 四個速度與時間關係圖）\n\n○ (A) 圖 (A)：通過原點向右上傾斜之斜直線（等加速度運動）\n○ (B) 圖 (B)：水平直線（等速度運動）\n○ (C) 圖 (C)：由某一正速度隨時間直線減速至 0\n○ (D) 圖 (D)：先等速後向下彎曲之曲線",
-  "answer": "(A) 圖 (A)：通過原點向右上傾斜之斜直線（等加速度運動）",
-  "diagramUrl": "assets/questions/q_sci_phy_free_fall_vt_graph_options_076.png",
-  "solution": "○ 詳細運動圖表深度解析：\n\n1. **分析「自由落下」的物理條件**：\n   - ① **初速度為零（$v_0 = 0$）**：\n     在出發時刻 $t = 0$ 時，速度 $v = 0$。因此在以時間 $t$ 為橫軸、速度 $v$ 為縱軸的 v-t 圖中，函數圖形必須**通過原點 $(0, 0)$**。\n   - ② **等加速度運動（加速度 $a = g = 9.8\\text{ m/s}^2$ 為正的定值）**：\n     在 v-t 圖中，**圖形的「斜率（傾斜程度）」代表物體的加速度**。\n     因為重力加速度大小與方向固定不變，故斜率必為**固定正值**。\n   - 綜合以上兩點，速度隨時間的函數式為 $v = gt$，其圖形必為**一條通過原點且向右上方傾斜的直線**（即選項 (A)）。\n\n2. **逐一檢討各選項圖形代表之運動狀態**：\n   - **圖 (A)**：通過原點向右上延伸之直線，表示初速為 0、加速度為定值的等加速度運動，**完全符合自由落體**，為正確答案。\n   - **圖 (B)**：呈現一條水平直線，表示速度隨時間完全不變（加速度 $a = 0$），代表「等速度直線運動」。\n   - **圖 (C)**：在 $t = 0$ 時具有較大的初速度，且隨著時間增加速度直線遞減至 0，代表「具有初速的等減速度運動」（例如鉛直向上拋出之物體在上升過程的速率變化）。\n   - **圖 (D)**：圖形為曲線且斜率越來越陡，表示加速度並非固定常數，不符合自由落體定值重力加速度的特徵。\n\n故正確答案為 **(A)**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-09-19"
-},
-{
-  "id": "q_sci_phy_vertical_throw_gravity_acceleration_constant_077",
-  "examPeriod": "一段",
-  "subject": "自然/理化",
-  "errorReason": "觀念不懂",
-  "concept": "鉛直上拋運動之受力與加速度分析：空中運動全程加速度恆等於重力加速度 g（大小與方向皆固定）",
-  "uploadDate": "2026-09-19",
-  "mondayDate": "2026-09-14",
-  "mondayDates": [
-    "2026-09-14"
-  ],
-  "weekLabel": "2026-09-14 (本週最新題)",
-  "isGuessedOrUnstable": true,
-  "mistakeNote": "【鉛直上拋在空中「加速度」三大考試大陷阱】：\n1. ❌【陷阱一：誤以為「剛離手時手推力最大，所以加速度最大」】：\n   - 錯！球「離開手掌」的瞬間，手對球的作用力立刻變成 0！在空中球只受到地球向下的重力！\n2. ❌【陷阱二：誤以為「最高點瞬時速度為 0，所以加速度也是 0」】：\n   - 錯！最高點瞬間雖然「速度 $v = 0$」，但重力依然存在，加速度依然是 $g = 9.8\\text{ m/s}^2$ 向下！若加速度為 0，球就會停在半空中掉不下來了！\n3. ❌【陷阱三：誤以為「快墜地時速度最快，所以加速度最大」】：\n   - 錯！速度大不等於加速度大！加速度是「速度變化的快慢」，每秒速度都固定增加 $9.8\\text{ m/s}$！\n👉【破題秒殺口訣】：只要在空中且不計阻力，全程合力只有重力，加速度【全程皆相同】，永遠等於 $9.8\\text{ m/s}^2$ 向下！",
-  "stem": "阿翰把一棒球拋向天空，試問在不計空氣阻力下，棒球在空中何時有最大的加速度？\n\n○ (A) 離開手後的那一剎那\n○ (B) 到最高點時\n○ (C) 墜地前\n○ (D) 全程皆相同",
-  "answer": "(D) 全程皆相同",
-  "diagramUrl": "",
-  "solution": "○ 詳細解題觀念與受力深度分析：\n\n1. **根據牛頓第二運動定律分析棒球在空中的受力情形**：\n   - 棒球被拋出「離開手」之後，在空中運動期間（無論是上升中、到達最高點瞬間、還是下落過程中），在題目設定「不計空氣阻力」的前提下：\n     - 棒球**全程只受到唯一的力——地球引力（重力 $W = mg$）**，方向恆垂直向下。\n     - 手的作用力在球離手的瞬間就已經完全消失，手無法隔空對球施力。\n\n2. **推求棒球在各階段的加速度**：\n   - 根據牛頓第二定律 $F_{\\text{合}} = ma$：\n     $$a = \\frac{F_{\\text{合}}}{m} = \\frac{mg}{m} = g = 9.8\\text{ m/s}^2$$\n   - 方向：恆垂直向下。\n   - 因此：\n     - **剛離開手時**：合力為重力，加速度 $= 9.8\\text{ m/s}^2$ 向下。\n     - **上升途中**：合力為重力，加速度 $= 9.8\\text{ m/s}^2$ 向下。\n     - **到達最高點瞬間**：雖然瞬間速度 $v = 0$，但地球依然拉著球，合力仍為重力，加速度**依然是 $9.8\\text{ m/s}^2$ 向下**！\n     - **下落與墜地前**：合力仍為重力，加速度 $= 9.8\\text{ m/s}^2$ 向下。\n   - 故在空中的任何時刻，加速度的大小均為定值 $g$，**全程皆相同**。\n\n3. **常見概念混淆澄清**：\n   - 題目問的是「**加速度**」（速度變化的快慢），不是問「速度」！\n   - 速度雖然在不同時刻會改變（最高點為 0、墜地前最快），但加速度全程保持不變。\n\n故正確答案為 **(D) 全程皆相同**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-09-19"
-}
+  {
+    "id": "q_sci_phy_car_east_west_acceleration_065",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "審題不清",
+    "concept": "直線運動學：速度與加速度之正負號方向性（向量運算）",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【向量正負號超級大陷阱——速度是向量，非純量！】：\n1. 很多同學看到「初速 20，末速 20」，直接直覺相減 20 - 20 = 0，誤選 (A) 0！\n2. 速度具有「大小」與「方向」，方向相反必須賦予不同正負號！\n   - 若設向東為正（+）：初速度 v₁ = +20 m/s，向西末速度 v₂ = -20 m/s。\n   - 速度變化量 Δv = v₂ - v₁ = (-20) - (+20) = -40 m/s（負號代表向西）。\n3. 平均加速度 a = Δv / Δt = -40 / 5 = -8 m/s²。\n   題目問「平均加速度大小」，故取絕對值為 8 m/s²！",
+    "stem": "某車開始時的初速度為向東 20m / s，經過 5 秒後，速度變成向西 20m / s，則在加速的過程中，該車的平均加速度大小為下列何者？\n\n○ (A) 0\n○ (B) 4m / s²\n○ (C) 5m / s²\n○ (D) 8m / s²",
+    "answer": "(D) 8m / s²",
+    "diagramUrl": "",
+    "solution": "○ 詳細物理觀念與向量運算深度解析：\n\n1. **核心觀念：速度（Velocity）是「向量」，兼具「大小」與「方向」**：\n   - 在一直線上運動，通常以「正負號」來代表運動方向。\n   - 規定基準方向：**設向東為正（+），向西為負（-）**。\n\n2. **物理量條列與速度變化量 Δv 計算**：\n   - 初速度 v₁ = +20 m/s（向東）\n   - 末速度 v₂ = -20 m/s（向西）\n   - 經過時間 Δt = 5 秒\n   - 速度變化量定義為「末速度 − 初速度」：\n     Δv = v₂ - v₁ = (-20) - (+20) = -40 m/s\n     （負號代表速度變化量的方向朝向「西方」）\n\n3. **平均加速度 ā 與大小**：\n   - 由平均加速度定義式：\n     ā = Δv / Δt = (-40 m/s) / 5 s = -8 m/s²\n   - 表示此車具有**向西 8 m/s²** 的平均加速度。\n   - 題目詢問的是「平均加速度大小」，純量量值取絕對值：\n     |ā| = 8 m/s²\n\n4. **各選項分析與診斷**：\n   - **(A) 0**：【最常犯典型錯誤】忽略方向，直接用純量 20 - 20 = 0 計算。\n   - **(B) 4m / s²**：計算或公式帶入錯誤。\n   - **(C) 5m / s²**：誤用時間數值。\n   - **(D) 8m / s²**：正確，|-20 - 20| / 5 = 8 m/s²。\n\n故正確答案為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_phy_ticker_tape_bd_avg_vel_066",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "計算粗心",
+    "concept": "直線運動學：打點計時器（紙帶軌跡）之時間間隔與平均速度計算",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【打點計時器／紙帶軌跡四大破題核心重點】：\n1.【數「間隔」而非數「點數」】：\n   - 啟動點到 E 點共有 5 個時間間隔（啟動點~A、A~B、B~C、C~D、D~E）。\n   - 總時間 0.5 秒，故每個間隔的時間 Δt = 0.5 / 5 = 0.1 秒！\n2.【B、D 間的位移與時間計算】：\n   - B 到 D 包含兩個區間：BC 段（3.5 cm）與 CD 段（5.5 cm），合計位移 Δx = 3.5 + 5.5 = 9.0 cm。\n   - B 到 D 經歷 2 個時間間隔，時間 t = 2 × 0.1 = 0.2 秒。\n3.【平均速度公式帶入】：\n   - v̄ = Δx / Δt = 9.0 cm / 0.2 s = 45 cm/s！",
+    "stem": "右圖為某物體在固定時間間隔下所捕捉到的運動軌跡點。已知啟動點至 E 點共歷時 0.5 秒，請問 B、D 兩點間的平均速度大小為何？\n\n○ (A) 20cm / s\n○ (B) 35cm / s\n○ (C) 40cm / s\n○ (D) 45cm / s",
+    "answer": "(D) 45cm / s",
+    "diagramUrl": "assets/questions/q_sci_phy_ticker_tape_bd_avg_vel_066.png",
+    "solution": "○ 詳細物理步驟與軌跡分析：\n\n1. **求各相鄰兩點間的時間間隔（頻率與週期概念）**：\n   - 題目給定：由「啟動點」移動至「E 點」共歷時 0.5 秒。\n   - 觀察紙帶上的相鄰區間：\n     - 啟動點 → A（第 1 個間隔）\n     - A → B（第 2 個間隔）\n     - B → C（第 3 個間隔）\n     - C → D（第 4 個間隔）\n     - D → E（第 5 個間隔）\n   - 總共包含 5 個相等的時間間隔：\n     Δt = 0.5 秒 / 5 = 0.1 秒\n\n2. **求 B 點至 D 點的位移 Δx_BD**：\n   - 由圖中標示的相鄰兩點間距：\n     - B 到 C 距離 = 3.5 cm\n     - C 到 D 距離 = 5.5 cm\n   - B 到 D 的總位移：\n     Δx_BD = 3.5 + 5.5 = 9.0 cm\n\n3. **求 B 點至 D 點所歷經的時間 Δt_BD**：\n   - B 到 D 共有 2 個時間間隔（BC 與 CD）：\n     Δt_BD = 2 × 0.1 秒 = 0.2 秒\n\n4. **計算 B、D 兩點間的平均速度大小 v̄**：\n   - 由平均速度定義式：\n     v̄ = 位移 / 時間 = 9.0 cm / 0.2 秒 = 45 cm/s\n\n故正確答案為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_phy_train_brake_stopping_distance_067",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "等加速度直線運動：火車煞車滑行時間、加速度、v-t 圖面積與完全煞停距離計算",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【等加速度運動公式與 v-t 圖面積雙解法核心】：\n1.【第一階段（30 到 10 m/s 滑行 400 m）求時間與加速度】：\n   - 利用平均速度求時間：x = [(v₀ + v)/2] × t ⟹ 400 = [(30 + 10)/2] × t ⟹ t = 20 秒（選項 A 正確）。\n   - 加速度 a = (v - v₀) / t = (10 - 30) / 20 = -1 m/s²（選項 B 正確）。\n2.【第二階段：火車完全煞停（末速 v = 0）】：\n   - 總煞停時間：0 = 30 + (-1) × t_總 ⟹ t_總 = 30 秒（選項 C 正確）。\n   - 總煞停距離（v-t 圖三角形面積）：x_總 = (初速 × 總時間) / 2 = (30 × 30) / 2 = 450 m。\n3.【錯誤陷阱】：\n   - (D) 敘述「需在 600 m 前開始煞車」錯誤，正確只需在 **450 m** 前開始煞車即可！",
+    "stem": "一列火車進站前車速為 30m / s，煞車到車速為 10m / s 時，滑行 400m 的距離，下列敘述何者錯誤？\n\n○ (A) 此段煞車時間為 20 秒\n○ (B) 煞車時的加速度為 -1m / s²\n○ (C) 歷時 30 秒，火車才能停靠月臺\n○ (D) 火車準確停靠月臺，需在 600m 前開始煞車",
+    "answer": "(D) 火車準確停靠月臺，需在 600m 前開始煞車",
+    "diagramUrl": "",
+    "solution": "○ 詳細等加速度運動觀念與逐步推導（公式解法 vs. v-t 圖幾何解法）：\n\n1. **分析第一階段煞車（由 30 m/s 減速至 10 m/s，位移 400 m）**：\n   - 初速度 v₀ = 30 m/s\n   - 減速後末速度 v = 10 m/s\n   - 滑行位移 x₁ = 400 m\n   - **(A) 求此段煞車時間 t₁**：\n     利用等加速度直線運動平均速度公式：\n     x₁ = [(v₀ + v) / 2] × t₁ ⟹ 400 = [(30 + 10) / 2] × t₁ = 20 × t₁ ⟹ t₁ = 20 秒\n     故 **(A) 此段煞車時間為 20 秒** 是正確的。\n\n   - **(B) 求煞車時的加速度 a**：\n     a = (v - v₀) / t₁ = (10 - 30) / 20 = -20 / 20 = -1 m/s²\n     （負號表示加速度方向與運動方向相反，為減速運動）\n     故 **(B) 煞車時的加速度為 -1 m/s²** 是正確的。\n\n2. **分析第二階段：由車速 30 m/s 完全煞停至靜止（v_末 = 0）**：\n   - **(C) 火車完全停靠月臺所需的總時間 t_總**：\n     v_末 = v₀ + a · t_總 ⟹ 0 = 30 + (-1) × t_總 ⟹ t_總 = 30 秒\n     故 **(C) 歷時 30 秒，火車才能停靠月臺** 是正確的。\n\n   - **(D) 火車準確停靠月臺所需煞車總距離 S_總**：\n     - **方法一（v-t 圖三角形面積法）**：\n       以縱軸為速度 v、橫軸為時間 t 畫出直角三角形，底為總時間 30 秒，高為初速度 30 m/s：\n       S_總 = (底 × 高) / 2 = (30 × 30) / 2 = 450 公尺\n     - **方法二（無時間公式 v² = v₀² + 2as）**：\n       0² = 30² + 2 × (-1) × S_總 ⟹ 0 = 900 - 2 S_總 ⟹ S_總 = 450 公尺\n     - 故火車欲準確停靠月臺，必須在 **450 公尺** 前開始煞車，而非 600 公尺。\n     故 **(D) 敘述錯誤**，為本題應選答案。\n\n故正確答案為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_phy_car_brake_vt_graph_acceleration_068",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "審題不清",
+    "concept": "直線運動學：v-t 圖判讀、減速煞車加速度大小與向量方向（向北為正，負號即向南）",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【v-t 圖斜率與正負方向判讀陷阱】：\n1.【鎖定題目要求的時段】：「減速煞車時」是指圖中 t = 10 ～ 20 秒的這一段（速度由 20 m/s 降為 0 m/s）！\n2.【求加速度】：a = Δv / Δt = (0 - 20) / (20 - 10) = -20 / 10 = -2 m/s²。\n3.【方向轉換】：\n   - 題目規定「汽車向北行駛」（向北為正 +）。\n   - 算出的加速度為負值（-2 m/s²），負號就代表「向南」！\n   - 加速度量值為 2 m/s²，方向為「向南」。千萬別漏看方向！",
+    "stem": "一汽車在直線公路上向北行駛，其速度（v）與時間（t）的關係圖，如圖所示，試問此汽車在減速煞車時加速度的量值及方向為何？\n\n○ (A) 2m / s²，向北\n○ (B) 2m / s²，向南\n○ (C) 1m / s²，向北\n○ (D) 1m / s²，向南",
+    "answer": "(B) 2m / s²，向南",
+    "diagramUrl": "assets/questions/q_sci_phy_car_brake_vt_graph_acceleration_068.png",
+    "solution": "○ 詳細物理步驟與 v-t 圖深度解析：\n\n1. **觀察 v-t 圖之運動各階段分析**：\n   - 0 ～ 10 秒：水平直線，速度維持 +20 m/s（向北等速度運動）。\n   - **10 ～ 20 秒**：斜向右下直線，速度由 +20 m/s 降至 0 m/s（**此階段即為題目所指的「減速煞車時」**）。\n   - 20 ～ 25 秒：速度為 0 m/s（靜止狀態）。\n   - 25 ～ 35 秒：斜向右上直線，速度由 0 m/s 增加至 +25 m/s（向北加速運動）。\n   - 35 ～ 50 秒：速度維持 +25 m/s（向北等速度運動）。\n\n2. **計算減速煞車時的加速度**：\n   - 初速度 v₁ = +20 m/s（向北）\n   - 末速度 v₂ = 0 m/s\n   - 經歷時間 Δt = 20 - 10 = 10 秒\n   - 根據加速度公式：\n     a = Δv / Δt = (v₂ - v₁) / Δt = (0 - 20) / 10 = -20 / 10 = -2 m/s²\n\n3. **判斷量值與方向**：\n   - **量值（大小）**：取絕對值 |a| = 2 m/s²。\n   - **方向**：題目設定向北為正（+），故計算出的負號（-）代表方向**向南**。\n   - 因此此車減速煞車時的加速度為 **2 m/s²，向南**。\n\n故正確答案為 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_phy_four_motion_graphs_speed_comparison_069",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "運動圖表判讀與轉換：x-t 圖、v-t 圖、a-t 圖在特定時刻之瞬間速度比較",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【四種運動圖形瞬時速度判讀必勝心法】：\n1.【看清縱軸座標代表什麼物理量】：\n   - 甲（x-t 圖）：在第 3 秒末時位於水平線上（x 停在 20 m 不動），故瞬間速度 v_甲 = 0 m/s！\n   - 乙（x-t 圖）：整段為斜直線（等速度運動），速度為斜率 v_乙 = 20 / 5 = 4 m/s！第 3 秒末速度仍為 4 m/s。\n   - 丙（v-t 圖）：等加速度直線，加速度 a = 5 / 5 = 1 m/s²，第 3 秒末的瞬時速度直接看高度：v_丙(3) = 1 × 3 = 3 m/s。\n   - 丁（a-t 圖）：水平線代表等加速度 a = 1 m/s²，由靜止啟動（v₀ = 0），第 3 秒末速度為面積：v_丁(3) = 0 + 1 × 3 = 3 m/s。\n2.【比較大小】：\n   - 乙 (4) > 丙 (3) = 丁 (3) > 甲 (0)，故最大者為【乙】！",
+    "stem": "已知甲、乙、丙、丁四個運動體均由靜止啟動，後續運動情形分別記錄如下各圖示，試問四者啟動後第 3 秒末瞬間的速度，以何者最大？\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁",
+    "answer": "(B) 乙",
+    "diagramUrl": "assets/questions/q_sci_phy_four_motion_graphs_speed_comparison_069.png",
+    "solution": "○ 詳細圖表判讀與逐一運算深度解析：\n\n題目詢問啟動後**第 3 秒末瞬間的速度**（瞬時速度），我們分別針對甲、乙、丙、丁四張圖深入分析：\n\n1. **【甲圖：x-t 位置與時間關係圖】**：\n   - 0 ～ 2 秒：等速度運動，由 0 m 移動至 20 m。\n   - **2 ～ 5 秒**：呈現**水平直線**，代表物體的位置始終停留在 x = 20 m，處於**靜止狀態**。\n   - 因此第 3 秒末瞬間的速度：\n     v_甲 = 0 m/s\n\n2. **【乙圖：x-t 位置與時間關係圖】**：\n   - 圖形為一條過原點的**傾斜直線**，代表物體正在進行**等速度直線運動**。\n   - x-t 圖的斜率即為速度：\n     v_乙 = Δx / Δt = (20 - 0) / (5 - 0) = 4 m/s\n   - 因為是等速度運動，全程速度皆相同，故第 3 秒末瞬間的速度：\n     v_乙 = 4 m/s\n\n3. **【丙圖：v-t 速度與時間關係圖】**：\n   - 圖形為過原點的傾斜直線，代表物體由靜止出發做**等加速度運動**。\n   - 加速度（斜率）：a_丙 = (5 - 0) / (5 - 0) = 1 m/s²。\n   - 在第 3 秒末時的瞬時速度：\n     v_丙 = a_丙 × t = 1 m/s² × 3 s = 3 m/s\n\n4. **【丁圖：a-t 加速度與時間關係圖】**：\n   - 圖形為一條水平直線，表示物體的加速度恆為 a = 1 m/s²（等加速度運動）。\n   - 題目說明由「靜止啟動」（初速度 v₀ = 0）。\n   - 在第 3 秒末時的速度（或由 a-t 圖 0 ～ 3 秒的面積求速度變化量）：\n     v_丁 = v₀ + a × t = 0 + 1 m/s² × 3 s = 3 m/s\n\n5. **【綜合比較第 3 秒末瞬間速度大小】**：\n   - v_甲 = 0 m/s\n   - v_乙 = 4 m/s\n   - v_丙 = 3 m/s\n   - v_丁 = 3 m/s\n   - 比較大小順序：v_乙 (4) > v_丙 (3) = v_丁 (3) > v_甲 (0)。\n   - 故速度最大者為 **乙**。\n\n故正確答案為 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_his_egypt_memphis_pyramid_070",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "古埃及古王國時期文明特徵（金字塔時代、孟斐斯、法老王權與陵墓興建）與世界古文明辨析〔93基測II〕",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【世界古代歷史四大古文明考點速記口訣】：\n1.【古埃及（尼羅河下游孟斐斯／金字塔）】：\n   - 古王國時代（約西元前 27～22 世紀）定都尼羅河下游的「孟斐斯」，國王稱為「法老」，生前即大興土木徵召人民建造「金字塔（大型國王陵墓）」，故古王國時期又稱「金字塔時期」！\n2.【常見選項陷阱辨析】：\n   - ❌ 廣場民主政治公共討論：古希臘城邦（如西元前 6～5 世紀之雅典），非埃及！\n   - ❌ 楔形文字與泥版紀錄：兩河流域（美索不達米亞文明，如蘇美、巴比倫），埃及使用的是草紙與象形文字！\n   - ❌ 傳播《聖經》信上帝得永生：基督教文明（西元 1 世紀於羅馬帝國統治下的巴勒斯坦興起），西元前 2500 年尚未出現！",
+    "stem": "西元前 2500 年左右，有一位商人旅行到埃及 尼羅河下游的孟斐斯，他在這個城市中最可能看到下列何種景象？【93年第2次基測】\n\n○ (A) 人們不時接獲官員徵召去興建大型國王陵墓\n○ (B) 許多男性公民趕赴廣場參與公共事務的討論\n○ (C) 人們將交易往來紀錄用楔形文字刻在泥版上\n○ (D) 有人熱忱傳播《聖經》，宣揚信上帝可得永生。",
+    "answer": "(A) 人們不時接獲官員徵召去興建大型國王陵墓",
+    "diagramUrl": "",
+    "solution": "○ 詳細解題觀念與歷史背景剖析：\n\n1. **時空定位：古埃及古王國時代與首都孟斐斯**：\n   - **時間**：西元前 2500 年左右，正值古埃及的「古王國時期」（約西元前 2686 ～ 前 2181 年）。\n   - **地點**：孟斐斯（Memphis）位於尼羅河下游三角洲頂端，為古王國時期的政經宗教首都。\n   - **時代特色**：古王國時期中央集權極盛，法老被視為神在人間的化身，掌管全埃及。法老會在生前動員龐大人力物力修建雄偉的金字塔作為陵墓，因此古王國時期亦被稱為「金字塔時期（Pyramid Age）」。在尼羅河氾濫的農閒期間，人民經常受官員徵召前往工廠與陵寢工地從事大型石造陵墓的建造工程。因此在孟斐斯最容易目睹的景象為 (A)。\n\n2. **逐一診斷錯誤選項**：\n   - **(B) 許多男性公民趕赴廣場參與公共事務的討論**：\n     - 此為**古希臘城邦（如雅典）的民主政治特色**。雅典男性公民在公民大會（廣場）行使直接民主權利，時間大約在西元前 6 世紀至西元前 4 世紀，地理位置在地中海愛琴海地區，與西元前 2500 年的埃及神權專制完全不符。\n   - **(C) 人們將交易往來紀錄用楔形文字刻在泥版上**：\n     - 楔形文字與泥版是**兩河流域（美索不達米亞文明）**的標誌性發明（蘇美人在西元前 3000 多年發明）。埃及使用的書寫系統為「象形文字（聖書體）」，書寫載體多為「紙莎草紙（Papyrus）」或鐫刻於石柱神廟石壁上，並非泥版。\n   - **(D) 有人熱忱傳播《聖經》，宣揚信上帝可得永生**：\n     - 《聖經》（新約）與傳播基督信仰、信上帝得永生是**基督教**的核心教義。基督教於**西元 1 世紀**發源於羅馬帝國統治下的巴勒斯坦地區。西元前 2500 年時基督教根本尚未誕生（此時距耶穌降生尚有約兩千五百年之遙）。\n\n故正確答案為 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_his_hammurabi_code_babylon_071",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "兩河流域古巴比倫文明：《漢摩拉比法典》之階級劃分、以牙還牙報復原則與楔形文字辨析",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【《漢摩拉比法典》必考三大核心特徵與常考陷阱】：\n1.【統治者與文明歸屬（陷阱重災區）】：\n   - 為「古巴比倫王國」國王「漢摩拉比（Hammurabi）」所頒布，屬於「兩河流域（美索不達米亞）」文明！\n   - ❌ 常見陷阱：誤植為「波斯國王」或「亞述國王」！波斯是後來的統一帝國，與巴比倫相隔千年以上。\n2.【文字與載體】：\n   - 全文使用「楔形文字」鐫刻於「玄武岩石碑」上（即著名的漢摩拉比法典石碑），非古埃及的象形文字！\n3.【法典兩大精神】：\n   - ①【階級概念鮮明（身分不平等）】：貴族、平民（自由民）、奴隸階級分明。同罪不同罰（如傷害貴族處以嚴刑重罰，打奴隸或平民則處罰輕微；奴隸打自由民割耳）。\n   - ②【以牙還牙、以眼還眼（同態復仇原則）】：在同階級之間強調同態報復（傷人眼者還傷其眼，折人手足者還折其手足）。",
+    "stem": "下列為老師介紹的法典部分內容，由此法典的內容判斷，何者敘述正確？\n(甲) 由條文可見當時有階級概念\n(乙) 強調「以牙還牙」的報復原則\n(丙) 為波斯國王漢摩拉比下令編訂\n(丁) 法典的原文應是由象形文字寫成\n\n【法典內容節錄】：\n・196 條：如果一個人傷了貴族的眼睛，還傷其眼。\n・197 條：如果一個人折了貴族的手足，還折其手足。\n・203 條：如果貴族階層的人打了貴族出身的人，須罰銀一明納。\n・205 條：如果任何人的奴隸打了自由民出身的人，處割耳之刑。\n\n○ (A) 甲乙\n○ (B) 乙丙\n○ (C) 甲丙\n○ (D) 丙丁",
+    "answer": "(A) 甲乙",
+    "diagramUrl": "",
+    "solution": "○ 詳細題意解析與法典條文深度剖析：\n\n1. **判斷法典名稱與出處**：\n   - 由引文「傷了貴族的眼睛，還傷其眼」、「折了貴族的手足，還折其手足」、「奴隸打了自由民...處割耳之刑」等條文，可確定此法典為世界現存最早完備的成文法典之一——**《漢摩拉比法典》（Code of Hammurabi）**。\n\n2. **逐項檢驗題目敘述**：\n   - **(甲) 由條文可見當時有階級概念**：**正確**。\n     - 條文中明確區分「貴族」、「自由民（平民）」與「奴隸」三種不同的社會階級。\n     - 刑罰標準因被害者與加害者的階級地位而有極大差異（例如傷害貴族須以同等肉體傷害報復；奴隸犯上則處以嚴酷割耳之刑；貴族內部互傷則罰銀）。這充分體現了當時社會「法律保障特定統治階層」且「身分等級森嚴」的階級社會特質。\n   - **(乙) 強調「以牙還牙」的報復原則**：**正確**。\n     - 第 196 條「傷人眼，還傷其眼」、第 197 條「折人手足，還折其手足」，即為法學上著名的**同態復仇原則（以牙還牙、以眼還眼，Lex Talionis）**。\n   - **(丙) 為波斯國王漢摩拉比下令編訂**：**錯誤**。\n     - 漢摩拉比是**古巴比倫王國（位於美索不達米亞／兩河流域）**的國王，於約西元前 18 世紀統一兩河流域後下令編訂法典，**並非「波斯」國王**（波斯帝國興起於西元前 6 世紀，兩者相隔逾千年）。\n   - **(丁) 法典的原文應是由象形文字寫成**：**錯誤**。\n     - 兩河流域文明使用的書寫文字為蘇美人所創發的**「楔形文字（釘頭字）」**。《漢摩拉比法典》原文是用阿卡德語楔形文字刻在黑色玄武岩圓柱石碑上，**並非埃及的「象形文字」**。\n\n3. **結論**：\n   - 敘述正確者為 **(甲)** 與 **(乙)**。\n\n故正確答案為 **(A) 甲乙**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_parallel_segments_ratio_trapezoid_072",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "平行線截比例線段與相似三角形：交叉平行線模型（EF//AB//CD）線段比例推導與經典公式",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【「交叉平行線 / 雙三角模型」秒殺口訣與陷阱】：\n1.【破題關鍵三部曲】：\n   - ① 看 $\\triangle BCD$（利用 $\\overline{EF} // \\overline{CD}$）：\n     $$\\overline{BF} : \\overline{BC} = \\overline{EF} : \\overline{CD} = 2 : 5 \\implies \\overline{BF} : \\overline{CF} = 2 : 3$$\n   - ② 轉看 $\\triangle CAB$（利用 $\\overline{EF} // \\overline{AB}$）：\n     $$\\overline{EF} : \\overline{AB} = \\overline{CF} : \\overline{CB} = 3 : (2+3) = 3 : 5$$\n   - ③ 兩側比例轉換：\n     $\\overline{BE} : \\overline{ED} = \\overline{BF} : \\overline{FC} = 2 : 3$（頂點 $B$ 端佔 2 份、底端 $C$ 佔 3 份，千萬別顛倒寫成 $3:2$）！\n2.【經典倒數和公式（秒殺驗算神技）】：\n   $$\\frac{1}{\\overline{EF}} = \\frac{1}{\\overline{AB}} + \\frac{1}{\\overline{CD}}$$\n   中間平行線長度的倒數，等於兩側平行線長度的倒數和！",
+    "stem": "如圖，$\\overline{AB} // \\overline{EF} // \\overline{CD}$，若 $\\overline{EF} : \\overline{CD} = 2 : 5$，則下列何者正確？\n\n（點擊附圖可放大檢視幾何圖形）\n\n○ (A) $\\overline{EF} : \\overline{AB} = 3 : 5$\n○ (B) $\\overline{BE} : \\overline{BD} = 3 : 5$\n○ (C) $\\overline{BE} : \\overline{DE} = 3 : 2$\n○ (D) $\\overline{AB} : \\overline{CD} = 1 : 1$",
+    "answer": "(A) $\\overline{EF} : \\overline{AB} = 3 : 5$",
+    "diagramUrl": "assets/questions/q_math_parallel_segments_ratio_trapezoid_072.png",
+    "solution": "○ 詳細解題幾何推導與比例分析：\n\n1. **利用 $\\triangle BCD$ 中的平行線求底邊分割比**：\n   - 題目給定 $\\overline{EF} // \\overline{CD}$，在 $\\triangle BCD$ 中：\n     $$\\triangle BEF \\sim \\triangle BDC$$\n   - 由對應邊成比例：\n     $$\\frac{\\overline{BF}}{\\overline{BC}} = \\frac{\\overline{BE}}{\\overline{BD}} = \\frac{\\overline{EF}}{\\overline{CD}} = \\frac{2}{5}$$\n   - 即 $\\overline{BF}$ 佔 2 份，全段 $\\overline{BC}$ 佔 5 份：\n     $$\\overline{CF} = \\overline{BC} - \\overline{BF} = 5 - 2 = 3 \\text{ 份}$$\n     $$\\implies \\overline{BF} : \\overline{CF} = 2 : 3$$\n     $$\\implies \\overline{CF} : \\overline{BC} = 3 : 5$$\n\n2. **利用 $\\triangle CAB$ 求 $\\overline{EF} : \\overline{AB}$ 的比值**：\n   - 因為 $\\overline{EF} // \\overline{AB}$，在 $\\triangle CAB$ 中：\n     $$\\triangle CEF \\sim \\triangle CAB$$\n   - 由對應邊成比例：\n     $$\\frac{\\overline{EF}}{\\overline{AB}} = \\frac{\\overline{CF}}{\\overline{CB}} = \\frac{\\overline{CE}}{\\overline{CA}}$$\n   - 代入剛剛求得的 $\\overline{CF} : \\overline{CB} = 3 : 5$：\n     $$\\overline{EF} : \\overline{AB} = 3 : 5$$\n   - **選項 (A) 完全正確！**\n\n3. **逐一檢驗其他選項之錯誤**：\n   - **(B) $\\overline{BE} : \\overline{BD}$**：\n     由第 1 步推導可知 $\\overline{BE} : \\overline{BD} = \\overline{EF} : \\overline{CD} = \\mathbf{2 : 5}$（非 $3 : 5$），故 (B) 錯誤。\n   - **(C) $\\overline{BE} : \\overline{DE}$**：\n     因為 $\\overline{BE}$ 佔 2 份、全段 $\\overline{BD}$ 佔 5 份，故 $\\overline{DE} = 5 - 2 = 3$ 份：\n     $$\\overline{BE} : \\overline{DE} = \\mathbf{2 : 3} \\text{ （非 } 3 : 2 \\text{）}$$，故 (C) 錯誤。\n   - **(D) $\\overline{AB} : \\overline{CD}$**：\n     - 設 $\\overline{EF} = 6k$（取 2 與 3 的公倍數方可整除）：\n       - 由 $\\overline{EF} : \\overline{CD} = 2 : 5 \\implies \\overline{CD} = 6k \\times \\frac{5}{2} = 15k$\n       - 由 $\\overline{EF} : \\overline{AB} = 3 : 5 \\implies \\overline{AB} = 6k \\times \\frac{5}{3} = 10k$\n     - 故：\n       $$\\overline{AB} : \\overline{CD} = 10k : 15k = \\mathbf{2 : 3} \\neq 1 : 1$$，故 (D) 錯誤。\n\n4. **經典公式快速驗證（延伸學習）**：\n   在交叉平行線模型中，恆有倒數和公式：\n   $$\\frac{1}{\\overline{EF}} = \\frac{1}{\\overline{AB}} + \\frac{1}{\\overline{CD}}$$\n   代入 $\\overline{EF} = 6$、$\\overline{AB} = 10$、$\\overline{CD} = 15$：\n   $$\\frac{1}{10} + \\frac{1}{15} = \\frac{3 + 2}{30} = \\frac{5}{30} = \\frac{1}{6}$$，完全吻合！\n\n故正確答案為 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_phy_free_fall_pisa_height_073",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "直線運動與自由落體：重力加速度（g = 9.8 m/s²）、v-t 圖面積求位移與下落高度計算",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【自由落體運動必背三大觀念與防錯口訣】：\n1.【核心物理條件】：\n   -「由靜止釋放」表示初速度 $v_0 = 0$ m/s！\n   - 只受重力作用，加速度為定值 $g = 9.8\\text{ m/s}^2$（等加速度運動）。\n2.【著地末速度】：\n   - 每秒速度增加 $9.8\\text{ m/s}$，經歷 $3$ 秒著地：\n     $$v = g \\times t = 9.8 \\times 3 = 29.4\\text{ m/s}$$\n3.【求下落高度（斜塔高度）兩種神技】：\n   - 方法一（v-t 圖面積法，最直觀）：\n     由靜止出發的 v-t 圖為過原點的三角形，面積代表位移（下落高度）：\n     $$\\text{高度 } h = \\frac{\\text{底 } t \\times \\text{高 } v}{2} = \\frac{3 \\times 29.4}{2} = 44.1\\text{ 公尺}$$\n   - 方法二（秒殺公式法）：\n     $$h = \\frac{1}{2}gt^2 = \\frac{1}{2} \\times 9.8 \\times 3^2 = 4.9 \\times 9 = 44.1\\text{ 公尺}$$\n4.【常見致命陷阱】：\n   - ❌ 粗心忘記「除以 2」算成 $29.4 \\times 3 = 88.2$（誤算成等速長方形面積）。\n   - ❌ 題目明訂 $g = 9.8$，切勿自行偷換成 $10$！",
+    "stem": "阿翰在比薩斜塔上某處，將蘋果由靜止往下釋放，並測量時間，結果發現蘋果在 3 秒後落地，請問阿翰所在處的高度為多少公尺？（g = 9.8 m / s²）",
+    "answer": "44.1 公尺（或 44.1 m）",
+    "diagramUrl": "",
+    "solution": "○ 詳細物理觀念與步驟解析：\n\n1. **基本物理條件分析**：\n   - 「由靜止往下釋放」：初速度 $v_0 = 0\\text{ m/s}$。\n   - 物體僅受地球重力作用，進行等加速度運動（自由落體）。\n   - 重力加速度：$g = 9.8\\text{ m/s}^2$。\n   - 下落總時間：$t = 3\\text{ 秒}$。\n\n2. **第一步：計算蘋果著地時的瞬間末速度**：\n   - 根據速度公式（每經過 1 秒速度增加 9.8 m/s）：\n     $$v = v_0 + gt = 0 + 9.8 \\times 3 = 29.4\\text{ m/s}$$\n   - 故經過 3 秒落地時，蘋果的瞬間速度為 $29.4\\text{ m/s}$。\n\n3. **第二步：利用 v-t 圖面積求下落高度（位移）**：\n   - 畫出蘋果運動的速度—時間關係圖（v-t 圖）：\n     - 橫軸（時間 $t$）：從 $0$ 到 $3$ 秒，底邊長度 $= 3$。\n     - 縱軸（速度 $v$）：從 $0$ 增加到 $29.4\\text{ m/s}$，三角形高 $= 29.4$。\n   - v-t 圖線下所圍成的三角形面積，即代表物體移動的距離（阿翰所在處的高度）：\n     $$\\text{高度 } h = \\frac{\\text{底 } \\times \\text{高}}{2} = \\frac{3 \\times 29.4}{2} = 1.5 \\times 29.4 = \\mathbf{44.1}\\text{ 公尺}$$\n\n4. **公式法直接驗算（等加速度運動位移公式）**：\n   - 代入自由落體位移公式：\n     $$h = v_0 t + \\frac{1}{2}gt^2$$\n   - 因為 $v_0 = 0$：\n     $$h = \\frac{1}{2} \\times 9.8 \\times 3^2 = 4.9 \\times 9 = \\mathbf{44.1}\\text{ 公尺}$$\n\n標準答案為 **44.1 公尺**（或 **44.1 m**）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_phy_free_fall_tower_time_speed_074",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "自由落體運動：已知下落高度反求著地時間（h = 1/2 gt²）與著地瞬間末速度（v = gt）",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【自由落體「已知高度反求時間與末速」速算必勝技巧】：\n1.【小數除法巧算神招】：\n   - 代入公式 $h = \\frac{1}{2}gt^2 = 4.9t^2$\n   - $t^2 = \\frac{78.4}{4.9}$，分子分母同乘 10 變整數：$\\frac{784}{49}$！\n   - 觀察 $49 = 7^2$，$784 = 28^2$，故 $t^2 = \\left(\\frac{28}{7}\\right)^2 = 4^2 = 16 \\implies t = 4$ 秒（完全不用拿筆除得滿頭大汗）！\n2.【第二小題末速度秒殺】：\n   - 著地末速 $v = gt = 9.8 \\times 4 = 39.2\\text{ m/s}$（方向向下）。\n3.【常見致命陷阱】：\n   - ❌ 誤將 $g = 9.8$ 記成 $4.9$ 當作重力加速度（$4.9$ 是 $\\frac{1}{2}g$，算末速時請乘上真正的 $g = 9.8$）。\n   - ❌ (2) 題未標單位，速度單位是 $\\text{m/s}$（公尺/秒），切勿寫成 $\\text{m/s}^2$（加速度單位）！",
+    "stem": "若一物體自 78.4 公尺的高塔自由掉落，則：（g = 9.8 m / s²）\n(1) 經幾秒後會著地？\n(2) 著地時的速度為何？",
+    "answer": "(1) 4 秒（或 4s）；(2) 39.2 公尺/秒（或 39.2 m/s）",
+    "diagramUrl": "",
+    "solution": "○ 詳細解題觀念與步驟解析：\n\n1. **題目物理條件分析**：\n   - 「自由掉落」：初速度 $v_0 = 0\\text{ m/s}$，只受重力作用進行等加速度直線運動。\n   - 重力加速度：$g = 9.8\\text{ m/s}^2$。\n   - 下落高度（位移）：$h = 78.4\\text{ 公尺}$。\n\n2. **第 (1) 小題：求經幾秒後會著地（著地時間 $t$）**：\n   - **方法一：v-t 圖面積推導法（核心觀念）**：\n     - 自由落體由靜止開始下落，經過 $t$ 秒時的瞬間末速度為 $v = gt = 9.8t\\text{ (m/s)}$。\n     - 繪出物體的 v-t 關係圖為過原點的直角三角形，線下斜線面積代表下落高度：\n       $$\\text{塔高 } h = \\frac{\\text{底 } \\times \\text{高}}{2} = \\frac{t \\times (9.8t)}{2} = 4.9t^2$$\n     - 代入塔高 $h = 78.4\\text{ 公尺}$：\n       $$4.9t^2 = 78.4 \\implies t^2 = \\frac{78.4}{4.9} = \\frac{784}{49} = 16$$\n     - 開根號得：\n       $$t = 4\\text{ 秒 (s)}$$（時間取正值）。\n\n3. **第 (2) 小題：求著地時的速度（瞬間末速度 $v$）**：\n   - 蘋果經過 $4$ 秒著地，根據等加速度運動速度公式：\n     $$v = v_0 + gt = 0 + 9.8 \\times 4 = \\mathbf{39.2}\\text{ 公尺/秒 (m/s)}$$\n   - （亦可用末速與位移公式驗算：$v^2 = 2gh = 2 \\times 9.8 \\times 78.4 = 1536.64 \\implies v = 39.2\\text{ m/s}$）。\n\n標準答案為：\n**(1) 4 秒（4s）**；\n**(2) 39.2 公尺/秒（39.2 m/s）**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_phy_free_fall_characteristics_075",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "自由落體運動之核心定義與特徵辨析（只受重力作用、等加速度運動、速度均勻增加、位移隨時間平方增加）",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【自由落體核心特徵常考四大概念辨析】：\n1.【全程只受重力作用】：不受外力或不計空氣阻力時的理想落體運動（選項 D 包括）。\n2.【等加速度運動】：地表附近重力加速度 $g = 9.8\\text{ m/s}^2$ 為定值（選項 B 包括）。\n3.【單位時間內「速度變化量」一定】：加速度定義為 $a = \\frac{\\Delta v}{\\Delta t}$，等加速度即每秒速度變化量相同（選項 C 包括）。\n4.【大陷阱（不包括的項目）】：\n   - ❌ 自由落體「越掉越快」，位移與時間平方成正比（$h = \\frac{1}{2}gt^2$），每 1 秒掉落的距離越來越長（第 1 秒 4.9m、第 2 秒 14.7m……），絕對不是「單位時間內位移量一定」！\n   - 「單位時間內位移量一定」是【等速度運動】的特徵，自由落體絕非等速度運動！",
+    "stem": "有關自由落體運動的特徵，不包括下列哪一項？\n\n○ (A) 單位時間內的位移量一定\n○ (B) 等加速度運動\n○ (C) 單位時間內的速度變化量一定\n○ (D) 全程只受重力作用",
+    "answer": "(A) 單位時間內的位移量一定",
+    "diagramUrl": "",
+    "solution": "○ 詳細物理觀念與各選項剖析：\n\n1. **自由落體之物理本質**：\n   - 定義：物體由靜止出發（$v_0 = 0$），在空中僅受地球引力（重力）作用而垂直下落的運動。\n   - 特徵：受定值重力，產生定值重力加速度 $g = 9.8\\text{ m/s}^2$。\n\n2. **逐項檢視選項特徵**：\n   - **(A)「單位時間內的位移量一定」：不包括（為本題所求）**。\n     - 「單位時間內的位移量」即為**速度（$v = \\frac{\\Delta x}{\\Delta t}$）**。\n     - 自由落體下落時速度持續均勻增加（$v = gt$），下落距離隨時間平方倍增（$h = \\frac{1}{2}gt^2$）。在每個相等的 1 秒內，下落的位移量分別為 $4.9\\text{ m}$、$14.7\\text{ m}$、$24.5\\text{ m}$……越掉越快、位移越來越大，並非常數！\n     - 只有在「等速度運動」中，單位時間內的位移量才會固定。\n   - **(B)「等加速度運動」：包括**。\n     - 全程加速度恆為 $g = 9.8\\text{ m/s}^2$（大小與方向皆固定），故確為等加速度運動。\n   - **(C)「單位時間內的速度變化量一定」：包括**。\n     - 根據加速度定義 $a = \\frac{\\Delta v}{\\Delta t}$，加速度為常數即表示單位時間（每 1 秒）內的速度增加量恆為 $9.8\\text{ m/s}$。\n   - **(D)「全程只受重力作用」：包括**。\n     - 自由落體的定義即在於不受手推力、支撐力或空氣阻力等其他外力，全程僅受地球引力。\n\n故不包括之敘述為 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_phy_free_fall_vt_graph_options_076",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "自由落體運動之 v-t 圖形判讀（初速為零、等加速度、過原點斜向右上直線）",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【自由落體 v-t 圖秒殺兩大鐵律】：\n1.【過原點 (0, 0)】：「自由掉落」代表由靜止釋放，初速度 $v_0 = 0$！在 $t = 0$ 時 $v = 0$，圖形起點一定在原點！\n2.【斜直線（斜率為定值 g）】：只受重力作用，加速度 $a = g = 9.8\\text{ m/s}^2$ 為正的定值！v-t 圖的斜率就是加速度，因此必為一條過原點向右上延伸的傾斜直線！\n3.【其餘圖形代表的運動】：\n   - 圖 (B) 水平線：速度不變（等速度運動）。\n   - 圖 (C) 往右下斜直線：具有初速度的等減速度運動（如鉛直上拋上升過程）。\n   - 圖 (D) 曲線下彎：加速度隨時間變化的變加速度運動。",
+    "stem": "一物體自高處自由落下，若不考慮空氣阻力，其掉落時速度（v）與時間（t）的關係圖為下列何者？\n\n（點擊附圖可放大檢視 (A)(B)(C)(D) 四個速度與時間關係圖）\n\n○ (A) 圖 (A)：通過原點向右上傾斜之斜直線（等加速度運動）\n○ (B) 圖 (B)：水平直線（等速度運動）\n○ (C) 圖 (C)：由某一正速度隨時間直線減速至 0\n○ (D) 圖 (D)：先等速後向下彎曲之曲線",
+    "answer": "(A) 圖 (A)：通過原點向右上傾斜之斜直線（等加速度運動）",
+    "diagramUrl": "assets/questions/q_sci_phy_free_fall_vt_graph_options_076.png",
+    "solution": "○ 詳細運動圖表深度解析：\n\n1. **分析「自由落下」的物理條件**：\n   - ① **初速度為零（$v_0 = 0$）**：\n     在出發時刻 $t = 0$ 時，速度 $v = 0$。因此在以時間 $t$ 為橫軸、速度 $v$ 為縱軸的 v-t 圖中，函數圖形必須**通過原點 $(0, 0)$**。\n   - ② **等加速度運動（加速度 $a = g = 9.8\\text{ m/s}^2$ 為正的定值）**：\n     在 v-t 圖中，**圖形的「斜率（傾斜程度）」代表物體的加速度**。\n     因為重力加速度大小與方向固定不變，故斜率必為**固定正值**。\n   - 綜合以上兩點，速度隨時間的函數式為 $v = gt$，其圖形必為**一條通過原點且向右上方傾斜的直線**（即選項 (A)）。\n\n2. **逐一檢討各選項圖形代表之運動狀態**：\n   - **圖 (A)**：通過原點向右上延伸之直線，表示初速為 0、加速度為定值的等加速度運動，**完全符合自由落體**，為正確答案。\n   - **圖 (B)**：呈現一條水平直線，表示速度隨時間完全不變（加速度 $a = 0$），代表「等速度直線運動」。\n   - **圖 (C)**：在 $t = 0$ 時具有較大的初速度，且隨著時間增加速度直線遞減至 0，代表「具有初速的等減速度運動」（例如鉛直向上拋出之物體在上升過程的速率變化）。\n   - **圖 (D)**：圖形為曲線且斜率越來越陡，表示加速度並非固定常數，不符合自由落體定值重力加速度的特徵。\n\n故正確答案為 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_phy_vertical_throw_gravity_acceleration_constant_077",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "鉛直上拋運動之受力與加速度分析：空中運動全程加速度恆等於重力加速度 g（大小與方向皆固定）",
+    "uploadDate": "2026-09-19",
+    "mondayDate": "2026-09-14",
+    "mondayDates": [
+      "2026-09-14"
+    ],
+    "weekLabel": "2026-09-14 (本週最新題)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【鉛直上拋在空中「加速度」三大考試大陷阱】：\n1. ❌【陷阱一：誤以為「剛離手時手推力最大，所以加速度最大」】：\n   - 錯！球「離開手掌」的瞬間，手對球的作用力立刻變成 0！在空中球只受到地球向下的重力！\n2. ❌【陷阱二：誤以為「最高點瞬時速度為 0，所以加速度也是 0」】：\n   - 錯！最高點瞬間雖然「速度 $v = 0$」，但重力依然存在，加速度依然是 $g = 9.8\\text{ m/s}^2$ 向下！若加速度為 0，球就會停在半空中掉不下來了！\n3. ❌【陷阱三：誤以為「快墜地時速度最快，所以加速度最大」】：\n   - 錯！速度大不等於加速度大！加速度是「速度變化的快慢」，每秒速度都固定增加 $9.8\\text{ m/s}$！\n👉【破題秒殺口訣】：只要在空中且不計阻力，全程合力只有重力，加速度【全程皆相同】，永遠等於 $9.8\\text{ m/s}^2$ 向下！",
+    "stem": "阿翰把一棒球拋向天空，試問在不計空氣阻力下，棒球在空中何時有最大的加速度？\n\n○ (A) 離開手後的那一剎那\n○ (B) 到最高點時\n○ (C) 墜地前\n○ (D) 全程皆相同",
+    "answer": "(D) 全程皆相同",
+    "diagramUrl": "",
+    "solution": "○ 詳細解題觀念與受力深度分析：\n\n1. **根據牛頓第二運動定律分析棒球在空中的受力情形**：\n   - 棒球被拋出「離開手」之後，在空中運動期間（無論是上升中、到達最高點瞬間、還是下落過程中），在題目設定「不計空氣阻力」的前提下：\n     - 棒球**全程只受到唯一的力——地球引力（重力 $W = mg$）**，方向恆垂直向下。\n     - 手的作用力在球離手的瞬間就已經完全消失，手無法隔空對球施力。\n\n2. **推求棒球在各階段的加速度**：\n   - 根據牛頓第二定律 $F_{\\text{合}} = ma$：\n     $$a = \\frac{F_{\\text{合}}}{m} = \\frac{mg}{m} = g = 9.8\\text{ m/s}^2$$\n   - 方向：恆垂直向下。\n   - 因此：\n     - **剛離開手時**：合力為重力，加速度 $= 9.8\\text{ m/s}^2$ 向下。\n     - **上升途中**：合力為重力，加速度 $= 9.8\\text{ m/s}^2$ 向下。\n     - **到達最高點瞬間**：雖然瞬間速度 $v = 0$，但地球依然拉著球，合力仍為重力，加速度**依然是 $9.8\\text{ m/s}^2$ 向下**！\n     - **下落與墜地前**：合力仍為重力，加速度 $= 9.8\\text{ m/s}^2$ 向下。\n   - 故在空中的任何時刻，加速度的大小均為定值 $g$，**全程皆相同**。\n\n3. **常見概念混淆澄清**：\n   - 題目問的是「**加速度**」（速度變化的快慢），不是問「速度」！\n   - 速度雖然在不同時刻會改變（最高點為 0、墜地前最快），但加速度全程保持不變。\n\n故正確答案為 **(D) 全程皆相同**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  }
 ];
 
 const DELETED_KEYS_STORAGE = 'miley_deleted_question_ids_v31';
@@ -2419,7 +2991,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v129') ||
+      stored = localStorage.getItem('miley_wrong_questions_v130') ||
+               localStorage.getItem('miley_wrong_questions_v129') ||
                localStorage.getItem('miley_wrong_questions_v128') ||
                localStorage.getItem('miley_wrong_questions_v127') ||
                localStorage.getItem('miley_wrong_questions_v126') ||
@@ -2540,13 +3113,35 @@ class DataManager {
       if (idx === -1) {
         this.questions.push(JSON.parse(JSON.stringify(seed)));
       } else {
-        // Sync latest text, solution & links from INITIAL_SEED_DATA while preserving user stats
+        // Sync latest text, solution & links from INITIAL_SEED_DATA while preserving user edits
         this.questions[idx].stem = seed.stem;
         this.questions[idx].solution = seed.solution;
         this.questions[idx].concept = seed.concept;
         this.questions[idx].mistakeNote = seed.mistakeNote;
         this.questions[idx].diagramUrl = seed.diagramUrl;
         this.questions[idx].answer = seed.answer;
+
+        // 智慧跨裝置進度合併：若種子資料此題已掌握，且本地尚未掌握，自動繼承掌握與已複習進度！
+        if ((seed.consecutiveMastered || 0) > (this.questions[idx].consecutiveMastered || 0)) {
+          this.questions[idx].consecutiveMastered = seed.consecutiveMastered;
+          this.questions[idx].ebbinghausStage = seed.ebbinghausStage || 2;
+          this.questions[idx].isReviewed = true;
+          this.questions[idx].reviewStatus = 'reviewed';
+          this.questions[idx].lastReviewDecision = seed.lastReviewDecision || 'mastered';
+          this.questions[idx].lastReviewedMonday = seed.lastReviewedMonday || '2026-09-14';
+          this.questions[idx].lastReviewedDate = seed.lastReviewedDate || '2026-09-19';
+          if (!Array.isArray(this.questions[idx].reviewedMondays)) {
+            this.questions[idx].reviewedMondays = [];
+          }
+          if (Array.isArray(seed.reviewedMondays)) {
+            seed.reviewedMondays.forEach(m => {
+              if (!this.questions[idx].reviewedMondays.includes(m)) {
+                this.questions[idx].reviewedMondays.push(m);
+              }
+            });
+          }
+        }
+
         if (Array.isArray(seed.mondayDates)) {
           if (!Array.isArray(this.questions[idx].mondayDates)) {
             this.questions[idx].mondayDates = [this.questions[idx].mondayDate || '2026-09-07'];

@@ -207,6 +207,10 @@
           </div>
           <p class="ebb-desc">艾賓浩斯週期追蹤中</p>
         </div>
+        <!-- 跨裝置進度同步按鈕 -->
+        <button id="btn-sidebar-sync" class="btn-sidebar-sync" title="手機與電腦進度無縫即時同步" onclick="window.SyncModule && window.SyncModule.openModal()">
+          <i class="fa-solid fa-arrows-rotate"></i> 跨裝置進度同步
+        </button>
         <!-- Sidebar Bottom PWA Install Button -->
         <button id="btn-sidebar-install" class="btn-sidebar-install" title="安裝 麥麥錯題本 App" onclick="triggerPWAInstall()">
           <i class="fa-solid fa-cloud-arrow-down"></i> 安裝 App
@@ -248,7 +252,12 @@
                     <i class="fa-solid fa-lightbulb" style="color: #fbbf24;"></i>
                     <span>智慧心靈寶庫</span>
                   </div>
-                  <button id="btn-close-wisdom-popover" class="popover-close-btn" title="關閉">&times;</button>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <button id="btn-wisdom-sync" class="popover-sync-btn" title="手機與電腦跨裝置進度即時同步" onclick="window.SyncModule && window.SyncModule.openModal()">
+                      <i class="fa-solid fa-arrows-rotate"></i>
+                    </button>
+                    <button id="btn-close-wisdom-popover" class="popover-close-btn" title="關閉">&times;</button>
+                  </div>
                 </div>
 
                 <div class="wisdom-summary-bar">
@@ -1141,17 +1150,72 @@
 
 
 
+  <!-- ==================== Cross-Device Sync Modal ==================== -->
+  <div id="sync-modal" class="modal-backdrop hidden">
+    <div class="modal-card sync-modal-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-solid fa-arrows-rotate" style="color: #38bdf8; font-size: 1.3rem;"></i>
+          <h3>跨裝置進度無縫同步</h3>
+        </div>
+        <button id="btn-close-sync-modal" class="icon-btn close-modal-btn" title="關閉">&times;</button>
+      </div>
+
+      <div class="modal-body sync-modal-body">
+        <!-- Current Progress Summary -->
+        <div class="sync-summary-box" id="sync-stats-summary">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <div class="sync-section">
+          <h4><i class="fa-solid fa-copy"></i> 方案一：一鍵複製 / 貼上同步碼 (手機與電腦極速互傳)</h4>
+          <p class="sync-tip">在電腦做完題，點「複製進度碼」，傳給自己手機貼上；或在手機做完傳至電腦，即可 100% 秒級同步！</p>
+          
+          <div class="sync-action-block">
+            <button id="btn-copy-sync-code" class="btn-primary" style="width: 100%; justify-content: center; margin-bottom: 8px;">
+              <i class="fa-regular fa-copy"></i> 複製本裝置進度碼 (至剪貼簿)
+            </button>
+            <textarea id="sync-export-code-text" class="sync-code-area" readonly placeholder="此處為本機生成的進度同步碼..."></textarea>
+          </div>
+
+          <div class="sync-action-block" style="margin-top: 14px;">
+            <textarea id="sync-import-code-text" class="sync-code-area" placeholder="請在此處貼上從另一台裝置複製的進度碼..."></textarea>
+            <button id="btn-apply-sync-code" class="btn-accent" style="width: 100%; justify-content: center; margin-top: 8px;">
+              <i class="fa-solid fa-cloud-arrow-down"></i> 貼上並合併進度 (智慧合併兩端成果)
+            </button>
+          </div>
+        </div>
+
+        <hr class="modal-divider" style="margin: 16px 0; border: none; border-top: 1px solid rgba(255,255,255,0.08);">
+
+        <div class="sync-section">
+          <h4><i class="fa-solid fa-file-arrow-down"></i> 方案二：匯出與匯入備份檔案</h4>
+          <div class="sync-file-buttons" style="display: flex; gap: 10px; margin-top: 8px;">
+            <button id="btn-export-sync-file" class="btn-secondary" style="flex: 1; justify-content: center;">
+              <i class="fa-solid fa-download"></i> 匯出備份檔 (.json)
+            </button>
+            <label class="btn-secondary" style="flex: 1; text-align: center; cursor: pointer; margin: 0; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
+              <i class="fa-solid fa-upload"></i> 匯入備份檔
+              <input type="file" id="sync-file-input" accept=".json" style="display: none;">
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=95"></script>
-  <script src="js/utils/katex_render.js?v=95"></script>
-  <script src="js/utils/pdf_export.js?v=95"></script>
-  <script src="js/modules/upload.js?v=95"></script>
-  <script src="js/modules/archive.js?v=95"></script>
-  <script src="js/modules/review.js?v=95"></script>
-  <script src="js/modules/sprint.js?v=95"></script>
-  <script src="js/modules/analytics.js?v=95"></script>
-  <script src="js/modules/calendar.js?v=104"></script>
-  <script src="js/modules/wisdom.js?v=95"></script>
-  <script src="js/app.js?v=105"></script>
+  <script src="js/data.js?v=131"></script>
+  <script src="js/utils/katex_render.js?v=131"></script>
+  <script src="js/utils/pdf_export.js?v=131"></script>
+  <script src="js/modules/upload.js?v=131"></script>
+  <script src="js/modules/archive.js?v=131"></script>
+  <script src="js/modules/review.js?v=131"></script>
+  <script src="js/modules/sprint.js?v=131"></script>
+  <script src="js/modules/analytics.js?v=131"></script>
+  <script src="js/modules/calendar.js?v=131"></script>
+  <script src="js/modules/wisdom.js?v=131"></script>
+  <script src="js/modules/sync.js?v=131"></script>
+  <script src="js/app.js?v=131"></script>
 </body>
 </html>
