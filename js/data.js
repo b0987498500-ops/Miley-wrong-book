@@ -3314,6 +3314,11 @@ class DataManager {
         alert('⚠️ 瀏覽器儲存空間 (LocalStorage) 已滿！建議在側邊欄重置資料或清理歷史紀錄。');
       }
     }
+
+    // 觸發 Supabase 雲端非同步秒級同步 (Debounced 600ms)
+    if (window.SyncModule && typeof window.SyncModule.scheduleCloudPush === 'function') {
+      window.SyncModule.scheduleCloudPush();
+    }
   }
 
   resetToSeed() {

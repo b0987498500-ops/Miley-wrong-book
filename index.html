@@ -237,6 +237,12 @@
           </div>
 
           <div class="header-right">
+            <!-- 雲端即時同步狀態按鈕 (靠右功能區) -->
+            <button id="btn-header-cloud-sync" class="header-cloud-chip" title="Supabase 雲端無縫同步中（點擊可查看或立即強制對齊）">
+              <i class="fa-solid fa-cloud-check" id="header-cloud-sync-icon" style="color: #10b981;"></i>
+              <span id="header-cloud-sync-text">雲端已同步</span>
+            </button>
+
             <!-- 智慧寶庫按鈕 (靠右功能區) -->
             <div class="wisdom-popover-wrapper">
               <button id="btn-open-wisdom-modal" class="wisdom-nav-btn" title="擊敗錯題怪解鎖的名言與心理學小知識">
@@ -1162,6 +1168,26 @@
       </div>
 
       <div class="modal-body sync-modal-body">
+        <!-- Supabase Realtime Cloud Sync Section -->
+        <div class="sync-cloud-card">
+          <div class="sync-cloud-header">
+            <div class="sync-cloud-title">
+              <i class="fa-solid fa-cloud-arrow-up" style="color: #10b981; font-size: 1.3rem;"></i>
+              <div>
+                <strong style="color: #ffffff; font-size: 1rem; display: block;">Supabase 雲端無縫自動同步</strong>
+                <div class="sync-status-indicator" id="modal-cloud-status-badge">🟢 連線正常 ‧ 雲端已即時同步</div>
+              </div>
+            </div>
+            <button type="button" id="btn-force-cloud-sync" class="btn-cloud-refresh" title="立即強制雙向對齊">
+              <i class="fa-solid fa-rotate"></i> 立即對齊
+            </button>
+          </div>
+          <p class="sync-cloud-desc">
+            手機與電腦只要聯網，點擊「未擊敗」或「已擊敗」即自動在背景 0.05 秒默默同步至雲端，無需手動複製進度碼！
+          </p>
+          <div class="sync-cloud-time" id="modal-cloud-last-sync-time">最後同步時間：已連線準備完畢</div>
+        </div>
+
         <!-- Current Progress Summary -->
         <div class="sync-summary-box" id="sync-stats-summary">
           <!-- Populated dynamically via JS -->
@@ -1205,17 +1231,17 @@
   </div>
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=133"></script>
-  <script src="js/utils/katex_render.js?v=133"></script>
-  <script src="js/utils/pdf_export.js?v=133"></script>
-  <script src="js/modules/upload.js?v=133"></script>
-  <script src="js/modules/archive.js?v=133"></script>
-  <script src="js/modules/review.js?v=133"></script>
-  <script src="js/modules/sprint.js?v=133"></script>
-  <script src="js/modules/analytics.js?v=133"></script>
-  <script src="js/modules/calendar.js?v=133"></script>
-  <script src="js/modules/wisdom.js?v=133"></script>
-  <script src="js/modules/sync.js?v=133"></script>
-  <script src="js/app.js?v=133"></script>
+  <script src="js/data.js?v=134"></script>
+  <script src="js/utils/katex_render.js?v=134"></script>
+  <script src="js/utils/pdf_export.js?v=134"></script>
+  <script src="js/modules/upload.js?v=134"></script>
+  <script src="js/modules/archive.js?v=134"></script>
+  <script src="js/modules/review.js?v=134"></script>
+  <script src="js/modules/sprint.js?v=134"></script>
+  <script src="js/modules/analytics.js?v=134"></script>
+  <script src="js/modules/calendar.js?v=134"></script>
+  <script src="js/modules/wisdom.js?v=134"></script>
+  <script src="js/modules/sync.js?v=134"></script>
+  <script src="js/app.js?v=134"></script>
 </body>
 </html>
