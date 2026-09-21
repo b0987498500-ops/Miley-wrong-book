@@ -36,47 +36,26 @@
 
 下午接續開工時，只需依照以下 5 個步驟即可在 15～20 分鐘內完全搞定：
 
-### ✅ 步驟 1：登入 Supabase 建立免費專案（耗時約 2 分鐘）
-- [ ] 前往 [Supabase 官網](https://supabase.com/)。
-- [ ] 點擊「Sign in」$\to$ **使用 GitHub 帳號一鍵授權登入**（免設密碼）。
-- [ ] 點擊「New Project」，建立一個專案：
-  - Name：`miley-wrong-book`
-  - Database Password：自行設定一組密碼（請先記下備用）。
-  - Region：選擇 `Northeast Asia (Tokyo)` 或 `Southeast Asia (Singapore)` 速度最快。
-  - Pricing Plan：選擇 **Free Plan**。
+### ✅ 步驟 1：登入 Supabase 建立免費專案（已完成）
+- [x] 前往 Supabase 官網並建立組織。
+- [x] 成功建立專案 `miley-wrong-book`（地區：Northeast Asia Seoul / ap-northeast-2）。
 
-### ✅ 步驟 2：取得 API 金鑰並提供給助理（耗時約 1 分鐘）
-- [ ] 專案建立後，在左側選單進入 **Project Settings** $\to$ **API**。
-- [ ] 複製以下兩個資訊貼在對話中：
-  1. **Project URL**（例：`https://abcdefg.supabase.co`）
-  2. **Project API Anon Key**（一串 `anon` 公開金鑰，可安全放在前端）
+### ✅ 步驟 2：取得 API 金鑰並提供給助理（已完成）
+- [x] 成功取得 Project ID: `gkablmvucuvokkebmaeq`。
+- [x] 成功取得 Anon Key 並通過 curl API 連線驗證！
 
-### ✅ 步驟 3：建立資料表（助理可提供一鍵 SQL 貼上執行）
-- [ ] 在 Supabase 左側點擊 **SQL Editor**。
-- [ ] 貼上以下語法並點擊「Run」：
-  ```sql
-  create table if not exists user_sync_progress (
-    id text primary key,
-    device_name text,
-    last_updated timestamptz default now(),
-    progress_data jsonb not null
-  );
-  
-  -- 開啟公開匿名讀寫權限（方便個人錯題網站免登入讀寫）
-  alter table user_sync_progress enable row level security;
-  create policy "Allow anon access" on user_sync_progress for all using (true) with check (true);
-  ```
+### ✅ 步驟 3：建立資料表（已完成）
+- [x] 已在 Supabase SQL Editor 執行建表語法，`user_sync_progress` 資料表與 RLS 讀寫政策正式生效！
 
-### ✅ 步驟 4：前端程式碼整合（助理全自動完成）
-- [ ] 建立 `js/modules/supabase_sync.js` 模組。
-- [ ] 在 `js/data.js` 的 `updateQuestionMastery` 與批次更新中，自動觸發非同步輕量雲端同步。
-- [ ] 網頁啟動時（`init()`），自動比對雲端 `last_updated` 時間戳記，自動智慧合併遠端最新進度。
-- [ ] 介面頂部增設一個綠色「☁️ 雲端已即時同步」狀態小膠囊。
+### ✅ 步驟 4：前端程式碼整合（已完成）
+- [x] `js/modules/sync.js` 升級為 Supabase 自動雙向即時同步模組。
+- [x] `js/data.js` 的 `save()` 自動連動 `scheduleCloudPush()`（防抖 600ms 自動推播）。
+- [x] 強化下週排程與做題紀錄雙向智慧合併 (`mondayDates` 聯集對齊）。
+- [x] 頂部導覽列新增 `🟢 雲端已同步` 即時狀態膠囊與點擊立即對齊功能。
 
-### ✅ 步驟 5：實地測試與 GitHub 推送上線
-- [ ] 手機打開 GitHub Pages 網站做 1~2 題並按「未擊敗」。
-- [ ] 電腦重新整理網頁，確認下週複習隊列立刻出現該題。
-- [ ] Git commit & push origin main，更新 Checkpoints.md，完工存檔！
+### ✅ 步驟 5：實地測試與 GitHub 推送上線（已完成）
+- [x] 通過 PostgREST REST API 雙向讀寫測試。
+- [x] Git commit & push origin main，正式部署上線！
 
 ---
 
