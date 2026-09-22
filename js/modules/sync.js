@@ -95,27 +95,36 @@ window.SyncModule = {
     const questions = window.dataManager ? window.dataManager.getAll() : [];
     const defeated = questions.filter(q => q.isArchived || (q.consecutiveMastered || 0) > 0).length;
     const total = questions.length;
+    const pct = total > 0 ? Math.round((defeated / total) * 100) : 0;
 
-    const chineseReviewed = questions.filter(q => q.subject === '國文' && (q.consecutiveMastered || 0) > 0).length;
-    const chineseTotal = questions.filter(q => q.subject === '國文').length;
+    const subjectsMap = {};
+    questions.forEach(q => {
+      const subj = q.subject || '未分類';
+      if (!subjectsMap[subj]) subjectsMap[subj] = { total: 0, defeated: 0 };
+      subjectsMap[subj].total++;
+      if (q.isArchived || (q.consecutiveMastered || 0) > 0) {
+        subjectsMap[subj].defeated++;
+      }
+    });
 
-    const englishReviewed = questions.filter(q => q.subject === '英文' && (q.consecutiveMastered || 0) > 0).length;
-    const englishTotal = questions.filter(q => q.subject === '英文').length;
-
-    const mathReviewed = questions.filter(q => q.subject === '數學' && (q.consecutiveMastered || 0) > 0).length;
-    const mathTotal = questions.filter(q => q.subject === '數學').length;
+    const tagsHtml = Object.keys(subjectsMap).map(subj => {
+      const s = subjectsMap[subj];
+      const isDone = s.defeated === s.total && s.total > 0;
+      return `<span class="sync-tag-item ${isDone ? 'complete' : ''}"><b>${subj}</b> ${s.defeated}/${s.total}</span>`;
+    }).join('');
 
     const statsEl = document.getElementById('sync-stats-summary');
     if (statsEl) {
       statsEl.innerHTML = `
-        <div class="sync-stat-row">
-          <span>⚔️ 已討伐錯題怪：</span>
-          <strong style="color: #fbbf24; font-size: 1.15rem;">${defeated} / ${total} 題</strong>
+        <div class="sync-stat-header">
+          <div class="sync-stat-title"><i class="fa-solid fa-dragon" style="color: #fbbf24;"></i> 錯題怪討伐總進度</div>
+          <div class="sync-stat-count"><strong style="color: #fbbf24; font-size: 1.15rem;">${defeated}</strong> / ${total} 題 <span class="sync-stat-pct">(${pct}%)</span></div>
+        </div>
+        <div class="sync-progress-bar-track">
+          <div class="sync-progress-bar-fill" style="width: ${pct}%;"></div>
         </div>
         <div class="sync-subject-tags">
-          <span class="sync-tag-item ${chineseReviewed === chineseTotal ? 'complete' : ''}">國文: ${chineseReviewed}/${chineseTotal}</span>
-          <span class="sync-tag-item ${englishReviewed === englishTotal ? 'complete' : ''}">英文: ${englishReviewed}/${englishTotal}</span>
-          <span class="sync-tag-item">數學: ${mathReviewed}/${mathTotal}</span>
+          ${tagsHtml}
         </div>
       `;
     }
