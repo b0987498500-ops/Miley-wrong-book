@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v136';
+const STORAGE_KEY = 'miley_wrong_questions_v137';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -3212,6 +3212,34 @@ const INITIAL_SEED_DATA = [
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
     "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_galileo_inclined_plane_length_084",
+    "examPeriod": "二段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "伽利略雙斜面實驗、力學能守恆與斜面幾何相似比",
+    "uploadDate": "2026-09-22",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【伽利略斜面實驗兩大關鍵得分突破口】：\n1. **力學能守恆與上升高度**：在忽略摩擦力與空氣阻力的理想狀況下，小鋼珠由左側高度 15 公分處靜止下滑，到達右側斜面時，所能上升的**垂直高度必定等於原出發高度**（即垂直高度 $h = 15$ 公分）！\n2. **斜面幾何相似比（斜長與高成正比）**：右側斜面的「斜面長度 : 垂直高度」比例固定！\n   - 已知右斜面全長 40 公分時，垂直高度為 24 公分。\n   - 設滑過長度為 $X$ 公分，此時垂直高度為 15 公分。\n   - 建立相似比：$\\frac{\\text{斜長}}{\\text{垂直高}} = \\frac{40}{24} = \\frac{X}{15} \\Rightarrow X = 25$ 公分！",
+    "stem": "讓一個小鋼珠由圖中的斜面上 A 處向下滑，並滑到另一斜面，若摩擦力可忽略，則小鋼珠在右邊斜面上滑過的長度應為幾公分？\n\n○ (A) 15\n○ (B) 20\n○ (C) 25\n○ (D) 30",
+    "answer": "(C) 25",
+    "diagramUrl": "assets/questions/q_phy_galileo_inclined_plane_length_084.png",
+    "solution": "○ **詳細物理觀念與幾何比例計算步驟**：\n\n1. **第一步：力學能守恆判定最高垂直高度**：\n   - 在忽略摩擦力與阻力的理想狀況下，小鋼珠在斜面上運動符合**力學能守恆定律**（重力位能與動能互相轉換）。\n   - 小鋼珠自左側斜面 A 點（垂直高度 15 公分）靜止釋放，到達右側斜面動能歸零（最高點）時，其**垂直高度必定等於出發點高度 15 公分**。\n\n2. **第二步：利用斜面幾何相似三角形求斜面長度**：\n   - 觀察右側斜面，斜面長度與垂直高度形成相似直角三角形，比例維持常數：\n     $$\\frac{\\text{右側斜面長度}}{\\text{右側垂直高度}} = \\frac{40 \\text{ 公分}}{24 \\text{ 公分}} = \\frac{5}{3}$$\n   - 設小鋼珠在右側斜面上滑過的長度為 $X$ 公分，此時對應的垂直高度為 15 公分：\n     $$40 : 24 = X : 15$$\n     $$X = 15 \\times \\frac{40}{24} = 15 \\times \\frac{5}{3} = 25 \\text{ (公分)}$$\n\n故正確答案選 **(C) 25**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-22",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   }
 ];
 
@@ -3244,7 +3272,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v135') ||
+      stored = localStorage.getItem('miley_wrong_questions_v136') ||
+               localStorage.getItem('miley_wrong_questions_v135') ||
                localStorage.getItem('miley_wrong_questions_v134') ||
                localStorage.getItem('miley_wrong_questions_v133') ||
                localStorage.getItem('miley_wrong_questions_v132') ||
