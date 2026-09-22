@@ -1183,9 +1183,13 @@
             </button>
           </div>
           <p class="sync-cloud-desc">
-            手機與電腦只要聯網，點擊「未擊敗」或「已擊敗」即自動在背景 0.05 秒默默同步至雲端，無需手動複製進度碼！
+            手機與電腦只要聯網，點擊「未擊敗」或「已擊敗」即自動在背景默默同步至雲端，無需手動複製進度碼！
           </p>
-          <div class="sync-cloud-time" id="modal-cloud-last-sync-time">最後同步時間：已連線準備完畢</div>
+          <div class="sync-cloud-meta" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.85); background: rgba(0,0,0,0.2); padding: 6px 10px; border-radius: 6px;">
+            <span>⏱️ <b>自動同步間隔</b>：60 秒定時 + 答題即時推播</span>
+            <span>📶 <b>網路流量消耗</b>：每次僅約 1~3 KB (極低流量)</span>
+          </div>
+          <div class="sync-cloud-time" id="modal-cloud-last-sync-time" style="margin-top: 6px;">最後同步時間：已連線準備完畢</div>
         </div>
 
         <!-- Current Progress Summary -->
@@ -1193,38 +1197,8 @@
           <!-- Populated dynamically via JS -->
         </div>
 
-        <div class="sync-section">
-          <h4><i class="fa-solid fa-copy"></i> 方案一：一鍵複製 / 貼上同步碼 (手機與電腦極速互傳)</h4>
-          <p class="sync-tip">在電腦做完題，點「複製進度碼」，傳給自己手機貼上；或在手機做完傳至電腦，即可 100% 秒級同步！</p>
-          
-          <div class="sync-action-block">
-            <button id="btn-copy-sync-code" class="btn-primary" style="width: 100%; justify-content: center; margin-bottom: 8px;">
-              <i class="fa-regular fa-copy"></i> 複製本裝置進度碼 (至剪貼簿)
-            </button>
-            <textarea id="sync-export-code-text" class="sync-code-area" readonly placeholder="此處為本機生成的進度同步碼..."></textarea>
-          </div>
-
-          <div class="sync-action-block" style="margin-top: 14px;">
-            <textarea id="sync-import-code-text" class="sync-code-area" placeholder="請在此處貼上從另一台裝置複製的進度碼..."></textarea>
-            <button id="btn-apply-sync-code" class="btn-accent" style="width: 100%; justify-content: center; margin-top: 8px;">
-              <i class="fa-solid fa-cloud-arrow-down"></i> 貼上並合併進度 (智慧合併兩端成果)
-            </button>
-          </div>
-        </div>
-
-        <hr class="modal-divider" style="margin: 16px 0; border: none; border-top: 1px solid rgba(255,255,255,0.08);">
-
-        <div class="sync-section">
-          <h4><i class="fa-solid fa-file-arrow-down"></i> 方案二：匯出與匯入備份檔案</h4>
-          <div class="sync-file-buttons" style="display: flex; gap: 10px; margin-top: 8px;">
-            <button id="btn-export-sync-file" class="btn-secondary" style="flex: 1; justify-content: center;">
-              <i class="fa-solid fa-download"></i> 匯出備份檔 (.json)
-            </button>
-            <label class="btn-secondary" style="flex: 1; text-align: center; cursor: pointer; margin: 0; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-              <i class="fa-solid fa-upload"></i> 匯入備份檔
-              <input type="file" id="sync-file-input" accept=".json" style="display: none;">
-            </label>
-          </div>
+        <div class="sync-footer-tip" style="text-align: center; margin-top: 12px; font-size: 0.8rem; color: rgba(255,255,255,0.5);">
+          <i class="fa-solid fa-shield-halved" style="color: #10b981;"></i> 全自動雲端雙向防護 ‧ 跨載具數據零遺失
         </div>
       </div>
     </div>

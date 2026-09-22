@@ -10,6 +10,7 @@ window.SyncModule = {
   isSyncing: false,
   pushDebounceTimer: null,
   lastSyncSuccessTime: null,
+  SYNC_POLL_INTERVAL_MS: 60000, // 60 秒定時輪詢 (僅前景畫面執行)
 
   // Supabase Cloud Configuration
   SUPABASE_CONFIG: {
@@ -33,7 +34,7 @@ window.SyncModule = {
       if (document.visibilityState === 'visible' && !this.isSyncing) {
         this.pullFromCloud(false);
       }
-    }, 60000);
+    }, this.SYNC_POLL_INTERVAL_MS);
   },
 
   bindEvents: function() {
