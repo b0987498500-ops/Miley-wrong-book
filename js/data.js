@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v137';
+const STORAGE_KEY = 'miley_wrong_questions_v138';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -3240,6 +3240,146 @@ const INITIAL_SEED_DATA = [
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
     "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_newton_first_law_true_statements_085",
+    "examPeriod": "二段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "牛頓第一運動定律（慣性定律）與合力為零之運動狀態分析",
+    "uploadDate": "2026-09-22",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【牛頓第一運動定律四大黃金迷思破除】：\n1. **合力為零時的運動狀態**：合力為零不代表靜止！物體若原本有速度，在合力為零時將保持『等速度直線運動』（速度不為零，排除 A、C）。\n2. **水平桌面靜止物體的受力**：靜止在桌面上的物體並非不受力，而是受到向下『重力』與向上『桌面支持力』相互抵銷，合力等於零（排除 B）。\n3. **伽利略斜面實驗的理想假設**：現實世界中摩擦力無法完全消除，因此伽利略係在『無摩擦力』的理想假設下，利用推論得出慣性概念（正解 D）！",
+    "stem": "下列有關牛頓第一運動定律的敘述，何者正確？\n\n○ (A) 只有當物體所受合力不等於零時，速度才不為零\n○ (B) 靜置在水平桌面上的物體，不受任何外力作用\n○ (C) 當物體不受任何外力作用時，必為靜止狀態\n○ (D) 伽利略的實驗結果，必須是在沒有摩擦力的假設下進行才能得到",
+    "answer": "(D) 伽利略的實驗結果，必須是在沒有摩擦力的假設下進行才能得到",
+    "diagramUrl": "",
+    "solution": "○ **詳細選項迷思剖析與診斷**：\n\n1. **選項 (A) 診斷（錯誤）**：\n   - 當物體所受合力等於零時，若物體原本已有速度，依據慣性定律將保持**等速度直線運動**，此時速度並不為零！故『只有合力不為零時速度才不為零』為常見迷思觀念。\n\n2. **選項 (B) 診斷（錯誤）**：\n   - 靜置於水平桌面上的物體，至少同時承受地球向下的**重力**與桌面向上的**支持力（法向力）**，兩力大小相等、方向相反（合力＝0），並非『不受任何外力作用』。\n\n3. **選項 (C) 診斷（錯誤）**：\n   - 當物體不受任何外力（或合力為零）時，物體可能保持**靜止**，也可能保持**等速度直線運動**，並非『必為靜止』。\n\n4. **選項 (D) 診斷（正確）**：\n   - 伽利略雙斜面實驗是在『忽略摩擦力』的理想心靈實驗假設下進行推論，進而提出慣性觀念，並由牛頓整理為第一運動定律。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-22",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_bus_brake_inertia_friction_086",
+    "examPeriod": "二段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "公車煞車傾斜現象：慣性定律與腳底靜摩擦力之作用",
+    "uploadDate": "2026-09-22",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【公車煞車向前傾斜現象雙重機制】：\n1. **(甲) 慣性定律（上半身向前傾）**：公車煞車時，乘客上半身因慣性欲保持原本向前的運動狀態，因而相對於車廂向前傾斜。\n2. **(丙) 摩擦力的存在（雙腳平穩站立）**：乘客雙腳與公車地板間存在『靜摩擦力』，使雙腳隨車體一同減速靜止；若無摩擦力，乘客腳底將向前滑倒！\n3. ❌ **迷思警告 (乙)**：乘客並未受到任何『向前的外在推力』！向前傾斜純粹為上半身維持原速度之慣性表現。",
+    "stem": "平穩站在前進中公車內的乘客，當煞車時，乘客上身會稍向車頭方向前傾，這是由於下列什麼原因造成？(甲)慣性定律；(乙)受到向前的推力；(丙)摩擦力的存在。\n\n○ (A) 甲乙\n○ (B) 甲丙\n○ (C) 甲乙丙\n○ (D) 以上皆非",
+    "answer": "(B) 甲丙",
+    "diagramUrl": "",
+    "solution": "○ **詳細物理機制與原因解析**：\n\n1. **(甲) 慣性定律作用**：\n   - 當前進中的公車緊急煞車時，車體速度減慢；但乘客的上半身因**慣性定律（牛頓第一定律）**，仍欲維持原本向前的運動速度與方向，因此上半身會順著原運動方向稍向車頭前傾。\n\n2. **(丙) 摩擦力的存在**：\n   - 乘客之所以能平穩站在車內而不滑倒，是因為雙腳鞋底與公車地板間存在**靜摩擦力**，使雙腳能隨著公車一同減速止步。\n\n3. **(乙) 錯誤說明排除**：\n   - 煞車過程中，並沒有任何物體對乘客施加『向前的推力』。向前傾斜純粹是慣性現象與腳底摩擦力共同作用的結果。\n\n故正確選項為 **(B) 甲丙**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-22",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_constant_velocity_car_net_force_087",
+    "examPeriod": "二段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "等速度運動之受力平衡（外力相互抵銷，合力等於零）",
+    "uploadDate": "2026-09-22",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【等速度運動受力三大黃金鐵則】：\n1. **等速度運動 ＝ 加速度 $a = 0$ ＝ 合力 $F_{\\text{合}} = 0$**！\n2. **有外力不代表合力不為零**：汽車在公路上行駛時受到引擎向前的動力、向後的空氣阻力與滾動摩擦力，外力確實存在，但方向相反大小相等，**外力相互抵銷使合力等於零**（選 C）！\n3. ❌ **常見陷阱 (A)**：『不受任何外力』僅存在於深空理想狀況，汽車在公路上必定受到重力、支持力、阻力等外力作用。",
+    "stem": "一輛汽車在公路上等速度行駛，下列敘述何者正確？\n\n○ (A) 不受任何外力作用\n○ (B) 受外力作用，合力不為零\n○ (C) 受外力作用，合力等於零\n○ (D) 受外力作用，加速度不是零。",
+    "answer": "(C) 受外力作用，合力等於零",
+    "diagramUrl": "",
+    "solution": "○ **詳細受力與運動狀態剖析**：\n\n1. **運動狀態與加速度關係**：\n   - 汽車進行**等速度運動**，意味著速度的大小與方向均不改變，因此**加速度 $a = 0$**。\n\n2. **牛頓運動定律與合力判斷**：\n   - 依據牛頓第二運動定律 $F_{\\text{合}} = ma$，當加速度 $a = 0$ 時，物體所受的**合力必等於零（$F_{\\text{合}} = 0$）**。\n\n3. **實際受力狀況診斷**：\n   - 汽車在公路上行駛時，承受重力、路面支持力、引擎牽引力、空氣阻力及摩擦力等多個外力作用，並非不受外力；而是這些外力的矢量和相互抵銷，達到**受力平衡（合力等於零）**。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-22",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_horse_rider_jump_trajectory_088",
+    "examPeriod": "二段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "運動獨立性與慣性：等速馬背上垂直跳起的運動軌跡（對地觀察者為斜拋運動）",
+    "uploadDate": "2026-09-22",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【運動觀察者與運動獨立性雙重視角】：\n1. **對馬背上的騎師（相對視角）**：騎師與馬保持相同的水平速度，跳起後水平位移同步，故看自己僅為『鉛直上拋與下落』。\n2. **對地面靜止觀察者（絕對視角）**：\n   - 水平方向：因慣性保持與馬相同的『等速度運動』。\n   - 垂直方向：受跳起推力與重力作用，進行『鉛直上拋與自由落體』。\n   - 兩方向運動獨立合成：水平等速 ＋ 垂直上拋 ＝ **斜向拋射運動（拋物線軌跡）**（選 D）！",
+    "stem": "騎師表演騎術時，自等速度運動的馬背上垂直跳起（相對於馬的位置），對地面的觀察者而言，騎師的運動狀態為下列何者？\n\n○ (A) 自由落體\n○ (B) 鉛直上拋\n○ (C) 水平等速\n○ (D) 向前斜向拋射。（補充題）",
+    "answer": "(D) 向前斜向拋射。（補充題）",
+    "diagramUrl": "",
+    "solution": "○ **詳細運動獨立性與軌跡合成解析**：\n\n1. **水平方向運動分解（慣性）**：\n   - 騎師在離開馬背前具有向前的水平速度 $v_x$。跳起後在水平方向不受外力作用（忽略空氣阻力），依據**慣性定律**，騎師在水平方向將繼續維持**等速度運動**。\n\n2. **垂直方向運動分解（重力）**：\n   - 騎師相對於馬背向上跳起，具有向上的初速度 $v_y$，僅受向下重力作用，故垂直方向進行**鉛直上拋後自由落體**運動。\n\n3. **運動軌跡合成（地面觀察者視角）**：\n   - 將水平方向的『等速直線運動』與垂直方向的『鉛直上拋運動』合成，地面觀察者所看到的騎師運動軌跡為一條拋物線，即**向前斜向拋射運動**。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-22",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_xt_graph_cart_net_force_089",
+    "examPeriod": "二段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "位置對時間圖 (x-t 圖) 的斜率代表速度與合力關係分析",
+    "uploadDate": "2026-09-22",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【x-t 圖斜率與合力判定黃金法則】：\n1. **x-t 圖斜率 ＝ 速度 $v$**！\n   - $0 \\sim 2$ 秒：圖形為斜直線 $\\Rightarrow$ 速度常數 $v = 5 \\text{ m/s}$（等速度運動，加速度 $a = 0$）。\n   - $2 \\sim 4$ 秒：圖形為水平線 $\\Rightarrow$ 靜止狀態 $v = 0$（加速度 $a = 0$）。\n   - $4 \\sim 8$ 秒：圖形為斜直線 $\\Rightarrow$ 等速度反向運動 $v = -2.5 \\text{ m/s}$（加速度 $a = 0$）。\n2. **全區間合力判定**：在 $0 \\sim 8$ 秒內，每一段的加速度 $a$ 皆為零，依 $F_{\\text{合}} = ma$，滑車所受到的**合力全區間皆為零**（選 D）！",
+    "stem": "一質量為 600 公克的滑車做直線運動，其位置 (x) 與時間 (t) 的關係如圖所示，則下列哪一段時間內，滑車受力最大？\n\n○ (A) 0～2 秒\n○ (B) 2～4 秒\n○ (C) 4～8 秒\n○ (D) 以上合力都是零",
+    "answer": "(D) 以上合力都是零",
+    "diagramUrl": "assets/questions/q_phy_xt_graph_cart_net_force_089.png",
+    "solution": "○ **詳細 x-t 圖形解析與加速度判讀步驟**：\n\n1. **圖形斜率物理意義**：\n   - 在位置對時間圖（x-t 圖）中，**圖線的斜率代表物體的運動速度 $v$**。\n   - 只要圖線為『斜直線』或『水平直線』，均代表物體處於等速度或靜止狀態，**加速度 $a$ 均為零**。\n\n2. **分段運動狀態剖析**：\n   - **$0 \\sim 2$ 秒**：圖線為正斜率直線，代表物體以 $v = \\frac{10 - 0}{2 - 0} = 5 \\text{ m/s}$ 作**等速度運動**（$a = 0$）。\n   - **$2 \\sim 4$ 秒**：圖線為水平線（位置維持在 10 m），代表物體**靜止**（$v = 0, a = 0$）。\n   - **$4 \\sim 8$ 秒**：圖線為負斜率直線，代表物體以 $v = \\frac{0 - 10}{8 - 4} = -2.5 \\text{ m/s}$ 作**等速度運動**（$a = 0$）。\n\n3. **合力計算**：\n   - 在全過程 $0 \\sim 8$ 秒中，加速度 $a$ 全程均為 0，依據 $F_{\\text{合}} = ma$，滑車所受到的**合力全程皆為零**。\n\n故正確答案選 **(D)**。\n\n🔗 **延伸學習影音推薦**：[觀看 YouTube 詳細影音解題教學影片](https://www.youtube.com/watch?v=N7urCLu3HoI)",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-22",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   }
 ];
 
@@ -3272,7 +3412,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v136') ||
+      stored = localStorage.getItem('miley_wrong_questions_v137') ||
+               localStorage.getItem('miley_wrong_questions_v136') ||
                localStorage.getItem('miley_wrong_questions_v135') ||
                localStorage.getItem('miley_wrong_questions_v134') ||
                localStorage.getItem('miley_wrong_questions_v133') ||
