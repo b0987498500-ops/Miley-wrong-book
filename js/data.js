@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v135';
+const STORAGE_KEY = 'miley_wrong_questions_v136';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -3184,6 +3184,34 @@ const INITIAL_SEED_DATA = [
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
     "reviewedMondays": []
+  },
+  {
+    "id": "q_math_triangle_angle_bisector_ef_cd_083",
+    "examPeriod": "二段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "三角形內角平分線分線段成比例定理與平行線截比例線段綜合應用",
+    "uploadDate": "2026-09-22",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【角平分線定理與平行截線兩大得分突破口】：\n1. **內角平分線定理**：三角形內角平分線分對邊成比例，等於兩鄰邊長之比！\n   - $\\overline{AD}$ 為 $\\angle BAC$ 平分線 $\\Rightarrow \\overline{BD} : \\overline{CD} = \\overline{AB} : \\overline{AC} = 8 : 6 = 4 : 3$。\n   - $\\overline{BF}$ 為 $\\angle ABC$ 平分線 $\\Rightarrow \\overline{AF} : \\overline{CF} = \\overline{AB} : \\overline{BC} = 8 : 7$。\n2. **平行線截比例線段**：已知 $\\overline{EF} // \\overline{CD} \\Rightarrow \\overline{EF} : \\overline{CD} = \\overline{AF} : \\overline{AC} = 8 : (8+7) = 8 : 15$。\n3. **線段與比例比值**：$\\overline{BD} = 7 \\times \\frac{4}{7} = 4$，$\\overline{EF} = \\frac{8}{15} \\overline{CD} = \\frac{8}{15} \\times 3 = \\frac{8}{5}$。最後計算 $\\overline{BD} : \\overline{EF} = 4 : \\frac{8}{5} = 5 : 2$！",
+    "stem": "如右圖，在 $\\triangle ABC$ 中，$\\overline{AD}$、$\\overline{BF}$ 分別為 $\\angle BAC$、$\\angle ABC$ 的角平分線，且 $\\overline{AD}$、$\\overline{BF}$ 相交於 $G$ 點，$\\overline{EF} // \\overline{CD}$，若 $\\overline{AB} = 8$，$\\overline{BC} = 7$，$\\overline{AC} = 6$，則 $\\overline{BD} : \\overline{EF} = ？$\n\n○ (A) 3 : 2\n○ (B) 4 : 3\n○ (C) 5 : 2\n○ (D) 7 : 5",
+    "answer": "(C) 5 : 2",
+    "diagramUrl": "assets/questions/q_math_triangle_angle_bisector_ef_cd_083.png",
+    "solution": "○ **詳細幾何幾何證明與計算步驟**：\n\n1. **第一步：應用內角平分線定理求線段比例與線段長**：\n   - 在 $\\triangle ABC$ 中，因為 $\\overline{AD}$ 為 $\\angle BAC$ 的角平分線：\n     $$\\overline{BD} : \\overline{CD} = \\overline{AB} : \\overline{AC} = 8 : 6 = 4 : 3$$\n     已知 $\\overline{BC} = 7$，故：\n     $$\\overline{BD} = 7 \\times \\frac{4}{4+3} = 4, \\quad \\overline{CD} = 7 \\times \\frac{3}{4+3} = 3$$\n   - 同理，因為 $\\overline{BF}$ 為 $\\angle ABC$ 的角平分線：\n     $$\\overline{AF} : \\overline{CF} = \\overline{AB} : \\overline{BC} = 8 : 7$$\n     因此 $\\overline{AF}$ 佔全線段 $\\overline{AC}$ 的比例為 $\\frac{8}{8+7} = \\frac{8}{15}$。\n\n2. **第二步：應用平行線截比例線段求 $\\overline{EF}$**：\n   - 題目已知 $\\overline{EF} // \\overline{CD}$，由 $\\triangle AEF \\sim \\triangle ADC$ 可得：\n     $$\\overline{EF} : \\overline{CD} = \\overline{AF} : \\overline{AC} = 8 : 15$$\n   - 代入已求得的 $\\overline{CD} = 3$：\n     $$\\overline{EF} = \\frac{8}{15} \\overline{CD} = \\frac{8}{15} \\times 3 = \\frac{8}{5}$$\n\n3. **第三步：計算最簡整數比 $\\overline{BD} : \\overline{EF}$**：\n   - 代入已知數據：\n     $$\\overline{BD} : \\overline{EF} = 4 : \\frac{8}{5} = 20 : 8 = 5 : 2$$\n\n故正確答案選 **(C) 5 : 2**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-22",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   }
 ];
 
@@ -3216,7 +3244,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v134') ||
+      stored = localStorage.getItem('miley_wrong_questions_v135') ||
+               localStorage.getItem('miley_wrong_questions_v134') ||
                localStorage.getItem('miley_wrong_questions_v133') ||
                localStorage.getItem('miley_wrong_questions_v132') ||
                localStorage.getItem('miley_wrong_questions_v131') ||

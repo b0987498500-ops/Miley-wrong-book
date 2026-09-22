@@ -4,6 +4,19 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v1.16] - 2026-09-22 (收錄 1 道幾何重磅錯題：內角平分線定理與平行線截線段比值計算、題庫擴增至 106 題)
+- **類型**：錯題自動收錄 / 內角平分線定理 / 平行線截比例線段 / 零死角純淨繁中 / 題庫擴增
+- **主要變更**：
+  1. **收錄題 1：數學『三角形內角平分線與平行截線段最簡整數比』(`q_math_triangle_angle_bisector_ef_cd_083`)**：
+     - 正解為 **(C) 5 : 2**。
+     - 自動處理幾何示意圖保存至 `assets/questions/q_math_triangle_angle_bisector_ef_cd_083.png`。
+     - 精導內角平分線定理 $\overline{BD} : \overline{CD} = 8 : 6 = 4 : 3 \Rightarrow \overline{BD} = 4, \overline{CD} = 3$，以及 $\overline{AF} : \overline{CF} = 8 : 7 \Rightarrow \overline{AF} : \overline{AC} = 8 : 15$。
+     - 結合平行截線 $\overline{EF} // \overline{CD} \Rightarrow \overline{EF} = \frac{8}{15} \overline{CD} = \frac{8}{5}$，最終求得最簡整數比 $\overline{BD} : \overline{EF} = 4 : \frac{8}{5} = 5 : 2$。
+  2. **版本升級至 `v136`**：
+     - 保留 `v135`～`v133` 相容鏈，跨裝置與線上網頁無痛同步載入 106 道題目。
+
+---
+
 ## [v1.15] - 2026-09-22 (收錄 4 道英文與數學錯題：現在完成式遊覽/簡答句/被動態與幾何中點連線角度計算、題庫擴增至 105 題)
 - **類型**：錯題自動收錄 / 英文完成式三大句型 / 幾何中點定理等腰推導 / 零死角純淨繁中 / 題庫擴增
 - **主要變更**：
