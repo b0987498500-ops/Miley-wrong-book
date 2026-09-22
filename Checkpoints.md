@@ -4,6 +4,27 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v1.15] - 2026-09-22 (收錄 4 道英文與數學錯題：現在完成式遊覽/簡答句/被動態與幾何中點連線角度計算、題庫擴增至 105 題)
+- **類型**：錯題自動收錄 / 英文完成式三大句型 / 幾何中點定理等腰推導 / 零死角純淨繁中 / 題庫擴增
+- **主要變更**：
+  1. **收錄題 1：英文『現在完成式遊覽/去過某地表達法』(`q_eng_present_perfect_visited_lake_080`)**：
+     - 正解為 **(B) have visited**。
+     - 精析主詞 `Jason and I`（複數 we）配合助動詞 have，破解 `have gone to`（去了尚未回來）與 `have visited`（曾造訪過且不需加介系詞 to）之核心區別。
+  2. **收錄題 2：英文『現在完成式簡答句與頻率副詞位置陷阱』(`q_eng_present_perfect_short_answer_never_081`)**：
+     - 正解為 **(A) I never have**。
+     - 破解國中英文常考盲點：完成式簡答句中（省略 p.p. 時），頻率副詞 (never) 必須前移至助動詞 (have) 的前面！
+  3. **收錄題 3：英文『現在完成被動態公式』(`q_eng_present_perfect_passive_great_wall_082`)**：
+     - 正解為 **(C) has been built**。
+     - 精導「長城被建造（被動態 be + p.p.）」與「持續超過兩千年 (for + 一段時間 需完成式)」，結合得出現在完成被動態公式 `has/have + been + p.p.`。
+  4. **收錄題 4：數學『三角形中點連線段平行性質與角度計算』(`q_math_triangle_midpoint_angle_ghf_080`)**：
+     - 正解為 **(D) 29°**。
+     - 自動處理幾何示意圖保存至 `assets/questions/q_math_triangle_midpoint_angle_ghf_080.png`。
+     - 運用中點定理推導平行線同位角 $\angle FGE = 30^\circ$、$\angle BGH = 88^\circ$，並由條件 $\overline{BD} = \overline{CE}$ 證明 $\triangle FGH$ 為等腰三角形，求出底角 $\angle GHF = 29^\circ$。
+  5. **版本升級至 `v135`**：
+     - 保留 `v134` 與 `v133` 相容鏈，跨裝置與線上網頁無痛同步載入 105 道題目。
+
+---
+
 ## [v1.14] - 2026-09-22 (雲端資料庫雙向同步時間間隔與網路流量消耗評估與顯示優化)
 - **類型**：雲端同步效能優化 / 流量消耗實測說明 / 介面標示升級
 - **主要變更**：

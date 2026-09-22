@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v133';
+const STORAGE_KEY = 'miley_wrong_questions_v135';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -3072,6 +3072,118 @@ const INITIAL_SEED_DATA = [
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
     "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_present_perfect_visited_lake_080",
+    "examPeriod": "二段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "現在完成式：去過/遊覽過某地 (have visited / have been to) 與主詞動詞一致性",
+    "uploadDate": "2026-09-22",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【現在完成式去過某地三大常考陷阱剖析】：\n1. 複數主詞配合助動詞：Jason and I 屬於「第一人稱複數 (we)」，助動詞必須使用 have，不可使用單數 has（排除 C、D）。\n2. 易混淆片語辨析：\n   - have gone to：表示「已經去了某地（目前人仍在當地，尚未返回）」，不符合句中 several times（去過好幾次並已返回）的經驗說明。\n   - have visited：表示「曾遊覽/造訪過某地」，後面直接接地點名詞，不需要介系詞 to（完全符合本題句型）。\n   - paid a visit：若選此片語，後面必須加上介系詞 to（即 have paid a visit to...），故 (D) 選項介系詞缺失。",
+    "stem": "Jason and I ______ Sun Moon Lake several (許多的) times.\n\n○ (A) have gone to\n○ (B) have visited\n○ (C) has been to\n○ (D) has paid a visit",
+    "answer": "(B) have visited",
+    "diagramUrl": "",
+    "solution": "1. **主詞與助動詞一致性**：\n   - 句中主詞為 `Jason and I`（代表複數 we），助動詞必須選用 **have**，故可直接排除 (C) `has been to` 與 (D) `has paid a visit`。\n\n2. **動詞語意與介系詞用法辨析**：\n   - **(A) `have gone to`**：意為「已經去了某地（人目前在當地，尚未回來）」，與句尾 `several times`（曾去過多次且目前已返回）之語意矛盾。\n   - **(B) `have visited`**：意為「曾拜訪/遊覽過某地」，動詞 visit 後面直接接地點 `Sun Moon Lake`，不需加介系詞 to，文法與語意完全正確。\n   - **(D) `has paid a visit`**：片語 `pay a visit` 後面必須接介系詞 `to` 才能接地點（應為 paid a visit to），選項缺少介系詞 to 且助動詞錯用 has。\n\n故正確答案選 **(B) have visited**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-22",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_present_perfect_short_answer_never_081",
+    "examPeriod": "二段",
+    "subject": "英文",
+    "errorReason": "審題不清",
+    "concept": "現在完成式簡答句中頻率副詞 (never/always) 的正確位置",
+    "uploadDate": "2026-09-22",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【現在完成式簡答句黃金考題陷阱】：\n1. 當回答 Have you ever p.p. ... ? 時，若答句為「簡答句（省略後方主要動詞 p.p.）」且加入頻率副詞 (never, always, often 等)，**頻率副詞必須放在助動詞 (have/has) 的前面**！\n2. 完整答句：No, I have never danced with my father.\n3. 簡答句：No, I **never have**.\n4. 易錯陷阱：國中英文考試中，若寫成 `No, I have never.` 屬於位置不完整之常考錯選項（排除 B）。",
+    "stem": "Tina: Have you ever danced with your father? Mina: No, ______.\n\n○ (A) I never have\n○ (B) I have never\n○ (C) I have\n○ (D) I never",
+    "answer": "(A) I never have",
+    "diagramUrl": "",
+    "solution": "1. **題目句型分析**：\n   - 題目為 `Have you ever ...?`（你曾……過嗎？）的問句，答句開頭為 `No, ...`，表示否定簡答。\n\n2. **頻率副詞在簡答句中的位置規則**：\n   - 在標準現在完成式詳答中，頻率副詞放在 have/has 與過去分詞 (p.p.) 之間：`I have never danced...`。\n   - 但在**簡答句**中，因為省略了後方的 p.p.（danced），**頻率副詞必須前移至助動詞 have/has 的前面**！\n   - 正確簡答形式為：`No, I never have.`。\n\n3. **選項排除**：\n   - (A) `I never have`：位置正確，符合否定簡答文法規範。\n   - (B) `I have never`：頻率副詞未前移至 have 前面，於簡答句中為不正確結構。\n   - (C) `I have`：與前方的 `No` 矛盾。\n   - (D) `I never`：缺少助動詞 have，文法不完整。\n\n故正確答案選 **(A) I never have**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-22",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_present_perfect_passive_great_wall_082",
+    "examPeriod": "二段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "現在完成被動態公式 (has / have + been + p.p.) 與持續時間 (for + 一段時間)",
+    "uploadDate": "2026-09-22",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【現在完成被動態雙重條件破題法】：\n1. **被動語態判定**：主詞 The Great Wall of China（萬里長城）與動詞 build（建造）為被動關係，長城是被建造的（需要被動語態 be + p.p.）。\n2. **完成式判定**：句尾有 `for + 一段時間`（for more than 2,000 years 表示持續超過兩千年至今），必須採用完成式 (has/have + p.p.)。\n3. **公式結合**：完成式 ＋ 被動語態 ＝ **現在完成被動態：has / have + been + p.p.**！\n   - 單數主詞配合 `has been built`，故精準選擇 (C)！",
+    "stem": "The Great Wall of China ______ for more than 2,000 years.\n\n○ (A) has built\n○ (B) was built\n○ (C) has been built\n○ (D) will be built",
+    "answer": "(C) has been built",
+    "diagramUrl": "",
+    "solution": "1. **文法關聯解析**：\n   - **語態判定**：主詞為 `The Great Wall of China`（萬里長城），長城「被建造」，動詞需使用**被動語態（be + p.p.）**。\n   - **時態判定**：句尾出現 `for + 一段時間`（`for more than 2,000 years` 超過兩千年），表示動作自過去持續至今，需使用**現在完成式（has/have + p.p.）**。\n\n2. **公式推導**：\n   - 現在完成式（has/have + p.p.）＋ 被動語態（be + p.p.）\n   - 兩者結合得出 **現在完成被動態**：`has / have + been + p.p.`。\n\n3. **選項比對**：\n   - (A) `has built`：主動語態（變成長城自己建造……，語意不符）。\n   - (B) `was built`：過去被動態（忽視了 for more than 2,000 years 表示持續至今的完成時態特性）。\n   - (C) `has been built`：現在完成被動態，完全符合句意與文法。\n   - (D) `will be built`：未來被動態（長城已被建造兩千年，非未來才要建造）。\n\n故正確答案選 **(C) has been built**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-22",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_triangle_midpoint_angle_ghf_080",
+    "examPeriod": "二段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "三角形中點連線段性質（平行且長度一半）與同位角、等腰三角形角度推導",
+    "uploadDate": "2026-09-22",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【幾何中點定理三大突破口】：\n1. **中點連線段性質**：三角形兩邊中點連線段平行於第三邊，且長度等於第三邊的一半！\n   - 在 $\\triangle DBE$ 中，F、G 為 $\\overline{DE}、\\overline{BE}$ 中點 $\\Rightarrow \\overline{FG} // \\overline{DB}$ 且 $\\overline{FG} = \\frac{1}{2} \\overline{BD}$。\n   - 在 $\\triangle BEC$ 中，G、H 為 $\\overline{BE}、\\overline{BC}$ 中點 $\\Rightarrow \\overline{GH} // \\overline{CE}$ 且 $\\overline{GH} = \\frac{1}{2} \\overline{CE}$。\n2. **等長條件轉移**：已知 $\\overline{BD} = \\overline{CE} \\Rightarrow \\overline{FG} = \\overline{GH}$，故 $\\triangle FGH$ 為**等腰三角形**！\n3. **角度推導**：平行線同位角 $\\angle FGE = \\angle DBE = 30^\\circ$，$\\angle BGH = \\angle BEC = 88^\\circ$。頂角 $\\angle FGH = 30^\\circ + (180^\\circ - 88^\\circ) = 122^\\circ$，底角 $\\angle GHF = (180^\\circ - 122^\\circ) \\div 2 = 29^\\circ$！",
+    "stem": "如右圖，在 $\\triangle ABC$ 中，$D$、$E$ 兩點分別在 $\\overline{AB}$、$\\overline{AC}$ 上，已知 $\\overline{BD} = \\overline{CE}$，$F$、$G$、$H$ 分別為 $\\overline{DE}$、$\\overline{BE}$、$\\overline{BC}$ 的中點，若 $\\angle BEC = 88^\\circ$，$\\angle DBE = 30^\\circ$，則 $\\angle GHF = ？$\n\n○ (A) 21°\n○ (B) 26°\n○ (C) 27°\n○ (D) 29°",
+    "answer": "(D) 29°",
+    "diagramUrl": "assets/questions/q_math_triangle_midpoint_angle_ghf_080.png",
+    "solution": "○ **詳細幾何證明與計算步驟**：\n\n1. **第一步：應用三角形中點定理推導平行線與角度**：\n   - 在 $\\triangle DBE$ 中，因為 $F$、$G$ 分別為 $\\overline{DE}$ 與 $\\overline{BE}$ 的中點：\n     $$\\overline{FG} // \\overline{DB} \\quad \\text{且} \\quad \\overline{FG} = \\frac{1}{2} \\overline{BD}$$\n     由平行線同位角相等可得：\n     $$\\angle FGE = \\angle DBE = 30^\\circ$$\n   - 在 $\\triangle BEC$ 中，因為 $G$、$H$ 分別為 $\\overline{BE}$ 與 $\\overline{BC}$ 的中點：\n     $$\\overline{GH} // \\overline{CE} \\quad \\text{且} \\quad \\overline{GH} = \\frac{1}{2} \\overline{CE}$$\n     由平行線同位角相等可得：\n     $$\\angle BGH = \\angle BEC = 88^\\circ$$\n\n2. **第二步：求頂角 $\\angle FGH$ 的度數**：\n   - 觀察平角 $\\angle BGE = 180^\\circ$：\n     $$\\angle EGH = 180^\\circ - \\angle BGH = 180^\\circ - 88^\\circ = 92^\\circ$$\n   - 因此 $\\triangle FGH$ 的頂角 $\\angle FGH$ 為：\n     $$\\angle FGH = \\angle FGE + \\angle EGH = 30^\\circ + 92^\\circ = 122^\\circ$$\n\n3. **第三步：證明 $\\triangle FGH$ 為等腰三角形並計算底角 $\\angle GHF$**：\n   - 題目已知 $\\overline{BD} = \\overline{CE}$：\n     $$\\overline{FG} = \\frac{1}{2} \\overline{BD} = \\frac{1}{2} \\overline{CE} = \\overline{GH}$$\n   - 因為 $\\overline{FG} = \\overline{GH}$，故 $\\triangle FGH$ 為以 $G$ 為頂角的**等腰三角形**。\n   - 底角 $\\angle GHF$ 等於：\n     $$\\angle GHF = \\frac{180^\\circ - \\angle FGH}{2} = \\frac{180^\\circ - 122^\\circ}{2} = \\frac{58^\\circ}{2} = 29^\\circ$$\n\n故正確答案選 **(D) 29°**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-22",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   }
 ];
 
@@ -3104,7 +3216,9 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v132') ||
+      stored = localStorage.getItem('miley_wrong_questions_v134') ||
+               localStorage.getItem('miley_wrong_questions_v133') ||
+               localStorage.getItem('miley_wrong_questions_v132') ||
                localStorage.getItem('miley_wrong_questions_v131') ||
                localStorage.getItem('miley_wrong_questions_v130') ||
                localStorage.getItem('miley_wrong_questions_v129') ||
