@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v138';
+const STORAGE_KEY = 'miley_wrong_questions_v139';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -3380,6 +3380,34 @@ const INITIAL_SEED_DATA = [
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
     "reviewedMondays": []
+  },
+  {
+    "id": "q_bio_selective_breeding_sweet_pepper_090",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "人工選擇（育種）與有性生殖（雜交培育與種子繁殖）〔110.會考補考〕",
+    "uploadDate": "2026-09-23",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【育種與基因改造概念辨析】：\n1. **人為篩選（育種）不等於基因改造**：傳統雜交培育是利用生物自身的遺傳變異進行人為選擇，並未轉移外源基因。\n2. **雜交與種子繁殖皆為「有性生殖」**：產生精細胞與卵細胞結合形成受精卵，並發育為種子，此過程必定經過「有性生殖」！",
+    "stem": "農民從辣椒植株中挑選出果實含辣椒素較少的種子，經過多次的雜交培育篩選而得到不含辣椒素的彩色甜椒植株。關於彩色甜椒植株的敘述，下列何者最合理？〔110.會考補考〕\n\n○ (A) 是一種基因改造生物\n○ (B) 是經過大自然的篩選\n○ (C) 其培育過程中需經有性生殖\n○ (D) 比辣椒植株更能適應自然環境",
+    "answer": "(C) 其培育過程中需經有性生殖",
+    "diagramUrl": "",
+    "solution": "○ **選項逐一剖析**：\n\n1. **(A) 錯誤**：此過程為傳統的人為篩選與雜交育種，利用個體間原本存在的基因組合進行選擇，**並未將外源基因轉殖**入植株中，因此不屬於基因改造生物（GMO）。\n2. **(B) 錯誤**：選育過程是由「農民」根據人類喜好（果實含辣椒素較少）進行挑選，屬於**人為選擇（人擇）**，而非自然環境競爭所進行的「天擇（大自然的篩選）」。\n3. **(C) 正確**：題目提及「雜交培育」與利用「種子」進行繁殖。雜交需要經過花粉（精細胞）與胚珠（卵細胞）的受精作用，產生種子發育為新植株，故**培育過程必定需要經過有性生殖**。\n4. **(D) 錯誤**：彩色甜椒是不含辣椒素的人工選育品種，合乎人為喜好，但**並不代表其比原始辣椒植株更能適應自然環境**（甚至在野外可能因缺乏辣椒素的防禦機制而較易受蟲害）。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-23",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   }
 ];
 
@@ -3412,7 +3440,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v137') ||
+      stored = localStorage.getItem('miley_wrong_questions_v138') ||
+               localStorage.getItem('miley_wrong_questions_v137') ||
                localStorage.getItem('miley_wrong_questions_v136') ||
                localStorage.getItem('miley_wrong_questions_v135') ||
                localStorage.getItem('miley_wrong_questions_v134') ||
