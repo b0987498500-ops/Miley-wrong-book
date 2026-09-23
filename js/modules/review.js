@@ -857,12 +857,15 @@ window.ReviewModule = {
     if (!ticksContainer) return;
     
     const total = this.activeQuestions ? this.activeQuestions.length : 0;
-    if (total <= 1 || total > 45) {
+    if (total <= 1 || total > 70) {
       ticksContainer.innerHTML = '';
       return;
     }
 
-    // Only rebuild DOM if tick count changed
+    ticksContainer.classList.toggle('compact-ticks', total > 16);
+    ticksContainer.classList.toggle('ultra-compact-ticks', total > 32);
+
+    // Rebuild DOM if tick count changed
     if (ticksContainer.children.length !== total) {
       ticksContainer.innerHTML = '';
       for (let i = 0; i < total; i++) {
@@ -871,6 +874,30 @@ window.ReviewModule = {
         const percent = (i / (total - 1)) * 100;
         dot.style.left = `${percent}%`;
         dot.dataset.index = i;
+
+        const label = document.createElement('span');
+        label.className = 'station-num-label';
+        label.textContent = (i + 1).toString();
+        dot.appendChild(label);
+
+        // Direct click event to jump to question card immediately
+        dot.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const targetIndex = parseInt(dot.dataset.index, 10);
+          if (!isNaN(targetIndex) && targetIndex !== this.currentIndex) {
+            this.currentIndex = targetIndex;
+            this.renderCurrentCard();
+            this.scrollToCardTop();
+            
+            const thumb = document.getElementById('review-progress-thumb');
+            if (thumb) {
+              thumb.classList.remove('snap-bounce');
+              void thumb.offsetWidth;
+              thumb.classList.add('snap-bounce');
+            }
+          }
+        });
+
         ticksContainer.appendChild(dot);
       }
     }
@@ -884,7 +911,7 @@ window.ReviewModule = {
       dot.classList.toggle('tick-unreviewed', !isRev);
       dot.classList.toggle('passed', idx <= this.currentIndex);
       dot.classList.toggle('current', idx === this.currentIndex);
-      dot.title = `第 ${idx + 1} 題：${isRev ? '已複習' : '未複習'}`;
+      dot.title = `第 ${idx + 1} 題：${isRev ? '已複習 (點擊直接跳轉做題)' : '未複習 (點擊直接跳轉做題)'}`;
     });
   },
 
