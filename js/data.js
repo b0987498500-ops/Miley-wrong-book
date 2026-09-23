@@ -3653,6 +3653,11 @@ class DataManager {
       this.save();
     }
 
+    // 1. Immediately purge any deleted questions from loaded storage array
+    if (Array.isArray(this.questions) && Array.isArray(this.deletedIds) && this.deletedIds.length > 0) {
+      this.questions = this.questions.filter(q => q && !this.deletedIds.includes(q.id));
+    }
+
     // Comprehensive split-join cleaner to purge any legacy 569X or 20474 corruption
     const cleanCorruptText = (text) => {
       if (typeof text !== 'string') return text;
@@ -3712,15 +3717,9 @@ class DataManager {
           }
         }
 
-        if (Array.isArray(seed.mondayDates)) {
-          if (!Array.isArray(this.questions[idx].mondayDates)) {
-            this.questions[idx].mondayDates = [this.questions[idx].mondayDate || '2026-09-07'];
-          }
-          seed.mondayDates.forEach(m => {
-            if (!this.questions[idx].mondayDates.includes(m)) {
-              this.questions[idx].mondayDates.push(m);
-            }
-          });
+        // Preserve user's deleted weeks in mondayDates: only set if uninitialized/empty
+        if (!Array.isArray(this.questions[idx].mondayDates) || this.questions[idx].mondayDates.length === 0) {
+          this.questions[idx].mondayDates = Array.isArray(seed.mondayDates) ? [...seed.mondayDates] : [seed.mondayDate || '2026-09-07'];
         }
       }
     });
@@ -3746,6 +3745,11 @@ class DataManager {
           q.reviewedMondays = [];
         }
       });
+    }
+
+    // Final strict purge of deleted IDs before saving
+    if (Array.isArray(this.deletedIds) && this.deletedIds.length > 0) {
+      this.questions = this.questions.filter(q => q && !this.deletedIds.includes(q.id));
     }
 
     this.save();

@@ -355,10 +355,11 @@ window.SyncModule = {
     } catch (e) {}
 
     return {
-      version: '1.13',
+      version: '1.14',
       timestamp: Date.now(),
       dateStr: new Date().toISOString().split('T')[0],
       favWisdom: favWisdom,
+      deletedIds: Array.isArray(window.dataManager.deletedIds) ? window.dataManager.deletedIds : [],
       progress: progressList
     };
   },
@@ -379,6 +380,17 @@ window.SyncModule = {
    */
   mergeProgressPayload: function(payload) {
     if (!window.dataManager || !Array.isArray(payload.progress)) return 0;
+
+    // 0. 同步刪除清單 (deletedIds) 並立即自本地資料中濾除
+    if (Array.isArray(payload.deletedIds)) {
+      payload.deletedIds.forEach(id => {
+        if (id && !window.dataManager.deletedIds.includes(id)) {
+          window.dataManager.deletedIds.push(id);
+        }
+      });
+      window.dataManager.saveDeletedIds();
+      window.dataManager.questions = window.dataManager.questions.filter(q => q && !window.dataManager.deletedIds.includes(q.id));
+    }
 
     const localQuestions = window.dataManager.getAll();
     let mergedCount = 0;
