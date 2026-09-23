@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v139';
+const STORAGE_KEY = 'miley_wrong_questions_v140';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -3408,6 +3408,118 @@ const INITIAL_SEED_DATA = [
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
     "reviewedMondays": []
+  },
+  {
+    "id": "q_math_triangle_parallel_segment_ratio_091",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "三角形過頂點輔助平行線與截線段比例計算",
+    "uploadDate": "2026-09-23",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【破題關鍵輔助線】：當圖形中無直接平行線時，過點 B 作線段 BG 平行 DF，即可建立兩個相似三角形（△EBG 與 △ACD），利用比例傳遞連比求解！",
+    "stem": "如圖，線段 AB : BC ＝ 線段 EF : BF ＝ 3 : 1，則線段 CD : DE ＝ ？\n\n○ (A) 2 : 7\n○ (B) 3 : 5\n○ (C) 3 : 7\n○ (D) 4 : 9",
+    "answer": "(D) 4 : 9",
+    "diagramUrl": "assets/questions/q_math_triangle_parallel_segment_ratio_091.png",
+    "solution": "○ **詳細觀念與解題步驟**：\n\n1. **過點 B 作輔助線**：\n   - 過點 B 作線段 BG 平行 DF，交線段 EC 於點 G。\n\n2. **在 △EBG 中**：\n   - 因線段 DF 平行 BG，依平行線截比例線段定理：\n     $$\\text{線段 } DE : DG = \\text{線段 } EF : BF = 3 : 1 = 9 : 3$$\n\n3. **在 △ACD 中**：\n   - 因線段 BG 平行 AD（即平行 DF），依平行線截比例線段定理：\n     $$\\text{線段 } DG : CG = \\text{線段 } AB : BC = 3 : 1$$\n\n4. **連比代換與最終求解**：\n   - 已設線段 DG ＝ 3 份，則線段 CG ＝ 1 份。\n   - 線段 CD ＝ 線段 CG ＋ DG ＝ 1 ＋ 3 ＝ 4 份。\n   - 已知線段 DE ＝ 9 份。\n   - 故線段 CD : DE ＝ 4 : 9。\n\n正確答案選 **(D)**。\n\n![解析輔助線示意圖](assets/questions/q_math_triangle_parallel_segment_ratio_091_aux.png)",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-23",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_perpendicular_lines_ratio_092",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "審題不清",
+    "concept": "多重垂直線段平行性質與雙相似三角形比值聯立",
+    "uploadDate": "2026-09-23",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【同垂直於同直線則互相平行】：線段 AB、HD、GF 均垂直於底邊 BF，故三者互相平行！分別在 △ABE 與 △CGF 中利用相似三角形對應邊比例，列出代數方程式聯立求解！",
+    "stem": "如圖，線段 AB 垂直 BF，線段 HD 垂直 BF，線段 GF 垂直 BF，線段 AE 與 CG 相交於 H 點。若線段 AB : HD : GF ＝ 2 : 1 : 3，線段 BC ＝ EF，則線段 CD : DE ＝ ？\n\n○ (A) 2 : 3\n○ (B) 3 : 2\n○ (C) 3 : 4\n○ (D) 4 : 3",
+    "answer": "(A) 2 : 3",
+    "diagramUrl": "assets/questions/q_math_perpendicular_lines_ratio_092.png",
+    "solution": "○ **詳細觀念與解題步驟**：\n\n1. **平行線判定與代數假設**：\n   - 因線段 AB、HD、GF 均垂直於底邊 BF，故線段 AB // HD // GF。\n   - 設線段 BC ＝ EF ＝ x，線段 CD ＝ a，線段 DE ＝ b，底邊全長 CF ＝ a ＋ b ＋ x。\n\n2. **在 △ABE 中利用 △HDE ～ △ABE**：\n   - 因線段 HD // AB，對應高與邊長成比例：\n     $$\\text{線段 } HD : AB = \\text{線段 } ED : EB$$\n     $$1 : 2 = b : (a + b + x) \\implies a + b + x = 2b$$\n\n3. **在 △CGF 中利用 △HDC ～ △GFC**：\n   - 因線段 HD // GF，對應高與邊長成比例：\n     $$\\text{線段 } HD : GF = \\text{線段 } CD : CF$$\n     $$1 : 3 = a : (a + b + x) \\implies a + b + x = 3a$$\n\n4. **聯立比較求線段比**：\n   - 由上兩式可得：$$2b = 3a \\implies a : b = 2 : 3$$\n   - 故線段 CD : DE ＝ a : b ＝ 2 : 3。\n\n正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-23",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_triangle_cevian_intersection_ratio_093",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "三角形內分線交點比例與過頂點作平行輔助線",
+    "uploadDate": "2026-09-23",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【交點線段比經典輔助線】：過 D 點作線段 DG 平行 BE 交 AC 於 G 點，利用 △BCE 算出線段 DG 長度比例，再移至 △ADG 計算線段 AF 與 AD 之比！",
+    "stem": "如圖，在 △ABC 中，線段 AD 與 BE 相交於 F 點。若線段 BD : CD ＝ 2 : 1，線段 BF : EF ＝ 6 : 1，則線段 AF : DF ＝ ？\n\n○ (A) 2 : 5\n○ (B) 3 : 4\n○ (C) 3 : 5\n○ (D) 4 : 5",
+    "answer": "(B) 3 : 4",
+    "diagramUrl": "assets/questions/q_math_triangle_cevian_intersection_ratio_093.png",
+    "solution": "○ **詳細觀念與解題步驟**：\n\n1. **過 D 點作平行輔助線**：\n   - 過 D 點作線段 DG 平行 BE，交線段 AC 於 G 點。\n\n2. **在 △BCE 中**：\n   - 因線段 DG // BE，依平行線截線段比例：\n     $$\\text{線段 } DG : BE = \\text{線段 } CD : CB = 1 : (2 + 1) = 1 : 3$$\n   - 設線段 BF ＝ 6r，EF ＝ r（r $\\neq$ 0），則全段 BE ＝ 7r。\n   - 故線段 DG ＝ \\frac{1}{3} BE ＝ \\frac{7}{3} r。\n\n3. **在 △ADG 中**：\n   - 因線段 EF // DG，依平行線截比例線段定理：\n     $$\\text{線段 } EF : DG = \\text{線段 } AF : AD = r : \\frac{7}{3} r = 3 : 7$$\n   - 代表若線段 AF ＝ 3 份，則全長 AD ＝ 7 份。\n   - 線段 DF ＝ 線段 AD － AF ＝ 7 － 3 ＝ 4 份。\n   - 故線段 AF : DF ＝ 3 : 4。\n\n正確答案選 **(B)**。\n\n![解析輔助線示意圖](assets/questions/q_math_triangle_cevian_intersection_ratio_093_aux.png)",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-23",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_trapezoid_parallel_lines_ratio_094",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "梯形/對角線三平行線比例性質與相似三角形判定",
+    "uploadDate": "2026-09-23",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "【沙漏型相似三角形對應邊比例】：平行線 CD // AB 形成 △OAB ～ △OCD。比例式為 OA : OC ＝ OB : OD，交叉交換內項即得 OA : OB ＝ OC : OD！",
+    "stem": "如圖，若線段 CD // EF // AB，則下列何者正確？\n\n○ (A) 線段 OD : OC ＝ OE : OF\n○ (B) 線段 CE : DF ＝ EF : CD\n○ (C) 線段 OA : OB ＝ OC : OD\n○ (D) 線段 AB : CD ＝ OA : OD",
+    "answer": "(C) 線段 OA : OB ＝ OC : OD",
+    "diagramUrl": "assets/questions/q_math_trapezoid_parallel_lines_ratio_094.png",
+    "solution": "○ **詳細觀念與選項剖析**：\n\n1. **沙漏型相似三角形**：\n   - 因線段 CD // AB，對頂角相等且內錯角相等，故 △OAB ～ △OCD。\n   - 對應邊成比例：$$\\frac{\\text{線段 } OA}{\\text{線段 } OC} = \\frac{\\text{線段 } OB}{\\text{線段 } OD}$$\n   - 交叉變換比例式內項與外項得：$$\\text{線段 } OA : OB = \\text{線段 } OC : OD$$\n\n2. **各選項詳細解析**：\n   - **(A) 錯誤**：線段 OD : OC 應等於 OB : OA，非 OE : OF。\n   - **(B) 錯誤**：線段 CE : DF 為兩側腰線截段比，EF : CD 為平行底邊長度比，兩者不相等。\n   - **(C) 正確**：由 △OAB ～ △OCD 導出線段 OA : OB ＝ OC : OD。\n   - **(D) 錯誤**：線段 AB : CD 應等於 OA : OC，而非 OA : OD。\n\n正確答案選 **(C)**。\n\n![解析輔助線示意圖](assets/questions/q_math_trapezoid_parallel_lines_ratio_094_aux.png)",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-23",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   }
 ];
 
@@ -3440,7 +3552,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v138') ||
+      stored = localStorage.getItem('miley_wrong_questions_v139') ||
+               localStorage.getItem('miley_wrong_questions_v138') ||
                localStorage.getItem('miley_wrong_questions_v137') ||
                localStorage.getItem('miley_wrong_questions_v136') ||
                localStorage.getItem('miley_wrong_questions_v135') ||
