@@ -51,7 +51,7 @@
       // Register Service Worker
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('sw.js?v=109').then(function(reg) {
+          navigator.serviceWorker.register('sw.js?v=110').then(function(reg) {
             if (typeof reg.update === 'function') {
               reg.update();
             }
@@ -103,7 +103,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=156">
+  <link rel="stylesheet" href="styles.css?v=157">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -178,22 +178,27 @@
         <div class="sidebar-subject-group" id="sidebar-subject-group">
           <button class="sidebar-subject-btn" data-subject="國文" title="國文">
             <span class="subj-char subj-zh">國</span>
+            <span class="subj-name">國文</span>
             <span class="subj-count-badge">0題</span>
           </button>
           <button class="sidebar-subject-btn" data-subject="英文" title="英文">
             <span class="subj-char subj-en">英</span>
+            <span class="subj-name">英文</span>
             <span class="subj-count-badge">0題</span>
           </button>
           <button class="sidebar-subject-btn" data-subject="數學" title="數學">
             <span class="subj-char subj-math">數</span>
+            <span class="subj-name">數學</span>
             <span class="subj-count-badge">0題</span>
           </button>
           <button class="sidebar-subject-btn" data-subject="自然" title="自然">
             <span class="subj-char subj-sci">自</span>
+            <span class="subj-name">自然</span>
             <span class="subj-count-badge">0題</span>
           </button>
           <button class="sidebar-subject-btn" data-subject="社會" title="社會">
             <span class="subj-char subj-soc">社</span>
+            <span class="subj-name">社會</span>
             <span class="subj-count-badge">0題</span>
           </button>
         </div>
