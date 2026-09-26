@@ -3,10 +3,70 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v140';
+const STORAGE_KEY = 'miley_wrong_questions_v141';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_chi_couplets_definition_rules_001",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "對聯的定義、名稱由來與格律特徵（對仗、字數相等與無須押韻之別）",
+    "uploadDate": "2026-09-26",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：對聯講求「字數相等、詞性相對、平仄相諧（仄起平收）」，但**不需要押韻**！押韻是近體詩與詞曲之格律特徵，切勿與對聯混淆！",
+    "stem": "關於對聯的說明，下列何者不正確？\n\n○ (A) 又稱聯語、對子\n○ (B) 與民俗上的桃符有關\n○ (C) 須對仗押韻，有字數限制\n○ (D) 必須字數相等、音韻相諧。",
+    "answer": "(C) 須對仗押韻，有字數限制",
+    "diagramUrl": "",
+    "solution": "1. **選項 (A) 正確**：對聯又名聯語、對子、楹聯，屬雙句對偶之文學體裁。\n2. **選項 (B) 正確**：春聯源自古代懸掛桃木板避邪之「桃符」民俗風尚。\n3. **選項 (C) 錯誤**：對聯講究「對仗、平仄相諧、字數相等」，但**無須押韻**。詩歌才有押韻限制。\n4. **選項 (D) 正確**：上下聯必須字數相等、詞性相對、音韻和諧（上聯末字仄聲、下聯末字平聲）。\n\n故不正確者選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-26",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_chi_couplets_industry_tea_house_002",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "審題不清",
+    "concept": "行業對聯辨識：茶館與餐館（飯店）對聯關鍵字比較",
+    "uploadDate": "2026-09-26",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：行業對聯辨識須抓特徵關鍵字！茶館對聯常嵌有「龍井、武夷、香茗、陸羽、清甘」等茶名茶具；(A)(C)(D)皆含烹飪、肉食、麻辣燙等，屬餐館/飯店對聯！",
+    "stem": "傅紅雪和明月心想找家茶店敘舊，下列哪一家店是他們的首選？\n\n○ (A) 聞香且止步，知味暫停車\n○ (B) 龍井泉多奇味，武夷茶發異香\n○ (C) 宰天下有如此肉，治大國若烹小鮮\n○ (D) 精法廉小餐特色，麻辣燙川味正宗。",
+    "answer": "(B) 龍井泉多奇味，武夷茶發異香",
+    "diagramUrl": "",
+    "solution": "1. **題幹考點**：尋找適合「茶店/茶館」之行業對聯。\n2. **選項分析**：\n   - **(A)**「聞香且止步，知味暫停車」：指美味佳餚留客，屬**餐館/飯店**對聯。\n   - **(B)**「龍井泉多奇味，武夷茶發異香」：嵌有「龍井」、「武夷茶」名茶茶名，屬標準**茶店/茶館**對聯。\n   - **(C)**「宰天下有如此肉，治大國若烹小鮮」：提及切肉與烹調，屬**餐館/飯店**對聯。\n   - **(D)**「精法廉小餐特色，麻辣燙川味正宗」：提及小餐特色與麻辣燙，屬**餐館/小吃店**對聯。\n\n故首選茶店選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-26",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_math_triangle_incenter_centroid_001",
     "examPeriod": "一段",
