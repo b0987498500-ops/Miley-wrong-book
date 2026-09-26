@@ -360,6 +360,7 @@ window.SyncModule = {
       dateStr: new Date().toISOString().split('T')[0],
       favWisdom: favWisdom,
       deletedIds: Array.isArray(window.dataManager.deletedIds) ? window.dataManager.deletedIds : [],
+      removedMondaysMap: window.dataManager.removedMondaysMap || {},
       progress: progressList
     };
   },
@@ -376,12 +377,12 @@ window.SyncModule = {
 
   /**
    * 智慧進度合併 (Smart Merge)：
-   * 確保手機與電腦兩端成果「只增不減」，並將下週排程 (mondayDates) 完整對齊
+   * 確保手機與電腦兩端成果「只增不減」，同時支援單題刪除與週次刪除之雙向真實對齊，防禦歷史週次死灰復燃
    */
   mergeProgressPayload: function(payload) {
     if (!window.dataManager || !Array.isArray(payload.progress)) return 0;
 
-    // 0. 同步刪除清單 (deletedIds) 並立即自本地資料中濾除
+    // 0a. 同步全域刪除清單 (deletedIds) 並立即自本地資料中濾除
     if (Array.isArray(payload.deletedIds)) {
       payload.deletedIds.forEach(id => {
         if (id && !window.dataManager.deletedIds.includes(id)) {
@@ -391,6 +392,48 @@ window.SyncModule = {
       window.dataManager.saveDeletedIds();
       window.dataManager.questions = window.dataManager.questions.filter(q => q && !window.dataManager.deletedIds.includes(q.id));
     }
+
+    // 0b. 同步週次刪除對照表 (removedMondaysMap)
+    if (payload.removedMondaysMap && typeof payload.removedMondaysMap === 'object') {
+      if (!window.dataManager.removedMondaysMap) window.dataManager.removedMondaysMap = {};
+      Object.keys(payload.removedMondaysMap).forEach(id => {
+        const remoteList = payload.removedMondaysMap[id];
+        if (Array.isArray(remoteList)) {
+          if (!Array.isArray(window.dataManager.removedMondaysMap[id])) {
+            window.dataManager.removedMondaysMap[id] = [];
+          }
+          remoteList.forEach(m => {
+            if (!window.dataManager.removedMondaysMap[id].includes(m)) {
+              window.dataManager.removedMondaysMap[id].push(m);
+            }
+          });
+        }
+      });
+      window.dataManager.saveRemovedMondaysMap();
+    }
+
+    // 0c. 依據 removedMondaysMap 強制剔除本地與遠端已刪除的週次
+    const rmMap = window.dataManager.removedMondaysMap || {};
+    window.dataManager.questions.forEach(q => {
+      if (!q) return;
+      const removedList = rmMap[q.id];
+      if (Array.isArray(removedList) && removedList.length > 0 && Array.isArray(q.mondayDates)) {
+        q.mondayDates = q.mondayDates.filter(m => !removedList.includes(m));
+      }
+    });
+
+    // 若題目已無剩餘任何週次，將其正式加入全域刪除
+    window.dataManager.questions = window.dataManager.questions.filter(q => {
+      if (!q) return false;
+      if (Array.isArray(q.mondayDates) && q.mondayDates.length === 0) {
+        if (!window.dataManager.deletedIds.includes(q.id)) {
+          window.dataManager.deletedIds.push(q.id);
+          window.dataManager.saveDeletedIds();
+        }
+        return false;
+      }
+      return true;
+    });
 
     const localQuestions = window.dataManager.getAll();
     let mergedCount = 0;
@@ -441,17 +484,18 @@ window.SyncModule = {
         });
       }
 
-      // 4. 下週排程聯集 (mondayDates) —— 確保手機按「未擊敗」推到下週的題目，電腦 100% 同步排入！
+      // 4. 下週排程 (mondayDates) 雙向對齊：跳過任何已在 removedMondaysMap 中的週次，防止刪除之週次死灰復燃！
       if (!Array.isArray(localQ.mondayDates)) localQ.mondayDates = [];
+      const removedForThisQ = rmMap[localQ.id] || [];
       if (Array.isArray(remote.mds)) {
         remote.mds.forEach(m => {
-          if (!localQ.mondayDates.includes(m)) {
+          if (!localQ.mondayDates.includes(m) && !removedForThisQ.includes(m)) {
             localQ.mondayDates.push(m);
             hasUpdate = true;
           }
         });
       }
-      if (remote.md) {
+      if (remote.md && !removedForThisQ.includes(remote.md)) {
         localQ.mondayDate = remote.md;
       }
 

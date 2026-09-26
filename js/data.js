@@ -3524,11 +3524,13 @@ const INITIAL_SEED_DATA = [
 ];
 
 const DELETED_KEYS_STORAGE = 'miley_deleted_question_ids_v31';
+const REMOVED_MONDAYS_STORAGE = 'miley_removed_mondays_map_v1';
 
 class DataManager {
   constructor() {
     this.questions = [];
     this.deletedIds = [];
+    this.removedMondaysMap = {};
     this.init();
   }
 
@@ -3547,8 +3549,34 @@ class DataManager {
     } catch (e) {}
   }
 
+  loadRemovedMondaysMap() {
+    try {
+      const stored = localStorage.getItem(REMOVED_MONDAYS_STORAGE);
+      this.removedMondaysMap = stored ? JSON.parse(stored) : {};
+    } catch (e) {
+      this.removedMondaysMap = {};
+    }
+  }
+
+  saveRemovedMondaysMap() {
+    try {
+      localStorage.setItem(REMOVED_MONDAYS_STORAGE, JSON.stringify(this.removedMondaysMap || {}));
+    } catch (e) {}
+  }
+
+  recordRemovedMonday(id, mondayDate) {
+    if (!id || !mondayDate) return;
+    if (!this.removedMondaysMap) this.removedMondaysMap = {};
+    if (!Array.isArray(this.removedMondaysMap[id])) this.removedMondaysMap[id] = [];
+    if (!this.removedMondaysMap[id].includes(mondayDate)) {
+      this.removedMondaysMap[id].push(mondayDate);
+      this.saveRemovedMondaysMap();
+    }
+  }
+
   init() {
     this.loadDeletedIds();
+    this.loadRemovedMondaysMap();
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
@@ -3783,6 +3811,8 @@ class DataManager {
   resetToSeed() {
     this.deletedIds = [];
     this.saveDeletedIds();
+    this.removedMondaysMap = {};
+    this.saveRemovedMondaysMap();
     this.questions = JSON.parse(JSON.stringify(INITIAL_SEED_DATA));
     this.save();
   }
@@ -3842,6 +3872,10 @@ class DataManager {
   removeQuestionFromWeek(id, targetMonday) {
     const q = this.getById(id);
     if (!q) return null;
+
+    if (targetMonday && targetMonday !== 'ALL') {
+      this.recordRemovedMonday(id, targetMonday);
+    }
 
     let mondays = Array.isArray(q.mondayDates) && q.mondayDates.length > 0
       ? q.mondayDates

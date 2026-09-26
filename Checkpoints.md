@@ -4,6 +4,17 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v1.25] - 2026-09-26 (重構跨裝置刪除與週次移除雙向同步機制，徹底解決手機與電腦對齊時已刪除題目/週次死灰復燃復活之問題)
+- **類型**：跨裝置同步核心邏輯重構 / 刪除狀態權威對齊 / 雙向刪除歷史紀錄 (deletedIds & removedMondaysMap) / 秒級持久化儲存
+- **主要變更**：
+  1. **導入週次刪除對照表 (`removedMondaysMap`)**：
+     - 當使用者在電腦或手機上將題目從特定週次（如 9/14 週）移除時，系統同步記錄 `removedMondaysMap[q.id] = ["2026-09-14"]` 並發送至雲端。
+     - 另一裝置同步時，自動比對並強制踢除該週次，同時禁止雲端 `remote.mds` 將已刪除週次重新塞回，徹底解決「27 題刪 1 題變 26 題，手機重整後又害電腦變回 27 題」的死灰復燃循環問題！
+  2. **強化刪除成果秒級落盤 (`dataManager.save()`)**：
+     - 在 `SyncModule.mergeProgressPayload()` 完成雲端合併後，立即強制觸發 `dataManager.save()` 將最新的 26 題寫入 LocalStorage，並驅動 `updateSidebarCounts` 與 `loadReviewQueue` 秒級更新畫面。
+
+---
+
 ## [v1.24] - 2026-09-25 (重構側邊欄科目分類選單 UI/UX 排版，徹底解決收合與窄寬度時數字徽章劃過文字與正方形圖示重疊問題)
 - **類型**：UI/UX 排版重劃 / 側邊欄科目選單視覺升級 / 數字徽章頂角亮點化 / 零壓迫優雅視覺設計
 - **主要變更**：
