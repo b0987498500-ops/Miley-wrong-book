@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v142';
+const STORAGE_KEY = 'miley_wrong_questions_v143';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_chi_couplets_location_matching_004",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "行業對聯張貼地點辨識：樂器行、照相館（攝影）、圖書館（書店）與中藥房對聯特徵比較",
+    "uploadDate": "2026-09-26",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：行業對聯張貼地點關鍵字辨識！高山流水/白雪陽春 ➔ 樂器行；鬚眉畢現/面目留真 ➔ 照相館；廣搜百代遺編/嘉惠後學 ➔ 圖書館/書店；杏林/橘井/當歸/何首烏 ➔ 中藥房！",
+    "stem": "下列對聯，何者張貼的地點最正確？\n\n○ (A) 韻出高山流水，調追白雪陽春—樂器行\n○ (B) 秦鏡高懸鬚眉畢現，廬山在此面目留真—書店\n○ (C) 廣搜百代遺編，追蹤虎觀；嘉惠四方後學，載質龍門—動物園\n○ (D) 杏林春意暖，獨活靈芝草；橘井活人多，當歸何首烏—火鍋店。",
+    "answer": "(A) 韻出高山流水，調追白雪陽春—樂器行",
+    "diagramUrl": "",
+    "solution": "1. **(A) 正確**：「高山流水」（伯牙鼓琴相知典故）與「白雪陽春」（高雅古曲《陽春白雪》），皆屬韻律樂曲，張貼於**樂器行**最正確。\n2. **(B) 錯誤**：「鬚眉畢現」（鬍鬚眉毛清晰刻劃）與「面目留真」（保留真實面容容貌），應張貼於**照相館/攝影棚/理髮店**（非書店）。\n3. **(C) 錯誤**：「廣搜百代遺編」（廣泛蒐集歷代典籍圖書）與「嘉惠四方後學」，應張貼於**圖書館/書店/出版機構**（非動物園）。\n4. **(D) 錯誤**：「杏林」（醫界名號）、「橘井」（藥界名號）以及「獨活、靈芝草、當歸、何首烏」（皆為中藥材名），應張貼於**中藥房/中醫診所**（非火鍋店）。\n\n故張貼地點最正確者選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-26",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_chi_couplets_industry_matching_003",
     "examPeriod": "一段",
