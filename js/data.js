@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v141';
+const STORAGE_KEY = 'miley_wrong_questions_v142';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_chi_couplets_industry_matching_003",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "行業對聯辨識：餐廳、酒莊（酒吧）、學校（教育）與鐘錶行對聯特徵比較",
+    "uploadDate": "2026-09-26",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：行業對聯特徵關鍵字對照！買醉/消愁 $\\to$ 酒莊；桃李/棟梁 $\\to$ 學校；十二時辰/手腕間 $\\to$ 鐘錶行；水陸佳餚/加餐 $\\to$ 餐廳！",
+    "stem": "下列對聯與適用場合的配對，何者正確？\n\n○ (A) 水陸兼呈皆上味，賓朋盡興共加餐—餐廳\n○ (B) 問世人為何買醉，惟此物足以消愁—茶館\n○ (C) 今日栽遍桃李樹，他年盡作棟梁材—建築公司\n○ (D) 萬千星斗心胸裡，十二時辰手腕間—眼鏡行。",
+    "answer": "(A) 水陸兼呈皆上味，賓朋盡興共加餐—餐廳",
+    "diagramUrl": "",
+    "solution": "1. **(A) 正確**：「水陸兼呈（水陸珍饈）」與「賓朋加餐」，描繪豐盛佳餚聚餐，為**餐廳/飯館**對聯。\n2. **(B) 錯誤**：「買醉」、「消愁」指飲酒酒品，應適用於**酒莊/酒吧/酒館**（茶館常為清心、香茗、龍井）。\n3. **(C) 錯誤**：「桃李樹（培育學生）」與「棟梁材」，指教育育人，應適用於**學校/教育機構**（非建築公司）。\n4. **(D) 錯誤**：「十二時辰」與「手腕間」，指配戴於手腕之計時鐘錶，應適用於**鐘錶行**（非眼鏡行）。\n\n故配對正確者選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-26",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_chi_couplets_definition_rules_001",
     "examPeriod": "一段",
