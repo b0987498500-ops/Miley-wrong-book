@@ -1694,6 +1694,7 @@ window.ReviewModule = {
     const formattedWeek = parts.length === 3 ? `${parseInt(parts[1], 10)}/${parseInt(parts[2], 10)}` : currentMonday;
 
     if (confirm(`確定要將此題僅從 ${formattedWeek} 週次中刪除嗎？\n（若此題包含其它週次，其它週次將不受影響）`)) {
+      const oldIndex = this.currentIndex;
       window.dataManager.removeQuestionFromWeek(q.id, currentMonday);
       this.showToast(`🗑️ 已從 ${formattedWeek} 週次清單中移除此題！`);
 
@@ -1702,7 +1703,9 @@ window.ReviewModule = {
         if (window.app.updateSidebarCounts) window.app.updateSidebarCounts();
       }
 
-      this.loadReviewQueue(window.app?.currentSubjectFilter, currentMonday);
+      const activeSubj = this.currentSubjectFilter || window.app?.currentSubjectFilter;
+      const activeMonday = this.currentMondayFilter || currentMonday;
+      this.loadReviewQueue(activeSubj, activeMonday, oldIndex);
     }
   },
 

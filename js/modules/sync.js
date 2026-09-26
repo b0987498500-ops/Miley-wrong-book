@@ -243,7 +243,16 @@ window.SyncModule = {
         const remoteTime = remotePayload.timestamp || 0;
         const localTime = parseInt(localStorage.getItem(this.STORAGE_SYNC_TIME_KEY) || '0', 10);
 
-        if (isManual || remoteTime > localTime) {
+        // 權威檢查：即使時間戳相同，若雲端含有本地尚未記錄的單題刪除或週次刪除，強制進行合併與清理
+        const localDeleted = window.dataManager?.deletedIds || [];
+        const localRemovedMap = window.dataManager?.removedMondaysMap || {};
+        const hasNewDeletions = (Array.isArray(remotePayload.deletedIds) && remotePayload.deletedIds.some(id => !localDeleted.includes(id))) ||
+                                (remotePayload.removedMondaysMap && typeof remotePayload.removedMondaysMap === 'object' && Object.keys(remotePayload.removedMondaysMap).some(id => {
+                                  const localList = localRemovedMap[id] || [];
+                                  return Array.isArray(remotePayload.removedMondaysMap[id]) && remotePayload.removedMondaysMap[id].some(m => !localList.includes(m));
+                                }));
+
+        if (isManual || remoteTime > localTime || hasNewDeletions) {
           const mergedCount = this.mergeProgressPayload(remotePayload);
           this.lastSyncSuccessTime = Date.now();
           localStorage.setItem(this.STORAGE_SYNC_TIME_KEY, String(remoteTime || Date.now()));
@@ -541,8 +550,13 @@ window.SyncModule = {
       window.WisdomModule.updateHeaderBadge();
       window.WisdomModule.renderModalContent();
     }
-    if (window.ReviewModule && window.ReviewModule.loadReviewQueue) {
-      window.ReviewModule.loadReviewQueue();
+    if (window.ReviewModule && typeof window.ReviewModule.loadReviewQueue === 'function') {
+      const activeSubj = window.ReviewModule.currentSubjectFilter || window.app?.currentSubjectFilter;
+      const activeMon = window.ReviewModule.currentMondayFilter || window.app?.currentMondayFilter;
+      const activeIdx = window.ReviewModule.currentIndex;
+      if (activeSubj || activeMon) {
+        window.ReviewModule.loadReviewQueue(activeSubj, activeMon, activeIdx);
+      }
     }
 
     return mergedCount;

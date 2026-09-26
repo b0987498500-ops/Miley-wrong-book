@@ -4,6 +4,19 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v1.26] - 2026-09-26 (修正刪除題目跳回首頁/第一題問題，並強化 hasNewDeletions 刪除優先級與資產版本修護)
+- **類型**：刪除卡片跳轉優化 / 雲端刪除優先權 (`hasNewDeletions`) / 腳本快取版號強制更新 (`v141`)
+- **主要變更**：
+  1. **刪除題目不再跳回首頁或第一題**：
+     - 修復 `ReviewModule.removeQuestionFromWeek`：刪除題目時保留原卡片索引（`oldIndex`），並自動平滑遞進至下一題（`targetIndex`），絕不再跳回首頁或第 1 題。
+     - 修復 `SyncModule.mergeProgressPayload`：雲端後台同步完成刷新畫面時，完整保留目前使用者正進行的科目、週次與卡片位置，防止背景同步干擾當前複習。
+  2. **刪除權威性高於時間戳 (`hasNewDeletions`)**：
+     - 在 `pullFromCloud` 增加 `hasNewDeletions` 權威檢查，無論時間戳是否較舊，只要雲端含有本機尚未記錄的刪除（如 33 題變 32 題），一律強制執行合併清理，確保手機 100% 同步刪除。
+  3. **強迫全端更新 (`v141`)**：
+     - 將 `index.html` 的所有 `<script src="js/..."></script>` 版號全面提升至 `v141`，升級 `sw.js` (v1.16)，解決手機版瀏覽器與 PWA 使用舊版 `sync.js?v=138` 快取之問題。
+
+---
+
 ## [v1.25] - 2026-09-26 (重構跨裝置刪除與週次移除雙向同步機制，徹底解決手機與電腦對齊時已刪除題目/週次死灰復燃復活之問題)
 - **類型**：跨裝置同步核心邏輯重構 / 刪除狀態權威對齊 / 雙向刪除歷史紀錄 (deletedIds & removedMondaysMap) / 秒級持久化儲存
 - **主要變更**：
