@@ -3,10 +3,70 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v143';
+const STORAGE_KEY = 'miley_wrong_questions_v144';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_chi_couplets_theatre_moral_education_005",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "戲臺對聯涵義判讀：戲曲之教化勸善（晨鐘暮鼓、善惡貞淫胥教誨）與人生幻化意境比較",
+    "uploadDate": "2026-09-26",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：戲臺對聯主旨判讀關鍵！題幹「善惡貞淫胥教誨」強調戲劇具備【道德教化、勸善懲惡】之功；(C)「莫輕看過、晨鐘暮鼓」同樣強調看戲不可輕忽、劇中道德榜樣如晨鐘暮鼓警醒世人，兩者涵義最為切合！",
+    "stem": "某戲臺有一副對聯：「此所謂現身說法，且看那善惡貞淫胥教誨；雖然是逢場作戲，難得他嬉笑怒罵皆文章。」這副對聯與下列何者的涵義最接近？\n\n○ (A) 傀儡登場，須知這臺上衣冠是假；痴人說夢，休認作眼前富貴為真\n○ (B) 君子小人，才子佳人，登場便見；歡天喜地，驚天動地，落幕即空\n○ (C) 假面登場有孝子忠臣，莫輕看過；新腔協律是晨鐘暮鼓，只管聽來\n○ (D) 戲愈好，人愈多，看他抒意表情；曲彌高，和彌寡，聽我長腔短調。",
+    "answer": "(C) 假面登場有孝子忠臣，莫輕看過；新腔協律是晨鐘暮鼓，只管聽來",
+    "diagramUrl": "",
+    "solution": "1. **題幹對聯主旨**：「善惡貞淫胥教誨」（善惡貞淫皆受教育戒惕）與「嬉笑怒罵皆文章」，強調戲曲雖為逢場作戲，但其根本宗旨為**傳遞道德觀念、發揮社會教化與勸善懲惡**功能。\n2. **選項比較與解析**：\n   - **(A) 側重「虛實幻象」**：強調臺上衣冠名利皆為假象富貴，與教化勸善無關。\n   - **(B) 側重「人生無常與繁華落幕」**：強調人生如戲、登場歡喜落幕即空，側重虛無感。\n   - **(C) 正確（側重「道德教化與警世」）**：「莫輕看過」（劇中有孝子忠臣等道德榜樣，不可輕忽看過）與「晨鐘暮鼓」（如警世鐘鼓發人深省），與題幹「教誨」涵義最接近。\n   - **(D) 側重「演技表演與曲調技巧」**：強調曲高和寡與演戲功力。\n\n故涵義最接近者選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-26",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_chi_couplets_temple_figures_matching_006",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "廟宇楹聯與描述對象配對：孔廟、關帝廟、岳飛廟與城隍廟關鍵字判讀",
+    "uploadDate": "2026-09-26",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：廟宇對聯人物配對速記！「祖述堯舜、憲章文武、道冠古今」 ➔ 孔子（孔廟）；「英雄三國無雙士」 ➔ 關羽（關帝廟）；「還我山河、一片忠心唯報國」 ➔ 岳飛（岳飛廟）；「舉念有神知善惡正邪」 ➔ 城隍爺（城隍廟）！",
+    "stem": "下列各廟宇楹聯所描述的對象，何者配對正確？\n\n○ (A) 英雄三國無雙士，正氣千秋第一人：岳飛廟\n○ (B) 祖述堯舜，憲章文武；德參天地，道冠古今：孔廟\n○ (C) 還我山河，一片忠心唯報國；驅爾異族，百年奇恥不共天：關帝廟\n○ (D) 舉念有神知善惡正邪能立判；照人為鏡朗吉凶禍福總無私：媽祖廟。",
+    "answer": "(B) 祖述堯舜，憲章文武；德參天地，道冠古今：孔廟",
+    "diagramUrl": "",
+    "solution": "1. **(B) 正確**：「祖述堯舜，憲章文武」（出自《中庸》讚頌孔子）與「德參天地，道冠古今」（形容萬世師表），描述對象為**孔子**，配對**孔廟**正確。\n2. **(A) 錯誤**：「三國無雙士」與「正氣千秋第一人」，描述對象為三國時期義薄雲天的**關羽**，應配對**關帝廟**（非岳飛廟）。\n3. **(C) 錯誤**：「還我山河」與「一片忠心唯報國（精忠報國）」，描述對象為南宋抗金名將**岳飛**，應配對**岳飛廟**（非關帝廟）。\n4. **(D) 錯誤**：「知善惡正邪能立判」與「朗吉凶禍福總無私」，描述公正威嚴、審判冥陽善惡的神明，應配對**城隍廟**（非媽祖廟）。\n\n故配對正確者選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-26",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_chi_couplets_location_matching_004",
     "examPeriod": "一段",
