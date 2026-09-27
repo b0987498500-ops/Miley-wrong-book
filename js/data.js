@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v144';
+const STORAGE_KEY = 'miley_wrong_questions_v145';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_geo_southern_europe_agriculture_001",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐洲區域特色：南歐地中海型氣候之農業優勢（緯度較低、陽光充足、生長季長）",
+    "uploadDate": "2026-09-27",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：南歐農業氣候特徵關鍵！南歐多屬「溫帶地中海型氣候（夏乾冬雨）」，位居溫帶而非熱帶！農業優勢為「緯度相對較低、生長季較長、日照充足」；地形則受板塊擠壓多山地崎嶇（非平坦）。",
+    "stem": "南歐是歐洲重要的蔬菜產地，盛產番茄、橄欖等各類蔬果。請問：該地區具有下列何種農業生產優勢？\n\n○ (A) 緯度較低生長季長\n○ (B) 地形平坦土壤肥沃\n○ (C) 全年有雨不需灌溉\n○ (D) 位居熱帶日照充足",
+    "answer": "(A) 緯度較低生長季長",
+    "diagramUrl": "",
+    "solution": "1. **(A) 正確**：南歐位於歐陸南部（約北緯 35°～45°），相對西歐與北歐緯度較低，夏季太陽輻射強、熱量豐富且**作物生長季較長**，利於番茄、柑橘、橄欖等園藝蔬果農業發展。\n2. **(B) 錯誤**：南歐位於歐亞板塊與非洲板塊擠壓交界帶，多山脈與丘陵（如阿爾卑斯山脈、波札那及亞平寧山脈等），整體**地形崎嶇**而非平坦。\n3. **(C) 錯誤**：南歐主要為「溫帶地中海型氣候」，特徵為**夏乾冬雨**（夏季炎熱乾燥、降雨偏少），因此農作生長季（夏季）非常需要依賴灌溉系統（灌溉農業）。\n4. **(D) 錯誤**：南歐地處**溫帶**區域，並非熱帶。\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-27",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_chi_couplets_theatre_moral_education_005",
     "examPeriod": "一段",
