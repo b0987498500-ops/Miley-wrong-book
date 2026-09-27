@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v147';
+const STORAGE_KEY = 'miley_wrong_questions_v148';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_sci_phy_tingting_vt_graph_avg_acc_west_100",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "速度時間圖（v-t 圖）與平均加速度判定：a = Δv / Δt，速度減少即平均加速度向西",
+    "uploadDate": "2026-09-27",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：平均加速度方向判讀關鍵！平均加速度公式 a = (v_末 - v_初) / (t_末 - t_初)。已知騎車方向向東（速度為正），若「平均加速度方向向西」（加速度為負），表示速度變化量 Δv < 0，即【末速小於初速（v_末 < v_初）】！檢視各時間區段：t = 20 分時速度為全圖最高點，t = 30 分時速度低於 t = 20 分，故 Δv < 0，平均加速度向西！",
+    "stem": "婷婷騎車在筆直的道路上向東行駛，右圖為其速度（v）與時間（t）的關係圖。下列哪一段時間，婷婷的平均加速度方向向西？\n\n○ (A) t = 0～10 分\n○ (B) t = 10～20 分\n○ (C) t = 15～30 分\n○ (D) t = 20～30 分",
+    "answer": "(D) t = 20～30 分",
+    "diagramUrl": "assets/questions/q_sci_phy_tingting_vt_graph_avg_acc_west_100.png",
+    "solution": "1. **觀念與公式說明**：\n   - 規定向東為正方向（速度 v > 0）。\n   - 平均加速度定義為：a = (v_末 - v_初) / (t_末 - t_初)。\n   - 若「平均加速度方向向西」（a < 0），表示速度變化量 Δv = v_末 - v_初 < 0，即**末速度小於初速度（v_末 < v_初）**。\n2. **選項時間區段與末初速度比較**：\n   - **(A) t = 0～10 分**：t = 0 時 v = 0，t = 10 時為第一個波峰，v_10 > v_0，速度增加（Δv > 0），平均加速度向東。\n   - **(B) t = 10～20 分**：t = 20 時為全圖最高點，v_20 > v_10，速度增加（Δv > 0），平均加速度向東。\n   - **(C) t = 15～30 分**：t = 15 時為谷底低點，t = 30 時為第三個波峰附近，v_30 > v_15，速度增加（Δv > 0），平均加速度向東。\n   - **(D) t = 20～30 分（正確）**：t = 20 時為全圖最大速度（最高點），t = 30 時速度明顯低於 t = 20 時的速度，故 v_30 < v_20，速度變化量 Δv < 0，**平均加速度方向向西**。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-27",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_sci_phy_four_cars_vt_graph_097",
     "examPeriod": "一段",
@@ -3910,7 +3940,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v146') ||
+      stored = localStorage.getItem('miley_wrong_questions_v147') ||
+               localStorage.getItem('miley_wrong_questions_v146') ||
                localStorage.getItem('miley_wrong_questions_v145') ||
                localStorage.getItem('miley_wrong_questions_v144') ||
                localStorage.getItem('miley_wrong_questions_v143') ||
