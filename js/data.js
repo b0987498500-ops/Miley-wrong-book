@@ -3,16 +3,16 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v145';
+const STORAGE_KEY = 'miley_wrong_questions_v146';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
   {
-    "id": "q_geo_southern_europe_agriculture_001",
+    "id": "q_sci_phy_ming_hua_xt_graph_095",
     "examPeriod": "一段",
-    "subject": "社會",
+    "subject": "自然/理化",
     "errorReason": "觀念不懂",
-    "concept": "歐洲區域特色：南歐地中海型氣候之農業優勢（緯度較低、陽光充足、生長季長）",
+    "concept": "直線運動與位置時間圖（x-t 圖）：斜率即速度、斜直線代表等速度運動（加速度為零）",
     "uploadDate": "2026-09-27",
     "mondayDate": "2026-09-21",
     "mondayDates": [
@@ -20,11 +20,41 @@ const INITIAL_SEED_DATA = [
     ],
     "weekLabel": "2026-09-21 (最新週次)",
     "isGuessedOrUnstable": false,
-    "mistakeNote": "💡 **易錯警示筆記**：南歐農業氣候特徵關鍵！南歐多屬「溫帶地中海型氣候（夏乾冬雨）」，位居溫帶而非熱帶！農業優勢為「緯度相對較低、生長季較長、日照充足」；地形則受板塊擠壓多山地崎嶇（非平坦）。",
-    "stem": "南歐是歐洲重要的蔬菜產地，盛產番茄、橄欖等各類蔬果。請問：該地區具有下列何種農業生產優勢？\n\n○ (A) 緯度較低生長季長\n○ (B) 地形平坦土壤肥沃\n○ (C) 全年有雨不需灌溉\n○ (D) 位居熱帶日照充足",
-    "answer": "(A) 緯度較低生長季長",
-    "diagramUrl": "",
-    "solution": "1. **(A) 正確**：南歐位於歐陸南部（約北緯 35°～45°），相對西歐與北歐緯度較低，夏季太陽輻射強、熱量豐富且**作物生長季較長**，利於番茄、柑橘、橄欖等園藝蔬果農業發展。\n2. **(B) 錯誤**：南歐位於歐亞板塊與非洲板塊擠壓交界帶，多山脈與丘陵（如阿爾卑斯山脈、波札那及亞平寧山脈等），整體**地形崎嶇**而非平坦。\n3. **(C) 錯誤**：南歐主要為「溫帶地中海型氣候」，特徵為**夏乾冬雨**（夏季炎熱乾燥、降雨偏少），因此農作生長季（夏季）非常需要依賴灌溉系統（灌溉農業）。\n4. **(D) 錯誤**：南歐地處**溫帶**區域，並非熱帶。\n\n故正確答案選 **(A)**。",
+    "mistakeNote": "💡 **易錯警示筆記**：x-t 圖判讀關鍵！x-t 圖為「斜直線」代表物體作【等速度運動】（加速度必為 0）；斜率大小代表「速度大小」（越陡越快）。小明與小華在 x-t 圖上皆為斜直線，因此兩人的加速度皆為 0！小明斜率較陡（速度 2 m/s），小華斜率較緩（速度 0.5 m/s）。",
+    "stem": "小明、小華兩人騎車直線前進，其位置與時間的關係如右圖，下列相關敘述何者正確？\n\n○ (A) 小華的加速度為零\n○ (B) 小明的加速度大小為 2 公尺／秒²\n○ (C) 第 1 秒末小華的速度較小明快\n○ (D) 小華 2 秒內的位移大小為 4 公尺",
+    "answer": "(A) 小華的加速度為零",
+    "diagramUrl": "assets/questions/q_sci_phy_ming_hua_xt_graph_095.png",
+    "solution": "1. **(A) 正確（加速度判斷）**：在位置與時間關係圖（x-t 圖）中，斜直線代表物體作**等速度運動**。小華與小明的圖形皆為斜直線，代表速度恆定不變，因此兩人的**加速度皆為零**（加速度 a = 0 m/s²）。\n2. **(B) 錯誤（單位與觀念混淆）**：小明的 x-t 圖為直線，作等速度運動，加速度大小為 0 m/s²。小明在 2 秒內位移為 4 - 0 = 4 公尺，其「速度」大小才是 v = 4/2 = 2 m/s。\n3. **(C) 錯誤（速度快慢比較）**：x-t 圖的「斜率」代表速度。小明的斜率為 2（速度 2 m/s），小華的斜率為 (4-3)/(2-0) = 0.5（速度 0.5 m/s）。因小明斜率較陡，不論第 1 秒末或任何時刻，小明的速度均比小華快。\n4. **(D) 錯誤（位移計算）**：小華在 t = 0 秒時位置 x = 3 公尺，t = 2 秒時位置 x = 4 公尺，故 2 秒內的位移大小為 Δx = 4 - 3 = 1 公尺（非 4 公尺）。\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-27",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_phy_free_fall_101_xt_graph_096",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "自由落體與 x-t 關係圖：等加速度運動公式（x ∝ t²）、斜率隨著速度增加而逐漸變陡",
+    "uploadDate": "2026-09-27",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：自由落體 x-t 圖判讀破題重點！自由落體為「等加速度運動」（初速 0，速度越來越快）。以樓頂為參考點（起始點 x = 0）且向下為正時，位置 x = (1/2)g t²，圖形為開口朝上的二次拋物線，其斜率（速度）必然隨時間 t 逐漸變陡！",
+    "stem": "【素養題】在不計空氣阻力下，一玻璃珠由 101 樓頂靜止釋放，下列何者可以表示其位置（x）與時間（t）的關係圖？（以樓頂為參考點，向下為正）\n\n○ (A) 圖 (A)：過原點且斜率隨時間逐漸變陡的曲線\n○ (B) 圖 (B)：過原點但斜率隨時間逐漸變平緩的曲線\n○ (C) 圖 (C)：向下開口的拋物線\n○ (D) 圖 (D)：由高處隨時間向下遞減的曲線",
+    "answer": "(A) 圖 (A)：過原點且斜率隨時間逐漸變陡的曲線",
+    "diagramUrl": "assets/questions/q_sci_phy_free_fall_101_xt_graph_096.png",
+    "solution": "1. **觀念說明與公式導引**：\n   - 不計空氣阻力時，玻璃珠由靜止釋放，屬於**自由落體運動**（加速度為重力加速度 g ≈ 9.8 m/s²）。\n   - 以樓頂為參考點，代表起始位置 x₀ = 0；以向下為正方向，其位置與時間公式為：x = v₀t + (1/2)gt² = (1/2)gt²（因初速 v₀ = 0）。\n2. **圖形特徵判定**：\n   - **起始點**：t = 0 時，x = 0，圖形必須過原點 (0,0)。\n   - **斜率變化**：x-t 圖的「切線斜率」代表「瞬間速度」。自由落體下落時速度越來越快（v = gt），故切線斜率必須隨時間 t 增加而**逐漸變陡**。\n3. **選項分析**：\n   - **(A) 正確**：曲線過原點，且開口朝上、斜率隨時間遞增（變陡），符合 x = (1/2)gt² 的等加速度下落特徵。\n   - **(B) 錯誤**：斜率隨時間變平緩，代表速度越來越慢（減速運動），不符合自由落體。\n   - **(C) 錯誤**：位置往負方向延伸，與題目「向下為正」設定不符。\n   - **(D) 錯誤**：起始位置不為零且為減速趨勢。\n\n故正確答案選 **(A)**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
@@ -3790,7 +3820,13 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v139') ||
+      stored = localStorage.getItem('miley_wrong_questions_v145') ||
+               localStorage.getItem('miley_wrong_questions_v144') ||
+               localStorage.getItem('miley_wrong_questions_v143') ||
+               localStorage.getItem('miley_wrong_questions_v142') ||
+               localStorage.getItem('miley_wrong_questions_v141') ||
+               localStorage.getItem('miley_wrong_questions_v140') ||
+               localStorage.getItem('miley_wrong_questions_v139') ||
                localStorage.getItem('miley_wrong_questions_v138') ||
                localStorage.getItem('miley_wrong_questions_v137') ||
                localStorage.getItem('miley_wrong_questions_v136') ||
