@@ -3,10 +3,100 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v146';
+const STORAGE_KEY = 'miley_wrong_questions_v147';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_sci_phy_four_cars_vt_graph_097",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "速度時間圖（v-t 圖）運動方向與距離變化：位移即面積，速度差造成距離隨時間遞增（111會考）",
+    "uploadDate": "2026-09-27",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：v-t 圖車輛距離判讀破題關鍵！t = 0 時同位置，v-t 圖曲線下方面積代表「位移」。(A) 甲乙兩車速度不同（甲正速、乙靜止），兩者距離隨時間變大；(B) 丙丁兩車速度不同，距離變大；(C) 甲丙方向相反（甲往正、丙往負），距離越來越遠；(D) 乙靜止（v = 0），丁往負方向加速，兩車距離必越來越遠！",
+    "stem": "在筆直的道路上有甲、乙、丙、丁四輛車，右圖為四車的速度（v）與時間（t）關係圖。若 t = 0 秒時，四車位於同一位置，則有關 t > 0 秒車輛間距離的敘述，下列何者正確？〔111.會考-25.〕\n\n○ (A) 甲、乙兩車的距離保持不變\n○ (B) 丙、丁兩車的距離保持不變\n○ (C) 甲、丙兩車的距離愈來愈近\n○ (D) 乙、丁兩車的距離愈來愈遠",
+    "answer": "(D) 乙、丁兩車的距離愈來愈遠",
+    "diagramUrl": "assets/questions/q_sci_phy_four_cars_vt_graph_097.png",
+    "solution": "1. **(D) 正確**：乙車速度 v = 0（保持靜止於原點），丁車速度為負值且絕對值隨時間增加（往負方向作等加速度運動）。由於兩車運動狀態不同，丁車不斷遠離原點，因此乙、丁兩車的距離必**愈來愈遠**。\n2. **(A) 錯誤**：甲車作正方向等速度運動，乙車靜止。甲車位置隨時間向正方向延伸，兩車距離**愈來愈遠**（非保持不變）。\n3. **(B) 錯誤**：丙車初速為 0 往負方向加速，丁車有初速且往負方向加速。兩車速度不相等（丁車速比丙車快），故兩車距離**愈來愈遠**（非保持不變）。\n4. **(C) 錯誤**：甲車往正方向前進，丙車往負方向前進，兩車向相反方向背道而馳，距離**愈來愈遠**（非愈來愈近）。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-27",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_phy_xt_graph_instant_vs_avg_speed_098",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "x-t 圖切線斜率（瞬間速度）與割線斜率（平均速度）：減速運動中 v₁ > v > v₂ 比較關係",
+    "uploadDate": "2026-09-27",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：x-t 圖瞬間速度與平均速度比較重點！x-t 圖切線斜率 = 瞬間速度；兩點連線割線斜率 = 平均速度。此 x-t 圖為「曲線漸平緩」（減速運動），切線斜率隨時間遞減（v₁ > v₂）。平均速度 v 為該時間區間內的整體平均，大小必定介於最大瞬間速度與最小瞬間速度之間（v₁ > v > v₂）！",
+    "stem": "右圖是某物體沿直線運動的位置（x）與時間（t）關係圖，設 t₁ 時刻的速度為 v₁，t₂ 時刻的速度為 v₂，t₁～t₂ 間的平均速度為 v，則下列關係何者正確？\n\n○ (A) v₁ > v₂ > v\n○ (B) v > v₁ > v₂\n○ (C) v₁ > v > v₂\n○ (D) v₂ > v > v₁",
+    "answer": "(C) v₁ > v > v₂",
+    "diagramUrl": "assets/questions/q_sci_phy_xt_graph_instant_vs_avg_speed_098.png",
+    "solution": "1. **切線斜率與瞬間速度**：在 x-t 圖中，圖形切線斜率代表**瞬間速度**。由圖可知，曲線在 t₁ 處較陡峭（速度 v₁ 較大），而在 t₂ 處逐漸趨於平緩（速度 v₂ 較小），故瞬間速度大小關係為 **v₁ > v₂**。\n2. **割線斜率與平均速度**：t₁～t₂ 時間區間內的**平均速度 v** 為兩點連線（割線）之斜率 v = (X₂ - X₁)/(t₂ - t₁)。\n3. **數值比較判定**：由於物體作持續減速運動，平均速度 v 為這段時間內瞬間速度的整體平均，其值必定界於最大瞬間速度 v₁ 與最小瞬間速度 v₂ 之間，即 **v₁ > v > v₂**。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-27",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_phy_constant_acc_5s_10s_displacement_099",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "初速為零等加速度運動：v-t 圖面積代表位移、相似三角形面積比等於時間平方比（1:4）",
+    "uploadDate": "2026-09-27",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：初速為 0 等加速度運動公式與幾何圖解！位移公式 x = (1/2)a t²，位移與時間平方成正比（x ∝ t²）。時間由 5 秒增加為 10 秒（時間比 1:2），總位移比為 1² : 2² = 1 : 4！故 10 秒末距離出發點 = 25 × 4 = 100 公尺！注意題目問「再經過 5 秒後距離出發點」，即開車起算第 10 秒末之總位移。",
+    "stem": "某一靜止的物體，受一定力作用後，作等加速度運動，已知在啟動後第 5 秒末的瞬間，物體已距出發點 25 公尺，則再經過 5 秒後，物體應距出發點多少距離？\n\n○ (A) 25 公尺\n○ (B) 50 公尺\n○ (C) 75 公尺\n○ (D) 100 公尺",
+    "answer": "(D) 100 公尺",
+    "diagramUrl": "assets/questions/q_sci_phy_constant_acc_5s_10s_displacement_099.png",
+    "solution": "1. **觀念說明與公式比率**：\n   - 物體由靜止（v₀ = 0）受定力作用，作**等加速度運動**（加速度 a 為定值）。\n   - 由位移公式 x = v₀t + (1/2)at² = (1/2)at²，可知位移與時間平方成正比（**x ∝ t²**）。\n2. **時間與位移比例計算**：\n   - 啟動後 5 秒末位移：x₅ = 25 公尺。\n   - 「再經過 5 秒後」代表總時間 t = 5 + 5 = 10 秒。\n   - 時間比為 5 : 10 = 1 : 2，故 10 秒末與 5 秒末的位移比為：\n     x₁₀ / x₅ = (10 / 5)² = 2² = 4\n   - 總位移 x₁₀ = 25 × 4 = **100 公尺**。\n3. **v-t 圖幾何面積法驗證**：\n   - v-t 圖中圖形與時間軸所圍三角形面積代表位移。\n   - t = 5 秒與 t = 10 秒形成的兩個三角形為**相似三角形**，對應邊長比為 1 : 2，故面積比（位移比）為 1² : 2² = 1 : 4，同樣求得 10 秒末位移為 25 × 4 = 100 公尺。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-27",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_sci_phy_ming_hua_xt_graph_095",
     "examPeriod": "一段",
@@ -3820,7 +3910,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v145') ||
+      stored = localStorage.getItem('miley_wrong_questions_v146') ||
+               localStorage.getItem('miley_wrong_questions_v145') ||
                localStorage.getItem('miley_wrong_questions_v144') ||
                localStorage.getItem('miley_wrong_questions_v143') ||
                localStorage.getItem('miley_wrong_questions_v142') ||
