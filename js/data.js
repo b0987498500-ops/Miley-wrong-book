@@ -3,10 +3,70 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v148';
+const STORAGE_KEY = 'miley_wrong_questions_v149';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_sci_phy_vertical_throw_vt_graph_options_101",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "鉛直上拋運動與 v-t 圖：向上為正則重力加速度 a = -9.8 m/s²（切線斜率為 -9.8）（110會考）",
+    "uploadDate": "2026-09-27",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：鉛直上拋 v-t 圖斜率破題關鍵！上拋運動中只受重力作用，加速度大小為 g = 9.8 m/s²。題目規定「向上為正、向下為負」，因重力向下，加速度必為 a = -9.8 m/s²。在 v-t 圖中斜率代表加速度，因此傾斜直線的斜率必須等於 -9.8！若初速 v₀ = 9.8 m/s，減速到最高點（v = 0）所需時間為 Δt = 0 - 9.8 / -9.8 = 1 秒！故選 (B)。",
+    "stem": "將一顆球鉛直上拋，球上升一段高度後便向下墜落。已知此地的重力加速度為 9.8 m/s²，若不計空氣阻力的影響，速度方向以鉛直向上為正、鉛直向下為負。下列選項中，哪一個最可能是此球運動過程的速度（v）與時間（t）關係圖？〔110.會考-43.〕\n\n○ (A) 圖 (A)：初速 9.8 m/s 且 9.8 秒末速度減為 0 的直線\n○ (B) 圖 (B)：初速 9.8 m/s 且 1 秒末速度減為 0 的直線\n○ (C) 圖 (C)：初速 0 且前 2 秒速度增加至 9.8 m/s 的折線\n○ (D) 圖 (D)：開口朝下的二次拋物線",
+    "answer": "(B) 圖 (B)：初速 9.8 m/s 且 1 秒末速度減為 0 的直線",
+    "diagramUrl": "assets/questions/q_sci_phy_vertical_throw_vt_graph_options_101.png",
+    "solution": "1. **加速度與斜率關係**：\n   - 鉛直上拋過程中僅受重力作用，作**等加速度運動**（加速度 a 為定值）。\n   - 規定「鉛直向上為正」，而重力方向向下，故加速度為 **a = -9.8 m/s²**。\n   - 在 v-t 圖中，直線的斜率代表加速度，故 v-t 圖必須為一斜率等於 -9.8 的向下傾斜直線。\n2. **選項斜率與物理意義檢驗**：\n   - **(A) 錯誤**：圖中 t = 9.8 秒時 v = 0，斜率 Slope = (0 - 9.8) / 9.8 = -1 m/s²，加速度大小不符。\n   - **(B) 正確**：圖中 t = 1 秒時 v = 0，斜率 Slope = (0 - 9.8) / 1 = -9.8 m/s²，完全符合重力加速度 a = -9.8 m/s² 的物理規律。\n   - **(C) 錯誤**：圖形初速為 0 且先加速後減速，不符合上拋初始具有向上速度的過程。\n   - **(D) 錯誤**：v-t 圖為曲線（斜率非常數），代表加速度隨時間改變，不符合重力加速度為常數之規律。\n\n故正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-27",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_phy_cart_east_west_avg_acc_102",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "平均加速度計算與方向判定：a = (v₂ - v₁) / Δt，方向相反時初速末速正負號設定（109會考補）",
+    "uploadDate": "2026-09-27",
+    "mondayDate": "2026-09-21",
+    "mondayDates": [
+      "2026-09-21"
+    ],
+    "weekLabel": "2026-09-21 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：平均加速度正負號與方向算術重點！平均加速度公式 a = (v_末 - v_初) / Δt。必須先定方向！若規定向東為正（+），向西為負（-）：初速 v_初 = +5 m/s，末速 v_末 = -10 m/s。計算得 a = (-10 - (+5)) / 5 = -15 / 5 = -3 m/s²！負號即代表方向向西！千萬不可誤算為 (-10 - 5) 漏看正負號。",
+    "stem": "一滑車作直線運動，在時間 t = 0s 時的速度為 5m/s，方向向東；t = 5s 時的速度為 10m/s，方向向西，則此滑車在 t = 0～5s 期間的平均加速度為下列何者？〔109.會考（補）-40.〕\n\n○ (A) 1m/s²，方向向東\n○ (B) 1m/s²，方向向西\n○ (C) 3m/s²，方向向東\n○ (D) 3m/s²，方向向西",
+    "answer": "(D) 3m/s²，方向向西",
+    "diagramUrl": "",
+    "solution": "1. **方向設定與數值表示**：\n   - 規定以「向東」為正方向（+），以「向西」為負方向（-）。\n   - 起始時刻 t₁ = 0s 之初速度：v₁ = +5 m/s。\n   - 結束時刻 t₂ = 5s 之末速度：v₂ = -10 m/s。\n2. **平均加速度公式計算**：\n   - 時間間隔 Δt = 5 - 0 = 5 秒。\n   - 代入平均加速度定義公式：\n     a = (v₂ - v₁) / Δt = (-10 - (+5)) / 5 = -15 / 5 = -3 m/s²。\n3. **結果判讀**：\n   - 計算結果大小為 **3 m/s²**。\n   - 負號（-）代表方向與正方向（向東）相反，即**方向向西**。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-27",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_sci_phy_tingting_vt_graph_avg_acc_west_100",
     "examPeriod": "一段",
@@ -3940,7 +4000,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v147') ||
+      stored = localStorage.getItem('miley_wrong_questions_v148') ||
+               localStorage.getItem('miley_wrong_questions_v147') ||
                localStorage.getItem('miley_wrong_questions_v146') ||
                localStorage.getItem('miley_wrong_questions_v145') ||
                localStorage.getItem('miley_wrong_questions_v144') ||
