@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v149';
+const STORAGE_KEY = 'miley_wrong_questions_v150';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_sci_phy_buoyancy_terminal_velocity_drag_103",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "浮力與等速度運動合力平衡：向下重力 = 向上浮力 + 向上阻力",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：流體阻力與等速度運動破題關鍵！下沉物體達到「等速度」時，代表受到的「合力 = 0」！物體向下受到重力（60 公克重），向上受有水的浮力（20 公克重）。因向下力大於向上浮力，若沒有阻力物體會加速下沉；而「等速度下沉」說明必有方向向上的水阻力來抵消淨力，故：向下重力（60 公克重） = 向上浮力（20 公克重） + 向上阻力，解得阻力 = 40 公克重！切勿遺漏浮力的向上作用。",
+    "stem": "若將一體積 20 立方公分，密度 3 公克／立方公分的物體丟入游泳池中，下沉的過程中，最後保持等速度下沉，試問在等速度下沉的過程中，該物體所受的阻力大小為何？\n\n○ (A) 10 公克重\n○ (B) 20 公克重\n○ (C) 40 公克重\n○ (D) 60 公克重",
+    "answer": "(C) 40 公克重",
+    "diagramUrl": "",
+    "solution": "1. **計算物體總重量（向下力）**：\n   - 物體質量（重量） = 體積 × 密度 = 20 立方公分 × 3 公克／立方公分 = 60 公克重（向下）。\n2. **計算水的浮力（向上力）**：\n   - 物體完全沒入水中，排開水體積等於物體體積（20 立方公分）。\n   - 依據阿基米德原理，浮力 = 排開液體重 = 20 立方公分 × 1 公克／立方公分 = 20 公克重（向上）。\n3. **利用等速度運動判定合力為零**：\n   - 物體作「等速度下沉」，表示所受合力為 0（牛頓第一運動定律）。\n   - 向下總力 = 向上總力。\n   - 向下重力（60 公克重） = 向上浮力（20 公克重） + 向上阻力。\n   - 解得阻力 = 60 - 20 = 40 公克重（方向向上）。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_sci_phy_vertical_throw_vt_graph_options_101",
     "examPeriod": "一段",
@@ -4000,7 +4030,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v148') ||
+      stored = localStorage.getItem('miley_wrong_questions_v149') ||
+               localStorage.getItem('miley_wrong_questions_v148') ||
                localStorage.getItem('miley_wrong_questions_v147') ||
                localStorage.getItem('miley_wrong_questions_v146') ||
                localStorage.getItem('miley_wrong_questions_v145') ||
