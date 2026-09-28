@@ -3,10 +3,130 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v159';
+const STORAGE_KEY = 'miley_wrong_questions_v160';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_north_sea_oil_field_uk_norway_112",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐洲資源與海域位置：北海（乙）油田開發使英國、挪威、丹麥獲得龐大原油收入與石化動力",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：歐洲海域與石油資源破題關鍵！1960年代在【(乙)北海】發現豐富油氣資源，使周邊鄰國如英國、挪威、丹麥獲得龐大原油收入與石化動力！附圖海域對照：【甲為大西洋】（英國以西）、【丙為波羅的海】（瑞典與芬蘭包圍）、【丁為北極海】（高緯極圈海域）。",
+    "stem": "1960年代在附圖何處發掘到油田，帶來豐厚的原油收入，使周遭享有開採權的英國、丹麥、挪威等國經濟獲得幫助，同時也滿足工業所需動力、有利推動石化工業發展，成為重要能源供應地？\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁。",
+    "answer": "(B) 乙",
+    "diagramUrl": "assets/questions/soc_geo_north_sea_oil_map.png",
+    "solution": "1. **關鍵線索分析**：\n   - 題目提及「1960年代發掘油田」、「英國、丹麥、挪威等國享有開採權」、「石化工業發展與重要能源供應地」。\n   - 上述國家皆環繞**北海**，北海海底蘊藏豐富的石油與天然氣（北海油田），使英國與挪威躍升為歐洲重要產油國。\n2. **地圖代號對照**：\n   - **(A) 甲**：大西洋（位於英國西側、歐洲大陸西方）。\n   - **(B) 乙**：**北海**（位於大不列顛島與斯堪地那維亞半島之間，為主要油田發掘地）。\n   - **(C) 丙**：波羅的海（位於北歐斯堪地那維亞半島與波羅的海三小國之間）。\n   - **(D) 丁**：北極海（位於高緯度極圈以北海域）。\n\n故正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_nordic_coniferous_forest_ikea_112",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "北歐自然植被與產業發展：芬蘭與瑞典位居高緯度鄰近北極圈，分布廣大的針葉林（甲）提供木材原料",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：北歐特色產業與自然植被破題關鍵！芬蘭林業造紙與瑞典 IKEA 木製家具發達，主因兩國位於高緯度副極地區，蘊藏廣大的【(甲)針葉林】（泰加林 Taiga）資源！對照剖面圖：【甲為副極地針葉林】（苔原以南）、【乙/丙為溫帶落葉闊葉林/地中海灌木】、【丁為熱帶雨林】（靠近赤道）。",
+    "stem": "芬蘭的林業、造紙業發達，瑞典的 IKEA 木製家具亦聞名全球，依照兩國的位置判斷，此區域的天然植物應是下列何種類型，為上述產業提供原料？\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁。",
+    "answer": "(A) 甲",
+    "diagramUrl": "assets/questions/soc_geo_latitude_vegetation_profile.png",
+    "solution": "1. **地理位置與氣候植被推論**：\n   - 芬蘭與瑞典位居北歐高緯度地區，大部分土地鄰近或深入北極圈，氣候屬於**副極地氣候**。\n   - 在苔原景觀以南的高緯度地帶，天然植被以廣大連綿的**針葉林**（如雲杉、冷杉、松樹）為主。\n2. **產業連結與圖表代號**：\n   - 針葉林木質適合造紙與家具製造，為芬蘭林業與瑞典 IKEA 提供穩定豐沛的林木原料。\n   - 對照緯度植物剖面圖：\n     - **(A) 甲**：**副極地針葉林**（位於苔原與冰帽南方高緯度區）。\n     - **(B) 乙 / (C) 丙**：溫帶落葉闊葉林 / 地中海灌木林。\n     - **(D) 丁**：熱帶雨林（位於低緯赤道附近）。\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_iceland_geothermal_aluminum_smelting_112",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "北歐國家與能源特色：冰島（甲）位於中洋脊板塊交界帶，地熱資源極豐富，發展低成本煉鋁業",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：北歐國家地熱與高耗能煉鋁工業秒殺關鍵！【(甲)冰島】位於中洋脊板塊張裂交界帶，火山與【地熱資源】極為豐富，提供極低廉且潔淨的電力，因而吸引需要大量電力的高耗能「煉鋁工業」設廠！附圖北歐國家對照：【甲為冰島】、【乙為挪威】、【丙為瑞典】、【丁為芬蘭】。",
+    "stem": "煉鋁工業需要消耗大量的能源，因此煉鋁廠多設在能源充足且動力低廉的地區，如北歐某國因擁有豐富的地熱能源，該國便利用此優勢發展煉鋁產業。請問：上述應為附圖中哪個國家？\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁。",
+    "answer": "(A) 甲",
+    "diagramUrl": "assets/questions/soc_geo_nordic_countries_map.png",
+    "solution": "1. **關鍵地緣與工業特色分析**：\n   - 煉鋁工業屬於「動力導向」產業，電費佔生產成本極高比例，故煉鋁廠必設於電力電力廉價地區。\n   - **冰島（甲）**坐落於大西洋中洋脊板塊張裂邊界，火山地熱活動極其頻繁，地熱發電與水力發電價格低廉且環境友善，成功吸引外資設立煉鋁廠。\n2. **地圖代號對照**：\n   - **(A) 甲**：**冰島**（大西洋西北部的火山地熱島國）。\n   - **(B) 乙**：挪威（斯堪地那維亞半島西側，以峽灣與水力、石油為主）。\n   - **(C) 丙**：瑞典（斯堪地那維亞半島東側，以鐵礦與森林為主）。\n   - **(D) 丁**：芬蘭（波羅的海東側，以千湖與林業為主）。\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_scandinavian_peninsula_glacial_landforms_112",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐洲三大半島與北歐地形主體：斯堪地那維亞半島曾為大陸冰河中心，留有大量冰蝕湖與U型谷（峽灣）",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：歐洲重要半島與冰河地形破題關鍵！【斯堪地那維亞半島】為北歐面積最大的半島地形主體（挪威與瑞典所在地）。古紀第四紀冰期時為大陸冰河覆蓋中心，地表經冰河強烈刨蝕留下廣大的冰蝕湖與兩側深峻的【U型谷（峽灣）】。切記：伊比利半島（西歐/南歐）、義大利半島（南歐）、巴爾幹半島（東南歐）。",
+    "stem": "「這個半島是北歐的地形主體，曾經是大陸冰河的中心，冰河消退以後在地表留下許多冰河地形，如冰蝕湖、U型谷等。」上文所述的半島最可能為下列何者？\n\n○ (A) 義大利半島\n○ (B) 伊比利半島\n○ (C) 巴爾幹半島\n○ (D) 斯堪地那維亞半島。",
+    "answer": "(D) 斯堪地那維亞半島",
+    "diagramUrl": "",
+    "solution": "1. **特徵與地形分析**：\n   - **地理位置**：位於北歐，包含挪威與瑞典，為北歐面積最大的地形主體。\n   - **冰河地形**：第四紀冰期時為歐洲大陸冰河的擴散中心，冰河退縮後留下了大量冰蝕窪地（冰蝕湖）以及海水入侵形成切壁陡峭的 U 型谷（峽灣地形）。\n2. **其他半島地理位置說明**：\n   - **(A) 義大利半島**：位於南歐地中海，呈靴子形狀。\n   - **(B) 伊比利半島**：位於西歐/南歐，包含西班牙與葡萄牙。\n   - **(C) 巴爾幹半島**：位於東南歐，地形崎嶇多山。\n   - **(D) 斯堪地那維亞半島**：**北歐地形主體**（正解）。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_geo_europe_location_world_map_112",
     "examPeriod": "一段",
@@ -4450,7 +4570,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v158') ||
+      stored = localStorage.getItem('miley_wrong_questions_v159') ||
+               localStorage.getItem('miley_wrong_questions_v158') ||
                localStorage.getItem('miley_wrong_questions_v157') ||
                localStorage.getItem('miley_wrong_questions_v156') ||
                localStorage.getItem('miley_wrong_questions_v155') ||
