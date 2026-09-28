@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v155';
+const STORAGE_KEY = 'miley_wrong_questions_v156';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_sci_bio_rice_aroma_genotype_104_cap_110",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "孟德爾遺傳法則與顯隱性基因型推論：無香味(親代)生出有香味(子代)，有香味為隱性(aa)，親代必為異型合子(Aa)",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：遺傳顯隱性判斷經典破題口訣【無中生有為隱性】！無香味親代（甲、乙）交配，竟然生出有香味子代（丁），說明「有香味」性狀在親代被隱藏，故「有香味為隱性（基因型 aa）」，而「無香味為顯性（基因型包含 A）」。親代甲、乙各提供一個隱性基因 a 給丁，故甲與乙基因型必皆為異型合子 Aa！子代丙不具香味（顯性），其基因型可能為同型合子 AA 或異型合子 Aa，故【丙的基因型無法確定】！",
+    "stem": "已知水稻中某種特殊香味的性狀是由一對等位基因所控制，包含具此香味和不具此香味兩種特徵。某研究人員將皆不具此香味的水稻甲和乙進行授粉，其子代水稻丙不具此香味，而子代水稻丁具有此香味。在不考慮突變的情況下，根據遺傳法則推測水稻甲、乙、丙及丁的基因型，下列何者無法確定？〔104.會考〕\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁。",
+    "answer": "(C) 丙",
+    "diagramUrl": "",
+    "solution": "1. **判斷顯隱性性狀（口訣：無中生有為隱性）**：\n   - 親代甲和乙皆「不具香味」（顯性表徵），但其子代丁卻「具有香味」（隱性表徵）。\n   - 由此可判定：「不具香味」為顯性性狀（設顯性基因型為 A），「具香味」為隱性性狀（設隱性基因型為 a）。\n2. **推導親代（甲、乙）與子代（丁）基因型**：\n   - **子代丁（具香味，隱性）**：基因型必為同型合子 **aa**。\n   - 丁的兩個 a 基因分別來自親代甲與乙，且甲與乙表現為顯性（不具香味），故**甲、乙基因型必皆為 Aa**（皆可確定）。\n3. **推導子代丙基因型**：\n   - **子代丙（不具香味，顯性）**：由親代甲（Aa）與乙（Aa）交配（Aa × Aa → AA : Aa : aa = 1 : 2 : 1），表現為顯性的丙，其基因型**可能為 AA 或 Aa**。\n   - 因此，**水稻丙的基因型無法唯一確定**。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_sci_bio_water_cycle_residence_ocean_109",
     "examPeriod": "一段",
@@ -4210,7 +4240,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v154') ||
+      stored = localStorage.getItem('miley_wrong_questions_v155') ||
+               localStorage.getItem('miley_wrong_questions_v154') ||
                localStorage.getItem('miley_wrong_questions_v153') ||
                localStorage.getItem('miley_wrong_questions_v152') ||
                localStorage.getItem('miley_wrong_questions_v151') ||
