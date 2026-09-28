@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v152';
+const STORAGE_KEY = 'miley_wrong_questions_v153';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_sci_bio_sea_salinity_evaporation_precipitation_106",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "海水鹽度影響因素：蒸發量與降水量之比值（蒸發量 > 降水量 則鹽度偏高；降水量 > 蒸发量 則鹽度偏低）",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：海水鹽度高低判定關鍵！海水鹽度決定於「蒸發量」與「降水量（及淡水注入）」的相對大小！當【蒸發量 > 降水量】（如副熱帶海域、地中海、死海），純水蒸發帶走水分，鹽分留存，海水濃度與鹽度偏【高】；反之，當【降水量 > 蒸發量】（如赤道對流旺盛降雨區），淡水降雨稀釋海水，海水鹽度偏【低】！",
+    "stem": "海水中所佔的鹽類會隨著各海域的蒸發量與降水量而改變：\n\n(1) 副熱帶海域、地中海、死海其海水蒸發量____於降水量（填大或小），鹽度較____。（填高或低）\n(2) 赤道海域之降水量____於海水蒸發量（填大或小），鹽度較____。（填高或低）",
+    "answer": "(1) 大、高；(2) 大、低",
+    "diagramUrl": "",
+    "solution": "1. **副熱帶海域、地中海、死海**：\n   - 此類海域氣候乾旱少雨、太陽輻射強，海水**蒸發量【大】於降水量**。\n   - 大量純水蒸發進入大氣，而鹽分留在海水中，導致海水鹽度偏【高】（死海更因極度蒸發成為高鹽度鹽湖）。\n2. **赤道海域**：\n   - 赤道地區氣流對流旺盛，午後常有降雨，**降水量【大】於海水蒸發量**。\n   - 大量淡水降雨稀釋了海水濃度，使得赤道海域的海水鹽度偏【低】。\n\n故正確填空為：(1) **大、高**；(2) **大、低**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_sci_bio_glacier_meltwater_source_105",
     "examPeriod": "一段",
@@ -4090,7 +4120,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v151') ||
+      stored = localStorage.getItem('miley_wrong_questions_v152') ||
+               localStorage.getItem('miley_wrong_questions_v151') ||
                localStorage.getItem('miley_wrong_questions_v150') ||
                localStorage.getItem('miley_wrong_questions_v149') ||
                localStorage.getItem('miley_wrong_questions_v148') ||
