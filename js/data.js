@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v150';
+const STORAGE_KEY = 'miley_wrong_questions_v151';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_sci_bio_earth_water_distribution_104",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "地球水資源分布與水循環：鹹水（海水）約佔 97.5%，淡水僅佔 2.5% 非平均分布",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：地球水資源分布破題關鍵！地球被稱為水球，但總水量中約有 97.5% 為鹹水（海水），淡水僅約佔 2.5%（且淡水中絕大部分為難以直接利用的冰川與深層地下水）。因此水資源絕非「平均分布於淡水及海水中」！人類常利用的淡水資源主要是地下水、河流與湖泊。",
+    "stem": "關於地球上的水，下列敘述何者錯誤？\n\n○ (A) 地球上的水平均分布於淡水及海水中\n○ (B) 在自然界中，水可以氣態、液態或固態存在\n○ (C) 水資源藉由水循環而重新分配與再利用\n○ (D) 地下水是人類常利用的水資源。",
+    "answer": "(A) 地球上的水平均分布於淡水及海水中",
+    "diagramUrl": "",
+    "solution": "1. **選項 (A) 錯誤（符合題意）**：\n   - 地球上的水資源中，海洋（海水）約佔了全地球總水量的 97.5%，淡水僅佔約 2.5%。\n   - 淡水與海水的比例極度懸殊，並非「平均分布」。\n2. **選項 (B) 正確**：\n   - 水在自然環境的常溫常壓下，可以同時以氣態（水蒸氣）、液態（雨水、河水、海水）與固態（冰川、積雪、霜）三種狀態存在。\n3. **選項 (C) 正確**：\n   - 太陽輻射推動水循環（蒸發、蒸散、凝結、降水、逕流），使水資源得以在陸地、海洋與大氣之間持續重新分配與循環再利用。\n4. **選項 (D) 正確**：\n   - 淡水資源中，除了封存在兩極與高山的冰川外，地下水與地表水（河流、湖泊）是人類最常開採與利用的水資源。\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_sci_phy_buoyancy_terminal_velocity_drag_103",
     "examPeriod": "一段",
@@ -4030,7 +4060,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v149') ||
+      stored = localStorage.getItem('miley_wrong_questions_v150') ||
+               localStorage.getItem('miley_wrong_questions_v149') ||
                localStorage.getItem('miley_wrong_questions_v148') ||
                localStorage.getItem('miley_wrong_questions_v147') ||
                localStorage.getItem('miley_wrong_questions_v146') ||
