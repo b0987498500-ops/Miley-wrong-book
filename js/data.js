@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v156';
+const STORAGE_KEY = 'miley_wrong_questions_v157';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_sci_bio_achondroplasia_genotype_112_cap_111",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "體染色體顯性遺傳與新發突變：單一突變基因(F)即致病，父母皆未患病（正常型 ff），阿佑個體精卵或胚胎突變(Ff)",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：顯性遺傳疾病與個體新發突變破題關鍵！「若親代僅一方患病子代即有 50% 以上罹病率」說明該病為【體染色體顯性遺傳】（只要有 1 個顯性突變基因 F 即患病，正常人基因型必為隱性同型合子 ff）。題目特別強調「阿佑父母皆未患病」，代表父母二人皆不帶致病基因 F，故父母基因型必皆為【父：ff、母：ff】！阿佑是生殖細胞或胚胎發育時「自行發生新發突變（New Mutation）」才患病（Ff）。",
+    "stem": "軟骨發育不全症是體染色體中 FGFR3 基因發生突變所造成，患者具有身材矮小、四肢短小變形等特徵，若親代只有其中一方為患者，子代就會有 50% 以上的罹病率。已知阿佑因發生突變而患有軟骨發育不全症，但其父母皆未患病，若以 F 代表突變的 FGFR3 遺傳因子，f 代表正常的 FGFR3 遺傳因子，則關於阿佑父母基因型的推論，下列何者最合理？〔112.會考〕\n\n○ (A) 父：Ff、母：Ff\n○ (B) 父：Ff、母：ff\n○ (C) 父：FF、母：FF\n○ (D) 父：ff、母：ff。",
+    "answer": "(D) 父：ff、母：ff。",
+    "diagramUrl": "",
+    "solution": "1. **判斷疾病為顯性或隱性遺傳**：\n   - 題幹指出：「若親代只有其中一方為患者（Ff），子代就有 50% 以上罹病率（Ff × ff → Ff : ff = 1 : 1）」。\n   - 這說明只需要獲得 1 個突變基因 **F** 即會發病，故軟骨發育不全症屬於**體染色體顯性遺傳疾病**。\n2. **判定父母基因型**：\n   - 顯性基因 **F** 代表患病，隱性基因 **f** 代表正常。\n   - 正常未患病者的基因型必定為隱性純合子 **ff**（若帶有 F 基因就一定會發病）。\n   - 題目明確說明「阿佑的父母皆未患病」，故父母兩人皆不帶有突變基因 F，**父親與母親的基因型皆為 ff**。\n3. **阿佑罹病原因**：\n   - 阿佑是在父母皆為正常 ff 的情況下，因為精子、卵子形成或受精卵發育時**自身發生了 DNA 新發突變（New Mutation）**而帶有 F 基因（基因型變為 Ff），進而發病。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_sci_bio_rice_aroma_genotype_104_cap_110",
     "examPeriod": "一段",
@@ -4240,7 +4270,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v155') ||
+      stored = localStorage.getItem('miley_wrong_questions_v156') ||
+               localStorage.getItem('miley_wrong_questions_v155') ||
                localStorage.getItem('miley_wrong_questions_v154') ||
                localStorage.getItem('miley_wrong_questions_v153') ||
                localStorage.getItem('miley_wrong_questions_v152') ||
