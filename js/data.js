@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v153';
+const STORAGE_KEY = 'miley_wrong_questions_v154';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_sci_bio_glacier_characteristics_107",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "冰川特性與水資源：高山內陸主要水源、參與水循環、融化恐導致水患與水源匱乏",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：冰川水資源與全球暖化破題關鍵！冰川雖為固態冰雪，但夏季融化（融雪水）是高山與內陸地區最重要的淡水來源（(D) 正確）；冰川也是水循環（固態水）的一環；全球暖化導致冰川大量融化，短期內會引發海平面上升與洪水水患，長期更會因冰川枯竭消失而導致嚴重的水資源匱乏（非增加淡水資源）！",
+    "stem": "關於冰川的敘述，下列何者正確？\n\n○ (A) 冰川是固體，人類無法利用\n○ (B) 冰川不會參與水循環\n○ (C) 全球暖化，冰川大量融化，大量增加淡水資源\n○ (D) 是內陸及高山地區的主要水源。",
+    "answer": "(D) 是內陸及高山地區的主要水源。",
+    "diagramUrl": "",
+    "solution": "1. **(D) 正確**：高山與乾旱內陸地區降雨稀少，夏季高山冰川與積雪融化（融雪水）匯入河流或滲入地下，是當地人類與生態最主要的淡水來源。\n2. **(A) 錯誤**：冰川融化後的水（融雪水）可直接被人類飲用、灌溉與利用。\n3. **(B) 錯誤**：水循環涵蓋水的固態（冰雪、冰川）、液態（雨水、河水、海洋）與氣態（水蒸氣），冰川亦持續進行昇華、融化與降雪補充，深度參與水循環。\n4. **(C) 錯誤**：全球暖化加速冰川融化，短期內會引發暴漲洪水與海平面上升（淡水流入海洋變成鹹水）；長期來看冰川儲藏量枯竭消失後，將導致嚴重的水資源匱乏，無法「大量增加淡水資源」。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_sci_bio_sea_salinity_evaporation_precipitation_106",
     "examPeriod": "一段",
@@ -4120,7 +4150,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v152') ||
+      stored = localStorage.getItem('miley_wrong_questions_v153') ||
+               localStorage.getItem('miley_wrong_questions_v152') ||
                localStorage.getItem('miley_wrong_questions_v151') ||
                localStorage.getItem('miley_wrong_questions_v150') ||
                localStorage.getItem('miley_wrong_questions_v149') ||
