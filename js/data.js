@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v151';
+const STORAGE_KEY = 'miley_wrong_questions_v152';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_sci_bio_glacier_meltwater_source_105",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "冰川地區水源補充：夏季冰雪融化為補充河水與地下水之主要水源",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：高山與高緯度冰川地區水源補給關鍵！在氣溫極低的冰川地區，降水主要以降雪形態累積形成冰川。到了夏季氣溫回升時，冰雪大量融化（融雪水），成為下方河流、湖泊與滲入地底補充地下水的最主要水源！千萬別誤選雨水或海水。",
+    "stem": "在冰川地區何者是補充河水、地下水的重要來源？\n\n○ (A) 雨水\n○ (B) 冰雪\n○ (C) 海水\n○ (D) 湖水。",
+    "answer": "(B) 冰雪",
+    "diagramUrl": "",
+    "solution": "1. **觀念解析**：\n   - 在高山或極地等冰川分佈地區，氣溫長年偏低，主要降水型態為降雪，積雪經長期壓縮形成冰川。\n   - 當夏季氣溫稍微回升時，高山冰雪融化（融雪水）沿山谷流下，成為該地區補充河流逕流與滲入地下補充地下水的最重要水資源來源。\n2. **選項比較**：\n   - **(A) 雨水**：冰川地區降水多以「雪」的形式呈現，降雨比例極少。\n   - **(B) 冰雪（正確）**：冰雪融水為冰川地區補給地表水（河水）與地下水的主要來源。\n   - **(C) 海水**：海水為鹹水，且位於海洋，無法直接補給內陸高山或陸地上的淡水河水與地下水。\n   - **(D) 湖水**：湖水本身亦常依賴冰雪融水來補充，非最源頭的補給來源。\n\n故正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_sci_bio_earth_water_distribution_104",
     "examPeriod": "一段",
@@ -4060,7 +4090,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v150') ||
+      stored = localStorage.getItem('miley_wrong_questions_v151') ||
+               localStorage.getItem('miley_wrong_questions_v150') ||
                localStorage.getItem('miley_wrong_questions_v149') ||
                localStorage.getItem('miley_wrong_questions_v148') ||
                localStorage.getItem('miley_wrong_questions_v147') ||
