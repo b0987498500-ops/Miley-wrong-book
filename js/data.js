@@ -3,10 +3,160 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v158';
+const STORAGE_KEY = 'miley_wrong_questions_v159';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_europe_location_world_map_112",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐洲地理位置與環境特徵：位於歐亞大陸西北部、西臨大西洋，平原廣大氣候宜人，人口分布最為平均",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：各大洲位置與人口分布特徵破題關鍵！「位於歐亞大陸西北部、西臨大西洋、平原廣大且人口分布最平均」指的就是【(丁)歐洲】！附圖中：【甲為北美洲】（位於西半球北部）、【乙為中南美洲】（位於西半球南部）、【丙為非洲】（位於歐亞大陸南方、赤道橫貫）。",
+    "stem": "「這個大洲位於歐亞大陸西北部，西臨大西洋。由於位居中、高緯度區，氣候較為舒適宜人，且平原廣大，因自然環境適宜人居，成為全球人口分布最為平均的一洲。」上文所述的大洲應為附圖中何者？\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁。",
+    "answer": "(D) 丁",
+    "diagramUrl": "assets/questions/soc_geo_world_continents_map.png",
+    "solution": "1. **解析題幹特徵線索**：\n   - **地理位置**：位於歐亞大陸西北部、西臨大西洋。\n   - **氣候與地形**：中高緯度區，氣候舒適宜人（以溫帶海洋性與地中海型氣候為主），平原地形廣大（西歐平原、波德平原、歐俄平原）。\n   - **人口分布**：環境適宜人居，人口分布為七大洲中最均勻者。\n   - 綜合上述條件，可知題幹描述的大洲為**歐洲**。\n2. **對照地圖代號**：\n   - **(A) 甲**：北美洲（位於大西洋西側、西半球北部）。\n   - **(B) 乙**：中南美洲（位於北美洲南方）。\n   - **(C) 丙**：非洲（位於歐洲南方、大西洋東側）。\n   - **(D) 丁**：**歐洲**（位於歐亞大陸西北部、非洲以北）。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_switzerland_alps_mountains_112",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐洲地形與重要山脈位置：瑞士位於高山內陸國，鄰近「歐洲屋脊」阿爾卑斯山脈（丙）",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：歐洲四大山脈位置快速秒殺口訣！瑞士為內陸山國，坐落於稱為「歐洲屋脊」的【(丙)阿爾卑斯山脈】。附圖其他山脈對照：【甲為斯堪地那維亞山脈】（北歐瑞典/挪威）、【乙為庇里牛斯山脈】（西歐法國與南歐西班牙的界山）、【丁為喀爾巴阡山脈】（中東歐弧形山脈）。",
+    "stem": "今年寒假雅晴計畫報名參加瑞士滑雪學校的課程，瑞士是一個多山的內陸國，國境大部分位在「歐洲屋脊」之稱的高山區。請指出雅晴上課地點的滑雪場鄰近附圖哪一座山脈？\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁。",
+    "answer": "(C) 丙",
+    "diagramUrl": "assets/questions/soc_geo_europe_mountains_map.png",
+    "solution": "1. **關鍵線索分析**：\n   - 題目提及「瑞士」、「多山內陸國」、「歐洲屋脊」，指的正是橫跨西歐與南歐的**阿爾卑斯山脈**。\n   - 瑞士境內滑雪勝地（如馬特洪峰、少女峰）皆位於阿爾卑斯山區。\n2. **地圖代號詳細對照**：\n   - **(A) 甲**：斯堪地那維亞山脈（位於北歐斯堪地那維亞半島）。\n   - **(B) 乙**：庇里牛斯山脈（位於伊比利半島北緣，為法、西國界）。\n   - **(C) 丙**：**阿爾卑斯山脈**（位於中南歐，為瑞士、義大利、法國、奧地利等國交界之歐洲屋脊）。\n   - **(D) 丁**：喀爾巴阡山脈（位於中東歐地區）。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_europe_population_sparse_northern_112",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐洲人口分布例外區域：北歐因緯度高、氣候嚴寒寒冷，人口分布相對稀少",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：歐洲整體人口分布均勻，但【北歐】因位居高緯度、氣候嚴寒（極地/副極地氣候），自然環境較不適宜密集居住，是歐洲人口密度最稀少的區域。審題時留意：西歐平原廣且工業發達人口極為密集；東歐與南歐亦有人口分布，僅北歐受嚴寒氣候影響最顯著！",
+    "stem": "歐洲大部分位於溫帶地區，由於氣候溫暖，平原廣大，為人口分布最均勻的一洲，但是觀察其人口分布點子圖，仍有例外，某區較歐洲其他地區相對而言，人口較為稀少。請問：歐洲人口分布相對稀少的是下列哪個地區？\n\n○ (A) 東歐，因薪資較低\n○ (B) 西歐，因沙漠廣布\n○ (C) 南歐，因地形崎嶇\n○ (D) 北歐，因氣候較冷。",
+    "answer": "(D) 北歐，因氣候較冷",
+    "diagramUrl": "assets/questions/soc_geo_europe_mountains_map.png",
+    "solution": "1. **歐洲整體與區域人口分布**：\n   - 歐洲普遍受西風與溫帶海洋性氣候影響，地形低平，整體人口分布為全球七大洲中最為平均者。\n2. **例外區域分析**：\n   - **北歐地區**：大部分地區深入北極圈或高緯度區，冬天漫長且氣候嚴寒，土壤貧瘠，致使人口分布較其他分區顯著稀少。\n3. **其他選項錯誤原因**：\n   - **(A) 東歐**：人口密度雖不如西歐高，但地形為廣大平原，人口並不稀少，且薪資非氣候自然地理主因。\n   - **(B) 西歐**：西歐氣候溫暖濕潤、經濟發達，人口極為稠密，且歐洲完全無沙漠地形。\n   - **(C) 南歐**：雖多丘陵高山，但地中海沿岸人口仍相當密集。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_finland_thousand_lakes_glacial_112",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "北歐冰河地形與湖泊成因：芬蘭高緯度受冰河侵蝕形成窪地，積水而成「冰蝕湖」",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：芬蘭「千湖國」湖泊成因秒殺關鍵！北歐芬蘭在第4次冰期時被大陸冰河全境覆蓋，巨大的冰河下挖刨蝕形成許多窪地，冰河消融退縮後窪地積水成湖，稱為【冰蝕湖】。切記：火山活動形成火口湖（如長白山天池）；沙洲封閉海灣形成潟湖；斷層下陷形成斷層湖（如日月潭、貝加爾湖）。",
+    "stem": "據統計，北歐國家芬蘭內陸水域面積占國土總面積約 10%，境內湖泊約 18.8 萬個，此種特殊地理景觀令該國有「千湖國」稱號。若以成因分類，當地湖泊多屬於下列何種類型？\n\n○ (A) 潟湖\n○ (B) 火口湖\n○ (C) 冰蝕湖\n○ (D) 斷層湖。",
+    "answer": "(C) 冰蝕湖",
+    "diagramUrl": "",
+    "solution": "1. **芬蘭地理環境與「千湖國」成因**：\n   - 芬蘭位居北歐高緯度地區，古地塊地形發育早。\n   - 在第四紀體廣大的**大陸冰河**覆蓋全境，冰河滑動侵蝕（刨蝕）地表形成數以萬計的冰蝕窪地。\n   - 後續氣溫回升冰河消融，漥地積水成湖，形成廣布的**冰蝕湖**。\n2. **其他湖泊類型對照**：\n   - **(A) 潟湖**：海岸沙洲與陸地間被封閉的海水水域。\n   - **(B) 火口湖**：火山噴發後火口積水而成。\n   - **(D) 斷層湖**：地殼斷層陷落積水而成。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_rotterdam_rhine_river_shipping_112",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐洲國際河流與港口：萊因河（丙）貫穿西歐工業區，出海口為鹿特丹港，航運價值最高",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：歐洲主要河流與門戶港口破題關鍵！歐洲航運價值最高、流經西歐精華區並注入北海的國際大河為【(丙)萊因河】，其出海口即為歐洲第一大港【荷蘭鹿特丹港】。附圖河流對照：【甲為聶伯河】（注入黑海）、【乙為多瑙河】（流經最多國家的國際河流，注入黑海）、【丁為塞納河】（流經法國巴黎注入英吉利海峽）。",
+    "stem": "鹿特丹港是歐洲第一大港，位於附圖哪條國際大河的出海口，該河川航運價值高，又銜接北大西洋航線，使港口轉口貿易發達，成為全球重要的物流中心之一，也是遠洋貨運進入歐陸的門戶之一，年貨物吞吐量高？\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁。",
+    "answer": "(C) 丙",
+    "diagramUrl": "assets/questions/soc_geo_europe_rivers_map.png",
+    "solution": "1. **鹿特丹港與萊因河關係**：\n   - **萊因河**發源於阿爾卑斯山，流經瑞士、德國、法國、荷蘭等西歐核心發達國家，水流平緩流速穩定、終年不凍，為全球航運價值最高的國際河流之一。\n   - 萊因河最終在荷蘭注入北海，其出海口即為歐洲吞吐量最大、最繁忙的門戶港口——**鹿特丹港**。\n2. **地圖代號詳細對照**：\n   - **(A) 甲**：聶伯河（流經烏克蘭注入黑海）。\n   - **(B) 乙**：多瑙河（歐洲第二長河，流經最多國家的國際河流，向東注入黑海）。\n   - **(C) 丙**：**萊因河**（貫穿西歐工業心臟地帶，出海口為鹿特丹港）。\n   - **(D) 丁**：塞納河（流經法國巴黎注入英吉利海峽）。\n\n故正確答案選 **(C)**。\n",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_geo_chongqing_mountain_city_sichuan_basin_112",
     "examPeriod": "一段",
@@ -4300,7 +4450,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v157') ||
+      stored = localStorage.getItem('miley_wrong_questions_v158') ||
+               localStorage.getItem('miley_wrong_questions_v157') ||
                localStorage.getItem('miley_wrong_questions_v156') ||
                localStorage.getItem('miley_wrong_questions_v155') ||
                localStorage.getItem('miley_wrong_questions_v154') ||
