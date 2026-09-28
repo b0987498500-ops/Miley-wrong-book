@@ -3,10 +3,70 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v154';
+const STORAGE_KEY = 'miley_wrong_questions_v155';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_sci_bio_water_cycle_residence_ocean_109",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "水循環與水資源留駐場所：全球 97.5% 水量儲存於海洋，大多數時間水留駐於海中",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：水循環水份滯留場所破題關鍵！全球總水資源中有高達約 97.5%（約 97%）儲存於海洋中。雖然水透過蒸發、降水在陸地、大氣間循環，但極大部分的水分大部分時間都滯留在海洋中（海洋是地球最大的水庫）！千萬不要誤選大氣或冰川。",
+    "stem": "地球上的水約 97% 是海水，因此在水循環中，大多數時間水留駐在何處？\n\n○ (A) 地下\n○ (B) 空中\n○ (C) 海中\n○ (D) 南、北極冰川中。",
+    "answer": "(C) 海中",
+    "diagramUrl": "",
+    "solution": "1. **地球水資源儲量分布**：\n   - 全球總水量中，海洋（海水）佔了約 97.5%，陸地淡水與大氣水氣僅佔極少數（約 2.5%）。\n2. **水循環滯留時間與場所**：\n   - 水循環雖然推動水分在陸地、海洋與大氣之間不斷移動（蒸發、凝結、降水），但由於海洋擁有龐大的水體儲量，水分子在海洋中的平均滯留時間最長。\n   - 因此在整個水循環系統中，大多數的時間水分都是留駐在海洋（海中）。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_bio_inland_terminal_salt_lake_108",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "內陸水系與鹹水湖成因：內陸河終點因強烈蒸發與無外流出口使鹽分持續累積",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：內陸鹹水湖成因破題關鍵！河流攜帶陸地上微量的溶解鹽類注入內陸湖泊，由於該湖泊為內陸河的終點（無外流出口注入海洋），加上當地乾燥強烈蒸發，水分不斷蒸發帶走純水，而鹽分留在湖中持續累積，久而久之湖水鹽度極高，成為鹹水湖（如死海、青海湖、鹹海）！",
+    "stem": "內陸湖泊若是內陸河流的終點大多是____湖。（填淡水或鹹水）",
+    "answer": "鹹水",
+    "diagramUrl": "",
+    "solution": "1. **內陸河與終點湖泊水文特徵**：\n   - 內陸河流流經陸地時，會溶解岩石與土壤中的微量礦物質（鹽類）。\n   - 當河流流入終點內陸湖泊，因地形限制無外流出口流向海洋，且當地氣候普遍乾旱少雨、蒸發強烈。\n2. **鹽分累積機制**：\n   - 水分在太陽照射下大量蒸發進入大氣，但鹽分無法蒸發而永久留存於湖水中。\n   - 經年累月下，湖水的鹽類濃度不斷升高，最終形成「鹹水湖」（鹽湖）。\n\n故正確填空為 **鹹水**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_sci_bio_glacier_characteristics_107",
     "examPeriod": "一段",
@@ -4150,7 +4210,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v153') ||
+      stored = localStorage.getItem('miley_wrong_questions_v154') ||
+               localStorage.getItem('miley_wrong_questions_v153') ||
                localStorage.getItem('miley_wrong_questions_v152') ||
                localStorage.getItem('miley_wrong_questions_v151') ||
                localStorage.getItem('miley_wrong_questions_v150') ||
