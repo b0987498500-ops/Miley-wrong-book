@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v157';
+const STORAGE_KEY = 'miley_wrong_questions_v158';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_chongqing_mountain_city_sichuan_basin_112",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "中國區域地理與地形特徵：重慶位於四川盆地東部（長江與嘉陵江交會），因多丘陵山地稱為山城",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：中國著名城市地形位置破題關鍵！重慶市位於【四川盆地】東部（長江與嘉陵江匯流之處）。因當地地形起伏劇烈、坡陡山多，自古有「山城」之稱，並發展出跨越長江纜車、高架立體公路與穿樓輕軌等特色交通。記住：橫斷山脈為高山深谷、內蒙古高原為坦蕩草原、珠江三角洲為平原水鄉。",
+    "stem": "重慶是中國著名的「山城」，為了因應當地的地形環境，造就出奇特的交通建設。例如：立體的公路、超長的爬山扶手梯、穿越樓房的輕軌、跨越長江的纜車等。由此可知，重慶最可能在下列哪一地區？\n\n○ (A) 橫斷山脈\n○ (B) 四川盆地\n○ (C) 內蒙古高原\n○ (D) 珠江三角洲。",
+    "answer": "(B) 四川盆地",
+    "diagramUrl": "",
+    "solution": "1. **重慶地理位置與地形特徵**：\n   - 重慶市位於中國西南地區的**四川盆地**東部，為長江與嘉陵江的交會之處。\n   - 雖然名為「盆地」，但四川盆地內部與邊緣多丘陵、山地起伏，重慶城區建築依山而建，因而獲得「山城」美譽。\n2. **關鍵線索分析**：\n   - 題幹提及「跨越長江的纜車」，長江幹流貫穿四川盆地並經過重慶。\n   - 特殊交通建設（立體公路、穿樓輕軌）正是因應四川盆地丘陵山城地形而生的特色。\n3. **其他選項排除**：\n   - **(A) 橫斷山脈**：山高谷深、交通極度不便且無大城市如重慶。\n   - **(C) 內蒙古高原**：地形坦蕩開闊、風吹草低，非山城地形。\n   - **(D) 珠江三角洲**：地勢低平、河網密布，屬平原三角洲地形（且長江不流經此處）。\n\n故正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_sci_bio_achondroplasia_genotype_112_cap_111",
     "examPeriod": "一段",
@@ -4270,7 +4300,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v156') ||
+      stored = localStorage.getItem('miley_wrong_questions_v157') ||
+               localStorage.getItem('miley_wrong_questions_v156') ||
                localStorage.getItem('miley_wrong_questions_v155') ||
                localStorage.getItem('miley_wrong_questions_v154') ||
                localStorage.getItem('miley_wrong_questions_v153') ||
