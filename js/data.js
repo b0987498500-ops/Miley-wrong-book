@@ -3,10 +3,39 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v162';
+const STORAGE_KEY = 'miley_wrong_questions_v163';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_eng_freq_adverb_elliptical_clause_010",
+    "examPeriod": "二段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "頻率副詞位置與 be 動詞對比簡略句：省略句中頻率副詞放在主詞與 be 動詞之間 (never is)",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記（頻率副詞簡略句特例）**：\n• 一般完整句：頻率副詞習慣放在 be 動詞「之後」（如：He **is never** hungry.）。\n• **簡略句/省略句（本題考點特例）**：當 be 動詞後的形容詞或補充語被省略時（省略 hungry），頻率副詞須前移放在「主詞與 be 動詞之間」（如：...but her brother **never is** [hungry].）！",
+    "stem": "Lily is always hungry after school, but her brother ________.\n\n○ (A) is never\n○ (B) does never\n○ (C) never is\n○ (D) never does",
+    "answer": "(C)",
+    "diagramUrl": "",
+    "solution": "1. **動詞種類對齊**：\n   - 第一句「Lily **is** always hungry after school...」使用 be 動詞 **is**。\n   - 「but」連接的後半句對比簡略句亦須統一使用 be 動詞 **is**（排除 B、D 選項之助動詞 does）。\n\n2. **頻率副詞位置之簡略句特例**：\n   - 【完整句】：頻率副詞放在 be 動詞後面（例如：He is never hungry.）。\n   - 【對比簡略句/省略句】：當 be 動詞後的形容詞（hungry）被省略時，頻率副詞（never）必須放在「主詞與 be 動詞之間」（S + never + is）。\n   - 例句完整補全：...but her brother **never is** [hungry].\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_chi_phonetics_fang_pu_xue_011",
     "examPeriod": "二段",
