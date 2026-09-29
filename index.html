@@ -212,10 +212,6 @@
           </div>
           <p class="ebb-desc">艾賓浩斯週期追蹤中</p>
         </div>
-        <!-- 跨裝置進度同步按鈕 -->
-        <button id="btn-sidebar-sync" class="btn-sidebar-sync" title="手機與電腦進度無縫即時同步" onclick="window.SyncModule && window.SyncModule.openModal()">
-          <i class="fa-solid fa-arrows-rotate"></i> 跨裝置進度同步
-        </button>
         <!-- Sidebar Bottom PWA Install Button -->
         <button id="btn-sidebar-install" class="btn-sidebar-install" title="安裝 麥麥錯題本 App" onclick="triggerPWAInstall()">
           <i class="fa-solid fa-cloud-arrow-down"></i> 安裝 App
@@ -242,11 +238,40 @@
           </div>
 
           <div class="header-right">
-            <!-- 雲端即時同步狀態按鈕 (靠右功能區) -->
-            <button id="btn-header-cloud-sync" class="header-cloud-chip" title="Supabase 雲端無縫同步中（點擊可查看或立即強制對齊）">
-              <i class="fa-solid fa-cloud-check" id="header-cloud-sync-icon" style="color: #10b981;"></i>
-              <span id="header-cloud-sync-text">雲端已同步</span>
-            </button>
+            <!-- 跨裝置進度同步 Popover 按鈕與浮動選單 (靠右功能區) -->
+            <div class="sync-popover-wrapper">
+              <button id="btn-open-sync-popover" class="sync-nav-btn" title="手機與電腦跨裝置進度即時同步">
+                <i class="fa-solid fa-arrows-rotate" id="header-cloud-sync-icon"></i>
+                <span id="header-cloud-sync-text">跨裝置進度同步</span>
+              </button>
+
+              <!-- Sync Floating Popover (Floating underneath button) -->
+              <div id="sync-popover" class="sync-popover hidden">
+                <div class="popover-header">
+                  <div class="popover-title">
+                    <i class="fa-solid fa-arrows-rotate" style="color: #38bdf8;"></i>
+                    <span>跨裝置進度無縫同步</span>
+                  </div>
+                  <button id="btn-close-sync-popover" class="popover-close-btn" title="關閉">&times;</button>
+                </div>
+
+                <div class="popover-body sync-popover-body">
+                  <div class="sync-cloud-status-box" style="text-align: center; padding: 12px 8px;">
+                    <i class="fa-solid fa-cloud-arrow-up" style="color: #10b981; font-size: 2rem; margin-bottom: 6px;"></i>
+                    <strong style="color: #ffffff; font-size: 1.05rem; display: block;">Supabase 雲端無縫同步</strong>
+                    <div class="sync-status-indicator" id="modal-cloud-status-badge" style="font-size: 0.85rem; margin-top: 4px;">🟢 連線正常 ‧ 雲端已即時同步</div>
+                  </div>
+
+                  <div style="margin: 16px 0 12px 0; text-align: center;">
+                    <button type="button" id="btn-force-cloud-sync" class="btn-cloud-refresh btn-cloud-refresh-lg" title="立即強制雙向對齊">
+                      <i class="fa-solid fa-rotate"></i> 立即對齊
+                    </button>
+                  </div>
+
+                  <div class="sync-cloud-time" id="modal-cloud-last-sync-time" style="text-align: center; color: rgba(255,255,255,0.6); font-size: 0.82rem;">最後同步時間：已連線準備完畢</div>
+                </div>
+              </div>
+            </div>
 
             <!-- 智慧寶庫按鈕 (靠右功能區) -->
             <div class="wisdom-popover-wrapper">
@@ -1161,50 +1186,20 @@
 
 
 
-  <!-- ==================== Cross-Device Sync Modal ==================== -->
-  <div id="sync-modal" class="modal-backdrop hidden">
-    <div class="modal-card sync-modal-card">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <i class="fa-solid fa-arrows-rotate" style="color: #38bdf8; font-size: 1.3rem;"></i>
-          <h3>跨裝置進度無縫同步</h3>
-        </div>
-        <button id="btn-close-sync-modal" class="icon-btn close-modal-btn" title="關閉">&times;</button>
-      </div>
 
-      <div class="modal-body sync-modal-body" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px 16px;">
-        <!-- Supabase Realtime Cloud Sync Section -->
-        <div class="sync-cloud-card centered-sync-card">
-          <div class="sync-cloud-status-box" style="text-align: center;">
-            <i class="fa-solid fa-cloud-arrow-up" style="color: #10b981; font-size: 2.2rem; margin-bottom: 8px;"></i>
-            <strong style="color: #ffffff; font-size: 1.1rem; display: block;">Supabase 雲端無縫同步</strong>
-            <div class="sync-status-indicator" id="modal-cloud-status-badge" style="font-size: 0.88rem; margin-top: 6px;">🟢 連線正常 ‧ 雲端已即時同步</div>
-          </div>
-
-          <div style="margin: 22px 0 16px 0; text-align: center;">
-            <button type="button" id="btn-force-cloud-sync" class="btn-cloud-refresh btn-cloud-refresh-lg" title="立即強制雙向對齊">
-              <i class="fa-solid fa-rotate"></i> 立即對齊
-            </button>
-          </div>
-
-          <div class="sync-cloud-time" id="modal-cloud-last-sync-time" style="text-align: center; color: rgba(255,255,255,0.6); font-size: 0.85rem;">最後同步時間：已連線準備完畢</div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=151"></script>
-  <script src="js/utils/katex_render.js?v=151"></script>
-  <script src="js/utils/pdf_export.js?v=151"></script>
-  <script src="js/modules/upload.js?v=151"></script>
-  <script src="js/modules/archive.js?v=151"></script>
-  <script src="js/modules/review.js?v=151"></script>
-  <script src="js/modules/sprint.js?v=151"></script>
-  <script src="js/modules/analytics.js?v=151"></script>
-  <script src="js/modules/calendar.js?v=151"></script>
-  <script src="js/modules/wisdom.js?v=151"></script>
-  <script src="js/modules/sync.js?v=151"></script>
-  <script src="js/app.js?v=151"></script>
+  <script src="js/data.js?v=152"></script>
+  <script src="js/utils/katex_render.js?v=152"></script>
+  <script src="js/utils/pdf_export.js?v=152"></script>
+  <script src="js/modules/upload.js?v=152"></script>
+  <script src="js/modules/archive.js?v=152"></script>
+  <script src="js/modules/review.js?v=152"></script>
+  <script src="js/modules/sprint.js?v=152"></script>
+  <script src="js/modules/analytics.js?v=152"></script>
+  <script src="js/modules/calendar.js?v=152"></script>
+  <script src="js/modules/wisdom.js?v=152"></script>
+  <script src="js/modules/sync.js?v=152"></script>
+  <script src="js/app.js?v=152"></script>
 </body>
 </html>

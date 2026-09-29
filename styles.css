@@ -6922,16 +6922,26 @@ html.is-pwa-standalone #app-bottom-bar {
     border-radius: 9999px !important;
   }
 
-  /* 彈窗在手機上全幅居中且絕不溢出 */
-  .wisdom-popover {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 92vw;
-    max-width: 380px;
-    max-height: 85vh;
-    z-index: 100000;
+  /* 彈窗在手機上全幅居中且絕不溢出 (智慧寶庫 & 跨裝置同步) */
+  .wisdom-popover-wrapper,
+  .sync-popover-wrapper {
+    position: static !important;
+  }
+
+  .wisdom-popover,
+  .sync-popover {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: min(380px, calc(100vw - 24px)) !important;
+    max-width: calc(100vw - 24px) !important;
+    max-height: 85vh !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    z-index: 100000 !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 0 100vmax rgba(0, 0, 0, 0.6) !important;
+    border-radius: 20px !important;
   }
 
   .calendar-popover {
@@ -7464,38 +7474,64 @@ html.is-pwa-standalone #app-bottom-bar {
 }
 
 /* ==================== SUPABASE CLOUD SYNC UI STYLES ==================== */
-.header-cloud-chip {
+.sync-popover-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.sync-nav-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  color: #34d399;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.82rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.25s ease;
   white-space: nowrap;
 }
 
-.header-cloud-chip:hover {
-  background: rgba(16, 185, 129, 0.22);
-  border-color: #10b981;
+.sync-nav-btn:hover {
+  background: rgba(56, 189, 248, 0.22);
+  border-color: #38bdf8;
   color: #ffffff;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
 }
 
-.header-cloud-chip.syncing {
-  background: rgba(56, 189, 248, 0.15);
-  border-color: rgba(56, 189, 248, 0.4);
+.sync-nav-btn.syncing {
+  background: rgba(56, 189, 248, 0.25);
+  border-color: rgba(56, 189, 248, 0.6);
   color: #38bdf8;
 }
 
-.header-cloud-chip.syncing i {
+.sync-nav-btn.syncing i {
   animation: spinSync 1s linear infinite;
+}
+
+.sync-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 320px;
+  background: rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(56, 189, 248, 0.15);
+  backdrop-filter: blur(16px);
+  z-index: 1000;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  animation: popoverFadeIn 0.2s ease;
+}
+
+.sync-popover.hidden {
+  display: none !important;
 }
 
 @keyframes spinSync {

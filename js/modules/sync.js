@@ -38,34 +38,38 @@ window.SyncModule = {
   },
 
   bindEvents: function() {
-    // Topbar & Sidebar triggers
-    document.getElementById('btn-open-sync-modal')?.addEventListener('click', () => this.openModal());
-    document.getElementById('btn-sidebar-sync')?.addEventListener('click', () => this.openModal());
-    document.getElementById('btn-header-cloud-sync')?.addEventListener('click', () => this.openModal());
-    document.getElementById('btn-cloud-sync-status')?.addEventListener('click', () => this.openModal());
-    document.getElementById('btn-wisdom-sync')?.addEventListener('click', () => this.openModal());
+    const self = this;
+    const btn = document.getElementById('btn-open-sync-popover');
+    const popover = document.getElementById('sync-popover');
+    const closeBtn = document.getElementById('btn-close-sync-popover');
 
-    document.getElementById('btn-close-sync-modal')?.addEventListener('click', () => this.closeModal());
-    document.getElementById('sync-modal-backdrop')?.addEventListener('click', (e) => {
-      if (e.target.id === 'sync-modal-backdrop') this.closeModal();
+    // Toggle popover on header button click
+    btn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      self.togglePopover();
+    });
+
+    closeBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      self.closePopover();
+    });
+
+    popover?.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    // Close popover when clicking anywhere outside
+    document.addEventListener('click', () => {
+      self.closePopover();
     });
 
     // Cloud Manual Trigger (立即對齊)
-    document.getElementById('btn-force-cloud-sync')?.addEventListener('click', () => {
+    document.getElementById('btn-force-cloud-sync')?.addEventListener('click', (e) => {
+      e.stopPropagation();
       this.pullFromCloud(true);
     });
 
-    // Copy Sync Code
-    document.getElementById('btn-copy-sync-code')?.addEventListener('click', () => this.copySyncCode());
-
-    // Apply Sync Code
-    document.getElementById('btn-apply-sync-code')?.addEventListener('click', () => this.applySyncCode());
-
-    // Export / Import JSON file
-    document.getElementById('btn-export-sync-file')?.addEventListener('click', () => this.exportBackupFile());
-    document.getElementById('sync-file-input')?.addEventListener('change', (e) => this.handleFileImport(e));
-
-    // 當瀏覽器標籤頁重新切換回前景時，自動向雲端檢查更新
+    // Visibility change
     document.addEventListener('visibilitychange', () => {
       if (document.visibilityState === 'visible' && !this.isSyncing) {
         this.pullFromCloud(false);
@@ -79,16 +83,36 @@ window.SyncModule = {
     });
   },
 
-  openModal: function() {
-    const modal = document.getElementById('sync-modal');
-    if (!modal) return;
-    modal.classList.remove('hidden');
+  togglePopover: function() {
+    const popover = document.getElementById('sync-popover');
+    if (!popover) return;
+    if (popover.classList.contains('hidden')) {
+      this.openPopover();
+    } else {
+      this.closePopover();
+    }
+  },
+
+  openPopover: function() {
+    const popover = document.getElementById('sync-popover');
+    if (!popover) return;
+    // Close wisdom popover if open
+    window.WisdomModule?.closePopover?.();
+    popover.classList.remove('hidden');
     this.refreshModalStats();
   },
 
+  closePopover: function() {
+    const popover = document.getElementById('sync-popover');
+    if (popover) popover.classList.add('hidden');
+  },
+
+  openModal: function() {
+    this.openPopover();
+  },
+
   closeModal: function() {
-    const modal = document.getElementById('sync-modal');
-    if (modal) modal.classList.add('hidden');
+    this.closePopover();
   },
 
   refreshModalStats: function() {
@@ -291,32 +315,34 @@ window.SyncModule = {
    * 更新頁面所有雲端同步狀態標籤與圖示
    */
   updateSyncBadge: function(text, isSpinning) {
-    const headerChip = document.getElementById('btn-header-cloud-sync');
+    const headerBtn = document.getElementById('btn-open-sync-popover') || document.getElementById('btn-header-cloud-sync');
     const headerText = document.getElementById('header-cloud-sync-text');
     const headerIcon = document.getElementById('header-cloud-sync-icon');
-
     const modalBadge = document.getElementById('modal-cloud-status-badge');
 
-    if (headerChip) {
+    if (headerBtn) {
       if (isSpinning) {
-        headerChip.classList.add('syncing');
+        headerBtn.classList.add('syncing');
       } else {
-        headerChip.classList.remove('syncing');
+        headerBtn.classList.remove('syncing');
       }
     }
 
-    if (headerText) headerText.innerText = text;
+    if (headerText) {
+      if (isSpinning) {
+        headerText.innerText = '同步中...';
+      } else {
+        headerText.innerText = '跨裝置進度同步';
+      }
+    }
 
     if (headerIcon) {
       if (isSpinning) {
         headerIcon.className = 'fa-solid fa-arrows-rotate fa-spin';
         headerIcon.style.color = '#38bdf8';
-      } else if (text.includes('已同步')) {
-        headerIcon.className = 'fa-solid fa-cloud-check';
-        headerIcon.style.color = '#10b981';
       } else {
-        headerIcon.className = 'fa-solid fa-cloud';
-        headerIcon.style.color = '#fbbf24';
+        headerIcon.className = 'fa-solid fa-arrows-rotate';
+        headerIcon.style.color = '#38bdf8';
       }
     }
 
