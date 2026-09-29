@@ -3,10 +3,126 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v161';
+const STORAGE_KEY = 'miley_wrong_questions_v162';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_chi_phonetics_fang_pu_xue_011",
+    "examPeriod": "二段",
+    "subject": "國文",
+    "errorReason": "粗心大意",
+    "concept": "形近字與多音字讀音辨析：遊「舫」/明查暗「訪」均讀 ㄈㄤˇ",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：\n• (A) 「踅」了一趟 (ㄒㄩㄝˊ) ／ 空谷「跫」音 (ㄑㄩㄥˊ)\n• (B) 老「圃」黃花 (ㄆㄨˇ) ／ 山中小「鋪」 (ㄆㄨˋ)\n• (C) 遊「舫」如織 (ㄈㄤˇ) ／ 明查暗「訪」 (ㄈㄤˇ) ➜ 讀音兩兩相同，正確！\n• (D) 青的「靛」青 (ㄉㄧㄢˋ) ／ 花朵「綻」放 (ㄓㄢˋ)",
+    "stem": "下列「 」中的字，何組讀音兩兩相同？\n\n○ (A) 「踅」了一趟／空谷「跫」音\n○ (B) 老「圃」黃花／山中小「鋪」\n○ (C) 遊「舫」如織／明查暗「訪」\n○ (D) 青的「靛」青／花朵「綻」放。",
+    "answer": "(C)",
+    "diagramUrl": "",
+    "solution": "1. **各選項讀音標註與解析**：\n   - **(A) 不同**：\n     - 「踅」了一趟：讀作 ㄒㄩㄝˊ (xué)，意指轉折、來回走動或遊覽走了一圈。\n     - 空谷「跫」音：讀作 ㄑㄩㄥˊ (qióng)，指腳步聲。\n   - **(B) 不同**：\n     - 老「圃」黃花：讀作 ㄆㄨˇ (pǔ)，指種植花草蔬菜的園地。\n     - 山中小「鋪」：讀作 ㄆㄨˋ (pù)，指店鋪或小商店。\n   - **(C) 相同（本題答案）**：\n     - 遊「舫」如織：讀作 ㄈㄤˇ (fǎng)，指遊船、船隻像織布一樣密密麻麻往來。\n     - 明查暗「訪」：讀作 ㄈㄤˇ (fǎng)，指公開調查與暗中探訪。\n   - **(D) 不同**：\n     - 青的「靛」青：讀作 ㄉㄧㄢˋ (diàn)，深藍色的有機染料。\n     - 花朵「綻」放：讀作 ㄓㄢˋ (zhàn)，花朵開放裂開。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_chi_daming_lake_rhetoric_numbers_012",
+    "examPeriod": "二段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "修辭數字虛實判讀：一城山色「半」城湖之「半」字表比例範圍廣大之虛數",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：\n• (A) 「四」面荷花「三」面柳 ➜ 實數（指東、西、北各方具體地理與荷柳圍繞方位）。\n• (B) 「一」城山色「半」城湖 ➜ 虛數！「半」字在此非精確算術的二分之一，而是形容大明湖佔據濟南城相當廣大的面積區域。\n• (C) 「一」盞寒泉 ➜ 實數（實指一杯、一盞寒泉水）。\n• (D) 「三」更畫舫 ➜ 實數（具體夜間三更，即夜間23點至01點）。",
+    "stem": "下列「 」中的數字，何者是虛數？\n\n○ (A) 「四」面荷花三面柳\n○ (B) 「一」城山色「半」城湖\n○ (C) 「一」盞寒泉薦秋菊\n○ (D) 「三」更畫舫穿藕花。",
+    "answer": "(B)",
+    "diagramUrl": "",
+    "solution": "1. **數字修辭「實數 vs 虛數」判定技巧**：\n   - 實數：表示精確計算或具體指稱的數量。\n   - 虛數：非精確數量，常用於形容數量極多、極少、廣闊或強調語氣的誇飾誇大描寫。\n2. **各選項分析**：\n   - **(A) 實數**：鐵公祠對聯「四面荷花三面柳」，實指鐵公祠與大明湖四周各方位被荷花與柳樹環繞的真實景觀構造。\n   - **(B) 虛數（本題答案）**：對聯「一城山色半城湖」，句中的「半」字並非精確的二分之一面積算術，而是誇張形容大明湖浩瀚廣闊，幾乎佔了濟南城很大一部分。\n   - **(C) 實數**：「一盞寒泉薦秋菊」，「一」代表實實在在的一盞（一杯）泉水。\n   - **(D) 實數**：「三更畫舫穿藕花」，「三更」為古代具體的時間計時單位（半夜子時，23:00~01:00）。\n\n故正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_chi_rhetoric_emotion_in_scenery_013",
+    "examPeriod": "二段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "寫作手法判讀：「寓情於景」vs 客觀寫實筆法（千佛山風景摹寫屬客觀寫實）",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：題目要求選出【沒有】使用「寓情於景」者！\n• (A) 楓橋夜泊藉江楓漁火映襯「愁眠」羈旅之情。\n• (B) 黃鶴樓送別藉「孤帆遠影」、「長江天際流」展現依依不捨。\n• (C) 記承天夜遊藉月光竹柏抒發超脫曠達之「閒人」情懷。\n• (D) 《老殘遊記》描寫千佛山上「梵宇僧樓與蒼松翠柏高下相間」為客觀視覺寫實摹寫，無主觀寓情於景！",
+    "stem": "下列文句，何者沒有使用「寓情於景」的手法？\n\n○ (A) 月落烏啼霜滿天，江楓漁火對愁眠\n○ (B) 孤帆遠影碧山盡，唯見長江天際流\n○ (C) 何夜無月？何處無竹柏？但少閒人如吾兩人耳\n○ (D) 只見對面千佛山上，梵宇僧樓，與那蒼松翠柏，高下相間。",
+    "answer": "(D)",
+    "diagramUrl": "",
+    "solution": "1. **「寓情於景」定義**：將作者內心的感情寄託、融合於客觀所描寫的自然景物中，使景物帶有濃厚感情色彩。\n2. **各選項深度解析**：\n   - **(A) 有使用**：張繼《楓橋夜泊》藉由月落、霜天、江楓、漁火等淒清秋景，抒發旅人孤寂難眠的「愁思」（對愁眠）。\n   - **(B) 有使用**：李白《黃鶴樓送孟浩然之廣陵》藉著目送友人的「孤帆」消逝在天際、只見長江滾滾奔流，展現對友人無盡的深情眷戀與離愁。\n   - **(C) 有使用**：蘇軾《記承天夜遊》藉澄澈空明的月光與竹柏倒影，寄託自己雖遭貶詰但仍曠達豁達的「閒人」情懷與微妙心境。\n   - **(D) 沒有使用（本題答案）**：節錄自劉鶚《老殘遊記·大明湖》，僅運用視覺色彩與高低層次，客觀寫實地描繪千佛山上的寺廟建築與樹木景象，屬於純粹的客觀景物摹寫，未融入作者主觀情感。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_chi_idiom_xu_ying_yi_gu_shi_014",
+    "examPeriod": "二段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "成語詞義理解：「虛應一故事」指照例敷衍應付，做事態度同「虛與委蛇」",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：\n• 「虛應一故事」：指依照舊例（故事：舊有的規章慣例）假裝應付一下，形容做事態度表面敷衍、缺乏誠意。\n• (A) 鄭重其事：態度莊重認真。\n• (B) 虛與委蛇：假意殷勤、敷衍應付（與「虛應一故事」相同，正確！）。\n• (C) 墨守成規：固執守著舊規矩不肯變通。\n• (D) 吹毛求疵：故意挑剔毛病缺點。",
+    "stem": "小強做事總是「虛應一故事」，這是形容他的做事態度如何？\n\n○ (A) 鄭重其事\n○ (B) 虛與委蛇\n○ (C) 墨守成規\n○ (D) 吹毛求疵。",
+    "answer": "(B)",
+    "diagramUrl": "",
+    "solution": "1. **成語「虛應一故事」解析**：\n   - 詞義：指依照慣例、舊有規矩（故事：古舊事例或舊有慣例）表面上假裝湊數應付過去。\n   - 語境：常用於形容辦事不切實、缺乏誠意、對工作或任務虛張聲勢敷衍了事的態度。\n2. **選項比較與語義 match**：\n   - **(A) 鄭重其事**：形容說話或做事態度非常莊重認真（反義詞）。\n   - **(B) 虛與委蛇 (ㄒㄩ ㄩˇ ㄨㄟ ㄧˊ)**：指對人對事表面上假意殷勤、順從應付，實際上缺乏誠意（同義詞，本題答案）。\n   - **(C) 墨守成規**：形容思想保守，固執地守著舊有的規章制度不肯改變（側重不肯創新，非敷衍）。\n   - **(D) 吹毛求疵**：比喻刻意挑剔別人的毛病或缺點。\n\n故正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_chi_daming_lake_quotes_scenery_007",
     "examPeriod": "二段",
