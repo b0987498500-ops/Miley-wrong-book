@@ -3,10 +3,126 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v166';
+const STORAGE_KEY = 'miley_wrong_questions_v167';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_earth_freshwater_resources_underground_016",
+    "examPeriod": "二段",
+    "subject": "自然",
+    "errorReason": "觀念不懂",
+    "concept": "人類可直接利用之淡水資源：地下水占最多（冰川為固體、海水鹹度高）",
+    "uploadDate": "2026-09-29",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記（淡水資源儲量 vs 可利用量）**：\n• 全球淡水總儲量最多的是「冰川」（約占淡水 68%），但固體冰川多分布於極地高山，極難直接利用！\n• 人類真正能「直接採集利用」的淡水資源中，以「地下水」占最多（約占淡水 30%）。",
+    "stem": "人類實際上可直接利用的淡水資源，以下列何項占最多？\n\n○ (A) 海水\n○ (B) 冰川\n○ (C) 地下水\n○ (D) 海冰",
+    "answer": "(C)",
+    "diagramUrl": "",
+    "solution": "1. **淡水資源分類與直接利用性分析**：\n   - **(A) 海水**：鹹水水體（占全球總水量 97.5%），含鹽量高無法直接飲用或灌溉。\n   - **(B) 冰川**：雖占淡水總量的 68%（儲量最多），但屬固體且分布於高緯度極地或高山，不利直接取用。\n   - **(C) 地下水**：占淡水總量約 30%，是人類實際上**最主要且可直接開發利用**的淡水資源（本題答案）。\n   - **(D) 海冰**：海水結冰而成，多含有鹽分且屬極地固體冰，無法直接利用。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-29",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_earth_seawater_salinity_subtropical_017",
+    "examPeriod": "二段",
+    "subject": "自然",
+    "errorReason": "觀念不懂",
+    "concept": "海水鹽度決定因素：蒸發量 > 降水量的副熱帶海域鹽度最高",
+    "uploadDate": "2026-09-29",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記（影響海水鹽度的兩大推手）**：\n• 鹽度增加原因：蒸發量大於降水量（如副熱帶高壓帶，氣流下沉多晴朗乾燥天氣）。\n• 鹽度降低原因：降水多（如赤道多雨區）或淡水注入量大（如大河入海口/海陸交界）。",
+    "stem": "各海域的鹽度，會受降水量、蒸發量和河水注入量的影響，因此在下列哪一個區域的鹽度會較高？\n\n○ (A) 赤道地區海域\n○ (B) 副熱帶地區海域\n○ (C) 熱帶多雨的海域\n○ (D) 海陸交界地區海域",
+    "answer": "(B)",
+    "diagramUrl": "",
+    "solution": "1. **影響海水鹽度機制**：\n   - **鹽度提高** ➜ 蒸發量 > 降水量（水分蒸發，鹽分濃縮）。\n   - **鹽度降低** ➜ 降水量 > 蒸發量 或 有大量河水/淡水注入（淡水稀釋鹽分）。\n\n2. **各選項海域特性判讀**：\n   - **(A) 赤道地區海域 / (C) 熱帶多雨海域**：受對流雨影響降水豐沛，降水量 > 蒸發量，鹽度較低。\n   - **(B) 副熱帶地區海域**：受副熱帶高壓下沉氣流控制，天氣晴朗乾燥，蒸發量 > 降水量，海水蒸發旺盛致**鹽度最高**（本題答案）。\n   - **(D) 海陸交界地區海域**：有陸地河流注入大量淡水，稀釋海水鹽度。\n\n故正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-29",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_earth_water_distribution_atmosphere_018",
+    "examPeriod": "二段",
+    "subject": "自然",
+    "errorReason": "觀念不懂",
+    "concept": "地球水圈水體分布觀念：大氣中水氣占水圈總水量極稀少比例 (<0.001%)",
+    "uploadDate": "2026-09-29",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記（地球水體分布觀念導正）**：\n• 陸地上也有「鹹水湖」（如死海、裏海），鹹水不只儲存在海洋！\n• 南北半球海洋面積不相等（南半球海洋面積遠大於北半球）。\n• 人類可直接利用淡水僅占全球總水量約 1%（非 5%）。\n• 大氣中水氣占水圈總水量極為微小（少於 0.001%）。",
+    "stem": "有關水的分布，下列敘述何者正確？\n\n○ (A) 地表面有 71% 以上的面積被水覆蓋，且在南、北半球的海洋面積差不多\n○ (B) 全球的鹹水水體全部都儲存在海洋中\n○ (C) 可供人類直接使用的水資源，占全球總水量約 5%\n○ (D) 大氣中的水氣，在水圈中所占的含量非常稀少",
+    "answer": "(D)",
+    "diagramUrl": "",
+    "solution": "1. **水圈分布各選項逐一導正**：\n   - **(A) 錯誤**：南半球海洋面積約占 81%，北半球約占 61%，南半球海洋面積遠大於北半球（水體分布不均）。\n   - **(B) 錯誤**：陸地上亦有鹹水湖（如死海、大鹽湖、裏海），鹹水並非全部儲存在海洋中。\n   - **(C) 錯誤**：淡水僅占全球總水量 2.5%，而人類可直接利用的淡水資源（地下水、河川湖泊）僅占全球總水量約 **1%** 左右（非 5%）。\n   - **(D) 正確**：大氣中的水氣（雲、霧、水蒸氣）雖然對天氣變化至關重要，但占整個水圈總水量的比例非常稀少（少於 0.001%）（本題答案）。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-29",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_earth_spheres_lithosphere_definition_019",
+    "examPeriod": "二段",
+    "subject": "自然",
+    "errorReason": "審題不清",
+    "concept": "地球圈層定義：岩石圈包含大陸地殼、海洋地殼及軟流圈以上的上部地幔（包含海底岩層）",
+    "uploadDate": "2026-09-29",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記（岩石圈範圍定義）**：\n• 岩石圈（Lithosphere）包含：地殼（大陸地殼 + 海洋地殼）以及地幔最頂部的堅硬岩石（軟流圈之上）。\n• 錯誤陷阱：岩石圈**絕非**「專指陸地上」的岩層，海底下方同樣屬於岩石圈範疇！",
+    "stem": "關於地球的描述，下列何者錯誤？\n\n○ (A) 水氣存在於大氣圈中\n○ (B) 水圈、岩石圈及大氣圈彼此會交互作用\n○ (C) 陸地上的湖泊屬於水圈的範圍\n○ (D) 岩石圈是專指分布在地表上陸地的岩層",
+    "answer": "(D)",
+    "diagramUrl": "",
+    "solution": "1. **地球三大圈層定義與選項解析**：\n   - **(A) 正確**：水氣、氮氣、氧氣等氣體均屬於大氣圈的組成成分。\n   - **(B) 正確**：水圈（降水/蒸發）、岩石圈（風化/火山）、大氣圈（氣候）三者間時刻進行能量與物質的交互作用。\n   - **(C) 正確**：水圈包含海洋、冰川、地下水、河川及陸地上的湖泊水體。\n   - **(D) 錯誤**：岩石圈範圍涵蓋「大陸地殼」與「海洋地殼」，以及地幔頂部的硬岩層，**並非專指陸地上**的岩層（本題選錯誤者，答案選 D）。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-29",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_eng_adv_a_lot_hotter_014",
     "examPeriod": "二段",
@@ -4976,7 +5092,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v165') ||
+      stored = localStorage.getItem('miley_wrong_questions_v166') ||
+               localStorage.getItem('miley_wrong_questions_v165') ||
                localStorage.getItem('miley_wrong_questions_v164') ||
                localStorage.getItem('miley_wrong_questions_v163') ||
                localStorage.getItem('miley_wrong_questions_v162') ||
