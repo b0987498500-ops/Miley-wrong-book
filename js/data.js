@@ -3,10 +3,39 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v163';
+const STORAGE_KEY = 'miley_wrong_questions_v164';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_eng_adv_lightly_cap106_011",
+    "examPeriod": "二段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "副詞詞義與句意上下文推論：lightly (輕巧地/輕盈地) 修飾 walks (106年會考)",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記（副詞詞義與關鍵上下文對照）**：\n• 關鍵線索句 1：you don't even know she's just passed by（你甚至沒發現她剛路過）\n• 關鍵線索句 2：You wonder if her feet ever touch the floor.（好奇她的腳到底有沒有碰到地板）\n• 語義比對：只有「輕巧地/輕盈地 (lightly)」走路才能達到幾乎悄無聲息、腳不著地般的輕盈效果！",
+    "stem": "Sabine walks so ________ in the apartment that sometimes you don't even know she's just passed by. You wonder if her feet ever touch the floor.【106年會考】\n\n○ (A) freely\n○ (B) lightly\n○ (C) shyly\n○ (D) slowly",
+    "answer": "(B)",
+    "diagramUrl": "",
+    "solution": "1. **句型結構分析**：\n   - 本題採用 **so... that...**（如此……以致於……）結果句型。\n   - 空格修飾一般動詞 **walks**（走路），需填入副詞。\n\n2. **上下文關鍵線索與選項詞義**：\n   - 線索 1：「sometimes you don't even know she's just passed by」（有時你甚至不知道她剛走過去）➜ 說明走路非常輕、完全沒聲音。\n   - 線索 2：「You wonder if her feet ever touch the floor」（你懷疑她的腳到底有沒有碰到地板）➜ 暗示步伐極其輕盈像在飄浮。\n   - **(A) freely**：自由自在地。\n   - **(B) lightly**：輕巧地、輕盈地（符合「悄無聲息、腳不著地」之意境，本題答案）。\n   - **(C) shyly**：害羞地。\n   - **(D) slowly**：緩慢地。\n\n故正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_eng_freq_adverb_elliptical_clause_010",
     "examPeriod": "二段",

@@ -4,6 +4,18 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v1.52] - 2026-09-29 (新增 1 道 106 年會考英文錯題：副詞修飾一般動詞與 so...that... 結果句型，升級題庫數據庫至 v164)
+- **類型**：錯題自動收錄 / 英文 106年會考真題 / 副詞修飾與結果句型 / 數據庫升級 v164
+- **主要變更**：
+  1. **收錄 1 道 106 年會考英文錯題至資料庫 (`q_eng_adv_lightly_cap106_011`)**：
+     - **題幹解題**：`Sabine walks so ________ in the apartment that sometimes you don't even know she's just passed by. You wonder if her feet ever touch the floor.【106年會考】`
+     - **上下文推論與解析**：修飾動詞 `walks` 需填入副詞；根據關鍵句「沒發現她路過」與「懷疑腳沒著地」，說明走路極其「輕巧/輕盈」(lightly)，標示正確選項 `(B) lightly`。導正選項 (A) `freely`（自由自在地）；選項 (C) `shyly`（害羞地）；選項 (D) `slowly`（緩慢地）。
+  2. **純淨排版與零奇怪符號標準**：
+     - 題幹、選項與導正解析一律採用標準繁體中文與純淨符號排版。
+     - 升級 `STORAGE_KEY` 至 `v164`，SW 快取更新至 `v1.31`，網頁腳本號更新至 `v=155`。
+
+---
+
 ## [v1.51] - 2026-09-29 (新增 1 道英文文法錯題：頻率副詞位置與 be 動詞對比簡略句特例，升級題庫數據庫至 v163)
 - **類型**：錯題自動收錄 / 英文頻率副詞位置 / 對比簡略句 (Elliptical Clauses) / 數據庫升級 v163
 - **主要變更**：
