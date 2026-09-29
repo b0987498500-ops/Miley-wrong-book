@@ -1172,55 +1172,39 @@
         <button id="btn-close-sync-modal" class="icon-btn close-modal-btn" title="關閉">&times;</button>
       </div>
 
-      <div class="modal-body sync-modal-body">
+      <div class="modal-body sync-modal-body" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px 16px;">
         <!-- Supabase Realtime Cloud Sync Section -->
-        <div class="sync-cloud-card">
-          <div class="sync-cloud-header">
-            <div class="sync-cloud-title">
-              <i class="fa-solid fa-cloud-arrow-up" style="color: #10b981; font-size: 1.3rem;"></i>
-              <div>
-                <strong style="color: #ffffff; font-size: 1rem; display: block;">Supabase 雲端無縫自動同步</strong>
-                <div class="sync-status-indicator" id="modal-cloud-status-badge">🟢 連線正常 ‧ 雲端已即時同步</div>
-              </div>
-            </div>
-            <button type="button" id="btn-force-cloud-sync" class="btn-cloud-refresh" title="立即強制雙向對齊">
+        <div class="sync-cloud-card centered-sync-card">
+          <div class="sync-cloud-status-box" style="text-align: center;">
+            <i class="fa-solid fa-cloud-arrow-up" style="color: #10b981; font-size: 2.2rem; margin-bottom: 8px;"></i>
+            <strong style="color: #ffffff; font-size: 1.1rem; display: block;">Supabase 雲端無縫同步</strong>
+            <div class="sync-status-indicator" id="modal-cloud-status-badge" style="font-size: 0.88rem; margin-top: 6px;">🟢 連線正常 ‧ 雲端已即時同步</div>
+          </div>
+
+          <div style="margin: 22px 0 16px 0; text-align: center;">
+            <button type="button" id="btn-force-cloud-sync" class="btn-cloud-refresh btn-cloud-refresh-lg" title="立即強制雙向對齊">
               <i class="fa-solid fa-rotate"></i> 立即對齊
             </button>
           </div>
-          <p class="sync-cloud-desc">
-            手機與電腦只要聯網，點擊「未擊敗」或「已擊敗」即自動在背景默默同步至雲端，無需手動複製進度碼！
-          </p>
-          <div class="sync-cloud-meta">
-            <span>⏱️ <b>自動同步間隔</b>：60秒定時 ＋ 答題即時推播</span>
-            <span>📶 <b>網路流量消耗</b>：每次僅約 1~3 KB (極低消耗)</span>
-          </div>
-          <div class="sync-cloud-time" id="modal-cloud-last-sync-time">最後同步時間：已連線準備完畢</div>
-        </div>
 
-        <!-- Current Progress Summary -->
-        <div class="sync-summary-box" id="sync-stats-summary">
-          <!-- Populated dynamically via JS -->
-        </div>
-
-        <div class="sync-footer-tip" style="text-align: center; margin-top: 12px; font-size: 0.8rem; color: rgba(255,255,255,0.5);">
-          <i class="fa-solid fa-shield-halved" style="color: #10b981;"></i> 全自動雲端雙向防護 ‧ 跨載具數據零遺失
+          <div class="sync-cloud-time" id="modal-cloud-last-sync-time" style="text-align: center; color: rgba(255,255,255,0.6); font-size: 0.85rem;">最後同步時間：已連線準備完畢</div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=150"></script>
-  <script src="js/utils/katex_render.js?v=150"></script>
-  <script src="js/utils/pdf_export.js?v=150"></script>
-  <script src="js/modules/upload.js?v=150"></script>
-  <script src="js/modules/archive.js?v=150"></script>
-  <script src="js/modules/review.js?v=150"></script>
-  <script src="js/modules/sprint.js?v=150"></script>
-  <script src="js/modules/analytics.js?v=150"></script>
-  <script src="js/modules/calendar.js?v=150"></script>
-  <script src="js/modules/wisdom.js?v=150"></script>
-  <script src="js/modules/sync.js?v=150"></script>
-  <script src="js/app.js?v=150"></script>
+  <script src="js/data.js?v=151"></script>
+  <script src="js/utils/katex_render.js?v=151"></script>
+  <script src="js/utils/pdf_export.js?v=151"></script>
+  <script src="js/modules/upload.js?v=151"></script>
+  <script src="js/modules/archive.js?v=151"></script>
+  <script src="js/modules/review.js?v=151"></script>
+  <script src="js/modules/sprint.js?v=151"></script>
+  <script src="js/modules/analytics.js?v=151"></script>
+  <script src="js/modules/calendar.js?v=151"></script>
+  <script src="js/modules/wisdom.js?v=151"></script>
+  <script src="js/modules/sync.js?v=151"></script>
+  <script src="js/app.js?v=151"></script>
 </body>
 </html>

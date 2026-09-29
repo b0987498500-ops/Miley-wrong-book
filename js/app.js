@@ -380,6 +380,9 @@ class App {
       const nextMonday = typeof window.dataManager.getNextMondayDate === 'function'
         ? window.dataManager.getNextMondayDate(currentMonday)
         : '';
+      const prevMonday = typeof window.dataManager.getPreviousMondayDate === 'function'
+        ? window.dataManager.getPreviousMondayDate(currentMonday)
+        : '';
       let html = '';
 
       mondayDates.forEach((dateStr) => {
@@ -393,22 +396,24 @@ class App {
           formattedDate = `${month}/${day}`;
         }
 
-        let weekTitle = '週次';
+        let weekTitle = '';
         if (dateStr === currentMonday) {
           weekTitle = '本週';
         } else if (dateStr === nextMonday) {
           weekTitle = '下週';
-        } else if (dateStr < currentMonday) {
+        } else if (dateStr === prevMonday) {
           weekTitle = '前週';
         } else {
-          weekTitle = formattedDate + '週';
+          weekTitle = '';
         }
 
         const isActive = dateStr === this.currentMondayFilter ? 'active' : '';
+        const titleAttr = weekTitle ? `${weekTitle} (${dateStr})` : dateStr;
+        const titleSpan = weekTitle ? `<span class="chip-week-title">${weekTitle}</span>` : '';
 
         html += `
-          <button class="monday-chip ${isActive}" data-monday="${dateStr}" title="${weekTitle} (${dateStr})">
-            <span class="chip-week-title">${weekTitle}</span>
+          <button class="monday-chip ${isActive}" data-monday="${dateStr}" title="${titleAttr}">
+            ${titleSpan}
             <span class="chip-week-date">${formattedDate}</span>
           </button>
         `;
