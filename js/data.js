@@ -3,10 +3,68 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v165';
+const STORAGE_KEY = 'miley_wrong_questions_v166';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_eng_adv_a_lot_hotter_014",
+    "examPeriod": "二段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "比較級程度修飾詞：a lot / much / even / a little + 比較級 (hotter)",
+    "uploadDate": "2026-09-29",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記（比較級修飾語禁忌）**：\n• 核心規則：hotter 本身已經是形容詞比較級，前面**嚴禁**重複加 more（例如 ✕ more hotter）！\n• 比較級程度修飾詞：修飾「更熱許多/程度差異」時，可用 a lot, much, even, a little, far 等。",
+    "stem": "It's ________ hotter today than yesterday.\n\n○ (A) ever\n○ (B) more\n○ (C) lots of\n○ (D) a lot",
+    "answer": "(D)",
+    "diagramUrl": "",
+    "solution": "1. **比較級修飾文法規則**：\n   - 句中 **hotter** 已經是形容詞比較級，前面不可重複疊加 **more**。\n   - 表達「比昨天熱『許多』」時，須用比較級程度修飾語（**a lot**, **much**, **even**, **a little**, **far**）。\n\n2. **選項詳細解析**：\n   - **(A) ever**：曾經，不修飾形容詞比較級。\n   - **(B) more**：不可修飾已有比較級字尾 -er 的單詞。\n   - **(C) lots of**：許多（後接名詞，不修飾形容詞比較級）。\n   - **(D) a lot**：很、許多（副詞片語，可修飾比較級 a lot hotter，本題答案）。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-29",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_poly_horner_eval_d_015",
+    "examPeriod": "二段",
+    "subject": "數學",
+    "errorReason": "計算粗心",
+    "concept": "多項式連續綜合除法（泰勒展式型態）：求常數項 d 可令 x + 2 = 0 (代入 x = -2)",
+    "uploadDate": "2026-09-29",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記（多項式連續綜合除法與特值代入）**：\n• 快速破題關鍵：要求的 d 為展開式最終常數項，最快解法是令 x + 2 = 0（即 x = -2 代入），此時前三項含有 (x+2) 的項目全數為 0，直接出 d！\n• 負數次方號變化：(-2)³ = -8 ➜ 3(-8) = -24；(-2)² = 4 ➜ 2(4) = 8；-3(-2) = 6。總和 -24 + 8 + 6 - 1 = -11。",
+    "stem": "設 3x³ + 2x² - 3x - 1 = a(x + 2)³ + b(x + 2)² + c(x + 2) + d，求 d = ？\n\n○ (A) -11\n○ (B) -9\n○ (C) 1\n○ (D) 25",
+    "answer": "(A)",
+    "diagramUrl": "",
+    "solution": "1. **破題關鍵（特值代入法）**：\n   - 展開式：3x³ + 2x² - 3x - 1 = a(x + 2)³ + b(x + 2)² + c(x + 2) + d\n   - 為了直接消去 a, b, c 各項以求 d，令 x + 2 = 0 ➜ **代入 x = -2**。\n\n2. **詳細代算步驟**：\n   - 將 x = -2 代入多項式：\n     3(-2)³ + 2(-2)² - 3(-2) - 1 = d\n     3(-8) + 2(4) + 6 - 1 = d\n     -24 + 8 + 6 - 1 = d\n     d = -11\n\n3. **📺 影音詳細解題影片**：\n   https://www.youtube.com/watch?v=inBviTsfb0k\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-29",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_eng_adv_almost_race_contrast_012",
     "examPeriod": "二段",
@@ -4918,7 +4976,13 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v159') ||
+      stored = localStorage.getItem('miley_wrong_questions_v165') ||
+               localStorage.getItem('miley_wrong_questions_v164') ||
+               localStorage.getItem('miley_wrong_questions_v163') ||
+               localStorage.getItem('miley_wrong_questions_v162') ||
+               localStorage.getItem('miley_wrong_questions_v161') ||
+               localStorage.getItem('miley_wrong_questions_v160') ||
+               localStorage.getItem('miley_wrong_questions_v159') ||
                localStorage.getItem('miley_wrong_questions_v158') ||
                localStorage.getItem('miley_wrong_questions_v157') ||
                localStorage.getItem('miley_wrong_questions_v156') ||
