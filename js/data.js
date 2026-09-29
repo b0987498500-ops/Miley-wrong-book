@@ -3,10 +3,126 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v160';
+const STORAGE_KEY = 'miley_wrong_questions_v161';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_chi_daming_lake_quotes_scenery_007",
+    "examPeriod": "二段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "大明湖 (老殘遊記)：文句描繪對象判讀「家家泉水，戶戶垂楊」形容初至濟南城特色",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：\n• (A) 「家家泉水，戶戶垂楊」形容初至濟南城時所見的獨特城市水鄉風貌。\n• (B) 「紅的火紅，白的雪白，青的靛青，綠的碧綠」形容千佛山上梵宇僧樓與蒼松翠柏高下相間之景緻（非百花爭妍）。\n• (C) 「趙千里的大畫」喻千佛山景色之美；「數十里長的屏風」喻千佛山山勢（非湖面）。\n• (D) 「粉紅絨毯」形容被夕陽染紅的「蘆花」（非荷花倒影）。",
+    "stem": "以下皆是大明湖中描寫景色的文句，何者說明正確？\n\n○ (A) 「家家泉水，戶戶垂楊」寫初至濟南城所見的特殊景觀\n○ (B) 「紅的火紅，白的雪白，青的靛青，綠的碧綠」形容百花爭妍，美不勝收的景色\n○ (C) 「彷彿宋人趙千里的一幅大畫，做了一架數十里長屏風」比喻湖面遼闊，風景如畫\n○ (D) 「一片白花映著帶水氣的斜陽，好似一條粉紅絨毯」指荷花在湖面的倒影，被夕陽染紅的景色。",
+    "answer": "(A)",
+    "diagramUrl": "",
+    "solution": "1. **題目拆解與觀念比對**：\n   - **(A) 正確**：「家家泉水，戶戶垂楊」為老殘剛進濟南府城時，所見濟南「泉城」特色景觀的經典名句。\n   - **(B) 錯誤**：課文中此句用於形容千佛山上「梵宇僧樓，與蒼松翠柏，高下相間」的豐富色彩與層次感，並非形容百花爭妍。\n   - **(C) 錯誤**：(1)用「趙千里的大畫」比喻「千佛山景色之美」；(2)用「數十里長的屏風」比喻「千佛山綿延的山勢」（非比喻大明湖湖面）。\n   - **(D) 錯誤**：課文中以此句形容夕陽照射下被染紅的「水邊蘆花」（粉紅絨毯），並非指荷花倒影。\n\n故正確選項選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_chi_daming_lake_narrative_style_008",
+    "examPeriod": "二段",
+    "subject": "國文",
+    "errorReason": "粗心大意",
+    "concept": "大明湖 (老殘遊記)：寫作手法與對聯穿插技巧判讀",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：\n• (A) 開頭僅「簡單交代」投宿濟南過程（非詳細敘述）。\n• (B) 全文採「順敘」手法（時間與遊歷路線先後），非倒敘。\n• (C) 文中穿插古人對聯（歷下亭、鐵公祠聯語），豐富遊記人文內涵，正確！\n• (D) 主力描繪千佛山與大明湖的「秋景」（秋山紅葉，老圃黃花），非春景。",
+    "stem": "下列關於大明湖一文的敘述，何者正確？\n\n○ (A) 文章開頭對投宿濟南的過程敘述詳細\n○ (B) 全文以倒敘手法，記載旅途所見所聞\n○ (C) 文中穿插古人聯語，豐富遊記內容\n○ (D) 對千佛山、大明湖的春景描繪深刻。",
+    "answer": "(C)",
+    "diagramUrl": "",
+    "solution": "1. **各選項深度解析與導正**：\n   - **(A) 錯誤**：文章開頭簡單交代老殘抵達濟南府城、投宿客棧的經過，重點在於後續遊覽景點，並未詳細贅述投宿過程。\n   - **(B) 錯誤**：全文順著老殘遊覽濟南名勝的時間順序與路線進行描寫，屬於經典的「順敘法」。\n   - **(C) 正確**：文中引用歷下亭「歷下此亭古，濟南名士多」與鐵公祠「四面荷花三面柳，一城山色半城湖」等古人對聯，增添濃厚之人文底蘊與采風特色。\n   - **(D) 錯誤**：文中景物如「秋山紅葉，老圃黃花（菊花）」、「千佛山秋景」等，均為深刻描繪「秋景」之經典筆觸，非春景。\n\n故正確選項選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_chi_daming_lake_narrative_perspective_009",
+    "examPeriod": "二段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "大明湖 (老殘遊記)：小說敘事觀點判讀（第三人稱旁觀寫實）",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：《老殘遊記》雖以老殘（劉鶚化身）為主角，但敘述視角採用【第三人稱觀點】與【客觀寫實筆調】描繪，非第一人稱主觀視角！",
+    "stem": "關於大明湖一文，下列何者敘述「不正確」？\n\n○ (A) 內容上是一篇遊記\n○ (B) 文中的主角老殘是指劉鶚自己\n○ (C) 採第一人稱觀點，筆調較主觀\n○ (D) 文筆清新，寫景多持摹寫筆法。",
+    "answer": "(C)",
+    "diagramUrl": "",
+    "solution": "1. **題目要求選出「不正確」者**：\n   - **(A) 正確**：本課選自《老殘遊記》第二回，記載老殘遊覽濟南大明湖與千佛山之經過，屬精彩遊記。\n   - **(B) 正確**：老殘（姓鐵名英，字補殘）為作者劉鶚（字鐵雲）自身的化身。\n   - **(C) 錯誤（本題答案）**：全文採用**「第三人稱觀點」**與**客觀描摹筆調**呈現老殘所見所聞，而非第一人稱（我）主觀抒情。\n   - **(D) 正確**：劉鶚文筆清新細緻，多善用視覺與色彩之「摹寫筆法」傳神還原景物。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_chi_daming_lake_season_matching_010",
+    "examPeriod": "二段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "古典詩詞季節判讀：老殘遊大明湖季節（秋季：紅葉、黃花、商意）",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：\n• 題幹「一路秋山紅葉，老圃黃花」：紅葉（楓葉）、黃花（菊花）均代表【秋季】。\n• (A) 「商意滿林薄」：「商意」對應五音中秋季之「商音」（即秋風秋意），屬【秋季】，與題幹相同！\n• (B) 「黃梅時節」為【夏季】。\n• (C) 「晝長」、「蟬鳴」為【夏季】。\n• (D) 「新竹」、「桑四圍」為【夏季】。",
+    "stem": "由「一路秋山紅葉，老圃黃花」可知，老殘遊大明湖時的季節與下列何者相同？\n\n○ (A) 不覺商意滿林薄\n○ (B) 黃梅時節家家雨\n○ (C) 晝長吟罷蟬鳴樹\n○ (D) 新竹壓簷桑四圍。",
+    "answer": "(A)",
+    "diagramUrl": "",
+    "solution": "1. **題幹季節判定**：\n   - 「一路秋山紅葉，老圃黃花」明載「秋」山，且「紅葉（楓葉）」與「黃花（菊花，黃花閨女/霜菊）」均為經典【秋季】代表特徵。\n2. **選項季節分析**：\n   - **(A) 正確**：「商意」指古代五音（宮商角徵羽）中對應秋季的商音，象徵秋風與秋意充滿樹林薄霧，為【秋季】。\n   - **(B) 錯誤**：「黃梅時節」指初夏梅雨季節，為【夏季】。\n   - **(C) 錯誤**：「晝長（白日長）」、「蟬鳴樹」為經典【夏季】景物。\n   - **(D) 錯誤**：「新竹（新竹筍長成）」、「桑四圍（桑葉茂盛）」為【夏季】農家景色。\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_geo_north_sea_oil_field_uk_norway_112",
     "examPeriod": "一段",
