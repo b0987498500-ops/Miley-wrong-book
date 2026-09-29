@@ -3,10 +3,68 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v164';
+const STORAGE_KEY = 'miley_wrong_questions_v165';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_eng_adv_almost_race_contrast_012",
+    "examPeriod": "二段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "副詞詞義與轉折句型推論：almost (幾乎/差一點) 與 However 跌倒形成轉折對比",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記（副詞詞義與轉折句型）**：\n• 轉折關鍵句：However, she fell at the last second and only came in third...（然而她在最後一刻跌倒，最終只得第三名）。\n• 前後語意邏輯：必須是「差一點/幾乎 (almost)」第一名抵達終點，才能與後半句「最後一刻跌倒只得第三名」構成此轉折關係！",
+    "stem": "During the race yesterday, Julie ________ got to the finish line first. However, she fell at the last second and only came in third in the end.\n\n○ (A) almost\n○ (B) already\n○ (C) finally\n○ (D) quickly",
+    "answer": "(A)",
+    "diagramUrl": "",
+    "solution": "1. **上下文語意與轉折關鍵**：\n   - 後半句「However, she fell at the last second and only came in third in the end」（然而她在最後一秒跌倒，最後只得到第三名）。\n   - 主句轉折詞 **However** 指出事實與預期不符，說明前半句應為「差一點/幾乎第一個到達終點」。\n\n2. **副詞選項比較**：\n   - **(A) almost**：幾乎、差一點（符合語境「幾乎第一個衝線但最後跌倒」，答案）。\n   - **(B) already**：已經（若已第一個到達，就不會最後一刻跌倒得第三名）。\n   - **(C) finally**：終於、最後（與最後得第三名衝突）。\n   - **(D) quickly**：快速地。\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_adj_only_tennis_club_cap109_013",
+    "examPeriod": "二段",
+    "subject": "英文",
+    "errorReason": "粗心大意",
+    "concept": "形容詞詞義與上下文推論：the only N. (唯一的...) 與 too... to... 句型 (109年會考補考)",
+    "uploadDate": "2026-09-28",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記（形容詞與上下文解題線索）**：\n• 關鍵說明句：He was too busy to join any other club.（他太忙了以致於無法參加任何其他社團）。\n• 邏輯推論：因為沒有空參加其他任何社團，代表網球社是他去年「唯一 (only)」參加的社團！",
+    "stem": "Southwell Tennis Club was the ________ club that David joined last year. He was too busy to join any other club.【109年會考補考】\n\n○ (A) best\n○ (B) first\n○ (C) only\n○ (D) other",
+    "answer": "(C)",
+    "diagramUrl": "",
+    "solution": "1. **上下文關鍵線索解析**：\n   - 關鍵句「He was too busy to join any other club」（他太忙了以致於無法參加其他任何社團）。\n   - 句型採用 **too... to...**（太……以致於不能……），指出 David 完全沒有加入別的社團。\n\n2. **形容詞選項比較**：\n   - **(A) best**：最好的。\n   - **(B) first**：第一個。\n   - **(C) only**：唯一的（the only + N. 指「唯一的……」，符合無參加其他社團之語境，答案）。\n   - **(D) other**：其他的。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_eng_adv_lightly_cap106_011",
     "examPeriod": "二段",

@@ -4,7 +4,17 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
-## [v1.52] - 2026-09-29 (新增 1 道 106 年會考英文錯題：副詞修飾一般動詞與 so...that... 結果句型，升級題庫數據庫至 v164)
+## [v1.53] - 2026-09-29 (新增 2 道英文錯題：almost情節轉折與the only N.關代/特指句型，升級題庫數據庫至 v165)
+- **類型**：錯題自動收錄 / 英文副詞 almost 語意轉折 / 109年會考補考限定形容詞 only / 數據庫升級 v165
+- **主要變更**：
+  1. **收錄 2 道英文錯題至資料庫 (`q_eng_adv_almost_race_contrast_012` & `q_eng_adj_only_tennis_club_cap109_013`)**：
+     - **題 1（副詞 almost 語意轉折 `q_eng_adv_almost_race_contrast_012`）**：`During the race yesterday, Julie ________ got to the finish line first. However, she fell at the last second and only came in third in the end.` 解析：後半句 `However` 與跌倒只得第三名說明比賽中「差一點/幾乎」第一名，故選 `(A) almost`。
+     - **題 2（限定形容詞 only 與唯一限定 `q_eng_adj_only_tennis_club_cap109_013`）**：`Southwell Tennis Club was the ________ club that David joined last year. He was too busy to join any other club.【109年會考補考】` 解析：根據 `too busy to join any other club`，說明網球社是去年「唯一」參加的社團，故選 `(C) only`。
+  2. **純淨排版與零奇怪符號標準**：
+     - 題幹、選項與導正解析一律採用標準繁體中文與純淨符號排版。
+     - 升級 `STORAGE_KEY` 至 `v165`，SW 快取更新至 `v1.31`，網頁腳本號更新至 `v=155`。
+
+---
 - **類型**：錯題自動收錄 / 英文 106年會考真題 / 副詞修飾與結果句型 / 數據庫升級 v164
 - **主要變更**：
   1. **收錄 1 道 106 年會考英文錯題至資料庫 (`q_eng_adv_lightly_cap106_011`)**：
