@@ -3,10 +3,68 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v167';
+const STORAGE_KEY = 'miley_wrong_questions_v168';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_earth_salt_lake_formation_climate_020",
+    "examPeriod": "二段",
+    "subject": "自然",
+    "errorReason": "觀念不懂",
+    "concept": "鹹水湖成因與環境條件：乾燥少雨 (蒸發量 > 降水量) 且 淡水只進不出 (內陸湖無流出口，鹽分累積)",
+    "uploadDate": "2026-09-29",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記（鹹水湖形成雙重必要條件）**：\n• 條件一（氣候）：**乾燥少雨** ➜ 強烈蒸發作用（蒸發量遠大於降水量），水份不斷蒸發被抽走。\n• 條件二（水文）：**淡水只進不出** ➜ 屬於內陸封閉水體，河流把少許礦物質/鹽分帶入湖中後無流出口帶走，鹽分日積月累濃縮成鹹水湖（如死海、裏海）。",
+    "stem": "鹹水湖通常出現的地區多是在下列何種氣候及環境下形成？\n\n○ (A) 潮溼多雨，淡水有進有出\n○ (B) 潮溼多雨，淡水只進不出\n○ (C) 乾燥少雨，淡水有進有出\n○ (D) 乾燥少雨，淡水只進不出",
+    "answer": "(D)",
+    "diagramUrl": "",
+    "solution": "1. **鹹水湖形成兩大關鍵環境機制**：\n   - **氣候條件（乾燥少雨）**：湖水面蒸發量遠大於大氣降水量，大量水份蒸發離開湖泊，留下溶於水中的礦物質與鹽分。\n   - **水文條件（淡水只進不出）**：湖泊為內陸封閉水域，沒有出口河流將鹽分帶走。外來河水不斷帶入微量鹽分，濃縮累積後湖水鹽度持續飆升。\n\n2. **各選項環境比較**：\n   - **(A) 潮溼多雨，淡水有進有出**：降水多且有流出口，湖水鹽分被帶走，形成典型**淡水湖**。\n   - **(B) / (C)**：無法同時滿足「強烈蒸發濃縮」與「鹽分封閉累積」兩大條件。\n   - **(D) 乾燥少雨，淡水只進不出**：完全符合鹹水湖形成的地理環境（本題答案）。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-29",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_earth_groundwater_profile_layer_profile_021",
+    "examPeriod": "二段",
+    "subject": "自然",
+    "errorReason": "觀念不懂",
+    "concept": "地下水面與地下水剖面圖判定：地下水面為「未飽和帶(甲)」與「飽和帶(乙)」之分界面，非不含水層",
+    "uploadDate": "2026-09-29",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (本週最新題)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記（地下水面定義陷阱）**：\n• 地下水面概念：地下水面（藍色虛線）並非介於兩個「不同岩層」之間，而是**同一個透水層中「未飽和帶（甲）」與「飽和帶（乙）」的分界面**！\n• 飽和帶（乙）：孔隙完全被水填滿的水體區域。\n• 湧泉（丙）：當地下水面高於地表或地表地形向下凹陷切穿地下水面時（丙處），地下水便會自然湧出形成泉水或補給河川。",
+    "stem": "右圖為某地地層和地下水的剖面圖，根據此圖推論，下列敘述何者錯誤？\n\n○ (A) 地下水面位於不含水層甲與含水層乙之間\n○ (B) 旱季時，地下水可與河水互相調節\n○ (C) 泉水可能由丙處湧出\n○ (D) 地勢高低會影響地下水面高度",
+    "answer": "(A)",
+    "diagramUrl": "assets/questions/q_earth_groundwater_profile_021.png",
+    "solution": "1. **剖面圖重點概念解析**：\n   - **(A) 錯誤**：甲為「未飽和帶（含水但不飽和）」，乙為「飽和帶（孔隙填滿地下水）」。地下水面是甲與乙的分界面，**甲並非不含水層**（本題選錯誤者，答案選 A）。\n   - **(B) 正確**：地下水面與河川水面相連通，旱季時地下水會補給河川，兩者具互相調節作用。\n   - **(C) 正確**：丙處地形下凹切穿地下水面，地下水會在此處自然湧出地表形成泉水。\n   - **(D) 正確**：地下水面通常隨地勢起伏，地勢高處地下水面較高，地勢低處較低。\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-09-29",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_earth_freshwater_resources_underground_016",
     "examPeriod": "二段",
@@ -5092,7 +5150,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v166') ||
+      stored = localStorage.getItem('miley_wrong_questions_v167') ||
+               localStorage.getItem('miley_wrong_questions_v166') ||
                localStorage.getItem('miley_wrong_questions_v165') ||
                localStorage.getItem('miley_wrong_questions_v164') ||
                localStorage.getItem('miley_wrong_questions_v163') ||
