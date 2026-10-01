@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v169';
+const STORAGE_KEY = 'miley_wrong_questions_v170';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_math_similar_polygons_outward_extension_098",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "相似多邊形判定：對應角相等且對應邊長成比例（正多邊形/菱形向外等寬擴張之相似性驗證）",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：幾何圖形向外延伸相同寬度的【相似性判讀陷阱】！\n1. **相似多邊形雙重充要條件**：必須【對應角相等】且【對應邊長成比例】！缺一不可！\n2. **各幾何圖形外擴相同寬度 d 判定**：\n   - **(A) 正三角形**：外擴後仍為正三角形，內角皆為 60 度，三邊長皆增加相同長度，邊長比為定值！【相似】\n   - **(B) 長方形**：長 a、寬 b（a ≠ b）各自增加 2d 後，(a + 2d)/a ≠ (b + 2d)/b，對應邊不成比例！【不相似】\n   - **(C) 菱形**：四邊向外垂直擴展 d，對應內角完全相等，四邊長皆增加相同長度 Δs，邊長比 (s + Δs) : s 皆相等！【相似】\n   - **(D) 平行四邊形**：兩組鄰邊增加長度後，邊長比 (a + Δa) : (b + Δb) ≠ a : b，對應邊不成比例！【不相似】\n   - **(E) 等腰梯形**：上底、下底與腰長加上相同的擴張寬度後，長度增加比例不一致，對應邊不成比例！【不相似】",
+    "stem": "下列圖形皆由內向外延長相等的寬度，請選出與原圖成為相似圖形的為何？（複選題）\n\n○ (A) 正三角形\n○ (B) 長方形\n○ (C) 菱形\n○ (D) 平行四邊形\n○ (E) 等腰梯形",
+    "answer": "(A) 正三角形、(C) 菱形",
+    "diagramUrl": "assets/questions/q_math_similar_polygons_outward_extension_098.png",
+    "solution": "1. **相似多邊形的定義**：\n   - 兩多邊形若相似，必須同時滿足：① 各對應角相等、② 各對應邊長成比例。\n2. **選項逐一驗證**：\n   - **(A) 正三角形（相似）**：向外延長相同寬度後，內角皆保持 60 度（對應角相等），且新圖形三邊長均變大相同長度，新舊邊長比恆定（對應邊成比例）。\n   - **(B) 長方形（不相似）**：設原長為 a、寬為 b（a ≠ b），向外延伸寬度 d 後，長變為 a + 2d、寬變為 b + 2d。因為 (a + 2d) / a ≠ (b + 2d) / b，對應邊長不成比例。\n   - **(C) 菱形（相似）**：四邊向外垂直平移相同寬度 d，對應內角不變；且四邊長增加量相等（設增加 Δs），新四邊長皆為 s + Δs，對應邊長比皆為 (s + Δs) : s，對應邊長成比例。\n   - **(D) 平行四邊形（不相似）**：兩組鄰邊長 a、b 不相等，向外延伸相同寬度後，邊長增量比不等於原邊長比，對應邊長不成比例。\n   - **(E) 等腰梯形（不相似）**：上底 a 與下底 b 不相等，加上相同的擴張寬度後，上底與下底的增加比例不同（ (a + Δa)/a ≠ (b + Δb)/b ），對應邊長不成比例。\n\n故正確答案選 **(A) 正三角形、(C) 菱形**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_geo_china_migration_ningxia_108_097",
     "examPeriod": "一段",
@@ -5180,7 +5210,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v168') ||
+      stored = localStorage.getItem('miley_wrong_questions_v169') ||
+               localStorage.getItem('miley_wrong_questions_v168') ||
                localStorage.getItem('miley_wrong_questions_v167') ||
                localStorage.getItem('miley_wrong_questions_v166') ||
                localStorage.getItem('miley_wrong_questions_v165') ||
