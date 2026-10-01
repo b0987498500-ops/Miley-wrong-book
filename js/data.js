@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v174';
+const STORAGE_KEY = 'miley_wrong_questions_v175';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_civ_law_of_demand_price_effect_115_107",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "公民與社會/經濟學：需求法則（價格降低導致需求量大增）與價格因素對消費者購買決策之影響",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：需求法則與商品熱銷/超賣現象解題關鍵！\n1. **需求法則（Law of Demand）**：在其他條件不變下，商品【價格降低】，消費者購買該商品付出的代價減少（機會成本降低），【需求量隨之增加】。\n2. **網站搶購暴增主因**：原網頁售價為 19,999 元、供貨量 99 臺。若網頁標錯價將【售價變更為 9,999 元】（降價達 10,000 元！），大幅增加消費者購買意願，才會在短時間內銷售一空且出現數百筆超賣候補訂單！\n3. **錯誤選項排除速記**：(A) 供貨量改 19 臺（只會更快售罄但不會增加數百筆候補）；(B) 供貨量改 999 臺（不會導致搶購爆單）；(D) 售價改 20,999 元（漲價會降低需求量，更賣不掉）。",
+    "stem": "右圖是新奇科技購物網站更新前的網頁資訊，某日該網頁內容調整後，幾分鐘內商品突然銷售一空，甚至還多了數百筆的訂單等候補貨。下列何者最可能是造成上述情況的原因？【115 年會考】\n\n○ (A) 供貨量變更為 19 臺\n○ (B) 供貨量變更為 999 臺\n○ (C) 售價變更為 9,999 元\n○ (D) 售價變更為 20,999 元",
+    "answer": "(C) 售價變更為 9,999 元",
+    "diagramUrl": "assets/questions/q_soc_civ_law_of_demand_price_effect_115_107.png",
+    "solution": "1. **經濟學觀念（需求法則）**：\n   - **需求法則**指出：在其他條件不變下，當商品的**售價降低**時，消費者購買該商品所付出的代價（機會成本）減少，購買意願提升，導致**需求量增加**。\n2. **題目情境與選項比對分析**：\n   - **原網頁設定**：筆記型電腦原售價 19,999 元，供貨量 99 臺。\n   - **(A) 供貨量變更為 19 臺**：僅減少總庫存量，無法解釋為何會有大量額外買家湧入並產生「數百筆候補訂單」。\n   - **(B) 供貨量變更為 999 臺**：庫存大增，在價格不變下不會引發幾分鐘內的搶購熱潮與等候補貨。\n   - **(C) 售價變更為 9,999 元（正確）**：大幅降價 10,000 元（標錯價或超低折扣），價格顯著下降引發強烈的「需求量大增」，使原本 99 臺庫存數分鐘內被搶購一空，並溢出數百筆候補訂單，完全符合需求法則與市場反應。\n   - **(D) 售價變更為 20,999 元**：售價提高會使消費者購買意願下降（需求量減少），不可能引發搶購。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_geo_eu_russia_energy_independence_115_103",
     "examPeriod": "一段",
@@ -5450,7 +5480,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v173') ||
+      stored = localStorage.getItem('miley_wrong_questions_v174') ||
+               localStorage.getItem('miley_wrong_questions_v173') ||
                localStorage.getItem('miley_wrong_questions_v172') ||
                localStorage.getItem('miley_wrong_questions_v171') ||
                localStorage.getItem('miley_wrong_questions_v170') ||
