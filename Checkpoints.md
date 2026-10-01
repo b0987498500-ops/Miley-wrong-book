@@ -4,6 +4,19 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v1.61] - 2026-10-01 (自動收錄 2 道地理錯題：114 會考加里寧格勒對抗 NATO 飛地據點與莫曼斯克北大西洋暖流不凍港，升級題庫數據庫至 v173)
+- **類型**：錯題自動收錄 / 社會地理地緣政治飛地與洋流氣候 / 114會考模擬考題 / 地圖無死角去痕裁切 / 數據庫升級 v173
+- **主要變更**：
+  1. **收錄 2 道地理錯題至資料庫 (`q_soc_geo_kaliningrad_nato_enclave_114_101` & `q_soc_geo_murmansk_ice_free_port_ocean_current_102`)**：
+     - **題 1（114 會考加里寧格勒飛地地緣政治 `q_soc_geo_kaliningrad_nato_enclave_114_101`）**：`立陶宛對經其領土進出加里寧格勒貨運火車實施限制...` 解析：加里寧格勒為俄國位於波羅的海之飛地，周圍被波蘭與立陶宛（NATO成員國）包圍，為俄羅斯對抗北大西洋公約組織（NATO）前哨軍事基地，標示正確答案選 `(D)`。
+     - **題 2（莫曼斯克不凍港與洋流成因 `q_soc_geo_murmansk_ice_free_port_ocean_current_102`）**：`莫曼斯克為北極圈內最大城市...受到哪股洋流影響成為終年不凍港？` 解析：強大的北大西洋暖流向北延伸至北極海，增溫增濕使北緯68度的莫曼斯克終年不結冰，標示正確答案選 `(D) 北大西洋暖流`。
+  2. **地圖去痕裁切與高清處理**：
+     - 裁切加里寧格勒地緣圖與莫曼斯克地圖並完全去除粉紅文字標記，保存至 `assets/questions/q_soc_geo_kaliningrad_nato_enclave_114_101.png` 與 `assets/questions/q_soc_geo_murmansk_ice_free_port_ocean_current_102.png`，配備點擊燈箱放大功能。
+  3. **資料庫與 Service Worker 升級**：
+     - 升級 `STORAGE_KEY` 至 `v173`，`sw.js` 快取版本更新至 `v1.39`，`index.html` 資源 query param 更新至 `v=173`。
+
+---
+
 ## [v1.60] - 2026-10-01 (自動收錄地理錯題：俄羅斯主要工業區區位條件與莫斯科市場人口導向判讀，升級題庫數據庫至 v172)
 - **類型**：錯題自動收錄 / 社會地理俄羅斯區域工業發展 / 區位導向比對 / 純淨文字排版無多餘截圖 / 數據庫升級 v172
 - **主要變更**：

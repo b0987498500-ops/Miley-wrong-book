@@ -3,10 +3,70 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v172';
+const STORAGE_KEY = 'miley_wrong_questions_v173';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_kaliningrad_nato_enclave_114_101",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "俄羅斯區域地理與飛地地緣政治：加里寧格勒（波羅的海不凍港/北大西洋公約組織包圍之軍事基地）",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：加里寧格勒地緣政治與戰略地位分析！\n1. **飛地（Enclave）定義**：加里寧格勒為俄羅斯位於波羅的海沿岸的海外獨立領土（飛地），被立陶宛與波蘭兩 NATO 成員國所環繞。\n2. **戰略與軍事價值**：加里寧格勒是俄羅斯在波羅的海唯二的不凍港之一（波羅的海艦隊總部），在地緣政治上為俄羅斯威嚇與對抗北大西洋公約組織（NATO）的核心前哨軍事基地！\n3. **錯誤選項排除速記**：距東北亞極為遙遠（非東北亞前哨）；波羅的海通往大西洋（非太平洋）；不位居俄羅斯至芬蘭之最短路徑上。",
+    "stem": "「俄烏戰爭以來，歐盟對俄羅斯採取大規模的制裁措施，其中立陶宛於 2022 年 6 月 18 日，對經其領土進出俄羅斯加里寧格勒的貨運火車實施限制，因而引發俄羅斯強烈不滿。此一事件也凸顯出加里寧格勒的重要性。」附圖顯示加里寧格勒的位置，根據上下文及圖中資訊判斷，其重要性可用下列何者來說明？【114 年會考】\n\n○ (A) 作為俄羅斯與東北亞國家間的貿易前哨站\n○ (B) 為俄羅斯貨物經波羅的海出太平洋的港口\n○ (C) 位處俄羅斯天然氣輸送至芬蘭的最短路徑上\n○ (D) 是俄羅斯對抗北大西洋公約組織的軍事基地",
+    "answer": "(D) 是俄羅斯對抗北大西洋公約組織的軍事基地",
+    "diagramUrl": "assets/questions/q_soc_geo_kaliningrad_nato_enclave_114_101.png",
+    "solution": "1. **地緣政治與飛地位置解析**：\n   - **加里寧格勒（Kaliningrad）**位於波羅的海沿岸，為俄羅斯的海外獨立領土（飛地），南北分別與波蘭及立陶宛接壤。\n   - 由於波蘭與立陶宛均為北大西洋公約組織（NATO）與歐盟成員國，加里寧格勒深入歐洲腹地，是俄羅斯防範與對抗 NATO 東擴的核心前哨戰略**軍事基地**（駐有波羅的海艦隊及飛彈系統）。\n2. **選項比較與導正**：\n   - **(A) 錯誤**：加里寧格勒位於歐洲北部波羅的海沿岸，距離東北亞（如中、日、韓）極為遙遠。\n   - **(B) 錯誤**：加里寧格勒臨波羅的海，經大西洋出口，而非太平洋。\n   - **(C) 錯誤**：由圖可知，加里寧格勒位於波羅的海東南岸，俄羅斯向芬蘭輸送天然氣直接經由其北部邊界或陸地接壤管道即可，無須繞經加里寧格勒。\n   - **(D) 正確**：身為夾在 NATO 成員國之間的俄國飛地與不凍港，其最主要戰略功能為對抗 NATO 的前方軍事據點。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_murmansk_ice_free_port_ocean_current_102",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "洋流與氣候影響：北大西洋暖流使極圈高緯度莫曼斯克成為終年不凍港",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：莫曼斯克高緯不凍港解題關鍵！\n1. **北極圈內最大城市／不凍港**：莫曼斯克（Murmansk）位於北緯 68 度（北極圈內巴倫支海沿岸），雖緯度高但終年不結冰！\n2. **主因（北大西洋暖流增溫增濕）**：強大的【北大西洋暖流】沿西歐延伸至北極海沿岸，為該海域帶來高溫高鹽的海水，使其成為俄羅斯北極海沿岸唯一終年不封凍的優良軍港與商港！\n3. **其他洋流位置對比**：親潮（日本東岸/千島群島涼流）；本吉拉涼流（非洲西南部）；阿古拉斯暖流（非洲東南部）。",
+    "stem": "附圖▲為俄羅斯莫曼斯克，不僅是俄羅斯重要的海港，更是北極圈內最大的城市，該國主要是受到下列哪股洋流影響，使其成為終年不結凍的不凍港？\n\n○ (A) 親潮\n○ (B) 本吉拉涼流\n○ (C) 阿古拉斯暖流\n○ (D) 北大西洋暖流",
+    "answer": "(D) 北大西洋暖流",
+    "diagramUrl": "assets/questions/q_soc_geo_murmansk_ice_free_port_ocean_current_102.png",
+    "solution": "1. **莫曼斯克地理位置與不凍港成因**：\n   - **莫曼斯克（Murmansk）**位於俄羅斯西北部科拉半島、北極圈以北（約北緯 68.9°），瀕臨巴倫支海，是北極圈內最大的城市。\n   - 雖然緯度極高且周邊陸地寒冷，但由於**北大西洋暖流**的餘脈（莫曼斯克暖流）一路向北延伸注入巴倫支海，帶來較高水溫，使該港口水域**終年不結冰**，成為俄羅斯重要的北極海終年不凍港與海軍基地。\n2. **選項洋流位置分析**：\n   - **(A) 親潮（千島寒流）**：位於西北太平洋，流經日本東北及千島群島。\n   - **(B) 本吉拉涼流**：位於南大西洋，流經非洲西南部沿岸。\n   - **(C) 阿古拉斯暖流**：位於印度洋，流經非洲東南部沿岸。\n   - **(D) 北大西洋暖流（正確）**：流經歐洲西岸延伸至北極海，影響莫曼斯克港口增溫。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_geo_russia_moscow_industrial_area_100",
     "examPeriod": "一段",
@@ -5270,7 +5330,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v171') ||
+      stored = localStorage.getItem('miley_wrong_questions_v172') ||
+               localStorage.getItem('miley_wrong_questions_v171') ||
                localStorage.getItem('miley_wrong_questions_v170') ||
                localStorage.getItem('miley_wrong_questions_v169') ||
                localStorage.getItem('miley_wrong_questions_v168') ||
