@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v168';
+const STORAGE_KEY = 'miley_wrong_questions_v169';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_china_migration_ningxia_108_097",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "中國區域發展與環境問題：農牧過渡帶（黃土高原/西海固生態移民）、氣候乾燥與水土流失判讀",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：中國氣候與行政區解題關鍵！\n1. **關鍵特徵解碼**：題幹提及【農牧過渡地帶】、【氣候乾燥少雨】、【水土流失嚴重】與【2011 年生態搬遷（西海固移民）】，指出該區為黃土高原南部及內陸乾旱/半乾旱交界處之【寧夏回族自治區】（圖中標示 **乙**）。\n2. **各標示行政區定位對照**：\n   - **甲（黑龍江省）**：東北地區，屬溫帶季風氣候，氣候濕潤/半濕潤，森林與黑土資源豐富，非乾燥少雨區。\n   - **乙（寧夏回族自治區）**：西北內陸，氣候乾燥少雨、地處黃土高原水土流失區域（西海固地區曾被聯合國列為最不適宜居住區之一）。\n   - **丙（湖南省）**：華中地區，屬亞熱帶季風氣候，降雨豐沛。\n   - **丁（廣西壯族自治區）**：華南地區，屬亞熱帶/熱帶季風氣候，氣候潮濕多雨。",
+    "stem": "中國某行政區的南部位於農牧過渡地帶，因氣候乾燥少雨、生態環境脆弱、水土流失嚴重及自然災害頻繁，被聯合國認為是最不適宜人類生存的地區之一，因此 2011 年當地政府對人民實施搬遷計畫。上述行政區應是附圖中何者？【108 年會考】\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁",
+    "answer": "(B) 乙",
+    "diagramUrl": "assets/questions/q_soc_geo_china_migration_ningxia_108_097.png",
+    "solution": "1. **題目關鍵特徵拆解**：\n   - **農牧過渡地帶**：位居雨量 400 mm 等雨線附近，介於東部季風農業區與西北乾旱牧區之間。\n   - **氣候乾燥少雨、水土流失嚴重**：位於西北內陸及黃土高原過渡區域（如寧夏南部西海固地區），生態脆弱且自然災害頻繁。\n   - **聯合國最不適宜居住地區與 2011 生態搬遷**：指寧夏回族自治區推動的「西海固生態移民搬遷工程」。\n2. **地圖代號與行政區比對**：\n   - **(A) 甲——黑龍江省**：位於東北季風氣候區，森林資源豐富、雨量適中，非乾燥少雨區。\n   - **(B) 乙——寧夏回族自治區（正確）**：位於西北內陸，南部位於農牧過渡帶與黃土高原水土流失區，氣候乾燥少雨，完全符合題意。\n   - **(C) 丙——湖南省**：位於華中長江流域，屬亞熱帶季風氣候，氣候潮濕且水資源充足。\n   - **(D) 丁——廣西壯族自治區**：位於華南地區，屬亞熱帶季風氣候，降水豐沛。\n\n故正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_earth_salt_lake_formation_climate_020",
     "examPeriod": "二段",
@@ -5150,7 +5180,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v167') ||
+      stored = localStorage.getItem('miley_wrong_questions_v168') ||
+               localStorage.getItem('miley_wrong_questions_v167') ||
                localStorage.getItem('miley_wrong_questions_v166') ||
                localStorage.getItem('miley_wrong_questions_v165') ||
                localStorage.getItem('miley_wrong_questions_v164') ||
