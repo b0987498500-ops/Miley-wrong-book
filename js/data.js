@@ -3,10 +3,130 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v173';
+const STORAGE_KEY = 'miley_wrong_questions_v174';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_eu_russia_energy_independence_115_103",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐洲區域地理與能源政策：擺脫俄羅斯化石燃料依賴之因應措施（減少消耗/開發替代能源/分散進口來源）判讀",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：歐盟能源安全與脫離俄依賴考點梳理！\n1. **擺脫能源依賴核心策略**：①【減少消耗】（如限制暖氣供應）、②【尋求替代來源】（如發展綠能）、③【分散進口風險】（如與第三國簽署天然氣協議）。\n2. **(B) 促使 OPEC 維持減產之陷阱**：若石油輸出國組織（OPEC）維持減產，會導致【全球國際油價上漲】與【化石燃料供應緊縮】，反而加劇歐盟面臨的能源危機，完全【無助於】擺脫能源依賴！",
+    "stem": "報導指出：「在俄烏戰爭爆發之前的 3 年裡，歐盟成員國平均每月從俄羅斯進口約 1,520 萬噸原油和石油產品，到了 2023 年 3 月，該值已下降至 140 萬噸。歐盟預計 2027 年切斷從俄羅斯的化石燃料進口，擺脫對其能源依賴。」下列何項措施無助於達成上述目標？【115 年會考】\n\n○ (A) 制定公共場所更嚴格的暖氣供應標準\n○ (B) 促使石油輸出國家組織維持減產政策\n○ (C) 與其他第三國簽署天然氣的進口協議\n○ (D) 積極發展綠能以增加替代性能源產量",
+    "answer": "(B) 促使石油輸出國家組織維持減產政策",
+    "diagramUrl": "",
+    "solution": "1. **能源轉型與擺脫依賴之核心邏輯**：\n   - 歐盟若要切斷對俄羅斯化石燃料（原油、天然氣）的依賴，必須透過「**減少需求與消耗**」或「**尋找本土／其他第三國替代來源**」來達成目標。\n2. **選項逐一檢視與排除**：\n   - **(A) 有助於達成（節能減耗）**：制定更嚴格的暖氣供應標準可直接減少化石燃料（天然氣與電力）的消耗量。\n   - **(B) 無助於達成（反向加劇危機，正確）**：若促使石油輸出國家組織（OPEC）維持「減產」政策，全球原油供給將會緊縮並推升國際油價，這不僅無法增加能源供應，反而會使歐盟面臨更嚴峻的能源短缺與高通膨危機，故無助於擺脫依賴。\n   - **(C) 有助於達成（分散進口來源）**：與其他第三國（如美國、卡達、挪威）簽署天然氣協議，能分散進口風險並替換俄國來源。\n   - **(D) 有助於達成（發展綠能替代）**：積極發展太陽能、風能等綠色能源，可增加本土替代性能源產量，逐步取代化石燃料。\n\n故無助於達成目標者選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_russia_terrain_profile_west_to_east_104",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "俄羅斯區域地理與地形剖面：西高東低地勢、由西向東深居內陸氣候特徵（年降水量遞減、溫差加大）",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：俄羅斯由西向東（歐俄至西伯利亞）氣候與景觀變化特徵！\n1. **年降水量與水氣來源**：俄羅斯的水氣主要來自西邊的大西洋，由西（甲區，歐俄平原）向東（乙區，西伯利亞高原山地）推進，距海越遠且受山脈阻擋，水氣遞減，【年降水量遞減】！\n2. **氣溫與人口分布**：由西向東，受海洋調節減少影響，1 月均溫越東越低（年溫差越大）；人口高度集中於西部的東歐平原（歐俄），向東人口密度劇降。",
+    "stem": "附圖為俄羅斯的地形剖面圖，若芮恩從圖中甲區前往乙區，最可能觀察到下列何種氣候特徵或景觀變化？\n\n○ (A) 年降水量遞減\n○ (B) 人口密度漸增\n○ (C) 地勢高度漸低\n○ (D) 1月月均溫漸增",
+    "answer": "(A) 年降水量遞減",
+    "diagramUrl": "assets/questions/q_soc_geo_russia_terrain_profile_west_to_east_104.png",
+    "solution": "1. **地形剖面圖位置判讀**：\n   - 圖中由西向東：甲區位於西部的**東歐平原／烏拉爾山**一帶；乙區位於東部的**中西伯利亞高原與東西伯利亞山地**。\n2. **氣候與人文景觀轉變分析**：\n   - **(A) 正確（水氣與降水量）**：俄羅斯主要的水氣來源為西邊的大西洋。由西（甲）向東（乙）行進，距離大西洋越遠，受西風帶水氣影響越弱，故**年降水量呈現遞減**趨勢。\n   - **(B) 錯誤（人口分布）**：俄羅斯約 75% 以上的人口集中於西部的歐俄平原（甲），東部的西伯利亞（乙）氣候嚴寒且地廣人稀，人口密度由西向東應為「漸減」。\n   - **(C) 錯誤（地勢高度）**：由圖可知，甲區為平原，向東過烏拉爾山後進入西伯利亞高原與山地（乙區），地勢高度由西向東總體為「漸高」。\n   - **(D) 錯誤（冬季均溫）**：由西向東遠離海洋調節，大陸性氣候特徵越發顯著，冬季受強烈大陸冷高壓籠罩，1 月月均溫由西向東為「漸低」（如奧伊米亞康為北半球寒極）。\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_russia_siberia_development_barriers_105",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "西伯利亞區域開發之限制因素：氣候嚴寒、人口稀少、土地廣袤運輸成本高與資源豐富特徵",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：西伯利亞開發障礙考題關鍵！\n1. **西伯利亞資源特徵**：西伯利亞擁有極其豐富的天然氣、石油、煤炭與森林礦產資源，【絕非自然資源匱乏】！\n2. **外商投資意願低之真實原因**：①【氣候極度嚴寒】（凍土層施工困難）、②【人口稀少】（勞動力極度缺乏）、③【面積遼闊】（交通基礎設施不足，運輸成本高昂）。",
+    "stem": "俄羅斯總統普丁上任後即宣布「交通現代化」和「與亞洲結合」為發展西伯利亞地區的重要目標，但歐盟和其他國家的資本家對該區域的投資意願甚低，其原因最不可能為下列何者？\n\n○ (A) 氣候嚴寒，產業發展受限\n○ (B) 人口稀少，勞動力供不應求\n○ (C) 土地面積廣大，運輸成本過高\n○ (D) 自然資源匱乏，原料成本提高",
+    "answer": "(D) 自然資源匱乏，原料成本提高",
+    "diagramUrl": "",
+    "solution": "1. **西伯利亞地理環境與資源特徵**：\n   - 西伯利亞地區蘊藏著全球最豐富的天然氣、石油、煤炭、鐵礦、金屬及森林水力資源，自然資源極為富饒，**絕非資源匱乏**。\n2. **外資投資意願低落之實際限制（排除 ABC）**：\n   - **(A) 屬實**：緯度高且氣候嚴寒，擁有廣大永凍土，建築與設施維護成本極高，產業發展受限。\n   - **(B) 屬實**：地廣人稀，當地勞工嚴重不足，需從外地引進勞動力。\n   - **(C) 屬實**：東西跨度極大，交通路線長且基礎建設較不完善，貨運與運輸成本過高。\n   - **(D) 最不可能（正確）**：西伯利亞自然資源極其豐富（如秋明油田、庫斯巴斯煤田等），原料來源無虞，故「資源匱乏」最不可能為投資意願低之原因。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_eu_cooperation_competitiveness_106",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐盟區域合作與組織特徵：跨國產業合作提升國際競爭力、總部地點（布魯塞爾）、歐元區與申根區非全涵蓋判讀",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：歐盟四大常見混淆考點梳理！\n1. **歐盟總部**：設於【比利時布魯塞爾】（非義大利羅馬）。\n2. **申根公約（開放邊境）**：僅限【簽署申根公約】之會員國與部分非歐盟國，非所有歐盟國均開放！\n3. **歐元區（統一貨幣）**：僅限【加入歐元區】之國家使用歐元（如瑞典、丹麥等多國未採用歐元），非所有歐盟國通用！\n4. **核心價值**：透過跨國分工與資源共享（如空中巴士飛機跨國合作組裝），【提升整體國際競爭力】！",
+    "stem": "歐盟會員國間緊密合作，期待能將歐洲結合展成一個整體。請問：下列關於歐盟的敘述，何者正確？\n\n○ (A) 總部設在義大利羅馬\n○ (B) 所有會員國皆對彼此開放邊境\n○ (C) 所有會員國皆使用統一貨幣歐元\n○ (D) 透過合作生產以提升國際競爭力",
+    "answer": "(D) 透過合作生產以提升國際競爭力",
+    "diagramUrl": "",
+    "solution": "1. **歐盟組織特徵與區域合作解析**：\n   - 歐盟（EU）成立的核心宗旨之一，係透過內部無關稅市場、資源共享及跨國分工（如歐洲空中巴士客機由法、德、英、西跨國共同製造生產），消除國界障礙並**提升歐盟在全球市場上的國際競爭力**。\n2. **選項逐一導正**：\n   - **(A) 錯誤**：歐盟總部位於**比利時布魯塞爾**（Brussels），非義大利羅馬。\n   - **(B) 錯誤**：開放邊境無須護照檢查僅適用於**簽署《申根公約》**的國家，部分歐盟會員國（如愛爾蘭）未加入申根區。\n   - **(C) 錯誤**：統一貨幣歐元僅限於**加入歐元區**的會員國採用（如瑞典、丹麥等國家仍使用本國貨幣）。\n   - **(D) 正確**：透過區域經濟整合與合作生產，成功強化整體國際競爭力。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_geo_kaliningrad_nato_enclave_114_101",
     "examPeriod": "一段",
@@ -5330,7 +5450,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v172') ||
+      stored = localStorage.getItem('miley_wrong_questions_v173') ||
+               localStorage.getItem('miley_wrong_questions_v172') ||
                localStorage.getItem('miley_wrong_questions_v171') ||
                localStorage.getItem('miley_wrong_questions_v170') ||
                localStorage.getItem('miley_wrong_questions_v169') ||
