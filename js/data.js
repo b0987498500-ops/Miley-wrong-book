@@ -3,10 +3,478 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v176';
+const STORAGE_KEY = 'miley_wrong_questions_v177';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_eng_vocab_appear_party_110",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "英文/字彙文法：動詞辨析（appear 出現、treat 招待、raise 撫養、lead 帶領）",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯筆記**：\n- **appear**：動詞，表示「出現；顯露」。句中「suddenly appeared at the party」（突然出現在派對上）最符合語意。\n- **treat**：招待；治療。**raise**：舉起；撫養（需接受詞）。**lead**：帶領；引導（過去式為 led）。",
+    "stem": "Everyone was surprised when he suddenly ______ at the party.",
+    "options": [
+      "(A) treated",
+      "(B) raised",
+      "(C) appeared",
+      "(D) led"
+    ],
+    "answer": "(C) appeared",
+    "diagramUrl": "",
+    "solution": "1. **題目句意**：「當他突然______在派對上時，大家都感到非常驚訝。」\n2. 關鍵字「suddenly」（突然地）與地點「at the party」（在派對上），表達「突然出現」，故選 (C) appeared。\n3. **選項詞義**：\n   - (A) treated：招待；治療\n   - (B) raised：舉起；撫養\n   - (C) appeared：出現；顯露（過去式）\n   - (D) led：帶領；引導（lead 的過去式）",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_verb_find_cheating_exam_111",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "審題不清",
+    "concept": "英文/句型文法：感官與發現動詞（find + 受詞 + V-ing）與考試作弊 cheat 詞彙",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯筆記**：\n1. **find + 人 + V-ing**：表示「發現某人正在做某事」。\n2. **cheat in the exam**：在考試中作弊。生氣（angry）的原因是發現學生在考試中作弊（cheating）。",
+    "stem": "The teacher was angry after she found some students ______ in the exam.",
+    "options": [
+      "(A) cheating",
+      "(B) kicking",
+      "(C) raising",
+      "(D) leading"
+    ],
+    "answer": "(A) cheating",
+    "diagramUrl": "",
+    "solution": "1. **題目句意**：「老師在發現有些學生在考試中______之後非常生氣。」\n2. 動詞「find + 受詞 + V-ing」表示發現某人正在進行某動作。在考試（in the exam）中會讓老師發怒（angry）的行為是 cheat（作弊），故選 (A) cheating。\n3. **選項詞義**：\n   - (A) cheating：作弊；欺騙\n   - (B) kicking：踢\n   - (C) raising：舉起；提升\n   - (D) leading：帶領；領先",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_adj_sick_weak_112",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "英文/字彙文法：形容詞辨析（weak 虛弱的、polite 禮貌的、wise 明智的、lovely 可愛的）",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯筆記**：\n- **weak**：虛弱的；軟弱的。因生病（sick）多時導致體力不好，故用 weak 描述身體狀態。\n- **polite**：有禮貌的；**wise**：聰明明智的；**lovely**：可愛討喜的。",
+    "stem": "Mr. Chang has been sick for a week, and he feels very ______ now.",
+    "options": [
+      "(A) polite",
+      "(B) wise",
+      "(C) lovely",
+      "(D) weak"
+    ],
+    "answer": "(D) weak",
+    "diagramUrl": "",
+    "solution": "1. **題目句意**：「張先生已經生病一個星期了，他現在感到非常______。」\n2. 前句提示「sick for a week」（生病一週），因此身體會感到「虛弱」，故選 (D) weak。\n3. **選項詞義**：\n   - (A) polite：有禮貌的\n   - (B) wise：明智的；聰明的\n   - (C) lovely：可愛的；美好的\n   - (D) weak：虛弱的；無力的",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_phrase_eve_chinese_new_year_113",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "英文/節慶字彙與片語：the eve of Chinese New Year (農曆除夕夜)",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯筆記**：\n- **eve**：名詞，指重大節日的前夕、前夜。\n- **the eve of Chinese New Year**：農曆除夕夜（全家聚在一起吃年夜飯 big meal 的時機）。",
+    "stem": "We always have a big meal on the ______ of Chinese New Year.",
+    "options": [
+      "(A) truck",
+      "(B) eve",
+      "(C) boss",
+      "(D) past"
+    ],
+    "answer": "(B) eve",
+    "diagramUrl": "",
+    "solution": "1. **題目句意**：「我們總是在農曆新年的______吃豐盛的大餐。」\n2. 專有名詞片語「the eve of Chinese New Year」指「除夕夜」。eve 專指節日前夕，故選 (B) eve。\n3. **選項詞義**：\n   - (A) truck：卡車\n   - (B) eve：前夕；前夜\n   - (C) boss：老闆\n   - (D) past：過去",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_phrasal_verb_woke_up_loud_noise_114",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "審題不清",
+    "concept": "英文/動詞片語：wake up (醒來，過去式為 woke up)",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯筆記**：\n- **wake up (過去式 woke up)**：醒來；甦醒。\n- **led to**：導致；引起（lead to 的過去式）。\n- 玻璃杯掉落發出大聲巨響（fell and made a loud noise），會使嬰兒「醒過來」（woke up）。",
+    "stem": "The baby ______ when the glass fell and made a loud (大聲的) noise.",
+    "options": [
+      "(A) lied",
+      "(B) led to",
+      "(C) hated",
+      "(D) woke up"
+    ],
+    "answer": "(D) woke up",
+    "diagramUrl": "",
+    "solution": "1. **題目句意**：「當玻璃杯掉落並發出巨大的聲音時，嬰兒______。」\n2. 受到巨大聲音驚嚇而醒來，動詞用 woke up（wake up 的過去式），故選 (D) woke up。\n3. **選項詞義**：\n   - (A) lied：說謊；躺下（lie 過去式）\n   - (B) led to：導致\n   - (C) hated：討厭；憎恨\n   - (D) woke up：醒過來",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_grammar_present_perfect_yet_115",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "英文/時態文法：現在完成式問句（Have/Has + 主詞 + p.p. ... yet?）",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯筆記**：\n1. 句尾有提示詞 **yet**（已經；還），且答句為 **Yes, I have.**，可知問句必定為現在完成式。\n2. **現在完成式疑問句句型**：Have / Has + 主詞 + 過去分詞 (p.p.) ... yet?\n3. 主詞為 you，故助動詞用 Have，動詞 watch 改為過去分詞 watched。",
+    "stem": "James: ______ you ______ the movie yet?\nJulie: Yes, I have.",
+    "options": [
+      "(A) Have; watched",
+      "(B) Do; watch",
+      "(C) Are; watching",
+      "(D) Did; watch"
+    ],
+    "answer": "(A) Have; watched",
+    "diagramUrl": "",
+    "solution": "1. 根據句尾副詞 yet 以及答句 Yes, I have. 判斷，本題為現在完成式的問句與回答。\n2. 現在完成式結構：Have/Has + 主詞 + p.p.（過去分詞）。\n3. 主詞為 you，助動詞使用 Have；watch 的過去分詞為 watched，故選 (A) Have; watched。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_grammar_present_perfect_short_answer_neg_116",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "審題不清",
+    "concept": "英文/時態文法：現在完成式疑問句之否定簡答（No, I haven't.）",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯筆記**：\n- 問句用助動詞 **Have** 開頭詢問（Have you finished...?），回答時必須「用什麼助動詞問，就用什麼助動詞答」！\n- 肯定回答：Yes, I have.\n- 否定回答：No, I haven't.",
+    "stem": "Mom: Have you finished your homework yet?\nAndy: No, ______.",
+    "options": [
+      "(A) I don't",
+      "(B) I can't",
+      "(C) I haven't",
+      "(D) I won't"
+    ],
+    "answer": "(C) I haven't",
+    "diagramUrl": "",
+    "solution": "1. 題目問句為「Have you finished your homework yet?」（你已經完成作業了嗎？），屬現在完成式問句。\n2. 用 Have 提問，簡答必須維持相同的完成式助動詞。\n3. 否定簡答格式為：No, I haven't.（完整句為 No, I haven't finished my homework yet.），故選 (C)。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_grammar_present_perfect_has_mary_ever_117",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "英文/時態文法：第三人稱單數現在完成式簡答（Yes, she has. 不得縮寫為 she's）",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯筆記**：\n1. 問句 Has Mary ever been to the US? 主詞為第三人稱單數 Mary，助動詞用 **Has**。\n2. 肯定簡答：Yes, she has.\n3. **超級陷阱**：肯定簡答句中的代名詞與助動詞**絕對不能縮寫**！不能寫成 Yes, she's.（因會被誤認為 is），故 (A) 錯誤，必須選完整的 (B) she has。",
+    "stem": "David: Has Mary ever been to the US?\nLaura: Yes, ______.",
+    "options": [
+      "(A) she's",
+      "(B) she has",
+      "(C) she does",
+      "(D) she can"
+    ],
+    "answer": "(B) she has",
+    "diagramUrl": "",
+    "solution": "1. 問句以 Has 開頭（Has Mary ever been...），主詞為 Mary（第三人稱單數代名詞用 she）。\n2. 肯定簡答需用 Yes, she has.\n3. 易錯點：肯定簡答結尾的代名詞與助動詞不能縮寫（不可寫成 Yes, she's），故選 (B) she has。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_wh_question_how_long_duration_118",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "英文/疑問詞辨析：How long 詢問持續時間長短（搭配 for + 時間長度）",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯筆記**：\n- **How long**：詢問「時間持續多久」，答句常搭配 For + 時間長度（如 For almost eight months）。\n- **How often**：詢問「頻率」（如 once a week）。\n- **When**：詢問「時間點」（如 yesterday, last night）。\n- **What time**：詢問「具體時刻點」（如 at 8:00）。",
+    "stem": "Jill: ______ have you worked as a waiter here?\nPeter: For almost eight months.",
+    "options": [
+      "(A) How often",
+      "(B) When",
+      "(C) How long",
+      "(D) What time"
+    ],
+    "answer": "(C) How long",
+    "diagramUrl": "",
+    "solution": "1. 答句為「For almost eight months」（長達將近八個月），使用的是「for + 時間長度」來回答持續的時間區段。\n2. 詢問「時間持續多久」的疑問詞為 How long，故選 (C) How long。\n3. 各疑問詞用途：\n   - (A) How often：詢問動作發生頻率（如幾天一次）\n   - (B) When：詢問時間點\n   - (C) How long：詢問時間長短\n   - (D) What time：詢問幾點幾分",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_grammar_since_past_point_ago_119",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "英文/時態文法：介詞 since 與 for 之區分（since + 時間 + ago vs for + 時間長度）",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯筆記**：現在完成式的關鍵介詞公式！\n1. **since + 過去時間點**：例如 since 1970 或 **since 50 years ago**（從五十年前的那一點算起直到現在）。\n2. **for + 一段時間長度**：例如 for 50 years（持續了五十年，後面**不可**加 ago）。\n- 題目句尾有 **ago**，因此只能選 **since**，絕不能選 for！",
+    "stem": "My grandparents have been married ______ fifty years ago.",
+    "options": [
+      "(A) for",
+      "(B) since",
+      "(C) about",
+      "(D) almost"
+    ],
+    "answer": "(B) since",
+    "diagramUrl": "",
+    "solution": "1. 本句時態為現在完成式（have been married）。\n2. 空格後方的文字為「fifty years ago」（五十年前），這是一個「特定的過去時間點」。\n3. 文法規則：\n   - since + 過去時間點（包含時間 + ago）\n   - for + 時間長度（注意：若用 for，句尾不可有 ago，應為 for fifty years）\n4. 句尾含有 ago，故介詞必須選擇 (B) since。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_reading_billboard_kpop_happy_song_120",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "細心審題",
+    "concept": "英文/閱讀測驗：Billboard K-pop 2025 排行榜細節檢索與曲風主題對應",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯筆記**：\n- 題目要求找出適合派對且充滿「快樂音樂（happy song）」的歌曲。\n- 查對表格：TOP 10 歌手 H1-KEY 的歌曲《Summer Was You》主題為「Happy summer energy」（歡樂夏天能量），完全符合需求。",
+    "stem": "Amy will throw a potluck party in July, and she wants to choose a happy song to play on that day. Which song might she choose?",
+    "options": [
+      "(A) Hwasa-Good Goodbye",
+      "(B) NMIXX-Blue Valentine",
+      "(C) H1-KEY-Summer Was You",
+      "(D) WOODZ-I'll Never Love Again"
+    ],
+    "answer": "(C) H1-KEY-Summer Was You",
+    "diagramUrl": "assets/questions/q_eng_billboard_kpop_table_109.png",
+    "solution": "1. 題目情境：Amy 在七月要辦溫馨派對，想選一首「歡樂快樂的歌曲（happy song）」。\n2. 對照 Billboard K-pop 表格主題（Subject）欄位：\n   - (A) Hwasa《Good Goodbye》：Saying goodbye to love with grace（優雅與愛情告別）\n   - (B) NMIXX《Blue Valentine》：Finding hope in despair（在絕望中找到希望）\n   - (C) H1-KEY《Summer Was You》：Happy summer energy（歡樂的夏天能量）\n   - (D) WOODZ《I'll Never Love Again》：Fear of loving again（害怕再次去愛）\n3. 只有 (C) H1-KEY 的歌曲包含關鍵字 Happy，故選 (C)。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_reading_billboard_kpop_jennie_confident_121",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "細心審題",
+    "concept": "英文/閱讀測驗：同義字詞代換與主題比對（Be confident and be yourself -> feel confident and strong）",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯筆記**：\n- JENNIE 的歌曲《like JENNIE》主題為「Be confident and be yourself」（展現自信，做你自己）。\n- 選項 (D) 中的「makes me feel confident and strong」（讓我感到自信與強大）精準對應歌詞與主題精神！",
+    "stem": "John's class is sharing songs they listened to this week. Which student is talking about like JENNIE?",
+    "options": [
+      "(A) \"I like this sad song.\"",
+      "(B) \"I like the song that was released in summer.\"",
+      "(C) \"I like the song that says having a crush on someone.\"",
+      "(D) \"I like the song that makes me feel confident and strong.\""
+    ],
+    "answer": "(D) \"I like the song that makes me feel confident and strong.\"",
+    "diagramUrl": "assets/questions/q_eng_billboard_kpop_table_109.png",
+    "solution": "1. 題目問哪位同學的描述符合 JENNIE 的歌曲《like JENNIE》。\n2. 查看表格中 JENNIE 的主題：Be confident and be yourself（展現自信，做你自己）。\n3. 對照選項：\n   - (A) 喜歡這首悲傷的歌（不符合）\n   - (B) 喜歡夏天發行的歌（JENNIE 發行日為 3 月）\n   - (C) 喜歡描述暗戀某人的歌（那是 TEN 的歌 STUNNER）\n   - (D) 喜歡讓我覺得自信且堅強的歌（精準符合 confident 關鍵字）\n4. 故正確答案選 (D)。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_reading_billboard_kpop_true_statement_february_122",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "細心審題",
+    "concept": "英文/閱讀測驗：綜合敘述真偽推論與發行月份（Release Date）檢索",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯筆記**：\n- 逐一核對選項：二月發行（February）的歌曲只有 TOP 8 歌手 Kiiikiii 的《I DO ME》（發行日期：2025.02.16），全表只有這一首！因此選項 (B)「There is only one song released in February.」完全正確！",
+    "stem": "According to (根據) this reading, which is true?",
+    "options": [
+      "(A) Billboard is a magazine about history.",
+      "(B) There is only one song released in February.",
+      "(C) Both ATEEZ and H1-KEY's songs are sad songs.",
+      "(D) Good Goodbye tells people to be afraid of love."
+    ],
+    "answer": "(B) There is only one song released in February.",
+    "diagramUrl": "assets/questions/q_eng_billboard_kpop_table_109.png",
+    "solution": "1. 逐一檢視各選項敘述的真實性：\n   - (A) Billboard 是歷史雜誌：錯誤。文章開頭第一句說明是音樂雜誌（famous American music magazine）。\n   - (B) 二月份發行的歌曲只有一首：正確！查看表格發行日期（Release Date），只有 Kiiikiii 的歌曲於 2025.02.16 發行，確實只有一首。\n   - (C) ATEEZ 與 H1-KEY 的歌都是悲傷歌曲：錯誤。H1-KEY 的主題是 Happy summer energy（快樂能量）。\n   - (D) Good Goodbye 告訴人們要害怕愛情：錯誤。對照主題是「Saying goodbye to love with grace」（優雅告別），害怕愛情是 WOODZ 的歌曲主題。\n2. 故正確敘述為 (B)。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_civ_production_factors_natural_resource_rent_108",
     "examPeriod": "一段",
@@ -5510,7 +5978,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v175') ||
+      stored = localStorage.getItem('miley_wrong_questions_v176') ||
+               localStorage.getItem('miley_wrong_questions_v175') ||
                localStorage.getItem('miley_wrong_questions_v174') ||
                localStorage.getItem('miley_wrong_questions_v173') ||
                localStorage.getItem('miley_wrong_questions_v172') ||

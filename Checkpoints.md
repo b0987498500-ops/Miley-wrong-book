@@ -4,6 +4,32 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v1.65] - 2026-10-01 (自動收錄 13 道英文錯題：Have You Ever Been To A Concert 綜合測驗 Q1~Q10 與 Billboard K-pop 2025 閱讀測驗 Q1~Q3，升級題庫數據庫至 v177)
+- **類型**：錯題自動收錄 / 國中英文 / 現在完成式文法與節慶字彙 / 旋轉圖片裁切去痕 / 閱讀測驗圖表分析 / 數據庫升級 v177
+- **主要變更**：
+  1. **收錄 13 道英文錯題至資料庫 (`q_eng_vocab_appear_party_110` ~ `q_eng_reading_billboard_kpop_true_statement_february_122`)**：
+     - **Part 1 綜合測驗 10 題**：
+       - **Q1 (appear)**：`suddenly appeared at the party`（突然出現在派對上），標示正確答案選 `(C)`。
+       - **Q2 (cheating)**：`found some students cheating in the exam`（發現學生考試作弊），標示正確答案選 `(A)`。
+       - **Q3 (weak)**：`sick for a week ... feels very weak`（生病一週感到虛弱），標示正確答案選 `(D)`。
+       - **Q4 (eve)**：`the eve of Chinese New Year`（農曆除夕夜），標示正確答案選 `(B)`。
+       - **Q5 (woke up)**：`the baby woke up when glass fell`（巨響驚醒嬰兒），標示正確答案選 `(D)`。
+       - **Q6 (Have; watched)**：`Have you watched the movie yet?` 完成式問句搭配 yet，標示正確答案選 `(A)`。
+       - **Q7 (I haven't)**：`Have you finished... No, I haven't.` 完成式否定簡答，標示正確答案選 `(C)`。
+       - **Q8 (she has)**：`Has Mary ever been... Yes, she has.` 肯定簡答代名詞與助動詞不可縮寫，標示正確答案選 `(B)`。
+       - **Q9 (How long)**：`How long have you worked... For almost eight months.` 詢問時間長度搭配 for，標示正確答案選 `(C)`。
+       - **Q10 (since)**：`married since fifty years ago.` 句尾有 ago 屬過去時間點，必搭配 since，標示正確答案選 `(B)`。
+     - **Part 2 閱讀測驗 3 題 (Billboard K-pop 2025 Top 10)**：
+       - **Q11 (Happy song)**：Amy 在七月辦派對選歡樂歌曲，對照 H1-KEY《Summer Was You》主題為 Happy summer energy，標示正確答案選 `(C)`。
+       - **Q12 (JENNIE)**：JENNIE 主題為 Be confident and be yourself，對應 (D) makes me feel confident and strong，標示正確答案選 `(D)`。
+       - **Q13 (February release)**：二月發行歌曲全表僅有 Kiiikiii《I DO ME》（2025.02.16），(B)敘述完全正確，標示正確答案選 `(B)`。
+  2. **圖表旋轉與去痕處理**：
+     - 將第三張側旋圖片進行 90 度順時針旋轉與淨化，裁切 Billboard K-pop 2025 Top 10 圖表保存至 `assets/questions/q_eng_billboard_kpop_table_109.png`。
+  3. **資料庫與 Service Worker 升級**：
+     - 升級 `STORAGE_KEY` 至 `v177`，`sw.js` 快取版本更新至 `v1.43`，`index.html` 資源 query param 更新至 `v=177`。
+
+---
+
 ## [v1.64] - 2026-10-01 (自動收錄公民經濟學錯題：四大生產要素與代價報酬，精軒公司租用土地屬自然資源與地租代價，升級題庫數據庫至 v176)
 - **類型**：錯題自動收錄 / 社會公民與社會經濟學 / 四大生產要素與報酬代價 / 土地與地租 / 圖表去痕裁切 / 數據庫升級 v176
 - **主要變更**：
