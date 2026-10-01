@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v170';
+const STORAGE_KEY = 'miley_wrong_questions_v171';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_eu_eastward_expansion_2004_099",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐洲區域地理與歐盟東擴：冷戰後政治經濟體制轉型及 2004 年加入歐盟之東歐國家分區判讀",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：歐盟發展與東擴考點梳理！\n1. **冷戰後體制轉型**：東歐國家原屬共產陣營，冷戰結束後轉型為市場經濟與民主政治，並積極加入歐盟以提振經濟。\n2. **2004 年歐盟東擴關鍵字**：波蘭、捷克、匈牙利、斯洛伐克（中東歐）、波羅的海三小國（愛沙尼亞、拉脫維亞、立陶宛）、羅馬尼亞與保加利亞等均位於【東歐】區域！",
+    "stem": "歐洲共同體 12 國於 1993 年轉為歐洲聯盟，其後不斷納入新會員國。在 2004 年後，有波蘭、捷克、匈牙利、斯洛伐克、斯洛維尼亞、愛沙尼亞、拉脫維亞、立陶宛、羅馬尼亞及保加利亞等國加入。請問：2004 年後加入歐盟的會員國，大多位在歐洲哪個分區？\n\n○ (A) 北歐\n○ (B) 西歐\n○ (C) 南歐\n○ (D) 東歐",
+    "answer": "(D) 東歐",
+    "diagramUrl": "",
+    "solution": "1. **歷史與區域背景**：\n   - 冷戰期間，東歐國家多屬於蘇聯共產陣營，在經濟與政治上與西歐隔絕。\n   - 1989 年東歐劇變及 1991 年蘇聯解體後，東歐各國積極轉型為民主政治與市場經濟體制。\n2. **歐盟東擴（2004 年後）**：\n   - 為了提振經濟發展、融入歐洲一體化市場，波蘭、捷克、匈牙利、斯洛伐克、斯洛維尼亞、波羅的海三小國（愛沙尼亞、拉脫維亞、立陶宛）以及羅馬尼亞、保加利亞等**東歐**國家相繼於 2004 年及 2007 年加入歐盟，此過程稱為「歐盟東擴」。\n3. **選項比較與分析**：\n   - **(A) 北歐**、**(B) 西歐**、**(C) 南歐**：多數國家在 2004 年前即已為歐盟或歐共體之早期成員國（如法國、德國、義大利、荷蘭等）。\n   - **(D) 東歐（正確）**：題幹所列舉之國家主要地理分區均屬於**東歐**。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_math_similar_polygons_outward_extension_098",
     "examPeriod": "一段",
@@ -5210,7 +5240,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v169') ||
+      stored = localStorage.getItem('miley_wrong_questions_v170') ||
+               localStorage.getItem('miley_wrong_questions_v169') ||
                localStorage.getItem('miley_wrong_questions_v168') ||
                localStorage.getItem('miley_wrong_questions_v167') ||
                localStorage.getItem('miley_wrong_questions_v166') ||
