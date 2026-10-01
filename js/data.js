@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v171';
+const STORAGE_KEY = 'miley_wrong_questions_v172';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_russia_moscow_industrial_area_100",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "俄羅斯區域地理與主要工業區：莫斯科工業區（人口密集、交通便利、市場導向）與礦產原料導向工業區之比較判讀",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：俄羅斯四大工業區區位導向對照！\n1. **莫斯科工業區**：【市場、人口勞動力、交通便利】（歐俄精華區，唯一以市場與人口交通為主的工業區）。\n2. **烏拉爾山工業區**：【鐵礦金屬】（礦產原料導向）。\n3. **庫斯內次工業區**：【煤礦】（庫斯巴斯煤田，燃料/原料導向）。\n4. **貝加爾湖工業區**：【水力發電與森林礦產】（能源/原料導向）。",
+    "stem": "「重工業」是俄羅斯的重點發展產業，其境內哪個工業區是因人口密集、交通便利，且接近廣大市場而興起？\n\n○ (A) 莫斯科工業區\n○ (B) 烏拉爾山工業區\n○ (C) 庫斯內次工業區\n○ (D) 貝加爾湖工業區",
+    "answer": "(A) 莫斯科工業區",
+    "diagramUrl": "",
+    "solution": "1. **俄羅斯工業區位條件特徵**：\n   - 俄羅斯為傳統重工業大國，其主要工業區的分布可分為「**市場與人口交通導向**」以及「**原料/礦產與能源導向**」兩大類別。\n2. **莫斯科工業區（市場與人口交通導向）**：\n   - **莫斯科工業區**位於歐俄地區核心，為俄羅斯的政治、經濟、交通與文化中心。該區擁有全國最密集的城鎮人口與消費市場，且陸空交通網路發達，因而興起並發展機械、汽車、化學及高科技等工業，屬於典型的**市場與人口交通導向**。\n3. **其他工業區（原料與能源導向）**：\n   - **(B) 烏拉爾山工業區**：利用烏拉爾山脈豐富的**鐵礦**與金屬礦產興起（原料導向）。\n   - **(C) 庫斯內次工業區**：位於西伯利亞地區，依賴著名的庫斯巴斯**煤礦**發展重工業（燃料/原料導向）。\n   - **(D) 貝加爾湖工業區**：利用貝加爾湖豐富的水力發電與周邊木材、礦產資源發展（能源與原料導向）。\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_geo_eu_eastward_expansion_2004_099",
     "examPeriod": "一段",
@@ -5240,7 +5270,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v170') ||
+      stored = localStorage.getItem('miley_wrong_questions_v171') ||
+               localStorage.getItem('miley_wrong_questions_v170') ||
                localStorage.getItem('miley_wrong_questions_v169') ||
                localStorage.getItem('miley_wrong_questions_v168') ||
                localStorage.getItem('miley_wrong_questions_v167') ||
