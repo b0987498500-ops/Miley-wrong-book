@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v175';
+const STORAGE_KEY = 'miley_wrong_questions_v176';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_civ_production_factors_natural_resource_rent_108",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "公民與社會/經濟學：四大生產要素分類（自然資源、勞力、資本、企業才能）與對應代價報酬（地租、工資、利息、利潤）",
+    "uploadDate": "2026-10-01",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：四大生產要素與代價報酬對應必考口訣！\n1. **自然資源（Land）** $\\to$ **地租**（如租用土地、天然礦產、水資源）。\n2. **勞力（Labor）** $\\to$ **工資/薪水**（如招聘員工提供勞動）。\n3. **資本（Capital）** $\\to$ **利息**（如購買機器、電腦設備、廠房倉庫等工具）。\n4. **企業才能（Entrepreneurship）** $\\to$ **利潤**（如創業者整合要素經營風險）。",
+    "stem": "(二) 精軒公司在上個月所添購的生產資源如右表所示，根據表中資訊回答下列問題：\n\n根據上表資源判斷，哪一個項目是屬於「自然資源」，精軒公司須支付的代價為何？",
+    "answer": "甲項目（租用土地）屬於自然資源，精軒公司租用土地須支付地租。",
+    "diagramUrl": "assets/questions/q_soc_civ_production_factors_natural_resource_rent_108.png",
+    "solution": "1. **四大生產要素與對應報酬代價總整理**：\n   - **自然資源（Land）**：未經人類加工之自然物（如土地、陽光、礦產、水資源），使用代價為**地租**。\n   - **勞力（Labor）**：人類提供之心力與體力勞動，使用代價為**工資（薪水）**。\n   - **資本（Capital）**：人類製造出來用於生產其他商品的工具與設備（如電腦設備、機器、廠房、倉庫），使用代價為**利息**。\n   - **企業才能（Entrepreneurship）**：企業家承擔風險、整合前三種要素進行創新與經營的能力，獲得之報酬為**利潤**。\n2. **表格各項目分類剖析**：\n   - **甲（租用土地）**：土地為天然存在的自然資源，屬**自然資源**，支付代價為**地租**。\n   - **乙（購買電腦設備）**與 **丁（租用倉庫）**：電腦設備與倉庫廠房為人類製造之生產工具，屬**資本**。\n   - **丙（招聘員工）**：員工提供心力與體力勞動，屬**勞力**，支付代價為**工資**。\n\n故正確解答為：**甲項目屬於自然資源，精軒公司須支付的代價為地租。**",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-01",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_civ_law_of_demand_price_effect_115_107",
     "examPeriod": "一段",
@@ -5480,7 +5510,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v174') ||
+      stored = localStorage.getItem('miley_wrong_questions_v175') ||
+               localStorage.getItem('miley_wrong_questions_v174') ||
                localStorage.getItem('miley_wrong_questions_v173') ||
                localStorage.getItem('miley_wrong_questions_v172') ||
                localStorage.getItem('miley_wrong_questions_v171') ||
