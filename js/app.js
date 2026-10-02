@@ -82,6 +82,11 @@ class App {
         this.currentMondayFilter = newCurrentMonday;
       }
 
+      // Auto carryover unreviewed questions to current week queue
+      if (window.dataManager && typeof window.dataManager.carryOverUnreviewedQuestionsToCurrentWeek === 'function') {
+        window.dataManager.carryOverUnreviewedQuestionsToCurrentWeek();
+      }
+
       this.renderWeeklyMondayBar();
       this.refreshAllViews();
     }

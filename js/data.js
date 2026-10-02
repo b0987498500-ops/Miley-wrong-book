@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v181';
+const STORAGE_KEY = 'miley_wrong_questions_v182';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -6158,7 +6158,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v180') ||
+      stored = localStorage.getItem('miley_wrong_questions_v181') ||
+               localStorage.getItem('miley_wrong_questions_v180') ||
                localStorage.getItem('miley_wrong_questions_v179') ||
                localStorage.getItem('miley_wrong_questions_v178') ||
                localStorage.getItem('miley_wrong_questions_v177') ||
@@ -6399,6 +6400,9 @@ class DataManager {
       this.questions = this.questions.filter(q => q && !this.deletedIds.includes(q.id));
     }
 
+    // Auto carryover unreviewed questions to current week queue
+    this.carryOverUnreviewedQuestionsToCurrentWeek();
+
     this.save();
   }
 
@@ -6525,6 +6529,73 @@ class DataManager {
       ? q.mondayDates
       : [q.mondayDate || this.getCurrentMondayDate()];
     return mondays.includes(targetMonday);
+  }
+
+  /**
+   * 取得跨裝置 canonical 確定性排序鍵值 (Deterministic Sort Key)
+   * 確保手機與電腦（跨裝置）之題目排列順序 100% 一致！
+   * 先加入的題目排在前面（第一頁/第一題），後加入的題目排在後面（最後一頁/最後一題）。
+   */
+  getQuestionSortKey(q) {
+    if (!q) return '9_9999-99-99_000000';
+    if (typeof q._seedIndex === 'number') {
+      return `0_${String(q._seedIndex).padStart(6, '0')}`;
+    }
+    const seedIdx = INITIAL_SEED_DATA.findIndex(s => s.id === q.id);
+    if (seedIdx !== -1) {
+      q._seedIndex = seedIdx;
+      return `0_${String(seedIdx).padStart(6, '0')}`;
+    }
+    const uploadDate = q.uploadDate || '2000-01-01';
+    let timestamp = 0;
+    if (q.id) {
+      const match = q.id.match(/\d+/);
+      if (match) timestamp = parseInt(match[0], 10);
+    }
+    return `1_${uploadDate}_${String(timestamp).padStart(15, '0')}_${q.id}`;
+  }
+
+  /**
+   * 自動跨週檢查與滾動：
+   * 當跨週／新一週開始時，在手機與電腦完成同步後，自動整理上週（及過去週次）未複習的題目，
+   * 將其自動編入最新一週 (currentMonday) 的複習隊列中！
+   */
+  carryOverUnreviewedQuestionsToCurrentWeek() {
+    const currentMonday = this.getCurrentMondayDate();
+    if (!currentMonday) return 0;
+
+    let carriedCount = 0;
+
+    this.questions.forEach(q => {
+      if (!q || q.isArchived) return;
+
+      const mondays = Array.isArray(q.mondayDates) && q.mondayDates.length > 0
+        ? q.mondayDates
+        : [q.mondayDate || currentMonday];
+
+      const hasPastWeek = mondays.some(m => m && m < currentMonday);
+      if (!hasPastWeek) return;
+
+      const isReviewedInCurrent = this.isQuestionReviewed(q, currentMonday);
+      const isReviewedOverall = q.isReviewed === true || q.reviewStatus === 'reviewed';
+
+      if (!isReviewedInCurrent && !isReviewedOverall) {
+        if (!mondays.includes(currentMonday)) {
+          mondays.push(currentMonday);
+          q.mondayDates = mondays;
+          q.mondayDate = currentMonday;
+          q.weekLabel = `${currentMonday} (最新週次)`;
+          carriedCount++;
+        }
+      }
+    });
+
+    if (carriedCount > 0) {
+      this.save();
+      console.log(`[AutoCarryover] 已將 ${carriedCount} 道過去週次未複習題目自動編入最新週 (${currentMonday})`);
+    }
+
+    return carriedCount;
   }
 
   isQuestionReviewed(q, mondayDate = null) {

@@ -4,6 +4,19 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v1.70] - 2026-10-02 (實作手機/電腦跨裝置 100% 確定性對齊排序與跨週未複習題目自動滾動編入最新週，升級題庫數據庫至 v182)
+- **類型**：跨裝置排序確定性對齊 (先放的排前面、後放的排後面) / 自動跨週滾動隊列 / 數據庫升級 v182
+- **主要變更**：
+  1. **手機與電腦跨裝置 100% 確定性題目排序對齊 (`getQuestionSortKey`)**：
+     - 在 `DataManager` 新增 `getQuestionSortKey(q)` 決定性排序演算法。
+     - 在 `ReviewModule.loadReviewQueue` 中以先來後到原則（早期題目 `0_seedIndex` 在前，新上傳題目 `1_uploadDate_timestamp` 在後）進行確定性排序，徹底消除手機與電腦端因為快取或瀏覽器渲染順序不同造成的題目序號混亂問題。
+  2. **跨週未複習題目自動對齊並編入新一週隊列 (`carryOverUnreviewedQuestionsToCurrentWeek`)**：
+     - 在跨週或新一週開啟時，系統會先與雲端完成雙向同步，整理出過去週次中**未複習**的錯題，並將其自動編入最新一週 (`currentMonday`) 的複習隊列中，確保 Miley 在新一週複習時不會遺漏任何過去尚未擊敗的錯題。
+  3. **數據庫與快取升級**：
+     - 升級 `STORAGE_KEY` 至 `v182`，`sw.js` 快取版本更新至 `v1.48`，`index.html` 資源 query param 更新至 `v=182`。
+
+---
+
 ## [v1.69] - 2026-10-02 (更新本週數學錯題示意圖為 854x743 頂級高畫質原圖，升級題庫數據庫至 v181)
 - **類型**：幾何示意圖畫質升級 / 本週數學錯題圖表優化 / 數據庫升級 v181
 - **主要變更**：

@@ -565,6 +565,11 @@ window.SyncModule = {
       } catch (e) {}
     }
 
+    // 自動跨週檢查：在兩端同步與做題進度對齊後，自動將過去週次未複習題目編入最新一週隊列
+    if (typeof window.dataManager.carryOverUnreviewedQuestionsToCurrentWeek === 'function') {
+      window.dataManager.carryOverUnreviewedQuestionsToCurrentWeek();
+    }
+
     // 儲存並即時更新頁面所有元件（火車、側邊欄、題庫隊列）
     window.dataManager.save();
 

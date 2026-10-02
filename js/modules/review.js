@@ -659,7 +659,15 @@ window.ReviewModule = {
       list = list.filter(q => window.dataManager.isQuestionInMonday(q, targetMonday));
     }
 
-    // Miley's sorting rule: reviewed questions in front, unreviewed questions after
+    // Miley's sorting rule:
+    // 1. Sort all matched questions deterministically by insertion order (先放的排前面，後放的排後面；跨裝置 100% 一致對齊)
+    list.sort((a, b) => {
+      const keyA = window.dataManager.getQuestionSortKey(a);
+      const keyB = window.dataManager.getQuestionSortKey(b);
+      return keyA.localeCompare(keyB);
+    });
+
+    // 2. Reviewed questions in front, unreviewed questions after (preserving deterministic insertion order within each group)
     const reviewed = list.filter(q => this.isQuestionReviewed(q));
     const unreviewed = list.filter(q => !this.isQuestionReviewed(q));
     this.activeQuestions = [...reviewed, ...unreviewed];
