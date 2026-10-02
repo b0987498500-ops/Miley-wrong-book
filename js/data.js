@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v182';
+const STORAGE_KEY = 'miley_wrong_questions_v183';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -6158,7 +6158,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v181') ||
+      stored = localStorage.getItem('miley_wrong_questions_v182') ||
+               localStorage.getItem('miley_wrong_questions_v181') ||
                localStorage.getItem('miley_wrong_questions_v180') ||
                localStorage.getItem('miley_wrong_questions_v179') ||
                localStorage.getItem('miley_wrong_questions_v178') ||

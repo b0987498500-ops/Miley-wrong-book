@@ -4,6 +4,19 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v1.71] - 2026-10-02 (更新手機 PWA 應用程式 Icon 與側邊欄品牌標誌為全新貓耳麥麥動漫插畫，升級題庫數據庫至 v183)
+- **類型**：PWA App Icon 視覺升級 / 側邊欄 Logo 更新 / 數據庫升級 v183
+- **主要變更**：
+  1. **更新手機 PWA 應用程式 Icon 與桌面捷徑圖示**：
+     - 將使用者提供之貓耳麥麥在書桌前複習錯題的精美動漫插畫，經智慧裁切與高解析度導出後，替換至 `assets/icon-192.png` (192x192) 與 `assets/icon-512.png` (512x512)。
+     - 更新 `manifest.json` 與 `index.html` 之 PWA `apple-touch-icon`、`favicon` 及 `shortcut icon` 配置，支援 iOS Safari 與 Android 桌面高畫質圖示顯示。
+  2. **更新側邊欄品牌標誌 (Sidebar Brand Logo)**：
+     - 將側邊欄頂部品牌標誌從學士帽圖示更新為圓角貓耳麥麥動漫插畫 (`assets/icon-192.png`)，提升整體視覺質感與氛圍。
+  3. **數據庫與快取升級**：
+     - 升級 `STORAGE_KEY` 至 `v183`，`sw.js` 快取版本更新至 `v1.49`，`index.html` 資源 query param 更新至 `v=183`。
+
+---
+
 ## [v1.70] - 2026-10-02 (實作手機/電腦跨裝置 100% 確定性對齊排序與跨週未複習題目自動滾動編入最新週，升級題庫數據庫至 v182)
 - **類型**：跨裝置排序確定性對齊 (先放的排前面、後放的排後面) / 自動跨週滾動隊列 / 數據庫升級 v182
 - **主要變更**：
