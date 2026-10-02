@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v177';
+const STORAGE_KEY = 'miley_wrong_questions_v178';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_china_heruo_railway_taklamakan_100",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "中國地理地形與氣候：塔里木盆地與塔克拉瑪干沙漠（和若鐵路環狀鐵路線）",
+    "uploadDate": "2026-10-02",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：中國地形、氣候與鐵路線連線解題關鍵！\n1. **地標與區域定位**：題幹明確提及【該國面積最大的盆地】，即中國最大的盆地——**塔里木盆地**（位於新疆南部）。\n2. **景觀特色對照**：\n   - 塔里木盆地中央為中國最大的沙漠【**塔克拉瑪干沙漠**】（氣候乾燥少雨，滿是浩瀚大漠與漫天滾滾風沙），故搭乘環繞該盆地（和若鐵路、南疆鐵路、格庫鐵路等）之列車最容易看見大漠風沙景觀！\n3. **其餘選項迷思拆解**：\n   - **(B) 黃河流經溝壑縱橫的高原**：指【黃土高原】（水土流失嚴重），非塔里木盆地。\n   - **(C) 高寒荒地與藏族牧民驅牛**：指【青藏高原】（高寒氣候區），非塔里木盆地。\n   - **(D) 成群馬匹在遼闊大草原奔跑**：指【內蒙古高原】（溫帶草原），非乾燥沙漠盆地。",
+    "stem": "中國「和若鐵路」於2022年6月6日開通，將與營運中的「格庫鐵路」、「南疆鐵路」連接，構成一條總長2,712公里的環形鐵路，並環抱著該國面積最大的盆地，如附圖所示。\n\n請問：搭乘上述鐵路列車的旅客，最有機會看見以下何種景象？\n\n○ (A) 浩瀚大漠，揚起的漫天滾滾風沙\n○ (B) 黃河，流經溝壑縱橫的崎嶇高原\n○ (C) 高寒荒地，藏族牧民驅趕著牛群\n○ (D) 成群馬匹，在遼闊大草原中奔跑",
+    "answer": "(A) 浩瀚大漠，揚起的漫天滾滾風沙",
+    "diagramUrl": "assets/questions/q_soc_geo_china_heruo_railway_taklamakan_100.png",
+    "solution": "1. **題目關鍵特徵拆解**：\n   - **環抱該國面積最大的盆地**：中國面積最大的盆地為位於新疆南部的**塔里木盆地**（面積約 53 萬平方公里）。\n2. **選項地理景觀剖析**：\n   - **(A) 浩瀚大漠，揚起的漫天滾滾風沙（正確）**：塔里木盆地內部為中國廣袤的溫帶沙漠——**塔克拉瑪干沙漠**。鐵路線（和若鐵路、南疆鐵路、喀和鐵路）沿著盆地邊緣綠洲與沙丘交界處環繞，旅客最有機會親眼目睹浩瀚大漠與漫天風沙之壯麗景致。\n   - **(B) 黃河，流經溝壑縱橫的崎嶇高原（錯誤）**：描述地形為沖刷切割嚴重的**黃土高原**，位居華北與西北過渡帶，非新疆塔里木盆地。\n   - **(C) 高寒荒地，藏族牧民驅趕著牛群（錯誤）**：描述氣候高寒、藏族牧業文化之**青藏高原**，非塔里木盆地。\n   - **(D) 成群馬匹，在遼闊大草原中奔跑（錯誤）**：描述草場遼闊之**內蒙古高原**景致。\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-02",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_eng_vocab_appear_party_110",
     "examPeriod": "一段",
@@ -5978,7 +6008,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v176') ||
+      stored = localStorage.getItem('miley_wrong_questions_v177') ||
+               localStorage.getItem('miley_wrong_questions_v176') ||
                localStorage.getItem('miley_wrong_questions_v175') ||
                localStorage.getItem('miley_wrong_questions_v174') ||
                localStorage.getItem('miley_wrong_questions_v173') ||
