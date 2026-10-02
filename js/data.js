@@ -3,10 +3,160 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v178';
+const STORAGE_KEY = 'miley_wrong_questions_v179';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_china_heihe_tengchong_line_105",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "中國人文與區域地理：胡煥庸線（黑河—騰衝線）人口密度與農畜業分界",
+    "uploadDate": "2026-10-02",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：胡煥庸線（黑河—騰衝線）三大重要地理意義！\n1. **人口密度分界**：東南半壁面積佔約 36%，人口高達 94%；西北半壁面積佔約 64%，人口僅約 6%。\n2. **產業型態分界**：連線東南部為【農業區（定居農耕）】，西北部為【畜牧區（游牧/定居放牧）】！\n3. **常見干擾界線比對**：\n   - **少數民族自治區邊界**：依據行政區劃分界定，非黑河—騰衝線。\n   - **濕潤與乾燥分界**：以年降水量 **400 mm 等雨線**（乾旱半乾旱與半濕潤濕潤）為基準。\n   - **內流區與外流區分界**：延伸自大興安嶺—陰山—賀蘭山—巴顏喀拉山—岡底斯山脈。",
+    "stem": "1935年，地理學家胡煥庸提出，以一條假想的線段（附圖中的連線），可將中國分為東南與西北兩部分。請問：下列哪項中國地理現象的界線，與圖中的連線較一致？\n\n○ (A) 少數民族自治區的邊界\n○ (B) 濕潤與乾燥地區的分界\n○ (C) 農業區與畜牧區的分界\n○ (D) 內流區與外流區的分界",
+    "answer": "(C) 農業區與畜牧區的分界",
+    "diagramUrl": "assets/questions/q_soc_geo_china_heihe_tengchong_line_105.png",
+    "solution": "1. **核心地標觀念（胡煥庸線）**：\n   - 地理學家胡煥庸提出的「黑河—騰衝線」（東北黑龍江黑河至西南雲南騰衝）是中國最著名的地理人文劃分線。\n2. **連線代表的地理特徵**：\n   - **人口分界線**：區分了東南人口稠密區與西北人口稀疏區。\n   - **產業分界線**：區分了東南部的**農業區**（季風氣候、平原丘陵地形、雨量充沛適合耕作）與西北部的**畜牧區**（乾燥/高寒氣候、草場廣袤適合放牧）。\n3. **各選項錯誤原因分析**：\n   - **(A) 錯誤**：少數民族自治區（如新疆、西藏、內蒙古、寧夏、廣西）劃分依據為行政區劃與民族分布，非直線邊界。\n   - **(B) 錯誤**：乾濕地區分界線以年降水量（如 400 mm 等雨線劃分半乾旱與半濕潤）為依據，軌跡較彎曲。\n   - **(D) 錯誤**：內流區與外流區分界線主要由山脈（大興安嶺、陰山、賀蘭山、巴顏喀拉山、岡底斯山）組成，與此假想直線不符。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-02",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_china_coffee_varieties_table_104",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "中國農業與經濟作物：咖啡產區（熱帶/低緯高原）與全球氣候分布特徵",
+    "uploadDate": "2026-10-02",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：中國熱帶經濟作物分布與全球對照！\n1. **熱帶作物條件**：咖啡為熱帶作物（生長於南北緯 25°/30° 之間的「咖啡帶」）。中國主要栽培區位於緯度較低且濕熱之【雲南、海南島、廣東/廣西南部】。\n2. **表格關鍵比對**：\n   - **甲品種（阿拉比卡咖啡）**：原產於中高海拔熱帶高原（巴西、哥倫比亞），中國產區在雲南高原與嶺南南部。\n   - **乙品種（羅布斯塔咖啡）**：原產於低海拔熱帶區（東南亞、非洲），中國產區在海南島。\n3. **干擾作物分析**：玉米（溫帶/亞熱帶廣泛栽培）、棉花（喜光耐旱主要在華北/新疆）、葡萄（溫帶乾燥/地中海型氣候），皆不符表中熱帶氣候條件。",
+    "stem": "附表是某一作物的品種，在中國分布的比較表。根據表中資訊判斷，該作物最可能為下列何者？\n\n| 品種分布 | 甲 | 乙 |\n| :--- | :--- | :--- |\n| **原產地** | 28°N~38°S 間的海拔 1300 至 1900 公尺地區，其中以巴西、哥倫比亞最多 | 10°N~10°S 間的低海拔地區，東南亞、印度及非洲中部和東部為主要栽培區 |\n| **中國產區** | 在雲南、廣西、福建、廣東的南部 | 主要在海南島 |\n\n○ (A) 玉米\n○ (B) 咖啡\n○ (C) 棉花\n○ (D) 葡萄",
+    "answer": "(B) 咖啡",
+    "diagramUrl": "",
+    "solution": "1. **地理環境與氣候剖析**：\n   - 表中所列作物的全球原產地與栽培區均位於低緯度熱帶地區（如拉丁美洲的巴西、哥倫比亞，以及東南亞、非洲）。\n   - 在中國的分布區侷限於緯度較低且熱量充沛之**雲南、廣西、廣東南部及海南島**。\n2. **作物種類判定與選項排除**：\n   - **(B) 咖啡（正確）**：表中的甲代表阿拉比卡種（Arabica，適合熱帶高原），乙代表羅布斯塔種（Robusta，適合熱帶低地），完美符合作物條件。\n   - **(A) 玉米**：廣泛分布於溫帶與亞熱帶平原（如東北平原、華北平原），非僅限熱帶。\n   - **(C) 棉花**：主要分佈於華北平原、長江中下游及新疆乾燥灌溉區。\n   - **(D) 葡萄**：屬溫帶水果，主產於新彊吐魯番盆地及華北一帶。\n\n故正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-02",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_china_crop_conditions_table_103",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "中國農作物生長條件與地理空間分布：茶樹、小麥、棉花與甘蔗對照",
+    "uploadDate": "2026-10-02",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：中國四大重要作物地形與氣候條件考點梳理！\n1. **茶樹**：喜濕潤多雲霧，但根部忌積水，必須種植於【排水良好之丘陵坡地】（如東南丘陵），非平原地區！\n2. **小麥**：耐寒耐旱，主要分布於北方【旱田景觀】（如華北平原、東北平原），水田為水稻之特色！\n3. **棉花**：喜光耐旱，收成時忌雨（雨水會污染棉絨），適宜【華北平原與新疆灌溉區沙質土壤】（正確選項 C）！\n4. **甘蔗**：熱帶/亞熱帶高溫多雨作物，主要分布於【華南地區（廣西、廣東、海南、台灣）】，絕非緯度高凍土長的東北平原！",
+    "stem": "附表為中國主要經濟作物的生長條件與空間分布。其中哪一項敘述正確？\n\n| 代號 | 作物 | 生長條件 | 例子 |\n| :--- | :--- | :--- | :--- |\n| (A) | 茶樹 | 適合多雲霧、排水良好的平原地 | 珠江三角洲平原 |\n| (B) | 小麥 | 耐寒耐乾，多為水田景觀 | 長江中下游平原 |\n| (C) | 棉花 | 耐乾旱，收成時忌雨，生長在沙質土壤 | 華北平原 |\n| (D) | 甘蔗 | 生長在氣候濕熱、平原廣大的地區 | 東北平原 |\n\n○ (A) (A)\n○ (B) (B)\n○ (C) (C)\n○ (D) (D)",
+    "answer": "(C) (C)",
+    "diagramUrl": "",
+    "solution": "1. **逐項分析與導正**：\n   - **(A) 錯誤**：茶樹雖然適合多雲霧氣候，但極度忌諱根部積水，因此需要種植於排水良好的**丘陵坡地**（如浙閩丘陵、江南丘陵），而非平原地區。\n   - **(B) 錯誤**：小麥為北方耐寒耐旱作物，主要種植於北方**旱田**；長江中下游平原多為高產水稻之水田景觀。\n   - **(C) 正確**：棉花喜光耐旱，且採收期最忌降雨（降雨會導致棉花品質下降），華北平原秋季少雨、土壤透氣性好，為中國主要棉花產區之一。\n   - **(D) 錯誤**：甘蔗為熱帶與亞熱帶作物，需要高溫濕熱的氣候，主產區在華南（如廣西、廣東、海南），東北平原緯度高、冬季漫長寒冷，無法生長甘蔗（東北主產甜菜）。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-02",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_china_cotton_irrigation_xinjiang_102",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "中國西北乾旱區農業：新疆棉花產區與灌溉水利設施（坎兒井/綠洲農業）",
+    "uploadDate": "2026-10-02",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：新疆棉花農業發展關鍵因素！\n1. **氣候優勢**：氣候乾燥、日照時間長、晝夜溫差大、採收季少雨，品質極佳（優質長絨棉）。\n2. **氣候限制與突破關鍵**：乾燥少雨區作物最大瓶頸為【水資源】。新疆能成為棉花大產區的核心關鍵即為【灌溉系統進步】（利用高山融雪、坎兒井、現代高效節水滴灌技術工程提供穩定水源）。\n3. **迷思排除**：排水設施（用於多雨防澇）、交通改善（解決運輸非生產）、政府規劃（輔助而非水源決定條件）。",
+    "stem": "附圖的灰色區塊代表中國某種經濟作物的主要產區，位於乾燥氣候區內的新疆為何能生產此種經濟作物？\n\n○ (A) 交通建設改善\n○ (B) 排水設施興建\n○ (C) 政府政策規劃\n○ (D) 灌溉系統進步",
+    "answer": "(D) 灌溉系統進步",
+    "diagramUrl": "assets/questions/q_soc_geo_china_cotton_irrigation_xinjiang_102.png",
+    "solution": "1. **地圖作物識別**：\n   - 圖中灰色區域分布於華北平原、長江中下游及新疆塔里木盆地邊緣綠洲，此分布特徵代表中國重要經濟作物——**棉花**。\n2. **新疆農業發展條件**：\n   - 新疆屬於溫帶大陸性乾旱氣候，降水稀少。棉花生長期間雖然耐旱，但仍需要充足的水分灌溉。\n   - 新疆能夠成為中國最優質棉花（長絨棉）主產區，關鍵在於**灌溉系統的進步**（引高山冰雪融水、地下坎兒井及現代化滴灌技術），克服了天然降水不足的環境限制。\n3. **選項排除**：\n   - (A) 交通建設改善主要解決作物物流運輸問題，無法直接克服乾燥氣候栽培瓶頸。\n   - (B) 排水設施興建用於多雨濕潤地區防止淹水，與乾燥區無關。\n   - (C) 政府政策為推動因素，但若無實際水利灌溉技術支援，作物仍無法在沙漠綠洲生長。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-02",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_china_puer_coffee_yunnan_101",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "中國區域地理：雲南省（低緯高原/熱帶季風氣候/普洱茶與咖啡主要產地）定位",
+    "uploadDate": "2026-10-02",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：中國省分與特色地理定位解題關鍵！\n1. **地區特徵定位**：題幹提及【普洱地區】、【低緯高原】、【熱帶季風氣候】、【普洱茶與咖啡產地】，指位於中國西南邊陲之【雲南省】（圖中標示 **丁**）。\n2. **地圖代號標示省分對照**：\n   - **甲**：福建省（東南沿海丘陵，亞熱帶季風氣候）。\n   - **乙**：山東省（華北平原/山東丘陵，溫帶季風氣候）。\n   - **丙**：青海省（青藏高原東北部，高寒氣候）。\n   - **丁**：雲南省（西南低緯高原，熱帶/亞熱帶季風氣候，普洱茶與咖啡產量占全國九成以上）。",
+    "stem": "中國普洱地區不僅產茶，咖啡豆產量更占了全國一半以上。這個咖啡產區四周群山蔥鬱，白雲繚繞，屬於低緯高原的熱帶季風氣候。昔日以普洱茶聞名，今因咖啡園與茶園相隔不遠，導致咖啡中帶有一點茶香的特殊風味，口感濃郁飽滿。請問：上述的咖啡產地最可能位於附圖中何處？\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁",
+    "answer": "(D) 丁",
+    "diagramUrl": "assets/questions/q_soc_geo_china_puer_coffee_yunnan_101.png",
+    "solution": "1. **關鍵特徵解碼**：\n   - **普洱地區**：位於中國雲南省南部。\n   - **低緯高原與熱帶季風氣候**：雲南省緯度跨越熱帶與亞熱帶，地處雲貴高原，地形起伏、群山環繞，氣候四季如春且熱量充足。\n   - **茶與咖啡產地**：雲南為中國最大的普洱茶原產地，亦為全國最大的咖啡豆種殖基地（產量占全國 95% 以上）。\n2. **行政區定位比對**：\n   - **(A) 甲——福建省**：屬東南沿海亞熱帶季風氣候，非低緯熱帶高原。\n   - **(B) 乙——山東省**：屬北方溫帶季風氣候。\n   - **(C) 丙——青海省**：屬青藏高原高寒氣候，地勢高聳且乾寒，不適宜熱帶咖啡與茶樹栽培。\n   - **(D) 丁——雲南省（正確）**：位於中國西南邊疆，完全符合作物條件與題幹描述。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-02",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_geo_china_heruo_railway_taklamakan_100",
     "examPeriod": "一段",
@@ -6008,7 +6158,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v177') ||
+      stored = localStorage.getItem('miley_wrong_questions_v178') ||
+               localStorage.getItem('miley_wrong_questions_v177') ||
                localStorage.getItem('miley_wrong_questions_v176') ||
                localStorage.getItem('miley_wrong_questions_v175') ||
                localStorage.getItem('miley_wrong_questions_v174') ||
