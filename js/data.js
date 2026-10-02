@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v179';
+const STORAGE_KEY = 'miley_wrong_questions_v180';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -5993,12 +5993,12 @@ const INITIAL_SEED_DATA = [
     "subject": "數學",
     "errorReason": "觀念不懂",
     "concept": "三角形過頂點輔助平行線與截線段比例計算",
-    "uploadDate": "2026-09-23",
-    "mondayDate": "2026-09-21",
+    "uploadDate": "2026-10-02",
+    "mondayDate": "2026-09-28",
     "mondayDates": [
-      "2026-09-21"
+      "2026-09-28"
     ],
-    "weekLabel": "2026-09-21 (最新週次)",
+    "weekLabel": "2026-09-28 (最新週次)",
     "isGuessedOrUnstable": true,
     "mistakeNote": "【破題關鍵輔助線】：當圖形中無直接平行線時，過點 B 作線段 BG 平行 DF，即可建立兩個相似三角形（△EBG 與 △ACD），利用比例傳遞連比求解！",
     "stem": "如圖，線段 AB : BC ＝ 線段 EF : BF ＝ 3 : 1，則線段 CD : DE ＝ ？\n\n○ (A) 2 : 7\n○ (B) 3 : 5\n○ (C) 3 : 7\n○ (D) 4 : 9",
@@ -6049,12 +6049,12 @@ const INITIAL_SEED_DATA = [
     "subject": "數學",
     "errorReason": "觀念不懂",
     "concept": "三角形內分線交點比例與過頂點作平行輔助線",
-    "uploadDate": "2026-09-23",
-    "mondayDate": "2026-09-21",
+    "uploadDate": "2026-10-02",
+    "mondayDate": "2026-09-28",
     "mondayDates": [
-      "2026-09-21"
+      "2026-09-28"
     ],
-    "weekLabel": "2026-09-21 (最新週次)",
+    "weekLabel": "2026-09-28 (最新週次)",
     "isGuessedOrUnstable": true,
     "mistakeNote": "【交點線段比經典輔助線】：過 D 點作線段 DG 平行 BE 交 AC 於 G 點，利用 △BCE 算出線段 DG 長度比例，再移至 △ADG 計算線段 AF 與 AD 之比！",
     "stem": "如圖，在 △ABC 中，線段 AD 與 BE 相交於 F 點。若線段 BD : CD ＝ 2 : 1，線段 BF : EF ＝ 6 : 1，則線段 AF : DF ＝ ？\n\n○ (A) 2 : 5\n○ (B) 3 : 4\n○ (C) 3 : 5\n○ (D) 4 : 5",
@@ -6077,12 +6077,12 @@ const INITIAL_SEED_DATA = [
     "subject": "數學",
     "errorReason": "觀念不懂",
     "concept": "梯形/對角線三平行線比例性質與相似三角形判定",
-    "uploadDate": "2026-09-23",
-    "mondayDate": "2026-09-21",
+    "uploadDate": "2026-10-02",
+    "mondayDate": "2026-09-28",
     "mondayDates": [
-      "2026-09-21"
+      "2026-09-28"
     ],
-    "weekLabel": "2026-09-21 (最新週次)",
+    "weekLabel": "2026-09-28 (最新週次)",
     "isGuessedOrUnstable": true,
     "mistakeNote": "【沙漏型相似三角形對應邊比例】：平行線 CD // AB 形成 △OAB ～ △OCD。比例式為 OA : OC ＝ OB : OD，交叉交換內項即得 OA : OB ＝ OC : OD！",
     "stem": "如圖，若線段 CD // EF // AB，則下列何者正確？\n\n○ (A) 線段 OD : OC ＝ OE : OF\n○ (B) 線段 CE : DF ＝ EF : CD\n○ (C) 線段 OA : OB ＝ OC : OD\n○ (D) 線段 AB : CD ＝ OA : OD",
@@ -6158,7 +6158,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v178') ||
+      stored = localStorage.getItem('miley_wrong_questions_v179') ||
+               localStorage.getItem('miley_wrong_questions_v178') ||
                localStorage.getItem('miley_wrong_questions_v177') ||
                localStorage.getItem('miley_wrong_questions_v176') ||
                localStorage.getItem('miley_wrong_questions_v175') ||
