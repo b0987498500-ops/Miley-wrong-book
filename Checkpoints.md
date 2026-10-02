@@ -4,6 +4,20 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v1.72] - 2026-10-02 (修復側邊欄「麥麥錯題本」品牌文字防壓擠截斷與自動收錄 2 道國文錯題，升級題庫數據庫至 v184)
+- **類型**：UI 寬度適配防截斷修復 / 國文錯題自動收錄 / 數據庫升級 v184
+- **主要變更**：
+  1. **修復側邊欄「麥麥錯題本」品牌文字防壓擠截斷**：
+     - 在 `styles.css` 中為 `.brand-text` 與 `.sidebar .brand-text` 加上 `min-width: 0; flex: 1;` 及 `word-break: keep-all;`。
+     - 設定 `.sidebar .brand-text h2` 標題尺寸為動態 `clamp(1.05rem, 4.2vw, 1.25rem) !important;`，保證不論手機端螢幕或側邊欄寬度如何縮減，字樣「麥麥錯題本」均完整顯示且永不被切字（消滅末字被截斷問題）。
+  2. **自動收錄 2 道國文錯題至 2026-09-28 本週複習隊列**：
+     - **第 1 題 (第 22 題)**：`q_chi_typo_correction_idiom_phrases_106`（國文形音義：常見詞語錯別字辨析「蓬蓽生輝/敷衍搪塞/貪婪成性/明燈萬盞/連蹦帶跳/雀巢鳩占」），答案 `(C)`。
+     - **第 2 題 (第 25 題)**：`q_chi_ancient_modern_terms_matching_107`（國文文化常識：古今用語演變對照「仵作→法醫、茅房→廁所(非草屋)、捕快→刑警、盤纏→旅費」），答案 `(B)`。
+  3. **數據庫與快取升級**：
+     - 升級 `STORAGE_KEY` 至 `v184`，`sw.js` 快取版本更新至 `v1.50`，`index.html` 資源 query param 更新至 `v=184`。
+
+---
+
 ## [v1.71] - 2026-10-02 (更新手機 PWA 應用程式 Icon 與側邊欄品牌標誌為全新貓耳麥麥動漫插畫，升級題庫數據庫至 v183)
 - **類型**：PWA App Icon 視覺升級 / 側邊欄 Logo 更新 / 數據庫升級 v183
 - **主要變更**：

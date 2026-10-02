@@ -3,10 +3,70 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v183';
+const STORAGE_KEY = 'miley_wrong_questions_v184';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_chi_typo_correction_idiom_phrases_106",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "審題不清",
+    "concept": "國文形音義：常見詞語錯別字辨析與正字修正",
+    "uploadDate": "2026-10-02",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：常見詞語與成語錯別字陷阱比對！\n1. **敷衍搪塞**：「搪」為手部，意為推託拒絕，不可寫成水部的「塘」！\n2. **蓬蓽生輝**：「蓽」為草字頭（蓬草與荊竹編成的門），不可誤寫為簡體/錯字「荜」！\n3. **貪婪成性**：「婪」為女部，不可誤寫為「梵」！\n4. **明燈萬盞**：「盞」為皿部（小杯/燈盞），不可誤寫為「棧」！\n5. **連蹦帶跳**：「蹦」為足部，不可寫成「繃」！\n6. **雀巢鳩占**：意指強佔他人處所，用字完全正確（鳩佔鵲巢）。",
+    "stem": "下列詞語，何組用字完全正確？\n\n○ (A) 蓬荜生輝 / 敷衍塘塞\n○ (B) 貪梵成性 / 明燈萬棧\n○ (C) 雀巢鳩占 / 藕斷絲連\n○ (D) 蕩氣迴腸 / 連繃帶跳",
+    "answer": "(C) 雀巢鳩占 / 藕斷絲連",
+    "diagramUrl": "",
+    "solution": "1. **選項剖析與正字對照**：\n   - **(A) 錯誤**：蓬荜生輝應修正為「蓬【蓽】生輝」（草頭蓽）；敷衍塘塞應修正為「敷衍【搪】塞」（手部搪）。\n   - **(B) 錯誤**：貪梵成性應修正為「貪【婪】成性」（女部婪）；明燈萬棧應修正為「明燈萬【盞】」（皿部盞）。\n   - **(C) 正確**：「雀巢鳩占」與「藕斷絲連」用字完全正確無誤。\n   - **(D) 錯誤**：連繃帶跳應修正為「連【蹦】帶跳」（足部蹦）。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-02",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_chi_ancient_modern_terms_matching_107",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "國文文化常識：古今用語演變與古今稱謂對照",
+    "uploadDate": "2026-10-02",
+    "mondayDate": "2026-09-28",
+    "mondayDates": [
+      "2026-09-28"
+    ],
+    "weekLabel": "2026-09-28 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：古今用語演變常考對照表！\n1. **茅房 → 廁所**：古代「茅房」專指廁所、洗手間，**並非草屋**！\n2. **仵作 → 法醫**：古代負責檢驗屍體的官吏。\n3. **捕快 → 刑警/警察**：古代負責緝拿罪犯的官差。\n4. **盤纏 → 旅費/路費**：古代出遠門隨身攜帶的金錢資金。\n5. **客棧 → 旅館/飯店**；**酒錢 → 小費**。",
+    "stem": "語言文字常隨時代而演變，如古代的「酒錢」就是現代所稱的「小費」；「客棧」就是現代所稱的「旅館」。下列古今用語的配對，何者不正確？\n\n○ (A) 仵作 → 法醫\n○ (B) 茅房 → 草屋\n○ (C) 捕快 → 刑警\n○ (D) 盤纏 → 旅費",
+    "answer": "(B) 茅房 → 草屋",
+    "diagramUrl": "",
+    "solution": "1. **觀念解析與古今對照**：\n   - **(A) 正確**：「仵作」為古代官府僱用專門檢驗屍體的基層人員，相當於現代的「法醫」。\n   - **(B) 錯誤（應選此項）**：「茅房」在古代是指「廁所、洗手間」，並非一般的草屋！故配對不正確。\n   - **(C) 正確**：「捕快」為古代衙門中負責偵查緝捕罪犯的捕差，相當於現代的「刑警/警察」。\n   - **(D) 正確**：「盤纏」指古代出行隨身攜帶纏繞在腰間的盤纏錢財，即現代的「旅費」。\n\n故正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-02",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_geo_china_heihe_tengchong_line_105",
     "examPeriod": "一段",
@@ -6158,7 +6218,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v182') ||
+      stored = localStorage.getItem('miley_wrong_questions_v183') ||
+               localStorage.getItem('miley_wrong_questions_v182') ||
                localStorage.getItem('miley_wrong_questions_v181') ||
                localStorage.getItem('miley_wrong_questions_v180') ||
                localStorage.getItem('miley_wrong_questions_v179') ||

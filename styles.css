@@ -357,11 +357,17 @@ body.fullscreen-review-mode .sidebar-resizer {
   flex-shrink: 0;
 }
 
+.brand-text {
+  min-width: 0;
+  flex: 1;
+}
+
 .brand-text h2 {
   font-size: 1.15rem;
   font-weight: 700;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
   white-space: nowrap;
+  word-break: keep-all;
 }
 
 .brand-text .sub-title {
@@ -6625,12 +6631,19 @@ html.is-pwa-standalone #app-bottom-bar {
     flex-shrink: 0;
   }
 
-  /* 標題大幅放大至與學士帽等高，展現大氣感 */
+  .sidebar .brand-text {
+    min-width: 0;
+    flex: 1;
+  }
+
+  /* 標題調整為強效響應式，保證麥麥錯題本全名完整顯示不被截斷 */
   .sidebar .brand-text h2 {
-    font-size: 1.40rem !important;
+    font-size: clamp(1.05rem, 4.2vw, 1.25rem) !important;
     font-weight: 800;
-    letter-spacing: 0.5px;
-    line-height: 1;
+    letter-spacing: -0.2px;
+    line-height: 1.1;
+    white-space: nowrap;
+    word-break: keep-all;
   }
 
   .sidebar .brand-text .sub-title {
