@@ -4,6 +4,22 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v1.75] - 2026-10-03 (重構草稿區為「題目絕對卡片黏著畫布」：支援上下滾動 100% 釘住題目、穿透向下看選項與每題筆記獨立記憶留存，升級題庫數據庫至 v187)
+- **類型**：題目卡片絕對黏著畫布 (Card-bound Canvas) / 雙向滾動支援 / 題題獨立筆記記憶 / 數據庫升級 v187
+- **主要變更**：
+  1. **畫筆筆劃 100% 釘住題目絕對位置 (Sticky Canvas Anchoring)**：
+     - 將草稿畫布 `<canvas id="scratchpad-canvas">` 從視窗浮層移入卡片內部容器 `#main-flashcard`（`position: absolute; width: 100%; height: 100%;`）。
+     - 當使用者使用滑鼠滾輪或滾動條（Scrollbar）向下滑動網頁檢視選項或詳解時，畫布與題目圖文、幾何圖形以 100% 物理精度完全同步滾動，畫筆筆劃永不離位！
+  2. **草稿模式下自由滾動檢視下方選項 (Scroll Passthrough in Scratchpad Mode)**：
+     - 在畫布上綁定 `wheel` 滾輪透視監聽器，讓麥麥在邊用畫筆解題時，隨時可以向下滑動看到 C、D 選項與下方重點解析，不再受限於螢幕高度。
+  3. **關閉工具列筆記維持留存 & 題目間獨立筆記記憶 (`savedScratchMap`)**：
+     - 當點擊「隱藏工具列」時，只關閉頂部浮動控制列，畫筆筆劃維持留在題目上供隨時對照。
+     - 切換「下一題」或「上一題」時，系統會自動儲存當前題目的筆劃 (`this.savedScratchMap[q.id]`)，並在切回來時秒級還原，每題筆記獨立保管不干擾。
+  4. **數據庫與快取升級**：
+     - 升級 `STORAGE_KEY` 至 `v187`，`sw.js` 快取版本更新至 `v1.53`，`index.html` 資源 query param 更新至 `v=187`。
+
+---
+
 ## [v1.74] - 2026-10-03 (修復草稿區畫筆滑鼠與觸控游標座標偏右下偏移問題，校準 100% 精準指點跟隨與縮放比例適配，升級題庫數據庫至 v186)
 - **類型**：螢幕草稿畫布座標與視角縮放校准 (Scratchpad Precision Calibration) / 數據庫升級 v186
 - **主要變更**：

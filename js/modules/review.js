@@ -16,6 +16,7 @@ window.ReviewModule = {
   scratchCtx: null,
   isScratchDrawing: false,
   scratchHistory: [],
+  savedScratchMap: {},
   sessionReviewedIds: new Set(),
 
   init: function() {
@@ -737,6 +738,7 @@ window.ReviewModule = {
 
   prevQuestion: function() {
     if (this.activeQuestions.length === 0) return;
+    this.saveCurrentQuestionScratchState();
     this.currentIndex = (this.currentIndex - 1 + this.activeQuestions.length) % this.activeQuestions.length;
     this.renderCurrentCard();
     this.scrollToCardTop();
@@ -744,6 +746,7 @@ window.ReviewModule = {
 
   nextQuestion: function() {
     if (this.activeQuestions.length === 0) return;
+    this.saveCurrentQuestionScratchState();
     this.currentIndex = (this.currentIndex + 1) % this.activeQuestions.length;
     this.renderCurrentCard();
     this.scrollToCardTop();
@@ -792,13 +795,12 @@ window.ReviewModule = {
       return;
     }
 
-    // Unreviewed question: Miley requested:
-    // "我希望我選擇『等一下再複習』的題目呢，是可以跳到最後一個的！等我先做完所有的題目，我再開始來做我剛才有跳過的題目！"
+    this.saveCurrentQuestionScratchState();
+
     const [item] = this.activeQuestions.splice(this.currentIndex, 1);
     this.activeQuestions.push(item);
     this.showToast('⏭️ 已將本題移至【隊列最後一題】，先做其它題目再來挑戰！');
 
-    // 原本 currentIndex 後方的題目自動遞補上來，若已超出長度則回到第 0 題
     if (this.currentIndex >= this.activeQuestions.length) {
       this.currentIndex = 0;
     }
@@ -893,6 +895,7 @@ window.ReviewModule = {
           e.stopPropagation();
           const targetIndex = parseInt(dot.dataset.index, 10);
           if (!isNaN(targetIndex) && targetIndex !== this.currentIndex) {
+            this.saveCurrentQuestionScratchState();
             this.currentIndex = targetIndex;
             this.renderCurrentCard();
             this.scrollToCardTop();
@@ -1348,6 +1351,7 @@ window.ReviewModule = {
 
     const q = this.activeQuestions[this.currentIndex];
     this.isAnswerRevealed = false;
+    this.restoreQuestionScratchState(q ? q.id : null);
 
     // Update Progress Bar & Counter (0 / Total before answer reveal)
     this.updateProgressDisplay();
@@ -1761,6 +1765,47 @@ window.ReviewModule = {
   scratchColor: '#ef4444',
   scratchSize: 3,
 
+  saveCurrentQuestionScratchState: function() {
+    if (!this.scratchCanvas || !this.scratchCtx) return;
+    const q = this.activeQuestions && this.activeQuestions[this.currentIndex];
+    if (!q || !q.id) return;
+
+    try {
+      const dataUrl = this.scratchCanvas.toDataURL();
+      if (!this.savedScratchMap) this.savedScratchMap = {};
+      this.savedScratchMap[q.id] = dataUrl;
+    } catch(e) {}
+  },
+
+  restoreQuestionScratchState: function(questionId) {
+    if (!this.scratchCanvas || !this.scratchCtx) return;
+
+    this.resizeCanvas();
+    this.scratchCtx.clearRect(0, 0, this.scratchCanvas.width, this.scratchCanvas.height);
+
+    if (!questionId) {
+      this.scratchHistory = [];
+      return;
+    }
+
+    const savedDataUrl = this.savedScratchMap ? this.savedScratchMap[questionId] : null;
+    if (savedDataUrl) {
+      const img = new Image();
+      img.onload = () => {
+        if (this.scratchCtx && this.scratchCanvas) {
+          try {
+            this.scratchCtx.drawImage(img, 0, 0, this.scratchCanvas.width, this.scratchCanvas.height);
+          } catch(e) {}
+          this.scratchHistory = [];
+          this.saveScratchState();
+        }
+      };
+      img.src = savedDataUrl;
+    } else {
+      this.scratchHistory = [];
+    }
+  },
+
   /* Screen Calculation Scratchpad (Transparent Overlay Canvas) */
   initScratchpad: function() {
     const overlay = document.getElementById('scratchpad-overlay');
@@ -1772,6 +1817,11 @@ window.ReviewModule = {
 
     const self = this;
     let drawing = false;
+
+    // Wheel Scroll Event Passthrough: Allow user to scroll page freely while hovering canvas!
+    canvas.addEventListener('wheel', (e) => {
+      window.scrollBy({ top: e.deltaY, behavior: 'instant' });
+    }, { passive: true });
 
     // Color Pickers
     const colorDots = overlay.querySelectorAll('.color-dot');
@@ -1829,6 +1879,8 @@ window.ReviewModule = {
     };
 
     const startDraw = (e) => {
+      // Allow 2-finger touch scroll or non-primary touches
+      if (e.touches && e.touches.length > 1) return;
       if (e.cancelable) e.preventDefault();
       drawing = true;
       self.saveScratchState();
@@ -1841,11 +1893,13 @@ window.ReviewModule = {
       if (drawing) {
         drawing = false;
         self.scratchCtx.beginPath();
+        self.saveCurrentQuestionScratchState();
       }
     };
 
     const draw = (e) => {
       if (!drawing) return;
+      if (e.touches && e.touches.length > 1) return;
       if (e.cancelable) e.preventDefault();
       const pos = getCanvasCoords(e);
 
@@ -1873,10 +1927,10 @@ window.ReviewModule = {
   resizeCanvas: function() {
     if (!this.scratchCanvas) return;
     const rect = this.scratchCanvas.getBoundingClientRect();
-    const w = Math.round(rect.width || window.innerWidth);
-    const h = Math.round(rect.height || window.innerHeight);
+    const w = Math.round(rect.width || (this.scratchCanvas.parentElement ? this.scratchCanvas.parentElement.clientWidth : window.innerWidth));
+    const h = Math.round(rect.height || (this.scratchCanvas.parentElement ? this.scratchCanvas.parentElement.clientHeight : window.innerHeight));
 
-    if (this.scratchCanvas.width !== w || this.scratchCanvas.height !== h) {
+    if (w > 0 && h > 0 && (this.scratchCanvas.width !== w || this.scratchCanvas.height !== h)) {
       let tempImage = null;
       if (this.scratchCtx && this.scratchCanvas.width > 0 && this.scratchCanvas.height > 0) {
         try {
@@ -1897,40 +1951,50 @@ window.ReviewModule = {
 
   openScratchpad: function() {
     const overlay = document.getElementById('scratchpad-overlay');
-    if (!overlay) return;
+    const flashcard = document.getElementById('main-flashcard');
+    if (!overlay || !flashcard) return;
 
     overlay.classList.remove('hidden');
+    flashcard.classList.add('scratchpad-active');
     this.resizeCanvas();
 
     if (!this._hasResizeListener) {
       this._hasResizeListener = true;
       window.addEventListener('resize', () => {
-        if (!overlay.classList.contains('hidden')) {
-          this.resizeCanvas();
-        }
+        this.resizeCanvas();
       });
     }
 
-    // Default to bright red if light theme
     if (document.body.classList.contains('light-theme')) {
       this.scratchColor = '#ef4444';
     } else {
       this.scratchColor = '#3b82f6';
     }
 
-    // Keep background 100% transparent
-    this.scratchCtx.clearRect(0, 0, this.scratchCanvas.width, this.scratchCanvas.height);
-    this.scratchHistory = [];
-    this.saveScratchState();
+    const q = this.activeQuestions && this.activeQuestions[this.currentIndex];
+    if (q && q.id && this.savedScratchMap && this.savedScratchMap[q.id]) {
+      this.restoreQuestionScratchState(q.id);
+    }
   },
 
   closeScratchpad: function() {
-    document.getElementById('scratchpad-overlay')?.classList.add('hidden');
+    const overlay = document.getElementById('scratchpad-overlay');
+    const flashcard = document.getElementById('main-flashcard');
+
+    this.saveCurrentQuestionScratchState();
+
+    if (overlay) overlay.classList.add('hidden');
+    if (flashcard) flashcard.classList.remove('scratchpad-active');
   },
 
   clearScratchpad: function() {
     if (this.scratchCanvas && this.scratchCtx) {
       this.scratchCtx.clearRect(0, 0, this.scratchCanvas.width, this.scratchCanvas.height);
+      const q = this.activeQuestions && this.activeQuestions[this.currentIndex];
+      if (q && q.id && this.savedScratchMap) {
+        delete this.savedScratchMap[q.id];
+      }
+      this.scratchHistory = [];
       this.saveScratchState();
     }
   },
@@ -1950,8 +2014,10 @@ window.ReviewModule = {
       this.scratchHistory.pop();
       const state = this.scratchHistory[this.scratchHistory.length - 1];
       this.scratchCtx.putImageData(state, 0, 0);
+      this.saveCurrentQuestionScratchState();
     } else if (this.scratchHistory.length === 1) {
       this.scratchCtx.clearRect(0, 0, this.scratchCanvas.width, this.scratchCanvas.height);
+      this.saveCurrentQuestionScratchState();
     }
   },
 

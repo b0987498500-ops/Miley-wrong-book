@@ -761,6 +761,9 @@
                 </button>
 
                 <div class="flashcard-card" id="main-flashcard">
+                  <!-- Question-bound Transparent Calculation Canvas -->
+                  <canvas id="scratchpad-canvas" class="scratchpad-transparent-canvas"></canvas>
+                  
                   <!-- Card Header -->
                   <div class="card-top-bar">
                     <div class="card-meta-tags" style="display: none;">
@@ -1004,11 +1007,11 @@
     </main>
   </div>
 
-  <!-- Transparent Floating Screen Calculation Scratchpad Canvas (Module 3) -->
+  <!-- Transparent Floating Controls Toolbar for Question Canvas (Module 3) -->
   <div id="scratchpad-overlay" class="scratchpad-overlay hidden">
-    <!-- Floating Transparent Controls Toolbar -->
+    <!-- Floating Controls Toolbar -->
     <div class="scratchpad-floating-toolbar">
-      <div class="toolbar-title"><i class="fa-solid fa-pen-ruler" style="color: var(--accent-primary);"></i> 全透視計算畫布</div>
+      <div class="toolbar-title"><i class="fa-solid fa-pen-ruler" style="color: var(--accent-primary);"></i> 隨身草稿畫筆</div>
       <div class="toolbar-divider"></div>
       
       <!-- Color Chips Picker -->
@@ -1036,12 +1039,9 @@
       <div class="scratch-action-btns">
         <button id="scratch-undo-btn" class="scratch-btn" title="復原上一筆"><i class="fa-solid fa-rotate-left"></i> 復原</button>
         <button id="scratch-clear-btn" class="scratch-btn" title="清除所有筆劃"><i class="fa-solid fa-trash-can"></i> 清除</button>
-        <button id="scratch-close-btn" class="scratch-btn btn-close-scratch" title="關閉草稿區"><i class="fa-solid fa-xmark"></i> 關閉</button>
+        <button id="scratch-close-btn" class="scratch-btn btn-close-scratch" title="收起工具列（筆記維持留存於題目）"><i class="fa-solid fa-eye-slash"></i> 隱藏工具列</button>
       </div>
     </div>
-
-    <!-- Fullscreen 100% Transparent Drawing Canvas -->
-    <canvas id="scratchpad-canvas" class="scratchpad-transparent-canvas"></canvas>
   </div>
 
   <!-- Add Calendar Event Modal -->
@@ -1191,17 +1191,17 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=186"></script>
-  <script src="js/utils/katex_render.js?v=186"></script>
-  <script src="js/utils/pdf_export.js?v=186"></script>
-  <script src="js/modules/upload.js?v=186"></script>
-  <script src="js/modules/archive.js?v=186"></script>
-  <script src="js/modules/review.js?v=186"></script>
-  <script src="js/modules/sprint.js?v=186"></script>
-  <script src="js/modules/analytics.js?v=186"></script>
-  <script src="js/modules/calendar.js?v=186"></script>
-  <script src="js/modules/wisdom.js?v=186"></script>
-  <script src="js/modules/sync.js?v=186"></script>
-  <script src="js/app.js?v=186"></script>
+  <script src="js/data.js?v=187"></script>
+  <script src="js/utils/katex_render.js?v=187"></script>
+  <script src="js/utils/pdf_export.js?v=187"></script>
+  <script src="js/modules/upload.js?v=187"></script>
+  <script src="js/modules/archive.js?v=187"></script>
+  <script src="js/modules/review.js?v=187"></script>
+  <script src="js/modules/sprint.js?v=187"></script>
+  <script src="js/modules/analytics.js?v=187"></script>
+  <script src="js/modules/calendar.js?v=187"></script>
+  <script src="js/modules/wisdom.js?v=187"></script>
+  <script src="js/modules/sync.js?v=187"></script>
+  <script src="js/app.js?v=187"></script>
 </body>
 </html>

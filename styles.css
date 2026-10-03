@@ -3208,6 +3208,7 @@ body.fullscreen-review-mode .sidebar-resizer {
 }
 
 .flashcard-card {
+  position: relative;
   background: var(--bg-secondary);
   border: var(--glass-border);
   border-radius: var(--radius-lg);
@@ -4363,10 +4364,9 @@ body.fullscreen-review-mode .sidebar-resizer {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.05);
+  height: 0;
   z-index: 1500;
-  display: block;
+  pointer-events: none;
 }
 
 .scratchpad-overlay.hidden {
@@ -4379,6 +4379,7 @@ body.fullscreen-review-mode .sidebar-resizer {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1600;
+  pointer-events: auto;
   background: var(--bg-secondary);
   border: var(--glass-border);
   border-radius: var(--radius-lg);
@@ -4489,10 +4490,18 @@ body.fullscreen-review-mode .sidebar-resizer {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: transparent !important;
   cursor: crosshair;
+  z-index: 120;
+  border-radius: var(--radius-lg);
+  pointer-events: none; /* Disabled when drawing mode off so option buttons can be clicked */
+  transition: opacity 0.2s ease;
+}
+
+.scratchpad-active .scratchpad-transparent-canvas {
+  pointer-events: auto; /* Active when drawing toolbar is open */
 }
 
 .scratchpad-tools {
