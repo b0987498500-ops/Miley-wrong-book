@@ -1700,11 +1700,36 @@ window.ReviewModule = {
     const currentMonday = window.app?.currentMondayFilter || q.mondayDate || (window.dataManager?.getCurrentMondayDate() || '2026-08-31');
     const parts = currentMonday.split('-');
     const formattedWeek = parts.length === 3 ? `${parseInt(parts[1], 10)}/${parseInt(parts[2], 10)}` : currentMonday;
+    const isMastered = q.isArchived || (q.consecutiveMastered > 0);
 
-    if (confirm(`確定要將此題僅從 ${formattedWeek} 週次中刪除嗎？\n（若此題包含其它週次，其它週次將不受影響）`)) {
+    const choice = prompt(
+      `【刪除錯題處置方式確認】\n` +
+      `當前題目：[${q.subject}] ${q.concept || '錯題'}\n` +
+      `題目狀態：${isMastered ? '已擊敗' : '未擊敗'}\n\n` +
+      `請選擇處置方式（輸入數字）：\n` +
+      `1 ＝ 僅從 ${formattedWeek} 週次隊列移除（保留在歷史庫與其他週次）\n` +
+      `2 ＝ 永久從全站題庫徹底刪除（全域刪除，不可復原）\n\n` +
+      `（按「確定」執行，按「取消」放棄操作）`,
+      "1"
+    );
+
+    if (choice === "1") {
       const oldIndex = this.currentIndex;
       window.dataManager.removeQuestionFromWeek(q.id, currentMonday);
       this.showToast(`🗑️ 已從 ${formattedWeek} 週次清單中移除此題！`);
+
+      if (window.app) {
+        if (window.app.renderWeeklyMondayBar) window.app.renderWeeklyMondayBar();
+        if (window.app.updateSidebarCounts) window.app.updateSidebarCounts();
+      }
+
+      const activeSubj = this.currentSubjectFilter || window.app?.currentSubjectFilter;
+      const activeMonday = this.currentMondayFilter || currentMonday;
+      this.loadReviewQueue(activeSubj, activeMonday, oldIndex);
+    } else if (choice === "2") {
+      const oldIndex = this.currentIndex;
+      window.dataManager.deleteQuestion(q.id);
+      this.showToast(`💥 已永久全域徹底刪除此題！`);
 
       if (window.app) {
         if (window.app.renderWeeklyMondayBar) window.app.renderWeeklyMondayBar();

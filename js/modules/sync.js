@@ -389,11 +389,18 @@ window.SyncModule = {
       if (favStr) favWisdom = JSON.parse(favStr);
     } catch (e) {}
 
+    let seenWisdomCount = 0;
+    try {
+      const seenStr = localStorage.getItem('miley_seen_wisdom_count');
+      if (seenStr) seenWisdomCount = parseInt(seenStr, 10) || 0;
+    } catch (e) {}
+
     return {
-      version: '1.14',
+      version: '1.15',
       timestamp: Date.now(),
       dateStr: new Date().toISOString().split('T')[0],
       favWisdom: favWisdom,
+      seenWisdomCount: seenWisdomCount,
       deletedIds: Array.isArray(window.dataManager.deletedIds) ? window.dataManager.deletedIds : [],
       removedMondaysMap: window.dataManager.removedMondaysMap || {},
       progress: progressList
@@ -549,7 +556,7 @@ window.SyncModule = {
       if (hasUpdate) mergedCount++;
     });
 
-    // 6. 收藏的名言金句合併
+    // 6. 收藏的名言金句與已讀狀態合併
     if (Array.isArray(payload.favWisdom)) {
       try {
         let localFavs = [];
@@ -561,6 +568,19 @@ window.SyncModule = {
         localStorage.setItem('miley_favorited_wisdom', JSON.stringify(localFavs));
         if (window.WisdomModule) {
           window.WisdomModule.favoritedIds = localFavs;
+        }
+      } catch (e) {}
+    }
+
+    if (typeof payload.seenWisdomCount === 'number') {
+      try {
+        const localSeen = window.WisdomModule ? window.WisdomModule.getSeenWisdomCount() : 0;
+        const newSeen = Math.max(localSeen, payload.seenWisdomCount);
+        if (window.WisdomModule) {
+          window.WisdomModule.setSeenWisdomCount(newSeen);
+          window.WisdomModule.updateHeaderBadge();
+        } else {
+          localStorage.setItem('miley_seen_wisdom_count', String(newSeen));
         }
       } catch (e) {}
     }

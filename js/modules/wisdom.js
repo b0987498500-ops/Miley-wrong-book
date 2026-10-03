@@ -355,6 +355,10 @@ window.WisdomModule = {
     this.setSeenWisdomCount(totalUnlocked);
     this.updateHeaderBadge();
 
+    if (window.SyncModule && typeof window.SyncModule.broadcastDataChange === 'function') {
+      window.SyncModule.broadcastDataChange();
+    }
+
     this.renderModalContent();
     popover.classList.remove('hidden');
 

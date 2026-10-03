@@ -236,8 +236,10 @@ window.ArchiveModule = {
           ` : ''}
 
           <div class="qcard-footer">
-            <span>錯誤次數：<strong style="color: var(--accent-danger);">${q.errorCount || 1} 次</strong></span>
-            <span>${q.isArchived ? '<span style="color:var(--accent-success);">[已掌握歸檔]</span>' : `艾賓浩斯 W${q.ebbinghausStage}`}</span>
+            <span>錯誤次數：<strong style="color: var(--accent-danger);">${q.errorCount || 1} 次</strong> ${q.isArchived ? '<span style="color:var(--accent-success);">[已掌握歸檔]</span>' : `<span style="color:var(--text-muted);">(W${q.ebbinghausStage})</span>`}</span>
+            <button type="button" class="btn-archive-delete-q" data-id="${q.id}" title="刪除此錯題">
+              <i class="fa-solid fa-trash-can"></i> 刪除
+            </button>
           </div>
         </div>
       `;
@@ -249,5 +251,45 @@ window.ArchiveModule = {
     list.forEach(q => {
       window.katexUtils.renderText(`card-stem-${q.id}`, q.stem);
     });
+
+    // Bind archive card delete buttons
+    grid.querySelectorAll('.btn-archive-delete-q').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const qId = btn.dataset.id;
+        this.deleteQuestion(qId);
+      });
+    });
+  },
+
+  deleteQuestion: function(qId) {
+    const q = window.dataManager.getById(qId);
+    if (!q) return;
+
+    const stemPreview = (q.stem || '').replace(/\n/g, ' ').substring(0, 30);
+    const isMastered = q.isArchived || (q.consecutiveMastered > 0);
+
+    const choice = prompt(
+      `【刪除錯題處置確認】\n` +
+      `題目：[${q.subject}] ${stemPreview}...\n` +
+      `狀態：${isMastered ? '已擊敗' : '未擊敗'}\n\n` +
+      `請輸入數字選擇處置方式：\n` +
+      `1 ＝ 僅從當前週次 (${q.mondayDate}) 隊列移除\n` +
+      `2 ＝ 永久從全站題庫徹底刪除（全域刪除）\n\n` +
+      `（按「確定」執行，按「取消」放棄操作）`,
+      "2"
+    );
+
+    if (choice === "1") {
+      window.dataManager.removeQuestionFromWeek(qId, q.mondayDate);
+      if (window.app && window.app.updateSidebarCounts) window.app.updateSidebarCounts();
+      this.renderTree();
+      this.renderCards();
+    } else if (choice === "2") {
+      window.dataManager.deleteQuestion(qId);
+      if (window.app && window.app.updateSidebarCounts) window.app.updateSidebarCounts();
+      this.renderTree();
+      this.renderCards();
+    }
   }
 };

@@ -2026,6 +2026,25 @@ body.fullscreen-review-mode .sidebar-resizer {
   border-top: 1px solid var(--border-color);
 }
 
+.btn-archive-delete-q {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: #ef4444;
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn-archive-delete-q:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: #ef4444;
+}
+
 /* ==================== MODULE 3: WEEKEND FLASHCARD & A4 PDF ==================== */
 .review-container {
   width: 100%;
