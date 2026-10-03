@@ -1803,13 +1803,41 @@ window.ReviewModule = {
       });
     });
 
-    const startDraw = (e) => {
-      drawing = true;
-      self.saveScratchState();
-      draw(e);
+    const getCanvasCoords = (e) => {
+      const rect = canvas.getBoundingClientRect();
+      let clientX = 0;
+      let clientY = 0;
+
+      if (e.touches && e.touches.length > 0) {
+        clientX = e.touches[0].clientX;
+        clientY = e.touches[0].clientY;
+      } else if (e.changedTouches && e.changedTouches.length > 0) {
+        clientX = e.changedTouches[0].clientX;
+        clientY = e.changedTouches[0].clientY;
+      } else if (e.clientX !== undefined) {
+        clientX = e.clientX;
+        clientY = e.clientY;
+      }
+
+      const scaleX = rect.width ? (canvas.width / rect.width) : 1;
+      const scaleY = rect.height ? (canvas.height / rect.height) : 1;
+
+      return {
+        x: (clientX - rect.left) * scaleX,
+        y: (clientY - rect.top) * scaleY
+      };
     };
 
-    const stopDraw = () => {
+    const startDraw = (e) => {
+      if (e.cancelable) e.preventDefault();
+      drawing = true;
+      self.saveScratchState();
+      const pos = getCanvasCoords(e);
+      self.scratchCtx.beginPath();
+      self.scratchCtx.moveTo(pos.x, pos.y);
+    };
+
+    const stopDraw = (e) => {
       if (drawing) {
         drawing = false;
         self.scratchCtx.beginPath();
@@ -1818,19 +1846,18 @@ window.ReviewModule = {
 
     const draw = (e) => {
       if (!drawing) return;
-      const rect = canvas.getBoundingClientRect();
-      const x = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
-      const y = (e.clientY || (e.touches && e.touches[0].clientY)) - rect.top;
+      if (e.cancelable) e.preventDefault();
+      const pos = getCanvasCoords(e);
 
       self.scratchCtx.lineWidth = self.scratchSize;
       self.scratchCtx.lineCap = 'round';
       self.scratchCtx.lineJoin = 'round';
       self.scratchCtx.strokeStyle = self.scratchColor;
 
-      self.scratchCtx.lineTo(x, y);
+      self.scratchCtx.lineTo(pos.x, pos.y);
       self.scratchCtx.stroke();
       self.scratchCtx.beginPath();
-      self.scratchCtx.moveTo(x, y);
+      self.scratchCtx.moveTo(pos.x, pos.y);
     };
 
     canvas.onmousedown = startDraw;
@@ -1843,13 +1870,46 @@ window.ReviewModule = {
     canvas.ontouchmove = draw;
   },
 
+  resizeCanvas: function() {
+    if (!this.scratchCanvas) return;
+    const rect = this.scratchCanvas.getBoundingClientRect();
+    const w = Math.round(rect.width || window.innerWidth);
+    const h = Math.round(rect.height || window.innerHeight);
+
+    if (this.scratchCanvas.width !== w || this.scratchCanvas.height !== h) {
+      let tempImage = null;
+      if (this.scratchCtx && this.scratchCanvas.width > 0 && this.scratchCanvas.height > 0) {
+        try {
+          tempImage = this.scratchCtx.getImageData(0, 0, this.scratchCanvas.width, this.scratchCanvas.height);
+        } catch(e) {}
+      }
+
+      this.scratchCanvas.width = w;
+      this.scratchCanvas.height = h;
+
+      if (tempImage && this.scratchCtx) {
+        try {
+          this.scratchCtx.putImageData(tempImage, 0, 0);
+        } catch(e) {}
+      }
+    }
+  },
+
   openScratchpad: function() {
     const overlay = document.getElementById('scratchpad-overlay');
     if (!overlay) return;
 
     overlay.classList.remove('hidden');
-    this.scratchCanvas.width = window.innerWidth;
-    this.scratchCanvas.height = window.innerHeight;
+    this.resizeCanvas();
+
+    if (!this._hasResizeListener) {
+      this._hasResizeListener = true;
+      window.addEventListener('resize', () => {
+        if (!overlay.classList.contains('hidden')) {
+          this.resizeCanvas();
+        }
+      });
+    }
 
     // Default to bright red if light theme
     if (document.body.classList.contains('light-theme')) {

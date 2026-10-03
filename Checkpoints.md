@@ -4,6 +4,20 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v1.74] - 2026-10-03 (修復草稿區畫筆滑鼠與觸控游標座標偏右下偏移問題，校準 100% 精準指點跟隨與縮放比例適配，升級題庫數據庫至 v186)
+- **類型**：螢幕草稿畫布座標與視角縮放校准 (Scratchpad Precision Calibration) / 數據庫升級 v186
+- **主要變更**：
+  1. **修復螢幕草稿畫布 (Scratchpad Canvas) 滑鼠/觸控游標偏右下 (Drift/Offset) 偏移問題**：
+     - 在 `ReviewModule` 新增萬用精準座標計算器 `getCanvasCoords(e)`，整合 `e.clientX / e.clientY` 與 `e.touches / e.changedTouches` 雙重相容。
+     - 計算 CSS 渲染尺寸與 Canvas 內部 Pixel 緩衝區之動態比例 `scaleX = canvas.width / rect.width` 與 `scaleY = canvas.height / rect.height`，並乘以 `(clientX - rect.left)`，徹底消滅 Retina 高解析度螢幕、視窗縮放或滾動產生的座標偏差，達成滑鼠游標至何處、筆劃即落於何處之 100% 絕對跟隨！
+  2. **觸控防滾動與視窗縮放自動校正 (`resizeCanvas`)**：
+     - 為 `touchstart` 與 `touchmove` 補上 `e.preventDefault()` 防呆，阻斷畫圖時背景網頁發生捲動造成的動態座標偏移。
+     - 監聽 `window` Resize 事件，當瀏覽器縮放或視窗尺寸變更時自動維持畫布高清與座標對齊。
+  3. **數據庫與快取升級**：
+     - 升級 `STORAGE_KEY` 至 `v186`，`sw.js` 快取版本更新至 `v1.52`，`index.html` 資源 query param 更新至 `v=186`。
+
+---
+
 ## [v1.73] - 2026-10-03 (支援智慧寶庫已讀狀態跨裝置對齊與開放「已擊敗/未擊敗」無條件全域/週次雙重刪除選單，升級題庫數據庫至 v185)
 - **類型**：跨裝置閱讀狀態同步 / 錯題刪除權限與選單強化 / 數據庫升級 v185
 - **主要變更**：
