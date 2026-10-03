@@ -1674,20 +1674,23 @@ window.ReviewModule = {
       window.app.renderWeeklyMondayBar();
     }
 
-    // 2. Re-order queue: Miley requested:
-    // "在複習的過程中，我我想要你把以複習的就把它排在前面，然後火車的進度就會到以複習"
-    this.reorderQueueReviewedFirst();
+    // 2. Sequential Navigation: Advance to the next unreviewed question starting AFTER currentIndex (wrapping around)
+    let nextIdx = -1;
+    const total = this.activeQuestions.length;
+    for (let i = 1; i <= total; i++) {
+      const candidateIdx = (this.currentIndex + i) % total;
+      if (!this.isQuestionReviewed(this.activeQuestions[candidateIdx])) {
+        nextIdx = candidateIdx;
+        break;
+      }
+    }
 
-    // 3. Find next unreviewed question
-    const firstUnreviewedIdx = this.activeQuestions.findIndex(item => !this.isQuestionReviewed(item));
-
-    if (firstUnreviewedIdx === -1) {
+    if (nextIdx === -1) {
       // All questions in queue have been reviewed!
-      this.currentIndex = this.activeQuestions.length - 1;
       this.renderCurrentCard();
       alert('🎉 恭喜麥麥！本輪所有題目已全部複習完成！');
     } else {
-      this.currentIndex = firstUnreviewedIdx;
+      this.currentIndex = nextIdx;
       this.renderCurrentCard();
       this.scrollToCardTop();
     }
@@ -1814,6 +1817,7 @@ window.ReviewModule = {
 
     this.scratchCanvas = canvas;
     this.scratchCtx = canvas.getContext('2d');
+    this.scratchMode = 'pen'; // 'pen' | 'eraser'
 
     const self = this;
     let drawing = false;
@@ -1823,22 +1827,42 @@ window.ReviewModule = {
       window.scrollBy({ top: e.deltaY, behavior: 'instant' });
     }, { passive: true });
 
-    // Color Pickers
+    const eraserBtn = document.getElementById('scratch-eraser-btn');
     const colorDots = overlay.querySelectorAll('.color-dot');
+    const customColorInput = document.getElementById('scratch-color-custom');
+
+    // Eraser Button handler
+    if (eraserBtn) {
+      eraserBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        colorDots.forEach(d => d.classList.remove('active'));
+        if (customColorInput) customColorInput.value = '#ffffff';
+        eraserBtn.classList.add('active');
+        self.scratchMode = 'eraser';
+        canvas.classList.add('scratchpad-erasing-active');
+      });
+    }
+
+    // Color Pickers (switches back to pen mode)
     colorDots.forEach(dot => {
       dot.addEventListener('click', (e) => {
         e.stopPropagation();
         colorDots.forEach(d => d.classList.remove('active'));
+        if (eraserBtn) eraserBtn.classList.remove('active');
+        canvas.classList.remove('scratchpad-erasing-active');
         dot.classList.add('active');
         self.scratchColor = dot.dataset.color;
+        self.scratchMode = 'pen';
       });
     });
 
-    const customColorInput = document.getElementById('scratch-color-custom');
     if (customColorInput) {
       customColorInput.addEventListener('input', (e) => {
         self.scratchColor = e.target.value;
         colorDots.forEach(d => d.classList.remove('active'));
+        if (eraserBtn) eraserBtn.classList.remove('active');
+        canvas.classList.remove('scratchpad-erasing-active');
+        self.scratchMode = 'pen';
       });
     }
 
@@ -1878,6 +1902,19 @@ window.ReviewModule = {
       };
     };
 
+    const applyDrawStyle = () => {
+      if (self.scratchMode === 'eraser') {
+        self.scratchCtx.globalCompositeOperation = 'destination-out';
+        self.scratchCtx.lineWidth = Math.max(20, self.scratchSize * 4);
+      } else {
+        self.scratchCtx.globalCompositeOperation = 'source-over';
+        self.scratchCtx.lineWidth = self.scratchSize;
+        self.scratchCtx.strokeStyle = self.scratchColor;
+      }
+      self.scratchCtx.lineCap = 'round';
+      self.scratchCtx.lineJoin = 'round';
+    };
+
     const startDraw = (e) => {
       // Allow 2-finger touch scroll or non-primary touches
       if (e.touches && e.touches.length > 1) return;
@@ -1885,6 +1922,7 @@ window.ReviewModule = {
       drawing = true;
       self.saveScratchState();
       const pos = getCanvasCoords(e);
+      applyDrawStyle();
       self.scratchCtx.beginPath();
       self.scratchCtx.moveTo(pos.x, pos.y);
     };
@@ -1903,10 +1941,7 @@ window.ReviewModule = {
       if (e.cancelable) e.preventDefault();
       const pos = getCanvasCoords(e);
 
-      self.scratchCtx.lineWidth = self.scratchSize;
-      self.scratchCtx.lineCap = 'round';
-      self.scratchCtx.lineJoin = 'round';
-      self.scratchCtx.strokeStyle = self.scratchColor;
+      applyDrawStyle();
 
       self.scratchCtx.lineTo(pos.x, pos.y);
       self.scratchCtx.stroke();

@@ -4,6 +4,21 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v1.76] - 2026-10-03 (新增草稿區專用「橡皮擦 (Eraser) 工具」與修正複習題目順序跳轉邏輯，升級題庫數據庫至 v188)
+- **類型**：草稿區橡皮擦工具 / 順序複習隊列跳轉修正 / 數據庫升級 v188
+- **主要變更**：
+  1. **草稿區新增專用「橡皮擦」工具 (Scratchpad Eraser Tool)**：
+     - 在草稿區頂部工具列 (`#scratchpad-overlay`) 新增「橡皮擦」按鈕 (`#scratch-eraser-btn`)。
+     - 點擊橡皮擦按鈕後自動切換至橡皮擦模式 (`scratchMode = 'eraser'`)，畫布 Cursor 變更為專業橡皮擦圖示，並使用 HTML5 Canvas 2D `destination-out` 透明擦除合成模式，可精準擦除局部筆劃。
+     - 點擊任意顏色圓點或自訂色彩時，自動無縫切換回畫筆模式 (`scratchMode = 'pen'`)。
+  2. **修正順序複習隊列跳轉邏輯 (Sequential Question Navigation Fix)**：
+     - 修復麥麥從中間題號（如第 16 題）開始複習時，作答完成後不會再不必要地跳回第 1 題的問題。
+     - 在作答判定 (`handleFeedback`) 中，改為由當前題號往後順序尋找下 ratings/unreviewed 題目 (`(currentIndex + i) % length`)，呈現 16 $\to$ 17 $\to$ 18 $\to$ 19 $\to$ 20 順暢連貫的答題體驗。
+  3. **數據庫與快取升級**：
+     - 升級 `STORAGE_KEY` 至 `v188`，`sw.js` 快取版本更新至 `v1.54`，`index.html` 資源 query param 更新至 `v=188`。
+
+---
+
 ## [v1.75] - 2026-10-03 (重構草稿區為「題目絕對卡片黏著畫布」：支援上下滾動 100% 釘住題目、穿透向下看選項與每題筆記獨立記憶留存，升級題庫數據庫至 v187)
 - **類型**：題目卡片絕對黏著畫布 (Card-bound Canvas) / 雙向滾動支援 / 題題獨立筆記記憶 / 數據庫升級 v187
 - **主要變更**：

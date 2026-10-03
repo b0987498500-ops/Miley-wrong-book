@@ -4475,6 +4475,13 @@ body.fullscreen-review-mode .sidebar-resizer {
   color: var(--accent-primary);
 }
 
+.scratch-btn.scratch-tool-btn.active {
+  background: var(--accent-primary);
+  color: #ffffff;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
+}
+
 .scratch-btn.btn-close-scratch {
   background: rgba(239, 68, 68, 0.15);
   color: var(--accent-danger);
@@ -4502,6 +4509,10 @@ body.fullscreen-review-mode .sidebar-resizer {
 
 .scratchpad-active .scratchpad-transparent-canvas {
   pointer-events: auto; /* Active when drawing toolbar is open */
+}
+
+.scratchpad-active.scratchpad-erasing-active .scratchpad-transparent-canvas {
+  cursor: cell; /* Erasing mode cursor */
 }
 
 .scratchpad-tools {
