@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v194';
+const STORAGE_KEY = 'miley_wrong_questions_v195';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -6326,6 +6326,174 @@ const INITIAL_SEED_DATA = [
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
     "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_geo_sedimentary_rock_grain_size_114",
+    "examPeriod": "一段",
+    "subject": "自然",
+    "errorReason": "觀念不懂",
+    "concept": "常見沉積岩碎屑顆粒粒徑大小比較（礫岩＞砂岩＞頁岩）",
+    "uploadDate": "2026-10-04",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "⚠️ 審題陷阱與易錯觀念：沉積岩碎屑顆粒粒徑由粗到細的標準順序為「礫岩（＞2mm）＞ 砂岩（0.0625~2mm）＞ 頁岩（＜0.0625mm）」！記憶口訣：「大礫、中砂、細頁泥」。",
+    "stem": "下列常見的沉積岩中，依照沉積物的顆粒大小由粗至細依序為何？\n\n○ (A) 砂岩 ＞ 礫岩 ＞ 頁岩\n○ (B) 礫岩 ＞ 頁岩 ＞ 砂岩\n○ (C) 礫岩 ＞ 砂岩 ＞ 頁岩\n○ (D) 頁岩 ＞ 礫岩 ＞ 砂岩",
+    "answer": "(C) 礫岩 ＞ 砂岩 ＞ 頁岩",
+    "diagramUrl": "",
+    "solution": "○ **詳細觀念與選項剖析**：\n\n1. **沉積岩顆粒粒徑大小分類**：\n   - **礫岩（Conglomerate）**：碎屑顆粒最大，粒徑大於 2 mm。\n   - **砂岩（Sandstone）**：中等顆粒，粒徑介於 0.0625 mm ～ 2 mm 之間。\n   - **頁岩（Shale/Mudstone）**：顆粒最細緻，粒徑小於 0.0625 mm。\n\n2. **順序比較**：\n   - 由粗至細依序為：**礫岩 ＞ 砂岩 ＞ 頁岩**。\n\n正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-05",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_geo_metamorphic_protolith_sources_115",
+    "examPeriod": "一段",
+    "subject": "自然",
+    "errorReason": "觀念不懂",
+    "concept": "變質岩母岩來源與高溫高壓變質作用機制",
+    "uploadDate": "2026-10-04",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "⚠️ 審題陷阱與易錯觀念：變質岩的母岩可以是「火成岩、沉積岩、或是原本的變質岩」！只要經歷地底深處的高溫高壓，三種岩石皆可再發生變質作用。",
+    "stem": "變質岩是由下列哪些岩石經由高溫、高壓的作用而形成的？\n(甲) 火成岩 ； (乙) 沉積岩 ； (丙) 變質岩\n\n○ (A) 僅(甲)(乙)\n○ (B) 僅(乙)(丙)\n○ (C) 僅(甲)(丙)\n○ (D) (甲)(乙)(丙)",
+    "answer": "(D) (甲)(乙)(丙)",
+    "diagramUrl": "",
+    "solution": "○ **詳細觀念與選項剖析**：\n\n1. **變質作用與母岩來源**：\n   - 地殼中的任何岩石（包含火成岩、沉積岩，甚至是既有的變質岩），只要被埋入地底深處，遭受強烈的高溫與高壓作用，其結晶顆粒或礦物組成就會發生改變，轉化為「變質岩」。\n\n2. **實例分析**：\n   - **(甲) 火成岩**：如花崗岩變質為花崗片麻岩。\n   - **(乙) 沉積岩**：如石灰岩變質為大理岩、頁岩變質為板岩。\n   - **(丙) 變質岩**：如板岩再次遭受高溫高壓可二次變質為千枚岩或片岩。\n\n故(甲)(乙)(丙)三者皆可，正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-05",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_geo_mineral_applications_amethyst_corundum_116",
+    "examPeriod": "一段",
+    "subject": "自然",
+    "errorReason": "審題不清",
+    "concept": "常見礦物特徵與工業/寶石應用（石英/長石/金剛石/剛玉）",
+    "uploadDate": "2026-10-04",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "⚠️ 審題陷阱與易錯觀念：紫色石英是「紫水晶」而非藍寶石！「藍寶石」與「紅寶石」的礦物成分均為「剛玉（莫氏硬度 9）」，切勿將石英與剛玉混淆。",
+    "stem": "關於礦物的應用，下列敘述何者錯誤？\n\n○ (A) 由長石變成的黏土礦物，是燒製陶瓷的主要原料\n○ (B) 石英砂可用來製造玻璃\n○ (C) 鑽石（金剛石）硬度極大，是極佳的切割材料\n○ (D) 結晶良好的紫色石英即為藍寶石的材料",
+    "answer": "(D) 結晶良好的紫色石英即為藍寶石的材料",
+    "diagramUrl": "",
+    "solution": "○ **詳細觀念與選項剖析**：\n\n1. **各選項礦物應用解析**：\n   - **(A) 正確**：長石風化後形成的黏土礦物（高嶺土），是燒製陶瓷器的主要原料。\n   - **(B) 正確**：石英的主要成分為二氧化矽（SiO₂），石英砂是製造玻璃與矽晶圓的主要原料。\n   - **(C) 正確**：鑽石（金剛石）是自然界中莫氏硬度最高的礦物（硬度 10），常用於工業切割與研磨。\n   - **(D) 錯誤（選此項）**：結晶良好的紫色石英是**紫水晶**；而藍寶石與紅寶石的礦物材料均為**剛玉**（硬度 9），非石英！\n\n正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-05",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_geo_limestone_formation_biological_chemical_117",
+    "examPeriod": "一段",
+    "subject": "自然",
+    "errorReason": "觀念不懂",
+    "concept": "石灰岩（碳酸鈣）沉積形成機制（生物外骨骼堆積與化學沉澱）",
+    "uploadDate": "2026-10-04",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "⚠️ 審題陷阱與易錯觀念：石灰岩既可以是「生物骨骸碎屑堆積（珊瑚、貝殼）」形成的生物沉積岩，也可以是「水溶液中碳酸鈣沉澱析出（如鐘乳石）」形成的化學沉積岩，三者皆正確！",
+    "stem": "石灰岩也是一種沉積岩，試問下列哪些是形成石灰岩的方式？\n(甲)珊瑚骨骼的遺骸堆積形成的 ； (乙)貝殼碎屑堆積形成的 ； (丙)溶解在水中的碳酸鈣沉澱形成的\n\n○ (A) 僅(甲)(乙)\n○ (B) 僅(乙)(丙)\n○ (C) 僅(甲)(丙)\n○ (D) (甲)(乙)(丙)",
+    "answer": "(D) (甲)(乙)(丙)",
+    "diagramUrl": "",
+    "solution": "○ **詳細觀念與選項剖析**：\n\n1. **石灰岩（Limestone）形成機制**：\n   - 主要成分為碳酸鈣（CaCO₃）。\n   - **生物沉積（生物岩）**：(甲)珊瑚骨骼與 (乙)貝殼等海洋生物外骨骼堆積壓密形成。\n   - **化學沉澱（化學沉積岩）**：(丙)溶解在水中的碳酸鈣離子過飽和沉澱析出（如鐘乳石、石筍）。\n\n故(甲)(乙)(丙)三者皆為石灰岩形成方式，正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-05",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_geo_sandstone_thin_section_options_118",
+    "examPeriod": "一段",
+    "subject": "自然",
+    "errorReason": "審題不清",
+    "concept": "砂岩顯微鏡薄片碎屑粒徑（0.0625~2mm）與膠結物質辨識",
+    "uploadDate": "2026-10-04",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "⚠️ 審題陷阱與易錯觀念：砂岩碎屑粒徑介於 0.0625 ~ 2mm 之間，且碎屑顆粒之間充填著點狀膠結物質（如黏土或方解石）。若標尺為 5mm 且顆粒直徑達 3~4mm 則為礫岩；若無膠結物質且結晶嵌合則為火成岩/變質岩。",
+    "stem": "小翰用地質鐵錘於野外敲下一岩石標本，製成薄片在顯微鏡下觀察及測量後，比對書上的描述，判斷其為砂岩。已知砂岩是由岩石碎屑沉積後，經過壓密、膠結等過程而形成。碎屑可以是其他岩石或礦物，而膠結這些碎屑的物質可能是方解石或黏土。砂岩的碎屑粒徑在 0.0625 至 2mm 之間，如果碎屑粒徑過小會形成頁岩，粒徑過大會形成礫岩。則小翰觀察到的岩石薄片最接近下列哪一個圖形？\n\n○ (A) 圖形 (A)\n○ (B) 圖形 (B)\n○ (C) 圖形 (C)\n○ (D) 圖形 (D)",
+    "answer": "(B) 圖形 (B)",
+    "diagramUrl": "assets/questions/q_sci_geo_sandstone_thin_section_options_118.png",
+    "solution": "○ **詳細觀念與圖表剖析**：\n\n1. **砂岩條件對照**：\n   - 粒徑介於 0.0625 mm ～ 2 mm 之間。\n   - 碎屑顆粒之間含有膠結物質充填。\n\n2. **各選項薄片圖表分析**：\n   - **圖 (A)**：標尺為 5 mm，顆粒直徑達 3～4 mm（大於 2 mm），屬於「礫岩」。\n   - **圖 (B)**：標尺為 1 mm，顆粒直徑約 0.2～0.5 mm（介於 0.0625～2 mm 之間），且顆粒間含有細微膠結物，符合砂岩特徵！\n   - **圖 (C)、(D)**：顆粒間無膠結物且結晶交錯嵌合，為火成岩或變質岩之結晶結構。\n\n正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-05",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_geo_marble_granite_slate_house_building_119",
+    "examPeriod": "一段",
+    "subject": "自然",
+    "errorReason": "觀念不懂",
+    "concept": "大理岩（遇酸冒泡）與花崗岩（堅硬建材）特徵及石板屋建材（板岩）辨析",
+    "uploadDate": "2026-10-04",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "⚠️ 審題陷阱與易錯觀念：原住民「石板屋」的主要建材是具有平整片理構造的「板岩（或頁岩）」，非花崗岩！花崗岩主要作為高堅硬度的大樓外牆與地板建材。",
+    "stem": "常被用來當作裝飾建築的石材有：(甲)大理岩 ； (乙)花崗岩，則有關這兩者的敘述，下列何者錯誤？\n\n○ (A) (甲)屬於變質岩，(乙)屬於火成岩\n○ (B) (甲)遇酸會產生氣體，(乙)則不會\n○ (C) (甲)堅固耐磨，(乙)常作為石板屋的建材\n○ (D) (甲)常見於雕刻品，(乙)常用於建材",
+    "answer": "(C) (甲)堅固耐磨，(乙)常作為石板屋的建材",
+    "diagramUrl": "",
+    "solution": "○ **詳細觀念與選項剖析**：\n\n1. **各選項地質與石材特徵解析**：\n   - **(A) 正確**：(甲)大理岩由石灰岩變質而成的「變質岩」；(乙)花崗岩為深成岩（「火成岩」）。\n   - **(B) 正確**：大理岩主要成分為碳酸鈣（CaCO₃），遇稀鹽酸會冒出二氧化碳氣泡；花崗岩遇酸不反應。\n   - **(C) 錯誤（選此項）**：原住民傳統「石板屋」的主要建材是易沿片理面剝離的**板岩（或頁岩）**，非花崗岩！且花崗岩極其堅硬耐磨，大理岩硬度較軟且怕酸。\n   - **(D) 正確**：大理岩質地較軟易於雕刻；花崗岩硬度高、耐磨，常用於地板與外牆建材。\n\n正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-05",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   }
 ];
 
@@ -6386,7 +6554,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v193') ||
+      stored = localStorage.getItem('miley_wrong_questions_v194') ||
+               localStorage.getItem('miley_wrong_questions_v193') ||
                localStorage.getItem('miley_wrong_questions_v192') ||
                localStorage.getItem('miley_wrong_questions_v191') ||
                localStorage.getItem('miley_wrong_questions_v190') ||

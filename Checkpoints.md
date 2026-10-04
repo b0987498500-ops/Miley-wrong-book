@@ -4,6 +4,23 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v1.83] - 2026-10-04 (自動收錄 6 道國三自然/地球科學岩石與礦物錯題：沉積岩顆粒比較、變質岩母岩來源、紫水晶與藍寶石成份、石灰岩成因、砂岩薄片粒徑膠結圖表與石板屋建材，升級題庫數據庫至 v195)
+- **類型**：國三自然/地球科學錯題自動收錄 / 10/5 下週複習歸檔 / 數據庫升級 v195
+- **主要變更**：
+  1. **收錄國三地質、岩石與礦物錯題六道**：
+     - `q_sci_geo_sedimentary_rock_grain_size_114`（沉積岩顆粒）：礫岩（>2mm）＞砂岩（0.0625~2mm）＞頁岩（<0.0625mm）。
+     - `q_sci_geo_metamorphic_protolith_sources_115`（變質岩來源）：火成岩、沉積岩與變質岩經高溫高壓皆可形成變質岩。
+     - `q_sci_geo_mineral_applications_amethyst_corundum_116`（礦物應用）：紫水晶成份為結晶良好的紫色石英（SiO₂），藍寶石材料為剛玉（Al₂O₃）。
+     - `q_sci_geo_limestone_formation_biological_chemical_117`（石灰岩成因）：珊瑚骨骼、貝殼碎屑生物堆積及水中碳酸鈣化學沉澱皆可形成。
+     - `q_sci_geo_sandstone_thin_section_options_118`（砂岩顯微鏡薄片）：切圖保存 4 個選項（A）~（D）薄片圖，比對 0.0625~2mm 粒徑與碎屑間點狀膠結物，正確對應 (B)。
+     - `q_sci_geo_marble_granite_slate_house_building_119`（建築石材觀念）：排灣族與魯凱族石板屋建材為板岩（變質岩），花崗岩多用做一般建築基石與面材。
+  2. **純淨排版與週次編配**：
+     - 6 題皆歸檔至 `2026-10-05` (最新週次)。純文字題採零 LaTeX 符號純淨中文化排版，1 題附有圖表選項切圖 `assets/questions/q_sci_geo_sandstone_thin_section_options_118.png`。
+  3. **數據庫與快取升級**：
+     - 升級 `STORAGE_KEY` 至 `v195`，`sw.js` 快取版本更新至 `v1.61`，`index.html` 資源 query param 更新至 `v=195`。
+
+---
+
 ## [v1.82] - 2026-10-04 (自動收錄 3 道國三自然/地球科學經典錯題「風吹砂/地貌作用辨析」、「凍融作用跨越 0°C 條件」與「含鐵礦物氧化紅褐色」，升級題庫數據庫至 v194)
 - **類型**：國三自然/地球科學錯題自動收錄 / 10/5 下週複習歸檔 / 數據庫升級 v194
 - **主要變更**：
