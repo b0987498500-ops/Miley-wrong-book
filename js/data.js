@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v191';
+const STORAGE_KEY = 'miley_wrong_questions_v192';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -6110,11 +6110,11 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "三角形內分線交點比例與過頂點作平行輔助線",
     "uploadDate": "2026-10-02",
-    "mondayDate": "2026-09-28",
+    "mondayDate": "2026-10-05",
     "mondayDates": [
-      "2026-09-28"
+      "2026-10-05"
     ],
-    "weekLabel": "2026-09-28 (最新週次)",
+    "weekLabel": "2026-10-05 (最新週次)",
     "isGuessedOrUnstable": true,
     "mistakeNote": "【交點線段比經典輔助線】：過 D 點作線段 DG 平行 BE 交 AC 於 G 點，利用 △BCE 算出線段 DG 長度比例，再移至 △ADG 計算線段 AF 與 AD 之比！",
     "stem": "如圖，在 △ABC 中，線段 AD 與 BE 相交於 F 點。若線段 BD : CD ＝ 2 : 1，線段 BF : EF ＝ 6 : 1，則線段 AF : DF ＝ ？\n\n○ (A) 2 : 5\n○ (B) 3 : 4\n○ (C) 3 : 5\n○ (D) 4 : 5",
@@ -6125,7 +6125,7 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-23",
+    "nextReviewDate": "2026-10-05",
     "isReviewed": false,
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
@@ -6138,11 +6138,11 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "梯形/對角線三平行線比例性質與相似三角形判定",
     "uploadDate": "2026-10-02",
-    "mondayDate": "2026-09-28",
+    "mondayDate": "2026-10-05",
     "mondayDates": [
-      "2026-09-28"
+      "2026-10-05"
     ],
-    "weekLabel": "2026-09-28 (最新週次)",
+    "weekLabel": "2026-10-05 (最新週次)",
     "isGuessedOrUnstable": true,
     "mistakeNote": "【沙漏型相似三角形對應邊比例】：平行線 CD // AB 形成 △OAB ～ △OCD。比例式為 OA : OC ＝ OB : OD，交叉交換內項即得 OA : OB ＝ OC : OD！",
     "stem": "如圖，若線段 CD // EF // AB，則下列何者正確？\n\n○ (A) 線段 OD : OC ＝ OE : OF\n○ (B) 線段 CE : DF ＝ EF : CD\n○ (C) 線段 OA : OB ＝ OC : OD\n○ (D) 線段 AB : CD ＝ OA : OD",
@@ -6153,7 +6153,7 @@ const INITIAL_SEED_DATA = [
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-23",
+    "nextReviewDate": "2026-10-05",
     "isReviewed": false,
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
@@ -6302,7 +6302,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v190') ||
+      stored = localStorage.getItem('miley_wrong_questions_v191') ||
+               localStorage.getItem('miley_wrong_questions_v190') ||
                localStorage.getItem('miley_wrong_questions_v189') ||
                localStorage.getItem('miley_wrong_questions_v188') ||
                localStorage.getItem('miley_wrong_questions_v187') ||
