@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v190';
+const STORAGE_KEY = 'miley_wrong_questions_v191';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -6214,6 +6214,34 @@ const INITIAL_SEED_DATA = [
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
     "reviewedMondays": []
+  },
+  {
+    "id": "q_math_isosceles_triangle_golden_ratio_110",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "黃金等腰三角形與相似三角形判斷求底邊",
+    "uploadDate": "2026-10-04",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "⚠️ 審題陷阱與易錯觀念：1. 黃金三角形的角度特徵：底角平分後分出的 △BDC 與原 △ABC 相似（頂角 36°，底角 72°）。2. 相似對應邊成比例與一元二次方程式解：利用 AB : BD ＝ AC : BC ＝ BC : CD，設 BC ＝ x，導出 x² ＋ 2x － 4 ＝ 0，以公式解求得 x ＝ -1 ＋ √5（負值不合）！",
+    "stem": "如圖，等腰 △ABC 中，線段 AB ＝ 線段 AC ＝ 2，若 ∠ABC 的角平分線 BD 交線段 AC 於 D 點，且線段 AD ＝ 線段 BD ＝ 線段 BC，則：\n(1) △ABC ～ ________。\n(2) 線段 BC ＝ ________。",
+    "answer": "(1) △BDC   (2) -1 + √5",
+    "diagramUrl": "assets/questions/q_math_isosceles_triangle_golden_ratio_110.png",
+    "solution": "○ **詳細觀念與解題步驟**：\n\n1. **角度推導與 AA 相似證明（第 1 小題）**：\n   - 在等腰 △ABC 中，因 AB ＝ AC ＝ 2，故 ∠ABC ＝ ∠C。\n   - 因 BD 為 ∠ABC 的角平分線，故 ∠ABD ＝ ∠DBC ＝ 1/2 ∠ABC。\n   - 已知 AD ＝ BD，在 △ABD 中，頂角與底角關係：∠A ＝ ∠ABD ＝ 1/2 ∠ABC ＝ 1/2 ∠C。\n   - 設 ∠A ＝ x，則 ∠ABC ＝ 2x，∠C ＝ 2x。\n   - 三角形內角和：∠A ＋ ∠ABC ＋ ∠C ＝ x ＋ 2x ＋ 2x ＝ 5x ＝ 180°  ⇒  x ＝ 36°。\n   - 得各角角度：∠A ＝ 36°，∠ABC ＝ 72°，∠C ＝ 72°。\n   - 在 △BDC 中，∠DBC ＝ 36°，∠C ＝ 72°，∠BDC ＝ 72°。\n   - 比較 △ABC 與 △BDC：\n     • ∠C ＝ ∠C（公共角）\n     • ∠A ＝ ∠DBC ＝ 36°\n     依 AA 相似性質，得 **△ABC ～ △BDC**。\n\n2. **列比例式求底邊 BC 長度（第 2 小題）**：\n   - 設 BC ＝ x，因已知 AD ＝ BD ＝ BC，故 AD ＝ x。\n   - 因 AC ＝ 2，故 CD ＝ AC － AD ＝ 2 － x。\n   - 由 △ABC ～ △BDC，對應邊成比例：\n     AC : BC ＝ BC : CD\n     2 : x ＝ x : (2 － x)\n   - 交叉相乘得：x² ＝ 2 × (2 － x)  ⇒  x² ＋ 2x － 4 ＝ 0\n   - 依公式解：\n     x ＝ [-2 ± √(4 － 4 × 1 × (-4))] / 2 ＝ [-2 ± √20] / 2 ＝ -1 ± √5\n   - 因邊長必為正數，負值不合，故 **線段 BC ＝ -1 ＋ √5**（或 √5 － 1）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-05",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   }
 ];
 
@@ -6274,7 +6302,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v189') ||
+      stored = localStorage.getItem('miley_wrong_questions_v190') ||
+               localStorage.getItem('miley_wrong_questions_v189') ||
                localStorage.getItem('miley_wrong_questions_v188') ||
                localStorage.getItem('miley_wrong_questions_v187') ||
                localStorage.getItem('miley_wrong_questions_v186') ||
