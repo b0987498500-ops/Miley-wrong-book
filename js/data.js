@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v189';
+const STORAGE_KEY = 'miley_wrong_questions_v190';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -6166,22 +6166,22 @@ const INITIAL_SEED_DATA = [
     "errorReason": "審題不清",
     "concept": "相似多邊形對應邊比例與多重情況討論",
     "uploadDate": "2026-10-04",
-    "mondayDate": "2026-09-28",
+    "mondayDate": "2026-10-05",
     "mondayDates": [
-      "2026-09-28"
+      "2026-10-05"
     ],
-    "weekLabel": "2026-09-28 (最新週次)",
+    "weekLabel": "2026-10-05 (最新週次)",
     "isGuessedOrUnstable": true,
     "mistakeNote": "⚠️ 審題陷阱與易錯觀念：1. 漏考慮邊長對應方向：許多同學只考慮了「長對長、寬對寬」的第一種情況（算出 x ＝ 4），而忽略了「長對寬、寬對長」的第二種情況（算出 x ＝ 13），導致少寫一個答案。2. 相似矩形的對應邊判定：兩個矩形相似時，較長邊與較短邊的比值固定為 5 : 4，新矩形擴展後的兩邊均可能作為較長邊或較短邊討論！",
-    "stem": "已知矩形的長為 15、寬為 12，若將長增加 5，則寬應增加多少才會與原矩形相似？\n\n○ (A) 4\n○ (B) 13\n○ (C) 4 或 13\n○ (D) 5 或 12",
-    "answer": "(C) 4 或 13",
-    "diagramUrl": "assets/questions/q_math_similar_rectangle_108.png",
-    "solution": "○ **詳細觀念與解題步驟**：\n\n1. **設定未知數與原矩形比例**：\n   - 設寬增加 x。\n   - 原矩形的長 : 寬 ＝ 15 : 12 ＝ 5 : 4。\n   - 新矩形的長為 15 ＋ 5 ＝ 20，新矩形的寬為 12 ＋ x。\n\n2. **考慮以下 2 種相似對應情形**：\n   - **【情形一】**：新矩形的「長」對應原矩形的「長」，新矩形的「寬」對應原矩形的「寬」\n     比例式：(15 ＋ 5) : (12 ＋ x) ＝ 5 : 4\n     20 : (12 ＋ x) ＝ 5 : 4\n     5 × (12 ＋ x) ＝ 80\n     60 ＋ 5x ＝ 80  ⇒  5x ＝ 20  ⇒  x ＝ 4\n\n   - **【情形二】**：新矩形的「寬」對應原矩形的「長」，新矩形的「長」對應原矩形的「寬」\n     比例式：(12 ＋ x) : (15 ＋ 5) ＝ 5 : 4\n     (12 ＋ x) : 20 ＝ 5 : 4\n     4 × (12 ＋ x) ＝ 100\n     48 ＋ 4x ＝ 100  ⇒  4x ＝ 52  ⇒  x ＝ 13\n\n3. **綜合上述結論**：\n   - 寬應增加 4 或 13。\n\n正確答案選 **(C)**。",
+    "stem": "已知矩形的長為 15、寬為 12，若將長增加 5，則寬應增加多少才會與原矩形相似？",
+    "answer": "4 或 13",
+    "diagramUrl": "",
+    "solution": "○ **詳細觀念與解題步驟**：\n\n1. **設定未知數與原矩形比例**：\n   - 設寬增加 x。\n   - 原矩形的長 : 寬 ＝ 15 : 12 ＝ 5 : 4。\n   - 新矩形的長為 15 ＋ 5 ＝ 20，新矩形的寬為 12 ＋ x。\n\n2. **考慮以下 2 種相似對應情形**：\n   - **【情形一】**：新矩形的「長」對應原矩形的「長」，新矩形的「寬」對應原矩形的「寬」\n     比例式：(15 ＋ 5) : (12 ＋ x) ＝ 5 : 4\n     20 : (12 ＋ x) ＝ 5 : 4\n     5 × (12 ＋ x) ＝ 80\n     60 ＋ 5x ＝ 80  ⇒  5x ＝ 20  ⇒  x ＝ 4\n\n   - **【情形二】**：新矩形的「寬」對應原矩形的「長」，新矩形的「長」對應原矩形的「寬」\n     比例式：(12 ＋ x) : (15 ＋ 5) ＝ 5 : 4\n     (12 ＋ x) : 20 ＝ 5 : 4\n     4 × (12 ＋ x) ＝ 100\n     48 ＋ 4x ＝ 100  ⇒  4x ＝ 52  ⇒  x ＝ 13\n\n3. **綜合上述結論**：\n   - 寬應增加 **4 或 13**。\n\n![矩形擴展與相似兩種情形示意圖](assets/questions/q_math_similar_rectangle_108.png)",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-29",
+    "nextReviewDate": "2026-10-05",
     "isReviewed": false,
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
@@ -6194,22 +6194,22 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "相似梯形與中間平行線段與腰長比例",
     "uploadDate": "2026-10-04",
-    "mondayDate": "2026-09-28",
+    "mondayDate": "2026-10-05",
     "mondayDates": [
-      "2026-09-28"
+      "2026-10-05"
     ],
-    "weekLabel": "2026-09-28 (最新週次)",
+    "weekLabel": "2026-10-05 (最新週次)",
     "isGuessedOrUnstable": true,
     "mistakeNote": "⚠️ 審題陷阱與易錯觀念：1. 相似梯形中間平行線段求法：若梯形被平行線分成兩個相似梯形，則中間平行線段 EF 為上下底長度的「幾何平均數」（EF 的平方 ＝ AD × BC ＝ 3 × 8 ＝ 24，故 EF ＝ √24 ＝ 2√6），非算術平均數！2. 對應腰長比等於對應底邊比：因為梯形 AEFD 相似於梯形 EBCF，其腰長比 AE : BE 正好等於上梯形與下梯形的對應底邊比 AD : EF ＝ 3 : 2√6！",
-    "stem": "如圖，在梯形 ABCD 中，E、F 兩點分別在線段 AB、線段 CD 上，且線段 EF // 線段 BC。若梯形 AEFD 和梯形 EBCF 相似，線段 AD ＝ 3，線段 BC ＝ 8，則線段 AE : 線段 BE ＝ ？\n\n○ (A) 3 : 8\n○ (B) 3 : 2√6\n○ (C) √6 : 3\n○ (D) 9 : 16",
-    "answer": "(B) 3 : 2√6",
+    "stem": "如圖，在梯形 ABCD 中，E、F 兩點分別在線段 AB、線段 CD 上，且線段 EF // 線段 BC。若梯形 AEFD 和梯形 EBCF 相似，線段 AD ＝ 3，線段 BC ＝ 8，則線段 AE : 線段 BE ＝ ________。",
+    "answer": "3 : 2√6",
     "diagramUrl": "assets/questions/q_math_similar_trapezoid_109.png",
-    "solution": "○ **詳細觀念與解題步驟**：\n\n1. **求中間平行線段 EF**：\n   - 因為梯形 AEFD 相似於梯形 EBCF，依相似多邊形對應邊成比例：\n     線段 AD : 線段 EF ＝ 線段 EF : 線段 BC\n   - 代入已知數據（AD ＝ 3，BC ＝ 8）：\n     3 : EF ＝ EF : 8\n     EF × EF ＝ 3 × 8 ＝ 24\n     EF ＝ √24 ＝ 2√6\n\n2. **求兩側腰長線段比 AE : BE**：\n   - 由梯形 AEFD 相似於梯形 EBCF，對應腰長比例等於對應底邊比例：\n     線段 AE : 線段 BE ＝ 線段 AD : 線段 EF\n   - 代入 AD ＝ 3 與 EF ＝ 2√6：\n     線段 AE : 線段 BE ＝ 3 : 2√6\n\n正確答案選 **(B)**。",
+    "solution": "○ **詳細觀念與解題步驟**：\n\n1. **求中間平行線段 EF**：\n   - 因為梯形 AEFD 相似於梯形 EBCF，依相似多邊形對應邊成比例：\n     線段 AD : 線段 EF ＝ 線段 EF : 線段 BC\n   - 代入已知數據（AD ＝ 3，BC ＝ 8）：\n     3 : EF ＝ EF : 8\n     EF × EF ＝ 3 × 8 ＝ 24\n     EF ＝ √24 ＝ 2√6\n\n2. **求兩側腰長線段比 AE : BE**：\n   - 由梯形 AEFD 相似於梯形 EBCF，對應腰長比例等於對應底邊比例：\n     線段 AE : 線段 BE ＝ 線段 AD : 線段 EF\n   - 代入 AD ＝ 3 與 EF ＝ 2√6：\n     線段 AE : 線段 BE ＝ 3 : 2√6\n\n故線段 AE : 線段 BE ＝ **3 : 2√6**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
     "isArchived": false,
-    "nextReviewDate": "2026-09-29",
+    "nextReviewDate": "2026-10-05",
     "isReviewed": false,
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
@@ -6274,7 +6274,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v188') ||
+      stored = localStorage.getItem('miley_wrong_questions_v189') ||
+               localStorage.getItem('miley_wrong_questions_v188') ||
                localStorage.getItem('miley_wrong_questions_v187') ||
                localStorage.getItem('miley_wrong_questions_v186') ||
                localStorage.getItem('miley_wrong_questions_v185') ||
