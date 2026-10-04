@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v192';
+const STORAGE_KEY = 'miley_wrong_questions_v193';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -6302,7 +6302,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v191') ||
+      stored = localStorage.getItem('miley_wrong_questions_v192') ||
+               localStorage.getItem('miley_wrong_questions_v191') ||
                localStorage.getItem('miley_wrong_questions_v190') ||
                localStorage.getItem('miley_wrong_questions_v189') ||
                localStorage.getItem('miley_wrong_questions_v188') ||
@@ -6481,6 +6482,32 @@ class DataManager {
           if (q[field]) q[field] = cleanCorruptText(q[field]);
         });
       });
+    }
+
+    // Forced Migration Patch: Ensure all recent math questions requested by Miley belong to 2026-10-05 week
+    const targetNextWeekMathIds = [
+      'q_math_similar_rectangle_108',
+      'q_math_similar_trapezoid_109',
+      'q_math_isosceles_triangle_golden_ratio_110',
+      'q_math_triangle_cevian_intersection_ratio_093',
+      'q_math_trapezoid_parallel_lines_ratio_094'
+    ];
+    if (Array.isArray(this.questions)) {
+      let modified = false;
+      this.questions.forEach(q => {
+        if (q && targetNextWeekMathIds.includes(q.id)) {
+          if (q.mondayDate !== '2026-10-05' || !Array.isArray(q.mondayDates) || !q.mondayDates.includes('2026-10-05')) {
+            q.mondayDate = '2026-10-05';
+            q.mondayDates = ['2026-10-05'];
+            q.weekLabel = '2026-10-05 (最新週次)';
+            q.nextReviewDate = '2026-10-05';
+            modified = true;
+          }
+        }
+      });
+      if (modified) {
+        this.save();
+      }
     }
 
     // Auto-sync any newly added system seed questions or seed content updates
