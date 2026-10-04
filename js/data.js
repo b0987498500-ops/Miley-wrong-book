@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v195';
+const STORAGE_KEY = 'miley_wrong_questions_v196';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -6494,6 +6494,34 @@ const INITIAL_SEED_DATA = [
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
     "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_civ_resource_scarcity_efficiency_120",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "資源稀少性與選擇目的：追求資源最高效率運用與分配",
+    "uploadDate": "2026-10-04",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "⚠️ 審題陷阱與易錯觀念：學習選擇的主要目的「並非最有節制」或「用得最少」，而是為了「將有限資源做最高效率的運用與分配」，發揮最大效益與滿足感！",
+    "stem": "當資源不能無止盡的提供人們使用時，就必須權衡考量做出選擇。根據上述判斷，下列何者是我們學習選擇課題的主要目的？\n\n○ (A) 如何將資源做最有節制的運用與分配\n○ (B) 如何將資源做最高效率的運用與分配\n○ (C) 如何將資源做最多的運用與分配\n○ (D) 如何將資源做最少的運用與分配",
+    "answer": "(B) 如何將資源做最高效率的運用與分配",
+    "diagramUrl": "",
+    "solution": "○ **詳細觀念與選項剖析**：\n\n1. **核心觀念解析**：\n   - **資源稀少性（Scarcity）**：人類的欲望無窮，但可利用的資源相對有限。當資源無法無止盡供給時，人們必須權衡取捨（Trade-off）做出選擇。\n   - **選擇的目的**：經濟學學習選擇課題，目標是追求**「最有效率的運用與分配」**（Efficiency），使每一單位資源能產生最大的效益與滿足感。\n\n2. **各選項誘答性分析**：\n   - **(A) 錯誤**：「最有節制」偏向節約或少用，並非選擇追求的核心效益極大化原則。\n   - **(B) 正確**：資源有限下，追求「最高效率」的分配與運用是選擇課題的最主要目的。\n   - **(C) 錯誤**：「最多運用」可能導致資源浪費或濫用，非最佳解。\n   - **(D) 錯誤**：「最少運用」會抑制合理需求與發展，不符合最佳分配思維。\n\n正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-05",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   }
 ];
 
@@ -6554,7 +6582,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v194') ||
+      stored = localStorage.getItem('miley_wrong_questions_v195') ||
+               localStorage.getItem('miley_wrong_questions_v194') ||
                localStorage.getItem('miley_wrong_questions_v193') ||
                localStorage.getItem('miley_wrong_questions_v192') ||
                localStorage.getItem('miley_wrong_questions_v191') ||
