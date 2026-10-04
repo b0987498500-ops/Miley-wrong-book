@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v193';
+const STORAGE_KEY = 'miley_wrong_questions_v194';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -6242,6 +6242,90 @@ const INITIAL_SEED_DATA = [
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
     "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_geo_landform_geological_activity_111",
+    "examPeriod": "一段",
+    "subject": "自然",
+    "errorReason": "審題不清",
+    "concept": "地貌景觀與地表地質作用對應（風蝕/風搬運沉積/冰蝕）",
+    "uploadDate": "2026-10-04",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "⚠️ 審題陷阱與易錯觀念：風吹砂是強風將海岸沙粒吹向陸地坡面堆積而成的「風力搬運與沉積現象」，並非侵蝕作用！常見的風蝕地貌為「風稜石」與「風蝕蕈狀岩」，切勿混淆搬運/沉積與侵蝕作用。",
+    "stem": "有關地貌景觀與地表地質活動的對應，下列何者錯誤？\n\n○ (A) U 型谷——冰川的侵蝕作用\n○ (B) 屏東恆春的風吹砂——風的侵蝕與搬運現象\n○ (C) 新北市富貴角的風稜石（指稜角分明的岩石）——強風挾帶砂粒侵蝕\n○ (D) 沙洲——海流的沉積作用",
+    "answer": "(B) 屏東恆春的風吹砂——風的侵蝕與搬運現象",
+    "diagramUrl": "",
+    "solution": "○ **詳細觀念與選項剖析**：\n\n1. **各選項地質作用解析**：\n   - **(A) 正確**：U 型谷是冰川向下移動時，廣泛侵蝕谷壁與谷底所形成的典型冰蝕地貌。\n   - **(B) 錯誤（選此項）**：屏東恆春的「風吹砂」是強勁落山風將海岸沙粒吹向陸地坡面沉積，屬於風的**搬運與沉積現象**，而非風蝕現象。\n   - **(C) 正確**：風稜石是強風挾帶細砂對岩石長期進行打磨（風蝕作用）所形成的稜角分明岩石。\n   - **(D) 正確**：沙洲是沿岸流與波浪將陸地河流攜帶入海的泥沙在近岸堆積而成的沉積地貌。\n\n正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-05",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_geo_frost_wedging_temp_range_112",
+    "examPeriod": "一段",
+    "subject": "自然",
+    "errorReason": "觀念不懂",
+    "concept": "凍融作用/結晶物理風化與氣溫冰點震盪條件",
+    "uploadDate": "2026-10-04",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "⚠️ 審題陷阱與易錯觀念：水結冰膨脹物理風化（凍融作用/楔裂作用）的必要條件是氣溫必須「跨越 0°C 冰點（高於 0°C 與低於 0°C 來回震盪）」！若氣溫全在 0°C 以下（如 -8°C ~ -5°C），水會一直保持固體冰塊，無法重複滲入岩縫融化與結晶膨脹。",
+    "stem": "在高山或高緯度地區，若容易因為水結冰膨脹，而產生風化作用，則此地氣溫變化範圍最可能為下列何者？\n\n○ (A) -8°C ～ -5°C\n○ (B) 3°C ～ 10°C\n○ (C) -20°C ～ -10°C\n○ (D) -5°C ～ 5°C",
+    "answer": "(D) -5°C ～ 5°C",
+    "diagramUrl": "",
+    "solution": "○ **詳細觀念與選項剖析**：\n\n1. **水結冰膨脹物理風化（凍融作用/楔裂作用）機制**：\n   - 液態水滲入岩石裂縫中，當氣溫降至 0°C 以下時水結成冰，體積膨脹約 9%，產生強大張力撐開岩縫。\n   - 當氣溫回升至 0°C 以上時冰融化成水，再次深入裂縫，等待下一次結冰。\n\n2. **氣溫條件分析**：\n   - 要引發頻繁的「結冰膨脹風化」，氣溫必須在 **0°C 上下反覆波動（跨越冰點 0°C）**。\n   - **(A) -8°C ～ -5°C**：全程低於 0°C，水一直保持冰塊，無法熔化重新滲入。\n   - **(B) 3°C ～ 10°C**：全程高於 0°C，水不會結冰膨脹。\n   - **(C) -20°C ～ -10°C**：全程遠低於 0°C，無法發生凍融循環。\n   - **(D) -5°C ～ 5°C**：氣溫在 0°C 上下震盪，白天融化滲入、夜晚結冰膨脹，最容易引發結晶風化與楔裂作用！\n\n正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-05",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_geo_iron_mineral_oxidation_color_113",
+    "examPeriod": "一段",
+    "subject": "自然",
+    "errorReason": "觀念不懂",
+    "concept": "含鐵礦物化學風化（氧化作用）與岩石呈紅褐色特徵",
+    "uploadDate": "2026-10-04",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": true,
+    "mistakeNote": "⚠️ 審題陷阱與易錯觀念：含鐵礦物發生「化學風化（氧化作用）」會生成紅褐色的氧化鐵（三價鐵 Fe₂O₃），這是許多土壤（如紅土）與岩石表面呈現紅褐色的主要原因。",
+    "stem": "岩石中含鐵礦物氧化會使岩石表面呈現何種顏色？\n\n○ (A) 黑色\n○ (B) 白色\n○ (C) 紅褐色\n○ (D) 藍色",
+    "answer": "(C) 紅褐色",
+    "diagramUrl": "",
+    "solution": "○ **詳細觀念與選項剖析**：\n\n1. **化學風化——氧化作用**：\n   - 岩石中的含鐵礦物（如橄欖石、輝石、黃鐵礦等）曝露於大氣與水份中時，二價鐵離子與氧氣、水反應，氧化生成三價鐵化合物（氧化鐵 Fe₂O₃ 或褐鐵礦）。\n\n2. **顏色特徵**：\n   - 三價氧化鐵呈現典型的**紅褐色**或黃褐色（俗稱生鏽色），使岩石土壤呈現紅棕色。\n\n正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-05",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "reviewedMondays": []
   }
 ];
 
@@ -6302,7 +6386,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v192') ||
+      stored = localStorage.getItem('miley_wrong_questions_v193') ||
+               localStorage.getItem('miley_wrong_questions_v192') ||
                localStorage.getItem('miley_wrong_questions_v191') ||
                localStorage.getItem('miley_wrong_questions_v190') ||
                localStorage.getItem('miley_wrong_questions_v189') ||
