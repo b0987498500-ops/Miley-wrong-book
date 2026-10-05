@@ -3,10 +3,160 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v196';
+const STORAGE_KEY = 'miley_wrong_questions_v197';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_math_sqrt_double_root_estimation_108",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "審題不清",
+    "concept": "平方根與根號運算：雙重平方根觀念與根號數值估算",
+    "uploadDate": "2026-10-05",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：雙重平方根陷阱與根號估算技巧！\n1. **字面陷阱：「√169 的正平方根」**：\n   - 先計算 √169 = 13。\n   - 題目問的是「13 的正平方根」，即 P = √13！\n   - 切勿誤把 P 當作 13（選 A）。\n2. **根號數值的連續整數估算**：\n   - 因為 9 < 13 < 16，同開根號得 √9 < √13 < √16，即 3 < √13 < 4。\n   - 因此 3 < P < 4。",
+    "stem": "已知 P 是 √169 的正平方根，則下列關於 P 值的敘述何者正確？\n\n○ (A) P = 13\n○ (B) 13 < P < 14\n○ (C) 3 < P < 4\n○ (D) 168 < P < 170",
+    "answer": "(C) 3 < P < 4",
+    "diagramUrl": "",
+    "solution": "1. **解題兩階段拆解**：\n   - **第一步（化簡內層數值）**：因為 13 × 13 = 169，所以 √169 = 13。\n   - **第二步（求 P 的定義）**：題目說明 P 是「√169 的正平方根」，也就是「13 的正平方根」，故 P = √13。\n2. **根號數值的夾擠估算**：\n   - 尋找 13 兩側最接近的完全平方數：9 與 16。\n   - 因為 9 < 13 < 16，所以 √9 < √13 < √16，即 3 < √13 < 4。\n   - 得出 3 < P < 4。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-05",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_past_continuous_passive_museum_109",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "英文時態與被動語態：過去進行被動語態 (was/were + being + p.p.)",
+    "uploadDate": "2026-10-05",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：過去進行被動語態 (Past Continuous Passive) 關鍵密碼！\n1. **時間子句判定**：「When I visited there...」表示「過去的某個特定時間點」。\n2. **動作狀態**：當時博物館正在被建造中，需結合「過去進行式 (was/were + V-ing)」與「被動語態 (be + p.p.)」。\n3. **公式組合**：was/were + being + p.p. → was being built。\n4. **常見干擾項排除**：\n   - (B) has been built 為現在完成被動，與過去特定時間點不吻合。\n   - (C) is being built 為現在進行被動，時態與 visited 不符。\n   - (D) is built 為現在簡單被動，時態不符。",
+    "stem": "When I visited there, a new museum ________ by them.\n\n○ (A) was being built\n○ (B) has been built\n○ (C) is being built\n○ (D) is built",
+    "answer": "(A) was being built",
+    "diagramUrl": "",
+    "solution": "1. **句型與時態分析**：\n   - 時間子句「When I visited there（當我在那裡參觀時）」中的 visited 是過去簡單式，鎖定了過去某特定時間點。\n2. **被動語態與進行式結構**：\n   - 主詞為「a new museum（一間新博物館）」，動作為「被建造（build）」。\n   - 在過去那個特定時刻，建造工程「正在進行中」，故必須使用過去進行被動語態。\n   - 過去進行被動語態結構：主詞 + was/were + being + p.p.\n   - 主詞 a new museum 為單數，故搭配 was being built。\n3. **選項比較**：\n   - **(A) was being built**：過去進行被動語態，符合句意「當時正在被建造」。\n   - **(B) has been built**：現在完成被動語態，不可與明確過去時間點 when I visited 搭配。\n   - **(C) is being built**：現在進行被動語態，與過去式時態不一致。\n   - **(D) is built**：現在簡單被動語態，時態不一致。\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-05",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_sqrt_reciprocal_rationalization_comparison_110",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "計算粗心",
+    "concept": "平方根與根號運算：倒數有理化比較根號差的大小",
+    "uploadDate": "2026-10-05",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：根號減法比較大小技巧 —— 「倒數有理化法」！\n1. **觀察特徵**：\n   - A = √19 - √9（因為 3 = √9，平方差 19 - 9 = 10）\n   - B = √18 - √8（因為 2√2 = √8，平方差 18 - 8 = 10）\n   - C = √17 - √7（平方差 17 - 7 = 10）\n   - 發現三式取「平方差」後的分子都是 10！\n2. **取倒數（有理化）**：\n   - 1/A = (√19 + 3) / 10\n   - 1/B = (√18 + √8) / 10\n   - 1/C = (√17 + √7) / 10\n3. **比較分子與倒數性質**：\n   - 分母皆為 10，分子：(√19+3) > (√18+√8) > (√17+√7)\n   - 倒數大小：1/A > 1/B > 1/C\n   - 正數取倒數後大小關係反轉：A < B < C！",
+    "stem": "若 A = √19 - 3，B = √18 - 2√2，C = √17 - √7，求 A、B、C 三數的大小關係何者正確？\n\n○ (A) A > B > C\n○ (B) B > C > A\n○ (C) C > A > B\n○ (D) A < B < C",
+    "answer": "(D) A < B < C",
+    "diagramUrl": "",
+    "solution": "1. **化簡並觀察各項平方差特徵**：\n   - 將整數與係數均化為根號內部形式：\n     - A = √19 - √9 （因為 3 = √9，其平方差為 19 - 9 = 10）\n     - B = √18 - √8 （因為 2√2 = √8，其平方差為 18 - 8 = 10）\n     - C = √17 - √7 （其平方差為 17 - 7 = 10）\n   - 發現三個式的平方差都是 10！\n2. **利用「倒數有理化」法進行比較**：\n   - 對各數取倒數並進行分母有理化：\n     - 1/A = 1 / (√19 - 3) = (√19 + 3) / (19 - 9) = (√19 + 3) / 10\n     - 1/B = 1 / (√18 - √8) = (√18 + √8) / (18 - 8) = (√18 + √8) / 10\n     - 1/C = 1 / (√17 - √7) = (√17 + √7) / (17 - 7) = (√17 + √7) / 10\n3. **倒數的大小比較與還原**：\n   - 三個分式分母同為 10，比較分子：因為 √19 > √18 > √17 且 3(=√9) > √8 > √7，故 (√19 + 3) > (√18 + √8) > (√17 + √7)。\n   - 得出倒數大小為：1/A > 1/B > 1/C。\n   - 因為 A、B、C 皆為正數，倒數越大者原數越小，故原數大小關係為：A < B < C。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-05",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_sqrt_cuboid_volume_height_111",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "計算粗心",
+    "concept": "平方根與根號運算：根號乘除運算與帶分數根號化簡（長方體體積與高）",
+    "uploadDate": "2026-10-05",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：根號帶分數與除法運算四大陷阱！\n1. **帶分數根號化簡前務必先變假分數**：\n   - √(2又2/3) = √(8/3) = √8 / √3 = 2√2 / √3。\n   - 絕不可誤拆為 √2！\n2. **體積公式求高**：\n   - 高 = 體積 ÷ (長 × 寬)。\n3. **一步化簡法**：\n   - 體積 = 2√12 = 4√3。\n   - 長 × 寬 = 2√3 × (2√2 / √3) = 4√2。\n   - 高 = 4√3 / 4√2 = √3 / √2 = √6 / 2。",
+    "stem": "有一個長方體的體積為 2√12 立方公分，且長為 2√3 公分，寬為 √(2又2/3) 公分，則高為多少公分？\n\n○ (A) (√6 / 2) 公分\n○ (B) (√3 / 2) 公分\n○ (C) √3 公分\n○ (D) (√3 / 3) 公分",
+    "answer": "(A) (√6 / 2) 公分",
+    "diagramUrl": "",
+    "solution": "1. **幾何公式與化簡**：\n   - 長方體體積 = 長 × 寬 × 高 → 高 = 體積 ÷ (長 × 寬)。\n2. **各數值根號化簡**：\n   - **體積**：2√12 = 2 × 2√3 = 4√3。\n   - **長**：2√3。\n   - **寬**：√(2又2/3) = √(8/3) = √8 / √3 = 2√2 / √3。\n3. **計算底面積與高**：\n   - **底面積 (長 × 寬)** = 2√3 × (2√2 / √3) = 4√2。\n   - **高** = 體積 ÷ 底面積 = 4√3 ÷ 4√2 = √3 / √2。\n   - **分母有理化**：(√3 × √2) / (√2 × √2) = √6 / 2。\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-05",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_sqrt_mixed_fraction_algebraic_identity_112",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "審題不清",
+    "concept": "乘法公式與平方根應用：帶分數結合平方差公式求平方根",
+    "uploadDate": "2026-10-05",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：帶分數開平方根速算與「正負符號」雙重提醒！\n1. **莫硬算！巧用乘法公式化簡分子**：\n   - 123又(1/121) = (123 × 121 + 1) / 121。\n   - 觀察 123 = 122 + 1 與 121 = 122 - 1，利用平方差公式：\n     (122 + 1)(122 - 1) + 1 = 122² - 1² + 1 = 122²！\n   - 原式變為 122² / 121 = (122 / 11)²！\n2. **「平方根」必定有正有負**：\n   - 題目問的是「平方根」，包含正平方根與負平方根，因此一定要加 ± 號！\n   - 若問「正平方根」或「算術平方根」才是正數。",
+    "stem": "123又1/121 的平方根為下列哪一選項？\n\n○ (A) 11又1/11\n○ (B) ± (122 / 11)\n○ (C) ± (√123 / 11)\n○ (D) √123 / 11",
+    "answer": "(B) ± (122 / 11)",
+    "diagramUrl": "",
+    "solution": "1. **帶分數化為假分數並運用乘法公式速算**：\n   - 原數 = 123又(1/121) = (123 × 121 + 1) / 121。\n   - 觀察分子：將 123 寫成 (122 + 1)，將 121 寫成 (122 - 1)。\n   - 分子 = (122 + 1) × (122 - 1) + 1。\n   - 利用平方差公式 (a+b)(a-b) = a² - b²：\n     分子 = (122² - 1²) + 1 = 122² - 1 + 1 = 122²。\n2. **整體結構與完全平方數**：\n   - 原數 = 122² / 121 = 122² / 11² = (122 / 11)²。\n3. **求「平方根」注意事項**：\n   - 任意正數的平方根皆有「正、負」兩個值，寫作 ± √(原數)。\n   - 平方根 = ± √[(122 / 11)²] = ± (122 / 11)。\n\n故正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-05",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_chi_typo_correction_idiom_phrases_106",
     "examPeriod": "一段",
@@ -6582,7 +6732,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v195') ||
+      stored = localStorage.getItem('miley_wrong_questions_v196') ||
+               localStorage.getItem('miley_wrong_questions_v195') ||
                localStorage.getItem('miley_wrong_questions_v194') ||
                localStorage.getItem('miley_wrong_questions_v193') ||
                localStorage.getItem('miley_wrong_questions_v192') ||
