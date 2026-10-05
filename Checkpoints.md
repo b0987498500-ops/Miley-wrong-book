@@ -4,6 +4,20 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v1.85] - 2026-10-05 (自動收錄 1 道國二數學二次平方根經典陷阱題「P 是 √169 的正平方根」與 YouTube 影音解題連結，升級題庫數據庫至 v197)
+- **類型**：國二數學錯題自動收錄 / 雙重根號正平方根陷阱 / YouTube 影音解題教學連結 / 數據庫升級 v197
+- **主要變更**：
+  1. **收錄國二數學二次平方根錯題一道 (`q_math_sqrt_positive_square_root_trap_108`)**：
+     - **題幹**：已知 P 是 $\sqrt{169}$ 的正平方根，則下列關於 P 值的敘述何者正確？
+     - **破題關鍵與正解**：先求底數化簡 $\sqrt{169} = 13$，再求 $13$ 的正平方根 $P = \sqrt{13}$；由 $3^2 = 9 < 13 < 16 = 4^2$ 可知 $3 < P < 4$（$P \approx 3.605$）。正解為 **(C)**。
+     - **影音解題教學連結**：於詳解中嵌入 YouTube 解題影片網址 `https://www.youtube.com/watch?v=0euMlPb_D68`。
+  2. **純淨排版與週次編配**：
+     - 歸檔至 `2026-10-05` (最新週次)。純文字題目，無須額外圖片，`diagramUrl: ""`。
+  3. **數據庫與快取升級**：
+     - 升級 `STORAGE_KEY` 至 `v197`，`sw.js` 快取版本更新至 `v1.63`。
+
+---
+
 ## [v1.84] - 2026-10-04 (自動收錄 1 道國三社會/公民選擇課題經典錯題「資源稀少性與學習選擇目的：追求最高效率運用與分配」，升級題庫數據庫至 v196)
 - **類型**：國三社會/公民錯題自動收錄 / 10/5 下週複習歸檔 / 數據庫升級 v196
 - **主要變更**：
@@ -148,12 +162,7 @@
 ## [v1.74] - 2026-10-03 (修復草稿區畫筆滑鼠與觸控游標座標偏右下偏移問題，校準 100% 精準指點跟隨與縮放比例適配，升級題庫數據庫至 v186)
 - **類型**：螢幕草稿畫布座標與視角縮放校准 (Scratchpad Precision Calibration) / 數據庫升級 v186
 - **主要變更**：
-  1. **修復螢幕草稿畫布 (Scratchpad Canvas) 滑鼠/觸控游標偏右下 (Drift/Offset) 偏移問題**：
-     - 在 `ReviewModule` 新增萬用精準座標計算器 `getCanvasCoords(e)`，整合 `e.clientX / e.clientY` 與 `e.touches / e.changedTouches` 雙重相容。
-     - 計算 CSS 渲染尺寸與 Canvas 內部 Pixel 緩衝區之動態比例 `scaleX = canvas.width / rect.width` 與 `scaleY = canvas.height / rect.height`，並乘以 `(clientX - rect.left)`，徹底消滅 Retina 高解析度螢幕、視窗縮放或滾動產生的座標偏差，達成滑鼠游標至何處、筆劃即落於何處之 100% 絕對跟隨！
-  2. **觸控防滾動與視窗縮放自動校正 (`resizeCanvas`)**：
-     - 為 `touchstart` 與 `touchmove` 補上 `e.preventDefault()` 防呆，阻斷畫圖時背景網頁發生捲動造成的動態座標偏移。
-     - 監聽 `window` Resize 事件，當瀏覽器縮放或視窗尺寸變更時自動維持畫布高清與座標對齊。
+  1. **修�      - 升級 `STORAGE_KEY` 至 `v178`，`sw.js` 快取版本更新至 `v1.44`，`index.html` 資源 query param 更新至 `v=178`。�縮放或視窗尺寸變更時自動維持畫布高清與座標對齊。
   3. **數據庫與快取升級**：
      - 升級 `STORAGE_KEY` 至 `v186`，`sw.js` 快取版本更新至 `v1.52`，`index.html` 資源 query param 更新至 `v=186`。
 
@@ -264,6 +273,19 @@
      - 裁切提取地圖圖像（含南疆鐵路、格庫鐵路、和若鐵路、喀和鐵路及各站點代號），保存至 `assets/questions/q_soc_geo_china_heruo_railway_taklamakan_100.png`，配備點擊燈箱放大檢視功能。
   3. **資料庫與 Service Worker 升級**：
      - 升級 `STORAGE_KEY` 至 `v178`，`sw.js` 快取版本更新至 `v1.44`，`index.html` 資源 query param 更新至 `v=178`。
+=======
+## [v1.85] - 2026-10-05 (自動收錄 1 道國二數學二次平方根經典陷阱題「P 是 √169 的正平方根」與 YouTube 影音解題連結，升級題庫數據庫至 v197)
+- **類型**：國二數學錯題自動收錄 / 雙重根號正平方根陷阱 / YouTube 影音解題教學連結 / 數據庫升級 v197
+- **主要變更**：
+  1. **收錄國二數學二次平方根錯題一道 (`q_math_sqrt_positive_square_root_trap_108`)**：
+     - **題幹**：已知 P 是 $\sqrt{169}$ 的正平方根，則下列關於 P 值的敘述何者正確？
+     - **破題關鍵與正解**：先求底數化簡 $\sqrt{169} = 13$，再求 $13$ 的正平方根 $P = \sqrt{13}$；由 $3^2 = 9 < 13 < 16 = 4^2$ 可知 $3 < P < 4$（$P \approx 3.605$）。正解為 **(C)**。
+     - **影音解題教學連結**：於詳解中嵌入 YouTube 解題影片網址 `https://www.youtube.com/watch?v=0euMlPb_D68`。
+  2. **純淨排版與週次編配**：
+     - 歸檔至 `2026-10-05` (最新週次)。純文字題目，無須額外圖片，`diagramUrl: ""`。
+  3. **數據庫與快取升級**：
+     - 升級 `STORAGE_KEY` 至 `v197`，`sw.js` 快取版本更新至 `v1.63`。
+>>>>>>> a36cfab (feat: add square root trap math question with YouTube video link (v1.85))
 
 ---
 
