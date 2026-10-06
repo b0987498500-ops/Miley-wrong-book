@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v197';
+const STORAGE_KEY = 'miley_wrong_questions_v198';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_bio_animal_common_name_taxonomy_113",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "脊椎動物分類與俗名辨析：真假魚類名稱盲點",
+    "uploadDate": "2026-10-06",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：生物俗名與真實分類陷阱 —— 「魚字尾」不一定是魚！\n1. **名稱有「魚」卻不是魚類**：\n   - **山椒魚**：兩生類（有尾目，用皮膚與肺呼吸）。\n   - **鱷魚**：爬蟲類（鱷目，用肺呼吸、體表有角質鱗片/骨板）。\n   - 其他常見非魚類：鯨魚/海豚（哺乳類）、墨魚/章魚/魷魚（軟體動物）、娃娃魚（兩生類/大鯢）。\n2. **名稱沒有「魚」或是特殊外型卻是魚類**：\n   - **彈塗魚**：硬骨魚綱（蝦虎魚科），用鰓呼吸。\n   - **海馬**：硬骨魚綱（海龍科），用鰓呼吸、有鰭。",
+    "stem": "動物的俗名，往往無法真正表達動物真實的種類，例如 (甲) 山椒魚；(乙) 彈塗魚；(丙) 海馬；(丁) 鱷魚；是一些常見動物的俗名。試判斷哪些並非屬於魚類？\n\n○ (A) (甲)(丁)\n○ (B) (丙)(丁)\n○ (C) (甲)(乙)(丙)\n○ (D) (甲)(丙)(丁)",
+    "answer": "(A) (甲)(丁)",
+    "diagramUrl": "",
+    "solution": "1. **個別動物分類與呼吸器官分析**：\n   - **(甲) 山椒魚**：屬於**兩生綱（兩生類）**。幼體用鰓呼吸，成體用肺與濕潤皮膚呼吸，非魚類。\n   - **(乙) 彈塗魚**：屬於**硬骨魚綱（魚類）**。用鰓呼吸，胸鰭發達可在泥灘上爬行，是真正的魚類。\n   - **(丙) 海馬**：屬於**硬骨魚綱（魚類）**。雖然頭部似馬且尾巴能捲曲，但具有鰓與背鰭，是真正的魚類。\n   - **(丁) 鱷魚**：屬於**爬蟲綱（爬蟲類）**。用肺呼吸，體表覆蓋角質鱗片或骨板，非魚類。\n2. **綜合判斷**：\n   - 並非屬於魚類的為 (甲) 山椒魚（兩生類）與 (丁) 鱷魚（爬蟲類）。\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-06",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_math_sqrt_double_root_estimation_108",
     "examPeriod": "一段",
@@ -6732,7 +6762,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v196') ||
+      stored = localStorage.getItem('miley_wrong_questions_v197') ||
+               localStorage.getItem('miley_wrong_questions_v196') ||
                localStorage.getItem('miley_wrong_questions_v195') ||
                localStorage.getItem('miley_wrong_questions_v194') ||
                localStorage.getItem('miley_wrong_questions_v193') ||
