@@ -3,10 +3,70 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v198';
+const STORAGE_KEY = 'miley_wrong_questions_v199';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_bio_deep_sea_hydrothermal_vent_sulfur_bacteria_114",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "原核生物界特徵：深海熱泉硫化菌（古菌）之構造、代謝與極端環境適應",
+    "uploadDate": "2026-10-06",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：原核生物界（古細菌/深海熱泉硫化菌）核心特徵與易錯觀念對照！\n1. **細胞結構特徵（極重要）**：\n   - **無細胞核膜**：原核生物最核心標籤！遺傳物質（DNA）直接裸露於細胞質中，沒有膜狀胞器。\n   - **細胞壁成分陷阱**：古細菌具有細胞壁，但成分（假肽聚糖/蛋白質）與植物（纖維素）及真細菌（肽聚糖）完全不同，不可混為一談。\n2. **能量獲取與代謝方式**：\n   - **化能自營（非光合作用）**：深海無陽光，熱泉硫化菌利用氧化硫化合物釋放的「化學能」合成有機物，屬於**生產者**，但**不利用光能，也不會產生氧氣**。\n3. **極端環境適應**：\n   - 屬於嗜熱古菌，體內酵素最適溫度常高於 70°C~100°C 以上，非一般常溫（20~40°C）。",
+    "stem": "下列何者是深海熱泉硫化菌（原核生物界）的特徵？\n\n○ (A) 具有細胞壁，成分和植物相同\n○ (B) 會自行製造氧氣，為生產者的角色\n○ (C) 缺乏細胞核膜，遺傳物質直接裸露在細胞質中\n○ (D) 細胞內進行酵素代謝反應的最適合溫度約20~40°C",
+    "answer": "(C) 缺乏細胞核膜，遺傳物質直接裸露在細胞質中",
+    "diagramUrl": "",
+    "solution": "1. **考點透視與選項詳細解析**：\n   - **(C) 正確**：深海熱泉硫化菌屬於**原核生物界（古細菌）**。原核生物的核心特徵為**缺乏細胞核膜與膜狀胞器**，其遺傳物質（DNA）直接裸露散佈於細胞質中。\n   - **(A) 錯誤**：深海熱泉硫化菌屬於古細菌，雖具有細胞壁，但其細胞壁主要由假肽聚糖、蛋白質或多醣組成，**成分與植物細胞壁（主要成分為纖維素）完全不同**。\n   - **(B) 錯誤**：深海熱泉缺乏陽光，硫化菌是利用氧化硫化物的**化學能**來合成有機物（化能自營生產者），此化學合成過程**不會產生氧氣**（光合作用才會釋放氧氣）。\n   - **(D) 錯誤**：深海熱泉噴口溫度高達 70°C~100°C 以上，生活於此的硫化菌為嗜熱古菌，其體內酵素代謝反應的最適合溫度遠高於 20~40°C（通常大於 70°C）。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-06",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_bio_animal_taxonomy_levels_comparison_115",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "生物分類階層與親緣關係：七大分類階層（界門綱目科屬種）比較",
+    "uploadDate": "2026-10-06",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：生物分類階層與親緣關係遠近判斷技巧！\n1. **階層越高，包含範圍越大；階層越低，親緣關係越近**：\n   - 分類階層順序：界 → 門 → 綱 → 目 → 科 → 屬 → 種。\n   - **同目優於不同目**：灰狼、斑鬣狗、赤狐、郊狼皆為「食肉目」，而花栗鼠為「齧齒目」。因此花栗鼠與其他四種生物在「目」這個階層就分開了，親緣關係最遠。\n2. **表格判讀與階層對比**：\n   - 花栗鼠與郊狼相同的分類階層：**界（動物界）、門（脊索動物門）、綱（哺乳綱）**，共 3 個階層相同。\n   - 斑鬣狗屬於鬣狗科，題目表格未給出其「屬」，無法直接推斷其屬於犬屬。",
+    "stem": "有灰狼、斑鬣狗、花栗鼠、赤狐、郊狼等五種生物，如表為牠們分類上的關係，請選出正確的敘述為何？\n\n○ (A) 斑鬣狗是屬於犬屬\n○ (B) 表中和灰狼親緣關係最遠的生物是斑鬣狗\n○ (C) 表中和赤狐親緣關係最遠的生物是花栗鼠\n○ (D) 七個分類階層中，花栗鼠有三個階層和郊狼相同",
+    "answer": "(D) 七個分類階層中，花栗鼠有三個階層和郊狼相同",
+    "diagramUrl": "assets/questions/q_bio_animal_taxonomy_table_115.png",
+    "solution": "1. **補全五種生物的七大分類階層資料表**：\n   - **界**：五者皆屬於**動物界**。\n   - **門**：五者皆屬於**脊索動物門**。\n   - **綱**：五者皆屬於**哺乳綱**。\n   - **目**：灰狼、斑鬣狗、赤狐、郊狼皆屬於**食肉目**；花栗鼠屬於**齧齒目**。\n   - **科**：灰狼（犬科）、斑鬣狗（鬣狗科）、赤狐（犬科）、郊狼（犬科）。\n   - **屬**：灰狼（犬屬）、赤狐（狐屬）、郊狼（犬屬）。\n2. **逐項剖析各選項**：\n   - **(A) 錯誤**：斑鬣狗屬於鬣狗科，表中資料並未指出斑鬣狗屬於哪一屬，更非犬屬。\n   - **(B) 錯誤**：灰狼為食肉目，斑鬣狗亦為食肉目；而花栗鼠為齧齒目。與灰狼親緣關係最遠的應為不同目的花栗鼠，而非斑鬣狗。\n   - **(C) 錯誤**：赤狐與花栗鼠不同目，花栗鼠是與赤狐親緣關係「最遠」的生物（而非選項寫的最近）。\n   - **(D) 正確**：花栗鼠與郊狼相同的分類階層包含**界（動物界）、門（脊索動物門）、綱（哺乳綱）**，共 3 個階層相同。\n\n故正確答案選 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-06",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_bio_animal_common_name_taxonomy_113",
     "examPeriod": "一段",
@@ -6762,7 +6822,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v197') ||
+      stored = localStorage.getItem('miley_wrong_questions_v198') ||
+               localStorage.getItem('miley_wrong_questions_v197') ||
                localStorage.getItem('miley_wrong_questions_v196') ||
                localStorage.getItem('miley_wrong_questions_v195') ||
                localStorage.getItem('miley_wrong_questions_v194') ||
