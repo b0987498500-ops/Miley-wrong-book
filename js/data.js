@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v199';
+const STORAGE_KEY = 'miley_wrong_questions_v200';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_sci_bio_flower_monocot_lily_characteristics_121",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "被子植物花型構造與分類：單子葉植物花瓣倍數、散生維管束與花粉管受精構造",
+    "uploadDate": "2026-10-07",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：單子葉與雙子葉植物特徵對照，以及花粉管的普遍性！\n1. **花瓣倍數判斷法**：\n   - **單子葉植物**：花瓣或花被片數通常為 **3 或 3 的倍數**（本題附圖中花朵有 6 片花被片，為典型單子葉植物，如百合、萱草/金針花）。\n   - **雙子葉植物**：花瓣數通常為 **4 或 5 的倍數**（如杜鵑、朱槿）。\n2. **維管束排列常考陷阱**：\n   - **單子葉植物**：莖內維管束為「**散生排列**」，無形成層（如玉米、百合、水稻）。\n   - **雙子葉植物**：莖內維管束為「**環狀排列**」，通常具形成層（如向日葵、榕樹）。\n3. **傳粉方式與花型特徵**：\n   - 本圖之花朵**花大、花被片鮮豔**，屬於典型的**蟲媒花**，主要藉由昆蟲（蜜蜂、蝴蝶）傳粉，而非靠風力（風媒花通常花小、不鮮豔、無香氣無蜜腺，如禾本科水稻、小麥）。\n4. **花粉管的絕對必要性（高頻陷阱題）**：\n   - **所有種子植物（包括裸子植物與被子植物）**在有性生殖時，無論是否為兩性花（兼具雌蕊與雄蕊），花粉落在柱頭後**都必須萌發「花粉管」**，將精細胞運送至胚珠完成受精，以擺脫受精對水分的依賴！絕不能因為兼具雌蕊雄蕊就誤以為不需要花粉管！",
+    "stem": "附圖為公園裡常見的觀賞花，試根據其花型及特徵，下列敘述何者正確？\n\n○ (A) 屬種子植物類別中的單子葉植物\n○ (B) 維管束排列方式為環狀排列\n○ (C) 主要藉由風力傳播花粉\n○ (D) 此花兼具雌蕊和雄蕊，故不需具有花粉管構造",
+    "answer": "(A) 屬種子植物類別中的單子葉植物",
+    "diagramUrl": "assets/questions/q_bio_flower_monocot_lily_121.png",
+    "solution": "1. **破題關鍵（圖形觀察與植物類別判定）**：\n   - 觀察附圖花朵外型：具有明顯的 **6 片花被片（3 片花萼與 3 片花瓣形態相似，為 3 的倍數）**，花朵中心可見明顯的雌雄蕊，為單子葉植物（例如百合科植物）的典型花型。\n   - 因為花被片為 3 的倍數，可確定此植物屬於**種子植物（被子植物）中的「單子葉植物」**。\n\n2. **選項逐一深入剖析**：\n   - **(A) 正確**：花瓣/花被片數為 3 或 6（3 的倍數），符合種子植物（被子植物）中**單子葉植物**的重要特徵。\n   - **(B) 錯誤**：單子葉植物的莖內維管束排列為「**散生排列**」，雙子葉植物的莖內維管束才呈「環狀排列」。\n   - **(C) 錯誤**：此花花朵碩大、色彩鮮明具觀賞價值，吸引昆蟲前來訪花，屬於「**蟲媒花**」，主要藉由昆蟲（如蜜蜂、蝴蝶）傳播花粉；風媒花的花朵通常較小且不鮮豔。\n   - **(D) 錯誤**：種子植物（裸子植物及被子植物）適應陸地生活的重要演化特徵就是**具有「花粉管」**。當花粉落在雌蕊柱頭後，必定會萌發出花粉管將精細胞送入胚珠完成受精，使受精過程不需以水為媒介。無論單性花或兩性花，**皆需要花粉管構造**。\n\n3. **單子葉與雙子葉植物核心特徵快速對照表**：\n   - **子葉數目**：單子葉（1 枚） vs. 雙子葉（2 枚）。\n   - **葉脈形狀**：平行脈 vs. 網狀脈。\n   - **莖維管束**：散生排列（通常無形成層） vs. 環狀排列（通常有形成層）。\n   - **花瓣數目**：3 或 3 的倍數 vs. 4、5 或其倍數。\n   - **根系型態**：鬚根系 vs. 軸根系。\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-07",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_bio_deep_sea_hydrothermal_vent_sulfur_bacteria_114",
     "examPeriod": "一段",
@@ -6822,7 +6852,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v198') ||
+      stored = localStorage.getItem('miley_wrong_questions_v199') ||
+               localStorage.getItem('miley_wrong_questions_v198') ||
                localStorage.getItem('miley_wrong_questions_v197') ||
                localStorage.getItem('miley_wrong_questions_v196') ||
                localStorage.getItem('miley_wrong_questions_v195') ||
