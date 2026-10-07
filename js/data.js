@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v201';
+const STORAGE_KEY = 'miley_wrong_questions_v202';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_bio_axolotl_amphibian_characteristics_123",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "脊椎動物的分類與特徵：兩生類（墨西哥鈍口螈/六角恐龍）之幼態延續、四肢、肺、光滑潮濕皮膚輔助呼吸與外鰓構造",
+    "uploadDate": "2026-10-07",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：常見動物俗名陷阱與兩生類核心呼吸特徵辨析！\n1. **名字有「恐龍」但不是爬蟲類**：\n   - 「六角恐龍」俗稱雖然帶有「恐龍」二字，但真實物種是「**墨西哥鈍口螈**」（蠑螈的一種），屬於「**脊椎動物中的兩生類**」，絕非爬蟲類！\n2. **兩生類核心呼吸特徵**：\n   - 具有**四肢**、構造簡單的**肺**，且皮膚**缺乏鱗片或外骨骼保護**，表面分泌黏液保持**光滑潮濕**，能溶入氧氣**協助呼吸**。\n3. **終身保留外鰓的特殊現象（幼態延續）**：\n   - 一般兩生類（如青蛙、蟾蜍）幼體用鰓呼吸，成體變態後鰓退化改用肺及皮膚呼吸。\n   - 但六角恐龍具有特殊的「**幼態延續（Neoteny）**」特徵，終身生活於水中，成體依然保留頭部兩側 6 根羽狀「**外鰓**」以進行水中氣體交換。\n4. **與其他脊椎動物類別對照排查**：\n   - **魚類**：以鰭運動、通常體表有鱗片，無真正四肢與肺（肺魚雖有鰾特化為鰾肺，但無四肢與裸露黏液皮膚）。\n   - **爬蟲類**：體表有乾燥的**角質鱗片或骨板**以防止水分散失，完全用肺呼吸，皮膚無法輔助呼吸。\n   - **哺乳類**：體表有毛髮、胎生、具有乳腺分泌乳汁哺育幼兒。",
+    "stem": "水族館中有一種觀賞寵物叫「六角恐龍」，如圖所示，原產地在墨西哥，因棲地汙染等問題，野生數量稀少，是瀕臨滅絕的物種。牠們生活於水中，有著短小的四肢，具有簡單的肺和光滑的皮膚可以協助呼吸，頭部兩側有六個類似羽毛狀的角，其實是呼吸用的鰓。根據以上描述，圖中生物應該屬於下列哪一類？\n\n○ (A) 魚類\n○ (B) 兩生類\n○ (C) 爬蟲類\n○ (D) 哺乳類",
+    "answer": "(B) 兩生類",
+    "diagramUrl": "assets/questions/q_bio_axolotl_amphibian_characteristics_123.png",
+    "solution": "1. **破題關鍵（從外觀特徵與生理構造判定動物類別）**：\n   - **四肢構造**：具有短小的四肢，非魚類的魚鰭，符合四足類脊椎動物特徵。\n   - **呼吸器官**：具有「**簡單的肺**」與「**光滑的皮膚協助呼吸**」，這是典型的**兩生類（兩棲綱）**特徵！因為兩生類的肺泡構造簡單、表面積不足，必須依靠表面缺乏角質鱗片、分泌黏液之薄皮膚進行皮膚呼吸。\n   - **羽狀外鰓與幼態延續**：六角恐龍頭部兩側 6 個羽毛狀角狀突起其實是「**外鰓**」，屬於兩生類蠑螈目中的「**墨西哥鈍口螈**」，因具幼態延續現象，即使成年仍生活於水中並保留外鰓。\n\n2. **選項逐一診斷**：\n   - **(A) 錯誤**：魚類通常以鰭運動，體表多覆蓋骨質鱗片，不具真正的四肢與可輔助呼吸的光滑皮膚。\n   - **(B) 正確**：具四肢、簡單的肺、光滑潮濕皮膚輔助呼吸，完全符合兩生類特徵。\n   - **(C) 錯誤**：爬蟲類（如蜥蜴、蛇、恐龍）體表具角質鱗片或骨板以防止水分散失，完全依靠發達的肺呼吸，皮膚無法呼吸。\n   - **(D) 錯誤**：哺乳類體表具毛髮，以肺呼吸，為恆溫動物且母體具乳腺哺育幼兒。\n\n3. **📺 影音詳細解題影片**：\n   https://www.youtube.com/watch?v=733wCa8O2cY\n\n故正確答案選 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-07",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_bio_animal_taxonomy_phylum_new_year_dishes_122",
     "examPeriod": "一段",
@@ -6882,7 +6912,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v200') ||
+      stored = localStorage.getItem('miley_wrong_questions_v201') ||
+               localStorage.getItem('miley_wrong_questions_v200') ||
                localStorage.getItem('miley_wrong_questions_v199') ||
                localStorage.getItem('miley_wrong_questions_v198') ||
                localStorage.getItem('miley_wrong_questions_v197') ||
