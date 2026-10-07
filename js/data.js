@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v203';
+const STORAGE_KEY = 'miley_wrong_questions_v204';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_bio_animal_common_name_true_fish_classification_125",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "脊椎動物的分類與特徵：動物俗名與真假魚類辨析（鱷魚、娃娃魚、章魚、海馬、海牛、鯊魚、鯨魚之生物分類）",
+    "uploadDate": "2026-10-07",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：生物俗名帶「魚」不一定是魚，不帶「魚」反而是真魚！\n1. **真魚類（符合用鰓呼吸、具鰭、水生魚類特徵）**：\n   - **海馬**：是「**硬骨魚類**」！雖然外型直立特殊，但具有鰓、胸鰭與背鰭，屬於輻鰭魚綱海龍科。\n   - **鯊魚**：是「**軟骨魚類**」！骨骼全由軟骨構成，具鰓裂、胸鰭、尾鰭，是真魚類。\n2. **名字帶「魚」卻不是魚類（高頻混淆陷阱）**：\n   - **鱷魚**：體表具角質骨板、用肺呼吸、卵生，屬於「**爬蟲類**」。\n   - **娃娃魚（中國大鯢）**：有四肢、皮膚濕潤輔助呼吸，屬於「**兩生類**」（蠑螈、山椒魚亦同）。\n   - **章魚**：身體柔軟不分節、具外套膜，屬於無脊椎動物之「**軟體動物門**」（墨魚、魷魚、鮑魚亦同）。\n   - **鯨魚**：體表有少量毛髮、肺呼吸、胎生哺乳，屬於「**哺乳類**」。\n3. **名字不帶「魚」的哺乳類海獸**：\n   - **海牛**：體型巨大水棲草食性，用肺呼吸、胎生哺乳，屬於「**哺乳類**」（海豚、海狗、海獅、海豹亦同）。",
+    "stem": "鱷魚、娃娃魚、章魚、海馬、海牛、鯊魚、鯨魚，以上屬於魚類的有幾種？\n\n○ (A) 2種\n○ (B) 3種\n○ (C) 4種\n○ (D) 5種",
+    "answer": "(A) 2種",
+    "diagramUrl": "",
+    "solution": "1. **破題關鍵（逐一剖析 7 種動物的真實分類階層）**：\n   - **鱷魚**：體表覆蓋堅硬角質鱗片與骨板，以發達的肺呼吸，產具堅硬卵殼之卵，屬於「**爬蟲類**」（非魚類）。\n   - **娃娃魚（大鯢）**：幼體用鰓呼吸，成體具四肢、以肺和光滑濕潤皮膚呼吸，屬於「**兩生類**」（非魚類）。\n   - **章魚（八爪魚）**：不具脊椎骨，身體柔軟具外套膜與腕足，屬於無脊椎動物中的「**軟體動物門**」（非魚類）。\n   - **海馬**：生活於海中、直立游泳、以鰓呼吸、具背鰭與胸鰭，屬於**硬骨魚綱**海龍科，是名副其實的「**魚類**」！\n   - **海牛**：完全水棲但以肺呼吸、胎生且具乳腺哺乳，屬於「**哺乳類**」（海牛目，非魚類）。\n   - **鯊魚**：體內骨骼由軟骨構成、具鰓裂呼吸、具鰭運動，屬於**軟骨魚綱**，是「**魚類**」！\n   - **鯨魚**：以肺呼吸（需浮出水面換氣）、體溫恆定、胎生哺乳，屬於「**哺乳類**」（鯨下目，非魚類）。\n\n2. **統計結果**：\n   - 真正屬於「魚類」的僅有：**海馬（硬骨魚）** 與 **鯊魚（軟骨魚）**，共 **2 種**。\n\n故正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-07",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_bio_bird_flight_adaptations_air_sacs_crop_gizzard_124",
     "examPeriod": "一段",
@@ -6942,7 +6972,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v202') ||
+      stored = localStorage.getItem('miley_wrong_questions_v203') ||
+               localStorage.getItem('miley_wrong_questions_v202') ||
                localStorage.getItem('miley_wrong_questions_v201') ||
                localStorage.getItem('miley_wrong_questions_v200') ||
                localStorage.getItem('miley_wrong_questions_v199') ||
