@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v200';
+const STORAGE_KEY = 'miley_wrong_questions_v201';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_bio_animal_taxonomy_phylum_new_year_dishes_122",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "動物界的分類與特徵：常見食材與各動物門（刺絲胞、軟體、節肢、棘皮、脊索動物門）之歸類配對",
+    "uploadDate": "2026-10-07",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：生活情境食材與無脊椎／脊椎動物門分類高頻考點對照！\n1. **海蜇皮是刺絲胞動物門**：\n   - 海蜇即水母的一種，身體呈輻射對稱，具刺絲胞可用於捕食與防禦，屬於「刺絲胞動物門 (甲)」！\n2. **常見軟體動物與棘皮動物食材區分**：\n   - **小烏賊、文蛤**：具柔軟身體與外套膜（分泌外殼），屬於「軟體動物門 (丙)」（章魚、魷魚、牡蠣、九孔亦同）。\n   - **海參**：生活於海中，體表具石灰質骨片、具管足運動，屬於「棘皮動物門 (己)」（海膽、海星亦同）。\n3. **甲殼類食材屬於節肢動物門**：\n   - **螃蟹、蝦**：身體分節、具有幾丁質外骨骼與分節附肢，屬於「節肢動物門 (戊)」甲殼綱。\n4. **脊索動物門食材（脊椎動物）**：\n   - **豬、牛**（哺乳綱）、**田雞/牛蛙**（兩生綱）、**鱸魚**（魚類/輻鰭魚綱）皆具脊椎骨與內骨骼，屬於「脊索動物門 (庚)」。\n5. **本菜單中缺席的動物門**：\n   - (乙) 扁形動物門（如渦蟲、絛蟲、肝吸蟲）與 (丁) 環節動物門（如蚯蚓、水蛭、沙蠶）均非一般年菜食用食材，故未包含乙與丁！",
+    "stem": "阿關過年回家吃年夜飯，阿關的媽媽準備了九菜一湯分別是：涼拌海蜇皮（水母）、醬油小烏賊、奶油焗螃蟹、蜜汁豬火腿、炒文蛤、三杯田雞（牛蛙）、蔥爆牛肉、海參燴什錦、醉蝦、薑絲鱸魚湯，請問這些食物中包含哪些動物門？請依下列代號回答問題：(甲)刺絲胞動物門 (乙)扁形動物門 (丙)軟體動物門 (丁)環節動物門 (戊)節肢動物門 (己)棘皮動物門 (庚)脊索動物門\n\n○ (A) 甲乙丙己庚\n○ (B) 甲丙丁戊庚\n○ (C) 甲丙戊己庚\n○ (D) 甲乙丙丁戊己庚",
+    "answer": "(C) 甲丙戊己庚",
+    "diagramUrl": "",
+    "solution": "1. **破題關鍵（十道年菜食材動物門逐一拆解）**：\n   - **涼拌海蜇皮（水母）**：水母身體呈輻射對稱、具刺絲胞，屬於「**刺絲胞動物門 (甲)**」。\n   - **醬油小烏賊**：身體柔軟不分節、具外套膜與墨囊，屬於「**軟體動物門 (丙)**」。\n   - **奶油焗螃蟹**：體表具幾丁質外骨骼、附肢分節，屬於「**節肢動物門 (戊)**」。\n   - **蜜汁豬火腿（豬肉）**：胎生、哺乳、具脊椎骨，屬於「**脊索動物門 (庚)**」。\n   - **炒文蛤**：具雙殼、斧足、外套膜，屬於「**軟體動物門 (丙)**」。\n   - **三杯田雞（牛蛙）**：幼體用鰓呼吸、成體用肺及皮膚呼吸，屬於兩生類，歸入「**脊索動物門 (庚)**」。\n   - **蔥爆牛肉（牛肉）**：具脊椎骨之哺乳動物，屬於「**脊索動物門 (庚)**」。\n   - **海參燴什錦（海參）**：生活在海中、具管足構造、骨片埋於體壁內，屬於「**棘皮動物門 (己)**」。\n   - **醉蝦**：具有幾丁質外骨骼、胸足分節，屬於「**節肢動物門 (戊)**」。\n   - **薑絲鱸魚湯（鱸魚）**：用鰓呼吸、具鰭、具脊椎骨之魚類，屬於「**脊索動物門 (庚)**」。\n\n2. **綜合彙整包含之動物門**：\n   - 包含的動物門代號為：**甲（刺絲胞）、丙（軟體）、戊（節肢）、己（棘皮）、庚（脊索）**。\n   - 未包含：乙（扁形動物門，如渦蟲、寄生蟲）、丁（環節動物門，如蚯蚓、水蛭）。\n\n3. **選項比對與診斷**：\n   - **(A) 錯誤**：少了節肢動物門 (戊)（螃蟹、蝦），多了扁形動物門 (乙)。\n   - **(B) 錯誤**：少了棘皮動物門 (己)（海參），多了環節動物門 (丁)。\n   - **(C) 正確**：包含甲、丙、戊、己、庚無誤。\n   - **(D) 錯誤**：誤將未出現的乙（扁形動物門）與丁（環節動物門）納入。\n\n故正確答案選 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-07",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_sci_bio_flower_monocot_lily_characteristics_121",
     "examPeriod": "一段",
@@ -6852,7 +6882,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v199') ||
+      stored = localStorage.getItem('miley_wrong_questions_v200') ||
+               localStorage.getItem('miley_wrong_questions_v199') ||
                localStorage.getItem('miley_wrong_questions_v198') ||
                localStorage.getItem('miley_wrong_questions_v197') ||
                localStorage.getItem('miley_wrong_questions_v196') ||
