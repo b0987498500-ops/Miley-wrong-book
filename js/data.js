@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v202';
+const STORAGE_KEY = 'miley_wrong_questions_v203';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_bio_bird_flight_adaptations_air_sacs_crop_gizzard_124",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "脊椎動物的分類與特徵：鳥類適應飛行的特化構造（羽毛、中空骨骼、氣囊雙重呼吸、瞬膜）與消化器官（嗉囊、砂囊）辨析",
+    "uploadDate": "2026-10-07",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：鳥類「呼吸器官（氣囊）」與「消化器官（嗉囊、砂囊）」易混淆陷阱！\n1. **協助呼吸的是「氣囊」而非嗉囊、砂囊**：\n   - **氣囊**：與肺部相通，能儲存氣體以進行高效率的「雙重呼吸」（吸氣與呼氣時肺部皆能進行氣體交換），並可充氣減輕身體比重、協助散熱。\n2. **嗉囊與砂囊的功能（消化系統）**：\n   - 鳥類**缺乏牙齒**，無法在口中咀嚼食物。\n   - **嗉囊**：食道膨大部位，用於「**暫存與軟化食物**」。\n   - **砂囊（肌胃）**：肌肉壁發達，鳥類常吞食小砂石存於砂囊中，用於「**磨碎堅硬食物**」。\n3. **鳥類其他適應飛行關鍵特徵**：\n   - **骨骼中空（充氣骨）**：質輕堅固，顯著降低體重。\n   - **羽毛特化**：正羽形成翼面產生升力與推力，絨羽保暖。\n   - **半透明瞬膜（第三眼瞼）**：飛行中如風鏡般覆蓋眼球，保濕、防風沙且不遮擋飛行視線。",
+    "stem": "鳥類是天空的霸主，能隨風翱翔，其適應飛行的構造敘述，下列何者不正確？\n\n○ (A) 鳥的羽毛質量輕，能保暖又可協助飛行\n○ (B) 鳥的骨骼中空，可減輕體重\n○ (C) 鳥有嗉囊和砂囊，可協助呼吸\n○ (D) 鳥的眼睛外面有一半透明的瞬膜，不影響視線又能保護眼睛",
+    "answer": "(C) 鳥有嗉囊和砂囊，可協助呼吸",
+    "diagramUrl": "",
+    "solution": "1. **破題關鍵（鳥類飛行適應特徵 vs 消化系統構造）**：\n   - 本題核心考點在於辨析鳥類體內各器官的「所屬系統」與「生理功能」。\n   - 協助鳥類呼吸、進行高效氣體交換的構造是**「氣囊」**，而非屬於消化系統的「嗉囊」與「砂囊」。\n\n2. **選項逐一深入剖析**：\n   - **(A) 正確**：鳥類的羽毛主要由角質蛋白構成，質輕且堅韌。翼上的「正羽」排列成流線型翼面以利飛翔，貼近皮膚的「絨羽」能留住空氣發揮絕佳保暖功能。\n   - **(B) 正確**：鳥類骨骼內部多呈蜂巢狀中空結構（充氣骨），在維持骨骼支撐強度的同時大幅降低體重，極利於飛翔。\n   - **(C) 錯誤（本題應選此項）**：\n     - 「嗉囊」是食道特化的儲存囊，功能為暫存並軟化食物；\n     - 「砂囊（肌胃）」具有厚實肌肉壁，內部常含有吞食的小砂石，用於磨碎食物以彌補鳥類沒有牙齒的缺憾；\n     - 兩者皆屬於**消化系統**，完全沒有協助呼吸的功能！鳥類協助呼吸且能減輕體重的構造為**「氣囊」**。\n   - **(D) 正確**：鳥類的眼球外側具有一層半透明的「瞬膜（第三眼瞼）」，在高空高速飛行或俯衝時能橫向覆蓋眼球，既能防止強風風沙吹拂並保持眼睛濕潤，又因半透明特性能維持視野清晰。\n\n故不正確的敘述為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-07",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_bio_axolotl_amphibian_characteristics_123",
     "examPeriod": "一段",
@@ -6912,7 +6942,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v201') ||
+      stored = localStorage.getItem('miley_wrong_questions_v202') ||
+               localStorage.getItem('miley_wrong_questions_v201') ||
                localStorage.getItem('miley_wrong_questions_v200') ||
                localStorage.getItem('miley_wrong_questions_v199') ||
                localStorage.getItem('miley_wrong_questions_v198') ||
