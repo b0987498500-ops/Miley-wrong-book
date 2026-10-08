@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v204';
+const STORAGE_KEY = 'miley_wrong_questions_v205';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_bio_cactus_angiosperm_flower_classification_126",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "植物的分類與構造：被子植物（開花結果、胚珠受子房保護）與裸子植物（具毬果、種子裸露無果實）之分類依據與適應特徵辨析",
+    "uploadDate": "2026-10-08",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：植物分類看「生殖器官（花、果實、種子）」，別被「適應乾旱環境的營養器官特化」給混淆了！\n1. **被子植物（開花植物）的核心特徵**：\n   - **具真正的花**：受精後由子房發育為「果實」，胚珠發育為種子，種子被果皮包被。\n   - 題幹明確指出仙人掌「**可開花結果**」，因此具「花的構造」是判定其為被子植物最直接且決定性的依據。\n2. **高頻混淆陷阱辨析**：\n   - **陷阱 (A) 裸子植物絕無果實**：裸子植物不具子房，只有毬果，種子裸露無果皮包被，不可能結出果實！\n   - **陷阱 (B) 針狀葉不是裸子植物的專利**：針狀葉只是適應乾燥沙漠氣候減少水分蒸散的「變態葉」，不能作為裸子植物的分類依據。\n   - **陷阱 (D) 肥厚儲水莖是營養器官**：肉質儲水莖是仙人掌適應乾旱環境的營養器官形態改變，植物界分類主要依據繁殖器官構造（花、果實、種子等），不能以特化莖作為被子植物的分類依據。",
+    "stem": "已知仙人掌有針狀葉及肥厚可儲水的莖，並可開花結果。根據上述說明，有關仙人掌的分類及其依據，下列何者最合理？〔108. 會考〕\n\n○ (A) 屬於裸子植物，因具有果實\n○ (B) 屬於裸子植物，因具有針狀葉\n○ (C) 屬於被子植物，因具有花的構造\n○ (D) 屬於被子植物，因具有特殊功能的莖。",
+    "answer": "(C) 屬於被子植物，因具有花的構造",
+    "diagramUrl": "",
+    "solution": "1. **破題核心觀念（被子植物 vs 裸子植物的本質界定）**：\n   - **種子植物**可依種子是否有果實包被分為「被子植物」與「裸子植物」兩大類。\n   - **被子植物（又稱開花植物）**：具有真正的「花」作為生殖構造。胚珠包藏於「子房」內，受精後子房膨大發育為「果實」，胚珠發育為「種子」，因此具有開花與結果的特徵。\n   - **裸子植物**：不開花、不結果。生殖器官為「毬果」（鱗片構造），胚珠直接裸露在鱗片表面，受精後種子直接裸露。\n\n2. **題目敘述與各選項逐一深入剖析**：\n   - **(A) 錯誤**：裸子植物缺乏子房構造，**「絕對沒有果實」**！選項敘述自相矛盾。\n   - **(B) 錯誤**：松樹雖具針狀葉，但仙人掌的針狀葉是葉片為適應沙漠乾旱氣候、減少水分蒸散而特化形成的變態葉，**不能作為裸子植物的分類依據**；且仙人掌能開花結果，根本不是裸子植物。\n   - **(C) 正確**：仙人掌「可開花結果」，「花」是被子植物特有的生殖器官，因此由具有花的構造判定其為被子植物最為合理。\n   - **(D) 錯誤**：肥厚肉質莖是適應乾燥氣候儲存水分的營養器官特化，**無法作為界定被子植物的分類依據**。生物分類學上主要以繁殖構造（如花、果實、毬果、種子構造）作為重要分類標準。\n\n3. **會考實戰破題秘訣**：\n   - 看到「開花結果」→ 必為「被子植物」。\n   - 看到「具有果實」→ 必為「被子植物」（裸子植物絕無果實）。\n\n故最適當且合理的選項為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-08",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_bio_animal_common_name_true_fish_classification_125",
     "examPeriod": "一段",
@@ -6972,7 +7002,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v203') ||
+      stored = localStorage.getItem('miley_wrong_questions_v204') ||
+               localStorage.getItem('miley_wrong_questions_v203') ||
                localStorage.getItem('miley_wrong_questions_v202') ||
                localStorage.getItem('miley_wrong_questions_v201') ||
                localStorage.getItem('miley_wrong_questions_v200') ||
