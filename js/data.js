@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v205';
+const STORAGE_KEY = 'miley_wrong_questions_v206';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_bio_cycad_gymnosperm_characteristics_127",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "植物的分類與構造：裸子植物（蘇鐵、松、杉、柏、銀杏）的特徵（具維管束、毬果、種子，但不開花、不結果）",
+    "uploadDate": "2026-10-08",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：裸子植物有「種子」也有「毬果」，但「絕對沒有花朵和果實」！\n1. **蘇鐵的生物分類歸屬**：\n   - 蘇鐵屬於「**裸子植物**」（同類常見代表尚有：松樹、紅檜、扁柏、銀杏、杉木等）。\n2. **蘇鐵具備的演化特徵**：\n   - **具維管束**：有真正的根、莖、葉分化，體內有維管束運送水分與養分，屬於維管束植物。\n   - **具毬果**：生殖器官為鱗片組成的毬果（雄毬果、雌毬果），並非真正的花朵。\n   - **具種子**：胚珠直接生長於鱗片表面，受精後發育為「種子」，能產生種子散播繁殖。\n3. **蘇鐵絕對沒有的構造（破題關鍵）**：\n   - **無花朵**：花是被子植物獨有的繁殖構造，裸子植物「不開花」。\n   - **無果實**：缺乏子房包覆，種子裸露，因此裸子植物「不結果」。\n   - 故《花朵圖鑑》絕對不可能以蘇鐵作為主要介紹範例！",
+    "stem": "下列為四本書的書名，每本書的書名分別顯示出所要介紹的內容，書中會列舉一些植物詳細說明其特徵，則哪一本書最不可能以蘇鐵作為這些植物的主要例子？〔110. 會考〕\n\n○ (A) 《花朵圖鑑》\n○ (B) 《種子的傳播》\n○ (C) 《毬果構造解析》\n○ (D) 《維管束植物簡介》",
+    "answer": "(A) 《花朵圖鑑》",
+    "diagramUrl": "",
+    "solution": "1. **破題核心觀念（蘇鐵的生物分類與構造特徵）**：\n   - **蘇鐵（鐵樹）**：在生物界分類屬於種子植物中的**「裸子植物」**。\n   - **演化與器官特徵盤點**：\n     - 具有根、莖、葉的分化，體內具有發達的木質部與韌皮部，屬於**「維管束植物」**。\n     - 生殖構造為由苞片/鱗片構成的**「毬果」**（分為雄毬果與雌毬果）。\n     - 胚珠直接生長於大孢子葉（鱗片）表面，受精後發育為**「種子」**。\n     - 裸子植物因不具子房，**「不開花」亦「不具果實」**。\n\n2. **各選項書籍關聯性深入剖析**：\n   - **(A) 最不可能（本題應選此項）**：《花朵圖鑑》介紹具有真正「花」的被子植物（如杜鵑、百合、菊花等）。蘇鐵為裸子植物，只有毬果而無花朵構造，絕不可能以蘇鐵為例。\n   - **(B) 可能**：蘇鐵受精後會產生種子，可利用風力、動物等方式散播種子繁殖後代，因此完全可以作為《種子的傳播》之代表植物。\n   - **(C) 可能**：蘇鐵是典型的裸子植物，具有大型毬果（雄毬果呈圓柱狀、雌毬果呈半球狀），是研究與解析毬果構造的經典教材。\n   - **(D) 可能**：蘇鐵具有發達的木質部與韌皮部（維管束），負責水分與養分之長途運輸，完全符合《維管束植物簡介》的範疇。\n\n3. **會考植物分類四大家族快速對照**：\n   - **蘚苔植物**：無維管束、無種子、無毬果、無花果（孢子繁殖）。\n   - **蕨類植物**：有維管束、無種子、無毬果、無花果（孢子繁殖）。\n   - **裸子植物（蘇鐵、松、柏、銀杏）**：有維管束、有毬果、有種子、**無花朵、無果實**。\n   - **被子植物**：有維管束、有種子、**有花朵、有果實**。\n\n正確答案選 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-08",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_bio_cactus_angiosperm_flower_classification_126",
     "examPeriod": "一段",
@@ -7002,7 +7032,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v204') ||
+      stored = localStorage.getItem('miley_wrong_questions_v205') ||
+               localStorage.getItem('miley_wrong_questions_v204') ||
                localStorage.getItem('miley_wrong_questions_v203') ||
                localStorage.getItem('miley_wrong_questions_v202') ||
                localStorage.getItem('miley_wrong_questions_v201') ||
