@@ -3,10 +3,70 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v206';
+const STORAGE_KEY = 'miley_wrong_questions_v207';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_bio_fermentation_substrate_sugar_yeast_128",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "酵素與受質概念及發酵作用：酵母菌進行酒精發酵時，受質（反應物）為「糖」，產物為「酒精與二氧化碳」，催化劑為「酵母菌體內的酵素」",
+    "uploadDate": "2026-10-08",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：搞懂酵素催化三要素「受質、產物、酵素」！\n1. **「受質（反應物）」的本質**：被酵素特異性結合並進行催化分解或合成的**原料分子**，在釀酒發酵中是「**糖（葡萄糖）**」。\n2. **常見高頻混淆陷阱**：\n   - **酵母菌不是受質**：酵母菌是活體生物細胞，其體內合成並分泌「**酵素（催化劑）**」來促成反應。\n   - **酒精與二氧化碳是產物**：糖經酵母菌無氧發酵後所生成的物質為「**產物**」，絕非受質！\n3. **酒精發酵反應式直觀記憶**：\n   - 糖（受質原料） → 酒精 ＋ 二氧化碳（生成產物）［由酵母菌酵素催化］。",
+    "stem": "在釀造的過程中，何者扮演「受質」的角色？\n\n○ (A) 糖\n○ (B) 酒精\n○ (C) 二氧化碳\n○ (D) 酵母菌",
+    "answer": "(A) 糖",
+    "diagramUrl": "",
+    "solution": "1. **破題核心觀念（酵素催化反應與受質定義）**：\n   - **受質（Substrate，反應物）**：指生物體進行生化代謝反應時，能與酵素的活性位點特異性結合，並被轉化為新物質的**反應原料**。\n   - **釀酒（酒精發酵）的生化歷程**：在缺氧條件下，酵母菌利用體內的代謝酵素，將「糖（如葡萄糖）」分解轉化為「酒精（乙醇）」與「二氧化碳」，並釋出能量供細胞生存。\n\n2. **各選項在發酵過程中的角色深入剖析**：\n   - **(A) 正確（本題應選此項）**：「糖」是提供發酵的原料物質，被酵素結合並催化轉化，扮演**「受質（反應物）」**的角色。\n   - **(B) 錯誤**：「酒精（乙醇）」是糖經分解後新生成的化學物質，屬於**「產物」**。\n   - **(C) 錯誤**：「二氧化碳」是發酵過程釋放出的氣體，屬於**「產物（副產物）」**。\n   - **(D) 錯誤**：「酵母菌」是單細胞真菌，負責合成並提供催化發酵反應所需的**「酵素（生物催化劑）」**，並非反應受質。\n\n故扮演「受質」角色的為 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-08",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_bio_coral_jellyfish_cnidaria_phylogeny_129",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "動物界的分類與親緣關係：刺絲胞動物門（珊瑚、水母、海葵、水螅之同門親緣判定與常見界級混淆）",
+    "uploadDate": "2026-10-08",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：別被珊瑚的「植物般外表」欺騙，珊瑚是如假包換的「動物」！\n1. **珊瑚的真實身分**：珊瑚屬於真核生物中的「**動物界／刺絲胞動物門**」，具備刺絲胞能捕食，體內雖有共生藻，但珊瑚本體是動物！\n2. **各選項生物分類界門階層對比**：\n   - **藻類**：屬於「**原生生物界**」（真核單細胞或多細胞，行光合作用自營）。\n   - **草履蟲**：屬於「**原生生物界**」的原生動物（單細胞異營）。\n   - **蘚苔類**：屬於「**植物界**」（多細胞無維管束陸生植物）。\n   - **水母**：與珊瑚同屬於「**動物界／刺絲胞動物門**」，同門生物親緣關係最近！\n3. **刺絲胞動物門四大金剛必背**：\n   - 水母、海葵、珊瑚、水螅。",
+    "stem": "請問珊瑚與下列哪一種生物的親緣關係最接近？\n\n○ (A) 藻類\n○ (B) 草履蟲\n○ (C) 蘚苔類\n○ (D) 水母",
+    "answer": "(D) 水母",
+    "diagramUrl": "",
+    "solution": "1. **破題核心觀念（珊瑚的真實分類階層）**：\n   - 珊瑚常因外觀呈現樹枝狀固著生長，且體內含有行光合作用的共生藻，容易被誤認為植物或藻類；但珊瑚本體具有觸手、刺絲胞及消化循環腔，能主動捕食浮游生物，是典型的**「動物界」**真後生動物。\n   - **所屬分類門**：珊瑚屬於**「刺絲胞動物門（Cnidaria）」**（體型多為水螅型，能分泌碳酸鈣骨骼沉積形成珊瑚礁）。\n\n2. **各選項生物分類階層對照與親緣關係判定**：\n   - **(A) 藻類**：如綠藻、矽藻、石蓴，屬於**原生生物界**（真核藻類），與動物界的珊瑚連「界」都不同，親緣關係遙遠。\n   - **(B) 草履蟲**：單細胞真核生物，屬於**原生生物界**的原生動物門，與珊瑚不同界。\n   - **(C) 蘚苔類**：如地錢、土馬騌，屬於**植物界**的無維管束植物，與動物界的珊瑚分屬不同界。\n   - **(D) 正確（本題應選此項）**：水母與珊瑚同屬於**「動物界刺絲胞動物門」**（水母為浮游漂浮的生活型態，珊瑚為固著型態），兩者分類階層同門，共享刺絲胞、輻射對稱與囊狀消化腔等核心演化特徵，親緣關係最為接近！\n\n3. **刺絲胞動物門四大常見代表速記**：\n   - **水母、海葵、珊瑚、水螅**（皆具刺絲胞防禦與捕食，單一開口兼具口與排泄）。\n\n故親緣關係最接近的為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-08",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_bio_cycad_gymnosperm_characteristics_127",
     "examPeriod": "一段",
@@ -7032,7 +7092,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v205') ||
+      stored = localStorage.getItem('miley_wrong_questions_v206') ||
+               localStorage.getItem('miley_wrong_questions_v205') ||
                localStorage.getItem('miley_wrong_questions_v204') ||
                localStorage.getItem('miley_wrong_questions_v203') ||
                localStorage.getItem('miley_wrong_questions_v202') ||
