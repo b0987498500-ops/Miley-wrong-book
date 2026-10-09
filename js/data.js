@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v208';
+const STORAGE_KEY = 'miley_wrong_questions_v209';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_alexander_great_eastern_campaign_hellenistic_131",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "希臘化時代與亞歷山大東征：馬其頓亞歷山大大帝東征（跨歐亞非至印度河流域）、希臘與東方文化融合及犍陀羅藝術對中國佛教之深遠影響",
+    "uploadDate": "2026-10-09",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：掌握西方上古歷史三大時期「希臘城邦 ➔ 希臘化時代 ➔ 羅馬帝國」！\n1. **破題關鍵定位詞**：\n   - 「**率軍把希臘文明帶至印度河流域**」＋「**開創希臘化時代**」＝ **亞歷山大（亞歷山大大帝）**！\n2. **亞歷山大東征路線與帝國版圖速記**：\n   - **發源**：希臘北方的**馬其頓王國**。\n   - **東征範圍**：橫跨**歐、亞、非三洲**，征服埃及（建立亞歷山大港/城）、滅波斯帝國，軍隊最遠抵達**印度河流域**（未進入恆河流域與中國本土）。\n3. **希臘化時代（Hellenistic Period）三大深遠影響**：\n   - **文化融合**：以希臘文化為基礎，深度融合西亞與埃及文化。\n   - **對東方影響（遠至中國）**：希臘雕刻寫實藝術與印度佛教結合產生「**犍陀羅藝術（希臘式雕像佛陀）**」，後經絲路傳入中國（如雲岡石窟、龍門石窟）。\n   - **對西方影響**：希臘化文明遺產直接孕育並塑造了地中海霸主——**羅馬帝國**的哲學、法律與建築文明。",
+    "stem": "(二) 有位學者認為：「……此人率領軍隊，把希臘文明帶至印度河流域，使希臘化時代的藝術影響遠至中國。希臘文明的遺產在西方更為顯著，它塑造了控制整個地中海世界的羅馬帝國之文明。」請回答下列問題：\n\n37. 文中提到「此人率領軍隊，把希臘文明帶至印度河流域」，這應該是指何人的事蹟？",
+    "answer": "亞歷山大（或稱亞歷山大大帝）",
+    "diagramUrl": "",
+    "solution": "1. **破題核心線索分析**：\n   - **線索一（率軍把希臘文明帶至印度河流域）**：西元前 4 世紀，馬其頓國王**亞歷山大大帝（Alexander the Great）**率領希臘聯軍展開長達十年的大規模東征。他先後征服小亞細亞、埃及、攻滅波斯帝國，軍隊一路向東挺進，最終跨越興都庫什山脈推進至**印度河流域**。\n   - **線索二（使希臘化時代藝術影響遠至中國）**：亞歷山大東征促進了東西文化空前的大交融，歷史上將亞歷山大去世後至羅馬征服埃及托勒密王朝這段時期稱為**「希臘化時代」**。在印度西北部產生的希臘化「犍陀羅佛像藝術」（佛陀面容具古希臘雕像深邃五官、身著希臘式波浪褶皺長袍），透過絲綢之路與西域僧侶傳入中國，深深影響了中國佛教石窟造像藝術（如雲岡石窟、龍門石窟）。\n   - **線索三（塑造控制整個地中海世界的羅馬帝國文明）**：羅馬人在征服地中海世界與希臘化諸王國後，全面繼承與吸收了希臘哲學、科學、戲劇、法律與建築藝術，奠定了羅馬帝國文明基石。\n\n2. **歷史考點整合與人物判定**：\n   - 歷史上唯一符合「率軍東征將希臘文明推展至印度河流域」、「建立橫跨歐亞非大帝國並開創希臘化時代」的偉大軍事統帥，唯有馬其頓國王——**亞歷山大大帝**。\n\n故本題標準答案為：**亞歷山大（或填：亞歷山大大帝）**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-09",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_sparta_military_training_obstacle_race_130",
     "examPeriod": "一段",
@@ -7122,7 +7152,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v207') ||
+      stored = localStorage.getItem('miley_wrong_questions_v208') ||
+               localStorage.getItem('miley_wrong_questions_v207') ||
                localStorage.getItem('miley_wrong_questions_v206') ||
                localStorage.getItem('miley_wrong_questions_v205') ||
                localStorage.getItem('miley_wrong_questions_v204') ||
