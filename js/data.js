@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v210';
+const STORAGE_KEY = 'miley_wrong_questions_v211';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_math_parallelogram_rhombus_diagonal_ratio_133",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "平行四邊形與菱形內接問題：利用平行線截比例線段與相似三角形性質（比值和為 1）求菱形邊長",
+    "uploadDate": "2026-10-09",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：幾何內接菱形線段長的【黃金秒殺分比公式】！\n1. **「四邊分別平行兩對角線」必成兩組相似三角形**：\n   - 菱形四邊長相等，設邊長為 $x$（$MN = MQ = x$）。\n   - 在 △ABC 中，$MN // AC \\implies \\frac{BM}{AB} = \\frac{MN}{AC} = \\frac{x}{3}$。\n   - 在 △ABD 中，$MQ // BD \\implies \\frac{AM}{AB} = \\frac{MQ}{BD} = \\frac{x}{5}$。\n2. **秒殺核心：同一直線兩線段比值相加必為 1**：\n   - 因為 $M$ 在線段 $AB$ 上，所以 $\\frac{BM}{AB} + \\frac{AM}{AB} = 1$！\n   - 立刻列式：$\\frac{x}{3} + \\frac{x}{5} = 1 \\implies \\frac{8}{15}x = 1 \\implies x = \\frac{15}{8}$！\n3. **常見計算盲點提醒**：\n   - 別被繁複的對角線半長（$5/2$、$3/2$）繞暈，直接利用邊長比例和為 1，既快又不易算錯！",
+    "stem": "如圖，在平行四邊形 ABCD 中，線段 AC、線段 BD 交於 O 點，M、N、P、Q 四點分別在線段 AB、線段 BC、線段 CD、線段 DA 上，且菱形 MNPQ 的四邊分別平行於線段 AC 和線段 BD。若線段 AC = 3，線段 BD = 5，則菱形 MNPQ 的邊長為何？",
+    "answer": "15/8",
+    "diagramUrl": "assets/questions/q_math_parallelogram_rhombus_diagonal_ratio_133.png",
+    "solution": "1. **破題核心思路（平行線截比例線段與兩法詳解）**：\n   - 題目已知 $MNPQ$ 為菱形，故四邊長均相等，設菱形邊長為 $x$（即 $MN = NP = PQ = QM = x$）。\n   - 菱形四邊分別平行於平行四邊形的兩對角線：$MN // AC$、$PQ // AC$，$MQ // BD$、$NP // BD$。\n\n2. **方法一：比例分段和為 1（最簡潔秒殺解法）**：\n   - **觀察 △ABC**：\n     - 因為 $MN // AC$，由平行線截線定理與 AA 相似，可得 △MBN ∼ △ABC。\n     - 對應邊成比例：$\\frac{BM}{AB} = \\frac{MN}{AC}$。\n     - 代入已知 $MN = x$、$AC = 3$，得：\n       $$\\frac{BM}{AB} = \\frac{x}{3}$$\n   - **觀察 △ABD**：\n     - 因為 $MQ // BD$，同理可得 △AMQ ∼ △ABD。\n     - 對應邊成比例：$\\frac{AM}{AB} = \\frac{MQ}{BD}$。\n     - 代入已知 $MQ = x$、$BD = 5$，得：\n       $$\\frac{AM}{AB} = \\frac{x}{5}$$\n   - **利用線段和的比例關係建立方程式**：\n     - 由於 $M$ 點在線段 $AB$ 上，$AM + BM = AB$，故兩比例相加必等於 1：\n       $$\\frac{BM}{AB} + \\frac{AM}{AB} = 1$$\n     - 將上述兩式代入：\n       $$\\frac{x}{3} + \\frac{x}{5} = 1$$\n       $$\\frac{5x + 3x}{15} = 1$$\n       $$\\frac{8}{15}x = 1 \\implies x = \\frac{15}{8}$$\n\n3. **方法二：對角線三段相加法（題目解答標準流程）**：\n   - 平行四邊形對角線互相平分，故 $BO = \\frac{1}{2}BD = \\frac{5}{2}$。\n   - 設 $MN$ 與 $BD$ 交於 $E$ 點，因 $ME // AO$，故 △MBE ∼ △ABO：\n     $$\\frac{BE}{BO} = \\frac{BM}{AB} = \\frac{MN}{AC} = \\frac{x}{3}$$\n     $$BE = BO \\times \\frac{x}{3} = \\frac{5}{2} \\times \\frac{x}{3} = \\frac{5}{6}x$$\n   - 同理，在 $D$ 端被 $PQ$ 截出的長度亦為 $\\frac{5}{6}x$；而菱形內部夾在兩平行線間的對角線段長恰等於菱形邊長 $x$。\n   - 整條對角線長為三段之和：\n     $$BD = 2 \\times BE + x = 2 \\times \\frac{5}{6}x + x = 5$$\n     $$\\frac{5}{3}x + x = 5 \\implies \\frac{8}{3}x = 5 \\implies x = \\frac{15}{8}$$\n\n故菱形 MNPQ 的邊長為 **15/8**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-09",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_math_triangle_right_angle_similarity_df_132",
     "examPeriod": "一段",
@@ -7182,7 +7212,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v209') ||
+      stored = localStorage.getItem('miley_wrong_questions_v210') ||
+               localStorage.getItem('miley_wrong_questions_v209') ||
                localStorage.getItem('miley_wrong_questions_v208') ||
                localStorage.getItem('miley_wrong_questions_v207') ||
                localStorage.getItem('miley_wrong_questions_v206') ||
