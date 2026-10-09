@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v207';
+const STORAGE_KEY = 'miley_wrong_questions_v208';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_sparta_military_training_obstacle_race_130",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "古希臘城邦文明：斯巴達尚武精神與嚴格軍事體系 vs 雅典民主政治與奧林匹克運動會",
+    "uploadDate": "2026-10-09",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：搞懂古希臘兩大核心城邦「斯巴達」與「雅典」的文化與制度差異！\n1. **斯巴達（Sparta）——尚武與軍事體育**：\n   - **核心特徵**：全民皆兵，實施極為嚴格的**軍事教育與體能鍛鍊**（男孩 7 歲起集體受訓，鍛鍊耐寒、耐飢與肉體極限；女性亦須強健體魄），以少數人口統治被征服的農奴（黑勞士）。\n   - **語意引申**：因其紀律嚴苛、生活克難、鍛鍊極限體能，現代常以「**斯巴達式（Spartan）**」形容高強度、刻苦磨練耐力與意志力的訓練或競賽（如斯巴達障礙跑）。\n2. **高頻混淆陷阱逐一排查**：\n   - **陷阱 (A) 為取悅神明舉辦運動會**：這是古代全希臘共同祭祀主神宙斯的「**奧林匹克運動會**」，非斯巴達單一城邦獨有特色，更非斯巴達詞義引申由來。\n   - **陷阱 (B) 所在地區多山崎嶇**：希臘全境普遍多山丘陵、平原狹小，這是城邦林立的共同地理背景，並非斯巴達以軍訓聞名的特殊地貌。\n   - **陷阱 (D) 將可能危害者流放出城邦**：此為**雅典**城邦所創立的「**陶片放逐法**」（防止獨裁僭主），屬於雅典民主政治特色，切勿張冠李戴！",
+    "stem": "近年來，臺灣興起各項極限運動，斯巴達障礙賽被引進臺灣後，也受許多民眾歡迎，這項障礙賽是路跑加上軍事訓練關卡，有推進泥巴坑、攀登高牆、巨石挑戰等種類。請問：「斯巴達」這個城邦名稱被引申為挑戰體能、耐力及意志力競賽的原因可能為何？\n\n○ (A) 為取悅神明而舉辦運動會\n○ (B) 所在地區多山且地形崎嶇\n○ (C) 以實施嚴格軍事訓練聞名\n○ (D) 將可能危害者流放出城邦",
+    "answer": "(C) 以實施嚴格軍事訓練聞名",
+    "diagramUrl": "",
+    "solution": "1. **破題核心觀念（斯巴達城邦的歷史背景與文化內涵）**：\n   - **地理與歷史背景**：古希臘城邦時代，**斯巴達（Sparta）**位於希臘南部的伯羅奔尼撒半島。因斯巴達人屬外來征服者，人口遠少於被奴役的原住民（黑勞士），為了長期壓制反抗、鞏固城邦安全，斯巴達發展出全希臘最嚴苛的**軍國主義與集體軍事訓練體系**。\n   - **斯巴達式訓練體制**：城邦男孩自 7 歲起即被送入國家軍營，接受嚴格的體能鍛鍊、耐力磨礪、抗寒飢餓與作戰技能培訓；公民生活極端簡樸克己，崇尚勇氣、力量與無條件服從。\n   - **現代詞意引申**：因為這種刻苦、嚴酷、強調突破肉體與心理極限的形象，「斯巴達（Spartan）」被現代人廣泛引申為**「高強度、考驗體能、耐力及意志力」**的象徵。例如引進臺灣的「斯巴達障礙賽（Spartan Race）」，即是結合路跑與泥坑、攀牆、負重巨石等軍事化障礙關卡的極限耐力挑戰賽。\n\n2. **各選項深度剖析**：\n   - **(A) 錯誤**：「為取悅神明而舉辦運動會」是指古希臘人在奧林匹亞定期舉行的體育祭典（即古代**奧林匹克運動會**，祭祀主神宙斯），此為各希臘城邦共同遵守的宗教體育盛事，並非斯巴達被引申為極限體能挑戰的原因。\n   - **(B) 錯誤**：古希臘各城邦所在地大多山嶺交錯、海岸線曲折，多山地形是古希臘半島的普遍特徵，並非斯巴達城邦專屬，亦非該名詞在現代被引申的原因。\n   - **(C) 正確（本題正解）**：斯巴達以**「嚴苛的軍事訓練、尚武文化與超凡體能意志」**聞名歷史，因此現代極限體能障礙競賽便以「斯巴達」為名，象徵參賽者需具備堅毅無畏的斯巴達戰士精神。\n   - **(D) 錯誤**：「將可能危害城邦利益者投票流放」是古希臘另一個著名城邦——**雅典（Athens）**所實施的政治防衛措施**「陶片放逐法」**（用陶片刻寫名字投票，防止獨裁僭主出現），屬於雅典民主政治範疇，與斯巴達無關。\n\n故本題正確答案為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-09",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_bio_fermentation_substrate_sugar_yeast_128",
     "examPeriod": "一段",
@@ -7092,7 +7122,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v206') ||
+      stored = localStorage.getItem('miley_wrong_questions_v207') ||
+               localStorage.getItem('miley_wrong_questions_v206') ||
                localStorage.getItem('miley_wrong_questions_v205') ||
                localStorage.getItem('miley_wrong_questions_v204') ||
                localStorage.getItem('miley_wrong_questions_v203') ||
