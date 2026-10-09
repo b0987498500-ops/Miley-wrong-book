@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v212';
+const STORAGE_KEY = 'miley_wrong_questions_v213';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_thutmose_iii_egypt_euphrates_mesopotamia_135",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "古代西亞與埃及歷史：埃及新王國圖特摩斯三世對外擴張版圖、幼發拉底河與兩河流域（美索不達米亞）地理關聯",
+    "uploadDate": "2026-10-09",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：抓準地理地標「幼發拉底河」秒殺版圖極東！\n1. **核心地理地標連結**：\n   - **幼發拉底河（Euphrates）**與**底格里斯河（Tigris）**共同孕育了古代著名的**「兩河流域（美索不達米亞文明）」**。\n   - 題幹明確指出「向東占據了**幼發拉底河以西**的土地」，因此圖特摩斯三世帝國向東擴張的極限範圍即抵達**兩河流域**西緣！\n2. **歷史背景常考知識點補充**：\n   - **圖特摩斯三世（Thutmose III）**：古埃及**新王國時期**第十八王朝法老，戰功赫赫，號稱「古埃及的拿破崙」。他向南征服努比亞（達尼羅河第四瀑布），向東北跨越西奈半島遠征敘利亞與巴勒斯坦，勢力直抵幼發拉底河畔。\n   - **西臺人（赫梯人）**：位於**小亞細亞（今土耳其）**，為世界上最早掌握冶鐵技術並使用鐵製兵器的民族，亦向其稱臣。\n3. **常見混淆地理區域排除**：\n   - **(A) 伊朗高原**：位於兩河流域以東（波斯人、米底人興起處），埃及勢力從未到達此處。\n   - **(B) 印度半島**：在南亞更東方（印度河、恆河流域），遠在埃及勢力之外。\n   - **(D) 小亞細亞**：位於黑海與地中海之間的安納托利亞高原（西臺人本土地理位置），位在埃及的「北邊」而非版圖最「東邊」。",
+    "stem": "圖特摩斯三世是西元前十五世紀統治尼羅河流域的領袖。在位期間，他積極對外擴張，南邊領土直達第四瀑布，向東占據了幼發拉底河以西的土地，國力興盛。而擁有世界最早煉鐵技術的西臺人，也不得不向他稱臣納貢。\n\n請問：文中這位領袖在位期間，其版圖最東應到達何處？\n\n○ (A) 伊朗高原\n○ (B) 印度半島\n○ (C) 兩河流域\n○ (D) 小亞細亞",
+    "answer": "(C) 兩河流域",
+    "diagramUrl": "",
+    "solution": "1. **題幹核心線索與地理空間定位**：\n   - **關鍵線索**：題幹敘述埃及法老圖特摩斯三世「**向東占據了幼發拉底河以西的土地**」。\n   - **地理空間對應**：\n     - **幼發拉底河**與**底格里斯河**並稱為西亞雙河，所夾狹長沖積平原即為著名的**「兩河流域」（希臘語：美索不達米亞 Mesopotamia，意為兩河之間）**。\n     - 圖特摩斯三世從埃及（東北非）出發，穿過西奈半島向東北擴張至黎凡特（敘利亞、巴勒斯坦一帶），東進的終點恰好抵達幼發拉底河畔。因此其版圖最東側所觸及的地理區域正是**兩河流域**。\n\n2. **各選項逐一深入辨析**：\n   - **(A) 錯誤（伊朗高原）**：伊朗高原位於兩河流域更東方的札格羅斯山脈以東，為波斯帝國的發祥地。埃及新王國的勢力從未翻越札格羅斯山脈進入伊朗高原。\n   - **(B) 錯誤（印度半島）**：位於南亞次大陸，距埃及數千公里之遙，埃及軍隊從未遠征至此。\n   - **(C) 正確（兩河流域）**：幼發拉底河為兩河流域之西側大河，占據幼發拉底河以西土地代表其版圖東界已抵達兩河流域西緣，完全吻合題目描述！\n   - **(D) 錯誤（小亞細亞）**：小亞細亞半島即安納托利亞半島（今土耳其），位於埃及的「正北方／西北方」。雖然題幹提及「擁有最早煉鐵技術的西臺人（位於小亞細亞）向其稱臣納貢」，但小亞細亞位於北方，並非版圖的最「東」端，不可混淆方向。\n\n故本題正確答案為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-09",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_byzantine_eastern_roman_empire_hagia_sophia_134",
     "examPeriod": "一段",
@@ -7242,7 +7272,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v211') ||
+      stored = localStorage.getItem('miley_wrong_questions_v212') ||
+               localStorage.getItem('miley_wrong_questions_v211') ||
                localStorage.getItem('miley_wrong_questions_v210') ||
                localStorage.getItem('miley_wrong_questions_v209') ||
                localStorage.getItem('miley_wrong_questions_v208') ||
