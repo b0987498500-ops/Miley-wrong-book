@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v211';
+const STORAGE_KEY = 'miley_wrong_questions_v212';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_byzantine_eastern_roman_empire_hagia_sophia_134",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐洲歷史與中古文明：東羅馬帝國（拜占庭帝國）首都君士坦丁堡/拜占庭、查士丁尼大帝修築聖索菲亞大教堂與西元 1453 年滅亡歷程",
+    "uploadDate": "2026-10-09",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：秒殺西方歷史四大帝國滅亡年代與特徵！\n1. **三大關鍵線索精準鎖定「東羅馬帝國（拜占庭帝國）」**：\n   - **線索一：首都拜占庭**：羅馬皇帝君士坦丁將首都東遷至「拜占庭（改名君士坦丁堡，今土耳其伊斯坦堡）」。\n   - **線索二：聖索菲亞大教堂**：6 世紀查士丁尼大帝下令修築，融合圓頂與馬賽克鑲嵌藝術，為拜占庭建築的顛峰代表。\n   - **線索三：十五世紀中葉滅亡**：西元 **1453 年**（15 世紀中葉）被**鄂圖曼土耳其帝國**蘇丹穆罕默德二世攻陷滅亡。\n2. **高頻混淆選項逐一破解**：\n   - **(A) 波斯帝國**：首都為蘇薩、波斯波利斯等，信仰拜火教（祆教），西元前 4 世紀被亞歷山大大帝所滅，與聖索菲亞大教堂無關。\n   - **(B) 羅馬帝國（未分裂前）**：西元 4 世紀末（395 年）狄奧多西一世死後分裂為東、西羅馬帝國。\n   - **(C) 西羅馬帝國**：首都為羅馬（後遷拉溫納），**西元 476 年（5 世紀末）**被日耳曼傭兵將領奧多亞塞所滅，時間遠早於 15 世紀中葉！",
+    "stem": "立修上網查詢歐洲史上某個國家的資料，並將資料整理為下列三項重點：\n・首都位於拜占庭\n・修築聖索菲亞大教堂\n・十五世紀中葉滅亡\n\n請問：立修所查詢的國家應為下列何者？\n\n○ (A) 波斯帝國\n○ (B) 羅馬帝國\n○ (C) 西羅馬帝國\n○ (D) 東羅馬帝國",
+    "answer": "(D) 東羅馬帝國",
+    "diagramUrl": "",
+    "solution": "1. **破題核心線索深入剖析**：\n   - **線索一：「首都位於拜占庭」**：\n     - 西元 330 年，羅馬帝國君士坦丁大帝將帝國首都從羅馬遷至歐亞交界的古城**「拜占庭」**，並將其命名為君士坦丁堡（Constantinople）。西元 395 年羅馬帝國分裂後，以該城為首都的政權即為**東羅馬帝國**（歷史學上亦稱**「拜占庭帝國」**）。\n   - **線索二：「修築聖索菲亞大教堂」**：\n     - 西元 6 世紀，東羅馬帝國全盛時期的君主**查士丁尼大帝（Justinian I）**在位期間，不僅編纂《查士丁尼法典》、收復部分西羅馬失土，更於首都下令修建宏偉壯麗的**聖索菲亞大教堂（Hagia Sophia）**。該教堂以巨大的中央圓頂與璀璨的馬賽克鑲嵌壁畫聞名於世，成為拜占庭建築藝術與東正教信仰的最高象徵。\n   - **線索三：「十五世紀中葉滅亡」**：\n     - 東羅馬帝國延續千年，歷經斯拉夫人、阿拉伯人與十字軍東征的衝擊，最終於**西元 1453 年（即 15 世紀中葉）**，君士坦丁堡遭新興的**鄂圖曼土耳其帝國**攻破，末代皇帝君士坦丁十一世戰死，東羅馬帝國正式走入歷史。\n\n2. **各選項干擾項目辨析**：\n   - **(A) 錯誤（波斯帝國）**：興起於西亞伊朗高原，西元前 6 世紀由居魯士二世建立，西元前 4 世紀被馬其頓亞歷山大大帝所滅，非歐洲國家亦無聖索菲亞大教堂。\n   - **(B) 錯誤（統一的羅馬帝國）**：西元 395 年即正式分裂為東西兩半部，並非持續至 15 世紀的單一國家。\n   - **(C) 錯誤（西羅馬帝國）**：西羅馬帝國以西歐與義大利半島為核心，西元 **476 年（5 世紀末）**便因日耳曼民族大遷徙與入侵而滅亡，進入歐洲中古黑暗時期，比東羅馬早滅亡近一千年！\n   - **(D) 正確（東羅馬帝國）**：完全符合「定都拜占庭（君士坦丁堡）」、「查士丁尼修建聖索菲亞大教堂」與「1453 年亡於鄂圖曼土耳其」三大特徵。\n\n故本題正確答案為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-09",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_math_parallelogram_rhombus_diagonal_ratio_133",
     "examPeriod": "一段",
@@ -7212,7 +7242,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v210') ||
+      stored = localStorage.getItem('miley_wrong_questions_v211') ||
+               localStorage.getItem('miley_wrong_questions_v210') ||
                localStorage.getItem('miley_wrong_questions_v209') ||
                localStorage.getItem('miley_wrong_questions_v208') ||
                localStorage.getItem('miley_wrong_questions_v207') ||
