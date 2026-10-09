@@ -3,10 +3,70 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v214';
+const STORAGE_KEY = 'miley_wrong_questions_v215';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_sci_geology_rocks_granite_marble_slate_sedimentary_140",
+    "examPeriod": "一段",
+    "subject": "自然",
+    "errorReason": "觀念不懂",
+    "concept": "岩石分類與特徵：火成岩（花崗岩深成岩粗粒）、沉積岩（顆粒大小：礫岩＞砂岩＞頁岩）、變質岩（石灰岩變大理岩、頁岩變板岩）",
+    "uploadDate": "2026-10-09",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：岩石三大類別（火成岩、沉積岩、變質岩）必考盲點秒殺表！\n1. **火成岩冷卻速率與結晶大小（(A) 選項致命陷阱）**：\n   - **深成岩（如花崗岩）**：在**地底深處**冷卻 $\\implies$ 冷卻速度**「緩慢」** $\\implies$ 礦物結晶有充分時間生長 $\\implies$ 結晶**粗大、肉眼清晰可見**！\n   - **火山岩（如安山岩、玄武岩）**：在**地表**噴出冷卻 $\\implies$ 冷卻速度**「快速」** $\\implies$ 結晶**細小或呈隱晶質**。\n2. **常見變質岩對照表（(B)、(C) 選項考點）**：\n   - **石灰岩（沉積岩）** $\\xrightarrow{高溫高壓}$ **大理岩（變質岩）**：質地較軟、具美麗花紋，常用於雕刻與建材（花蓮太魯閣盛產！）。主要成分為碳酸鈣，遇稀鹽酸會冒泡！\n   - **頁岩（沉積岩）** $\\xrightarrow{高溫高壓}$ **板岩（變質岩）** $\\xrightarrow{更高溫壓}$ **片岩**：板岩具有良好的劈理（片理），易剝成平整薄板，原住民（排灣族、魯凱族）以此建造傳統**「石板屋」**！注意：板岩是**「變質岩」**，不是沉積岩！\n3. **沉積岩顆粒粒徑口訣（(D) 選項陷阱）**：\n   - 由大到小排序：**礫岩（＞2 mm）＞ 砂岩（0.0625～2 mm）＞ 頁岩／泥岩（＜0.0625 mm）**！（頁岩顆粒最細，非排在中間！）",
+    "stem": "有關岩石的敘述，下列何者正確？\n\n○ (A) 花崗岩中常可見顆粒較粗的礦物結晶，是岩漿快速冷卻所形成\n○ (B) 臺灣東部常見的大理岩有美麗多變的花紋，是良好的建築材料\n○ (C) 板岩是由沉積物層層疊置形成的，是原住民常用於建築石板屋之石材\n○ (D) 沉積岩所含顆粒由大到小分類，依序為礫岩＞頁岩＞砂岩",
+    "answer": "(B) 臺灣東部常見的大理岩有美麗多變的花紋，是良好的建築材料",
+    "diagramUrl": "",
+    "solution": "1. **岩石三大類別核心成因回顧**：\n   - **火成岩**：岩漿冷卻凝固而成（依冷卻位置分為噴出地表的火山岩與深埋地底的深成岩）。\n   - **沉積岩**：地表岩石碎屑或生物遺骸經搬運、堆積、壓密、膠結而成（具明顯層理，常含化石）。\n   - **變質岩**：原本已存在的岩石受到地下高溫、高壓作用，在固態狀態下發生礦物成分或結構重組而成（具片理或條紋構造）。\n\n2. **各選項逐一深入辨析**：\n   - **(A) 錯誤（花崗岩冷卻環境）**：\n     - 花崗岩屬於「深成火成岩」，是在地底深處受圍岩保溫，岩漿經過漫長歲月**「緩慢冷卻」**結晶形成。因此礦物顆粒（如長石、石英、黑雲母）有充裕時間生長成較粗大的肉眼可見晶體，絕非「快速冷卻」！\n   - **(B) 正確（臺灣東部大理岩）**：\n     - 臺灣東部（花蓮太魯閣一帶）因菲律賓海板塊與歐亞板塊擠壓的高溫高壓地質歷史，使原本的石灰岩層變質為純度高、紋理豐富多彩的**大理岩**，為臺灣著名的景觀與優良石材建築材料。\n   - **(C) 錯誤（板岩成因性質）**：\n     - 板岩確實是臺灣原住民建造石板屋的主要建材，但它不是由沉積物層層疊置的沉積岩，而是由**頁岩受到低度變質作用（高溫高壓）**所形成的**「變質岩」**！\n   - **(D) 錯誤（沉積岩顆粒粒徑排序）**：\n     - 碎屑沉積岩依碎屑顆粒粒徑由大到小的正確順序為：**礫岩（礫石，粒徑大於 2mm）＞ 砂岩（沙粒，粒徑 0.0625～2mm）＞ 頁岩/泥岩（黏土與粉砂，粒徑小於 0.0625mm）**。因此順序應為礫岩＞砂岩＞頁岩。\n\n故本題正確答案為 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-09",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_river_erosion_transportation_upper_lower_stream_139",
+    "examPeriod": "一段",
+    "subject": "自然",
+    "errorReason": "審題不清",
+    "concept": "河流地質作用：上游向下侵蝕加深河道（V型谷）與向源侵蝕加長 vs 中下游側蝕加寬曲流、濫採砂石引發回春侵蝕",
+    "uploadDate": "2026-10-09",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：河流侵蝕「三向發展」與上中下游特徵口訣！\n1. **河流侵蝕的三個方向與地形對照**：\n   - **向下侵蝕（下切）**：發生在**上游**（地勢陡峭、流速湍急、位能大），河道不斷**加深**，形成兩壁陡峭的 **V 型峽谷**、瀑布。\n   - **向側侵蝕（側蝕）**：發生在**中、下游**（坡度平緩、流速減慢），水流左右擺動沖刷凹岸，河道不斷**加寬**，形成蜿蜒曲流與寬闊谷地。\n   - **向源侵蝕（頭蝕）**：發生在**源頭端**，水流不斷向源頭切蝕倒退，使河流長度不斷**加長**（甚至引發河川襲奪）。\n2. **(C) 選項的致命陷阱**：\n   - 上游侵蝕力確實非常旺盛，但侵蝕的**主力方向是「向下（加深）」而非「向側（變寬）」**！因此上游河谷狹窄深峻（呈 V 型），絕非「變寬」！\n3. **(D) 選項高頻觀念——濫採砂石的連鎖效應**：\n   - 河床被大量盜採砂石 $\\implies$ 出現深坑窪地 $\\implies$ 局部侵蝕基準面相對下降 $\\implies$ 上游落差增大，激發更強烈的向下侵蝕與向源侵蝕（稱為「回春侵蝕」），容易淘空上游橋墩與護岸！",
+    "stem": "有關河流侵蝕、搬運作用的敘述，下列何者錯誤？\n\n○ (A) 中、下游地區常因搬運作用可發現鵝卵石\n○ (B) 河流受侵蝕作用，會不斷加長、加深及加寬\n○ (C) 上游地區因為侵蝕力明顯，故河道呈現變寬的形態\n○ (D) 由於河床濫採砂石，會強化其上游河道的侵蝕現象",
+    "answer": "(C) 上游地區因為侵蝕力明顯，故河道呈現變寬的形態",
+    "diagramUrl": "",
+    "solution": "1. **河流侵蝕作用的三種方向與特徵**：\n   - **向源侵蝕（加長）**：河水在河源處持續侵蝕，使河谷向源頭延伸，河流長度逐漸增加。\n   - **向下侵蝕（加深）**：上游因地勢起伏劇烈、坡陡流急，水流挾帶礫石向下刨蝕河床，使河谷劇烈下切加深，形成狹窄陡峭的 **V 型谷**。\n   - **向側侵蝕（加寬）**：進入中下游後，地勢平緩，水流以橫向擺動側蝕為主，不斷沖刷兩側河岸，使河谷與河道日益寬闊，形成曲流與泛濫平原。\n\n2. **各選項逐一深入辨析**：\n   - **(A) 正確**：岩石碎屑從上游滾落隨水流向下游搬運過程中，因互相撞擊摩擦、磨圓角稜，中下游河床或出海口常可見圓潤光滑的「鵝卵石（礫石）」。\n   - **(B) 正確**：河流透過「向源侵蝕（加長）」、「向下侵蝕（加深）」及「側蝕（加寬）」三種侵蝕作用，使整條河流系統規模持續發展擴大。\n   - **(C) 錯誤（選此項）**：上游地形坡度大、水流湍急，以強烈的**「向下侵蝕」**為主，因此河道呈現深狹的 V 型峽谷，使河道**加深**而非「變寬」；河道變寬是中下游側向侵蝕的特徵。\n   - **(D) 正確**：河床被大量挖取砂石後，採砂區河床下陷，使採砂區上游的水流落差（坡度）變大、流速加快，進而引發更劇烈的向下與向源侵蝕，嚴重時會淘空上游橋墩與河堤。\n\n故本題正確答案為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-09",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_sci_river_estuary_sand_mining_coastline_erosion_138",
     "examPeriod": "一段",
@@ -7362,7 +7422,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v213') ||
+      stored = localStorage.getItem('miley_wrong_questions_v214') ||
+               localStorage.getItem('miley_wrong_questions_v213') ||
                localStorage.getItem('miley_wrong_questions_v212') ||
                localStorage.getItem('miley_wrong_questions_v211') ||
                localStorage.getItem('miley_wrong_questions_v210') ||
