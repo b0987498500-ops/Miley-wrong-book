@@ -111,6 +111,13 @@ window.ReviewModule = {
     document.getElementById('btn-mark-unmastered')?.addEventListener('click', () => self.handleFeedback(false));
     document.getElementById('btn-mark-mastered')?.addEventListener('click', () => self.handleFeedback(true));
 
+    // Note Portal Button (筆記傳送門)
+    document.getElementById('btn-note-portal')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      self.openNotePortal();
+    });
+
     // Delete Question From Current Week Only
     document.getElementById('btn-delete-this-week')?.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -2504,5 +2511,203 @@ window.ReviewModule = {
       explanation: `1. **核心概念解析**：\n本題核心為「${q.concept || '觀念釐清'}」。\n2. **原題關鍵盲點剖析**：\n${q.mistakeNote || '解題時務必確認定義細節，避免落入常見粗心陷阱！'}\n3. **結論**：解題首重先審清關鍵定義與限制條件，故選 **(B)**。`,
       mistakeNote: `記住：審題時抓住核心定義與限制條件，是破解陷阱題的關鍵！`
     };
+  },
+
+  /* ==================== NOTE PORTAL (筆記傳送門) IMPLEMENTATION ==================== */
+  _portalActiveQuestion: null,
+
+  openNotePortal: function(customQuestion) {
+    const q = customQuestion || this.activeQuestions[this.currentIndex];
+    if (!q) {
+      this.showToast('⚠️ 尚未選擇題目，無法開啟傳送門！');
+      return;
+    }
+
+    const modal = document.getElementById('modal-note-portal');
+    if (!modal) return;
+
+    this._portalActiveQuestion = q;
+
+    // Fill Meta Card
+    const subjBadge = document.getElementById('portal-q-subject-badge');
+    if (subjBadge) subjBadge.innerText = q.subject || '科目';
+
+    const conceptBadge = document.getElementById('portal-q-concept-badge');
+    if (conceptBadge) conceptBadge.innerText = `#${q.concept || '核心重點'}`;
+
+    const examBadge = document.getElementById('portal-q-exam-badge');
+    if (examBadge) examBadge.innerText = q.examPeriod || '一段';
+
+    const stemPreview = document.getElementById('portal-q-stem-preview');
+    if (stemPreview) {
+      const cleanStem = (q.stem || '').replace(/[#*`_]/g, '').trim();
+      stemPreview.innerText = cleanStem;
+    }
+
+    // Auto-map subject select
+    const targetSubjSelect = document.getElementById('portal-target-subject');
+    if (targetSubjSelect) {
+      const s = String(q.subject || '');
+      if (s.includes('自然') || s.includes('理化') || s.includes('生物') || s.includes('地科')) {
+        targetSubjSelect.value = 'science';
+      } else if (s.includes('社會') || s.includes('歷史') || s.includes('地理') || s.includes('公民')) {
+        targetSubjSelect.value = 'social';
+      } else if (s.includes('數學')) {
+        targetSubjSelect.value = 'math';
+      } else if (s.includes('國文')) {
+        targetSubjSelect.value = 'chinese';
+      } else if (s.includes('英文')) {
+        targetSubjSelect.value = 'english';
+      } else {
+        targetSubjSelect.value = 'science';
+      }
+    }
+
+    // Set default title & content
+    const titleInput = document.getElementById('portal-note-title');
+    const contentInput = document.getElementById('portal-note-content');
+
+    let defaultTitle = '';
+    if (q.concept) {
+      defaultTitle = q.concept.split('：')[0].replace(/【.*?】/g, '').trim();
+      if (defaultTitle.length > 30) defaultTitle = defaultTitle.substring(0, 30);
+    }
+    if (titleInput) titleInput.value = defaultTitle;
+
+    let defaultContent = '';
+    if (q.mistakeNote) {
+      defaultContent = q.mistakeNote.replace(/^💡\s*\*\*易錯警示筆記\*\*：?/g, '').trim();
+    }
+    if (contentInput) contentInput.value = defaultContent;
+
+    // Bind Quick Actions
+    const btnMistake = document.getElementById('btn-portal-fill-mistake');
+    if (btnMistake) {
+      btnMistake.onclick = () => {
+        if (q.mistakeNote && contentInput) {
+          contentInput.value = q.mistakeNote.replace(/^💡\s*\*\*易錯警示筆記\*\*：?/g, '').trim();
+          contentInput.focus();
+        }
+      };
+    }
+
+    const btnConcept = document.getElementById('btn-portal-fill-concept');
+    if (btnConcept) {
+      btnConcept.onclick = () => {
+        if (q.concept) {
+          if (titleInput) titleInput.value = q.concept.split('：')[0].trim();
+          if (contentInput && !contentInput.value.trim()) {
+            contentInput.value = q.concept;
+          }
+        }
+      };
+    }
+
+    const btnClean = document.getElementById('btn-portal-fill-clean');
+    if (btnClean) {
+      btnClean.onclick = () => {
+        if (titleInput) titleInput.value = '';
+        if (contentInput) {
+          contentInput.value = '';
+          contentInput.focus();
+        }
+      };
+    }
+
+    // Close Events
+    const closeModal = () => modal.classList.add('hidden');
+    const btnClose = document.getElementById('btn-close-note-portal');
+    if (btnClose) btnClose.onclick = closeModal;
+    const btnCancel = document.getElementById('btn-cancel-note-portal');
+    if (btnCancel) btnCancel.onclick = closeModal;
+
+    // Send Button
+    const sendBtn = document.getElementById('btn-do-send-portal-note');
+    if (sendBtn) {
+      sendBtn.onclick = () => {
+        this.sendPortalNote();
+      };
+    }
+
+    modal.classList.remove('hidden');
+    if (titleInput) {
+      setTimeout(() => titleInput.focus(), 150);
+    }
+  },
+
+  sendPortalNote: function() {
+    const q = this._portalActiveQuestion;
+    const titleInput = document.getElementById('portal-note-title');
+    const contentInput = document.getElementById('portal-note-content');
+    const stageRadio = document.querySelector('input[name="portal-target-stage"]:checked');
+    const targetSubjSelect = document.getElementById('portal-target-subject');
+
+    const title = titleInput ? titleInput.value.trim() : '';
+    const content = contentInput ? contentInput.value.trim() : '';
+    const stage = stageRadio ? stageRadio.value : 'review';
+    const subject = targetSubjSelect ? targetSubjSelect.value : 'science';
+
+    if (!title && !content) {
+      alert('請先輸入筆記標題或重點內容唷！');
+      return;
+    }
+
+    const finalTitle = title || (q ? q.concept : '手帳重點提煉');
+    const finalContent = content || finalTitle;
+
+    // Save history record to localStorage
+    try {
+      let sentHistory = JSON.parse(localStorage.getItem('miley_portal_sent_notes') || '[]');
+      sentHistory.unshift({
+        id: 'portal_' + Date.now(),
+        qid: q ? q.id : null,
+        title: finalTitle,
+        content: finalContent,
+        stage: stage,
+        subject: subject,
+        concept: q ? q.concept : '',
+        timestamp: new Date().toISOString()
+      });
+      localStorage.setItem('miley_portal_sent_notes', JSON.stringify(sentHistory.slice(0, 100)));
+    } catch(e) {}
+
+    // Determine target URL for 麥麥筆記
+    const isOnline = window.location.hostname.includes('github.io');
+    let targetBase = isOnline 
+      ? 'https://b0987498500-ops.github.io/Miley-notes/' 
+      : '../麥麥筆記/index.html';
+
+    const params = new URLSearchParams({
+      action: 'add_note',
+      stage: stage,
+      subject: subject,
+      title: finalTitle,
+      content: finalContent,
+      concept: q ? q.concept : '',
+      qid: q ? q.id : '',
+      source: 'wrong_book',
+      t: Date.now()
+    });
+
+    const targetUrl = targetBase + (targetBase.includes('?') ? '&' : '?') + params.toString();
+
+    // Trigger celebration Confetti if available
+    if (typeof confetti === 'function') {
+      confetti({
+        particleCount: 80,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }
+
+    // Close modal
+    document.getElementById('modal-note-portal')?.classList.add('hidden');
+
+    this.showToast('🚀 筆記已成功傳送！正在開啟麥麥筆記手帳...');
+
+    // Open target website in new tab
+    setTimeout(() => {
+      window.open(targetUrl, '_blank');
+    }, 400);
   }
 };

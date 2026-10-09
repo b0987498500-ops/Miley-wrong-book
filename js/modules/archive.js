@@ -237,9 +237,14 @@ window.ArchiveModule = {
 
           <div class="qcard-footer">
             <span>錯誤次數：<strong style="color: var(--accent-danger);">${q.errorCount || 1} 次</strong> ${q.isArchived ? '<span style="color:var(--accent-success);">[已掌握歸檔]</span>' : `<span style="color:var(--text-muted);">(W${q.ebbinghausStage})</span>`}</span>
-            <button type="button" class="btn-archive-delete-q" data-id="${q.id}" title="刪除此錯題">
-              <i class="fa-solid fa-trash-can"></i> 刪除
-            </button>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <button type="button" class="btn-archive-portal-q" data-id="${q.id}" title="開啟傳送門，將本題重點寫入麥麥筆記手帳" style="background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.4); color:#fef08a; padding:5px 10px; border-radius:8px; font-size:0.78rem; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:4px;">
+                <i class="fa-solid fa-door-open"></i> 傳送門
+              </button>
+              <button type="button" class="btn-archive-delete-q" data-id="${q.id}" title="刪除此錯題">
+                <i class="fa-solid fa-trash-can"></i> 刪除
+              </button>
+            </div>
           </div>
         </div>
       `;
@@ -250,6 +255,18 @@ window.ArchiveModule = {
     // Render KaTeX for stems in cards
     list.forEach(q => {
       window.katexUtils.renderText(`card-stem-${q.id}`, q.stem);
+    });
+
+    // Bind archive card portal buttons
+    grid.querySelectorAll('.btn-archive-portal-q').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const qId = btn.dataset.id;
+        const q = window.dataManager.getById(qId);
+        if (q && window.ReviewModule && window.ReviewModule.openNotePortal) {
+          window.ReviewModule.openNotePortal(q);
+        }
+      });
     });
 
     // Bind archive card delete buttons
