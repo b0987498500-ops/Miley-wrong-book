@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v209';
+const STORAGE_KEY = 'miley_wrong_questions_v210';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_math_triangle_right_angle_similarity_df_132",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "相似三角形判定與應用：利用直角與同角的餘角相等（AA 相似性質）建立對應邊成比例求線段長",
+    "uploadDate": "2026-10-09",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：幾何求線段長的【母子相似與餘角轉換】破題口訣！\n1. **「直角＋共角/餘角」必有 AA 相似**：\n   - 題目出現多個 90° 直角時，立刻尋找**「互餘關係」**：\n     - 在直角 △ABC 中：∠A ＋ ∠B = 90° ⟹ ∠B = 90° － ∠A。\n     - 在直角 △ADF 中：∠A ＋ ∠F = 90° ⟹ ∠F = 90° － ∠A。\n     - 導出關鍵等角：**∠F = ∠B**！\n2. **鎖定相似三角形與對應邊順序（嚴禁對錯邊）**：\n   - △FDA 與 △BDE 中：\n     - ∠FDA = ∠BDE = 90°\n     - ∠F = ∠B\n     - 故 **△FDA ∼ △BDE（AA 相似）**！\n   - 對應邊成比例：**AD : DE = DF : BD**。\n3. **高頻計算粗心陷阱**：\n   - 線段 BD 的長度是 **AB － AD = 10 － 6 = 4**，千萬不要直接誤帶 AB = 10！",
+    "stem": "如圖，在 △ABC 中，∠ACB = 90°，D 為線段 AB 上一點，作線段 DF 垂直線段 AB 且交線段 AC 的延長線於 F 點。若線段 AB = 10，線段 AD = 6，線段 DE = 2，則線段 DF 的長度為何？",
+    "answer": "12",
+    "diagramUrl": "assets/questions/q_math_triangle_right_angle_similarity_df_132.png",
+    "solution": "1. **破題核心觀念（尋找直角互餘關係與 AA 相似性質）**：\n   - **步驟一：由直角三角形內角關係求角相等**\n     - 在直角 △ABC 中，已知 ∠ACB = 90°，故兩銳角互餘：\n       ∠A ＋ ∠B = 90° ⟹ ∠B = 90° － ∠A\n     - 又已知線段 DF ⊥ 線段 AB 於 D 點，故 ∠ADF = ∠BDE = 90°。\n     - 在直角 △ADF 中，兩銳角同樣互餘：\n       ∠A ＋ ∠F = 90° ⟹ ∠F = 90° － ∠A\n     - 比較兩式可得：**∠F = ∠B**。\n\n   - **步驟二：判定 △FDA 與 △BDE 相似**\n     - 在 △FDA 與 △BDE 中：\n       1. ∠FDA = ∠BDE = 90°（已知垂直）\n       2. ∠F = ∠B（同角的餘角相等）\n     - 根據 **AA 相似性質**，可得：\n       **△FDA ∼ △BDE**。\n\n2. **列出對應邊成比例式並求解**：\n   - 由 △FDA ∼ △BDE，對應邊長成比例：\n     線段 AD : 線段 DE = 線段 DF : 線段 BD\n   - 計算線段 BD 長度：\n     線段 BD = 線段 AB － 線段 AD = 10 － 6 = 4\n   - 代入已知數值：\n     6 : 2 = 線段 DF : 4\n     3 = 線段 DF / 4\n     線段 DF = 3 × 4 = 12。\n\n3. **另解驗證（三角比正切值快速檢驗）**：\n   - 在直角 △BDE 中，tan ∠B = DE / BD = 2 / 4 = 1/2。\n   - 在直角 △ABC 中，tan ∠A = 1 / tan ∠B = 2。\n   - 在直角 △ADF 中，tan ∠A = DF / AD = DF / 6。\n   - 故 DF / 6 = 2 ⟹ DF = 12，兩法完全吻合！\n\n故線段 DF 的長度為 **12**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-09",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_alexander_great_eastern_campaign_hellenistic_131",
     "examPeriod": "一段",
@@ -7152,7 +7182,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v208') ||
+      stored = localStorage.getItem('miley_wrong_questions_v209') ||
+               localStorage.getItem('miley_wrong_questions_v208') ||
                localStorage.getItem('miley_wrong_questions_v207') ||
                localStorage.getItem('miley_wrong_questions_v206') ||
                localStorage.getItem('miley_wrong_questions_v205') ||
