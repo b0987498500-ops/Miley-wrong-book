@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v220';
+const STORAGE_KEY = 'miley_wrong_questions_v221';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_russia_st_petersburg_map_148",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "俄羅斯主要城市空間分布與歷史地理定位：聖彼得堡（面向西方的窗口/波羅的海門戶）vs 莫斯科 vs 海參崴",
+    "uploadDate": "2026-10-10",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：俄羅斯關鍵門戶港口【空間位置 vs 歷史代名詞】秒殺口訣！\n1. **🇪🇺「面向西方的窗口」＝ 聖彼得堡（代號 甲）**：\n   - 位置：西北角芬蘭灣、瀕臨 **波羅的海**。\n   - 特徵：曾為沙俄首都（1712～1918年）、彼得大帝西化之都、彼得夏宮與冬宮所在地。\n2. **🌏「面向東方的窗口」＝ 海參崴（符拉迪沃斯托克，代號 丁）**：\n   - 位置：遠東太平洋沿岸（日本海側），西伯利亞大鐵路終點。\n3. **其餘代號快速定位防呆**：\n   - **乙**：瀕臨 **裏海**（世界最大內陸湖，非波羅的海）。\n   - **丙**：深居 **西伯利亞內陸腹地**（不靠海）。\n4. **關鍵破題字眼**：看到「波羅的海」、「彼得夏宮」、「面向西方窗口」，直奔西北角甲點（聖彼得堡）！",
+    "stem": "某城市曾為俄羅斯的首都，歷史悠久，許多建築物被列入世界文化遺產，如彼得夏宮。再加上其瀕臨波羅的海，因此成為重要的港口，被稱為俄羅斯「面向西方的窗口」。上述城市應為附圖中何者？\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁",
+    "answer": "(A) 甲",
+    "diagramUrl": "assets/questions/q_soc_geo_russia_st_petersburg_map_148.png",
+    "solution": "1. **第一步：抓取題幹四大核心線索鎖定目標城市**：\n   - **線索 1（歷史首都）**：18 世紀初彼得大帝遷都於此，作為俄羅斯帝國首都長達兩百餘年（1712～1918 年）。\n   - **線索 2（世界文化遺產）**：擁有彼得大帝下令營建的彼得夏宮（噴泉宮殿群）、冬宮與涅瓦大街。\n   - **線索 3（水運出海口）**：瀕臨【波羅的海（芬蘭灣）】，為俄羅斯通往大西洋歐洲各國不可或缺的深水海港。\n   - **線索 4（歷史美譽）**：彼得大帝推行西化政策，在此營建全新海港都城，象徵俄羅斯打開與西歐各國貿易和文化交流之門，因而獲得【面向西方的窗口】美稱。\n   - 綜合以上特徵，該城市確定為**聖彼得堡（Saint Petersburg）**！\n\n2. **第二步：對照附圖中各點之地理空間位置**：\n   - **【甲】（本題正解，選 A）**：位於俄羅斯西北部東歐平原頂端、波羅的海芬蘭灣沿岸，正是**聖彼得堡**！\n   - **【乙】（錯誤）**：位於俄羅斯西南部高加索北麓，瀕臨世界最大內陸湖【裏海】。\n   - **【丙】（錯誤）**：深居西伯利亞中南部內陸腹地（貝加爾湖西側），完全不靠海。\n   - **【丁】（錯誤）**：位於俄羅斯最東端、太平洋（日本海）沿岸，為遠東軍港與西伯利亞鐵路終點【海參崴（符拉迪沃斯托克）】，被稱為俄羅斯「面向東方的窗口」。\n\n故本題正確答案為 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-10",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  }," 
   {
     "id": "q_soc_geo_russia_export_pie_chart_oil_gas_147",
     "examPeriod": "一段",
@@ -7632,7 +7662,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v219') ||
+      stored = localStorage.getItem('miley_wrong_questions_v220') ||
+               localStorage.getItem('miley_wrong_questions_v219') ||
                localStorage.getItem('miley_wrong_questions_v218') ||
                localStorage.getItem('miley_wrong_questions_v217') ||
                localStorage.getItem('miley_wrong_questions_v216') ||
