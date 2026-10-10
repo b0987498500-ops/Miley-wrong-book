@@ -2787,6 +2787,76 @@ window.ReviewModule = {
 
     const targetUrl = targetBase + (targetBase.includes('?') ? '&' : '?') + params.toString();
 
+    // 1. 同源同步：直接寫入 localStorage (線上 GitHub Pages 兩站同屬 https://b0987498500-ops.github.io，共享同一儲存空間)
+    const SUBJECT_NAMES = {
+      science: '自然',
+      math: '數學',
+      social: '社會',
+      chinese: '國文',
+      english: '英文'
+    };
+    const SUBJECT_ICONS = {
+      science: '🔬',
+      math: '📐',
+      social: '🌍',
+      chinese: '📜',
+      english: '🔤'
+    };
+
+    const stageName = stage === 'progress' ? '進度手帳' : '複習手帳';
+    const volume = stage === 'progress' ? '第 5～6 冊' : '第 1～4 冊';
+    const subjectName = SUBJECT_NAMES[subject] || '自然';
+    const subjectIcon = SUBJECT_ICONS[subject] || '🔬';
+
+    const coreConcepts = finalContent
+      ? finalContent.split('\n').map(s => s.trim()).filter(Boolean)
+      : [finalTitle];
+
+    const newNote = {
+      id: 'portal-' + Date.now(),
+      stage: stage,
+      volume: volume,
+      stageName: stageName,
+      subject: subject,
+      subjectName: subjectName,
+      subjectIcon: subjectIcon,
+      gradeVersion: '錯題傳送門 · 重點速記',
+      unit: q ? (q.unit || '錯題精華速記') : '錯題精華速記',
+      title: finalTitle,
+      concept: (q && q.concept) ? q.concept : finalTitle,
+      coreConcepts: coreConcepts,
+      isPortalNote: true,
+      createdTime: new Date().toLocaleString('zh-TW', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' }),
+      sourceQuestionId: q ? (q.id || '') : ''
+    };
+
+    try {
+      let customList = JSON.parse(localStorage.getItem('maimai_custom_notes') || '[]');
+      const isDupe = customList.some(n => n.title === newNote.title && JSON.stringify(n.coreConcepts) === JSON.stringify(newNote.coreConcepts));
+      if (!isDupe) {
+        customList.unshift(newNote);
+        localStorage.setItem('maimai_custom_notes', JSON.stringify(customList));
+      }
+    } catch(e) {
+      console.warn('localStorage sync warning:', e);
+    }
+
+    // 2. 跨環境/本機雙保險：透過不可見的背景 iframe 靜默觸發麥麥筆記接收機制，絕不開新分頁、絕不跳轉中斷刷題
+    try {
+      const silentIframe = document.createElement('iframe');
+      silentIframe.style.display = 'none';
+      silentIframe.style.width = '0px';
+      silentIframe.style.height = '0px';
+      silentIframe.style.border = 'none';
+      silentIframe.src = targetUrl;
+      document.body.appendChild(silentIframe);
+      setTimeout(() => {
+        try { silentIframe.remove(); } catch(err) {}
+      }, 3000);
+    } catch(e) {
+      console.warn('Silent iframe sync warning:', e);
+    }
+
     // 慶祝五彩碎紙
     if (typeof confetti === 'function') {
       confetti({
@@ -2799,11 +2869,7 @@ window.ReviewModule = {
     // 關閉 Modal
     document.getElementById('modal-note-portal')?.classList.add('hidden');
 
-    this.showToast('🚀 筆記已成功傳送！正在開啟麥麥筆記手帳...');
-
-    // 開啟目標網站
-    setTimeout(() => {
-      window.open(targetUrl, '_blank');
-    }, 380);
+    // 溫馨提示：筆記已在背景成功傳送，無需跳出網頁，直接專注做下一題！
+    this.showToast('✨ 筆記已成功傳送至手帳！繼續下一題 🚀');
   }
 };
