@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>網頁導向中 | 麥麥學習系統</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/icon-192.png">
+
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent: #ec4899;
+      --bg: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.85);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', 'Noto Sans TC', sans-serif;
+      background: radial-gradient(circle at 20% 20%, #1e1b4b 0%, #0f172a 60%, #020617 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 520px;
+      width: 100%;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 40px 32px;
+      text-align: center;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(99, 102, 241, 0.15);
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .badge-icon {
+      width: 88px;
+      height: 88px;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      margin-bottom: 24px;
+      color: #a5b4fc;
+      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.25);
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.desc {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-sub);
+      margin-bottom: 28px;
+    }
+
+    .countdown-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #cbd5e1;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .countdown-num {
+      display: inline-block;
+      font-weight: 700;
+      color: #38bdf8;
+      font-size: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge-icon">
+      <i class="fa-solid fa-compass"></i>
+    </div>
+    <h1>別擔心，正在為您導向</h1>
+    <p class="desc">
+      您輸入的網址路徑可能有誤或大小寫不符。<br>
+      麥麥的題庫與筆記全數安然無恙，正自動導航至正確首頁！
+    </p>
+
+    <div class="countdown-box">
+      <i class="fa-solid fa-spinner fa-spin" style="color: #6366f1;"></i>
+      <span>將在 <span class="countdown-num" id="countdown">3</span> 秒後自動前往錯題首頁...</span>
+    </div>
+
+    <div class="buttons">
+      <a href="https://b0987498500-ops.github.io/Miley-wrong-book/" class="btn btn-primary" id="btn-wrongbook">
+        <i class="fa-solid fa-book-open"></i> 前往 麥麥錯題網站
+      </a>
+      <a href="https://b0987498500-ops.github.io/Miley-notes/" class="btn btn-secondary" id="btn-notes">
+        <i class="fa-solid fa-feather-pointed"></i> 前往 麥麥精華筆記本
+      </a>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var currentPath = window.location.pathname.toLowerCase();
+      var targetUrl = "https://b0987498500-ops.github.io/Miley-wrong-book/";
+      
+      if (currentPath.indexOf("note") !== -1) {
+        targetUrl = "https://b0987498500-ops.github.io/Miley-notes/";
+      }
+
+      var timeLeft = 3;
+      var countdownEl = document.getElementById("countdown");
+      
+      var timer = setInterval(function() {
+        timeLeft--;
+        if (countdownEl) countdownEl.textContent = timeLeft;
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          window.location.replace(targetUrl);
+        }
+      }, 1000);
+    })();
+  </script>
+</body>
+</html>
