@@ -2513,8 +2513,119 @@ window.ReviewModule = {
     };
   },
 
-  /* ==================== NOTE PORTAL (筆記傳送門) IMPLEMENTATION ==================== */
+  /* ==================== NOTE PORTAL (筆記傳送門 - 極簡純淨版) IMPLEMENTATION ==================== */
   _portalActiveQuestion: null,
+  _portalDetectedInfo: null,
+
+  /**
+   * 智慧全自動辨析科目與手帳冊數（無需使用者動手設定）
+   */
+  _detectPortalSubjectAndStage: function(q) {
+    if (!q) {
+      return {
+        subject: 'science',
+        subjectName: '自然',
+        stage: 'review',
+        stageName: '複習手帳 (第 1～4 冊)',
+        volume: '第 1～4 冊'
+      };
+    }
+
+    // 1. 科目辨識
+    let subject = 'science';
+    let subjectName = '自然';
+    const rawSubj = String(q.subject || '');
+    if (rawSubj.includes('社會') || rawSubj.includes('歷史') || rawSubj.includes('地理') || rawSubj.includes('公民')) {
+      subject = 'social';
+      subjectName = '社會';
+    } else if (rawSubj.includes('數學')) {
+      subject = 'math';
+      subjectName = '數學';
+    } else if (rawSubj.includes('國文')) {
+      subject = 'chinese';
+      subjectName = '國文';
+    } else if (rawSubj.includes('英文')) {
+      subject = 'english';
+      subjectName = '英文';
+    } else {
+      subject = 'science';
+      subjectName = '自然';
+    }
+
+    // 2. 冊數與手帳辨識 (review 複習 1~4 冊 vs progress 進度 5~6 冊)
+    const fullText = [
+      q.gradeVersion || '',
+      q.unit || '',
+      q.concept || '',
+      q.examPeriod || '',
+      q.stem || '',
+      q.mistakeNote || ''
+    ].join(' ');
+
+    const isProgress = (
+      /九年級|國三|第[5-6]冊|五冊|六冊|進度/i.test(fullText) ||
+      // 社會公民九上：機會成本、外顯成本、隱藏成本、供給與需求、生產可能曲線、市場均衡、比較利益、貿易、貨幣
+      /機會成本|外顯成本|隱藏成本|供給與需求|生產可能曲線|市場均衡|比較利益|貿易|貨幣政策|消保法/i.test(fullText) ||
+      // 社會歷史九上：上古西亞、埃及文明、兩河流域、希臘羅馬、亞歷山大、基督教、羅馬和平、拜占庭
+      /上古文明|西亞文明|兩河流域|美索不達米亞|漢摩拉比|希臘羅馬|雅典|斯巴達|亞歷山大|羅馬帝國|拜占庭|封建/i.test(fullText) ||
+      // 自然地科九上：變質岩、地球構造、板塊運動、地震、斷層
+      /變質岩|地球構造|板塊運動|聚合性|張裂性|斷層|震央|震度|地震波/i.test(fullText) ||
+      // 自然理化九上：直線運動、加速度、牛頓運動定律、自由落體、萬有引力、功與功率、動能位能、電學
+      /牛頓|運動定律|自由落體|加速度|功與能|機械能|電功率|歐姆定律/i.test(fullText)
+    );
+
+    const stage = isProgress ? 'progress' : 'review';
+    const stageName = isProgress ? '進度手帳 (第 5 冊)' : '複習手帳 (第 1～4 冊)';
+    const volume = isProgress ? '第 5 冊' : '第 1～4 冊';
+
+    return { subject, subjectName, stage, stageName, volume };
+  },
+
+  /**
+   * 智慧全自動提煉筆記標題（無需使用者動手輸入）
+   */
+  _autoGeneratePortalTitle: function(q, content) {
+    const trimmed = (content || '').trim();
+    const firstLine = trimmed.split('\n')[0].replace(/^[-*•1-9.、\s]+/, '').trim();
+
+    // 1. 若使用者輸入的是簡短一句話（<= 25 字，例如「石灰岩是沉積岩」），直接作為最傳神的主旨標題！
+    if (firstLine && firstLine.length <= 25 && !trimmed.includes('\n')) {
+      return firstLine;
+    }
+
+    // 2. 依題目核心考點提煉乾淨主旨（過濾特殊符號與前綴學科分類）
+    if (q && q.concept) {
+      let t = q.concept
+        .replace(/^[#＃]\s*/, '')
+        .replace(/【.*?】/g, '');
+
+      // 若包含冒號（例如「#公民與社會：機會成本計算...」），取冒號後真正的主考點
+      if (t.includes('：')) {
+        const parts = t.split('：');
+        t = (parts[1] || parts[0]).trim();
+      } else if (t.includes(':')) {
+        const parts = t.split(':');
+        t = (parts[1] || parts[0]).trim();
+      }
+
+      t = t.split('(')[0].split('（')[0].trim();
+      if (t.length > 25) t = t.substring(0, 25);
+      if (t) return t;
+    }
+
+    // 3. 依題目單元名稱提煉
+    if (q && q.unit) {
+      let t = q.unit.replace(/^第\s*\d+\s*章\s*/, '').trim();
+      if (t.length > 25) t = t.substring(0, 25);
+      if (t) return t;
+    }
+
+    if (firstLine && firstLine.length <= 30) {
+      return firstLine;
+    }
+
+    return '錯題精華手帳速記';
+  },
 
   openNotePortal: function(customQuestion) {
     const q = customQuestion || this.activeQuestions[this.currentIndex];
@@ -2528,64 +2639,35 @@ window.ReviewModule = {
 
     this._portalActiveQuestion = q;
 
-    // Fill Meta Card
-    const subjBadge = document.getElementById('portal-q-subject-badge');
-    if (subjBadge) subjBadge.innerText = q.subject || '科目';
+    // 自動偵測科目與手帳冊數（系統全自動歸納）
+    const detected = this._detectPortalSubjectAndStage(q);
+    this._portalDetectedInfo = detected;
 
-    const conceptBadge = document.getElementById('portal-q-concept-badge');
-    if (conceptBadge) conceptBadge.innerText = `#${q.concept || '核心重點'}`;
-
-    const examBadge = document.getElementById('portal-q-exam-badge');
-    if (examBadge) examBadge.innerText = q.examPeriod || '一段';
-
-    const stemPreview = document.getElementById('portal-q-stem-preview');
-    if (stemPreview) {
-      const cleanStem = (q.stem || '').replace(/[#*`_]/g, '').trim();
-      stemPreview.innerText = cleanStem;
+    const destText = document.getElementById('portal-auto-dest-text');
+    if (destText) {
+      destText.innerText = `自動歸入：${detected.subjectName} · ${detected.stageName}`;
     }
 
-    // Auto-map subject select
-    const targetSubjSelect = document.getElementById('portal-target-subject');
-    if (targetSubjSelect) {
-      const s = String(q.subject || '');
-      if (s.includes('自然') || s.includes('理化') || s.includes('生物') || s.includes('地科')) {
-        targetSubjSelect.value = 'science';
-      } else if (s.includes('社會') || s.includes('歷史') || s.includes('地理') || s.includes('公民')) {
-        targetSubjSelect.value = 'social';
-      } else if (s.includes('數學')) {
-        targetSubjSelect.value = 'math';
-      } else if (s.includes('國文')) {
-        targetSubjSelect.value = 'chinese';
-      } else if (s.includes('英文')) {
-        targetSubjSelect.value = 'english';
-      } else {
-        targetSubjSelect.value = 'science';
-      }
-    }
-
-    // Set default title & content
-    const titleInput = document.getElementById('portal-note-title');
+    // 單一核心重點輸入框
     const contentInput = document.getElementById('portal-note-content');
-
-    let defaultTitle = '';
-    if (q.concept) {
-      defaultTitle = q.concept.split('：')[0].replace(/【.*?】/g, '').trim();
-      if (defaultTitle.length > 30) defaultTitle = defaultTitle.substring(0, 30);
+    if (contentInput) {
+      // 預設帶入易錯盲點筆記（若有），方便 Miley 直接查閱或修改；若無則留空
+      let defaultContent = '';
+      if (q.mistakeNote) {
+        defaultContent = q.mistakeNote.replace(/^💡\s*\*\*易錯警示筆記\*\*：?/g, '').trim();
+      }
+      contentInput.value = defaultContent;
     }
-    if (titleInput) titleInput.value = defaultTitle;
 
-    let defaultContent = '';
-    if (q.mistakeNote) {
-      defaultContent = q.mistakeNote.replace(/^💡\s*\*\*易錯警示筆記\*\*：?/g, '').trim();
-    }
-    if (contentInput) contentInput.value = defaultContent;
-
-    // Bind Quick Actions
+    // 綁定智慧快捷 Chip
     const btnMistake = document.getElementById('btn-portal-fill-mistake');
     if (btnMistake) {
       btnMistake.onclick = () => {
-        if (q.mistakeNote && contentInput) {
-          contentInput.value = q.mistakeNote.replace(/^💡\s*\*\*易錯警示筆記\*\*：?/g, '').trim();
+        if (contentInput) {
+          const noteText = q.mistakeNote 
+            ? q.mistakeNote.replace(/^💡\s*\*\*易錯警示筆記\*\*：?/g, '').trim()
+            : (q.concept || '核心觀念');
+          contentInput.value = noteText;
           contentInput.focus();
         }
       };
@@ -2594,11 +2676,9 @@ window.ReviewModule = {
     const btnConcept = document.getElementById('btn-portal-fill-concept');
     if (btnConcept) {
       btnConcept.onclick = () => {
-        if (q.concept) {
-          if (titleInput) titleInput.value = q.concept.split('：')[0].trim();
-          if (contentInput && !contentInput.value.trim()) {
-            contentInput.value = q.concept;
-          }
+        if (contentInput) {
+          contentInput.value = q.concept || '';
+          contentInput.focus();
         }
       };
     }
@@ -2606,7 +2686,6 @@ window.ReviewModule = {
     const btnClean = document.getElementById('btn-portal-fill-clean');
     if (btnClean) {
       btnClean.onclick = () => {
-        if (titleInput) titleInput.value = '';
         if (contentInput) {
           contentInput.value = '';
           contentInput.focus();
@@ -2614,14 +2693,19 @@ window.ReviewModule = {
       };
     }
 
-    // Close Events
+    // 關閉事件
     const closeModal = () => modal.classList.add('hidden');
     const btnClose = document.getElementById('btn-close-note-portal');
     if (btnClose) btnClose.onclick = closeModal;
     const btnCancel = document.getElementById('btn-cancel-note-portal');
     if (btnCancel) btnCancel.onclick = closeModal;
 
-    // Send Button
+    // 點擊背景遮罩亦可快速關閉
+    modal.onclick = (e) => {
+      if (e.target === modal) closeModal();
+    };
+
+    // 傳送按鈕
     const sendBtn = document.getElementById('btn-do-send-portal-note');
     if (sendBtn) {
       sendBtn.onclick = () => {
@@ -2630,32 +2714,43 @@ window.ReviewModule = {
     }
 
     modal.classList.remove('hidden');
-    if (titleInput) {
-      setTimeout(() => titleInput.focus(), 150);
+    if (contentInput) {
+      setTimeout(() => {
+        contentInput.focus();
+        // 將游標置於最後
+        contentInput.selectionStart = contentInput.selectionEnd = contentInput.value.length;
+      }, 100);
     }
   },
 
   sendPortalNote: function() {
     const q = this._portalActiveQuestion;
-    const titleInput = document.getElementById('portal-note-title');
     const contentInput = document.getElementById('portal-note-content');
-    const stageRadio = document.querySelector('input[name="portal-target-stage"]:checked');
-    const targetSubjSelect = document.getElementById('portal-target-subject');
+    const userContent = contentInput ? contentInput.value.trim() : '';
 
-    const title = titleInput ? titleInput.value.trim() : '';
-    const content = contentInput ? contentInput.value.trim() : '';
-    const stage = stageRadio ? stageRadio.value : 'review';
-    const subject = targetSubjSelect ? targetSubjSelect.value : 'science';
+    // 自動偵測或取用快取的歸屬設定（科目 + 冊數）
+    const detected = this._portalDetectedInfo || this._detectPortalSubjectAndStage(q);
+    const stage = detected.stage;
+    const subject = detected.subject;
 
-    if (!title && !content) {
-      alert('請先輸入筆記標題或重點內容唷！');
-      return;
+    // 內容防呆：若使用者未輸入，自動以題目易錯盲點或考點為內容
+    let finalContent = userContent;
+    if (!finalContent) {
+      if (q && q.mistakeNote) {
+        finalContent = q.mistakeNote.replace(/^💡\s*\*\*易錯警示筆記\*\*：?/g, '').trim();
+      } else if (q && q.concept) {
+        finalContent = q.concept;
+      } else {
+        alert('請先輸入重點筆記內容唷！');
+        if (contentInput) contentInput.focus();
+        return;
+      }
     }
 
-    const finalTitle = title || (q ? q.concept : '手帳重點提煉');
-    const finalContent = content || finalTitle;
+    // 系統全自動提煉精準筆記標題（無需使用者手動想標題）
+    const finalTitle = this._autoGeneratePortalTitle(q, finalContent);
 
-    // Save history record to localStorage
+    // 儲存至本地歷史紀錄
     try {
       let sentHistory = JSON.parse(localStorage.getItem('miley_portal_sent_notes') || '[]');
       sentHistory.unshift({
@@ -2671,7 +2766,7 @@ window.ReviewModule = {
       localStorage.setItem('miley_portal_sent_notes', JSON.stringify(sentHistory.slice(0, 100)));
     } catch(e) {}
 
-    // Determine target URL for 麥麥筆記
+    // 目標網址：線上 GitHub Pages 或本機相對路徑
     const isOnline = window.location.hostname.includes('github.io');
     let targetBase = isOnline 
       ? 'https://b0987498500-ops.github.io/Miley-notes/' 
@@ -2684,6 +2779,7 @@ window.ReviewModule = {
       title: finalTitle,
       content: finalContent,
       concept: q ? q.concept : '',
+      unit: q ? (q.unit || '錯題精華速記') : '錯題精華速記',
       qid: q ? q.id : '',
       source: 'wrong_book',
       t: Date.now()
@@ -2691,23 +2787,23 @@ window.ReviewModule = {
 
     const targetUrl = targetBase + (targetBase.includes('?') ? '&' : '?') + params.toString();
 
-    // Trigger celebration Confetti if available
+    // 慶祝五彩碎紙
     if (typeof confetti === 'function') {
       confetti({
         particleCount: 80,
         spread: 70,
-        origin: { y: 0.6 }
+        origin: { y: 0.55 }
       });
     }
 
-    // Close modal
+    // 關閉 Modal
     document.getElementById('modal-note-portal')?.classList.add('hidden');
 
     this.showToast('🚀 筆記已成功傳送！正在開啟麥麥筆記手帳...');
 
-    // Open target website in new tab
+    // 開啟目標網站
     setTimeout(() => {
       window.open(targetUrl, '_blank');
-    }, 400);
+    }, 380);
   }
 };

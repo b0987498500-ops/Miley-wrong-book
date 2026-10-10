@@ -1193,102 +1193,50 @@
     </div>
   </div>
 
-  <!-- ==================== NOTE PORTAL MODAL (筆記傳送門手帳彈窗) ==================== -->
+  <!-- ==================== NOTE PORTAL MODAL (筆記傳送門手帳彈窗 - 極簡純淨版) ==================== -->
   <div id="modal-note-portal" class="modal-overlay hidden">
     <div class="modal-content glass-panel note-portal-modal-content">
-      <div class="modal-header">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <span class="portal-header-icon"><i class="fa-solid fa-door-open"></i></span>
-          <div>
-            <h3 style="margin: 0; font-size: 1.22rem; color: #fef08a; font-weight: 800; display: flex; align-items: center; gap: 8px;">
-              <span>✨ 麥麥手帳 · 筆記傳送門</span>
-              <span class="badge badge-warning" style="font-size: 0.72rem; padding: 2px 8px;">Note Portal</span>
-            </h3>
-            <p style="margin: 4px 0 0 0; font-size: 0.83rem; color: var(--text-secondary);">
-              將錯題核心精華一鍵打包，無縫傳送收錄至「麥麥筆記」手帳！
-            </p>
+      <!-- 頂部精簡 Header：標題 + 自動判定歸屬提示 + 關閉按鈕 -->
+      <div class="portal-compact-header">
+        <div class="portal-header-left">
+          <span class="portal-header-icon-mini">🚪</span>
+          <div class="portal-header-titles">
+            <h3 class="portal-title-text">麥麥手帳 · 筆記傳送門</h3>
+            <div id="portal-auto-dest-pill" class="portal-auto-dest-pill" title="系統已為妳自動辨析歸納">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span id="portal-auto-dest-text">自動歸入：社會 · 進度手帳 (第 5 冊)</span>
+            </div>
           </div>
         </div>
         <button type="button" class="modal-close-btn" id="btn-close-note-portal" title="關閉"><i class="fa-solid fa-xmark"></i></button>
       </div>
 
-      <div class="modal-body note-portal-modal-body">
-        <!-- Question Meta Card -->
-        <div class="portal-q-meta-card">
-          <div class="portal-q-meta-top">
-            <span id="portal-q-subject-badge" class="badge badge-primary">🌱 自然</span>
-            <span id="portal-q-concept-badge" class="portal-concept-pill">#核心考點</span>
-            <span id="portal-q-exam-badge" class="badge badge-secondary" style="margin-left: auto;">一段</span>
-          </div>
-          <div id="portal-q-stem-preview" class="portal-q-stem-text">
-            正在載入題目內容...
-          </div>
-        </div>
-
-        <!-- Quick Fill Actions -->
-        <div class="portal-quick-actions">
-          <span class="portal-quick-label"><i class="fa-solid fa-wand-magic-sparkles"></i> 智慧帶入：</span>
+      <!-- 主體：快速帶入 Chip + 單一純淨重點輸入框 -->
+      <div class="portal-compact-body">
+        <!-- 智慧快捷 Chip（一鍵帶入，無任何多餘贅字） -->
+        <div class="portal-quick-chips-row">
           <button type="button" id="btn-portal-fill-mistake" class="portal-chip-btn" title="一鍵帶入本題易錯盲點筆記">
-            <i class="fa-solid fa-highlighter" style="color: #f59e0b;"></i> 帶入易錯盲點
+            <i class="fa-solid fa-highlighter" style="color: #f59e0b;"></i> 帶入盲點筆記
           </button>
           <button type="button" id="btn-portal-fill-concept" class="portal-chip-btn" title="一鍵帶入核心考點">
             <i class="fa-solid fa-bullseye" style="color: #38bdf8;"></i> 帶入核心考點
           </button>
           <button type="button" id="btn-portal-fill-clean" class="portal-chip-btn" title="清空重新輸入">
-            <i class="fa-solid fa-eraser"></i> 清空重寫
+            <i class="fa-solid fa-eraser"></i> 清空
           </button>
         </div>
 
-        <!-- Note Title Input -->
-        <div class="form-group" style="margin-bottom: 12px;">
-          <label for="portal-note-title" class="portal-field-label">
-            <span>📝 筆記標題（一句話大意）：</span>
-            <span style="font-weight: 400; color: var(--text-muted); font-size: 0.78rem;">（例如：石灰岩是沉積岩 / 花崗岩在地下深處緩慢冷卻）</span>
-          </label>
-          <input type="text" id="portal-note-title" class="form-control portal-input" placeholder="例如：石灰岩是沉積岩" maxlength="60">
-        </div>
-
-        <!-- Note Content Textarea -->
-        <div class="form-group" style="margin-bottom: 14px;">
-          <label for="portal-note-content" class="portal-field-label">
-            <span>✍️ 筆記詳細重點（將記入麥麥筆記手帳中）：</span>
-          </label>
-          <textarea id="portal-note-content" class="form-control portal-textarea" rows="4" placeholder="寫下妳想記錄的重點～&#10;例如：&#10;石灰岩是沉積岩，受高溫高壓變質為大理岩（太魯閣盛產，遇稀鹽酸冒泡）。&#10;花崗岩是深成火成岩，在地底深處緩慢冷卻，結晶粗大可見！"></textarea>
-        </div>
-
-        <!-- Target Settings -->
-        <div class="portal-target-settings">
-          <div class="portal-setting-col">
-            <label class="portal-field-label">📚 傳送至哪本筆記本？</label>
-            <div class="portal-radio-group">
-              <label class="portal-radio-label">
-                <input type="radio" name="portal-target-stage" value="review" checked>
-                <span>📗 複習 (1~4冊)</span>
-              </label>
-              <label class="portal-radio-label">
-                <input type="radio" name="portal-target-stage" value="progress">
-                <span>📘 進度 (第5冊起)</span>
-              </label>
-            </div>
-          </div>
-
-          <div class="portal-setting-col">
-            <label class="portal-field-label">🏷️ 歸屬科目：</label>
-            <select id="portal-target-subject" class="form-control portal-select">
-              <option value="science">🌱 自然</option>
-              <option value="social">🌍 社會</option>
-              <option value="math">📐 數學</option>
-              <option value="chinese">📖 國文</option>
-              <option value="english">🔤 英文</option>
-            </select>
-          </div>
+        <!-- 單一核心輸入框：筆記重點（大字、清爽手帳紙質感） -->
+        <div class="portal-textarea-wrapper">
+          <textarea id="portal-note-content" class="portal-clean-textarea" placeholder="在這裡寫下妳想記錄的重點（例如：石灰岩是沉積岩）..."></textarea>
         </div>
       </div>
 
-      <div class="modal-footer note-portal-modal-footer">
-        <button type="button" id="btn-cancel-note-portal" class="btn-secondary">取消</button>
+      <!-- 底部動作列：取消 + 🚀 傳送至麥麥筆記 -->
+      <div class="portal-compact-footer">
+        <button type="button" id="btn-cancel-note-portal" class="btn-portal-cancel">取消</button>
         <button type="button" id="btn-do-send-portal-note" class="btn-portal-send">
-          <i class="fa-solid fa-paper-plane"></i> 🚀 傳送至麥麥筆記手帳
+          <i class="fa-solid fa-paper-plane"></i> 🚀 傳送至麥麥筆記
         </button>
       </div>
     </div>
