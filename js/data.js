@@ -3,10 +3,70 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v221';
+const STORAGE_KEY = 'miley_wrong_questions_v222';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_mediterranean_climate_scatter_plot_149",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐洲氣候類型判讀：溫帶地中海型氣候特徵（夏乾冬雨、最冷月大於 0°C）與散布圖判讀（義大利南部）",
+    "uploadDate": "2026-10-10",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：歐洲氣候散布圖【夏乾冬雨 vs 各地氣候比對】秒殺金律！\n1. **看圖判讀季節溫雨特徵（歐洲位於北半球）**：\n   - ☀️ **夏季（6、7月）**：氣溫高達 23°C～26°C，但月降水量僅 10～15 mm（**高溫炎熱且極度乾燥**）。\n   - 🌧️ **冬季（11、1月）**：氣溫約 10°C～14°C（**溫和不結冰**），月降水量高達 55～90 mm（**降雨主要集中在冬季**）。\n   - 核心氣候特徵：標準的【**夏乾冬雨 ＝ 溫帶地中海型氣候**】！\n2. **歐洲各地氣候配對辨析**：\n   - **義大利南部 (D)**：地處南歐地中海沿岸，屬典型溫帶地中海型氣候，完美吻合！\n   - **挪威北部 (A)**：寒帶/副極地氣候，冬季酷寒冰凍（遠低於 0°C），不可能達 10°C。\n   - **捷克東部 (B)**：溫帶大陸性氣候，為「夏雨冬乾」，與圖中冬雨夏乾截然相反。\n   - **瑞士東南部 (C)**：阿爾卑斯山高地氣候，冬季氣溫酷寒常年積雪結冰。\n3. **秒殺總結**：看到「6、7月雨最少，11、1月雨最多」，直覺鎖定地中海沿岸（義大利南部）！",
+    "stem": "附圖是歐洲某測站長時間統計的平均月均溫及月降水量資料，依據圖中資訊判斷，該測站最可能設在下列何處？\n\n○ (A) 挪威北部\n○ (B) 捷克東部\n○ (C) 瑞士東南部\n○ (D) 義大利南部",
+    "answer": "(D) 義大利南部",
+    "diagramUrl": "assets/questions/q_soc_geo_mediterranean_climate_scatter_plot_149.png",
+    "solution": "1. **第一步：精確判讀坐標散布圖之氣溫與降水特徵**：\n   - 歐洲位於北半球，6、7 月為夏季，11、1 月為冬季。\n   - 觀察坐標點之數值分布：\n     - **夏季（6月、7月）**：氣溫約 23°C～26°C（炎熱），但月降水量僅約 10～15 mm（極端乾旱）。\n     - **冬季（11月、1月）**：氣溫約 10°C～14°C（溫和舒適，最冷月遠高於 0°C），月降水量高達 55～90 mm（降水豐沛）。\n   - 具有顯著的【夏季炎熱乾燥、冬季溫和多雨（夏乾冬雨）】特徵，可確定該測站屬於**溫帶地中海型氣候**。\n\n2. **第二步：逐一檢視各選項之氣候類型**：\n   - **(A) 挪威北部（錯誤）**：位於高緯度近北極圈，屬於寒帶/副極地氣候，終年低溫少雨，冬季氣溫遠低於 0°C。\n   - **(B) 捷克東部（錯誤）**：位於中歐內陸，屬於溫帶大陸性氣候，特徵為「夏雨冬乾（夏季對流降雨多、冬季寒冷少雨）」，與圖中特徵相反。\n   - **(C) 瑞士東南部（錯誤）**：位於阿爾卑斯山區，屬於高地氣候，隨高度上升氣溫驟降，冬季寒冷多雪。\n   - **(D) 義大利南部（本題正解）**：位於南歐地中海核心區，夏季受副熱帶高壓籠罩炎熱乾燥，冬季受西風帶南移影響溫和多雨，為標準溫帶地中海型氣候！\n\n故本題正確答案為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-10",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  }," 
+  {
+    "id": "q_soc_geo_europe_climate_zones_jungfrau_150",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐洲五天氣候類型空間分布圖判讀：瑞士阿爾卑斯山脈（戊：高地氣候）與少女峰冰河登山鐵路",
+    "uploadDate": "2026-10-10",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：歐洲氣候分區地圖【五大代號空間對照】秒殺表！\n1. **地圖各代號氣候分區定位**：\n   - 🌬️ **甲 ＝ 溫帶海洋性氣候**：西歐沿海（英國、法國、德國西部），受盛行西風與北大西洋暖流影響，全年有雨、冬溫夏涼。\n   - 🌾 **乙 ＝ 溫帶大陸性氣候**：東歐平原與俄羅斯，深居內陸，夏雨冬乾、年溫差大。\n   - ❄️ **丙 ＝ 寒帶/副極地氣候**：北歐斯堪地那維亞半島北部與俄羅斯北極海沿岸，緯度高、酷寒長冬。\n   - 🍊 **丁 ＝ 溫帶地中海型氣候**：南歐三大半島（伊比利、義大利、巴爾幹）沿岸，夏乾冬雨。\n   - 🏔️ **戊 ＝ 高地氣候（阿爾卑斯山脈）**：中南歐橫亙之高山，氣候隨高度垂直遞減，終年積雪、冰河發育。\n2. **破題關鍵線索**：\n   - 題幹明確指出「**瑞士**」、「**少女峰登山鐵路**」、「**冰河底下穿越岩壁**」。\n   - 瑞士國土約 60% 坐落於阿爾卑斯山脈，少女峰更是阿爾卑斯山著名高峰（標高 4,158 公尺），毫無疑問屬於 **(戊) 高地氣候區**！",
+    "stem": "歐洲介於 35°N～70°N 之間，氣候大致南熱北冷、西溼東乾，附圖為歐洲氣候類型分布圖，請問：\n瑞士的少女峰登山鐵道於 1986 年動工，由於有 3/4 的路段是從冰河底下建隧道穿越岩壁，因此工程十分艱鉅，費時 16 年才正式通車。上述的鐵道最可能分布於圖中哪一氣候區？\n\n○ (A) 甲\n○ (B) 丙\n○ (C) 丁\n○ (D) 戊",
+    "answer": "(D) 戊",
+    "diagramUrl": "assets/questions/q_soc_geo_europe_climate_zones_jungfrau_150.png",
+    "solution": "1. **第一步：看圖辨析歐洲五天氣候類型的空間分布**：\n   - **【甲】溫帶海洋性氣候**：分布於西歐大西洋沿岸（如英國、法國大部、荷蘭、挪威西南沿海），受北大西洋暖流與盛行西風吹拂，冬溫夏涼、終年濕潤。\n   - **【乙】溫帶大陸性氣候**：分布於東歐平原與東歐各國，深居內陸水氣少，年溫差大，夏雨冬乾。\n   - **【丙】副極地/寒帶氣候**：分布於北歐北部與俄羅斯北部，緯度高於 60°N，氣候嚴寒少雨。\n   - **【丁】溫帶地中海型氣候**：分布於南歐地中海沿岸地區（西班牙南部、義大利、希臘等），夏乾冬雨。\n   - **【戊】高地氣候（本題正解，選 D）**：分布於中南歐的**阿爾卑斯山脈**，地勢高聳，垂直氣候特徵顯著，高海拔區終年積雪、冰河發育。\n\n2. **第二步：結合瑞士與少女峰的地理背景破題**：\n   - 瑞士為內陸多山國家，國土超過 60% 位於歐洲阿爾卑斯山脈之中。\n   - 少女峰（Jungfrau）為阿爾卑斯山脈著名的冰河雪峰（海拔逾 4,000 公尺），少女峰鐵道穿越深厚花崗岩壁與冰河，正是為了攀登高聳雪山而建。\n   - 因此少女峰登山鐵道必然分布於阿爾卑斯山所屬的【(戊) 高地氣候區】。\n\n故本題正確答案為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-10",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  }," 
   {
     "id": "q_soc_geo_russia_st_petersburg_map_148",
     "examPeriod": "一段",
@@ -7662,7 +7722,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v220') ||
+      stored = localStorage.getItem('miley_wrong_questions_v221') ||
+               localStorage.getItem('miley_wrong_questions_v220') ||
                localStorage.getItem('miley_wrong_questions_v219') ||
                localStorage.getItem('miley_wrong_questions_v218') ||
                localStorage.getItem('miley_wrong_questions_v217') ||
