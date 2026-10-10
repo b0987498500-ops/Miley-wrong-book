@@ -3,10 +3,70 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v218';
+const STORAGE_KEY = 'miley_wrong_questions_v219';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_eastern_orthodox_church_onion_dome_145",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐洲宗教派別與建築特色：東正教洋蔥式圓頂教堂（莫斯科/東歐）vs 天主教哥德式（巴黎）vs 基督新教簡約風（倫敦/鹿特丹）",
+    "uploadDate": "2026-10-10",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：歐洲三大基督教派別【建築風格 vs 分布城市】秒殺口訣！\n1. **看圖識教派：洋蔥式屋頂 ＝ 東正教（莫斯科 / 東歐）**：\n   - 附圖為簇擁圓潤的「**洋蔥頭圓頂（Onion Dome）**」，是東正教最鮮明的建築圖騰（如莫斯科紅場聖巴希爾大教堂）。\n   - ❄️ **氣候適應智慧**：俄羅斯冬季嚴寒暴雪，陡峭圓滑的洋蔥圓頂可防止積雪過厚壓垮屋頂。\n2. **歐洲三大教派建築特徵速記表**：\n   - 🧅 **東正教**：**洋蔥式圓頂**、色彩繽紛 ⟹ **東歐、俄羅斯（代表城市：莫斯科 (D)）**。\n   - 🏹 **天主教**：**哥德式尖塔**、飛扶壁、彩繪玻璃花窗 ⟹ **南歐、西歐（代表城市：巴黎 (B)、羅馬）**。\n   - 🧱 **基督新教**：**外觀簡樸**、內部無華麗雕像 ⟹ **西北歐、北歐（代表城市：倫敦 (A)、鹿特丹 (C)）**。\n3. **考點秒殺**：看到洋蔥頭建築，直覺鎖定東正教重鎮「莫斯科」！",
+    "stem": "歐洲的宗教信仰以基督教為主，而基督教又分為不同派別，其教堂建築風格也各有不同。附圖為其中一個派別的傳統特色建築，這類風格的教堂在歐洲哪個城市最為常見？\n\n○ (A) 倫敦\n○ (B) 巴黎\n○ (C) 鹿特丹\n○ (D) 莫斯科",
+    "answer": "(D) 莫斯科",
+    "diagramUrl": "assets/questions/q_soc_geo_eastern_orthodox_church_onion_dome_145.png",
+    "solution": "1. **第一步：看圖辨析建築風格與宗教派別**：\n   - 附圖中的建築擁有層疊簇擁、頂部飾有十字架的【洋蔥式圓頂（Onion Dome）】，此為**東正教（Eastern Orthodox）**最著名的代表性建築風格（最具代表性即為俄羅斯莫斯科紅場上的聖巴希爾大教堂）。\n   - 洋蔥式屋頂的設計既有宗教象徵（象徵向上燃燒的祈禱燭火），亦具氣候實用功能（俄羅斯冬季嚴寒多暴雪，洋蔥圓頂斜度大可避免沉重積雪堆積屋頂）。\n\n2. **第二步：分析歐洲三大宗教派別的地理分布與代表城市**：\n   - **(A) 倫敦（英國首都）**：主要信仰為**基督新教（英國國教派）**，教堂建築風格相對簡樸，並非東正教洋蔥頂。\n   - **(B) 巴黎（法國首都）**：主要信仰為**天主教**，代表建築為擁有高聳尖塔、飛扶壁與玫瑰花窗的**哥德式建築**（如巴黎聖母院），非東正教風格。\n   - **(C) 鹿特丹（荷蘭重要商港）**：主要信仰為**基督新教（喀爾文派）**，崇尚簡樸實用風格，非東正教洋蔥頂。\n   - **(D) 莫斯科（俄羅斯首都，本題正解）**：俄羅斯自基輔羅斯時代即皈依**東正教**，莫斯科為東正教核心重鎮，境內克里姆林宮與紅場遍布洋蔥頭圓頂教堂，最為常見！\n\n故本題正確答案為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-10",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  }," 
+  {
+    "id": "q_soc_geo_russia_trans_siberian_railway_taiga_146",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "俄羅斯自然環境與西伯利亞大鐵路：亞寒帶針葉林氣候（泰加林 Taiga）與鐵路走線緯度考點",
+    "uploadDate": "2026-10-10",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：西伯利亞鐵路三大高頻考點與植被空間配對！\n1. **西伯利亞鐵路沿線主力景觀 ＝ 一望無際的針葉林（泰加林 Taiga）**：\n   - 鐵路橫貫俄羅斯南部的溫帶大陸性/亞寒帶針葉林氣候帶，窗外最普遍的景致即是針葉林海。\n2. **⚠️ 致命陷阱一：西伯利亞鐵路「未通過北極圈」**：\n   - 北部永久凍土深厚、氣候極端酷寒，因此鐵路刻意避開，修建在氣候相對溫和、人口與資源較集中的「西伯利亞南部」。\n   - 全線位於北極圈（66.5°N）以南，窗外**不可能**看見北極圈內的苔原（選項 A 錯誤）。\n3. **⚠️ 致命陷阱二：氣候植被空間配對**：\n   - 🌴 **棗椰樹**：耐乾熱，是熱帶與副熱帶乾燥氣候（西亞阿拉伯、北非綠洲）特產，寒冷俄羅斯絕不可能有！\n   - 🏛️ **地中海白色建築**：分布於南歐夏乾冬雨的地中海沿岸（反射夏日豔陽），俄羅斯未瀕臨地中海！",
+    "stem": "俄羅斯的發展深受氣候條件的限制，隨著西伯利亞鐵路通車後，豐富多樣的環境特徵才一一揭露在世人的眼前，若乘客搭乘西伯利亞鐵路旅行，最有可能在窗外看見下列何種景致？\n\n○ (A) 北極圈內的苔原\n○ (B) 一望無際的針葉林\n○ (C) 布滿平原的棗椰樹\n○ (D) 地中海沿岸的白色建築",
+    "answer": "(B) 一望無際的針葉林",
+    "diagramUrl": "",
+    "solution": "1. **第一步：分析西伯利亞鐵路的地理位置與走向**：\n   - 西伯利亞大鐵路西起首都莫斯科，東至太平洋沿岸海參崴，全長 9,288 公里，是世界最長的鐵路幹線。\n   - 由於西伯利亞北部氣候酷寒且有極深厚的永久凍土，工程難度極高且人口稀少，因此鐵路主要修築於俄羅斯【南部邊陲地帶】。\n   - 西伯利亞鐵路全線皆在北極圈（66.5°N）以南，**並未穿越北極圈**。\n\n2. **第二步：逐一檢視各選項景觀與鐵路沿線之吻合度**：\n   - **(A) 北極圈內的苔原（錯誤）**：苔原（苔蘚、地衣）分布於北極海沿岸極地氣候區，西伯利亞鐵路位於南部，未經北極圈境內，乘客無法看見。\n   - **(B) 一望無際的針葉林（本題正解）**：俄羅斯擁有全球最廣大的【亞寒帶針葉林（泰加林 Taiga）】，主要分布於西伯利亞中南部，鐵路沿線終日穿行於浩瀚的落葉松、雲杉與冷杉林海之中，是最典型的車窗景觀！\n   - **(C) 布滿平原的棗椰樹（錯誤）**：棗椰樹喜高溫耐乾旱，為熱帶乾燥氣候區（如西亞波斯灣、北非撒哈拉綠洲）的代表經濟作物，高緯寒冷的俄羅斯絕無棗椰樹。\n   - **(D) 地中海沿岸的白色建築（錯誤）**：白色厚牆建築是地中海型氣候區（如希臘、南義大利）為反射夏季炎熱烈陽而建，俄羅斯並未瀕臨地中海。\n\n故本題正確答案為 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-10",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  }," 
   {
     "id": "q_soc_geo_europe_glacial_vs_ria_coast_144",
     "examPeriod": "一段",
@@ -7542,7 +7602,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v217') ||
+      stored = localStorage.getItem('miley_wrong_questions_v218') ||
+               localStorage.getItem('miley_wrong_questions_v217') ||
                localStorage.getItem('miley_wrong_questions_v216') ||
                localStorage.getItem('miley_wrong_questions_v215') ||
                localStorage.getItem('miley_wrong_questions_v214') ||
