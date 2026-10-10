@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v216';
+const STORAGE_KEY = 'miley_wrong_questions_v217';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_math_parallel_area_ratio_adef_abc_143",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "平行線截線段性質與相似三角形面積比：平行四邊形面積分割與相似三角形面積平方比求解",
+    "uploadDate": "2026-10-10",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：幾何面積比【相似平方比 vs 同高底邊比】秒殺對比！\n1. **相似三角形面積比 ＝ 邊長「平方比」（切記平方！）**：\n   - 看到 BE : CE ＝ 3 : 5，若求 △BDE 與 △ABC 的面積比，邊長比是 3 : (3＋5) ＝ 3 : 8。\n   - ⚠️ **常犯盲點**：千萬不要直接把邊長比 3 : 8 當成面積比（誤選 B）！面積比必須是 (3/8)² ＝ 9/64！\n2. **免連輔助線的【扣除法】最快最不易出錯**：\n   - △BDE 面積佔全體 △ABC 的 (3/8)² ＝ 9/64。\n   - △CEF 面積佔全體 △ABC 的 (5/8)² ＝ 25/64。\n   - 平行四邊形 ADEF ＝ 1 － 9/64 － 25/64 ＝ 30/64 ＝ 15/32！\n   - 一行算式直接秒殺 (D)！\n3. **輔助線法注意：平行四邊形有「兩塊」全等三角形**：\n   - 若連線段 AE，四邊形 ADEF 是由 △ADE 與 △AEF 兩塊組成（15r ＋ 15r ＝ 30r），切莫漏乘 2！",
+    "stem": "如右圖，在 △ABC 中，D、E、F 分別為 線段 AB、線段 BC、線段 AC 邊上的點。若 線段 DE // 線段 AC，線段 EF // 線段 AB，且 線段 BE : 線段 CE ＝ 3 : 5，則四邊形 ADEF 和 △ABC 的面積比為何？\n\n○ (A) 3 : 5\n○ (B) 5 : 8\n○ (C) 11 : 25\n○ (D) 15 : 32",
+    "answer": "(D) 15 : 32",
+    "diagramUrl": "assets/questions/q_math_parallel_area_ratio_adef_abc_143.png",
+    "solution": "本題提供兩種最清晰的破題思路，強烈推薦【解法一（相似形平方比扣除法）】，快速直覺且零計算陷阱！\n\n### 💡 解法一：相似三角形面積平方比扣除法（推薦！最快最直覺）\n1. **第一步：由平行線判定小三角形與大三角形相似**：\n   - 已知線段 DE // 線段 AC，由同位角相等可得：\n     △BDE ∼ △BAC（AA 相似）。\n   - 對應邊長比為：\n     線段 BE : 線段 BC ＝ 3 : (3 ＋ 5) ＝ 3 : 8。\n   - 根據【相似三角形面積比等於對應邊長平方比】：\n     △BDE 面積 : △ABC 面積 ＝ 3² : 8² ＝ 9 : 64。\n     即 △BDE 面積 ＝ 9/64 × △ABC 面積。\n\n2. **第二步：同理求右下角 △CEF 的面積佔比**：\n   - 已知線段 EF // 線段 AB，由同位角相等可得：\n     △CEF ∼ △CBA（AA 相似）。\n   - 對應邊長比為：\n     線段 CE : 線段 BC ＝ 5 : (3 ＋ 5) ＝ 5 : 8。\n   - 根據相似三角形面積平方比：\n     △CEF 面積 : △ABC 面積 ＝ 5² : 8² ＝ 25 : 64。\n     即 △CEF 面積 ＝ 25/64 × △ABC 面積。\n\n3. **第三步：利用全部扣除兩角求中間四邊形 ADEF**：\n   - 大三角形 △ABC 被分割為三個互不重疊的區域：\n     左下 △BDE、右下 △CEF、中間上方四邊形 ADEF。\n   - 因此：\n     四邊形 ADEF 面積 ＝ △ABC 面積 － △BDE 面積 － △CEF 面積\n     ＝ [1 － (9/64) － (25/64)] × △ABC 面積\n     ＝ [1 － 34/64] × △ABC 面積\n     ＝ 30/64 × △ABC 面積 ＝ 15/32 × △ABC 面積。\n   - 所求面積比：\n     四邊形 ADEF 面積 : △ABC 面積 ＝ 30 : 64 ＝ 15 : 32。\n\n---\n\n### 💡 解法二：連接對角線 AE 輔助線法（原題解析法）\n1. **判定平行四邊形**：\n   - 因為線段 DE // 線段 AC，且線段 EF // 線段 AB，兩組對邊分別平行，所以四邊形 ADEF 為**平行四邊形**。\n   - 連接對角線線段 AE，對角線將平行四邊形平分為兩個等面積三角形：\n     △ADE 面積 ＝ △AEF 面積。\n   - 故四邊形 ADEF 面積 ＝ △ADE 面積 ＋ △AEF 面積 ＝ 2 × △ADE 面積。\n\n2. **利用平行線截比例線段與等高三角形面積比**：\n   - 在 △ABC 中，線段 DE // 線段 AC：\n     線段 BD : 線段 AD ＝ 線段 BE : 線段 CE ＝ 3 : 5。\n   - △BDE 與 △ADE 具備相同高（頂點為 E）：\n     △BDE 面積 : △ADE 面積 ＝ 線段 BD : 線段 AD ＝ 3 : 5。\n   - 在 △ABC 中，線段 EF // 線段 AB：\n     線段 AF : 線段 CF ＝ 線段 BE : 線段 CE ＝ 3 : 5。\n   - △AEF 與 △CEF 具備相同高（頂點為 E）：\n     △AEF 面積 : △CEF 面積 ＝ 線段 AF : 線段 CF ＝ 3 : 5。\n\n3. **連比代數法（設比例常數 r）**：\n   - 由於 △ADE 面積 ＝ △AEF 面積，且它們分別與 △BDE、△CEF 成 5 : 3 比例關係：\n     設 △ADE 面積 ＝ △AEF 面積 ＝ 15r（取 3 與 5 的最小公倍數）。\n   - 則 △BDE 面積 ＝ 15r × (3/5) ＝ 9r。\n   - 則 △CEF 面積 ＝ 15r × (5/3) ＝ 25r。\n   - 四邊形 ADEF 面積 ＝ 15r ＋ 15r ＝ 30r。\n   - 整個大三角形 △ABC 面積 ＝ 9r ＋ 15r ＋ 15r ＋ 25r ＝ 64r。\n   - 所求比值 ＝ 30r : 64r ＝ 15 : 32。\n\n故本題正確答案為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-10",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_math_similar_triangle_parallel_ef_bc_141",
     "examPeriod": "一段",
@@ -7482,7 +7512,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v215') ||
+      stored = localStorage.getItem('miley_wrong_questions_v216') ||
+               localStorage.getItem('miley_wrong_questions_v215') ||
                localStorage.getItem('miley_wrong_questions_v214') ||
                localStorage.getItem('miley_wrong_questions_v213') ||
                localStorage.getItem('miley_wrong_questions_v212') ||

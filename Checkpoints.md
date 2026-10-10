@@ -4,6 +4,23 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v2.09] - 2026-10-10 (自動收錄 1 道國三數學相似形與平行線截線段綜合錯題：平行四邊形分割面積與相似三角形面積平方比扣除法，升級數據庫至 v217，快取升級 v1.85)
+- **類型**：錯題自動收錄 / 數學相似形 / 平行線截線段性質 / 平行四邊形性質 / 相似三角形面積「平方比」vs 等高三角形「底邊比」/ 輔助線與扣除法雙解 / 高畫質幾何去痕與純白底淨化處理 / 數據庫升級 v217 / 快取升級 v1.85
+- **主要變更**：
+  1. **收錄 1 道國三數學幾何重點錯題**：
+     - `q_math_parallel_area_ratio_adef_abc_143`（數學）：考查平行線截比例線段與相似形面積平方比。已知 $\overline{DE} // \overline{AC}$、$\overline{EF} // \overline{AB}$，且 $\overline{BE} : \overline{CE} = 3 : 5$。提供雙解剖析：
+       - **解法一（相似形平方比扣除法，推薦最快）**：由平行線得 $\triangle BDE \sim \triangle BAC$（邊長比 $3 : 8$，面積佔比 $9/64$）、$\triangle CEF \sim \triangle CBA$（邊長比 $5 : 8$，面積佔比 $25/64$）；中間平行四邊形 $ADEF$ 面積 $= 1 - 9/64 - 25/64 = 30/64 = 15/32$。秒殺得出面積比 $15 : 32$。
+       - **解法二（連接對角線 AE 輔助線法）**：連接 $\overline{AE}$，四邊形 $ADEF$ 為平行四邊形被平分為兩塊等積三角形 $\triangle ADE = \triangle AEF$；由等高三角形底邊比推導 $\triangle BDE : \triangle ADE : \triangle CEF = 9 : 15 : 25$，設比常數 $r$ 得四邊形 $ADEF$ 面積 $= 30r$、$\triangle ABC$ 面積 $= 64r$，比值為 $15 : 32$，正解 **(D)**。
+  2. **高畫質幾何圖表去痕與輔助線清理**：
+     - 截取題幹幾何圖形，嚴格遵循《圖表去痕與輔助線清理》最高準則，利用色彩頻譜分析徹底去除原解答附加之粉紅色虛線輔助線 $\overline{AE}$（避免劇透破題思路）。
+     - 底圖執行純白底 `#FFFFFF` 淨化，並以 2x Lanczos 高畫質抗鋸齒平滑放大儲存至 `assets/questions/q_math_parallel_area_ratio_adef_abc_143.png`，完美支援 Retina 螢幕與點擊燈箱放大。
+  3. **純淨繁體中文排版**：
+     - 所有題幹、選項、易錯警示筆記與完整剖析全數落實零奇怪符號之純淨繁體中文排版。
+  4. **數據庫與快取升級**：
+     - 升級 `STORAGE_KEY` 至 `v217`（保留 v216 前版相容 fallback 鏈），`sw.js` 快取版本更新至 `v1.85`，`index.html` 資源 query param 更新至 `v=217`。
+
+---
+
 ## [v2.08] - 2026-10-10 (優化【🚪 筆記傳送門】背景靜默同步機制：傳送後零跳轉、零新分頁，專注刷題完全不中斷，快取升級 v1.84)
 - **類型**：UX 體驗極致優化 / 背景靜默同步 (Silent Background Sync) / 零跳轉 / 零新開分頁 / 保持連續刷題專注力 / 快取升級 v1.84
 - **主要變更**：
