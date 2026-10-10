@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v222';
+const STORAGE_KEY = 'miley_wrong_questions_v223';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -36,7 +36,7 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  }," 
+  },
   {
     "id": "q_soc_geo_europe_climate_zones_jungfrau_150",
     "examPeriod": "一段",
@@ -66,7 +66,7 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  }," 
+  },
   {
     "id": "q_soc_geo_russia_st_petersburg_map_148",
     "examPeriod": "一段",
@@ -96,7 +96,7 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  }," 
+  },
   {
     "id": "q_soc_geo_russia_export_pie_chart_oil_gas_147",
     "examPeriod": "一段",
@@ -126,7 +126,7 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  }," 
+  },
   {
     "id": "q_soc_geo_eastern_orthodox_church_onion_dome_145",
     "examPeriod": "一段",
@@ -156,7 +156,7 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  }," 
+  },
   {
     "id": "q_soc_geo_russia_trans_siberian_railway_taiga_146",
     "examPeriod": "一段",
@@ -186,7 +186,7 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  }," 
+  },
   {
     "id": "q_soc_geo_europe_glacial_vs_ria_coast_144",
     "examPeriod": "一段",
@@ -216,7 +216,7 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  }," 
+  },
   {
     "id": "q_math_parallel_area_ratio_adef_abc_143",
     "examPeriod": "一段",
@@ -276,7 +276,7 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  },"
+  },
   {
     "id": "q_math_similar_triangle_unit_grid_sss_142",
     "examPeriod": "一段",
@@ -306,7 +306,7 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  },"
+  },
   {
     "id": "q_sci_geology_rocks_granite_marble_slate_sedimentary_140",
     "examPeriod": "一段",
@@ -7722,7 +7722,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v221') ||
+      stored = localStorage.getItem('miley_wrong_questions_v222') ||
+               localStorage.getItem('miley_wrong_questions_v221') ||
                localStorage.getItem('miley_wrong_questions_v220') ||
                localStorage.getItem('miley_wrong_questions_v219') ||
                localStorage.getItem('miley_wrong_questions_v218') ||
