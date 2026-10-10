@@ -3,10 +3,70 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v215';
+const STORAGE_KEY = 'miley_wrong_questions_v216';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_math_similar_triangle_parallel_ef_bc_141",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "平行線截比例線段與雙重相似形：沙漏型相似（△ABE∼△CDE）與金字塔型相似（△DEF∼△DBC）連鎖求解",
+    "uploadDate": "2026-10-10",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：幾何求線段長的【雙重相似形連鎖比例】破題口訣！\n1. **第一重：沙漏形相似（找上下邊長比）**：\n   - 線段 AB // 線段 CD ⟹ 內錯角相等，故 △ABE ∼ △CDE（AA 相似）。\n   - 對應邊成比例：BE : DE = AB : CD = 3 : 5。\n2. **第二重：金字塔形相似（找側邊與底邊比）**：\n   - 線段 EF // 線段 BC ⟹ 同位角相等，故 △DEF ∼ △DBC（AA 相似）。\n   - ⚠️ **致命盲點（切勿搞錯分子分母與頂點出發方向）**：\n     - 金字塔由頂點 D 出發，對應比例是 **DE : BD**，而非 BE : BD，更不是 BE : DE！\n     - 整條線段 BD = BE ＋ DE = 3 ＋ 5 = 8，故 DE : BD = 5 : 8！\n3. **列式秒殺**：\n   - EF : BC = DE : BD ⟹ EF : 6 = 5 : 8 ⟹ EF = (6 × 5) ÷ 8 = 30/8 = 15/4！",
+    "stem": "如右圖，在 △ABC 和 △DCB 中，線段 AB // 線段 CD，E、F 兩點分別在 線段 BD、線段 CD 上，且 線段 EF // 線段 BC。若 線段 AB = 3，線段 BC = 6，線段 CD = 5，則 線段 EF 的長度為何？\n\n○ (A) 15/4\n○ (B) 9/2\n○ (C) 4\n○ (D) 5",
+    "answer": "(A) 15/4",
+    "diagramUrl": "assets/questions/q_math_similar_triangle_parallel_ef_bc_141.png",
+    "solution": "1. **第一步：利用平行線內錯角相等，判定第一組相似三角形（△ABE ∼ △CDE）**：\n   - 已知線段 AB // 線段 CD，AC 與 BD 為相交於 E 點的兩條截線。\n   - 兩平行線之內錯角相等：\n     - ∠ABE ＝ ∠CDE\n     - ∠BAE ＝ ∠DCE\n   - 由 **AA 相似性質**，可得：\n     **△ABE ∼ △CDE**。\n   - 根據對應邊成比例定理：\n     線段 BE : 線段 DE ＝ 線段 AB : 線段 CD ＝ 3 : 5。\n   - 因此，線段 BD 全長等於線段 BE ＋ 線段 DE：\n     線段 DE : 線段 BD ＝ 5 : (3 ＋ 5) ＝ 5 : 8。\n\n2. **第二步：利用平行線同位角相等，判定第二組相似三角形（△DEF ∼ △DBC）**：\n   - 已知線段 EF // 線段 BC，截 △DBC 的兩邊 BD 與 CD 於 E、F 兩點。\n   - 兩平行線之同位角相等：\n     - ∠DEF ＝ ∠DBC\n     - ∠DFE ＝ ∠DCB\n   - 由 **AA 相似性質**（或平行線截比例線段性質），可得：\n     **△DEF ∼ △DBC**。\n   - 根據對應邊成比例定理（從共用頂點 D 出發）：\n     線段 EF : 線段 BC ＝ 線段 DE : 線段 BD。\n\n3. **第三步：代入已知數據求解線段 EF**：\n   - 已知線段 BC ＝ 6，且 DE : BD ＝ 5 : 8：\n     線段 EF : 6 ＝ 5 : 8\n     8 × 線段 EF ＝ 6 × 5 ＝ 30\n     線段 EF ＝ 30 ÷ 8 ＝ 15/4。\n\n故本題正確答案為 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-10",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },"
+  {
+    "id": "q_math_similar_triangle_unit_grid_sss_142",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "網格中的相似形判別：利用畢氏定理求三邊長比例（SSS 相似性質）",
+    "uploadDate": "2026-10-10",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：幾何網格題的【SSS 相似三邊比值】秒殺金律！\n1. **絕不可憑肉眼視覺猜測**：\n   - 網格中的三角形方向旋轉、大小縮放，肉眼容易產生視覺錯覺（誤選 C 或 D）。\n2. **畢氏定理求出原圖三邊長並「由短到長」排隊**：\n   - 設小正方形邊長為 1：\n     - 最短邊 AB ＝ √(1² ＋ 1²) ＝ √2\n     - 次長邊 BC ＝ 3 － 1 ＝ 2\n     - 最長邊 AC ＝ √(3² ＋ 1²) ＝ √10\n   - 三邊長比例化簡：√2 : 2 : √10 ＝ **1 : √2 : √5**（全體同除以 √2）。\n3. **快速檢驗選項（只要三邊比為 1 : √2 : √5 必相似）**：\n   - 選項 (B) 的三邊長：底邊為 1，兩斜邊分別為 √(1² ＋ 1²) ＝ √2，以及 √(2² ＋ 1²) ＝ √5！\n   - 三邊長由短至長恰為 **1 : √2 : √5**，完全符合 SSS 相似性質，秒殺 (B)！",
+    "stem": "如右圖，三個小正方形的邊長均為 1，則下列圖形中，何者和 △ABC 相似？\n\n○ (A) 圖形 (A)\n○ (B) 圖形 (B)\n○ (C) 圖形 (C)\n○ (D) 圖形 (D)",
+    "answer": "(B) 圖形 (B)",
+    "diagramUrl": "assets/questions/q_math_similar_triangle_unit_grid_sss_142.png",
+    "solution": "1. **第一步：建立網格坐標，利用畢氏定理計算已知 △ABC 的三邊長**：\n   - 設三個並排的單位正方形左下角為原點 (0, 0)，小正方形邊長均為 1：\n     - 頂點 A 坐標為 (0, 1)\n     - 頂點 B 坐標為 (1, 0)\n     - 頂點 C 坐標為 (3, 0)\n   - 由兩點距離公式（畢氏定理）計算各邊長度：\n     - 線段 AB ＝ √[(1 － 0)² ＋ (0 － 1)²] ＝ √(1 ＋ 1) ＝ √2\n     - 線段 BC ＝ 3 － 1 ＝ 2\n     - 線段 AC ＝ √[(3 － 0)² ＋ (0 － 1)²] ＝ √(9 ＋ 1) ＝ √10\n   - 將 △ABC 三邊長由短至長排列並求比值：\n     AB : BC : AC ＝ √2 : 2 : √10\n     同除以 √2 化簡為標準邊長比：**1 : √2 : √5**。\n\n2. **第二步：逐一計算各選項網格中三角形的三邊長**：\n   - **檢驗選項 (A)**：\n     - 底邊長度 ＝ 1\n     - 第二邊 ＝ √(1² ＋ 2²) ＝ √5\n     - 最長邊 ＝ √(2² ＋ 2²) ＝ √8 ＝ 2√2\n     - 三邊長比為 1 : √5 : 2√2，與目標 1 : √2 : √5 不符。\n   - **檢驗選項 (B)**：\n     - 最短底邊 ＝ 1\n     - 第二邊 ＝ √(1² ＋ 1²) ＝ √2\n     - 最長邊 ＝ √(2² ＋ 1²) ＝ √(4 ＋ 1) ＝ √5\n     - 三邊長由短至長恰為 **1 : √2 : √5**！\n     - 與 △ABC 之三邊長比完全相等（放大倍率為 √2 倍）：\n       AB / 1 ＝ BC / √2 ＝ AC / √5 ＝ √2。\n     - 根據 **SSS 相似性質**，選項 (B) 之圖形必定與 △ABC 相似！\n   - **檢驗選項 (C)**：\n     - 底邊 ＝ 3，兩斜邊分別為 √2 與 √5，三邊比為 √2 : √5 : 3，不符。\n   - **檢驗選項 (D)**：\n     - 底邊 ＝ 2，兩斜邊分別為 √5 與 √(3² ＋ 2²) ＝ √13，不符。\n\n故本題正確答案為 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-10",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },"
   {
     "id": "q_sci_geology_rocks_granite_marble_slate_sedimentary_140",
     "examPeriod": "一段",
@@ -7422,7 +7482,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v214') ||
+      stored = localStorage.getItem('miley_wrong_questions_v215') ||
+               localStorage.getItem('miley_wrong_questions_v214') ||
                localStorage.getItem('miley_wrong_questions_v213') ||
                localStorage.getItem('miley_wrong_questions_v212') ||
                localStorage.getItem('miley_wrong_questions_v211') ||

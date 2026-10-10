@@ -4,6 +4,22 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v2.07] - 2026-10-10 (自動收錄 2 道國三數學相似形重點錯題：平行線截比例線段與雙重相似形求 EF、方格網坐標中 SSS 相似三角形判別，升級數據庫至 v216)
+- **類型**：錯題自動收錄 / 數學相似形 / 平行線截比例線段（沙漏型 △ABE∼△CDE 與金字塔型 △DEF∼△DBC 連鎖）/ 網格坐標系與畢氏定理三邊長比（SSS 相似性質）/ 高畫質 2x Lanczos 圖表純白底淨化處理 / 數據庫升級 v216 / 快取升級 v1.83
+- **主要變更**：
+  1. **收錄 2 道國三數學重點錯題**：
+     - `q_math_similar_triangle_parallel_ef_bc_141`（數學）：考查平行線截比例線段與雙重相似形綜合題。由 AB // CD 內錯角相等導出沙漏型相似 $\triangle ABE \sim \triangle CDE$（AA 相似），求得線段比 $BE : DE = AB : CD = 3 : 5$；再由 EF // BC 導出金字塔型相似 $\triangle DEF \sim \triangle DBC$（AA 相似），以頂點 D 出發列出對應比例 $EF : BC = DE : BD = 5 : (3+5) = 5 : 8$；代入 $BC = 6$ 求得 $EF = 6 \times \frac{5}{8} = \frac{15}{4}$，正解 **(A)**。
+     - `q_math_similar_triangle_unit_grid_sss_142`（數學）：考查網格中的三角形相似判別。建立方格網坐標系，利用畢氏定理求得原圖 $\triangle ABC$ 三邊長分別為 $AB = \sqrt{2}$、$BC = 2$、$AC = \sqrt{10}$，由短至長化簡為邊長比 $1 : \sqrt{2} : \sqrt{5}$；逐一計算選項各網格三角形三邊長，鎖定選項 (B) 三邊長恰為 $1$、$\sqrt{2}$、$\sqrt{5}$，三邊成比例（放大 $\sqrt{2}$ 倍），由 SSS 相似性質確定與 $\triangle ABC$ 相似，正解 **(B)**。
+  2. **高畫質幾何圖表裁切與去痕純白底處理**：
+     - 截取第 141 題幾何線段圖，徹底分離解析解答筆跡，純白底淨化並以 2x Lanczos 高畫質抗鋸齒平滑放大儲存至 `assets/questions/q_math_similar_triangle_parallel_ef_bc_141.png`。
+     - 截取第 142 題已知 $\triangle ABC$ 與 (A)、(B)、(C)、(D) 四組網格選項圖形，組合為高清晰複合對照圖表，儲存至 `assets/questions/q_math_similar_triangle_unit_grid_sss_142.png`，支援點擊放大燈箱檢視。
+  3. **純淨繁體中文排版**：
+     - 所有題幹、選項、易錯警示筆記與完整剖析全數落實零奇怪符號之純淨繁體中文排版。
+  4. **數據庫與快取升級**：
+     - 升級 `STORAGE_KEY` 至 `v216`（保留 v215 前版相容 fallback 鏈），`sw.js` 快取版本更新至 `v1.83`，`index.html` 資源 query param 更新至 `v=216`。
+
+---
+
 ## [v2.06] - 2026-10-10 (全面升級【🚪 筆記傳送門】極簡純淨版：單一重點輸入、智慧全自動辨析科目與冊數、自動提煉考點標題、手機/平板/電腦全端緊湊免滾動排版)
 - **類型**：UI/UX 深度重構 / 筆記傳送門極簡化 / 智慧全自動科目與手帳辨析 / 自動提煉精準標題 / 手機平板電腦全端自適應排版（一屏全覽、零滾動、免縮放）/ 麥麥筆記《機會成本計算與非成本辨析》種子手帳
 - **主要變更**：
