@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v217';
+const STORAGE_KEY = 'miley_wrong_questions_v218';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_europe_glacial_vs_ria_coast_144",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歐洲冰河地形 vs 沉降海岸地形：峽灣（冰河 U 型谷）與谷灣（河流 V 型谷）成因嚴格對比",
+    "uploadDate": "2026-10-10",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：海岸與冰河地形【峽灣 vs 谷灣】一字之差成因大對決！\n1. **「峽灣」與「谷灣」成因千萬別混淆**：\n   - ❄️ **峽灣（Fjord）＝ 冰河侵蝕（U 型谷）＋ 海水淹沒**：\n     - 特徵：兩岸懸崖峭壁非常陡峭、谷底平水極深、狹長延伸。\n     - 代表：挪威沿海、智利南部、紐西蘭南島。\n   - 🌊 **谷灣（Ria）＝ 河流侵蝕（V 型谷）＋ 海水淹沒（沉降海岸）**：\n     - 特徵：丘陵谷地被海水淹沒，海岸曲折呈樹枝狀分岔、坡度較緩。\n     - 代表：義大利半島、西班牙西北部、台灣東北角基隆。\n2. **歐洲冰河遺跡地理分布速記**：\n   - **北歐平原與半島（大陸冰河）**：芬蘭冰蝕湖（千湖國）、挪威峽灣。\n   - **中南歐高山（山岳冰河）**：阿爾卑斯山角峰、U 型谷、冰斗。\n   - **南歐地中海沿岸（未受冰河侵蝕）**：義大利半島海岸為河流侵蝕形成的「谷灣」，與冰河作用毫無關係，秒殺 (C)！",
+    "stem": "歐洲曾經被大範圍的冰河所覆蓋，留下許多冰河遺跡，下列哪個地理景觀的形成與冰河作用的關係最不密切？\n\n○ (A) 芬蘭的冰蝕湖\n○ (B) 挪威的峽灣\n○ (C) 義大利半島的谷灣地形\n○ (D) 阿爾卑斯山的 U 型谷",
+    "answer": "(C) 義大利半島的谷灣地形",
+    "diagramUrl": "",
+    "solution": "1. **逐一剖析各選項之成因與冰河作用的關聯性**：\n   - **(A) 芬蘭的冰蝕湖（密切）**：\n     - 第四紀冰河期時，巨厚的大陸冰河覆蓋北歐，冰河前進與重壓向下刨蝕地表凹陷形成槽狀窪地；\n     - 氣候轉暖冰河消退融化後，融冰水匯聚於窪地中積水成湖，稱為【冰蝕湖】。\n     - 芬蘭境內擁有數萬座冰蝕湖，因而被譽為「千湖國」，為極具代表性之大陸冰河遺跡。\n   - **(B) 挪威的峽灣（密切）**：\n     - 高緯度的挪威沿海山脈，在冰期時遭受強烈冰河向下與向兩側侵蝕，形成兩壁陡峭的巨大【U 型谷】；\n     - 冰期結束後海平面上升，海水倒灌侵入淹沒原先的 U 型冰河谷，形成兩岸崖壁垂直陡峭、谷深狹長的【峽灣】，為典型之冰河侵蝕沈水海岸。\n   - **(C) 義大利半島的谷灣地形（關係最不密切，本題正解）**：\n     - 義大利半島位處南歐地中海沿岸，緯度較低，第四紀冰河期並未被大陸冰河覆蓋；\n     - 沿海地區為丘陵地形，原先由【河流長期下切侵蝕】形成 V 型河谷；\n     - 冰期結束後氣候變暖、海平面顯著上升，海水湧入並淹沒低平的丘陵河流谷地，形成海岸線曲折、呈樹枝狀分岔的【谷灣地形】；\n     - 谷灣地形的主導營力為【河流侵蝕】與【海平面上升（沈水沉降作用）】，與「冰河作用」關係最不密切！\n   - **(D) 阿爾卑斯山的 U 型谷（密切）**：\n     - 中歐的阿爾卑斯山脈海拔極高，在冰期發育出發達的山岳冰河（谷冰河）；\n     - 冰河順山谷流動，刨蝕作用使原本狹窄的 V 型河谷拓寬拓深，塑造成谷底寬平、谷壁高聳陡峭的【U 型谷（槽谷）】，是極為標準的冰蝕地貌。\n\n故本題正確答案為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-10",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  }," 
   {
     "id": "q_math_parallel_area_ratio_adef_abc_143",
     "examPeriod": "一段",
@@ -7512,7 +7542,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v216') ||
+      stored = localStorage.getItem('miley_wrong_questions_v217') ||
+               localStorage.getItem('miley_wrong_questions_v216') ||
                localStorage.getItem('miley_wrong_questions_v215') ||
                localStorage.getItem('miley_wrong_questions_v214') ||
                localStorage.getItem('miley_wrong_questions_v213') ||
