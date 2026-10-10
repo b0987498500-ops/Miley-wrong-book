@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v219';
+const STORAGE_KEY = 'miley_wrong_questions_v220';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_russia_export_pie_chart_oil_gas_147",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "俄羅斯出口商品結構與經濟發展問題：化石能源與原物料高度依賴（易受國際油價波動影響）",
+    "uploadDate": "2026-10-10",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：俄羅斯經濟結構【資源導向 vs 國際油價脆弱性】秒殺金律！\n1. **看圖判讀出口商品結構（能源佔比過半）**：\n   - 石油（43.4%）＋ 天然氣（10.4%）＋ 煤（5.6%）＝ **近 60% 均為化石能源**！\n   - 若加上礦產與原料（生鋁、鐵合金、肥料等），出口高度集中於初級資源。\n2. **⚠️ 經濟發展最大隱患：極易受「國際油價波動」劇烈影響**：\n   - 國家財政與外匯收入過度仰賴能源外銷；一旦國際油價大跌或面臨國際制裁禁運，國家經濟將遭受毀滅性打擊（選 C）。\n3. **常見干擾選項反向辨析**：\n   - 俄羅斯是資源大國：煤鐵鋁礦極其豐富，**不缺重工業原料**（A 錯）。\n   - 俄羅斯是產油氣大國：天然氣產量與出口量名列全球前茅，**絕非仰賴進口**（D 錯）。\n   - 俄羅斯歐洲部分南部黑土帶肥沃廣大，是世界主要小麥出口國（B 錯）。",
+    "stem": "俄羅斯不僅是全球重要的能源出口國，也是 OPEC 以外的主要原油輸出國之一，附圖是 2024 年俄羅斯主要出口商品比例圖，由圖中資料判斷，俄羅斯的經濟發展可能會遇到下列何項問題？\n\n○ (A) 缺乏發展重工業的原料\n○ (B) 糧食作物空間受到壓縮\n○ (C) 易受國際油價波動影響\n○ (D) 天然氣能源多仰賴進口",
+    "answer": "(C) 易受國際油價波動影響",
+    "diagramUrl": "assets/questions/q_soc_geo_russia_export_pie_chart_oil_gas_147.png",
+    "solution": "1. **第一步：判讀 2024 年俄羅斯主要出口商品比例圓餅圖**：\n   - 圖中清晰列出各項出口商品佔比：\n     - **石油**：**43.4%**（單項即佔四成以上）\n     - **天然氣**：**10.4%**\n     - **煤磚**：**5.6%**\n     - 礦物肥料：3.6%、黃金：3.2%、鐵合金半成品：3.2%、生鋁：1.8%、小麥：1.3%\n     - 其他（礦產、原料、農牧）：27.5%\n   - 由數據可知，俄羅斯的出口貿易**高度集中於石油、天然氣與礦產等初級能源與原料**，化石能源合計便佔了近 60%。\n\n2. **第二步：分析出口高度集中於化石能源帶來的經濟弱點**：\n   - 當一國的經濟命脈、財政預算與外匯儲備過度依賴石油與天然氣出口時，其國內經濟極易受到【國際原油價格波動】與國際原物料景氣循環的直接衝擊。\n   - 當國際油價高漲時經濟繁榮；但一旦國際油價暴跌、開採成本上升或遭遇國際禁運制裁時，國家財政收入驟降、貨幣（盧布）貶值，極易引發國內經濟嚴重動盪與衰退。\n\n3. **第三步：逐一檢視其餘選項**：\n   - **(A) 缺乏發展重工業的原料（錯誤）**：俄羅斯鐵礦（庫斯克）、煤礦（庫斯巴次）、石油與天然氣等礦產儲量皆名列世界前茅，重工業原料極為充足。\n   - **(B) 糧食作物空間受到壓縮（錯誤）**：俄羅斯西南部伏爾加河流域與頓河流域分布廣大的肥沃黑土帶，為世界主要小麥出口大國之一，糧食空間未受壓縮。\n   - **(D) 天然氣能源多仰賴進口（嚴重錯誤）**：俄羅斯為全球天然氣出口霸主，圖中天然氣佔出口 10.4%，是向外國輸出而非仰賴進口。\n\n故本題正確答案為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-10",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  }," 
   {
     "id": "q_soc_geo_eastern_orthodox_church_onion_dome_145",
     "examPeriod": "一段",
@@ -7602,7 +7632,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v218') ||
+      stored = localStorage.getItem('miley_wrong_questions_v219') ||
+               localStorage.getItem('miley_wrong_questions_v218') ||
                localStorage.getItem('miley_wrong_questions_v217') ||
                localStorage.getItem('miley_wrong_questions_v216') ||
                localStorage.getItem('miley_wrong_questions_v215') ||
