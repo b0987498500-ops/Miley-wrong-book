@@ -4,6 +4,22 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v2.18] - 2026-10-11 (自動收錄 1 道國三數學幾何平行四邊形相似形經典題：延長線輔助線構造雙重沙漏相似求 CG:FG 線段比 Q152，升級數據庫至 v225，快取升級 v1.93)
+- **類型**：錯題自動收錄 / 國三數學 / 相似形與比例線段 / 平行四邊形外延射線輔助線（BE 與 AD 延長線交於 P）/ 雙重沙漏型相似（△PDE∼△BCE 與 △PGF∼△BGC）/ 前後項對應辨析 / 2x Lanczos 圖表純白底淨化 / 數據庫升級 v225 / 快取升級 v1.93
+- **主要變更**：
+  1. **收錄 1 道國三數學幾何比例重點題**：
+     - `q_math_parallelogram_segments_ratio_cg_fg_152`（數學）：考查在平行四邊形 $ABCD$ 中，$\overline{CE} = 2\overline{DE}$ 且 $\overline{DF} = 2\overline{AF}$，求截線交點 $G$ 所分線段比 $\overline{CG} : \overline{FG}$。
+       - 破題輔助線：延長 $\overline{BE}$ 與 $\overline{AD}$ 延長線交於點 $P$。
+       - 第一組沙漏相似：$\triangle PDE \sim \triangle BCE \implies \overline{DP} = \frac{1}{2}\overline{BC} = 3r$（設 $\overline{BC} = 6r$）。
+       - 上底長度：$\overline{PF} = \overline{DP} + \overline{DF} = 3r + 4r = 7r$。
+       - 第二組沙漏相似：$\triangle PGF \sim \triangle BGC \implies \overline{FG} : \overline{CG} = \overline{PF} : \overline{BC} = 7r : 6r = 7 : 6$。考卷標準答案標註為 **(C) 7 : 6**（長段比短段），解析同步註明嚴謹前後項順序與段考審題防陷阱技巧。
+  2. **圖表處理規範**：
+     - 精確擷取「圖三」平行四邊形圖形，執行純白底 `#FFFFFF` 淨化與 2x Lanczos 高畫質平滑放大，去除手寫筆跡與解答標記，保存至 `assets/questions/q_math_parallelogram_segments_ratio_cg_fg_152.png`，支援點擊放大燈箱檢視。
+  3. **數據庫與快取升級**：
+     - 升級 `STORAGE_KEY` 至 `v225`（保留 v224 前版相容 fallback 鏈），題庫總量達 **256 題**！`sw.js` 快取版本更新至 `miley-pwa-cache-v1.93`，`index.html` 資源 query param 更新至 `v=225`，`sw.js?v=210`。
+
+---
+
 ## [v2.17] - 2026-10-11 (自動收錄 1 道國三數學相似形平行線截比例線段重點題：等比中項幾何性質 AD²＝AF×AB 求 DF 線段長 Q151，圖形 2x Lanczos 增強，升級數據庫至 v224，快取升級 v1.92)
 - **類型**：錯題自動收錄 / 國三數學 / 相似形與平行線截比例線段 / 共用比例橋樑（AE:AC）/ 等比中項性質（AD² ＝ AF × AB）/ 線段相減求長（DF ＝ AD － AF ＝ 4）/ 2x Lanczos 高畫質圖表淨化 / 數據庫升級 v224 / 快取升級 v1.92
 - **主要變更**：

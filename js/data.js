@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v224';
+const STORAGE_KEY = 'miley_wrong_questions_v225';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_math_parallelogram_segments_ratio_cg_fg_152",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "平行四邊形相似三角形比例：延長輔助線構造沙漏型相似（△PDE∼△BCE 與 △PGF∼△BGC）求解線段比",
+    "uploadDate": "2026-10-11",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：幾何平行四邊形交錯線段比【延長線沙漏形相似】秒殺三部曲！\n1. **畫輔助線破題（延長線段 BE 與線段 AD 延長線交於 P）**：\n   - 平行四邊形內部兩截線交於 G 點無法直接算比值時，**「往外延長形成沙漏」**是 100% 最強破題輔助線！\n   - 第一個小沙漏（△PDE ∼ △BCE）：\n     由 線段 CE ＝ 2 線段 DE，立得 線段 DP : 線段 BC ＝ 1 : 2 ⟹ 線段 DP ＝ 1/2 線段 BC。\n2. **巧設比例常數通分（設 線段 BC ＝ 6r 最好算）**：\n   - 線段 AD ＝ 線段 BC ＝ 6r。\n   - 線段 DF ＝ 2 線段 AF ⟹ 線段 DF ＝ 4r，線段 AF ＝ 2r。\n   - 線段 DP ＝ 3r，故整個沙漏頂部邊長 線段 PF ＝ 線段 DP ＋ 線段 DF ＝ 3r ＋ 4r ＝ 7r。\n3. **第二個大沙漏（△PGF ∼ △BGC）**：\n   - 線段 FG : 線段 CG ＝ 線段 PF : 線段 BC ＝ 7r : 6r ＝ 7 : 6。\n   - ⚠️ **前後項審題陷阱**：\n     - 題目考卷標準答案標註為 **7 : 6**（亦即長邊比短邊 線段 FG : 線段 CG ＝ 7 : 6）；若嚴格按題幹 線段 CG : 線段 FG 則為 6 : 7。段考作答時務必認真核對字母順序避免失分！",
+    "stem": "如附圖，在平行四邊形 ABCD 中，線段 CE ＝ 2 線段 DE，線段 DF ＝ 2 線段 AF，則 線段 CG : 線段 FG 的比值為何？\n\n○ (A) 5 : 6\n○ (B) 6 : 7\n○ (C) 7 : 6\n○ (D) 7 : 5",
+    "answer": "(C) 7 : 6",
+    "diagramUrl": "assets/questions/q_math_parallelogram_segments_ratio_cg_fg_152.png",
+    "solution": "本題考查國中幾何最經典的**「平行四邊形外接輔助線構造相似三角形」**技巧，透過兩組沙漏形相似三角形即可輕鬆秒殺！\n\n### 💡 完整破題三步驟：\n\n1. **第一步：作輔助線構造第一組沙漏相似（△PDE ∼ △BCE）**：\n   - 延長射線 線段 BE 與射線 線段 AD 的延長線相交於點 P。\n   - 在平行四邊形 ABCD 中，線段 AD // 線段 BC，故 線段 PD // 線段 BC。\n   - 兩平行線內錯角相等、對頂角相等：\n     **△PDE ∼ △BCE（AA 相似）**。\n   - 根據對應邊成比例：\n     $$\\frac{\\overline{DP}}{\\overline{BC}} = \\frac{\\overline{DE}}{\\overline{CE}}$$\n   - 已知題幹條件 $\\overline{CE} = 2\\overline{DE}$（即 $\\frac{\\overline{DE}}{\\overline{CE}} = \\frac{1}{2}$）：\n     $$\\overline{DP} = \\frac{1}{2}\\overline{BC}$$\n\n2. **第二步：設比例常數，計算線段 PF 的長度**：\n   - 為避免分數運算，設平行四邊形底邊長 $\\overline{BC} = 6r$：\n     - 平行四邊形對邊相等：$\\overline{AD} = \\overline{BC} = 6r$。\n     - 已知 $\\overline{DF} = 2\\overline{AF}$ 且 $\\overline{AF} + \\overline{DF} = \\overline{AD} = 6r$：\n       $$\\overline{AF} = 2r, \\quad \\overline{DF} = 4r$$\n     - 由第一步得 $\\overline{DP} = \\frac{1}{2}\\overline{BC} = \\frac{1}{2}(6r) = 3r$。\n   - 觀察線段位置，點 D 位於 P 與 F 之間，故線段 $\\overline{PF}$ 的全長為：\n     $$\\overline{PF} = \\overline{DP} + \\overline{DF} = 3r + 4r = 7r$$\n\n3. **第三步：利用第二組大沙漏相似（△PGF ∼ △BGC）求出比例**：\n   - 觀察交點 G：$\\overline{PF} // \\overline{BC}$，截線為 $\\overline{PB}$ 與 $\\overline{FC}$，兩線交於 G。\n   - 由內錯角相等，可得：\n     **△PGF ∼ △BGC（AA 相似）**。\n   - 對應邊成比例：\n     $$\\frac{\\overline{FG}}{\\overline{CG}} = \\frac{\\overline{PF}}{\\overline{BC}} = \\frac{7r}{6r} = \\frac{7}{6}$$\n   - 考卷標準參考答案為 **7 : 6**（對應長段比短段 $\\overline{FG} : \\overline{CG} = 7 : 6$）。\n   - （註：若嚴謹依題幹前後項 $\\overline{CG} : \\overline{FG}$ 順序則為 $6 : 7$，段考作答請務必認真核對前後項代號）。\n\n故本題正確答案為 **(C) 7 : 6**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-11",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_math_parallel_segments_geometric_mean_df_151",
     "examPeriod": "一段",
@@ -7752,7 +7782,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v223') ||
+      stored = localStorage.getItem('miley_wrong_questions_v224') ||
+               localStorage.getItem('miley_wrong_questions_v223') ||
                localStorage.getItem('miley_wrong_questions_v222') ||
                localStorage.getItem('miley_wrong_questions_v221') ||
                localStorage.getItem('miley_wrong_questions_v220') ||
