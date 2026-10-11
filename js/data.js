@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v225';
+const STORAGE_KEY = 'miley_wrong_questions_v226';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_math_triangle_similarity_trapezoid_area_153",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "直角三角形相似形與梯形面積方程解題：AA 相似性質（△ADE∼△ABC）與代數設未知數求面積",
+    "uploadDate": "2026-10-11",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：直角三角形相似與梯形面積【設未知數 x 聯立破題】三步驟！\n1. **直角同位角判定 AA 相似**：\n   - ∠C ＝ 90° 且 線段 DE ⊥ 線段 AC ⟹ ∠AED ＝ 90°。\n   - 同位角相等 ⟹ 線段 DE // 線段 BC，搭配共用角 ∠A，立得 △ADE ∼ △ABC（AA 相似）。\n2. **設 線段 DE ＝ x 表達各邊長（避免多個未知數）**：\n   - 線段 DE ＝ x ⟹ 線段 AE ＝ 3x。\n   - 底邊長 線段 AC ＝ 線段 AE ＋ 線段 EC ＝ 3x ＋ 12。\n   - 相似形兩股對應比：線段 BC : 線段 AC ＝ 線段 DE : 線段 AE ＝ 1 : 3 ⟹ 線段 BC ＝ (3x ＋ 12) / 3 ＝ x ＋ 4。\n3. **利用梯形面積公式列一元一次方程式**：\n   - 梯形 DECB 面積 ＝ [(上底 線段 DE ＋ 下底 線段 BC) × 高 線段 EC] / 2。\n   - [(x ＋ (x ＋ 4)) × 12] / 2 ＝ 108 ⟹ 6(2x ＋ 4) ＝ 108 ⟹ 2x ＋ 4 ＝ 18 ⟹ x ＝ 7。\n4. **最後求 △ADE 面積切勿漏乘 1/2**：\n   - 面積 ＝ 1/2 × 線段 AE × 線段 DE ＝ 1/2 × (3 × 7) × 7 ＝ 147/2（或 73.5）！",
+    "stem": "如附圖，在 △ABC 中，∠C ＝ 90°，線段 DE ⊥ 線段 AC，線段 AE ＝ 3 線段 DE，線段 EC ＝ 12。若梯形 DECB 的面積為 108，則 △ADE 的面積為何？\n\n○ (A) 63\n○ (B) 147/2\n○ (C) 75\n○ (D) 147",
+    "answer": "(B) 147/2",
+    "diagramUrl": "assets/questions/q_math_triangle_similarity_trapezoid_area_153.png",
+    "solution": "本題考查國三幾何**「直角三角形 AA 相似性質」**結合**「梯形面積一元一次方程式」**的經典綜合題型。\n\n### 💡 完整破題三步驟：\n\n1. **第一步：由垂直線性質判定 AA 相似**：\n   - 已知 ∠C ＝ 90°，且 $\\overline{DE} \\perp \\overline{AC}$，即 $\\angle AED = 90^\\circ$。\n   - 因為同位角相等（$\\angle AED = \\angle C = 90^\\circ$），所以 $\\overline{DE} // \\overline{BC}$。\n   - 在 $\\triangle ADE$ 與 $\\triangle ABC$ 中：\n     - $\\angle A = \\angle A$（共用頂角）\n     - $\\angle AED = \\angle ACB = 90^\\circ$\n   - 根據 **AA 相似性質**，可得：\n     $$\\triangle ADE \\sim \\triangle ABC$$\n\n2. **第二步：設未知數 $x$，求出底邊與兩股長度**：\n   - 設 $\\overline{DE} = x$，由題幹條件 $\\overline{AE} = 3\\overline{DE}$，可得 $\\overline{AE} = 3x$。\n   - 整條底邊 $\\overline{AC}$ 的長度為：\n     $$\\overline{AC} = \\overline{AE} + \\overline{EC} = 3x + 12$$\n   - 由相似三角形對應邊成比例：\n     $$\\frac{\\overline{BC}}{\\overline{AC}} = \\frac{\\overline{DE}}{\\overline{AE}} = \\frac{x}{3x} = \\frac{1}{3}$$\n   - 交叉相乘求出右側垂直股 $\\overline{BC}$：\n     $$\\overline{BC} = \\frac{1}{3}\\overline{AC} = \\frac{3x + 12}{3} = x + 4$$\n\n3. **第三步：依梯形面積列方程式求 $x$，計算 $\\triangle ADE$ 面積**：\n   - 觀察圖形，四邊形 $DECB$ 為以 $\\overline{DE}$ 為上底、$\\overline{BC}$ 為下底、$\\overline{EC} = 12$ 為高的直角梯形。\n   - 根據梯形面積公式：\n     $$\\text{梯形 } DECB \\text{ 面積} = \\frac{(\\overline{DE} + \\overline{BC}) \\times \\overline{EC}}{2}$$\n     $$\\frac{[x + (x + 4)] \\times 12}{2} = 108$$\n     $$(2x + 4) \\times 6 = 108$$\n     $$2x + 4 = 18$$\n     $$2x = 14 \\implies x = 7$$\n   - 將 $x = 7$ 代回 $\\triangle ADE$：\n     - 底邊 $\\overline{AE} = 3x = 3 \\times 7 = 21$\n     - 高 $\\overline{DE} = x = 7$\n   - 因此 $\\triangle ADE$ 的面積為：\n     $$\\triangle ADE \\text{ 面積} = \\frac{1}{2} \\times \\overline{AE} \\times \\overline{DE} = \\frac{1}{2} \\times 21 \\times 7 = \\frac{147}{2} \\quad (\\text{或 } 73.5)$$\n\n故本題正確答案為 **(B) 147/2**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-11",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_math_parallelogram_segments_ratio_cg_fg_152",
     "examPeriod": "一段",
@@ -7782,7 +7812,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v224') ||
+      stored = localStorage.getItem('miley_wrong_questions_v225') ||
+               localStorage.getItem('miley_wrong_questions_v224') ||
                localStorage.getItem('miley_wrong_questions_v223') ||
                localStorage.getItem('miley_wrong_questions_v222') ||
                localStorage.getItem('miley_wrong_questions_v221') ||

@@ -4,6 +4,22 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v2.19] - 2026-10-11 (自動收錄 1 道國三數學幾何相似形梯形面積經典題：直角同位角 AA 相似結合一元一次方程求 ADE 面積 Q153，幾何圖形高畫質去痕淨化，升級數據庫至 v226，快取升級 v1.94)
+- **類型**：錯題自動收錄 / 國三數學 / 相似形與直角三角形 / AA 相似性質（△ADE∼△ABC）/ 設未知數 x 與邊長比例代換（BC ＝ x ＋ 4）/ 直角梯形面積公式一元一次方程式（x ＝ 7）/ 求 ADE 面積（147/2）/ 2x Lanczos 圖表純淨裁切 / 數據庫升級 v226 / 快取升級 v1.94
+- **主要變更**：
+  1. **收錄 1 道國三數學幾何面積綜合題**：
+     - `q_math_triangle_similarity_trapezoid_area_153`（數學）：考查在 $\triangle ABC$ 中，$\angle C = 90^\circ$、$\overline{DE} \perp \overline{AC}$、$\overline{AE} = 3\overline{DE}$、$\overline{EC} = 12$，梯形 $DECB$ 面積為 108，求 $\triangle ADE$ 面積。
+       - 判定相似：$\angle AED = \angle C = 90^\circ \implies \overline{DE} // \overline{BC}$，故 $\triangle ADE \sim \triangle ABC$（AA 相似）。
+       - 代數設元：設 $\overline{DE} = x \implies \overline{AE} = 3x$，$\overline{AC} = 3x + 12$。由兩股比 $\frac{\overline{BC}}{\overline{AC}} = \frac{x}{3x} = \frac{1}{3} \implies \overline{BC} = x + 4$。
+       - 梯形方程：$\frac{[x + (x + 4)] \times 12}{2} = 108 \implies 6(2x + 4) = 108 \implies 2x + 4 = 18 \implies x = 7$。
+       - 計算所求：$\triangle ADE \text{ 面積} = \frac{1}{2} \times 3x \times x = \frac{1}{2} \times 21 \times 7 = \frac{147}{2}$（或 $73.5$）。正解為 **(B) 147/2**。
+  2. **圖表處理規範**：
+     - 精確擷取題目右側之乾淨幾何圖形，完全去除左側解答手寫紅字劇透，執行純白底 `#FFFFFF` 淨化與 2x Lanczos 高畫質平滑放大，保存至 `assets/questions/q_math_triangle_similarity_trapezoid_area_153.png`，完美支援點擊放大燈箱檢視。
+  3. **數據庫與快取升級**：
+     - 升級 `STORAGE_KEY` 至 `v226`（保留 v225 前版相容 fallback 鏈），題庫總量達 **257 題**！`sw.js` 快取版本更新至 `miley-pwa-cache-v1.94`，`index.html` 資源 query param 更新至 `v=226`，`sw.js?v=211`。
+
+---
+
 ## [v2.18] - 2026-10-11 (自動收錄 1 道國三數學幾何平行四邊形相似形經典題：延長線輔助線構造雙重沙漏相似求 CG:FG 線段比 Q152，升級數據庫至 v225，快取升級 v1.93)
 - **類型**：錯題自動收錄 / 國三數學 / 相似形與比例線段 / 平行四邊形外延射線輔助線（BE 與 AD 延長線交於 P）/ 雙重沙漏型相似（△PDE∼△BCE 與 △PGF∼△BGC）/ 前後項對應辨析 / 2x Lanczos 圖表純白底淨化 / 數據庫升級 v225 / 快取升級 v1.93
 - **主要變更**：
