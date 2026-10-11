@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v223';
+const STORAGE_KEY = 'miley_wrong_questions_v224';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_math_parallel_segments_geometric_mean_df_151",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "平行線截比例線段與共用比例橋樑：等比中項性質（AD² ＝ AF × AB）與線段相減求長",
+    "uploadDate": "2026-10-11",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：幾何雙重平行線【共用比例橋樑 ＝ 等比中項】秒殺口訣！\n1. **找尋共用中介橋樑（右側邊 AC 上的線段比）**：\n   - 第一重平行（線段 EF // 線段 DC）：在 △ADC 中，AF : AD ＝ AE : AC。\n   - 第二重平行（線段 DE // 線段 BC）：在 △ABC 中，AD : AB ＝ AE : AC。\n   - 兩者皆等於 AE : AC，故直接串聯：AF : AD ＝ AD : AB！\n2. **秒殺公式：AD² ＝ AF × AB（等比中項）**：\n   - 中間點 D 所代表的線段長 AD，恰為小線段 AF 與全長 AB 的等比中項！\n   - 代入已知數據：AD² ＝ 8 × 18 ＝ 144 ⟹ AD ＝ 12。\n3. **最後一步千萬別粗心（求的是 DF 不是 AD）**：\n   - ⚠️ **常犯盲點**：算出 AD ＝ 12 後千萬別急著選 12！\n   - 題目問的是 DF 的長度，由圖中點的順序可知 A－F－D 共線：\n     DF ＝ AD － AF ＝ 12 － 8 ＝ 4！",
+    "stem": "如附圖，在 △ABC 中，線段 DE // 線段 BC，線段 EF // 線段 DC。若 線段 AF ＝ 8，線段 AB ＝ 18，則 線段 DF 的長度為何？\n\n○ (A) 3\n○ (B) 4\n○ (C) 5\n○ (D) 6",
+    "answer": "(B) 4",
+    "diagramUrl": "assets/questions/q_math_parallel_segments_geometric_mean_df_151.png",
+    "solution": "本題考查國中幾何核心重點——**平行線截比例線段性質**的雙重應用與「比例橋樑傳遞」技巧。\n\n### 💡 完整破題三步驟：\n\n1. **第一步：在 △ADC 中利用第一組平行線（線段 EF // 線段 DC）**：\n   - 觀察以 A 為頂點的三角形 △ADC，線段 EF 平行底邊線段 DC。\n   - 根據平行線截比例線段性質（由頂點 A 出發之線段比）：\n     $$\\frac{\\overline{AF}}{\\overline{AD}} = \\frac{\\overline{AE}}{\\overline{AC}}$$\n     （即小三角形兩邊與大三角形兩邊的對應比例相等）。\n\n2. **第二步：在 △ABC 中利用第二組平行線（線段 DE // 線段 BC）**：\n   - 觀察整個大三角形 △ABC，線段 DE 平行底邊線段 BC。\n   - 根據平行線截比例線段性質（由頂點 A 出發之線段比）：\n     $$\\frac{\\overline{AD}}{\\overline{AB}} = \\frac{\\overline{AE}}{\\overline{AC}}$$。\n\n3. **第三步：搭起比例橋樑，求出線段 AD 與所求線段 DF**：\n   - 因為第一步與第二步的右式皆等於 $\\frac{\\overline{AE}}{\\overline{AC}}$，故兩式的左式必然相等：\n     $$\\frac{\\overline{AF}}{\\overline{AD}} = \\frac{\\overline{AD}}{\\overline{AB}}$$\n   - 交叉相乘可得幾何著名的等比中項公式：\n     $$\\overline{AD}^2 = \\overline{AF} \\times \\overline{AB}$$\n   - 代入已知條件 $\\overline{AF} = 8$ 與 $\\overline{AB} = 18$：\n     $$\\overline{AD}^2 = 8 \\times 18 = 144$$\n     $$\\overline{AD} = \\sqrt{144} = 12$$（長度必為正值）。\n   - 由圖形可知點 F 介於 A 與 D 之間（$A-F-D$ 在同一直線上）：\n     $$\\overline{DF} = \\overline{AD} - \\overline{AF} = 12 - 8 = 4$$。\n\n故本題正確答案為 **(B) 4**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-11",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_geo_mediterranean_climate_scatter_plot_149",
     "examPeriod": "一段",
@@ -7722,7 +7752,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v222') ||
+      stored = localStorage.getItem('miley_wrong_questions_v223') ||
+               localStorage.getItem('miley_wrong_questions_v222') ||
                localStorage.getItem('miley_wrong_questions_v221') ||
                localStorage.getItem('miley_wrong_questions_v220') ||
                localStorage.getItem('miley_wrong_questions_v219') ||

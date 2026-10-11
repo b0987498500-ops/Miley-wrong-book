@@ -4,6 +4,21 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v2.17] - 2026-10-11 (自動收錄 1 道國三數學相似形平行線截比例線段重點題：等比中項幾何性質 AD²＝AF×AB 求 DF 線段長 Q151，圖形 2x Lanczos 增強，升級數據庫至 v224，快取升級 v1.92)
+- **類型**：錯題自動收錄 / 國三數學 / 相似形與平行線截比例線段 / 共用比例橋樑（AE:AC）/ 等比中項性質（AD² ＝ AF × AB）/ 線段相減求長（DF ＝ AD － AF ＝ 4）/ 2x Lanczos 高畫質圖表淨化 / 數據庫升級 v224 / 快取升級 v1.92
+- **主要變更**：
+  1. **收錄 1 道國三數學重要幾何考題**：
+     - `q_math_parallel_segments_geometric_mean_df_151`（數學）：考查在 $\triangle ABC$ 中，兩組平行線 $\overline{DE} // \overline{BC}$ 與 $\overline{EF} // \overline{DC}$ 之比例線段傳遞。
+       - 利用 $\overline{AC}$ 上的線段比作為共用橋樑：$\frac{\overline{AF}}{\overline{AD}} = \frac{\overline{AE}}{\overline{AC}} = \frac{\overline{AD}}{\overline{AB}}$。
+       - 導出等比中項公式：$\overline{AD}^2 = \overline{AF} \times \overline{AB} = 8 \times 18 = 144 \implies \overline{AD} = 12$。
+       - 求出線段 $\overline{DF} = \overline{AD} - \overline{AF} = 12 - 8 = 4$。正解為 **(B) 4**。
+  2. **圖表處理規範**：
+     - 精確擷取「圖二」幾何圖形，執行純白底 `#FFFFFF` 淨化與 2x Lanczos 高畫質平滑放大，去除手寫筆跡與解答標記，保存至 `assets/questions/q_math_parallel_segments_geometric_mean_df_151.png`，完美支援點擊放大燈箱檢視。
+  3. **數據庫與快取升級**：
+     - 升級 `STORAGE_KEY` 至 `v224`（保留 v223 前版相容 fallback 鏈），題庫總量達 **255 題**！`sw.js` 快取版本更新至 `miley-pwa-cache-v1.92`，`index.html` 資源 query param 更新至 `v=224`，`sw.js?v=209`。
+
+---
+
 ## [v2.16] - 2026-10-10 (修復 js/data.js 語法異常引號，全面恢復 254 題題庫渲染與卡片呈現，升級數據庫至 v223，快取升級 v1.91)
 - **類型**：緊急修復 / 題庫資料語法除錯 / 題幹與選項渲染管線恢復 / 數據庫升級 v223 / 快取升級 v1.91
 - **主要變更**：
