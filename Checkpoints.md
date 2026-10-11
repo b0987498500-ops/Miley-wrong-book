@@ -4,6 +4,23 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v2.21] - 2026-10-11 (自動收錄 6 道國三英語核心段考題：單字 lazy、瞬間動詞 vs 持續狀態 has been dead、過去式 Did vs have been 經驗、Most of 朋友主謂一致、完成式頻率副詞 twice、There have been 存在句型 Q155~Q160，升級數據庫至 v228，快取升級 v1.96)
+- **類型**：錯題自動收錄 / 國三英語 / 現在完成式 / 核心單字 lazy / 瞬間動詞（die）與持續狀態（has been dead for 3 years）/ 明確過去時間（last summer）用過去式 Did you go vs 去過經驗 have been there / 主詞動詞單複數一致性（Most of my friends have... but I haven't）/ 完成式頻率副詞 twice vs 介系詞辨析 / 存在句完成式 There have been online games / 數據庫升級 v228 / 快取升級 v1.96
+- **主要變更**：
+  1. **收錄 6 道國三英語經典考題（Q155～Q160）**：
+     - `q_eng_vocab_lazy_couch_housework_155`（英文）：由情境線索 lies on the couch 與 seldom helps with housework 辨析個性形容詞 **lazy**，正解 **(D)**。
+     - `q_eng_grammar_has_been_dead_duration_156`（英文）：瞬間動詞 die 動作不能持續三年，搭配 for three years 必須轉為持續狀態 **has been dead**，正解 **(C)**。
+     - `q_eng_grammar_did_you_go_vs_have_been_there_157`（英文）：第一格由 last summer 鎖定過去簡單式 **Did you go**；第二格 Sandy 當面陳述造訪花蓮三次之經驗用 **have been there**，正解 **(B)**。
+     - `q_eng_grammar_most_of_friends_have_vs_i_havent_158`（英文）：Most of my friends 後接複數名詞視為複數用 **have**；轉折詞 but 搭配第一人稱 I 之否定簡答 **haven't**，正解 **(D)**。
+     - `q_eng_grammar_have_taken_bath_twice_time_adverb_159`（英文）：現在完成式 I've taken 搭配表經驗次數之時間副詞 **twice**；(C) 應改為 for two hours 或 since two hours ago，正解 **(B)**。
+     - `q_eng_grammar_there_have_been_for_past_ten_years_160`（英文）：由 for the past ten years 鎖定現在完成式；There be 存在句型搭配後方複數主詞 online games，形成 **there have been**，嚴禁混用 have had，正解 **(C)**。
+  2. **純文字排版規範**：
+     - 六道題目均為純文字題型，不放多餘截圖（`diagramUrl: ""`），全數採標準純淨繁體中文排版，排入最新週次 `2026-10-05`。
+  3. **數據庫與快取升級**：
+     - 升級 `STORAGE_KEY` 至 `v228`（保留 v227 前版相容 fallback 鏈），英文題庫擴充達 34 題，全站題庫總量達 **264 題**！`sw.js` 快取版本更新至 `miley-pwa-cache-v1.96`，`index.html` 資源 query param 更新至 `v=228`，`sw.js?v=213`。
+
+---
+
 ## [v2.20] - 2026-10-11 (自動收錄 1 道國三數學幾何正方形摺紙連鎖相似形重點題：一線三直角 K 字型 AA 相似連比求解 GF:A'E:A'G Q154，幾何圖形高畫質去痕淨化，升級數據庫至 v227，快取升級 v1.95)
 - **類型**：錯題自動收錄 / 國三數學 / 正方形摺紙幾何 / 摺疊對稱全等性質（EA ＝ EA' ＝ 5x）/ 正方形邊長推導（AD ＝ 9x）/ 一線三直角 K 字型互餘（△DA'E ∼ △CGA' ∼ △B'GF）/ 連鎖三邊 3:4:5 比例推導 / 三連比化簡（1:2:3）/ 2x Lanczos 圖表純淨裁切 / 數據庫升級 v227 / 快取升級 v1.95
 - **主要變更**：

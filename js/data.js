@@ -3,10 +3,190 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v227';
+const STORAGE_KEY = 'miley_wrong_questions_v228';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_eng_vocab_lazy_couch_housework_155",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "國三英語核心單字：形容詞 lazy（懶散的、懶惰的）之字首提示與情境填空",
+    "uploadDate": "2026-10-11",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：從關鍵線索【躺在沙發上＋很少做家事】鎖定個性！\n1. **關鍵情境線索**：\n   - *lies on the couch*（總躺在沙發上不動）\n   - *seldom helps his parents do housework*（很少幫父母做家事）\n2. **單字拼寫與辨析**：\n   - **lazy**：懶惰的、懶散的（字首 l，字尾 y，共 4 個字母）。\n   - 易混淆單字防呆：lucky（幸運的）、lovely（可愛的）、lonely（寂寞的）。",
+    "stem": "Andy is a l______y boy. He always lies on the couch and seldom helps his parents do housework.\n\n○ (A) lucky\n○ (B) lovely\n○ (C) lonely\n○ (D) lazy",
+    "answer": "(D) lazy",
+    "diagramUrl": "",
+    "solution": "1. **語境線索剖析**：\n   - 後句提到「He always lies on the couch and seldom helps his parents do housework.（他總是躺在沙發上，而且很少幫父母做家事）」。\n   - 根據行為描寫，可明確得知 Andy 的性格是「**懶惰的（lazy）**」。\n\n2. **單字拼字檢驗**：\n   - 題幹提示字首為 `l`，字尾為 `y`，故填入形容詞 **lazy**。\n\n故本題正確答案為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-11",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_grammar_has_been_dead_duration_156",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "現在完成式狀態延續性：瞬間動詞 die 與持續狀態 have/has been dead 搭配 for＋一段時間",
+    "uploadDate": "2026-10-11",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：國中會考英文超高頻必考陷阱【瞬間動詞 vs 持續狀態】！\n1. **瞬間動詞（die）不能搭配持續時間（for three years）**：\n   - **die** 是瞬間動詞（斷氣是一瞬間的事），死去的「動作」不能持續三年，因此**絕不能說 has died for three years**（(A) 大錯特錯）！\n2. **表「已去世三年（持續某種狀態）」的正確句型**：\n   - ✅ **has/has been dead + for 一段時間**（dead 是形容詞，表示去世的狀態，可持續）。\n   - ✅ **died + 一段時間 + ago**（Jack's father died three years ago. 過去式搭配 ago）。\n   - ✅ **It has been + 一段時間 + since Jack's father died.**\n3. **(B) has dead 語法錯誤**：has 後面要接過去分詞（p.p.），dead 是形容詞，需有 be 動詞 has been dead！",
+    "stem": "Jack's father ______ for three years.\n\n○ (A) has died\n○ (B) has dead\n○ (C) has been dead\n○ (D) died",
+    "answer": "(C) has been dead",
+    "diagramUrl": "",
+    "solution": "1. **核心語法規則（瞬間動作 vs 持續狀態）**：\n   - 句尾出現 **for three years**（長達三年之久），表示動作或狀態持續了一段時間，必須搭配能持續的狀態。\n   - **die**（死）為瞬間動詞，動作發生後即告結束，不能在現在完成式中接 for + 一段時間。因此不能選 (A) has died。\n\n2. **正確表達分析**：\n   - 形容詞 **dead**（死亡的）可以表示持續存在的狀態。\n   - 搭配現在完成式時，需要助動詞 has 加上 be 動詞的過去分詞 been，形成 **has been dead**。\n   - (B) `has dead` 缺少動詞（dead 是形容詞不能單獨接在 has 後面）；(D) `died` 為過去式，應用於 `three years ago`，不能接 `for three years`。\n\n故本題正確答案為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-11",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_grammar_did_you_go_vs_have_been_there_157",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "過去簡單式 vs 現在完成式：過去明確時間點 last summer（Did you go）與去過某地經驗（have been there）",
+    "uploadDate": "2026-10-11",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【明確過去時間 vs 經驗次數】秒殺組合拳！\n1. **第一空：看到「last summer」秒選過去式（Did you...）**：\n   - 凡是有明確過去時間點（yesterday, last summer, in 2020, ago），**絕對不能用現在完成式**！助動詞必須用 **Did** 搭配原形動詞 go！\n2. **第二空：have been to/there vs have gone to/there 世紀大對決**：\n   - ✈️ **have been to / there**：去過某地（人已經回來了，強調「**經驗**」）。\n   - 🏃 **have gone to / there**：去了某地（人還在那裡沒回來，強調「**離開前往**」）。\n   - Sandy 正在跟 Tina 當面說話聊天，而且句尾有 **three times（三次）**，表示「去過花蓮三次的經驗」，人早已回到眼前，必須用 **been**！",
+    "stem": "Tina: ______ you go to Hualien last summer?\nSandy: Yes. I like there. I have ______ there three times.\n\n○ (A) Have; been\n○ (B) Did; been\n○ (C) Have; gone\n○ (D) Did; gone",
+    "answer": "(B) Did; been",
+    "diagramUrl": "",
+    "solution": "1. **第一格（時態判定）**：\n   - 句尾出現明確的過去時間副詞 **last summer（去年夏天）**，疑問句助動詞必須使用過去式 **Did**（接原形動詞 go），排除 (A)、(C)。\n\n2. **第二格（完成式動詞片語辨析）**：\n   - Sandy 回答「I like there. I have ______ there three times.」，表示過去曾經造訪過花蓮三次的**經驗**。\n   - **have been there** 表示「曾經去過那裡（現在已不在那裡）」，符合句意。\n   - 若用 **have gone there** 則表示「已經出發去那裡了（現在不在說話現場）」，Sandy 正當面跟 Tina 對話，不可能人還留在花蓮，故排除 (D)。\n\n故本題正確答案為 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-11",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_grammar_most_of_friends_have_vs_i_havent_158",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "現在完成式主詞動詞一致性：複數名詞受詞之 Most of 搭配 have，與第一人稱 I 的完成式簡答 haven't",
+    "uploadDate": "2026-10-11",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【Most of 主詞動詞單複數判定＋完成式否定簡答】！\n1. **第一空：Most of 的單複數由後方的名詞決定**：\n   - *Most of + 複數可數名詞（my friends）* ⟹ **視為複數**，助動詞用 **have**（非 has）！\n   - 若為不可數名詞（如 Most of the water）才用單數 has。\n2. **第二空：轉折詞 but 搭配第一人稱主詞 I 的簡答**：\n   - 前句為肯定「多數朋友都搭過」，but 連接轉折「但我沒有（搭過）」。\n   - 主詞為第一人稱 **I**，現在完成式否定簡答直接使用助動詞 **haven't**（省略 taken an airplane）！",
+    "stem": "Most of my friends ______ taken an airplane, but I ______ .\n\n○ (A) hasn't; has\n○ (B) has; haven't\n○ (C) have; hasn't\n○ (D) have; haven't",
+    "answer": "(D) have; haven't",
+    "diagramUrl": "",
+    "solution": "1. **第一格主詞與動詞一致性**：\n   - 主詞片語「Most of my friends」中，of 後面的受詞為複數名詞 **my friends**，因此代名詞 Most 視為複數。\n   - 現在完成式助動詞應使用複數形的 **have**，排除 (A)、(B)。\n\n2. **第二格對比簡答**：\n   - 對等連接詞 **but** 表示語意轉折，前句「多數朋友都曾搭過飛機」，後句轉折表示「但我沒有搭過飛機」。\n   - 主詞為 **I**，對應之完成式否定縮寫為 **haven't**（完整句為 but I haven't taken an airplane）。\n\n故本題正確答案為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-11",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_grammar_have_taken_bath_twice_time_adverb_159",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "現在完成式時間副詞搭配：表次數之 twice 搭配現在完成式經驗，與其他時間副詞用法辨析",
+    "uploadDate": "2026-10-11",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【現在完成式 vs 各種時間副詞】精準配對表！\n1. **現在完成式（have + p.p.）最常搭配的副詞**：\n   - ✅ **表經驗次數**：once（一次）, **twice（兩次）**, three times, ever, never。\n   - ✅ **since + 過去時間點**（since 2020, since yesterday, since two hours ago）。\n   - ✅ **for + 一段時間長度**（for two hours, for three days）。\n2. **各選項致命錯誤檢驗**：\n   - (A) `in two days`：表「在兩天之內」或「兩天之後」，通常用於**未來式**（will do... in two days）。\n   - (C) `since two hours`：錯誤語法！since 只能接「過去起點時間」，若是一段時間長度必須用 **for two hours**，或是 **since two hours ago**。\n   - (D) `several days ago`：有明確 ago（幾天前），只能用於**過去簡單式**（I took... several days ago）。",
+    "stem": "I've taken a hot spring bath ______ .\n\n○ (A) in two days\n○ (B) twice\n○ (C) since two hours\n○ (D) several days ago",
+    "answer": "(B) twice",
+    "diagramUrl": "",
+    "solution": "1. **主要子句時態分析**：\n   - 句首「I've taken...（I have taken...）」為**現在完成式**，表示到目前為止的經驗或完成狀態。\n\n2. **選項檢驗**：\n   - **(A) in two days**：通常用於未來式（例如 I will go there in two days），與現在完成式不合。\n   - **(B) twice（正確）**：表示「兩次」，為頻率副詞，常用於現在完成式表示「有過兩次泡溫泉的經驗」，語意與文法完全正確。\n   - **(C) since two hours**：文法錯誤。since 後面必須接時間起點（如 since two o'clock），表兩小時的時間長度應用介系詞 **for two hours**。\n   - **(D) several days ago**：含有 ago 的時間副詞為明確過去時間點，只能搭配過去簡單式（I took...），不能用於現在完成式。\n\n故本題正確答案為 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-11",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_grammar_there_have_been_for_past_ten_years_160",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "There is / There are 存在句型之現在完成式：There have been 搭配複數名詞與 for the past ten years",
+    "uploadDate": "2026-10-11",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【There be 存在句型 ＋ 現在完成式】大魔王題型！\n1. **There is / There are 進入完成式的變形規則**：\n   - 「有（某物存在）」是 **There is / There are**，絕對不是 There have！\n   - 當加上現在完成式（have + p.p.）時，be 動詞變成 **been**：\n     ⟹ 單數名詞：**There has been...**\n     ⟹ 複數名詞：**There have been...**\n2. **致命陷阱：絕不可用 There have had 或 There will have**：\n   - 英文中「某地有某物」用 There be 句型，**嚴禁混用 have（擁有）**！絕無「There have had」這種用法（(D) 錯誤）！\n3. **時間副詞線索**：\n   - **for the past ten years（在過去十年以來）** ⟹ 強烈鎖定**現在完成式**！\n   - 後方名詞是複數 **more and more online games** ⟹ 鎖定 **have been**！",
+    "stem": "Young people enjoy playing online games. In fact, there ______ more and more online games for the past ten years.\n\n○ (A) will be\n○ (B) will have\n○ (C) have been\n○ (D) have had",
+    "answer": "(C) have been",
+    "diagramUrl": "",
+    "solution": "1. **時間線索辨析**：\n   - 句尾時間片語為 **for the past ten years（過去十年來）**，表示從過去持續到現在的時間跨度，主要子句必須使用**現在完成式**，排除未來式 (A) will be 與 (B) will have。\n\n2. **There be 句型的完成式結構**：\n   - 「存在句」以 **There be** 表達「有...」。\n   - 轉為現在完成式時，助動詞 have/has 加上 be 動詞的過去分詞 been，形成 **There has/have been**。\n   - 本句真正的主詞為後方的複數名詞「more and more online **games**」，故助動詞使用複數形 **have**，搭配 been 形成 **there have been**。\n   - (D) `have had` 是「擁有（動詞 have）」的完成式，There be 句型中不能使用動詞 have 表擁有，故排除 (D)。\n\n故本題正確答案為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-11",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_math_square_folding_similarity_ratio_154",
     "examPeriod": "一段",
@@ -7842,7 +8022,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v226') ||
+      stored = localStorage.getItem('miley_wrong_questions_v227') ||
+               localStorage.getItem('miley_wrong_questions_v226') ||
                localStorage.getItem('miley_wrong_questions_v225') ||
                localStorage.getItem('miley_wrong_questions_v224') ||
                localStorage.getItem('miley_wrong_questions_v223') ||
