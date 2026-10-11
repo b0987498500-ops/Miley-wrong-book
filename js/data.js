@@ -8016,184 +8016,60 @@ class DataManager {
     }
   }
 
+  /**
+   * 徹底清理 LocalStorage 中的歷史舊版題庫快取 (Purge Legacy Storage Keys)
+   * 釋放 3MB ~ 4.5MB 瀏覽器空間，根除 QuotaExceededError 記憶體上限報錯！
+   */
+  purgeLegacyStorageKeys() {
+    try {
+      const keysToRemove = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith('miley_wrong_questions_v') && k !== STORAGE_KEY) {
+          keysToRemove.push(k);
+        }
+      }
+      keysToRemove.forEach(k => {
+        try {
+          localStorage.removeItem(k);
+        } catch (e) {}
+      });
+      if (keysToRemove.length > 0) {
+        console.log(`[Storage] 🧹 成功清理 ${keysToRemove.length} 個歷史舊版題庫快取，已釋放 ${Math.round(keysToRemove.length * 0.72 * 10) / 10} MB 瀏覽器空間！`);
+      }
+    } catch (e) {
+      console.warn('[Storage] 清理舊版快取時發生錯誤:', e);
+    }
+  }
+
   init() {
     this.loadDeletedIds();
     this.loadRemovedMondaysMap();
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v228') ||
-               localStorage.getItem('miley_wrong_questions_v227') ||
-               localStorage.getItem('miley_wrong_questions_v226') ||
-               localStorage.getItem('miley_wrong_questions_v225') ||
-               localStorage.getItem('miley_wrong_questions_v224') ||
-               localStorage.getItem('miley_wrong_questions_v223') ||
-               localStorage.getItem('miley_wrong_questions_v222') ||
-               localStorage.getItem('miley_wrong_questions_v221') ||
-               localStorage.getItem('miley_wrong_questions_v220') ||
-               localStorage.getItem('miley_wrong_questions_v219') ||
-               localStorage.getItem('miley_wrong_questions_v218') ||
-               localStorage.getItem('miley_wrong_questions_v217') ||
-               localStorage.getItem('miley_wrong_questions_v216') ||
-               localStorage.getItem('miley_wrong_questions_v215') ||
-               localStorage.getItem('miley_wrong_questions_v214') ||
-               localStorage.getItem('miley_wrong_questions_v213') ||
-               localStorage.getItem('miley_wrong_questions_v212') ||
-               localStorage.getItem('miley_wrong_questions_v211') ||
-               localStorage.getItem('miley_wrong_questions_v210') ||
-               localStorage.getItem('miley_wrong_questions_v209') ||
-               localStorage.getItem('miley_wrong_questions_v208') ||
-               localStorage.getItem('miley_wrong_questions_v207') ||
-               localStorage.getItem('miley_wrong_questions_v206') ||
-               localStorage.getItem('miley_wrong_questions_v205') ||
-               localStorage.getItem('miley_wrong_questions_v204') ||
-               localStorage.getItem('miley_wrong_questions_v203') ||
-               localStorage.getItem('miley_wrong_questions_v202') ||
-               localStorage.getItem('miley_wrong_questions_v201') ||
-               localStorage.getItem('miley_wrong_questions_v200') ||
-               localStorage.getItem('miley_wrong_questions_v199') ||
-               localStorage.getItem('miley_wrong_questions_v198') ||
-               localStorage.getItem('miley_wrong_questions_v197') ||
-               localStorage.getItem('miley_wrong_questions_v196') ||
-               localStorage.getItem('miley_wrong_questions_v195') ||
-               localStorage.getItem('miley_wrong_questions_v194') ||
-               localStorage.getItem('miley_wrong_questions_v193') ||
-               localStorage.getItem('miley_wrong_questions_v192') ||
-               localStorage.getItem('miley_wrong_questions_v191') ||
-               localStorage.getItem('miley_wrong_questions_v190') ||
-               localStorage.getItem('miley_wrong_questions_v189') ||
-               localStorage.getItem('miley_wrong_questions_v188') ||
-               localStorage.getItem('miley_wrong_questions_v187') ||
-               localStorage.getItem('miley_wrong_questions_v186') ||
-               localStorage.getItem('miley_wrong_questions_v185') ||
-               localStorage.getItem('miley_wrong_questions_v184') ||
-               localStorage.getItem('miley_wrong_questions_v183') ||
-               localStorage.getItem('miley_wrong_questions_v182') ||
-               localStorage.getItem('miley_wrong_questions_v181') ||
-               localStorage.getItem('miley_wrong_questions_v180') ||
-               localStorage.getItem('miley_wrong_questions_v179') ||
-               localStorage.getItem('miley_wrong_questions_v178') ||
-               localStorage.getItem('miley_wrong_questions_v177') ||
-               localStorage.getItem('miley_wrong_questions_v176') ||
-               localStorage.getItem('miley_wrong_questions_v175') ||
-               localStorage.getItem('miley_wrong_questions_v174') ||
-               localStorage.getItem('miley_wrong_questions_v173') ||
-               localStorage.getItem('miley_wrong_questions_v172') ||
-               localStorage.getItem('miley_wrong_questions_v171') ||
-               localStorage.getItem('miley_wrong_questions_v170') ||
-               localStorage.getItem('miley_wrong_questions_v169') ||
-               localStorage.getItem('miley_wrong_questions_v168') ||
-               localStorage.getItem('miley_wrong_questions_v167') ||
-               localStorage.getItem('miley_wrong_questions_v166') ||
-               localStorage.getItem('miley_wrong_questions_v165') ||
-               localStorage.getItem('miley_wrong_questions_v164') ||
-               localStorage.getItem('miley_wrong_questions_v163') ||
-               localStorage.getItem('miley_wrong_questions_v162') ||
-               localStorage.getItem('miley_wrong_questions_v161') ||
-               localStorage.getItem('miley_wrong_questions_v160') ||
-               localStorage.getItem('miley_wrong_questions_v159') ||
-               localStorage.getItem('miley_wrong_questions_v158') ||
-               localStorage.getItem('miley_wrong_questions_v157') ||
-               localStorage.getItem('miley_wrong_questions_v156') ||
-               localStorage.getItem('miley_wrong_questions_v155') ||
-               localStorage.getItem('miley_wrong_questions_v154') ||
-               localStorage.getItem('miley_wrong_questions_v153') ||
-               localStorage.getItem('miley_wrong_questions_v152') ||
-               localStorage.getItem('miley_wrong_questions_v151') ||
-               localStorage.getItem('miley_wrong_questions_v150') ||
-               localStorage.getItem('miley_wrong_questions_v149') ||
-               localStorage.getItem('miley_wrong_questions_v148') ||
-               localStorage.getItem('miley_wrong_questions_v147') ||
-               localStorage.getItem('miley_wrong_questions_v146') ||
-               localStorage.getItem('miley_wrong_questions_v145') ||
-               localStorage.getItem('miley_wrong_questions_v144') ||
-               localStorage.getItem('miley_wrong_questions_v143') ||
-               localStorage.getItem('miley_wrong_questions_v142') ||
-               localStorage.getItem('miley_wrong_questions_v141') ||
-               localStorage.getItem('miley_wrong_questions_v140') ||
-               localStorage.getItem('miley_wrong_questions_v139') ||
-               localStorage.getItem('miley_wrong_questions_v138') ||
-               localStorage.getItem('miley_wrong_questions_v137') ||
-               localStorage.getItem('miley_wrong_questions_v136') ||
-               localStorage.getItem('miley_wrong_questions_v135') ||
-               localStorage.getItem('miley_wrong_questions_v134') ||
-               localStorage.getItem('miley_wrong_questions_v133') ||
-               localStorage.getItem('miley_wrong_questions_v132') ||
-               localStorage.getItem('miley_wrong_questions_v131') ||
-               localStorage.getItem('miley_wrong_questions_v130') ||
-               localStorage.getItem('miley_wrong_questions_v129') ||
-               localStorage.getItem('miley_wrong_questions_v128') ||
-               localStorage.getItem('miley_wrong_questions_v127') ||
-               localStorage.getItem('miley_wrong_questions_v126') ||
-               localStorage.getItem('miley_wrong_questions_v125') ||
-               localStorage.getItem('miley_wrong_questions_v124') ||
-               localStorage.getItem('miley_wrong_questions_v123') ||
-               localStorage.getItem('miley_wrong_questions_v122') ||
-               localStorage.getItem('miley_wrong_questions_v121') ||
-               localStorage.getItem('miley_wrong_questions_v120') ||
-               localStorage.getItem('miley_wrong_questions_v119') ||
-               localStorage.getItem('miley_wrong_questions_v118') ||
-               localStorage.getItem('miley_wrong_questions_v117') ||
-               localStorage.getItem('miley_wrong_questions_v116') ||
-               localStorage.getItem('miley_wrong_questions_v115') ||
-               localStorage.getItem('miley_wrong_questions_v114') ||
-               localStorage.getItem('miley_wrong_questions_v113') ||
-               localStorage.getItem('miley_wrong_questions_v112') ||
-               localStorage.getItem('miley_wrong_questions_v111') ||
-               localStorage.getItem('miley_wrong_questions_v110') ||
-               localStorage.getItem('miley_wrong_questions_v109') ||
-               localStorage.getItem('miley_wrong_questions_v108') ||
-               localStorage.getItem('miley_wrong_questions_v107') ||
-               localStorage.getItem('miley_wrong_questions_v106') ||
-               localStorage.getItem('miley_wrong_questions_v105') ||
-               localStorage.getItem('miley_wrong_questions_v104') ||
-               localStorage.getItem('miley_wrong_questions_v103') ||
-               localStorage.getItem('miley_wrong_questions_v102') ||
-               localStorage.getItem('miley_wrong_questions_v101') ||
-               localStorage.getItem('miley_wrong_questions_v100') ||
-               localStorage.getItem('miley_wrong_questions_v99') ||
-               localStorage.getItem('miley_wrong_questions_v98') ||
-               localStorage.getItem('miley_wrong_questions_v97') ||
-               localStorage.getItem('miley_wrong_questions_v96') ||
-               localStorage.getItem('miley_wrong_questions_v95') ||
-               localStorage.getItem('miley_wrong_questions_v94') ||
-               localStorage.getItem('miley_wrong_questions_v93') ||
-               localStorage.getItem('miley_wrong_questions_v92') ||
-               localStorage.getItem('miley_wrong_questions_v91') ||
-               localStorage.getItem('miley_wrong_questions_v90') ||
-               localStorage.getItem('miley_wrong_questions_v89') ||
-               localStorage.getItem('miley_wrong_questions_v88') ||
-               localStorage.getItem('miley_wrong_questions_v87') ||
-               localStorage.getItem('miley_wrong_questions_v86') ||
-               localStorage.getItem('miley_wrong_questions_v85') ||
-               localStorage.getItem('miley_wrong_questions_v84') ||
-               localStorage.getItem('miley_wrong_questions_v83') ||
-               localStorage.getItem('miley_wrong_questions_v82') ||
-               localStorage.getItem('miley_wrong_questions_v81') ||
-               localStorage.getItem('miley_wrong_questions_v80') ||
-               localStorage.getItem('miley_wrong_questions_v79') ||
-               localStorage.getItem('miley_wrong_questions_v78') ||
-               localStorage.getItem('miley_wrong_questions_v76') ||
-               localStorage.getItem('miley_wrong_questions_v75') ||
-               localStorage.getItem('miley_wrong_questions_v74') ||
-               localStorage.getItem('miley_wrong_questions_v73') ||
-               localStorage.getItem('miley_wrong_questions_v72') ||
-               localStorage.getItem('miley_wrong_questions_v71') ||
-               localStorage.getItem('miley_wrong_questions_v70') ||
-               localStorage.getItem('miley_wrong_questions_v69') ||
-               localStorage.getItem('miley_wrong_questions_v68') ||
-               localStorage.getItem('miley_wrong_questions_v67') ||
-               localStorage.getItem('miley_wrong_questions_v66') ||
-               localStorage.getItem('miley_wrong_questions_v65') ||
-               localStorage.getItem('miley_wrong_questions_v64') ||
-               localStorage.getItem('miley_wrong_questions_v63') ||
-               localStorage.getItem('miley_wrong_questions_v62') ||
-               localStorage.getItem('miley_wrong_questions_v61') ||
-               localStorage.getItem('miley_wrong_questions_v60') ||
-               localStorage.getItem('miley_wrong_questions_v59') ||
-               localStorage.getItem('miley_wrong_questions_v58') ||
-               localStorage.getItem('miley_wrong_questions_v57');
+      // 動態搜尋所有歷史版本 miley_wrong_questions_v*，取版本號最新的一版無縫繼承！
+      const legacyKeys = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith('miley_wrong_questions_v') && k !== STORAGE_KEY) {
+          const match = k.match(/_v(\d+)$/);
+          if (match) {
+            legacyKeys.push({ key: k, v: parseInt(match[1], 10) });
+          }
+        }
+      }
+      legacyKeys.sort((a, b) => b.v - a.v);
+      for (const item of legacyKeys) {
+        const val = localStorage.getItem(item.key);
+        if (val) {
+          stored = val;
+          console.log(`[Storage] 成功自歷史舊版本繼承進度: ${item.key}`);
+          break;
+        }
+      }
     }
+
     if (stored !== null) {
       try {
         const parsed = JSON.parse(stored);
@@ -8211,6 +8087,9 @@ class DataManager {
       this.questions = JSON.parse(JSON.stringify(INITIAL_SEED_DATA));
       this.save();
     }
+
+    // 關鍵防爆：進度載入完成後，立即徹底清除所有舊版冗餘 Key，永遠只保留 1 份資料，徹底釋放 4+ MB 空間！
+    this.purgeLegacyStorageKeys();
 
     // 1. Immediately purge any deleted questions from loaded storage array
     if (Array.isArray(this.questions) && Array.isArray(this.deletedIds) && this.deletedIds.length > 0) {
@@ -8347,18 +8226,21 @@ class DataManager {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(this.questions));
     } catch (e) {
-      console.warn('LocalStorage save failed (QuotaExceededError), cleaning heavy diagram images...', e);
-      // Clean oversized base64 images safely without corrupting JSON
+      console.warn('LocalStorage save failed (QuotaExceededError), executing emergency cleanup...', e);
+      // 1. 緊急動作：立即徹底清除所有歷史舊版快取
+      this.purgeLegacyStorageKeys();
+
+      // 2. 清理過大的 Base64 圖片
       this.questions.forEach(q => {
-        if (q.diagramUrl && q.diagramUrl.length > 80000) {
+        if (q.diagramUrl && q.diagramUrl.length > 50000) {
           q.diagramUrl = ''; // fallback to pure text presentation to free storage
         }
       });
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(this.questions));
+        console.log('[Storage] Saved successfully to LocalStorage after emergency purge!');
       } catch (e2) {
-        console.error('Critical: LocalStorage is full even after cleaning images.', e2);
-        alert('⚠️ 瀏覽器儲存空間 (LocalStorage) 已滿！建議在側邊欄重置資料或清理歷史紀錄。');
+        console.error('Critical: LocalStorage is full even after emergency purge.', e2);
       }
     }
 

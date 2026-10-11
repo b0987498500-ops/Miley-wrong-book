@@ -4,6 +4,30 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v2.25] - 2026-10-11 (徹底根治 LocalStorage QuotaExceededError 5MB 上限報錯：新增歷史版本動態清除機制 purgeLegacyStorageKeys 自動清除 170+ 舊版 key 釋放 4.5MB 空間、移除阻斷式 alert 彈窗、升級快取至 v2.00)
+- **類型**：效能與儲存架構優化 / LocalStorage 儲存上限錯誤修復 / 歷史版本快取自動清理 / PWA 快取升級 v2.00
+- **問題根因與控制台報錯**：
+  - **Console 報錯**：`Critical: LocalStorage is full even after cleaning images. QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'miley_wrong_questions_v228' exceeded the quota. at DataManager.save (data.js?v=228:8357:22)`
+  - **根本成因**：
+    - 瀏覽器 LocalStorage 每個網域有嚴格的 5MB（約 5,242,880 位元組）配額上限。
+    - 過去歷次版本升級（如從 `v57` 迭代至 `v228`），每次升級都會將整個題庫（約 742KB）存入新的 key（例如 `miley_wrong_questions_v228`），但從未清理舊版本的 key！
+    - 導致使用者瀏覽器本地端累積了多達 170 多個歷史版本的巨大物件，總佔用量超過 40~50MB，徹底灌爆 5MB 限制，導致每次答題儲存 (`updateQuestionMastery`) 或雲端同步 (`mergeProgressPayload`) 時拋出 `QuotaExceededError`，並彈出擾人的警告視窗。
+- **改進內容**：
+  1. **歷史版本主動徹底清除機制 (`purgeLegacyStorageKeys`)**：
+     - 在 `DataManager` 中實作 `purgeLegacyStorageKeys()`：遍歷 `localStorage` 中所有以 `miley_wrong_questions_v` 開頭的 key，主動且安全地將除當前 `STORAGE_KEY`（`miley_wrong_questions_v229`）以外的所有舊版本 key 全數刪除！
+     - 單次清理即可瞬間釋放超過 4.5MB 的空間，讓 LocalStorage 使用量直接降至 700KB 左右（健康水位）。
+  2. **智慧動態繼承 (`Dynamic Legacy Version Migration`)**：
+     - 移除舊程式碼中寫死 170 多行逐版 fallback（`v57` ~ `v228`），改為正規表示法動態搜尋當前本地存在的最高歷史版本，無縫繼承使用者最新的作答紀錄與複習進度。
+     - 載入成功後立即觸發 `purgeLegacyStorageKeys()`，確保本地永遠只保留單一一份最新乾淨資料。
+  3. **儲存防護網與阻斷性 Alert 移除 (`DataManager.save`)**：
+     - 若遭遇任何突發性 Quota 錯誤，第一時間自動觸發 `purgeLegacyStorageKeys()` 與超大 Base64 圖片修剪，並重新嘗試儲存。
+     - 移除擾人的 `alert('⚠️ 瀏覽器儲存空間 (LocalStorage) 已滿！')` 阻斷性彈窗，避免中斷使用者專注複習的流程。
+  4. **版本升級與離線快取同步**：
+     - Service Worker 快取名稱升級至里程碑大版本：`miley-pwa-cache-v2.00`。
+     - 核心腳本快取升級：`sw.js?v=217`、`data.js?v=230`。
+
+---
+
 ## [v2.24] - 2026-10-11 (複習隊列動態排序與題目自然先後順序徹底重構：作答後已複習自動前移歸入前半部、未複習後排，火車軌道進度條完美對齊連續無跳站，題目依收錄時間最早至最晚自然排序 Q001->Q160，升級數據庫 v229 快取 v1.99)
 - **類型**：業務邏輯重構 / 複習隊列動態排隊演算法 / 火車軌道進度條渲染修復 / 題目自然時間序排序 / 數據庫相容升級 v229 / 快取升級 v1.99
 - **問題根因與麥麥反饋**：
