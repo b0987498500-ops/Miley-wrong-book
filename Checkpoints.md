@@ -4,6 +4,22 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v2.20] - 2026-10-11 (自動收錄 1 道國三數學幾何正方形摺紙連鎖相似形重點題：一線三直角 K 字型 AA 相似連比求解 GF:A'E:A'G Q154，幾何圖形高畫質去痕淨化，升級數據庫至 v227，快取升級 v1.95)
+- **類型**：錯題自動收錄 / 國三數學 / 正方形摺紙幾何 / 摺疊對稱全等性質（EA ＝ EA' ＝ 5x）/ 正方形邊長推導（AD ＝ 9x）/ 一線三直角 K 字型互餘（△DA'E ∼ △CGA' ∼ △B'GF）/ 連鎖三邊 3:4:5 比例推導 / 三連比化簡（1:2:3）/ 2x Lanczos 圖表純淨裁切 / 數據庫升級 v227 / 快取升級 v1.95
+- **主要變更**：
+  1. **收錄 1 道國三數學幾何摺紙重點題**：
+     - `q_math_square_folding_similarity_ratio_154`（數學）：考查將正方形色紙 $ABCD$ 沿 $\overline{EF}$ 對摺，$A$ 落在 $\overline{CD}$ 上的 $A'$ 點，$\overline{A'D} : \overline{DE} : \overline{EA'} = 3 : 4 : 5$，求 $\overline{GF} : \overline{A'E} : \overline{A'G}$ 的連比。
+       - 摺疊對稱求邊長：$\overline{EA} = \overline{EA'} = 5x \implies$ 正方形邊長 $\overline{AD} = 5x + 4x = 9x$，$\overline{A'C} = 9x - 3x = 6x$。
+       - 一線三直角互餘：平角 $A'$ 處 $\angle DA'E + 90^\circ + \angle CA'G = 180^\circ \implies \triangle DA'E \sim \triangle CGA' \sim \triangle B'GF$（三組直角三角形連鎖 AA 相似，邊長比皆為 $3 : 4 : 5$）。
+       - 依比例求長度：$\overline{A'E} = 5x$；$\triangle CGA'$ 中斜邊 $\overline{A'G} = 6x \times \frac{5}{4} = \frac{15}{2}x$；$\triangle B'GF$ 中短股 $\overline{B'G} = 9x - \frac{15}{2}x = \frac{3}{2}x \implies$ 斜邊 $\overline{GF} = \frac{3}{2}x \times \frac{5}{3} = \frac{5}{2}x$。
+       - 連比計算：$\overline{GF} : \overline{A'E} : \overline{A'G} = \frac{5}{2}x : 5x : \frac{15}{2}x = 5 : 10 : 15 = 1 : 2 : 3$。正解為 **(A) 1 : 2 : 3**。
+  2. **圖表處理規範**：
+     - 精確擷取摺疊前後正方形與箭頭幾何圖形，完全去除下方紅字解答劇透，純白底 `#FFFFFF` 淨化與 2x Lanczos 高畫質平滑放大，保存至 `assets/questions/q_math_square_folding_similarity_ratio_154.png`，完美支援點擊放大燈箱檢視。
+  3. **數據庫與快取升級**：
+     - 升級 `STORAGE_KEY` 至 `v227`（保留 v226 前版相容 fallback 鏈），題庫總量達 **258 題**！`sw.js` 快取版本更新至 `miley-pwa-cache-v1.95`，`index.html` 資源 query param 更新至 `v=227`，`sw.js?v=212`。
+
+---
+
 ## [v2.19] - 2026-10-11 (自動收錄 1 道國三數學幾何相似形梯形面積經典題：直角同位角 AA 相似結合一元一次方程求 ADE 面積 Q153，幾何圖形高畫質去痕淨化，升級數據庫至 v226，快取升級 v1.94)
 - **類型**：錯題自動收錄 / 國三數學 / 相似形與直角三角形 / AA 相似性質（△ADE∼△ABC）/ 設未知數 x 與邊長比例代換（BC ＝ x ＋ 4）/ 直角梯形面積公式一元一次方程式（x ＝ 7）/ 求 ADE 面積（147/2）/ 2x Lanczos 圖表純淨裁切 / 數據庫升級 v226 / 快取升級 v1.94
 - **主要變更**：

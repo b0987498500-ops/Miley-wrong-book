@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v226';
+const STORAGE_KEY = 'miley_wrong_questions_v227';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_math_square_folding_similarity_ratio_154",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "正方形摺紙幾何與連鎖相似形：摺疊對稱全等、直角互餘判定三組直角三角形相似（△DA'E ∼ △CGA' ∼ △B'GF）",
+    "uploadDate": "2026-10-11",
+    "mondayDate": "2026-10-05",
+    "mondayDates": [
+      "2026-10-05"
+    ],
+    "weekLabel": "2026-10-05 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：正方形摺紙幾何【連鎖直角相似三部曲】破題心法！\n1. **摺疊全等找隱藏邊長（最容易忽略！）**：\n   - 將 A 沿 線段 EF 摺至 A' 點，摺痕兩側完全對稱 ⟹ 線段 EA ＝ 線段 EA' ＝ 5x！\n   - 正方形邊長即為 線段 AD ＝ 線段 AE ＋ 線段 DE ＝ 5x ＋ 4x ＝ 9x！\n   - 頂邊 線段 CD ＝ 9x ⟹ 線段 A'C ＝ 9x － 3x ＝ 6x。\n2. **直角互餘（K 字形 / 一線三直角）判定連鎖相似**：\n   - 在平角點 A' 處：∠DA'E ＋ ∠EA'G(90°) ＋ ∠CA'G ＝ 180° ⟹ ∠DA'E ＋ ∠CA'G ＝ 90°。\n   - 與 △DA'E 內角和比較，立得 ∠CGA' ＝ ∠DA'E！\n   - 判定出**三組直角三角形連鎖相似**：△DA'E ∼ △CGA' ∼ △B'GF（三邊比皆為 3 : 4 : 5）！\n3. **利用 3 : 4 : 5 比例鎖定目標三線段**：\n   - 在 △DA'E 中，線段 A'E ＝ 5x。\n   - 在 △CGA' 中，長股 線段 A'C ＝ 6x 對應 4 份 ⟹ 斜邊 線段 A'G ＝ 6x × (5/4) ＝ 15/2 x。\n   - 在 △B'GF 中，線段 A'B' ＝ 9x ⟹ 短股 線段 B'G ＝ 9x － 15/2 x ＝ 3/2 x 對應 3 份 ⟹ 斜邊 線段 GF ＝ 3/2 x × (5/3) ＝ 5/2 x。\n4. **三連比化簡**：\n   - 線段 GF : 線段 A'E : 線段 A'G ＝ 5/2 x : 5x : 15/2 x ＝ 5 : 10 : 15 ＝ 1 : 2 : 3！",
+    "stem": "如附圖，將正方形色紙 ABCD 沿著線段 EF 對摺，使得 A 點的位置移至 A' 點。若 A' 點在線段 CD 上，且 線段 A'D : 線段 DE : 線段 EA' ＝ 3 : 4 : 5，則 線段 GF : 線段 A'E : 線段 A'G 的連比為何？\n\n○ (A) 1 : 2 : 3\n○ (B) 2 : 3 : 4\n○ (C) 3 : 4 : 5\n○ (D) 1 : 3 : 5",
+    "answer": "(A) 1 : 2 : 3",
+    "diagramUrl": "assets/questions/q_math_square_folding_similarity_ratio_154.png",
+    "solution": "本題考查國三幾何**「正方形摺疊對稱性質」**與**「一線三直角 K 字型連鎖 AA 相似三角形」**的高頻核心題型。\n\n### 💡 完整破題四步驟：\n\n1. **第一步：由摺疊對稱性求出正方形邊長**：\n   - 依題意，色紙沿線段 $\\overline{EF}$ 對摺使 $A$ 落在 $A'$，摺痕兩側圖形全等：\n     $$\\overline{EA} = \\overline{EA'}$$\n   - 已知 $\\overline{A'D} : \\overline{DE} : \\overline{EA'} = 3 : 4 : 5$，設比例常數 $x$：\n     $$\\overline{A'D} = 3x, \\quad \\overline{DE} = 4x, \\quad \\overline{EA'} = 5x$$\n   - 因此 $\\overline{EA} = \\overline{EA'} = 5x$。\n   - 正方形邊長為：\n     $$\\overline{AD} = \\overline{AE} + \\overline{DE} = 5x + 4x = 9x$$\n     正方形四邊皆等長，故 $\\overline{AB} = \\overline{BC} = \\overline{CD} = \\overline{AD} = 9x$。\n   - 點 $A'$ 在 $\\overline{CD}$ 上，求得右段：\n     $$\\overline{A'C} = \\overline{CD} - \\overline{A'D} = 9x - 3x = 6x$$\n\n2. **第二步：利用一線三直角互餘判定連鎖 AA 相似**：\n   - 在直線 $\\overline{CD}$ 上的點 $A'$：\n     $\\angle DA'E + \\angle EA'G + \\angle CA'G = 180^\\circ$\n   - 因為摺疊角 $\\angle EA'G = \\angle EAB = 90^\\circ$（正方形內角）：\n     $$\\angle DA'E + \\angle CA'G = 90^\\circ$$\n   - 在直角 $\\triangle DA'E$ 中，兩銳角互餘：\n     $$\\angle DA'E + \\angle DEA' = 90^\\circ \\implies \\angle CA'G = \\angle DEA'$$\n   - 在直角 $\\triangle CGA'$ 中，$\\angle C = \\angle D = 90^\\circ$：\n     $$\\triangle DA'E \\sim \\triangle CGA' \\quad (\\text{AA 相似})$$\n   - 同理，在頂點 $G$ 處對頂角相等（$\\angle B'GF = \\angle CGA'$），且 $\\angle B' = \\angle B = 90^\\circ$：\n     $$\\triangle CGA' \\sim \\triangle B'GF \\quad (\\text{AA 相似})$$\n   - 故得三組直角三角形連鎖相似，其三邊比均為 $3 : 4 : 5$（短股 : 長股 : 斜邊）！\n\n3. **第三步：依 $3 : 4 : 5$ 比例分別求出三線段長度**：\n   - **求 $\\overline{A'E}$**：\n     由設定條件已知：\n     $$\\overline{A'E} = 5x$$\n   - **求 $\\overline{A'G}$**：\n     在 $\\triangle CGA'$ 中，$\\overline{A'C}$ 為長股（對應 4 份），$\\overline{A'G}$ 為斜邊（對應 5 份）：\n     $$\\overline{A'C} : \\overline{A'G} = 4 : 5 \\implies 6x : \\overline{A'G} = 4 : 5$$\n     $$\\overline{A'G} = 6x \\times \\frac{5}{4} = \\frac{15}{2}x$$\n   - **求 $\\overline{GF}$**：\n     - 摺疊後邊長 $\\overline{A'B'} = \\overline{AB} = 9x$。\n     - 在線段 $\\overline{A'B'}$ 上：\n       $$\\overline{B'G} = \\overline{A'B'} - \\overline{A'G} = 9x - \\frac{15}{2}x = \\frac{3}{2}x$$\n     - 在 $\\triangle B'GF$ 中，$\\overline{B'G}$ 為短股（對應 3 份），$\\overline{GF}$ 為斜邊（對應 5 份）：\n       $$\\overline{B'G} : \\overline{GF} = 3 : 5 \\implies \\frac{3}{2}x : \\overline{GF} = 3 : 5$$\n       $$\\overline{GF} = \\frac{3}{2}x \\times \\frac{5}{3} = \\frac{5}{2}x$$\n\n4. **第四步：計算目標連比 $\\overline{GF} : \\overline{A'E} : \\overline{A'G}$**：\n   $$\\overline{GF} : \\overline{A'E} : \\overline{A'G} = \\frac{5}{2}x : 5x : \\frac{15}{2}x$$\n   同乘以 2：\n   $$= 5x : 10x : 15x$$\n   同除以 $5x$ 化為最簡整數比：\n   $$= 1 : 2 : 3$$\n\n故本題正確答案為 **(A) 1 : 2 : 3**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-11",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_math_triangle_similarity_trapezoid_area_153",
     "examPeriod": "一段",
@@ -7812,7 +7842,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v225') ||
+      stored = localStorage.getItem('miley_wrong_questions_v226') ||
+               localStorage.getItem('miley_wrong_questions_v225') ||
                localStorage.getItem('miley_wrong_questions_v224') ||
                localStorage.getItem('miley_wrong_questions_v223') ||
                localStorage.getItem('miley_wrong_questions_v222') ||
