@@ -218,6 +218,12 @@ window.ReviewModule = {
         } else {
           self.closeScratchpad();
         }
+      } else if (e.key === 'Escape') {
+        const scratchOverlay = document.getElementById('scratchpad-overlay');
+        if (scratchOverlay && !scratchOverlay.classList.contains('hidden')) {
+          e.preventDefault();
+          self.closeScratchpad();
+        }
       } else if (e.key === 'f' || e.key === 'F') {
         e.preventDefault();
         document.getElementById('btn-toggle-fullscreen')?.click();
@@ -225,7 +231,14 @@ window.ReviewModule = {
     });
 
     // Scratchpad Modal Toggle
-    document.getElementById('toggle-scratchpad-btn')?.addEventListener('click', () => self.openScratchpad());
+    document.getElementById('toggle-scratchpad-btn')?.addEventListener('click', () => {
+      const scratchOverlay = document.getElementById('scratchpad-overlay');
+      if (scratchOverlay && !scratchOverlay.classList.contains('hidden')) {
+        self.closeScratchpad();
+      } else {
+        self.openScratchpad();
+      }
+    });
     document.getElementById('scratch-close-btn')?.addEventListener('click', () => self.closeScratchpad());
     document.getElementById('scratch-clear-btn')?.addEventListener('click', () => self.clearScratchpad());
     document.getElementById('scratch-undo-btn')?.addEventListener('click', () => self.undoScratchpad());
@@ -1776,6 +1789,8 @@ window.ReviewModule = {
   scratchSize: 3,
 
   saveCurrentQuestionScratchState: function() {
+    const overlay = document.getElementById('scratchpad-overlay');
+    if (!overlay || overlay.classList.contains('hidden')) return;
     if (!this.scratchCanvas || !this.scratchCtx) return;
     const q = this.activeQuestions && this.activeQuestions[this.currentIndex];
     if (!q || !q.id) return;
@@ -2022,11 +2037,30 @@ window.ReviewModule = {
   closeScratchpad: function() {
     const overlay = document.getElementById('scratchpad-overlay');
     const flashcard = document.getElementById('main-flashcard');
+    const canvas = this.scratchCanvas || document.getElementById('scratchpad-canvas');
 
-    this.saveCurrentQuestionScratchState();
+    // 1. 完全清除當前畫布上的所有草稿筆劃與繪圖步驟，還原乾淨原始畫面
+    if (canvas && this.scratchCtx) {
+      this.scratchCtx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+    this.scratchHistory = [];
 
+    // 2. 清除所有題目暫存的草稿記錄，回歸純淨無筆跡狀態
+    const q = this.activeQuestions && this.activeQuestions[this.currentIndex];
+    if (q && q.id && this.savedScratchMap) {
+      delete this.savedScratchMap[q.id];
+    }
+    this.savedScratchMap = {};
+
+    // 3. 隱藏懸浮工具列與關閉畫布互動啟用狀態
     if (overlay) overlay.classList.add('hidden');
     if (flashcard) flashcard.classList.remove('scratchpad-active');
+
+    // 4. 重設橡皮擦狀態
+    if (canvas) canvas.classList.remove('scratchpad-erasing-active');
+    document.getElementById('scratch-eraser-btn')?.classList.remove('active');
+
+    this.showToast('🧹 已關閉草稿並清除所有筆劃！');
   },
 
   clearScratchpad: function() {

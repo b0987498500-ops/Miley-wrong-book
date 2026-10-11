@@ -53,7 +53,7 @@
       // Register Service Worker
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('sw.js?v=214').then(function(reg) {
+          navigator.serviceWorker.register('sw.js?v=215').then(function(reg) {
             if (typeof reg.update === 'function') {
               reg.update();
             }
@@ -1049,7 +1049,7 @@
         <button id="scratch-eraser-btn" class="scratch-btn scratch-tool-btn" title="切換橡皮擦（擦除局部筆劃）"><i class="fa-solid fa-eraser"></i> 橡皮擦</button>
         <button id="scratch-undo-btn" class="scratch-btn" title="復原上一筆"><i class="fa-solid fa-rotate-left"></i> 復原</button>
         <button id="scratch-clear-btn" class="scratch-btn" title="清除所有筆劃"><i class="fa-solid fa-trash-can"></i> 清除</button>
-        <button id="scratch-close-btn" class="scratch-btn btn-close-scratch" title="收起工具列（筆記維持留存於題目）"><i class="fa-solid fa-eye-slash"></i> 隱藏工具列</button>
+        <button id="scratch-close-btn" class="scratch-btn btn-close-scratch" title="關閉草稿區並清除所有筆劃（還原乾淨畫面）"><i class="fa-solid fa-xmark"></i> 關閉草稿</button>
       </div>
     </div>
   </div>
@@ -1255,12 +1255,12 @@
   <script src="js/utils/pdf_export.js?v=216"></script>
   <script src="js/modules/upload.js?v=216"></script>
   <script src="js/modules/archive.js?v=216"></script>
-  <script src="js/modules/review.js?v=216"></script>
+  <script src="js/modules/review.js?v=217"></script>
   <script src="js/modules/sprint.js?v=216"></script>
   <script src="js/modules/analytics.js?v=216"></script>
   <script src="js/modules/calendar.js?v=216"></script>
   <script src="js/modules/wisdom.js?v=216"></script>
   <script src="js/modules/sync.js?v=216"></script>
-  <script src="js/app.js?v=216"></script>
+  <script src="js/app.js?v=217"></script>
 </body>
 </html>

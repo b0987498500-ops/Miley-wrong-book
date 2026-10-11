@@ -451,6 +451,14 @@ class App {
   switchTab(tabId) {
     this.currentTab = tabId;
 
+    // Close scratchpad cleanly if navigating away from review
+    if (tabId !== 'review' && window.ReviewModule?.closeScratchpad) {
+      const overlay = document.getElementById('scratchpad-overlay');
+      if (overlay && !overlay.classList.contains('hidden')) {
+        window.ReviewModule.closeScratchpad();
+      }
+    }
+
     // Update Nav Buttons Active State
     document.querySelectorAll('.nav-item').forEach(item => {
       if (item.dataset.tab === tabId) {
