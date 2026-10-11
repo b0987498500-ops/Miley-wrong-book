@@ -4,6 +4,20 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v2.22] - 2026-10-11 (修復全螢幕模式題目排版偏右與右側按鈕被截斷問題：根除 100vw 在 CSS zoom: 1.25 下之 2400px 溢出病灶，修復下一題與頂部功能按鈕遮擋，快取升級 v1.97)
+- **類型**：UI 介面排版修復 / 全螢幕視窗排版適配 / CSS 視窗單位溢出修正 / 離線快取更新 v1.97
+- **問題根因**：
+  - 專案根目錄 `html` 設定了 `zoom: 1.25;` 全局放大比例。
+  - 在全螢幕模式（`body.fullscreen-review-mode`）下，原 CSS 多個外層容器（`.app-container`、`.main-content`、`.views-wrapper`、`#view-review`、`.review-container`）使用了 `width: 100vw !important`。
+  - 在 CSS `zoom: 1.25` 的解析管線下，`100vw` 依未縮放視窗寬度 1920px 計算，在渲染時被乘上 1.25 倍擴展至 2400px，超出螢幕物理寬度達 480px，導致整張題目卡片嚴重偏右，右側的「退出全螢幕」、「草稿區」、「出類似題」、「匯出 PDF」、「下一題」導航按鈕、火車軌道後段車站與選項刪去 [X] 按鈕全部被擠出螢幕邊緣截斷！
+- **修復方案**：
+  1. 將全螢幕模式下的容器寬度統一由 `100vw` 修正為標準 `100%`，讓容器精確契合視窗邊界，徹底消除 480px 的超額溢出。
+  2. 同步修復透明計算草稿區 `.scratchpad-overlay` 之 `100vw` 寬度為 `100%`。
+  3. 驗證全螢幕模式下「上一題」與「下一題」浮動導航箭頭對稱居中顯示，題幹、選項、解析與頂部動作條完全端正居中對齊。
+  4. 快取升級：`sw.js` 升級至 `miley-pwa-cache-v1.97`，`index.html` 更新 `sw.js?v=214` 與 `styles.css?v=162`。
+
+---
+
 ## [v2.21] - 2026-10-11 (自動收錄 6 道國三英語核心段考題：單字 lazy、瞬間動詞 vs 持續狀態 has been dead、過去式 Did vs have been 經驗、Most of 朋友主謂一致、完成式頻率副詞 twice、There have been 存在句型 Q155~Q160，升級數據庫至 v228，快取升級 v1.96)
 - **類型**：錯題自動收錄 / 國三英語 / 現在完成式 / 核心單字 lazy / 瞬間動詞（die）與持續狀態（has been dead for 3 years）/ 明確過去時間（last summer）用過去式 Did you go vs 去過經驗 have been there / 主詞動詞單複數一致性（Most of my friends have... but I haven't）/ 完成式頻率副詞 twice vs 介系詞辨析 / 存在句完成式 There have been online games / 數據庫升級 v228 / 快取升級 v1.96
 - **主要變更**：

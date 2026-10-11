@@ -4672,7 +4672,7 @@ body.fullscreen-review-mode .sidebar-resizer {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 0;
   z-index: 1500;
   pointer-events: none;
@@ -4910,8 +4910,8 @@ body.fullscreen-review-mode .top-header {
 }
 
 body.fullscreen-review-mode .app-container {
-  width: 100vw !important;
-  max-width: 100vw !important;
+  width: 100% !important;
+  max-width: 100% !important;
   min-height: 100vh !important;
   height: auto !important;
   margin: 0 !important;
@@ -4920,8 +4920,8 @@ body.fullscreen-review-mode .app-container {
 }
 
 body.fullscreen-review-mode .main-content {
-  width: 100vw !important;
-  max-width: 100vw !important;
+  width: 100% !important;
+  max-width: 100% !important;
   min-height: 100vh !important;
   height: auto !important;
   margin: 0 !important;
@@ -4932,8 +4932,8 @@ body.fullscreen-review-mode .main-content {
 }
 
 body.fullscreen-review-mode .views-wrapper {
-  width: 100vw !important;
-  max-width: 100vw !important;
+  width: 100% !important;
+  max-width: 100% !important;
   min-height: 100vh !important;
   height: auto !important;
   margin: 0 !important;
@@ -4943,8 +4943,8 @@ body.fullscreen-review-mode .views-wrapper {
 }
 
 body.fullscreen-review-mode #view-review {
-  width: 100vw !important;
-  max-width: 100vw !important;
+  width: 100% !important;
+  max-width: 100% !important;
   min-height: 100vh !important;
   height: auto !important;
   margin: 0 !important;
@@ -4953,8 +4953,8 @@ body.fullscreen-review-mode #view-review {
 }
 
 body.fullscreen-review-mode .review-container {
-  width: 100vw !important;
-  max-width: 100vw !important;
+  width: 100% !important;
+  max-width: 100% !important;
   min-height: 100vh !important;
   height: auto !important;
   margin: 0 !important;
