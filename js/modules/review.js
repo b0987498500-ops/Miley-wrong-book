@@ -796,6 +796,20 @@ window.ReviewModule = {
       }
     }
 
+    // Preserve natural chronological sort key within each group (先放的在前，後放的在後)
+    if (window.dataManager && typeof window.dataManager.getQuestionSortKey === 'function') {
+      reviewed.sort((a, b) => {
+        const keyA = window.dataManager.getQuestionSortKey(a);
+        const keyB = window.dataManager.getQuestionSortKey(b);
+        return keyA.localeCompare(keyB);
+      });
+      unreviewed.sort((a, b) => {
+        const keyA = window.dataManager.getQuestionSortKey(a);
+        const keyB = window.dataManager.getQuestionSortKey(b);
+        return keyA.localeCompare(keyB);
+      });
+    }
+
     this.activeQuestions = [...reviewed, ...unreviewed];
   },
 
@@ -868,12 +882,23 @@ window.ReviewModule = {
     }
 
     // Train progress: Miley requested:
-    // "然後火車的進度就會到以複習"
-    const reviewedPercent = (reviewedCount / total) * 100;
-    const currentPercent = total > 1 ? (this.currentIndex / (total - 1)) * 100 : 100;
+    // "你應該要把做完的題目往前排，然後把還沒有做完的往後排，這樣你也可以符合你的那一條進度條。"
+    let trackFillPercent = 0;
+    if (total > 1) {
+      if (reviewedCount >= total) {
+        trackFillPercent = 100;
+      } else {
+        const frontierIndex = Math.max(reviewedCount, this.currentIndex);
+        trackFillPercent = Math.min(100, Math.max(0, (frontierIndex / (total - 1)) * 100));
+      }
+    } else {
+      trackFillPercent = reviewedCount > 0 ? 100 : 0;
+    }
+
+    const currentPercent = total > 1 ? (this.currentIndex / (total - 1)) * 100 : 0;
 
     if (fillEl) {
-      fillEl.style.width = `${Math.max(reviewedPercent, (this.currentIndex / Math.max(total - 1, 1)) * 100)}%`;
+      fillEl.style.width = `${trackFillPercent}%`;
     }
     if (thumbEl) {
       thumbEl.style.left = `${currentPercent}%`;
@@ -1694,23 +1719,20 @@ window.ReviewModule = {
       window.app.renderWeeklyMondayBar();
     }
 
-    // 2. Sequential Navigation: Advance to the next unreviewed question starting AFTER currentIndex (wrapping around)
-    let nextIdx = -1;
-    const total = this.activeQuestions.length;
-    for (let i = 1; i <= total; i++) {
-      const candidateIdx = (this.currentIndex + i) % total;
-      if (!this.isQuestionReviewed(this.activeQuestions[candidateIdx])) {
-        nextIdx = candidateIdx;
-        break;
-      }
-    }
+    // 2. Dynamic Queue Reordering: Miley's Rule
+    // 做完的題目往前排（前半部），還沒有做完的往後排（後半部），符合火車軌道進度條！
+    this.reorderQueueReviewedFirst();
 
-    if (nextIdx === -1) {
+    const reviewedCount = this.activeQuestions.filter(item => this.isQuestionReviewed(item)).length;
+    if (reviewedCount >= this.activeQuestions.length) {
       // All questions in queue have been reviewed!
+      this.currentIndex = this.activeQuestions.length - 1;
       this.renderCurrentCard();
+      this.scrollToCardTop();
       alert('🎉 恭喜麥麥！本輪所有題目已全部複習完成！');
     } else {
-      this.currentIndex = nextIdx;
+      // Next unreviewed question is automatically at reviewedCount index!
+      this.currentIndex = reviewedCount;
       this.renderCurrentCard();
       this.scrollToCardTop();
     }

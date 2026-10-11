@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v228';
+const STORAGE_KEY = 'miley_wrong_questions_v229';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -8022,7 +8022,8 @@ class DataManager {
 
     let stored = localStorage.getItem(STORAGE_KEY);
     if (stored === null) {
-      stored = localStorage.getItem('miley_wrong_questions_v227') ||
+      stored = localStorage.getItem('miley_wrong_questions_v228') ||
+               localStorage.getItem('miley_wrong_questions_v227') ||
                localStorage.getItem('miley_wrong_questions_v226') ||
                localStorage.getItem('miley_wrong_questions_v225') ||
                localStorage.getItem('miley_wrong_questions_v224') ||
@@ -8470,24 +8471,30 @@ class DataManager {
   /**
    * 取得跨裝置 canonical 確定性排序鍵值 (Deterministic Sort Key)
    * 確保手機與電腦（跨裝置）之題目排列順序 100% 一致！
-   * 先加入的題目排在前面（第一頁/第一題），後加入的題目排在後面（最後一頁/最後一題）。
+   * 麥麥最高規範：
+   * 1. 第一個放進去的題目要排在第 1 題（第一頁/第一題）
+   * 2. 越晚放進去的題目排在越後面（本週比較後面的題目/最後一頁/最後一題）
    */
   getQuestionSortKey(q) {
-    if (!q) return '9_9999-99-99_000000';
-    if (typeof q._seedIndex === 'number') {
-      return `0_${String(q._seedIndex).padStart(6, '0')}`;
+    if (!q) return '9_999999999999999_zzzz';
+    
+    // 依末尾題號（如 Q001 ~ Q160，依收錄先後自然遞增）做自然數序遞增排序
+    let qNum = null;
+    if (q.id) {
+      const match = q.id.match(/_(\d+)$/);
+      if (match) qNum = parseInt(match[1], 10);
     }
-    const seedIdx = INITIAL_SEED_DATA.findIndex(s => s.id === q.id);
-    if (seedIdx !== -1) {
-      q._seedIndex = seedIdx;
-      return `0_${String(seedIdx).padStart(6, '0')}`;
+    if (qNum !== null && !isNaN(qNum)) {
+      return `0_${String(qNum).padStart(15, '0')}_${q.id}`;
     }
-    const uploadDate = q.uploadDate || '2000-01-01';
+    
+    // 自訂上傳或時間戳記題目（如 q_1760000000000）
     let timestamp = 0;
     if (q.id) {
-      const match = q.id.match(/\d+/);
-      if (match) timestamp = parseInt(match[0], 10);
+      const matchAny = q.id.match(/\d+/);
+      if (matchAny) timestamp = parseInt(matchAny[0], 10);
     }
+    const uploadDate = q.uploadDate || '2026-01-01';
     return `1_${uploadDate}_${String(timestamp).padStart(15, '0')}_${q.id}`;
   }
 
