@@ -526,19 +526,23 @@ window.SyncModule = {
         });
       }
 
-      // 4. 下週排程 (mondayDates) 雙向對齊：跳過任何已在 removedMondaysMap 中的週次，防止刪除之週次死灰復燃！
-      if (!Array.isArray(localQ.mondayDates)) localQ.mondayDates = [];
-      const removedForThisQ = rmMap[localQ.id] || [];
-      if (Array.isArray(remote.mds)) {
-        remote.mds.forEach(m => {
-          if (!localQ.mondayDates.includes(m) && !removedForThisQ.includes(m)) {
-            localQ.mondayDates.push(m);
-            hasUpdate = true;
-          }
-        });
-      }
-      if (remote.md && !removedForThisQ.includes(remote.md)) {
-        localQ.mondayDate = remote.md;
+      // 4. 下週排程 (mondayDates) 安全對齊：
+      // 依麥麥指示：種子題目所屬歷史週次絕對固定純淨，嚴禁跨週倒灌或污染！
+      const isSeed = Array.isArray(INITIAL_SEED_DATA) && INITIAL_SEED_DATA.some(s => s && s.id === localQ.id);
+      if (!isSeed) {
+        if (!Array.isArray(localQ.mondayDates)) localQ.mondayDates = [];
+        const removedForThisQ = rmMap[localQ.id] || [];
+        if (Array.isArray(remote.mds)) {
+          remote.mds.forEach(m => {
+            if (!localQ.mondayDates.includes(m) && !removedForThisQ.includes(m)) {
+              localQ.mondayDates.push(m);
+              hasUpdate = true;
+            }
+          });
+        }
+        if (remote.md && !removedForThisQ.includes(remote.md)) {
+          localQ.mondayDate = remote.md;
+        }
       }
 
       // 5. 做題歷史紀錄合併

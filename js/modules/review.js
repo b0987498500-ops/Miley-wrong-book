@@ -1860,7 +1860,7 @@ window.ReviewModule = {
     if (!canvas || !overlay) return;
 
     this.scratchCanvas = canvas;
-    this.scratchCtx = canvas.getContext('2d');
+    this.scratchCtx = canvas.getContext('2d', { willReadFrequently: true });
     this.scratchMode = 'pen'; // 'pen' | 'eraser'
 
     const self = this;

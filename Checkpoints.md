@@ -4,6 +4,31 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v2.27] - 2026-10-12 (麥麥做題進度全面對齊與零死角修復：烘焙 190 道已複習狀態至種子資料庫與雲端、修復跨週日期造成已複習標記與進度條不同步問題、根除雲端拉取歷史週次再污染、修復 Canvas2D willReadFrequently 警告，升級題庫至 v232 與快取 v2.02)
+- **類型**：複習進度完全對齊 / 跨週判定 Bug 修復 / 雲端週次防污染 / Canvas2D 效能警告修復 / PWA 快取升級 v2.02
+- **麥麥語音反饋與控制台報錯深度剖析**：
+  1. **已複習題目未被標記已複習、進度條沒跟上（麥麥反映「有一些題目我已經複習過了，但是沒有標記已複習，進度條好像都沒有跟上」）**：
+     - **成因一（跨週 Monday 比對盲點）**：`data.js` 的 `isQuestionReviewed(q, mondayDate)` 原先寫法為：若傳入目前週次（如 10/05），則嚴格比對 `q.reviewedMondays.includes('2026-10-05')`。但麥麥是在今天（週一 10/12）複習這些 10/05 題目，系統記錄的複習週次為 `2026-10-12`，導致在查看 10/05 時被誤判為「未複習」，進度條顯示 0/25！
+     - **成因二（種子題庫未固化做題進度）**：麥麥在雲端與本機共累積攻克了 190 道錯題，但種子資料庫中多數題目仍預設 `isReviewed: false`，換裝置或重整時若雲端合併邏輯受阻，進度便未能立即呈現。
+  2. **10/5 自然題目重新整理後又變回 80 題（雲端遠端排程再污染）**：
+     - `sync.js` 的 `mergeProgressPayload()` 在自 Supabase 雲端拉取快照時，第 534 行仍會將雲端歷史快照中被舊版 carryOver 污染的 `mds` 重新 union 灌回 `localQ.mondayDates`，導致 9/21 與 9/28 的歷史題目再度死灰復燃被灌進 10/05！
+  3. **Canvas2D 控制台黃色效能警告（麥麥截圖報錯）**：
+     - 控制台顯示：`Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. review.js?v=219:2016`。草稿畫布在 `getContext('2d')` 時未宣告 `{ willReadFrequently: true }`。
+- **改進內容**：
+  1. **全站 190 道已複習題目完整烘焙與雲端同步固化**：
+     - 將麥麥在 Supabase 雲端的所有真實做題痕跡（共 190 題已攻克，涵蓋國文 35 題、數學 45 題、社會 35 題、自然/理化 27 題、自然/生物 24 題、英文 14 題、地科 10 題；10/05 當週已複習 6 題）100% 完整烘焙入 `INITIAL_SEED_DATA`！
+     - 雙向更新並洗淨 Supabase 雲端資料庫的 `progress_data`，確保任何裝置載入第一秒即擁有最完整真實的已複習進度！
+  2. **重構 `isQuestionReviewed()` 核心邏輯（符合 AGENTS.md 準則）**：
+     - 徹底拔除「跨日/跨週 Monday 嚴格吻合才算複習」的盲點。只要題目曾被點擊「已擊敗」或「未擊敗」、`reviewStatus === 'reviewed'`、掌握次數 > 0、或有任何做題紀錄，全站任何週次檢視時一律永久且穩定認定為【已複習】！
+     - 火車進度條與卡片徽章即時連動，10/05 自然科進度條精準反映 6/25 完成度！
+  3. **徹底切斷雲端週次再污染通道 (`sync.js`)**：
+     - 在 `mergeProgressPayload` 中加入種子題目隔離保護：種子題目的 `mondayDates` 嚴禁被雲端歷史殘留的舊跨週標籤竄改覆蓋，歷史週次徹底純淨固定，10/05 自然科永遠固定為真實的 25 題。
+  4. **修復 Canvas2D willReadFrequently 警告**：
+     - 在 `review.js` 之 `initScratchpad` 畫布初始化中加上 `{ willReadFrequently: true }`，徹底消除 Chrome 控制台黃色警告。
+  5. **版本升級與離線快取同步**：
+     - 升級 `STORAGE_KEY` 至 `v232`，`sw.js` 快取版本更新至 `v2.02`。
+     - `index.html` 資源版本更新至 `data.js?v=232`、`review.js?v=220`、`sync.js?v=217`、`sw.js?v=219`。
+
 ## [v2.26] - 2026-10-12 (徹底根除自然科目跨週倒灌 80 題病灶：精準回歸 10/5 真實 25 題、修復進度條刻度題號丟失問題、側邊欄科目點選預設週次防呆優化、自動收錄 8 道歷史與數學最新錯題，升級題庫至 v231 與快取 v2.01)
 - **類型**：錯題暴增問題修復 / 進度條題號顯示修復 / 歷史週次歸屬純淨化 / 最新國二歷史與數學 8 道錯題收錄 / PWA 快取升級 v2.01
 - **問題根因與麥麥反饋剖析**：

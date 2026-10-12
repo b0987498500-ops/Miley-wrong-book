@@ -1,4 +1,4 @@
-const CACHE_NAME = 'miley-pwa-cache-v2.01';
+const CACHE_NAME = 'miley-pwa-cache-v2.02';
 
 const ASSETS_TO_CACHE = [
   './',
@@ -16,7 +16,8 @@ const ASSETS_TO_CACHE = [
   'js/modules/calendar.js',
   'js/modules/sprint.js',
   'js/modules/upload.js',
-  'js/modules/analytics.js'
+  'js/modules/analytics.js',
+  'js/modules/sync.js'
 ];
 
 // 安裝 Service Worker 並預先載入核心資源

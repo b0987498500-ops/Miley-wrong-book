@@ -53,7 +53,7 @@
       // Register Service Worker
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('sw.js?v=218').then(function(reg) {
+          navigator.serviceWorker.register('sw.js?v=219').then(function(reg) {
             if (typeof reg.update === 'function') {
               reg.update();
             }
@@ -1250,17 +1250,17 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=231"></script>
+  <script src="js/data.js?v=232"></script>
   <script src="js/utils/katex_render.js?v=216"></script>
   <script src="js/utils/pdf_export.js?v=216"></script>
   <script src="js/modules/upload.js?v=216"></script>
   <script src="js/modules/archive.js?v=216"></script>
-  <script src="js/modules/review.js?v=219"></script>
+  <script src="js/modules/review.js?v=220"></script>
   <script src="js/modules/sprint.js?v=216"></script>
   <script src="js/modules/analytics.js?v=216"></script>
   <script src="js/modules/calendar.js?v=216"></script>
   <script src="js/modules/wisdom.js?v=216"></script>
-  <script src="js/modules/sync.js?v=216"></script>
+  <script src="js/modules/sync.js?v=217"></script>
   <script src="js/app.js?v=217"></script>
 </body>
 </html>

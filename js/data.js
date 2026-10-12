@@ -3,251 +3,250 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v231';
+const STORAGE_KEY = 'miley_wrong_questions_v232';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
-{
-  "id": "q_soc_hist_rome_republic_three_continents_expansion_161",
-  "examPeriod": "一段",
-  "subject": "社會",
-  "errorReason": "觀念不懂",
-  "concept": "國二歷史：古羅馬共和時期的對外擴張與版圖橫跨歐亞非三洲",
-  "uploadDate": "2026-10-12",
-  "mondayDate": "2026-10-12",
-  "mondayDates": [
-    "2026-10-12"
-  ],
-  "weekLabel": "2026-10-12 (最新週次)",
-  "isGuessedOrUnstable": false,
-  "mistakeNote": "💡 **易錯警示筆記**：羅馬三大時期（王政 → 共和 → 帝國）對外擴張關鍵字！\n1. **自「共和」時期起積極向外擴張**：\n   - 羅馬在共和時期（西元前 509～前 27 年）推翻王政，對外發動布匿戰爭擊敗迦太基，版圖橫跨歐、亞、非三洲！\n   - 帝國時期（西元前 27 年起）屋大維建立元首制，版圖達到全盛，地中海成為羅馬帝國的「內海」。\n2. **審題關鍵字**：注意題幹「**自 ______ 時期起**」，擴張起點正是「共和時期」！",
-  "stem": "自 ______ 時期起，羅馬人積極向外擴張，版圖橫跨歐、亞、非三洲。\n\n○ (A) 王政\n○ (B) 共和\n○ (C) 帝國\n○ (D) 拜占庭",
-  "answer": "(B) 共和",
-  "diagramUrl": "",
-  "solution": "1. **羅馬三大歷史時期分界**：\n   - **王政時期**（西元前 8 世紀～西元前 509 年）：伊特魯里亞人王政統治。\n   - **共和時期**（西元前 509 年～西元前 27 年）：推翻王政建立共和政體，設執政官、元老院與公民大會分權制衡。自此時期起，羅馬人積極對外擴張，征服義大利半島及地中海周邊，版圖橫跨歐、亞、非三洲。\n   - **帝國時期**（西元前 27 年～西元 476 年）：屋大維建立元首制，羅馬進入帝國時代，版圖進一步擴大達到極盛。\n\n2. **破題重點**：題幹提及「自……時期起，羅馬人積極向外擴張，版圖橫跨歐、亞、非三洲」，此起點正是「**共和時期**」。\n\n故本題正確答案為 **(B) 共和**（填空：共和）。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-10-12",
-  "isReviewed": false,
-  "reviewStatus": "unreviewed",
-  "lastReviewDecision": null,
-  "lastReviewedMonday": null,
-  "lastReviewedDate": null,
-  "reviewedMondays": []
-},
-{
-  "id": "q_soc_hist_rome_caesar_dictatorship_first_citizen_162",
-  "examPeriod": "一段",
-  "subject": "社會",
-  "errorReason": "觀念不懂",
-  "concept": "國二歷史：羅馬共和末期政治動盪與凱撒首先破壞平衡走向個人獨裁",
-  "uploadDate": "2026-10-12",
-  "mondayDate": "2026-10-12",
-  "mondayDates": [
-    "2026-10-12"
-  ],
-  "weekLabel": "2026-10-12 (最新週次)",
-  "isGuessedOrUnstable": false,
-  "mistakeNote": "💡 **易錯警示筆記**：【何人「首先」破壞平衡走向獨裁？】考點精準辨析！\n1. **凱撒（Caesar）**：共和末期征服高盧的軍事統帥，進軍羅馬並出任「終身獨裁官」，集中軍政大權於一身，是**最先打破分權制衡體制、走向個人獨裁**的人！\n2. **屋大維（奧古斯都）**：是凱撒的養子，在凱撒死後結束內戰，正式開啟元首制（帝國時期），自稱「第一公民」。但題目問的是「**何人首先破壞平衡走向獨裁**」，始作俑者是**凱撒**！",
-  "stem": "以下三則資料，分別為羅馬三個時期的人物述說當代的情況。閱讀資料並回答問題：\n資料一：我們有分權且制衡的政治體制，成文法的頒布，使法律的精神得以確立，同時我們也積極向外擴張。\n資料二：國家昔日的平等遭到剝奪，所有人都一股腦兒，仰望聽命於「第一公民」一人。\n資料三：外族的國王非常殘暴、厲行苛政，有朝一日，我們一定要將異族政權推翻，建立一個新的政治體制。\n\n【題目】資料二提及國家昔日的平等遭到剝奪，請問何人首先破壞平衡走向獨裁？\n\n○ (A) 屋大維\n○ (B) 奧古斯都\n○ (C) 凱撒\n○ (D) 君士坦丁",
-  "answer": "(C) 凱撒",
-  "diagramUrl": "",
-  "solution": "1. **題幹資料定位**：\n   - 資料二提及「國家昔日的平等遭到剝奪，所有人都一股腦兒，仰望聽命於『第一公民』一人」，描述的是羅馬走向獨裁與帝國元首統治的轉變。\n\n2. **破題關鍵（何人「首先」走向獨裁）**：\n   - 羅馬共和末期因貧富懸殊、土地兼併與軍閥爭權，憲政秩序瓦解。\n   - **凱撒（Julius Caesar）** 憑藉征服高盧的強大軍隊進軍羅馬，被任命為「終身獨裁官」，獨攬統治大權，是歷史上**最先破壞共和制衡、走向個人軍事獨裁**的代表人物。\n   - 凱撒遇刺後，其養子屋大維（即奧古斯都）擊敗政敵建立帝國（元首制），自稱第一公民。但開啟獨裁先河者為凱撒。\n\n故本題正確答案為 **(C) 凱撒**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-10-12",
-  "isReviewed": false,
-  "reviewStatus": "unreviewed",
-  "lastReviewDecision": null,
-  "lastReviewedMonday": null,
-  "lastReviewedDate": null,
-  "reviewedMondays": []
-},
-{
-  "id": "q_soc_hist_rome_three_periods_chronological_order_163",
-  "examPeriod": "一段",
-  "subject": "社會",
-  "errorReason": "觀念不懂",
-  "concept": "國二歷史：古羅馬歷史演進三大階段時間順序（王政 → 共和 → 帝國）",
-  "uploadDate": "2026-10-12",
-  "mondayDate": "2026-10-12",
-  "mondayDates": [
-    "2026-10-12"
-  ],
-  "weekLabel": "2026-10-12 (最新週次)",
-  "isGuessedOrUnstable": false,
-  "mistakeNote": "💡 **易錯警示筆記**：羅馬演進三大時期特徵與時間軸速記！\n1. **資料三（王政時期，最先）**：「外族國王非常殘暴、將異族政權推翻」⟹ 指伊特魯里亞人王政統治末期。\n2. **資料一（共和時期，居中）**：「分權制衡體制、成文法（十二表法）、積極向外擴張」⟹ 指西元前 509 年推翻王政後建立的共和政體。\n3. **資料二（帝國時期，最晚）**：「聽命於第一公民一人」⟹ 指西元前 27 年屋大維開創的羅馬帝國。\n- **時間順序**：資料三（王政）→ 資料一（共和）→ 資料二（帝國）！",
-  "stem": "以下三則資料，分別為羅馬三個時期的人物述說當代的情況。閱讀資料並回答問題：\n資料一：我們有分權且制衡的政治體制，成文法的頒布，使法律的精神得以確立，同時我們也積極向外擴張。\n資料二：國家昔日的平等遭到剝奪，所有人都一股腦兒，仰望聽命於「第一公民」一人。\n資料三：外族的國王非常殘暴、厲行苛政，有朝一日，我們一定要將異族政權推翻，建立一個新的政治體制。\n\n【題目】三則資料依時間如何排序？\n\n○ (A) 資料一 → 資料二 → 資料三\n○ (B) 資料二 → 資料三 → 資料一\n○ (C) 資料三 → 資料一 → 資料二\n○ (D) 資料三 → 資料二 → 資料一",
-  "answer": "(C) 資料三 → 資料一 → 資料二",
-  "diagramUrl": "",
-  "solution": "1. **逐一解構三則資料之歷史時期**：\n   - **資料三【王政時期（西元前 8 世紀～西元前 509 年）】**：早期羅馬受外族伊特魯里亞人國王殘暴統治，羅馬人起義推翻苛政，結束王政。\n   - **資料一【共和時期（西元前 509 年～西元前 27 年）】**：推翻王政後建立共和政體，以執政官、元老院與公民大會分權制衡；制定《十二表法》確立成文法精神，並積極對外軍事擴張。\n   - **資料二【帝國時期（西元前 27 年～西元 476 年）】**：共和末期內戰結束，屋大維獲封「奧古斯都」，自稱「第一公民」，開創帝國元首政治。\n\n2. **時間先後排序**：\n   - 順序為：**王政（資料三） → 共和（資料一） → 帝國（資料二）**。\n\n【考卷原版解析】\n資料一：共和時期。資料二：帝國時期。資料三：王政時期。\n\n故本題正確答案為 **(C) 資料三 → 資料一 → 資料二**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-10-12",
-  "isReviewed": false,
-  "reviewStatus": "unreviewed",
-  "lastReviewDecision": null,
-  "lastReviewedMonday": null,
-  "lastReviewedDate": null,
-  "reviewedMondays": []
-},
-{
-  "id": "q_math_geom_rectangle_diagonal_fold_area_164",
-  "examPeriod": "一段",
-  "subject": "數學",
-  "errorReason": "觀念不懂",
-  "concept": "國二數學幾何：長方形紙條對角線對摺之等腰三角形性質與畢氏定理求面積",
-  "uploadDate": "2026-10-12",
-  "mondayDate": "2026-10-12",
-  "mondayDates": [
-    "2026-10-12"
-  ],
-  "weekLabel": "2026-10-12 (最新週次)",
-  "isGuessedOrUnstable": false,
-  "mistakeNote": "💡 **易錯警示筆記**：【長方形對摺幾何】秒殺兩大定律！\n1. **摺疊對稱 ＋ 平行線內錯角 ＝ 必出等腰三角形！**\n   - 摺疊角相等：∠D'AC ＝ ∠DAC。\n   - 平行線內錯角相等：∠DAC ＝ ∠BCA。\n   - 兩底角相等 ⟹ △APC 為等腰三角形，斜邊 AP ＝ CP！\n2. **設未知數 x 技巧**：\n   - 設直角短邊 BP ＝ x，則 CP ＝ 6 － x ⟹ 斜邊 AP ＝ 6 － x。\n   - 代入畢氏定理：2² ＋ x² ＝ (6 － x)² ⟹ 12x ＝ 32 ⟹ x ＝ 8/3。\n   - △ABP 面積 ＝ 1/2 × 2 × (8/3) ＝ 8/3！",
-  "stem": "如圖，長方形紙條中，將此紙條沿對角線 AC 對摺，設 P 為 AD 與 BC 的交點，AB = 2，AD = 6，則 △ABP 的面積為多少平方單位？\n\n○ (A) 5/3\n○ (B) 8/3\n○ (C) 3\n○ (D) 10/3",
-  "answer": "(B) 8/3",
-  "diagramUrl": "",
-  "solution": "🎥 **老師影音詳解教學**：https://www.youtube.com/watch?v=_q-gENhsLjU\n\n### 💡 完整破題四步驟：\n\n1. **第一步：由摺疊與平行線證明等腰三角形**：\n   - 沿對角線 $\\overline{AC}$ 對摺，摺疊角相等：$\\angle D'AC = \\angle DAC$。\n   - 長方形對邊平行 $\\overline{AD} // \\overline{BC}$，內錯角相等：$\\angle DAC = \\angle BCA$。\n   - 因此 $\\angle D'AC = \\angle BCA$，即在 $\\triangle APC$ 中兩底角相等：\n     $$\\triangle APC \\text{ 為等腰三角形} \\implies \\overline{AP} = \\overline{CP}$$\n\n2. **第二步：設未知數 $x$，建立畢氏定理方程式**：\n   - 長方形中 $\\overline{BC} = \\overline{AD} = 6$。\n   - 設 $\\overline{BP} = x$，則 $\\overline{CP} = 6 - x$。\n   - 由 $\\overline{AP} = \\overline{CP}$ 可得斜邊 $\\overline{AP} = 6 - x$。\n   - 在直角 $\\triangle ABP$ 中（$\\angle B = 90^\\circ, \\overline{AB} = 2$）：\n     $$\\overline{AB}^2 + \\overline{BP}^2 = \\overline{AP}^2$$\n     $$2^2 + x^2 = (6 - x)^2$$\n     $$4 + x^2 = 36 - 12x + x^2$$\n\n3. **第三步：解一元一次方程式求 $x$**：\n   $$4 = 36 - 12x \\implies 12x = 32 \\implies x = \\frac{32}{12} = \\frac{8}{3}$$\n\n4. **第四步：計算 $\\triangle ABP$ 面積**：\n   $$\\triangle ABP \\text{ 面積} = \\frac{1}{2} \\times \\overline{AB} \\times \\overline{BP} = \\frac{1}{2} \\times 2 \\times \\frac{8}{3} = \\frac{8}{3}$$\n\n故本題正確答案為 **(B) 8/3**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-10-12",
-  "isReviewed": false,
-  "reviewStatus": "unreviewed",
-  "lastReviewDecision": null,
-  "lastReviewedMonday": null,
-  "lastReviewedDate": null,
-  "reviewedMondays": []
-},
-{
-  "id": "q_math_pythagoras_quadrilateral_integer_sides_165",
-  "examPeriod": "一段",
-  "subject": "數學",
-  "errorReason": "觀念不懂",
-  "concept": "國二數學：共用斜邊直角三角形畢氏定理、平方差整數分解與排除重複邊長",
-  "uploadDate": "2026-10-12",
-  "mondayDate": "2026-10-12",
-  "mondayDates": [
-    "2026-10-12"
-  ],
-  "weekLabel": "2026-10-12 (最新週次)",
-  "isGuessedOrUnstable": false,
-  "mistakeNote": "💡 **易錯警示筆記**：【共用斜邊平方差整數分解】避坑重點！\n1. **列出平方差等式**：\n   - AC² ＝ 7² ＋ a² ＝ 9² ＋ b² ⟹ a² － b² ＝ 9² － 7² ＝ 81 － 49 ＝ 32。\n   - (a ＋ b)(a － b) ＝ 32，因同奇同偶，兩者必同為正偶數！\n2. **排除重複邊長（審題關鍵！）**：\n   - 組合 (16, 2) ⟹ a ＝ 9, b ＝ 7。但題目要求「四邊均為整數且**不等長**」，已有 AB＝7, AD＝9，若 a＝9, b＝7 則重複，**不合**！\n   - 組合 (8, 4) ⟹ a ＝ 6, b ＝ 2。四邊分別為 7, 6, 2, 9，完全不等長，**合**！\n3. **總面積** ＝ 1/2×7×6 ＋ 1/2×9×2 ＝ 21 ＋ 9 ＝ 30！",
-  "stem": "如圖，四邊形 ABCD 為兩個直角三角形合併而成（∠B = ∠D = 90°），已知四邊長均為整數且不等長，若 AB = 7，AD = 9，則四邊形 ABCD 面積為多少平方單位？\n\n○ (A) 30\n○ (B) 36\n○ (C) 42\n○ (D) 48",
-  "answer": "(A) 30",
-  "diagramUrl": "",
-  "solution": "1. **共用斜邊 AC 建立方程式**：\n   - 設 $\\overline{BC} = a, \\overline{CD} = b$（$a, b$ 為正整數）。\n   - 在直角 $\\triangle ABC$ 中：$\\overline{AC}^2 = 7^2 + a^2$。\n   - 在直角 $\\triangle ADC$ 中：$\\overline{AC}^2 = 9^2 + b^2$。\n   - 兩式相等：\n     $$7^2 + a^2 = 9^2 + b^2 \\implies a^2 - b^2 = 9^2 - 7^2 = 81 - 49 = 32$$\n     $$(a + b)(a - b) = 32$$\n\n2. **因數分解與條件檢驗**：\n   - 因為 $(a+b) + (a-b) = 2a$（為偶數），所以 $(a+b)$ 與 $(a-b)$ 必同為偶數。\n   - 將 32 拆解為兩正偶數之積（$a+b > a-b$）：\n     - **組合一**：$a+b = 16, a-b = 2 \\implies a = 9, b = 7$。\n       ⚠️ 題目條件：「四邊長均為整數且**不等長**」，若 $a=9, b=7$ 則四邊長為 $7, 9, 7, 9$，邊長重複，**不合**！\n     - **組合二**：$a+b = 8, a-b = 4 \\implies a = 6, b = 2$。\n       四邊長分別為 $7, 6, 2, 9$，全部為整數且互不相等，**完全合適**！\n\n3. **計算四邊形 ABCD 面積**：\n   $$\\text{面積} = \\triangle ABC + \\triangle ADC = \\left(\\frac{1}{2} \\times 7 \\times 6\\right) + \\left(\\frac{1}{2} \\times 9 \\times 2\\right) = 21 + 9 = 30$$\n\n故本題正確答案為 **(A) 30**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-10-12",
-  "isReviewed": false,
-  "reviewStatus": "unreviewed",
-  "lastReviewDecision": null,
-  "lastReviewedMonday": null,
-  "lastReviewedDate": null,
-  "reviewedMondays": []
-},
-{
-  "id": "q_math_equilateral_side_5_height_area_166",
-  "examPeriod": "一段",
-  "subject": "數學",
-  "errorReason": "觀念不懂",
-  "concept": "國二數學：30-60-90 特殊直角三角形邊長比與正三角形高、面積公式",
-  "uploadDate": "2026-10-12",
-  "mondayDate": "2026-10-12",
-  "mondayDates": [
-    "2026-10-12"
-  ],
-  "weekLabel": "2026-10-12 (最新週次)",
-  "isGuessedOrUnstable": false,
-  "mistakeNote": "💡 **易錯警示筆記**：【正三角形三大必背黃金公式】！\n1. **高公式**：$h = \\frac{\\sqrt{3}}{2}a$\n2. **面積公式**：$A = \\frac{\\sqrt{3}}{4}a^2$\n3. **推導原理**：從頂點向底邊作高，形成 30°-60°-90° 直角三角形，邊長比為 $1 : \\sqrt{3} : 2$。底邊一半為 $a/2$，高為 $(\\sqrt{3}/2)a$，面積為 $(1/2) \\times a \\times (\\sqrt{3}/2)a = (\\sqrt{3}/4)a^2$！",
-  "stem": "正三角形的邊長是 5，求其高與面積。\n\n○ (A) 高 = 5√3/2，面積 = 25√3/4\n○ (B) 高 = 5√3/4，面積 = 25√3/2\n○ (C) 高 = 5/2，面積 = 25/4\n○ (D) 高 = 5√2/2，面積 = 25√2/4",
-  "answer": "(A) 高 = 5√3/2，面積 = 25√3/4",
-  "diagramUrl": "",
-  "solution": "1. **公式推導**：\n   - 正三角形邊長為 $a$。\n   - 作垂直高平分底邊，底邊的一半為 $\\frac{a}{2}$。\n   - 形成 $30^\\circ-60^\\circ-90^\\circ$ 直角三角形，邊長比為 $1 : \\sqrt{3} : 2$。\n   - 高 $h = \\frac{\\sqrt{3}}{2}a$。\n   - 面積 $A = \\frac{1}{2} \\times \\text{底} \\times \\text{高} = \\frac{1}{2} \\times a \\times \\left(\\frac{\\sqrt{3}}{2}a\\right) = \\frac{\\sqrt{3}}{4}a^2$。\n\n2. **代入邊長 $a = 5$**：\n   - **高** $= \\frac{\\sqrt{3}}{2} \\times 5 = \\mathbf{\\frac{5\\sqrt{3}}{2}}$\n   - **面積** $= \\frac{\\sqrt{3}}{4} \\times 5^2 = \\mathbf{\\frac{25\\sqrt{3}}{4}}$\n\n故本題正確答案為 **(A)**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-10-12",
-  "isReviewed": false,
-  "reviewStatus": "unreviewed",
-  "lastReviewDecision": null,
-  "lastReviewedMonday": null,
-  "lastReviewedDate": null,
-  "reviewedMondays": []
-},
-{
-  "id": "q_math_equilateral_area_perimeter_height_167",
-  "examPeriod": "一段",
-  "subject": "數學",
-  "errorReason": "觀念不懂",
-  "concept": "國二數學：正三角形面積逆向推導邊長、周長與高（防呆乘3）",
-  "uploadDate": "2026-10-12",
-  "mondayDate": "2026-10-12",
-  "mondayDates": [
-    "2026-10-12"
-  ],
-  "weekLabel": "2026-10-12 (最新週次)",
-  "isGuessedOrUnstable": false,
-  "mistakeNote": "💡 **易錯警示筆記**：【面積反求周長與高】逆向破題步驟！\n1. **第一步（求邊長 a）**：$(\\sqrt{3}/4)a^2 = 16\\sqrt{3} \\implies a^2/4 = 16 \\implies a^2 = 64 \\implies a = 8$。\n2. **第二步（注意題目問的是「周長」）**：\n   - ⚠️ 算出 $a=8$ 切莫直接填答案！題目問的是「**周長**」，周長 $= 3a = 3 \\times 8 = 24$ 公分！\n3. **第三步（求高）**：$h = (\\sqrt{3}/2)a = (\\sqrt{3}/2) \\times 8 = 4\\sqrt{3}$ 公分！",
-  "stem": "若一正三角形的面積為 16√3 平方公分，則此三角形的周長與高分別為何？\n\n○ (A) 周長 = 8 公分，高 = 4√3 公分\n○ (B) 周長 = 24 公分，高 = 4√3 公分\n○ (C) 周長 = 24 公分，高 = 8√3 公分\n○ (D) 周長 = 16 公分，高 = 4√3 公分",
-  "answer": "(B) 周長 = 24 公分，高 = 4√3 公分",
-  "diagramUrl": "",
-  "solution": "1. **第一步：由面積公式逆推邊長 $a$**：\n   $$\\frac{\\sqrt{3}}{4}a^2 = 16\\sqrt{3}$$\n   - 兩邊同除以 $\\sqrt{3}$：\n     $$\\frac{a^2}{4} = 16$$\n   - 兩邊同乘以 4：\n     $$a^2 = 64 \\implies a = 8 \\quad (\\text{邊長為正})$$\n\n2. **第二步：求周長**：\n   $$\\text{周長} = 3 \\times a = 3 \\times 8 = \\mathbf{24} \\text{ 公分}$$\n\n3. **第三步：求高**：\n   $$\\text{高 } h = \\frac{\\sqrt{3}}{2}a = \\frac{\\sqrt{3}}{2} \\times 8 = \\mathbf{4\\sqrt{3}} \\text{ 公分}$$\n\n故本題正確答案為 **(B) 周長 = 24 公分，高 = 4√3 公分**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-10-12",
-  "isReviewed": false,
-  "reviewStatus": "unreviewed",
-  "lastReviewDecision": null,
-  "lastReviewedMonday": null,
-  "lastReviewedDate": null,
-  "reviewedMondays": []
-},
-{
-  "id": "q_math_poly_factor_theorem_ab_value_168",
-  "examPeriod": "一段",
-  "subject": "數學",
-  "errorReason": "觀念不懂",
-  "concept": "國二數學：多項式因式定理代入法 vs 常數項反推秒殺法求 a-b",
-  "uploadDate": "2026-10-12",
-  "mondayDate": "2026-10-12",
-  "mondayDates": [
-    "2026-10-12"
-  ],
-  "weekLabel": "2026-10-12 (最新週次)",
-  "isGuessedOrUnstable": false,
-  "mistakeNote": "💡 **易錯警示筆記**：【因式求未知數】放棄長除法，改用因式定理秒殺！\n1. **因式定理（令因式為 0 代入使多項式等於 0）**：\n   - 代入 $x = -2$：$(-2)^3 + a(-2)^2 + b(-2) - 6 = 0 \\implies 2a - b = 7 \\quad \\cdots (1)$\n   - 代入 $x = 3$：$(3)^3 + a(3)^2 + b(3) - 6 = 0 \\implies 3a + b = -7 \\quad \\cdots (2)$\n   - $(1) + (2)$ 直接消去 $b$：$5a = 0 \\implies a = 0$。\n   - 代回 $(1)$：$-b = 7 \\implies b = -7$。\n   - 所求 $a - b = 0 - (-7) = 7$！\n2. **常數項反推秒殺法（口算 15 秒）**：\n   - $(x+2)(x-3)(x-k) = (x^2-x-6)(x-k)$，常數項 $(-6)(-k) = -6 \\implies k = -1$。\n   - $(x^2-x-6)(x+1) = x^3 - 7x - 6 \\implies a = 0, b = -7 \\implies a - b = 7$！",
-  "stem": "若 x+2 與 x-3 均為 x³ + ax² + bx - 6 的因式，求 a - b 之值。\n\n○ (A) -7\n○ (B) 0\n○ (C) 7\n○ (D) 14",
-  "answer": "(C) 7",
-  "diagramUrl": "",
-  "solution": "### 💡 兩種超快秒殺解法：\n\n#### 🏆 解法一：因式定理代入法（最推薦！最不易出錯）\n設 $f(x) = x^3 + ax^2 + bx - 6$：\n1. 因為 $x+2$ 是因式，令 $x = -2$ 代入得餘式為 0：\n   $$f(-2) = (-2)^3 + a(-2)^2 + b(-2) - 6 = 0$$\n   $$-8 + 4a - 2b - 6 = 0 \\implies 4a - 2b = 14 \\implies 2a - b = 7 \\quad \\cdots (1)$$\n2. 因為 $x-3$ 是因式，令 $x = 3$ 代入得餘式為 0：\n   $$f(3) = 3^3 + a(3)^2 + b(3) - 6 = 0$$\n   $$27 + 9a + 3b - 6 = 0 \\implies 9a + 3b = -21 \\implies 3a + b = -7 \\quad \\cdots (2)$$\n3. 將 $(1) + (2)$ 相加消去 $b$：\n   $$(2a - b) + (3a + b) = 7 + (-7) \\implies 5a = 0 \\implies a = 0$$\n4. 代回 $(1)$：\n   $$2(0) - b = 7 \\implies -b = 7 \\implies b = -7$$\n5. 計算所求：\n   $$a - b = 0 - (-7) = \\mathbf{7}$$\n\n---\n\n#### ⚡ 解法二：常數項反推秒殺法（口算 15 秒）\n1. 三次多項式首項係數為 1，常數項為 $-6$。\n2. 已知兩因式為 $(x+2)$ 與 $(x-3)$，乘積為 $(x^2 - x - 6)$。\n3. 設第三個因式為 $(x - k)$：\n   $$(x^2 - x - 6)(x - k) = x^3 + ax^2 + bx - 6$$\n4. 比對常數項：$(-6) \\times (-k) = -6 \\implies 6k = -6 \\implies k = -1$。\n5. 故第三個因式為 $(x + 1)$，展開：\n   $$(x^2 - x - 6)(x + 1) = x^3 - 7x - 6$$\n6. 比對係數直接得到：$a = 0, b = -7 \\implies a - b = 0 - (-7) = \\mathbf{7}$！\n\n故本題正確答案為 **(C) 7**。",
-  "errorCount": 1,
-  "ebbinghausStage": 1,
-  "consecutiveMastered": 0,
-  "isArchived": false,
-  "nextReviewDate": "2026-10-12",
-  "isReviewed": false,
-  "reviewStatus": "unreviewed",
-  "lastReviewDecision": null,
-  "lastReviewedMonday": null,
-  "lastReviewedDate": null,
-  "reviewedMondays": []
-},
-
+  {
+    "id": "q_soc_hist_rome_republic_three_continents_expansion_161",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "國二歷史：古羅馬共和時期的對外擴張與版圖橫跨歐亞非三洲",
+    "uploadDate": "2026-10-12",
+    "mondayDate": "2026-10-12",
+    "mondayDates": [
+      "2026-10-12"
+    ],
+    "weekLabel": "2026-10-12 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：羅馬三大時期（王政 → 共和 → 帝國）對外擴張關鍵字！\n1. **自「共和」時期起積極向外擴張**：\n   - 羅馬在共和時期（西元前 509～前 27 年）推翻王政，對外發動布匿戰爭擊敗迦太基，版圖橫跨歐、亞、非三洲！\n   - 帝國時期（西元前 27 年起）屋大維建立元首制，版圖達到全盛，地中海成為羅馬帝國的「內海」。\n2. **審題關鍵字**：注意題幹「**自 ______ 時期起**」，擴張起點正是「共和時期」！",
+    "stem": "自 ______ 時期起，羅馬人積極向外擴張，版圖橫跨歐、亞、非三洲。\n\n○ (A) 王政\n○ (B) 共和\n○ (C) 帝國\n○ (D) 拜占庭",
+    "answer": "(B) 共和",
+    "diagramUrl": "",
+    "solution": "1. **羅馬三大歷史時期分界**：\n   - **王政時期**（西元前 8 世紀～西元前 509 年）：伊特魯里亞人王政統治。\n   - **共和時期**（西元前 509 年～西元前 27 年）：推翻王政建立共和政體，設執政官、元老院與公民大會分權制衡。自此時期起，羅馬人積極對外擴張，征服義大利半島及地中海周邊，版圖橫跨歐、亞、非三洲。\n   - **帝國時期**（西元前 27 年～西元 476 年）：屋大維建立元首制，羅馬進入帝國時代，版圖進一步擴大達到極盛。\n\n2. **破題重點**：題幹提及「自……時期起，羅馬人積極向外擴張，版圖橫跨歐、亞、非三洲」，此起點正是「**共和時期**」。\n\n故本題正確答案為 **(B) 共和**（填空：共和）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-12",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_hist_rome_caesar_dictatorship_first_citizen_162",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "國二歷史：羅馬共和末期政治動盪與凱撒首先破壞平衡走向個人獨裁",
+    "uploadDate": "2026-10-12",
+    "mondayDate": "2026-10-12",
+    "mondayDates": [
+      "2026-10-12"
+    ],
+    "weekLabel": "2026-10-12 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【何人「首先」破壞平衡走向獨裁？】考點精準辨析！\n1. **凱撒（Caesar）**：共和末期征服高盧的軍事統帥，進軍羅馬並出任「終身獨裁官」，集中軍政大權於一身，是**最先打破分權制衡體制、走向個人獨裁**的人！\n2. **屋大維（奧古斯都）**：是凱撒的養子，在凱撒死後結束內戰，正式開啟元首制（帝國時期），自稱「第一公民」。但題目問的是「**何人首先破壞平衡走向獨裁**」，始作俑者是**凱撒**！",
+    "stem": "以下三則資料，分別為羅馬三個時期的人物述說當代的情況。閱讀資料並回答問題：\n資料一：我們有分權且制衡的政治體制，成文法的頒布，使法律的精神得以確立，同時我們也積極向外擴張。\n資料二：國家昔日的平等遭到剝奪，所有人都一股腦兒，仰望聽命於「第一公民」一人。\n資料三：外族的國王非常殘暴、厲行苛政，有朝一日，我們一定要將異族政權推翻，建立一個新的政治體制。\n\n【題目】資料二提及國家昔日的平等遭到剝奪，請問何人首先破壞平衡走向獨裁？\n\n○ (A) 屋大維\n○ (B) 奧古斯都\n○ (C) 凱撒\n○ (D) 君士坦丁",
+    "answer": "(C) 凱撒",
+    "diagramUrl": "",
+    "solution": "1. **題幹資料定位**：\n   - 資料二提及「國家昔日的平等遭到剝奪，所有人都一股腦兒，仰望聽命於『第一公民』一人」，描述的是羅馬走向獨裁與帝國元首統治的轉變。\n\n2. **破題關鍵（何人「首先」走向獨裁）**：\n   - 羅馬共和末期因貧富懸殊、土地兼併與軍閥爭權，憲政秩序瓦解。\n   - **凱撒（Julius Caesar）** 憑藉征服高盧的強大軍隊進軍羅馬，被任命為「終身獨裁官」，獨攬統治大權，是歷史上**最先破壞共和制衡、走向個人軍事獨裁**的代表人物。\n   - 凱撒遇刺後，其養子屋大維（即奧古斯都）擊敗政敵建立帝國（元首制），自稱第一公民。但開啟獨裁先河者為凱撒。\n\n故本題正確答案為 **(C) 凱撒**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-12",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_hist_rome_three_periods_chronological_order_163",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "國二歷史：古羅馬歷史演進三大階段時間順序（王政 → 共和 → 帝國）",
+    "uploadDate": "2026-10-12",
+    "mondayDate": "2026-10-12",
+    "mondayDates": [
+      "2026-10-12"
+    ],
+    "weekLabel": "2026-10-12 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：羅馬演進三大時期特徵與時間軸速記！\n1. **資料三（王政時期，最先）**：「外族國王非常殘暴、將異族政權推翻」⟹ 指伊特魯里亞人王政統治末期。\n2. **資料一（共和時期，居中）**：「分權制衡體制、成文法（十二表法）、積極向外擴張」⟹ 指西元前 509 年推翻王政後建立的共和政體。\n3. **資料二（帝國時期，最晚）**：「聽命於第一公民一人」⟹ 指西元前 27 年屋大維開創的羅馬帝國。\n- **時間順序**：資料三（王政）→ 資料一（共和）→ 資料二（帝國）！",
+    "stem": "以下三則資料，分別為羅馬三個時期的人物述說當代的情況。閱讀資料並回答問題：\n資料一：我們有分權且制衡的政治體制，成文法的頒布，使法律的精神得以確立，同時我們也積極向外擴張。\n資料二：國家昔日的平等遭到剝奪，所有人都一股腦兒，仰望聽命於「第一公民」一人。\n資料三：外族的國王非常殘暴、厲行苛政，有朝一日，我們一定要將異族政權推翻，建立一個新的政治體制。\n\n【題目】三則資料依時間如何排序？\n\n○ (A) 資料一 → 資料二 → 資料三\n○ (B) 資料二 → 資料三 → 資料一\n○ (C) 資料三 → 資料一 → 資料二\n○ (D) 資料三 → 資料二 → 資料一",
+    "answer": "(C) 資料三 → 資料一 → 資料二",
+    "diagramUrl": "",
+    "solution": "1. **逐一解構三則資料之歷史時期**：\n   - **資料三【王政時期（西元前 8 世紀～西元前 509 年）】**：早期羅馬受外族伊特魯里亞人國王殘暴統治，羅馬人起義推翻苛政，結束王政。\n   - **資料一【共和時期（西元前 509 年～西元前 27 年）】**：推翻王政後建立共和政體，以執政官、元老院與公民大會分權制衡；制定《十二表法》確立成文法精神，並積極對外軍事擴張。\n   - **資料二【帝國時期（西元前 27 年～西元 476 年）】**：共和末期內戰結束，屋大維獲封「奧古斯都」，自稱「第一公民」，開創帝國元首政治。\n\n2. **時間先後排序**：\n   - 順序為：**王政（資料三） → 共和（資料一） → 帝國（資料二）**。\n\n【考卷原版解析】\n資料一：共和時期。資料二：帝國時期。資料三：王政時期。\n\n故本題正確答案為 **(C) 資料三 → 資料一 → 資料二**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-12",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_geom_rectangle_diagonal_fold_area_164",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國二數學幾何：長方形紙條對角線對摺之等腰三角形性質與畢氏定理求面積",
+    "uploadDate": "2026-10-12",
+    "mondayDate": "2026-10-12",
+    "mondayDates": [
+      "2026-10-12"
+    ],
+    "weekLabel": "2026-10-12 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【長方形對摺幾何】秒殺兩大定律！\n1. **摺疊對稱 ＋ 平行線內錯角 ＝ 必出等腰三角形！**\n   - 摺疊角相等：∠D'AC ＝ ∠DAC。\n   - 平行線內錯角相等：∠DAC ＝ ∠BCA。\n   - 兩底角相等 ⟹ △APC 為等腰三角形，斜邊 AP ＝ CP！\n2. **設未知數 x 技巧**：\n   - 設直角短邊 BP ＝ x，則 CP ＝ 6 － x ⟹ 斜邊 AP ＝ 6 － x。\n   - 代入畢氏定理：2² ＋ x² ＝ (6 － x)² ⟹ 12x ＝ 32 ⟹ x ＝ 8/3。\n   - △ABP 面積 ＝ 1/2 × 2 × (8/3) ＝ 8/3！",
+    "stem": "如圖，長方形紙條中，將此紙條沿對角線 AC 對摺，設 P 為 AD 與 BC 的交點，AB = 2，AD = 6，則 △ABP 的面積為多少平方單位？\n\n○ (A) 5/3\n○ (B) 8/3\n○ (C) 3\n○ (D) 10/3",
+    "answer": "(B) 8/3",
+    "diagramUrl": "",
+    "solution": "🎥 **老師影音詳解教學**：https://www.youtube.com/watch?v=_q-gENhsLjU\n\n### 💡 完整破題四步驟：\n\n1. **第一步：由摺疊與平行線證明等腰三角形**：\n   - 沿對角線 $\\overline{AC}$ 對摺，摺疊角相等：$\\angle D'AC = \\angle DAC$。\n   - 長方形對邊平行 $\\overline{AD} // \\overline{BC}$，內錯角相等：$\\angle DAC = \\angle BCA$。\n   - 因此 $\\angle D'AC = \\angle BCA$，即在 $\\triangle APC$ 中兩底角相等：\n     $$\\triangle APC \\text{ 為等腰三角形} \\implies \\overline{AP} = \\overline{CP}$$\n\n2. **第二步：設未知數 $x$，建立畢氏定理方程式**：\n   - 長方形中 $\\overline{BC} = \\overline{AD} = 6$。\n   - 設 $\\overline{BP} = x$，則 $\\overline{CP} = 6 - x$。\n   - 由 $\\overline{AP} = \\overline{CP}$ 可得斜邊 $\\overline{AP} = 6 - x$。\n   - 在直角 $\\triangle ABP$ 中（$\\angle B = 90^\\circ, \\overline{AB} = 2$）：\n     $$\\overline{AB}^2 + \\overline{BP}^2 = \\overline{AP}^2$$\n     $$2^2 + x^2 = (6 - x)^2$$\n     $$4 + x^2 = 36 - 12x + x^2$$\n\n3. **第三步：解一元一次方程式求 $x$**：\n   $$4 = 36 - 12x \\implies 12x = 32 \\implies x = \\frac{32}{12} = \\frac{8}{3}$$\n\n4. **第四步：計算 $\\triangle ABP$ 面積**：\n   $$\\triangle ABP \\text{ 面積} = \\frac{1}{2} \\times \\overline{AB} \\times \\overline{BP} = \\frac{1}{2} \\times 2 \\times \\frac{8}{3} = \\frac{8}{3}$$\n\n故本題正確答案為 **(B) 8/3**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-12",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_pythagoras_quadrilateral_integer_sides_165",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國二數學：共用斜邊直角三角形畢氏定理、平方差整數分解與排除重複邊長",
+    "uploadDate": "2026-10-12",
+    "mondayDate": "2026-10-12",
+    "mondayDates": [
+      "2026-10-12"
+    ],
+    "weekLabel": "2026-10-12 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【共用斜邊平方差整數分解】避坑重點！\n1. **列出平方差等式**：\n   - AC² ＝ 7² ＋ a² ＝ 9² ＋ b² ⟹ a² － b² ＝ 9² － 7² ＝ 81 － 49 ＝ 32。\n   - (a ＋ b)(a － b) ＝ 32，因同奇同偶，兩者必同為正偶數！\n2. **排除重複邊長（審題關鍵！）**：\n   - 組合 (16, 2) ⟹ a ＝ 9, b ＝ 7。但題目要求「四邊均為整數且**不等長**」，已有 AB＝7, AD＝9，若 a＝9, b＝7 則重複，**不合**！\n   - 組合 (8, 4) ⟹ a ＝ 6, b ＝ 2。四邊分別為 7, 6, 2, 9，完全不等長，**合**！\n3. **總面積** ＝ 1/2×7×6 ＋ 1/2×9×2 ＝ 21 ＋ 9 ＝ 30！",
+    "stem": "如圖，四邊形 ABCD 為兩個直角三角形合併而成（∠B = ∠D = 90°），已知四邊長均為整數且不等長，若 AB = 7，AD = 9，則四邊形 ABCD 面積為多少平方單位？\n\n○ (A) 30\n○ (B) 36\n○ (C) 42\n○ (D) 48",
+    "answer": "(A) 30",
+    "diagramUrl": "",
+    "solution": "1. **共用斜邊 AC 建立方程式**：\n   - 設 $\\overline{BC} = a, \\overline{CD} = b$（$a, b$ 為正整數）。\n   - 在直角 $\\triangle ABC$ 中：$\\overline{AC}^2 = 7^2 + a^2$。\n   - 在直角 $\\triangle ADC$ 中：$\\overline{AC}^2 = 9^2 + b^2$。\n   - 兩式相等：\n     $$7^2 + a^2 = 9^2 + b^2 \\implies a^2 - b^2 = 9^2 - 7^2 = 81 - 49 = 32$$\n     $$(a + b)(a - b) = 32$$\n\n2. **因數分解與條件檢驗**：\n   - 因為 $(a+b) + (a-b) = 2a$（為偶數），所以 $(a+b)$ 與 $(a-b)$ 必同為偶數。\n   - 將 32 拆解為兩正偶數之積（$a+b > a-b$）：\n     - **組合一**：$a+b = 16, a-b = 2 \\implies a = 9, b = 7$。\n       ⚠️ 題目條件：「四邊長均為整數且**不等長**」，若 $a=9, b=7$ 則四邊長為 $7, 9, 7, 9$，邊長重複，**不合**！\n     - **組合二**：$a+b = 8, a-b = 4 \\implies a = 6, b = 2$。\n       四邊長分別為 $7, 6, 2, 9$，全部為整數且互不相等，**完全合適**！\n\n3. **計算四邊形 ABCD 面積**：\n   $$\\text{面積} = \\triangle ABC + \\triangle ADC = \\left(\\frac{1}{2} \\times 7 \\times 6\\right) + \\left(\\frac{1}{2} \\times 9 \\times 2\\right) = 21 + 9 = 30$$\n\n故本題正確答案為 **(A) 30**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-12",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_equilateral_side_5_height_area_166",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國二數學：30-60-90 特殊直角三角形邊長比與正三角形高、面積公式",
+    "uploadDate": "2026-10-12",
+    "mondayDate": "2026-10-12",
+    "mondayDates": [
+      "2026-10-12"
+    ],
+    "weekLabel": "2026-10-12 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【正三角形三大必背黃金公式】！\n1. **高公式**：$h = \\frac{\\sqrt{3}}{2}a$\n2. **面積公式**：$A = \\frac{\\sqrt{3}}{4}a^2$\n3. **推導原理**：從頂點向底邊作高，形成 30°-60°-90° 直角三角形，邊長比為 $1 : \\sqrt{3} : 2$。底邊一半為 $a/2$，高為 $(\\sqrt{3}/2)a$，面積為 $(1/2) \\times a \\times (\\sqrt{3}/2)a = (\\sqrt{3}/4)a^2$！",
+    "stem": "正三角形的邊長是 5，求其高與面積。\n\n○ (A) 高 = 5√3/2，面積 = 25√3/4\n○ (B) 高 = 5√3/4，面積 = 25√3/2\n○ (C) 高 = 5/2，面積 = 25/4\n○ (D) 高 = 5√2/2，面積 = 25√2/4",
+    "answer": "(A) 高 = 5√3/2，面積 = 25√3/4",
+    "diagramUrl": "",
+    "solution": "1. **公式推導**：\n   - 正三角形邊長為 $a$。\n   - 作垂直高平分底邊，底邊的一半為 $\\frac{a}{2}$。\n   - 形成 $30^\\circ-60^\\circ-90^\\circ$ 直角三角形，邊長比為 $1 : \\sqrt{3} : 2$。\n   - 高 $h = \\frac{\\sqrt{3}}{2}a$。\n   - 面積 $A = \\frac{1}{2} \\times \\text{底} \\times \\text{高} = \\frac{1}{2} \\times a \\times \\left(\\frac{\\sqrt{3}}{2}a\\right) = \\frac{\\sqrt{3}}{4}a^2$。\n\n2. **代入邊長 $a = 5$**：\n   - **高** $= \\frac{\\sqrt{3}}{2} \\times 5 = \\mathbf{\\frac{5\\sqrt{3}}{2}}$\n   - **面積** $= \\frac{\\sqrt{3}}{4} \\times 5^2 = \\mathbf{\\frac{25\\sqrt{3}}{4}}$\n\n故本題正確答案為 **(A)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-12",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_equilateral_area_perimeter_height_167",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國二數學：正三角形面積逆向推導邊長、周長與高（防呆乘3）",
+    "uploadDate": "2026-10-12",
+    "mondayDate": "2026-10-12",
+    "mondayDates": [
+      "2026-10-12"
+    ],
+    "weekLabel": "2026-10-12 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【面積反求周長與高】逆向破題步驟！\n1. **第一步（求邊長 a）**：$(\\sqrt{3}/4)a^2 = 16\\sqrt{3} \\implies a^2/4 = 16 \\implies a^2 = 64 \\implies a = 8$。\n2. **第二步（注意題目問的是「周長」）**：\n   - ⚠️ 算出 $a=8$ 切莫直接填答案！題目問的是「**周長**」，周長 $= 3a = 3 \\times 8 = 24$ 公分！\n3. **第三步（求高）**：$h = (\\sqrt{3}/2)a = (\\sqrt{3}/2) \\times 8 = 4\\sqrt{3}$ 公分！",
+    "stem": "若一正三角形的面積為 16√3 平方公分，則此三角形的周長與高分別為何？\n\n○ (A) 周長 = 8 公分，高 = 4√3 公分\n○ (B) 周長 = 24 公分，高 = 4√3 公分\n○ (C) 周長 = 24 公分，高 = 8√3 公分\n○ (D) 周長 = 16 公分，高 = 4√3 公分",
+    "answer": "(B) 周長 = 24 公分，高 = 4√3 公分",
+    "diagramUrl": "",
+    "solution": "1. **第一步：由面積公式逆推邊長 $a$**：\n   $$\\frac{\\sqrt{3}}{4}a^2 = 16\\sqrt{3}$$\n   - 兩邊同除以 $\\sqrt{3}$：\n     $$\\frac{a^2}{4} = 16$$\n   - 兩邊同乘以 4：\n     $$a^2 = 64 \\implies a = 8 \\quad (\\text{邊長為正})$$\n\n2. **第二步：求周長**：\n   $$\\text{周長} = 3 \\times a = 3 \\times 8 = \\mathbf{24} \\text{ 公分}$$\n\n3. **第三步：求高**：\n   $$\\text{高 } h = \\frac{\\sqrt{3}}{2}a = \\frac{\\sqrt{3}}{2} \\times 8 = \\mathbf{4\\sqrt{3}} \\text{ 公分}$$\n\n故本題正確答案為 **(B) 周長 = 24 公分，高 = 4√3 公分**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-12",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_poly_factor_theorem_ab_value_168",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國二數學：多項式因式定理代入法 vs 常數項反推秒殺法求 a-b",
+    "uploadDate": "2026-10-12",
+    "mondayDate": "2026-10-12",
+    "mondayDates": [
+      "2026-10-12"
+    ],
+    "weekLabel": "2026-10-12 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【因式求未知數】放棄長除法，改用因式定理秒殺！\n1. **因式定理（令因式為 0 代入使多項式等於 0）**：\n   - 代入 $x = -2$：$(-2)^3 + a(-2)^2 + b(-2) - 6 = 0 \\implies 2a - b = 7 \\quad \\cdots (1)$\n   - 代入 $x = 3$：$(3)^3 + a(3)^2 + b(3) - 6 = 0 \\implies 3a + b = -7 \\quad \\cdots (2)$\n   - $(1) + (2)$ 直接消去 $b$：$5a = 0 \\implies a = 0$。\n   - 代回 $(1)$：$-b = 7 \\implies b = -7$。\n   - 所求 $a - b = 0 - (-7) = 7$！\n2. **常數項反推秒殺法（口算 15 秒）**：\n   - $(x+2)(x-3)(x-k) = (x^2-x-6)(x-k)$，常數項 $(-6)(-k) = -6 \\implies k = -1$。\n   - $(x^2-x-6)(x+1) = x^3 - 7x - 6 \\implies a = 0, b = -7 \\implies a - b = 7$！",
+    "stem": "若 x+2 與 x-3 均為 x³ + ax² + bx - 6 的因式，求 a - b 之值。\n\n○ (A) -7\n○ (B) 0\n○ (C) 7\n○ (D) 14",
+    "answer": "(C) 7",
+    "diagramUrl": "",
+    "solution": "### 💡 兩種超快秒殺解法：\n\n#### 🏆 解法一：因式定理代入法（最推薦！最不易出錯）\n設 $f(x) = x^3 + ax^2 + bx - 6$：\n1. 因為 $x+2$ 是因式，令 $x = -2$ 代入得餘式為 0：\n   $$f(-2) = (-2)^3 + a(-2)^2 + b(-2) - 6 = 0$$\n   $$-8 + 4a - 2b - 6 = 0 \\implies 4a - 2b = 14 \\implies 2a - b = 7 \\quad \\cdots (1)$$\n2. 因為 $x-3$ 是因式，令 $x = 3$ 代入得餘式為 0：\n   $$f(3) = 3^3 + a(3)^2 + b(3) - 6 = 0$$\n   $$27 + 9a + 3b - 6 = 0 \\implies 9a + 3b = -21 \\implies 3a + b = -7 \\quad \\cdots (2)$$\n3. 將 $(1) + (2)$ 相加消去 $b$：\n   $$(2a - b) + (3a + b) = 7 + (-7) \\implies 5a = 0 \\implies a = 0$$\n4. 代回 $(1)$：\n   $$2(0) - b = 7 \\implies -b = 7 \\implies b = -7$$\n5. 計算所求：\n   $$a - b = 0 - (-7) = \\mathbf{7}$$\n\n---\n\n#### ⚡ 解法二：常數項反推秒殺法（口算 15 秒）\n1. 三次多項式首項係數為 1，常數項為 $-6$。\n2. 已知兩因式為 $(x+2)$ 與 $(x-3)$，乘積為 $(x^2 - x - 6)$。\n3. 設第三個因式為 $(x - k)$：\n   $$(x^2 - x - 6)(x - k) = x^3 + ax^2 + bx - 6$$\n4. 比對常數項：$(-6) \\times (-k) = -6 \\implies 6k = -6 \\implies k = -1$。\n5. 故第三個因式為 $(x + 1)$，展開：\n   $$(x^2 - x - 6)(x + 1) = x^3 - 7x - 6$$\n6. 比對係數直接得到：$a = 0, b = -7 \\implies a - b = 0 - (-7) = \\mathbf{7}$！\n\n故本題正確答案為 **(C) 7**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-12",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_eng_vocab_lazy_couch_housework_155",
     "examPeriod": "一段",
@@ -1467,16 +1466,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **考點透視與選項詳細解析**：\n   - **(C) 正確**：深海熱泉硫化菌屬於**原核生物界（古細菌）**。原核生物的核心特徵為**缺乏細胞核膜與膜狀胞器**，其遺傳物質（DNA）直接裸露散佈於細胞質中。\n   - **(A) 錯誤**：深海熱泉硫化菌屬於古細菌，雖具有細胞壁，但其細胞壁主要由假肽聚糖、蛋白質或多醣組成，**成分與植物細胞壁（主要成分為纖維素）完全不同**。\n   - **(B) 錯誤**：深海熱泉缺乏陽光，硫化菌是利用氧化硫化物的**化學能**來合成有機物（化能自營生產者），此化學合成過程**不會產生氧氣**（光合作用才會釋放氧氣）。\n   - **(D) 錯誤**：深海熱泉噴口溫度高達 70°C~100°C 以上，生活於此的硫化菌為嗜熱古菌，其體內酵素代謝反應的最適合溫度遠高於 20~40°C（通常大於 70°C）。\n\n故正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-06",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-10-12",
+    "lastReviewedDate": "2026-10-12",
+    "reviewedMondays": [
+      "2026-10-12"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-12",
+        "monday": "2026-10-12",
+        "timestamp": 1791793286786,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_bio_animal_taxonomy_levels_comparison_115",
@@ -1531,12 +1540,22 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-10-06",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "lastReviewedMonday": "2026-10-12",
+    "lastReviewedDate": "2026-10-12",
+    "reviewedMondays": [
+      "2026-10-12"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-12",
+        "monday": "2026-10-12",
+        "timestamp": 1791793164817,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_math_sqrt_double_root_estimation_108",
@@ -1707,16 +1726,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **選項剖析與正字對照**：\n   - **(A) 錯誤**：蓬荜生輝應修正為「蓬【蓽】生輝」（草頭蓽）；敷衍塘塞應修正為「敷衍【搪】塞」（手部搪）。\n   - **(B) 錯誤**：貪梵成性應修正為「貪【婪】成性」（女部婪）；明燈萬棧應修正為「明燈萬【盞】」（皿部盞）。\n   - **(C) 正確**：「雀巢鳩占」與「藕斷絲連」用字完全正確無誤。\n   - **(D) 錯誤**：連繃帶跳應修正為「連【蹦】帶跳」（足部蹦）。\n\n故正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-02",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-07",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-07",
+        "monday": "2026-09-28",
+        "timestamp": 1791361298120,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_chi_ancient_modern_terms_matching_107",
@@ -1737,16 +1766,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **觀念解析與古今對照**：\n   - **(A) 正確**：「仵作」為古代官府僱用專門檢驗屍體的基層人員，相當於現代的「法醫」。\n   - **(B) 錯誤（應選此項）**：「茅房」在古代是指「廁所、洗手間」，並非一般的草屋！故配對不正確。\n   - **(C) 正確**：「捕快」為古代衙門中負責偵查緝捕罪犯的捕差，相當於現代的「刑警/警察」。\n   - **(D) 正確**：「盤纏」指古代出行隨身攜帶纏繞在腰間的盤纏錢財，即現代的「旅費」。\n\n故正確答案選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-02",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-07",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-07",
+        "monday": "2026-09-28",
+        "timestamp": 1791361317070,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_china_heihe_tengchong_line_105",
@@ -1767,16 +1806,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_soc_geo_china_heihe_tengchong_line_105.png",
     "solution": "1. **核心地標觀念（胡煥庸線）**：\n   - 地理學家胡煥庸提出的「黑河—騰衝線」（東北黑龍江黑河至西南雲南騰衝）是中國最著名的地理人文劃分線。\n2. **連線代表的地理特徵**：\n   - **人口分界線**：區分了東南人口稠密區與西北人口稀疏區。\n   - **產業分界線**：區分了東南部的**農業區**（季風氣候、平原丘陵地形、雨量充沛適合耕作）與西北部的**畜牧區**（乾燥/高寒氣候、草場廣袤適合放牧）。\n3. **各選項錯誤原因分析**：\n   - **(A) 錯誤**：少數民族自治區（如新疆、西藏、內蒙古、寧夏、廣西）劃分依據為行政區劃與民族分布，非直線邊界。\n   - **(B) 錯誤**：乾濕地區分界線以年降水量（如 400 mm 等雨線劃分半乾旱與半濕潤）為依據，軌跡較彎曲。\n   - **(D) 錯誤**：內流區與外流區分界線主要由山脈（大興安嶺、陰山、賀蘭山、巴顏喀拉山、岡底斯山）組成，與此假想直線不符。\n\n故正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-02",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791009482626,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_china_coffee_varieties_table_104",
@@ -1797,16 +1846,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **地理環境與氣候剖析**：\n   - 表中所列作物的全球原產地與栽培區均位於低緯度熱帶地區（如拉丁美洲的巴西、哥倫比亞，以及東南亞、非洲）。\n   - 在中國的分布區侷限於緯度較低且熱量充沛之**雲南、廣西、廣東南部及海南島**。\n2. **作物種類判定與選項排除**：\n   - **(B) 咖啡（正確）**：表中的甲代表阿拉比卡種（Arabica，適合熱帶高原），乙代表羅布斯塔種（Robusta，適合熱帶低地），完美符合作物條件。\n   - **(A) 玉米**：廣泛分布於溫帶與亞熱帶平原（如東北平原、華北平原），非僅限熱帶。\n   - **(C) 棉花**：主要分佈於華北平原、長江中下游及新疆乾燥灌溉區。\n   - **(D) 葡萄**：屬溫帶水果，主產於新彊吐魯番盆地及華北一帶。\n\n故正確答案選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-02",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791009585467,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_china_crop_conditions_table_103",
@@ -1827,16 +1886,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **逐項分析與導正**：\n   - **(A) 錯誤**：茶樹雖然適合多雲霧氣候，但極度忌諱根部積水，因此需要種植於排水良好的**丘陵坡地**（如浙閩丘陵、江南丘陵），而非平原地區。\n   - **(B) 錯誤**：小麥為北方耐寒耐旱作物，主要種植於北方**旱田**；長江中下游平原多為高產水稻之水田景觀。\n   - **(C) 正確**：棉花喜光耐旱，且採收期最忌降雨（降雨會導致棉花品質下降），華北平原秋季少雨、土壤透氣性好，為中國主要棉花產區之一。\n   - **(D) 錯誤**：甘蔗為熱帶與亞熱帶作物，需要高溫濕熱的氣候，主產區在華南（如廣西、廣東、海南），東北平原緯度高、冬季漫長寒冷，無法生長甘蔗（東北主產甜菜）。\n\n故正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-02",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791009599395,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_china_cotton_irrigation_xinjiang_102",
@@ -1857,16 +1926,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_soc_geo_china_cotton_irrigation_xinjiang_102.png",
     "solution": "1. **地圖作物識別**：\n   - 圖中灰色區域分布於華北平原、長江中下游及新疆塔里木盆地邊緣綠洲，此分布特徵代表中國重要經濟作物——**棉花**。\n2. **新疆農業發展條件**：\n   - 新疆屬於溫帶大陸性乾旱氣候，降水稀少。棉花生長期間雖然耐旱，但仍需要充足的水分灌溉。\n   - 新疆能夠成為中國最優質棉花（長絨棉）主產區，關鍵在於**灌溉系統的進步**（引高山冰雪融水、地下坎兒井及現代化滴灌技術），克服了天然降水不足的環境限制。\n3. **選項排除**：\n   - (A) 交通建設改善主要解決作物物流運輸問題，無法直接克服乾燥氣候栽培瓶頸。\n   - (B) 排水設施興建用於多雨濕潤地區防止淹水，與乾燥區無關。\n   - (C) 政府政策為推動因素，但若無實際水利灌溉技術支援，作物仍無法在沙漠綠洲生長。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-02",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791009763318,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_china_puer_coffee_yunnan_101",
@@ -1891,12 +1970,22 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-10-02",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791009823593,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_soc_geo_china_heruo_railway_taklamakan_100",
@@ -1917,16 +2006,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_soc_geo_china_heruo_railway_taklamakan_100.png",
     "solution": "1. **題目關鍵特徵拆解**：\n   - **環抱該國面積最大的盆地**：中國面積最大的盆地為位於新疆南部的**塔里木盆地**（面積約 53 萬平方公里）。\n2. **選項地理景觀剖析**：\n   - **(A) 浩瀚大漠，揚起的漫天滾滾風沙（正確）**：塔里木盆地內部為中國廣袤的溫帶沙漠——**塔克拉瑪干沙漠**。鐵路線（和若鐵路、南疆鐵路、喀和鐵路）沿著盆地邊緣綠洲與沙丘交界處環繞，旅客最有機會親眼目睹浩瀚大漠與漫天風沙之壯麗景致。\n   - **(B) 黃河，流經溝壑縱橫的崎嶇高原（錯誤）**：描述地形為沖刷切割嚴重的**黃土高原**，位居華北與西北過渡帶，非新疆塔里木盆地。\n   - **(C) 高寒荒地，藏族牧民驅趕著牛群（錯誤）**：描述氣候高寒、藏族牧業文化之**青藏高原**，非塔里木盆地。\n   - **(D) 成群馬匹，在遼闊大草原中奔跑（錯誤）**：描述草場遼闊之**內蒙古高原**景致。\n\n故正確答案選 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-02",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791009951568,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_eng_vocab_appear_party_110",
@@ -2415,16 +2514,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_soc_civ_production_factors_natural_resource_rent_108.png",
     "solution": "1. **四大生產要素與對應報酬代價總整理**：\n   - **自然資源（Land）**：未經人類加工之自然物（如土地、陽光、礦產、水資源），使用代價為**地租**。\n   - **勞力（Labor）**：人類提供之心力與體力勞動，使用代價為**工資（薪水）**。\n   - **資本（Capital）**：人類製造出來用於生產其他商品的工具與設備（如電腦設備、機器、廠房、倉庫），使用代價為**利息**。\n   - **企業才能（Entrepreneurship）**：企業家承擔風險、整合前三種要素進行創新與經營的能力，獲得之報酬為**利潤**。\n2. **表格各項目分類剖析**：\n   - **甲（租用土地）**：土地為天然存在的自然資源，屬**自然資源**，支付代價為**地租**。\n   - **乙（購買電腦設備）**與 **丁（租用倉庫）**：電腦設備與倉庫廠房為人類製造之生產工具，屬**資本**。\n   - **丙（招聘員工）**：員工提供心力與體力勞動，屬**勞力**，支付代價為**工資**。\n\n故正確解答為：**甲項目屬於自然資源，精軒公司須支付的代價為地租。**",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-01",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791010342644,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_civ_law_of_demand_price_effect_115_107",
@@ -2445,16 +2554,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_soc_civ_law_of_demand_price_effect_115_107.png",
     "solution": "1. **經濟學觀念（需求法則）**：\n   - **需求法則**指出：在其他條件不變下，當商品的**售價降低**時，消費者購買該商品所付出的代價（機會成本）減少，購買意願提升，導致**需求量增加**。\n2. **題目情境與選項比對分析**：\n   - **原網頁設定**：筆記型電腦原售價 19,999 元，供貨量 99 臺。\n   - **(A) 供貨量變更為 19 臺**：僅減少總庫存量，無法解釋為何會有大量額外買家湧入並產生「數百筆候補訂單」。\n   - **(B) 供貨量變更為 999 臺**：庫存大增，在價格不變下不會引發幾分鐘內的搶購熱潮與等候補貨。\n   - **(C) 售價變更為 9,999 元（正確）**：大幅降價 10,000 元（標錯價或超低折扣），價格顯著下降引發強烈的「需求量大增」，使原本 99 臺庫存數分鐘內被搶購一空，並溢出數百筆候補訂單，完全符合需求法則與市場反應。\n   - **(D) 售價變更為 20,999 元**：售價提高會使消費者購買意願下降（需求量減少），不可能引發搶購。\n\n故正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-01",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791010357189,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_eu_russia_energy_independence_115_103",
@@ -2475,16 +2594,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **能源轉型與擺脫依賴之核心邏輯**：\n   - 歐盟若要切斷對俄羅斯化石燃料（原油、天然氣）的依賴，必須透過「**減少需求與消耗**」或「**尋找本土／其他第三國替代來源**」來達成目標。\n2. **選項逐一檢視與排除**：\n   - **(A) 有助於達成（節能減耗）**：制定更嚴格的暖氣供應標準可直接減少化石燃料（天然氣與電力）的消耗量。\n   - **(B) 無助於達成（反向加劇危機，正確）**：若促使石油輸出國家組織（OPEC）維持「減產」政策，全球原油供給將會緊縮並推升國際油價，這不僅無法增加能源供應，反而會使歐盟面臨更嚴峻的能源短缺與高通膨危機，故無助於擺脫依賴。\n   - **(C) 有助於達成（分散進口來源）**：與其他第三國（如美國、卡達、挪威）簽署天然氣協議，能分散進口風險並替換俄國來源。\n   - **(D) 有助於達成（發展綠能替代）**：積極發展太陽能、風能等綠色能源，可增加本土替代性能源產量，逐步取代化石燃料。\n\n故無助於達成目標者選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-01",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791010901686,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_russia_terrain_profile_west_to_east_104",
@@ -2505,16 +2634,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_soc_geo_russia_terrain_profile_west_to_east_104.png",
     "solution": "1. **地形剖面圖位置判讀**：\n   - 圖中由西向東：甲區位於西部的**東歐平原／烏拉爾山**一帶；乙區位於東部的**中西伯利亞高原與東西伯利亞山地**。\n2. **氣候與人文景觀轉變分析**：\n   - **(A) 正確（水氣與降水量）**：俄羅斯主要的水氣來源為西邊的大西洋。由西（甲）向東（乙）行進，距離大西洋越遠，受西風帶水氣影響越弱，故**年降水量呈現遞減**趨勢。\n   - **(B) 錯誤（人口分布）**：俄羅斯約 75% 以上的人口集中於西部的歐俄平原（甲），東部的西伯利亞（乙）氣候嚴寒且地廣人稀，人口密度由西向東應為「漸減」。\n   - **(C) 錯誤（地勢高度）**：由圖可知，甲區為平原，向東過烏拉爾山後進入西伯利亞高原與山地（乙區），地勢高度由西向東總體為「漸高」。\n   - **(D) 錯誤（冬季均溫）**：由西向東遠離海洋調節，大陸性氣候特徵越發顯著，冬季受強烈大陸冷高壓籠罩，1 月月均溫由西向東為「漸低」（如奧伊米亞康為北半球寒極）。\n\n故正確答案選 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-01",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791015021881,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_russia_siberia_development_barriers_105",
@@ -2535,16 +2674,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **西伯利亞地理環境與資源特徵**：\n   - 西伯利亞地區蘊藏著全球最豐富的天然氣、石油、煤炭、鐵礦、金屬及森林水力資源，自然資源極為富饒，**絕非資源匱乏**。\n2. **外資投資意願低落之實際限制（排除 ABC）**：\n   - **(A) 屬實**：緯度高且氣候嚴寒，擁有廣大永凍土，建築與設施維護成本極高，產業發展受限。\n   - **(B) 屬實**：地廣人稀，當地勞工嚴重不足，需從外地引進勞動力。\n   - **(C) 屬實**：東西跨度極大，交通路線長且基礎建設較不完善，貨運與運輸成本過高。\n   - **(D) 最不可能（正確）**：西伯利亞自然資源極其豐富（如秋明油田、庫斯巴斯煤田等），原料來源無虞，故「資源匱乏」最不可能為投資意願低之原因。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-01",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791013040738,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_eu_cooperation_competitiveness_106",
@@ -2565,16 +2714,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **歐盟組織特徵與區域合作解析**：\n   - 歐盟（EU）成立的核心宗旨之一，係透過內部無關稅市場、資源共享及跨國分工（如歐洲空中巴士客機由法、德、英、西跨國共同製造生產），消除國界障礙並**提升歐盟在全球市場上的國際競爭力**。\n2. **選項逐一導正**：\n   - **(A) 錯誤**：歐盟總部位於**比利時布魯塞爾**（Brussels），非義大利羅馬。\n   - **(B) 錯誤**：開放邊境無須護照檢查僅適用於**簽署《申根公約》**的國家，部分歐盟會員國（如愛爾蘭）未加入申根區。\n   - **(C) 錯誤**：統一貨幣歐元僅限於**加入歐元區**的會員國採用（如瑞典、丹麥等國家仍使用本國貨幣）。\n   - **(D) 正確**：透過區域經濟整合與合作生產，成功強化整體國際競爭力。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-01",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791013053572,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_kaliningrad_nato_enclave_114_101",
@@ -2595,16 +2754,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_soc_geo_kaliningrad_nato_enclave_114_101.png",
     "solution": "1. **地緣政治與飛地位置解析**：\n   - **加里寧格勒（Kaliningrad）**位於波羅的海沿岸，為俄羅斯的海外獨立領土（飛地），南北分別與波蘭及立陶宛接壤。\n   - 由於波蘭與立陶宛均為北大西洋公約組織（NATO）與歐盟成員國，加里寧格勒深入歐洲腹地，是俄羅斯防範與對抗 NATO 東擴的核心前哨戰略**軍事基地**（駐有波羅的海艦隊及飛彈系統）。\n2. **選項比較與導正**：\n   - **(A) 錯誤**：加里寧格勒位於歐洲北部波羅的海沿岸，距離東北亞（如中、日、韓）極為遙遠。\n   - **(B) 錯誤**：加里寧格勒臨波羅的海，經大西洋出口，而非太平洋。\n   - **(C) 錯誤**：由圖可知，加里寧格勒位於波羅的海東南岸，俄羅斯向芬蘭輸送天然氣直接經由其北部邊界或陸地接壤管道即可，無須繞經加里寧格勒。\n   - **(D) 正確**：身為夾在 NATO 成員國之間的俄國飛地與不凍港，其最主要戰略功能為對抗 NATO 的前方軍事據點。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-01",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791013123110,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_murmansk_ice_free_port_ocean_current_102",
@@ -2625,16 +2794,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_soc_geo_murmansk_ice_free_port_ocean_current_102.png",
     "solution": "1. **莫曼斯克地理位置與不凍港成因**：\n   - **莫曼斯克（Murmansk）**位於俄羅斯西北部科拉半島、北極圈以北（約北緯 68.9°），瀕臨巴倫支海，是北極圈內最大的城市。\n   - 雖然緯度極高且周邊陸地寒冷，但由於**北大西洋暖流**的餘脈（莫曼斯克暖流）一路向北延伸注入巴倫支海，帶來較高水溫，使該港口水域**終年不結冰**，成為俄羅斯重要的北極海終年不凍港與海軍基地。\n2. **選項洋流位置分析**：\n   - **(A) 親潮（千島寒流）**：位於西北太平洋，流經日本東北及千島群島。\n   - **(B) 本吉拉涼流**：位於南大西洋，流經非洲西南部沿岸。\n   - **(C) 阿古拉斯暖流**：位於印度洋，流經非洲東南部沿岸。\n   - **(D) 北大西洋暖流（正確）**：流經歐洲西岸延伸至北極海，影響莫曼斯克港口增溫。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-01",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791013131864,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_russia_moscow_industrial_area_100",
@@ -2655,16 +2834,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **俄羅斯工業區位條件特徵**：\n   - 俄羅斯為傳統重工業大國，其主要工業區的分布可分為「**市場與人口交通導向**」以及「**原料/礦產與能源導向**」兩大類別。\n2. **莫斯科工業區（市場與人口交通導向）**：\n   - **莫斯科工業區**位於歐俄地區核心，為俄羅斯的政治、經濟、交通與文化中心。該區擁有全國最密集的城鎮人口與消費市場，且陸空交通網路發達，因而興起並發展機械、汽車、化學及高科技等工業，屬於典型的**市場與人口交通導向**。\n3. **其他工業區（原料與能源導向）**：\n   - **(B) 烏拉爾山工業區**：利用烏拉爾山脈豐富的**鐵礦**與金屬礦產興起（原料導向）。\n   - **(C) 庫斯內次工業區**：位於西伯利亞地區，依賴著名的庫斯巴斯**煤礦**發展重工業（燃料/原料導向）。\n   - **(D) 貝加爾湖工業區**：利用貝加爾湖豐富的水力發電與周邊木材、礦產資源發展（能源與原料導向）。\n\n故正確答案選 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-01",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791013137506,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_eu_eastward_expansion_2004_099",
@@ -2685,16 +2874,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **歷史與區域背景**：\n   - 冷戰期間，東歐國家多屬於蘇聯共產陣營，在經濟與政治上與西歐隔絕。\n   - 1989 年東歐劇變及 1991 年蘇聯解體後，東歐各國積極轉型為民主政治與市場經濟體制。\n2. **歐盟東擴（2004 年後）**：\n   - 為了提振經濟發展、融入歐洲一體化市場，波蘭、捷克、匈牙利、斯洛伐克、斯洛維尼亞、波羅的海三小國（愛沙尼亞、拉脫維亞、立陶宛）以及羅馬尼亞、保加利亞等**東歐**國家相繼於 2004 年及 2007 年加入歐盟，此過程稱為「歐盟東擴」。\n3. **選項比較與分析**：\n   - **(A) 北歐**、**(B) 西歐**、**(C) 南歐**：多數國家在 2004 年前即已為歐盟或歐共體之早期成員國（如法國、德國、義大利、荷蘭等）。\n   - **(D) 東歐（正確）**：題幹所列舉之國家主要地理分區均屬於**東歐**。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-01",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791013228294,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_similar_polygons_outward_extension_098",
@@ -2715,16 +2914,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_similar_polygons_outward_extension_098.png",
     "solution": "1. **相似多邊形的定義**：\n   - 兩多邊形若相似，必須同時滿足：① 各對應角相等、② 各對應邊長成比例。\n2. **選項逐一驗證**：\n   - **(A) 正三角形（相似）**：向外延長相同寬度後，內角皆保持 60 度（對應角相等），且新圖形三邊長均變大相同長度，新舊邊長比恆定（對應邊成比例）。\n   - **(B) 長方形（不相似）**：設原長為 a、寬為 b（a ≠ b），向外延伸寬度 d 後，長變為 a + 2d、寬變為 b + 2d。因為 (a + 2d) / a ≠ (b + 2d) / b，對應邊長不成比例。\n   - **(C) 菱形（相似）**：四邊向外垂直平移相同寬度 d，對應內角不變；且四邊長增加量相等（設增加 Δs），新四邊長皆為 s + Δs，對應邊長比皆為 (s + Δs) : s，對應邊長成比例。\n   - **(D) 平行四邊形（不相似）**：兩組鄰邊長 a、b 不相等，向外延伸相同寬度後，邊長增量比不等於原邊長比，對應邊長不成比例。\n   - **(E) 等腰梯形（不相似）**：上底 a 與下底 b 不相等，加上相同的擴張寬度後，上底與下底的增加比例不同（ (a + Δa)/a ≠ (b + Δb)/b ），對應邊長不成比例。\n\n故正確答案選 **(A) 正三角形、(C) 菱形**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-01",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791024381859,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_china_migration_ningxia_108_097",
@@ -2775,15 +2984,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **鹹水湖形成兩大關鍵環境機制**：\n   - **氣候條件（乾燥少雨）**：湖水面蒸發量遠大於大氣降水量，大量水份蒸發離開湖泊，留下溶於水中的礦物質與鹽分。\n   - **水文條件（淡水只進不出）**：湖泊為內陸封閉水域，沒有出口河流將鹽分帶走。外來河水不斷帶入微量鹽分，濃縮累積後湖水鹽度持續飆升。\n\n2. **各選項環境比較**：\n   - **(A) 潮溼多雨，淡水有進有出**：降水多且有流出口，湖水鹽分被帶走，形成典型**淡水湖**。\n   - **(B) / (C)**：無法同時滿足「強烈蒸發濃縮」與「鹽分封閉累積」兩大條件。\n   - **(D) 乾燥少雨，淡水只進不出**：完全符合鹹水湖形成的地理環境（本題答案）。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-29",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-06",
+    "reviewHistory": [
+      {
+        "date": "2026-10-06",
+        "monday": "2026-09-28",
+        "timestamp": 1791274776204,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_earth_groundwater_profile_layer_profile_021",
@@ -2808,11 +3028,22 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-29",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-06",
+    "reviewHistory": [
+      {
+        "date": "2026-10-06",
+        "monday": "2026-09-28",
+        "timestamp": 1791274869581,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_earth_freshwater_resources_underground_016",
@@ -2833,15 +3064,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **淡水資源分類與直接利用性分析**：\n   - **(A) 海水**：鹹水水體（占全球總水量 97.5%），含鹽量高無法直接飲用或灌溉。\n   - **(B) 冰川**：雖占淡水總量的 68%（儲量最多），但屬固體且分布於高緯度極地或高山，不利直接取用。\n   - **(C) 地下水**：占淡水總量約 30%，是人類實際上**最主要且可直接開發利用**的淡水資源（本題答案）。\n   - **(D) 海冰**：海水結冰而成，多含有鹽分且屬極地固體冰，無法直接利用。\n\n故正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-29",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-07",
+    "reviewHistory": [
+      {
+        "date": "2026-10-07",
+        "monday": "2026-09-28",
+        "timestamp": 1791328617748,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_earth_seawater_salinity_subtropical_017",
@@ -2866,11 +3108,22 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-29",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-07",
+    "reviewHistory": [
+      {
+        "date": "2026-10-07",
+        "monday": "2026-09-28",
+        "timestamp": 1791329121397,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_earth_water_distribution_atmosphere_018",
@@ -2891,15 +3144,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **水圈分布各選項逐一導正**：\n   - **(A) 錯誤**：南半球海洋面積約占 81%，北半球約占 61%，南半球海洋面積遠大於北半球（水體分布不均）。\n   - **(B) 錯誤**：陸地上亦有鹹水湖（如死海、大鹽湖、裏海），鹹水並非全部儲存在海洋中。\n   - **(C) 錯誤**：淡水僅占全球總水量 2.5%，而人類可直接利用的淡水資源（地下水、河川湖泊）僅占全球總水量約 **1%** 左右（非 5%）。\n   - **(D) 正確**：大氣中的水氣（雲、霧、水蒸氣）雖然對天氣變化至關重要，但占整個水圈總水量的比例非常稀少（少於 0.001%）（本題答案）。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-29",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-07",
+    "reviewHistory": [
+      {
+        "date": "2026-10-07",
+        "monday": "2026-09-28",
+        "timestamp": 1791360656391,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_earth_spheres_lithosphere_definition_019",
@@ -2920,15 +3184,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **地球三大圈層定義與選項解析**：\n   - **(A) 正確**：水氣、氮氣、氧氣等氣體均屬於大氣圈的組成成分。\n   - **(B) 正確**：水圈（降水/蒸發）、岩石圈（風化/火山）、大氣圈（氣候）三者間時刻進行能量與物質的交互作用。\n   - **(C) 正確**：水圈包含海洋、冰川、地下水、河川及陸地上的湖泊水體。\n   - **(D) 錯誤**：岩石圈範圍涵蓋「大陸地殼」與「海洋地殼」，以及地幔頂部的硬岩層，**並非專指陸地上**的岩層（本題選錯誤者，答案選 D）。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-29",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-07",
+    "reviewHistory": [
+      {
+        "date": "2026-10-07",
+        "monday": "2026-09-28",
+        "timestamp": 1791360741547,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_eng_adv_a_lot_hotter_014",
@@ -2949,15 +3224,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **比較級修飾文法規則**：\n   - 句中 **hotter** 已經是形容詞比較級，前面不可重複疊加 **more**。\n   - 表達「比昨天熱『許多』」時，須用比較級程度修飾語（**a lot**, **much**, **even**, **a little**, **far**）。\n\n2. **選項詳細解析**：\n   - **(A) ever**：曾經，不修飾形容詞比較級。\n   - **(B) more**：不可修飾已有比較級字尾 -er 的單詞。\n   - **(C) lots of**：許多（後接名詞，不修飾形容詞比較級）。\n   - **(D) a lot**：很、許多（副詞片語，可修飾比較級 a lot hotter，本題答案）。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-29",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791006109694,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_poly_horner_eval_d_015",
@@ -2982,11 +3268,22 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-29",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791024672569,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_eng_adv_almost_race_contrast_012",
@@ -3007,15 +3304,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **上下文語意與轉折關鍵**：\n   - 後半句「However, she fell at the last second and only came in third in the end」（然而她在最後一秒跌倒，最後只得到第三名）。\n   - 主句轉折詞 **However** 指出事實與預期不符，說明前半句應為「差一點/幾乎第一個到達終點」。\n\n2. **副詞選項比較**：\n   - **(A) almost**：幾乎、差一點（符合語境「幾乎第一個衝線但最後跌倒」，答案）。\n   - **(B) already**：已經（若已第一個到達，就不會最後一刻跌倒得第三名）。\n   - **(C) finally**：終於、最後（與最後得第三名衝突）。\n   - **(D) quickly**：快速地。\n\n故正確答案選 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791006151828,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_eng_adj_only_tennis_club_cap109_013",
@@ -3040,11 +3348,22 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791006211165,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_eng_adv_lightly_cap106_011",
@@ -3065,15 +3384,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **句型結構分析**：\n   - 本題採用 **so... that...**（如此……以致於……）結果句型。\n   - 空格修飾一般動詞 **walks**（走路），需填入副詞。\n\n2. **上下文關鍵線索與選項詞義**：\n   - 線索 1：「sometimes you don't even know she's just passed by」（有時你甚至不知道她剛走過去）➜ 說明走路非常輕、完全沒聲音。\n   - 線索 2：「You wonder if her feet ever touch the floor」（你懷疑她的腳到底有沒有碰到地板）➜ 暗示步伐極其輕盈像在飄浮。\n   - **(A) freely**：自由自在地。\n   - **(B) lightly**：輕巧地、輕盈地（符合「悄無聲息、腳不著地」之意境，本題答案）。\n   - **(C) shyly**：害羞地。\n   - **(D) slowly**：緩慢地。\n\n故正確答案選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791006223697,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_eng_freq_adverb_elliptical_clause_010",
@@ -3094,15 +3424,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **動詞種類對齊**：\n   - 第一句「Lily **is** always hungry after school...」使用 be 動詞 **is**。\n   - 「but」連接的後半句對比簡略句亦須統一使用 be 動詞 **is**（排除 B、D 選項之助動詞 does）。\n\n2. **頻率副詞位置之簡略句特例**：\n   - 【完整句】：頻率副詞放在 be 動詞後面（例如：He is never hungry.）。\n   - 【對比簡略句/省略句】：當 be 動詞後的形容詞（hungry）被省略時，頻率副詞（never）必須放在「主詞與 be 動詞之間」（S + never + is）。\n   - 例句完整補全：...but her brother **never is** [hungry].\n\n故正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791006242491,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_chi_phonetics_fang_pu_xue_011",
@@ -3123,15 +3464,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **各選項讀音標註與解析**：\n   - **(A) 不同**：\n     - 「踅」了一趟：讀作 ㄒㄩㄝˊ (xué)，意指轉折、來回走動或遊覽走了一圈。\n     - 空谷「跫」音：讀作 ㄑㄩㄥˊ (qióng)，指腳步聲。\n   - **(B) 不同**：\n     - 老「圃」黃花：讀作 ㄆㄨˇ (pǔ)，指種植花草蔬菜的園地。\n     - 山中小「鋪」：讀作 ㄆㄨˋ (pù)，指店鋪或小商店。\n   - **(C) 相同（本題答案）**：\n     - 遊「舫」如織：讀作 ㄈㄤˇ (fǎng)，指遊船、船隻像織布一樣密密麻麻往來。\n     - 明查暗「訪」：讀作 ㄈㄤˇ (fǎng)，指公開調查與暗中探訪。\n   - **(D) 不同**：\n     - 青的「靛」青：讀作 ㄉㄧㄢˋ (diàn)，深藍色的有機染料。\n     - 花朵「綻」放：讀作 ㄓㄢˋ (zhàn)，花朵開放裂開。\n\n故正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791003717940,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_chi_daming_lake_rhetoric_numbers_012",
@@ -3152,15 +3504,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **數字修辭「實數 vs 虛數」判定技巧**：\n   - 實數：表示精確計算或具體指稱的數量。\n   - 虛數：非精確數量，常用於形容數量極多、極少、廣闊或強調語氣的誇飾誇大描寫。\n2. **各選項分析**：\n   - **(A) 實數**：鐵公祠對聯「四面荷花三面柳」，實指鐵公祠與大明湖四周各方位被荷花與柳樹環繞的真實景觀構造。\n   - **(B) 虛數（本題答案）**：對聯「一城山色半城湖」，句中的「半」字並非精確的二分之一面積算術，而是誇張形容大明湖浩瀚廣闊，幾乎佔了濟南城很大一部分。\n   - **(C) 實數**：「一盞寒泉薦秋菊」，「一」代表實實在在的一盞（一杯）泉水。\n   - **(D) 實數**：「三更畫舫穿藕花」，「三更」為古代具體的時間計時單位（半夜子時，23:00~01:00）。\n\n故正確答案選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791003728262,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_chi_rhetoric_emotion_in_scenery_013",
@@ -3181,15 +3544,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **「寓情於景」定義**：將作者內心的感情寄託、融合於客觀所描寫的自然景物中，使景物帶有濃厚感情色彩。\n2. **各選項深度解析**：\n   - **(A) 有使用**：張繼《楓橋夜泊》藉由月落、霜天、江楓、漁火等淒清秋景，抒發旅人孤寂難眠的「愁思」（對愁眠）。\n   - **(B) 有使用**：李白《黃鶴樓送孟浩然之廣陵》藉著目送友人的「孤帆」消逝在天際、只見長江滾滾奔流，展現對友人無盡的深情眷戀與離愁。\n   - **(C) 有使用**：蘇軾《記承天夜遊》藉澄澈空明的月光與竹柏倒影，寄託自己雖遭貶詰但仍曠達豁達的「閒人」情懷與微妙心境。\n   - **(D) 沒有使用（本題答案）**：節錄自劉鶚《老殘遊記·大明湖》，僅運用視覺色彩與高低層次，客觀寫實地描繪千佛山上的寺廟建築與樹木景象，屬於純粹的客觀景物摹寫，未融入作者主觀情感。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
-    "isArchived": false,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 2,
+    "isArchived": true,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791005585751,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_chi_idiom_xu_ying_yi_gu_shi_014",
@@ -3210,15 +3584,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **成語「虛應一故事」解析**：\n   - 詞義：指依照慣例、舊有規矩（故事：古舊事例或舊有慣例）表面上假裝湊數應付過去。\n   - 語境：常用於形容辦事不切實、缺乏誠意、對工作或任務虛張聲勢敷衍了事的態度。\n2. **選項比較與語義 match**：\n   - **(A) 鄭重其事**：形容說話或做事態度非常莊重認真（反義詞）。\n   - **(B) 虛與委蛇 (ㄒㄩ ㄩˇ ㄨㄟ ㄧˊ)**：指對人對事表面上假意殷勤、順從應付，實際上缺乏誠意（同義詞，本題答案）。\n   - **(C) 墨守成規**：形容思想保守，固執地守著舊有的規章制度不肯改變（側重不肯創新，非敷衍）。\n   - **(D) 吹毛求疵**：比喻刻意挑剔別人的毛病或缺點。\n\n故正確答案選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791005623315,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_chi_daming_lake_quotes_scenery_007",
@@ -3239,15 +3624,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **題目拆解與觀念比對**：\n   - **(A) 正確**：「家家泉水，戶戶垂楊」為老殘剛進濟南府城時，所見濟南「泉城」特色景觀的經典名句。\n   - **(B) 錯誤**：課文中此句用於形容千佛山上「梵宇僧樓，與蒼松翠柏，高下相間」的豐富色彩與層次感，並非形容百花爭妍。\n   - **(C) 錯誤**：(1)用「趙千里的大畫」比喻「千佛山景色之美」；(2)用「數十里長的屏風」比喻「千佛山綿延的山勢」（非比喻大明湖湖面）。\n   - **(D) 錯誤**：課文中以此句形容夕陽照射下被染紅的「水邊蘆花」（粉紅絨毯），並非指荷花倒影。\n\n故正確選項選 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791005642986,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_chi_daming_lake_narrative_style_008",
@@ -3268,15 +3664,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **各選項深度解析與導正**：\n   - **(A) 錯誤**：文章開頭簡單交代老殘抵達濟南府城、投宿客棧的經過，重點在於後續遊覽景點，並未詳細贅述投宿過程。\n   - **(B) 錯誤**：全文順著老殘遊覽濟南名勝的時間順序與路線進行描寫，屬於經典的「順敘法」。\n   - **(C) 正確**：文中引用歷下亭「歷下此亭古，濟南名士多」與鐵公祠「四面荷花三面柳，一城山色半城湖」等古人對聯，增添濃厚之人文底蘊與采風特色。\n   - **(D) 錯誤**：文中景物如「秋山紅葉，老圃黃花（菊花）」、「千佛山秋景」等，均為深刻描繪「秋景」之經典筆觸，非春景。\n\n故正確選項選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791005774865,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_chi_daming_lake_narrative_perspective_009",
@@ -3297,15 +3704,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **題目要求選出「不正確」者**：\n   - **(A) 正確**：本課選自《老殘遊記》第二回，記載老殘遊覽濟南大明湖與千佛山之經過，屬精彩遊記。\n   - **(B) 正確**：老殘（姓鐵名英，字補殘）為作者劉鶚（字鐵雲）自身的化身。\n   - **(C) 錯誤（本題答案）**：全文採用**「第三人稱觀點」**與**客觀描摹筆調**呈現老殘所見所聞，而非第一人稱（我）主觀抒情。\n   - **(D) 正確**：劉鶚文筆清新細緻，多善用視覺與色彩之「摹寫筆法」傳神還原景物。\n\n故正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791005836974,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_chi_daming_lake_season_matching_010",
@@ -3330,11 +3748,22 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "lastReviewedMonday": "2026-09-28",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791005868781,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_soc_geo_north_sea_oil_field_uk_norway_112",
@@ -3355,16 +3784,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/soc_geo_north_sea_oil_map.png",
     "solution": "1. **關鍵線索分析**：\n   - 題目提及「1960年代發掘油田」、「英國、丹麥、挪威等國享有開採權」、「石化工業發展與重要能源供應地」。\n   - 上述國家皆環繞**北海**，北海海底蘊藏豐富的石油與天然氣（北海油田），使英國與挪威躍升為歐洲重要產油國。\n2. **地圖代號對照**：\n   - **(A) 甲**：大西洋（位於英國西側、歐洲大陸西方）。\n   - **(B) 乙**：**北海**（位於大不列顛島與斯堪地那維亞半島之間，為主要油田發掘地）。\n   - **(C) 丙**：波羅的海（位於北歐斯堪地那維亞半島與波羅的海三小國之間）。\n   - **(D) 丁**：北極海（位於高緯度極圈以北海域）。\n\n故正確答案選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791015057127,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_nordic_coniferous_forest_ikea_112",
@@ -3385,16 +3824,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/soc_geo_latitude_vegetation_profile.png",
     "solution": "1. **地理位置與氣候植被推論**：\n   - 芬蘭與瑞典位居北歐高緯度地區，大部分土地鄰近或深入北極圈，氣候屬於**副極地氣候**。\n   - 在苔原景觀以南的高緯度地帶，天然植被以廣大連綿的**針葉林**（如雲杉、冷杉、松樹）為主。\n2. **產業連結與圖表代號**：\n   - 針葉林木質適合造紙與家具製造，為芬蘭林業與瑞典 IKEA 提供穩定豐沛的林木原料。\n   - 對照緯度植物剖面圖：\n     - **(A) 甲**：**副極地針葉林**（位於苔原與冰帽南方高緯度區）。\n     - **(B) 乙 / (C) 丙**：溫帶落葉闊葉林 / 地中海灌木林。\n     - **(D) 丁**：熱帶雨林（位於低緯赤道附近）。\n\n故正確答案選 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-06",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-06",
+        "monday": "2026-09-28",
+        "timestamp": 1791273935341,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_iceland_geothermal_aluminum_smelting_112",
@@ -3415,16 +3864,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/soc_geo_nordic_countries_map.png",
     "solution": "1. **關鍵地緣與工業特色分析**：\n   - 煉鋁工業屬於「動力導向」產業，電費佔生產成本極高比例，故煉鋁廠必設於電力電力廉價地區。\n   - **冰島（甲）**坐落於大西洋中洋脊板塊張裂邊界，火山地熱活動極其頻繁，地熱發電與水力發電價格低廉且環境友善，成功吸引外資設立煉鋁廠。\n2. **地圖代號對照**：\n   - **(A) 甲**：**冰島**（大西洋西北部的火山地熱島國）。\n   - **(B) 乙**：挪威（斯堪地那維亞半島西側，以峽灣與水力、石油為主）。\n   - **(C) 丙**：瑞典（斯堪地那維亞半島東側，以鐵礦與森林為主）。\n   - **(D) 丁**：芬蘭（波羅的海東側，以千湖與林業為主）。\n\n故正確答案選 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-06",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-06",
+        "monday": "2026-09-28",
+        "timestamp": 1791274146065,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_scandinavian_peninsula_glacial_landforms_112",
@@ -3445,16 +3904,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **特徵與地形分析**：\n   - **地理位置**：位於北歐，包含挪威與瑞典，為北歐面積最大的地形主體。\n   - **冰河地形**：第四紀冰期時為歐洲大陸冰河的擴散中心，冰河退縮後留下了大量冰蝕窪地（冰蝕湖）以及海水入侵形成切壁陡峭的 U 型谷（峽灣地形）。\n2. **其他半島地理位置說明**：\n   - **(A) 義大利半島**：位於南歐地中海，呈靴子形狀。\n   - **(B) 伊比利半島**：位於西歐/南歐，包含西班牙與葡萄牙。\n   - **(C) 巴爾幹半島**：位於東南歐，地形崎嶇多山。\n   - **(D) 斯堪地那維亞半島**：**北歐地形主體**（正解）。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-06",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-06",
+        "monday": "2026-09-28",
+        "timestamp": 1791274159925,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_europe_location_world_map_112",
@@ -3479,12 +3948,22 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-06",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-06",
+        "monday": "2026-09-28",
+        "timestamp": 1791274284780,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_soc_geo_switzerland_alps_mountains_112",
@@ -3505,16 +3984,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/soc_geo_europe_mountains_map.png",
     "solution": "1. **關鍵線索分析**：\n   - 題目提及「瑞士」、「多山內陸國」、「歐洲屋脊」，指的正是橫跨西歐與南歐的**阿爾卑斯山脈**。\n   - 瑞士境內滑雪勝地（如馬特洪峰、少女峰）皆位於阿爾卑斯山區。\n2. **地圖代號詳細對照**：\n   - **(A) 甲**：斯堪地那維亞山脈（位於北歐斯堪地那維亞半島）。\n   - **(B) 乙**：庇里牛斯山脈（位於伊比利半島北緣，為法、西國界）。\n   - **(C) 丙**：**阿爾卑斯山脈**（位於中南歐，為瑞士、義大利、法國、奧地利等國交界之歐洲屋脊）。\n   - **(D) 丁**：喀爾巴阡山脈（位於中東歐地區）。\n\n故正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-06",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-06",
+        "monday": "2026-09-28",
+        "timestamp": 1791274297068,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_europe_population_sparse_northern_112",
@@ -3535,16 +4024,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/soc_geo_europe_mountains_map.png",
     "solution": "1. **歐洲整體與區域人口分布**：\n   - 歐洲普遍受西風與溫帶海洋性氣候影響，地形低平，整體人口分布為全球七大洲中最為平均者。\n2. **例外區域分析**：\n   - **北歐地區**：大部分地區深入北極圈或高緯度區，冬天漫長且氣候嚴寒，土壤貧瘠，致使人口分布較其他分區顯著稀少。\n3. **其他選項錯誤原因**：\n   - **(A) 東歐**：人口密度雖不如西歐高，但地形為廣大平原，人口並不稀少，且薪資非氣候自然地理主因。\n   - **(B) 西歐**：西歐氣候溫暖濕潤、經濟發達，人口極為稠密，且歐洲完全無沙漠地形。\n   - **(C) 南歐**：雖多丘陵高山，但地中海沿岸人口仍相當密集。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-06",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-06",
+        "monday": "2026-09-28",
+        "timestamp": 1791274328284,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_finland_thousand_lakes_glacial_112",
@@ -3565,16 +4064,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **芬蘭地理環境與「千湖國」成因**：\n   - 芬蘭位居北歐高緯度地區，古地塊地形發育早。\n   - 在第四紀體廣大的**大陸冰河**覆蓋全境，冰河滑動侵蝕（刨蝕）地表形成數以萬計的冰蝕窪地。\n   - 後續氣溫回升冰河消融，漥地積水成湖，形成廣布的**冰蝕湖**。\n2. **其他湖泊類型對照**：\n   - **(A) 潟湖**：海岸沙洲與陸地間被封閉的海水水域。\n   - **(B) 火口湖**：火山噴發後火口積水而成。\n   - **(D) 斷層湖**：地殼斷層陷落積水而成。\n\n故正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-06",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-06",
+        "monday": "2026-09-28",
+        "timestamp": 1791274375741,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_rotterdam_rhine_river_shipping_112",
@@ -3595,16 +4104,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/soc_geo_europe_rivers_map.png",
     "solution": "1. **鹿特丹港與萊因河關係**：\n   - **萊因河**發源於阿爾卑斯山，流經瑞士、德國、法國、荷蘭等西歐核心發達國家，水流平緩流速穩定、終年不凍，為全球航運價值最高的國際河流之一。\n   - 萊因河最終在荷蘭注入北海，其出海口即為歐洲吞吐量最大、最繁忙的門戶港口——**鹿特丹港**。\n2. **地圖代號詳細對照**：\n   - **(A) 甲**：聶伯河（流經烏克蘭注入黑海）。\n   - **(B) 乙**：多瑙河（歐洲第二長河，流經最多國家的國際河流，向東注入黑海）。\n   - **(C) 丙**：**萊因河**（貫穿西歐工業心臟地帶，出海口為鹿特丹港）。\n   - **(D) 丁**：塞納河（流經法國巴黎注入英吉利海峽）。\n\n故正確答案選 **(C)**。\n",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-06",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-06",
+        "monday": "2026-09-28",
+        "timestamp": 1791274462908,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_chongqing_mountain_city_sichuan_basin_112",
@@ -3629,12 +4148,28 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-06",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-06",
+        "monday": "2026-09-28",
+        "timestamp": 1791274563415,
+        "isMastered": true
+      },
+      {
+        "date": "2026-10-06",
+        "monday": "2026-09-28",
+        "timestamp": 1791274574267,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_sci_bio_achondroplasia_genotype_112_cap_111",
@@ -3655,16 +4190,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **判斷疾病為顯性或隱性遺傳**：\n   - 題幹指出：「若親代只有其中一方為患者（Ff），子代就有 50% 以上罹病率（Ff × ff → Ff : ff = 1 : 1）」。\n   - 這說明只需要獲得 1 個突變基因 **F** 即會發病，故軟骨發育不全症屬於**體染色體顯性遺傳疾病**。\n2. **判定父母基因型**：\n   - 顯性基因 **F** 代表患病，隱性基因 **f** 代表正常。\n   - 正常未患病者的基因型必定為隱性純合子 **ff**（若帶有 F 基因就一定會發病）。\n   - 題目明確說明「阿佑的父母皆未患病」，故父母兩人皆不帶有突變基因 F，**父親與母親的基因型皆為 ff**。\n3. **阿佑罹病原因**：\n   - 阿佑是在父母皆為正常 ff 的情況下，因為精子、卵子形成或受精卵發育時**自身發生了 DNA 新發突變（New Mutation）**而帶有 F 基因（基因型變為 Ff），進而發病。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-10-12",
+    "lastReviewedDate": "2026-10-12",
+    "reviewedMondays": [
+      "2026-10-12"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-12",
+        "monday": "2026-10-12",
+        "timestamp": 1791792805447,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_bio_rice_aroma_genotype_104_cap_110",
@@ -3685,16 +4230,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **判斷顯隱性性狀（口訣：無中生有為隱性）**：\n   - 親代甲和乙皆「不具香味」（顯性表徵），但其子代丁卻「具有香味」（隱性表徵）。\n   - 由此可判定：「不具香味」為顯性性狀（設顯性基因型為 A），「具香味」為隱性性狀（設隱性基因型為 a）。\n2. **推導親代（甲、乙）與子代（丁）基因型**：\n   - **子代丁（具香味，隱性）**：基因型必為同型合子 **aa**。\n   - 丁的兩個 a 基因分別來自親代甲與乙，且甲與乙表現為顯性（不具香味），故**甲、乙基因型必皆為 Aa**（皆可確定）。\n3. **推導子代丙基因型**：\n   - **子代丙（不具香味，顯性）**：由親代甲（Aa）與乙（Aa）交配（Aa × Aa → AA : Aa : aa = 1 : 2 : 1），表現為顯性的丙，其基因型**可能為 AA 或 Aa**。\n   - 因此，**水稻丙的基因型無法唯一確定**。\n\n故正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-07",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-07",
+        "monday": "2026-09-28",
+        "timestamp": 1791361081934,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_bio_water_cycle_residence_ocean_109",
@@ -3715,16 +4270,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **地球水資源儲量分布**：\n   - 全球總水量中，海洋（海水）佔了約 97.5%，陸地淡水與大氣水氣僅佔極少數（約 2.5%）。\n2. **水循環滯留時間與場所**：\n   - 水循環雖然推動水分在陸地、海洋與大氣之間不斷移動（蒸發、凝結、降水），但由於海洋擁有龐大的水體儲量，水分子在海洋中的平均滯留時間最長。\n   - 因此在整個水循環系統中，大多數的時間水分都是留駐在海洋（海中）。\n\n故正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-07",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-07",
+        "monday": "2026-09-28",
+        "timestamp": 1791361101019,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_bio_inland_terminal_salt_lake_108",
@@ -3745,16 +4310,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **內陸河與終點湖泊水文特徵**：\n   - 內陸河流流經陸地時，會溶解岩石與土壤中的微量礦物質（鹽類）。\n   - 當河流流入終點內陸湖泊，因地形限制無外流出口流向海洋，且當地氣候普遍乾旱少雨、蒸發強烈。\n2. **鹽分累積機制**：\n   - 水分在太陽照射下大量蒸發進入大氣，但鹽分無法蒸發而永久留存於湖水中。\n   - 經年累月下，湖水的鹽類濃度不斷升高，最終形成「鹹水湖」（鹽湖）。\n\n故正確填空為 **鹹水**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-07",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-07",
+        "monday": "2026-09-28",
+        "timestamp": 1791361173711,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_bio_glacier_characteristics_107",
@@ -3775,16 +4350,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **(D) 正確**：高山與乾旱內陸地區降雨稀少，夏季高山冰川與積雪融化（融雪水）匯入河流或滲入地下，是當地人類與生態最主要的淡水來源。\n2. **(A) 錯誤**：冰川融化後的水（融雪水）可直接被人類飲用、灌溉與利用。\n3. **(B) 錯誤**：水循環涵蓋水的固態（冰雪、冰川）、液態（雨水、河水、海洋）與氣態（水蒸氣），冰川亦持續進行昇華、融化與降雪補充，深度參與水循環。\n4. **(C) 錯誤**：全球暖化加速冰川融化，短期內會引發暴漲洪水與海平面上升（淡水流入海洋變成鹹水）；長期來看冰川儲藏量枯竭消失後，將導致嚴重的水資源匱乏，無法「大量增加淡水資源」。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-07",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-07",
+        "monday": "2026-09-28",
+        "timestamp": 1791360810423,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_bio_sea_salinity_evaporation_precipitation_106",
@@ -3805,16 +4390,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **副熱帶海域、地中海、死海**：\n   - 此類海域氣候乾旱少雨、太陽輻射強，海水**蒸發量【大】於降水量**。\n   - 大量純水蒸發進入大氣，而鹽分留在海水中，導致海水鹽度偏【高】（死海更因極度蒸發成為高鹽度鹽湖）。\n2. **赤道海域**：\n   - 赤道地區氣流對流旺盛，午後常有降雨，**降水量【大】於海水蒸發量**。\n   - 大量淡水降雨稀釋了海水濃度，使得赤道海域的海水鹽度偏【低】。\n\n故正確填空為：(1) **大、高**；(2) **大、低**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-07",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-07",
+        "monday": "2026-09-28",
+        "timestamp": 1791360898791,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_bio_glacier_meltwater_source_105",
@@ -3839,12 +4434,22 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-07",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-07",
+        "monday": "2026-09-28",
+        "timestamp": 1791360933490,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_sci_bio_earth_water_distribution_104",
@@ -3865,16 +4470,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **選項 (A) 錯誤（符合題意）**：\n   - 地球上的水資源中，海洋（海水）約佔了全地球總水量的 97.5%，淡水僅佔約 2.5%。\n   - 淡水與海水的比例極度懸殊，並非「平均分布」。\n2. **選項 (B) 正確**：\n   - 水在自然環境的常溫常壓下，可以同時以氣態（水蒸氣）、液態（雨水、河水、海水）與固態（冰川、積雪、霜）三種狀態存在。\n3. **選項 (C) 正確**：\n   - 太陽輻射推動水循環（蒸發、蒸散、凝結、降水、逕流），使水資源得以在陸地、海洋與大氣之間持續重新分配與循環再利用。\n4. **選項 (D) 正確**：\n   - 淡水資源中，除了封存在兩極與高山的冰川外，地下水與地表水（河流、湖泊）是人類最常開採與利用的水資源。\n\n故正確答案選 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-07",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-07",
+        "monday": "2026-09-28",
+        "timestamp": 1791361011796,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_buoyancy_terminal_velocity_drag_103",
@@ -3895,16 +4510,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **計算物體總重量（向下力）**：\n   - 物體質量（重量） = 體積 × 密度 = 20 立方公分 × 3 公克／立方公分 = 60 公克重（向下）。\n2. **計算水的浮力（向上力）**：\n   - 物體完全沒入水中，排開水體積等於物體體積（20 立方公分）。\n   - 依據阿基米德原理，浮力 = 排開液體重 = 20 立方公分 × 1 公克／立方公分 = 20 公克重（向上）。\n3. **利用等速度運動判定合力為零**：\n   - 物體作「等速度下沉」，表示所受合力為 0（牛頓第一運動定律）。\n   - 向下總力 = 向上總力。\n   - 向下重力（60 公克重） = 向上浮力（20 公克重） + 向上阻力。\n   - 解得阻力 = 60 - 20 = 40 公克重（方向向上）。\n\n故正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-28",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791037799250,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_vertical_throw_vt_graph_options_101",
@@ -3925,16 +4550,33 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_sci_phy_vertical_throw_vt_graph_options_101.png",
     "solution": "1. **加速度與斜率關係**：\n   - 鉛直上拋過程中僅受重力作用，作**等加速度運動**（加速度 a 為定值）。\n   - 規定「鉛直向上為正」，而重力方向向下，故加速度為 **a = -9.8 m/s²**。\n   - 在 v-t 圖中，直線的斜率代表加速度，故 v-t 圖必須為一斜率等於 -9.8 的向下傾斜直線。\n2. **選項斜率與物理意義檢驗**：\n   - **(A) 錯誤**：圖中 t = 9.8 秒時 v = 0，斜率 Slope = (0 - 9.8) / 9.8 = -1 m/s²，加速度大小不符。\n   - **(B) 正確**：圖中 t = 1 秒時 v = 0，斜率 Slope = (0 - 9.8) / 1 = -9.8 m/s²，完全符合重力加速度 a = -9.8 m/s² 的物理規律。\n   - **(C) 錯誤**：圖形初速為 0 且先加速後減速，不符合上拋初始具有向上速度的過程。\n   - **(D) 錯誤**：v-t 圖為曲線（斜率非常數），代表加速度隨時間改變，不符合重力加速度為常數之規律。\n\n故正確答案選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
-    "isArchived": false,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 2,
+    "isArchived": true,
     "nextReviewDate": "2026-09-27",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-10-10",
+    "reviewedMondays": [
+      "2026-09-28",
+      "2026-09-21"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791037921418,
+        "isMastered": true
+      },
+      {
+        "date": "2026-10-10",
+        "monday": "2026-09-21",
+        "timestamp": 1791641914626,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_cart_east_west_avg_acc_102",
@@ -3955,16 +4597,33 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **方向設定與數值表示**：\n   - 規定以「向東」為正方向（+），以「向西」為負方向（-）。\n   - 起始時刻 t₁ = 0s 之初速度：v₁ = +5 m/s。\n   - 結束時刻 t₂ = 5s 之末速度：v₂ = -10 m/s。\n2. **平均加速度公式計算**：\n   - 時間間隔 Δt = 5 - 0 = 5 秒。\n   - 代入平均加速度定義公式：\n     a = (v₂ - v₁) / Δt = (-10 - (+5)) / 5 = -15 / 5 = -3 m/s²。\n3. **結果判讀**：\n   - 計算結果大小為 **3 m/s²**。\n   - 負號（-）代表方向與正方向（向東）相反，即**方向向西**。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
-    "isArchived": false,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 2,
+    "isArchived": true,
     "nextReviewDate": "2026-09-27",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-10-10",
+    "reviewedMondays": [
+      "2026-09-28",
+      "2026-09-21"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791038191065,
+        "isMastered": true
+      },
+      {
+        "date": "2026-10-10",
+        "monday": "2026-09-21",
+        "timestamp": 1791641955939,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_tingting_vt_graph_avg_acc_west_100",
@@ -3985,16 +4644,33 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_sci_phy_tingting_vt_graph_avg_acc_west_100.png",
     "solution": "1. **觀念與公式說明**：\n   - 規定向東為正方向（速度 v > 0）。\n   - 平均加速度定義為：a = (v_末 - v_初) / (t_末 - t_初)。\n   - 若「平均加速度方向向西」（a < 0），表示速度變化量 Δv = v_末 - v_初 < 0，即**末速度小於初速度（v_末 < v_初）**。\n2. **選項時間區段與末初速度比較**：\n   - **(A) t = 0～10 分**：t = 0 時 v = 0，t = 10 時為第一個波峰，v_10 > v_0，速度增加（Δv > 0），平均加速度向東。\n   - **(B) t = 10～20 分**：t = 20 時為全圖最高點，v_20 > v_10，速度增加（Δv > 0），平均加速度向東。\n   - **(C) t = 15～30 分**：t = 15 時為谷底低點，t = 30 時為第三個波峰附近，v_30 > v_15，速度增加（Δv > 0），平均加速度向東。\n   - **(D) t = 20～30 分（正確）**：t = 20 時為全圖最大速度（最高點），t = 30 時速度明顯低於 t = 20 時的速度，故 v_30 < v_20，速度變化量 Δv < 0，**平均加速度方向向西**。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
-    "isArchived": false,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 2,
+    "isArchived": true,
     "nextReviewDate": "2026-09-27",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-10-10",
+    "reviewedMondays": [
+      "2026-09-28",
+      "2026-09-21"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791038294365,
+        "isMastered": true
+      },
+      {
+        "date": "2026-10-10",
+        "monday": "2026-09-21",
+        "timestamp": 1791642005449,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_four_cars_vt_graph_097",
@@ -4015,16 +4691,33 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_sci_phy_four_cars_vt_graph_097.png",
     "solution": "1. **(D) 正確**：乙車速度 v = 0（保持靜止於原點），丁車速度為負值且絕對值隨時間增加（往負方向作等加速度運動）。由於兩車運動狀態不同，丁車不斷遠離原點，因此乙、丁兩車的距離必**愈來愈遠**。\n2. **(A) 錯誤**：甲車作正方向等速度運動，乙車靜止。甲車位置隨時間向正方向延伸，兩車距離**愈來愈遠**（非保持不變）。\n3. **(B) 錯誤**：丙車初速為 0 往負方向加速，丁車有初速且往負方向加速。兩車速度不相等（丁車速比丙車快），故兩車距離**愈來愈遠**（非保持不變）。\n4. **(C) 錯誤**：甲車往正方向前進，丙車往負方向前進，兩車向相反方向背道而馳，距離**愈來愈遠**（非愈來愈近）。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
-    "isArchived": false,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 2,
+    "isArchived": true,
     "nextReviewDate": "2026-09-27",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-10-10",
+    "reviewedMondays": [
+      "2026-09-28",
+      "2026-09-21"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791038463015,
+        "isMastered": true
+      },
+      {
+        "date": "2026-10-10",
+        "monday": "2026-09-21",
+        "timestamp": 1791642020977,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_xt_graph_instant_vs_avg_speed_098",
@@ -4075,16 +4768,33 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_sci_phy_constant_acc_5s_10s_displacement_099.png",
     "solution": "1. **觀念說明與公式比率**：\n   - 物體由靜止（v₀ = 0）受定力作用，作**等加速度運動**（加速度 a 為定值）。\n   - 由位移公式 x = v₀t + (1/2)at² = (1/2)at²，可知位移與時間平方成正比（**x ∝ t²**）。\n2. **時間與位移比例計算**：\n   - 啟動後 5 秒末位移：x₅ = 25 公尺。\n   - 「再經過 5 秒後」代表總時間 t = 5 + 5 = 10 秒。\n   - 時間比為 5 : 10 = 1 : 2，故 10 秒末與 5 秒末的位移比為：\n     x₁₀ / x₅ = (10 / 5)² = 2² = 4\n   - 總位移 x₁₀ = 25 × 4 = **100 公尺**。\n3. **v-t 圖幾何面積法驗證**：\n   - v-t 圖中圖形與時間軸所圍三角形面積代表位移。\n   - t = 5 秒與 t = 10 秒形成的兩個三角形為**相似三角形**，對應邊長比為 1 : 2，故面積比（位移比）為 1² : 2² = 1 : 4，同樣求得 10 秒末位移為 25 × 4 = 100 公尺。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
-    "isArchived": false,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 2,
+    "isArchived": true,
     "nextReviewDate": "2026-09-27",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-10-10",
+    "reviewedMondays": [
+      "2026-09-28",
+      "2026-09-21"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791038566163,
+        "isMastered": true
+      },
+      {
+        "date": "2026-10-10",
+        "monday": "2026-09-21",
+        "timestamp": 1791642083905,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_ming_hua_xt_graph_095",
@@ -4105,16 +4815,33 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_sci_phy_ming_hua_xt_graph_095.png",
     "solution": "1. **(A) 正確（加速度判斷）**：在位置與時間關係圖（x-t 圖）中，斜直線代表物體作**等速度運動**。小華與小明的圖形皆為斜直線，代表速度恆定不變，因此兩人的**加速度皆為零**（加速度 a = 0 m/s²）。\n2. **(B) 錯誤（單位與觀念混淆）**：小明的 x-t 圖為直線，作等速度運動，加速度大小為 0 m/s²。小明在 2 秒內位移為 4 - 0 = 4 公尺，其「速度」大小才是 v = 4/2 = 2 m/s。\n3. **(C) 錯誤（速度快慢比較）**：x-t 圖的「斜率」代表速度。小明的斜率為 2（速度 2 m/s），小華的斜率為 (4-3)/(2-0) = 0.5（速度 0.5 m/s）。因小明斜率較陡，不論第 1 秒末或任何時刻，小明的速度均比小華快。\n4. **(D) 錯誤（位移計算）**：小華在 t = 0 秒時位置 x = 3 公尺，t = 2 秒時位置 x = 4 公尺，故 2 秒內的位移大小為 Δx = 4 - 3 = 1 公尺（非 4 公尺）。\n\n故正確答案選 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
-    "isArchived": false,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 2,
+    "isArchived": true,
     "nextReviewDate": "2026-09-27",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-10-10",
+    "reviewedMondays": [
+      "2026-09-28",
+      "2026-09-21"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791038686662,
+        "isMastered": true
+      },
+      {
+        "date": "2026-10-10",
+        "monday": "2026-09-21",
+        "timestamp": 1791642100108,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_free_fall_101_xt_graph_096",
@@ -4139,12 +4866,29 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-27",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-10-10",
+    "reviewedMondays": [
+      "2026-09-28",
+      "2026-09-21"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791038752380,
+        "isMastered": false
+      },
+      {
+        "date": "2026-10-10",
+        "monday": "2026-09-21",
+        "timestamp": 1791642122026,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_chi_couplets_theatre_moral_education_005",
@@ -4169,12 +4913,35 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-26",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-21",
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-01",
+        "monday": "2026-09-21",
+        "timestamp": 1790810350809,
+        "isMastered": true
+      },
+      {
+        "date": "2026-10-01",
+        "monday": "2026-09-21",
+        "timestamp": 1790810369752,
+        "isMastered": false
+      },
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791005944258,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_chi_couplets_temple_figures_matching_006",
@@ -4195,16 +4962,33 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **(B) 正確**：「祖述堯舜，憲章文武」（出自《中庸》讚頌孔子）與「德參天地，道冠古今」（形容萬世師表），描述對象為**孔子**，配對**孔廟**正確。\n2. **(A) 錯誤**：「三國無雙士」與「正氣千秋第一人」，描述對象為三國時期義薄雲天的**關羽**，應配對**關帝廟**（非岳飛廟）。\n3. **(C) 錯誤**：「還我山河」與「一片忠心唯報國（精忠報國）」，描述對象為南宋抗金名將**岳飛**，應配對**岳飛廟**（非關帝廟）。\n4. **(D) 錯誤**：「知善惡正邪能立判」與「朗吉凶禍福總無私」，描述公正威嚴、審判冥陽善惡的神明，應配對**城隍廟**（非媽祖廟）。\n\n故配對正確者選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-26",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewedMondays": [
+      "2026-09-21",
+      "2026-09-28"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-01",
+        "monday": "2026-09-21",
+        "timestamp": 1790810451303,
+        "isMastered": false
+      },
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791006066319,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_chi_couplets_location_matching_004",
@@ -4225,16 +5009,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **(A) 正確**：「高山流水」（伯牙鼓琴相知典故）與「白雪陽春」（高雅古曲《陽春白雪》），皆屬韻律樂曲，張貼於**樂器行**最正確。\n2. **(B) 錯誤**：「鬚眉畢現」（鬍鬚眉毛清晰刻劃）與「面目留真」（保留真實面容容貌），應張貼於**照相館/攝影棚/理髮店**（非書店）。\n3. **(C) 錯誤**：「廣搜百代遺編」（廣泛蒐集歷代典籍圖書）與「嘉惠四方後學」，應張貼於**圖書館/書店/出版機構**（非動物園）。\n4. **(D) 錯誤**：「杏林」（醫界名號）、「橘井」（藥界名號）以及「獨活、靈芝草、當歸、何首烏」（皆為中藥材名），應張貼於**中藥房/中醫診所**（非火鍋店）。\n\n故張貼地點最正確者選 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-26",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-10-01",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-01",
+        "monday": "2026-09-21",
+        "timestamp": 1790809695780,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_chi_couplets_industry_matching_003",
@@ -4255,16 +5049,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **(A) 正確**：「水陸兼呈（水陸珍饈）」與「賓朋加餐」，描繪豐盛佳餚聚餐，為**餐廳/飯館**對聯。\n2. **(B) 錯誤**：「買醉」、「消愁」指飲酒酒品，應適用於**酒莊/酒吧/酒館**（茶館常為清心、香茗、龍井）。\n3. **(C) 錯誤**：「桃李樹（培育學生）」與「棟梁材」，指教育育人，應適用於**學校/教育機構**（非建築公司）。\n4. **(D) 錯誤**：「十二時辰」與「手腕間」，指配戴於手腕之計時鐘錶，應適用於**鐘錶行**（非眼鏡行）。\n\n故配對正確者選 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-26",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-10-01",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-01",
+        "monday": "2026-09-21",
+        "timestamp": 1790809823257,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_chi_couplets_definition_rules_001",
@@ -4285,16 +5089,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **選項 (A) 正確**：對聯又名聯語、對子、楹聯，屬雙句對偶之文學體裁。\n2. **選項 (B) 正確**：春聯源自古代懸掛桃木板避邪之「桃符」民俗風尚。\n3. **選項 (C) 錯誤**：對聯講究「對仗、平仄相諧、字數相等」，但**無須押韻**。詩歌才有押韻限制。\n4. **選項 (D) 正確**：上下聯必須字數相等、詞性相對、音韻和諧（上聯末字仄聲、下聯末字平聲）。\n\n故不正確者選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-26",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-10-01",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-01",
+        "monday": "2026-09-21",
+        "timestamp": 1790809837557,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_chi_couplets_industry_tea_house_002",
@@ -4315,16 +5129,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **題幹考點**：尋找適合「茶店/茶館」之行業對聯。\n2. **選項分析**：\n   - **(A)**「聞香且止步，知味暫停車」：指美味佳餚留客，屬**餐館/飯店**對聯。\n   - **(B)**「龍井泉多奇味，武夷茶發異香」：嵌有「龍井」、「武夷茶」名茶茶名，屬標準**茶店/茶館**對聯。\n   - **(C)**「宰天下有如此肉，治大國若烹小鮮」：提及切肉與烹調，屬**餐館/飯店**對聯。\n   - **(D)**「精法廉小餐特色，麻辣燙川味正宗」：提及小餐特色與麻辣燙，屬**餐館/小吃店**對聯。\n\n故首選茶店選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-26",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "lastReviewedMonday": null,
-    "lastReviewedDate": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-10-01",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-10-01",
+        "monday": "2026-09-21",
+        "timestamp": 1790809868000,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_triangle_incenter_centroid_001",
@@ -4542,10 +5366,22 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-07",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791038793763,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_sci_phy_position_description_002",
@@ -4571,10 +5407,22 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-07",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791038822012,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_sci_phy_round_trip_average_speed_003",
@@ -4596,14 +5444,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解題步驟：\n\n1. **核心定義**：\n   $$\\text{平均速率} = \\frac{\\text{總路徑長}}{\\text{總時間}}$$\n   （注意：平均速率**不能**直接將兩速度相加除以 2，因為上山時間與下山時間並不相同！）\n\n2. **設未知數並計算時間**：\n   - 設單程山路長度為 $S$ 公里，往返總路程為 $2S$ 公里。\n   - 上山所耗時間：$t_1 = \\frac{S}{10}$ 小時。\n   - 下山所耗時間：$t_2 = \\frac{S}{30}$ 小時。\n   - 往返總時間：\n     $$t = t_1 + t_2 = \\frac{S}{10} + \\frac{S}{30} = \\frac{3S + S}{30} = \\frac{4S}{30} = \\frac{2S}{15} \\text{ 小時}$$\n\n3. **計算全程平均速率**：\n   $$v = \\frac{2S}{\\frac{2S}{15}} = 2S \\times \\frac{15}{2S} = \\mathbf{15} \\text{ 公里／小時}$$\n\n正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-07",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790591010204,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_car_vt_displacement_004",
@@ -4625,14 +5485,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_sci_phy_car_vt_displacement_007.png",
     "solution": "○ 詳細解題步驟：\n\n1. **$v-t$ 圖的核心物理意義**：\n   - 曲線的斜率代表**加速度 $a$**。\n   - 曲線與時間軸所圍成的**面積即為位移大小**。\n\n2. **求甲車的運動關係式**：\n   - 由圖可知直線通過原點 $(0, 0)$，在第 5 秒時速度達到 $15 \\text{ m/s}$。\n   - 加速度：$a = \\frac{15 - 0}{5} = 3 \\text{ m/s}^2$。\n   - 速度方程式：$v(t) = 3t$。\n\n3. **求第 2 秒與第 4 秒之瞬時速度**：\n   - 第 2 秒時速度：$v_2 = 3 \\times 2 = 6 \\text{ m/s}$\n   - 第 4 秒時速度：$v_4 = 3 \\times 4 = 12 \\text{ m/s}$\n\n4. **計算第 2 秒至第 4 秒間的位移（梯形面積）**：\n   - 時間間隔：$\\Delta t = 4 - 2 = 2 \\text{ 秒}$\n   - 位移：\n     $$\\text{位移} = \\frac{(v_2 + v_4) \\times \\Delta t}{2} = \\frac{(6 + 12) \\times 2}{2} = \\mathbf{18} \\text{ m}$$\n\n正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-07",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-10-12"
+    ],
+    "lastReviewedMonday": "2026-10-12",
+    "lastReviewedDate": "2026-10-12",
+    "reviewHistory": [
+      {
+        "date": "2026-10-12",
+        "monday": "2026-10-12",
+        "timestamp": 1791792795676,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_ratio_fraction_param_linear_007",
@@ -5145,6 +6017,20 @@ const INITIAL_SEED_DATA = [
     "lastReviewedDate": "2026-09-19",
     "reviewedMondays": [
       "2026-09-14"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789896398589,
+        "isMastered": true
+      },
+      {
+        "date": "2026-09-21",
+        "monday": "2026-09-14",
+        "timestamp": 1790000990631,
+        "isMastered": false
+      }
     ]
   },
   {
@@ -5234,14 +6120,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_parallel_lines_trapezoid_ef_cf_020.png",
     "solution": "1. **第 (1) 小題：利用「平行線截等比例線段性質」求 $\\overline{EF}$**：\n   - $\\because L_1 // L_2 // L_3$\n   - 兩截線被三平行線所截出的線段長成比例：\n     $$\\overline{AB} : \\overline{BC} = \\overline{DE} : \\overline{EF}$$\n   - 將題目已知數值代入：\n     $$12 : 18 = 10 : \\overline{EF}$$\n     $$2 : 3 = 10 : \\overline{EF}$$\n     $$2 \\times \\overline{EF} = 30 \\implies \\mathbf{\\overline{EF} = 15}$$\n\n2. **第 (2) 小題：作平行輔助線（平行四邊形 ＋ 相似三角形法）求 $\\overline{CF}$**：\n   - **作輔助線**：過 $A$ 點作 $\\overline{AG} // \\overline{DF}$，分別交直線 $L_2$ 於 $H$ 點、交直線 $L_3$ 於 $G$ 點。\n   - **利用平行四邊形對邊等長**：\n     四邊形 $ADHE$ 與四邊形 $ADGF$ 皆為平行四邊形，故對邊等長：\n     $$\\overline{HE} = \\overline{AD} = 20，\\quad \\overline{GF} = \\overline{AD} = 20$$\n   - **計算小三角形底邊 $\\overline{BH}$**：\n     已知整段 $\\overline{BE} = 30$：\n     $$\\overline{BH} = \\overline{BE} - \\overline{HE} = 30 - 20 = 10$$\n   - **利用 $\\triangle ABH \\sim \\triangle ACG$ 求底邊 $\\overline{CG}$**：\n     在 $\\triangle ACG$ 中，$\\because \\overline{BH} // \\overline{CG}$，由對應邊成比例：\n     $$\\frac{\\overline{BH}}{\\overline{CG}} = \\frac{\\overline{AB}}{\\overline{AC}} = \\frac{\\overline{AB}}{\\overline{AB} + \\overline{BC}}$$\n     $$\\frac{10}{\\overline{CG}} = \\frac{12}{12 + 18} = \\frac{12}{30} = \\frac{2}{5}$$\n     $$2 \\times \\overline{CG} = 50 \\implies \\overline{CG} = 25$$\n   - **計算總長 $\\overline{CF}$**：\n     $$\\overline{CF} = \\overline{CG} + \\overline{GF} = 25 + 20 = \\mathbf{45}$$\n\n3. **第 (2) 小題秒殺技巧：梯形比例分點公式（驗算法）**：\n   - 中間橫線長度等於「交叉相乘加權平均」：\n     $$\\overline{BE} = \\frac{\\overline{BC} \\times \\overline{AD} + \\overline{AB} \\times \\overline{CF}}{\\overline{AB} + \\overline{BC}}$$\n     $$30 = \\frac{18 \\times 20 + 12 \\times \\overline{CF}}{12 + 18} = \\frac{360 + 12\\overline{CF}}{30}$$\n     $$900 = 360 + 12\\overline{CF} \\implies 12\\overline{CF} = 540 \\implies \\mathbf{\\overline{CF} = 45}$$\n\n4. **結論**：\n   (1) $\\mathbf{\\overline{EF} = 15}$；(2) $\\mathbf{\\overline{CF} = 45}$。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-10",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791024853699,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_chinese_part_of_speech_comparison_006",
@@ -5712,14 +6610,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_parallel_reciprocal_sum_proof_021.png",
     "solution": "【四步驟完整推導說明】\n\n**步驟一**：\n在 $\\triangle BCD$ 中，因為 $\\overline{EF} // \\overline{CD}$，\n由平行線截比例線段與相似三角形性質（$\\triangle BEF \\sim \\triangle BCD$）：\n$$\\frac{\\overline{EF}}{\\overline{CD}} = \\frac{\\overline{BF}}{\\overline{BD}} \\quad \\cdots\\cdots ①$$\n\n**步驟二**：\n在 $\\triangle DAB$ 中，因為 $\\overline{EF} // \\overline{AB}$，\n由平行線截比例線段與相似三角形性質（$\\triangle DEF \\sim \\triangle DAB$）：\n$$\\frac{\\overline{EF}}{\\overline{AB}} = \\frac{\\overline{DF}}{\\overline{BD}} \\quad \\cdots\\cdots ②$$\n\n**步驟三**：\n將 $①$ 式與 $②$ 式兩式相加：\n$$\\frac{\\overline{EF}}{\\overline{AB}} + \\frac{\\overline{EF}}{\\overline{CD}} = \\frac{\\overline{DF}}{\\overline{BD}} + \\frac{\\overline{BF}}{\\overline{BD}} = \\frac{\\overline{DF} + \\overline{BF}}{\\overline{BD}}$$\n因為 $F$ 點在線段 $\\overline{BD}$ 上，所以 $\\overline{DF} + \\overline{BF} = \\overline{BD}$：\n$$\\Rightarrow \\frac{\\overline{EF}}{\\overline{AB}} + \\frac{\\overline{EF}}{\\overline{CD}} = \\frac{\\overline{BD}}{\\overline{BD}} = 1$$\n\n**步驟四**：\n等號兩邊同除以 $\\overline{EF}$（即同乘以 $\\frac{1}{\\overline{EF}}$）：\n$$\\Rightarrow \\frac{1}{\\overline{AB}} + \\frac{1}{\\overline{CD}} = \\frac{1}{\\overline{EF}}$$\n★ **得證！**",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-11",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791025113427,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_polynomial_expansion_coeff_abs_023",
@@ -5741,14 +6651,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **步驟一：展開左式（善用提負號平方技巧）**：\n   括號內兩項皆為負號，提出負號後平方：\n   $$(-7x - a)^2 = [-(7x + a)]^2 = (7x + a)^2$$\n   利用和的平方公式 $(A + B)^2 = A^2 + 2AB + B^2$ 展開：\n   $$(7x + a)^2 = (7x)^2 + 2 \\cdot (7x) \\cdot a + a^2 = \\mathbf{49x^2 + 14ax + a^2}$$\n\n2. **步驟二：對照多項式各項係數**：\n   已知 $49x^2 + 14ax + a^2 = 49x^2 - bx + 9$：\n   - 常數項相等：$a^2 = 9 \\implies a = 3 \\text{ 或 } a = -3$\n   - 一次項相等：$+14a = -b \\implies b = -14a$\n\n3. **步驟三：分類討論計算 $|a + b|$**：\n   - **情況 ①**：若 $a = 3$，則 $b = -14 \\times 3 = -42$\n     $$a + b = 3 + (-42) = -39 \\implies |a + b| = |-39| = \\mathbf{39}$$\n   - **情況 ②**：若 $a = -3$，則 $b = -14 \\times (-3) = 42$\n     $$a + b = (-3) + 42 = 39 \\implies |a + b| = |39| = \\mathbf{39}$$\n   - 結論：無論 $a$ 是 $3$ 或 $-3$，$|a + b|$ 的值恆為 **39**。\n\n故選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-14",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791025276264,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_mixed_fraction_diff_squares_024",
@@ -5770,14 +6692,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **尋找基準整數，套用平方差公式**：\n   觀察兩帶分數的平均中心為 $25$：\n   $$24\\frac{9}{10} = 25 - \\frac{1}{10}$$\n   $$25\\frac{1}{10} = 25 + \\frac{1}{10}$$\n   套用平方差公式 $(A - B)(A + B) = A^2 - B^2$：\n   $$24\\frac{9}{10} \\times 25\\frac{1}{10} = \\left(25 - \\frac{1}{10}\\right)\\left(25 + \\frac{1}{10}\\right) = 25^2 - \\left(\\frac{1}{10}\\right)^2 = 625 - \\frac{1}{100}$$\n\n2. **滿足 $a$ 為正整數且 $0 < b < 1$ 的關鍵拆解**：\n   $\\because b$ 必須介於 $0$ 與 $1$ 之間（正真分數），若取 $a=625$，則 $b=-\\frac{1}{100} < 0$ 不合！\n   因此需向整數 $625$ **「借 1」** 轉化為正小數：\n   $$625 - \\frac{1}{100} = 624 + \\left(1 - \\frac{1}{100}\\right) = \\mathbf{624} + \\mathbf{\\frac{99}{100}}$$\n   - 正整數部分：$a = \\mathbf{624}$\n   - 純小數部分：$b = \\frac{99}{100}$（滿足 $0 < \\frac{99}{100} < 1$）\n\n故填 **624**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-14",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790588581447,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_bittest_diff_squares_compare_025",
@@ -5799,14 +6733,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **利用平方差公式 $A^2 - B^2 = (A + B)(A - B)$ 展開各選項**：\n   - **(A)** $(777 + 27)(777 - 27) = \\mathbf{750} \\times \\mathbf{804}$\n   - **(B)** $(852 + 48)(852 - 48) = \\mathbf{900} \\times \\mathbf{804}$\n   - **(C)** $(1001 + 599)(1001 - 599) = 1600 \\times 402$\n     巧妙借 $2$ 給 $402$ 統一基準：\n     $$= (800 \\times 2) \\times 402 = \\mathbf{800} \\times \\mathbf{804}$$\n   - **(D)** $(1006 + 604)(1006 - 604) = 1610 \\times 402$\n     同樣借 $2$ 給 $402$：\n     $$= (805 \\times 2) \\times 402 = \\mathbf{805} \\times \\mathbf{804}$$\n\n2. **同乘基準數 804，直接比係數大小**：\n   因為四個式子皆化為「$\\text{某數} \\times 804$」，直接比較前面的因數：\n   $$\\mathbf{900} > 805 > 800 > 750$$\n   因此 (B) 的值最大。\n\n故選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-14",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791025551475,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_diff_squares_plus_minus_trap_026",
@@ -5828,14 +6774,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **步驟一：以 2000 為中心套用平方差公式**：\n   $$1994 = 2000 - 6$$\n   $$2006 = 2000 + 6$$\n   $$1994 \\times 2006 = (2000 - 6)(2000 + 6) = 2000^2 - 6^2$$\n\n2. **步驟二：求 $a$ 之值（注意正負雙解陷阱）**：\n   對照式子 $2000^2 - a^2 = 2000^2 - 6^2$：\n   $$a^2 = 6^2 = 36$$\n   ⚠️ **關鍵注意**：題目未限定 $a$ 為正數，而 $6^2 = 36$ 且 $(-6)^2 = 36$：\n   $$\\mathbf{a = \\pm 6} \\quad (\\text{或寫 } 6 \\text{ 或 } -6)$$\n\n3. **步驟三：求 $b$ 之值**：\n   $$b = 2000^2 - 36 = 4,000,000 - 36 = \\mathbf{3,999,964}$$\n\n故答：$a = \\pm 6$；$b = 3999964$。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-14",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791025677523,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_overlapping_squares_area_027",
@@ -5857,14 +6815,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_overlapping_squares_area_022.png",
     "solution": "1. **步驟一：依重疊面積原理列出幾何算式**：\n   重疊後圖形總面積等於「兩正方形面積和減去重複計算的重疊面積」：\n   $$\\text{總面積} = 30^2 + \\left(22\\frac{1}{2}\\right)^2 - \\left(7\\frac{1}{2}\\right)^2$$\n\n2. **步驟二：觀察後兩項，套用平方差公式神速化簡**：\n   千萬不要硬算分數平方！將後兩項結合為 $A^2 - B^2 = (A + B)(A - B)$：\n   $$\\left(22\\frac{1}{2}\\right)^2 - \\left(7\\frac{1}{2}\\right)^2 = \\left(22\\frac{1}{2} + 7\\frac{1}{2}\\right)\\left(22\\frac{1}{2} - 7\\frac{1}{2}\\right)$$\n   - 和：$22.5 + 7.5 = \\mathbf{30}$（分數直接相加變為整數！）\n   - 差：$22.5 - 7.5 = \\mathbf{15}$\n   故後兩項平方差即為：$30 \\times 15$！\n\n3. **步驟三：提出公因數 30，心算秒殺答案**：\n   原算式改寫為：\n   $$30^2 + 30 \\times 15 = 30 \\times (30 + 15) = 30 \\times 45 = \\mathbf{1350}\\text{ (平方公分)}$$\n\n故選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-14",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791025748704,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_triangle_midpoint_trisect_df_028",
@@ -5886,14 +6856,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_triangle_midpoint_trisect_df_028.png",
     "solution": "1. **步驟一：觀察 $\\triangle AEC$，找出第一組中點連線**：\n   - 因 $D$、$E$ 三等分 $\\overline{AB}$，故 $\\overline{AD} = \\overline{DE}$，即 $D$ 為 $\\overline{AE}$ 的中點。\n   - 題目已知 $F$ 為 $\\overline{AC}$ 的中點（$\\overline{AF} = \\overline{FC}$）。\n   - 根據**三角形兩邊中點連線定理**：\n     $$\\overline{DF} \\parallel \\overline{EC} \\quad \\text{且} \\quad \\overline{DF} = \\frac{1}{2}\\overline{EC}$$\n\n2. **步驟二：觀察 $\\triangle BDF$，找出第二組中點連線**：\n   - 同樣由三等分可知 $\\overline{DE} = \\overline{EB}$，即 $E$ 為 $\\overline{BD}$ 的中點。\n   - 因為由步驟一已證得 $\\overline{DF} \\parallel \\overline{EC}$，而 $P$ 在 $\\overline{EC}$ 上，所以 $\\overline{EP} \\parallel \\overline{DF}$。\n   - 在 $\\triangle BDF$ 中，過一邊中點 $E$ 作底邊 $\\overline{DF}$ 的平行線，必平分另一邊 $\\overline{BF}$（即 $P$ 為 $\\overline{BF}$ 中點），且：\n     $$\\overline{EP} = \\frac{1}{2}\\overline{DF}$$\n\n3. **步驟三：設未知數列方程式求解**：\n   - 設所求 $\\overline{DF} = x$。\n   - 由步驟二可得：\n     $$\\overline{EP} = \\frac{1}{2}\\overline{DF} = \\frac{1}{2}x$$\n   - 整段線段 $\\overline{EC} = \\overline{EP} + \\overline{CP}$，題目已知 $\\overline{CP} = 3$：\n     $$\\overline{EC} = \\frac{1}{2}x + 3$$\n   - 代回步驟一的關係式 $\\overline{DF} = \\frac{1}{2}\\overline{EC}$：\n     $$x = \\frac{1}{2}\\left(\\frac{1}{2}x + 3\\right)$$\n   - 兩邊同乘以 $2$：\n     $$2x = \\frac{1}{2}x + 3$$\n   - 移項化簡：\n     $$\\frac{3}{2}x = 3 \\implies x = 3 \\times \\frac{2}{3} = \\mathbf{2}$$\n\n因此，$\\overline{DF} = \\mathbf{2}$。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-14",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790588742507,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_persian_zoroastrianism_map_029",
@@ -5915,14 +6897,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_soc_persian_zoroastrianism_map_029.png",
     "solution": "1. **步驟一：由宗教特色判斷宗教種類**：\n   - 題目提及：「**崇拜光明、以火為尊、講究善惡對立**」。\n   - 此為古代波斯人創立的宗教——**祆（ㄒㄧㄢ）教**（又稱**拜火教**、**瑣羅亞斯德教**）。\n   - 其核心教義為「光明善神（阿胡拉·馬茲達）」與「黑暗惡神（阿里曼）」的善惡二元對立，並相信世界末日會有最後審判，善人升天堂、惡人下地獄（對後來的猶太教、基督教、伊斯蘭教產生深遠影響）。\n\n2. **步驟二：判讀地圖代號地理位置**：\n   - **甲**：**巴爾幹半島（希臘）**，為古希臘愛琴文明、城邦文明發源地。\n   - **乙**：**尼羅河流域（埃及）**，為古埃及文明，崇拜太陽神與冥王，相信靈魂不滅。\n   - **丙**：**兩河流域（美索不達米亞平原）**，底格里斯河與幼發拉底河，蘇美、巴比倫文明發源地。\n   - **丁**：**伊朗高原（波斯）**，此處即為古波斯人興起之地，也是**祆教**的發源核心！\n\n3. **步驟三：總結**：\n   - 祆教盛行並發源於**伊朗高原（丁）**，故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-14",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-25",
+    "reviewHistory": [
+      {
+        "date": "2026-09-25",
+        "monday": "2026-09-21",
+        "timestamp": 1790314939142,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_bio_cancer_cell_division_mitosis_030",
@@ -5973,14 +6967,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解析：\n\n1. **選項逐一檢驗**：\n   - **(A) 錯誤**：產生配子（精子、卵子）需經過**減數分裂**（染色體數目減半，$2n \\to 1n$），而非一般細胞分裂。\n   - **(B) 錯誤**：雌雄配子結合稱為「受精」，分為**體內受精**（如哺乳類、鳥類、爬蟲類）與**體外受精**（如多數魚類、兩生類），並非全部都在體內。\n   - **(C) 正確**：有性生殖結合了雙親的遺傳物質，且減數分裂與受精過程具有基因重組，使得**子代的遺傳特性與親代不同**（具有個別差異，利於演化與適應環境變異）。\n   - **(D) 錯誤**：親代為雙套（$2n$），形成的配子為單套（$1n$）；受精卵結合後恢復為雙套（$2n$），因此**親代與子代的染色體套數相同**。\n\n2. **重點結論**：\n   - 正確答案為 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-15",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789880323680,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_bio_meiosis_chimpanzee_chromosomes_032",
@@ -6002,14 +7008,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解析：\n\n1. **黑猩猩染色體基本分析**：\n   - 黑猩猩為雙倍體生物，**體細胞**（雙套 $2n$）含有 **48 條染色體（24 對）**。\n\n2. **減數分裂特徵**：\n   - **複製次數**：染色體**僅複製 1 次**。\n   - **分裂次數**：連續**分裂 2 次**（第一次分裂同源染色體分離，第二次分裂姐妹染色分體分離）。\n   - **結果**：形成 4 個子細胞（精子），每個精子含有**單套（$1n$）**染色體，數目減半為 **24 條**。\n\n3. **選項盲點逐一檢視**：\n   - **(A) 正確**：染色體複製 1 次，形成的精子含有體細胞一半的染色體（$48 \\div 2 = 24$ 條）。\n   - **(B) 錯誤**：染色體只複製 1 次，不是 2 次；精子染色體數為 24 條，非 48 條。\n   - **(C) 錯誤**：精子是**單套（$1n$）**，染色體單獨存在，**不成對**！不能稱作「12 對」，應為「24 條」。\n   - **(D) 錯誤**：複製僅 1 次，且精子為單套，不成對。\n\n故正確答案為 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-15",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789880376381,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_triangle_midpoint_perimeter_area_033",
@@ -6031,14 +7049,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解題步驟：\n\n1. **步驟一：由中點連線段性質求邊長比與周長**：\n   - 設 $D, E, F$ 為 $\\triangle ABC$ 三邊中點。\n   - 由三角形中點連線段定理：連接兩邊中點的線段平行於第三邊且長度等於第三邊的一半。\n     $$\\overline{DE} = \\frac{1}{2}\\overline{AC}, \\quad \\overline{EF} = \\frac{1}{2}\\overline{AB}, \\quad \\overline{DF} = \\frac{1}{2}\\overline{BC}$$\n   - 因此 $\\triangle ABC$ 的三邊長分別為 $\\triangle DEF$ 三邊長的 $2$ 倍：\n     $$2 \\times 6 = 12, \\quad 2 \\times 8 = 16, \\quad 2 \\times 10 = 20$$\n   - $\\triangle ABC$ 的周長為：\n     $$\\text{周長} = 12 + 16 + 20 = 48$$\n     （亦可由周長比等於邊長比直接計算：$(6 + 8 + 10) \\times 2 = 24 \\times 2 = 48$）。\n\n2. **步驟二：判斷 $\\triangle DEF$ 形狀並計算面積**：\n   - 檢驗 $\\triangle DEF$ 的三邊長 $6, 8, 10$：\n     $$6^2 + 8^2 = 36 + 64 = 100 = 10^2$$\n   - 滿足畢氏定理，故 $\\triangle DEF$ 為以 $6$ 和 $8$ 為兩股的**直角三角形**。\n   - $\\triangle DEF$ 的面積為：\n     $$\\text{面積}_{\\triangle DEF} = \\frac{1}{2} \\times 6 \\times 8 = 24$$\n\n3. **步驟三：利用面積比求 $\\triangle ABC$ 的面積**：\n   - 相似三角形的面積比等於對應邊長比的平方：\n     $$\\frac{\\text{面積}_{\\triangle ABC}}{\\text{面積}_{\\triangle DEF}} = \\left(\\frac{2}{1}\\right)^2 = 4$$\n   - $\\triangle ABC$ 的面積為：\n     $$\\text{面積}_{\\triangle ABC} = 4 \\times 24 = 96$$\n\n標準答案：周長為 **48**，面積為 **96**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-15",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791025755120,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_triangle_midpoint_ratio_ae_ef_034",
@@ -6060,14 +7090,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_triangle_midpoint_ratio_ae_ef_034.png",
     "solution": "○ 詳細解題步驟：\n\n1. **步驟一：作輔助線（構造中點平行線）**：\n   - 過點 $D$ 作 $\\overline{DG} \\parallel \\overline{AF}$，交 $\\overline{BC}$ 於 $G$ 點。\n\n2. **步驟二：在 $\\triangle AFC$ 中分析**：\n   - $\\because D$ 為 $\\overline{AC}$ 的中點，且 $\\overline{DG} \\parallel \\overline{AF}$（同位角相等，$\\triangle CDG \\sim \\triangle CAF$）。\n   - 由三角形中點連線性質：\n     $$\\overline{DG} = \\frac{1}{2}\\overline{AF}, \\quad \\overline{CG} = \\overline{GF}$$\n\n3. **步驟三：在 $\\triangle BDG$ 中分析**：\n   - $\\because E$ 為 $\\overline{BD}$ 的中點，且 $\\overline{EF} \\parallel \\overline{DG}$（$\\because \\overline{AF} \\parallel \\overline{DG}$ 且 $E, F$ 分別在 $\\overline{AF}$ 及其直線上）。\n   - 由三角形中點連線段性質：\n     $$\\overline{EF} = \\frac{1}{2}\\overline{DG} = \\frac{1}{2} \\times \\left(\\frac{1}{2}\\overline{AF}\\right) = \\frac{1}{4}\\overline{AF}$$\n     （且 $\\overline{BF} = \\overline{FG}$，可得 $\\overline{BF} : \\overline{FG} : \\overline{GC} = 1 : 1 : 1$）。\n\n4. **步驟四：計算線段比 $\\overline{AE} : \\overline{EF}$**：\n   - 已知整段 $\\overline{AF}$ 中，$\\overline{EF} = \\frac{1}{4}\\overline{AF}$：\n     $$\\overline{AE} = \\overline{AF} - \\overline{EF} = \\overline{AF} - \\frac{1}{4}\\overline{AF} = \\frac{3}{4}\\overline{AF}$$\n   - 兩線段長度比為：\n     $$\\overline{AE} : \\overline{EF} = \\left(\\frac{3}{4}\\overline{AF}\\right) : \\left(\\frac{1}{4}\\overline{AF}\\right) = 3 : 1$$\n\n○ **速解小技巧（孟氏定理 Menelaus's Theorem）**：\n   以 $\\triangle BCD$ 與截線 $A-E-F$ 套用孟氏定理：\n   $$\\frac{\\overline{BF}}{\\overline{FC}} \\times \\frac{\\overline{CA}}{\\overline{AD}} \\times \\frac{\\overline{DE}}{\\overline{EB}} = 1$$\n   由前面中點比例得 $\\overline{BF} : \\overline{FC} = 1 : 2$，$\\frac{\\overline{CA}}{\\overline{AD}} = \\frac{2}{1}$，$\\frac{\\overline{DE}}{\\overline{EB}} = 1$。\n   再以 $\\triangle BDG$ 截線計算，亦可瞬間得出 $\\overline{AE} : \\overline{EF} = 3 : 1$！\n\n標準答案為 **3 : 1**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-15",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790589218576,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_bio_fern_vegetative_reproduction_035",
@@ -6089,14 +7131,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_bio_fern_vegetative_reproduction_035.png",
     "solution": "○ 詳細破題解析：\n\n1. **圖意判讀與構造確認**：\n   - 甲植株為蕨類植物，其地上部分為羽狀複葉，土壤橫向生長之構造「乙」為**地下莖**（莖屬於營養器官，植物的根、莖、葉皆為營養器官）。\n   - 將乙截取一段置入培養土中，經一段時間長成丙植株，此過程為利用地下莖發育成新個體，屬於**營養器官繁殖**，為**無性生殖**的一種。\n\n2. **各選項逐一剖析**：\n   - **(A) 錯誤**：無性生殖過程是由體細胞透過**細胞分裂（有絲分裂）**增殖與分化產生新植株，**不須經過減數分裂**（減數分裂僅發生於形成配子或孢子的有性生殖/生活史特定階段）。\n   - **(B) 正確**：乙構造為地下莖，屬於植物的**營養器官**，因此丙植株是由營養器官所繁殖形成。\n   - **(C) 錯誤**：蕨類植物屬於**無花植物**（以孢子繁殖，不開花、不產生種子），因此**不會開花**，更無花朵顏色基因型可言。\n   - **(D) 錯誤**：無性生殖過程中未涉及雌雄配子結合與遺傳物質重組，在不考慮突變的情況下，丙植株的基因型與親代甲植株完全相同，**無法增加遺傳多樣性**（若環境劇烈改變，所有個體可能同時面臨滅絕風險）。\n\n標準答案為 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-16",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789880433968,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_bio_platypus_oviparous_mammal_036",
@@ -6118,14 +7172,33 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細破題解析：\n\n1. **鴨嘴獸的生物分類與生理特徵**：\n   - 鴨嘴獸（Platypus）屬於脊椎動物門哺乳綱**單孔目**，是極少數現存的**卵生哺乳類**（另一代表為針鼴）。\n   - 雖然會產卵，但母體腹部有乳腺（無明顯乳頭），幼獸孵化後會舔食母獸腹部毛皮滲出的乳汁。\n   - 鴨嘴獸為恆溫動物、用**肺呼吸**，並非兩生類，終生均不具有鰓。\n\n2. **各選項逐一剖析**：\n   - **(A) 錯誤**：鴨嘴獸為「**卵生哺乳類**」，沒有育兒袋，也沒有胎盤；有育兒袋、胎盤發育不完全者為「**有袋類**」（如袋鼠、無尾熊）。\n   - **(B) 錯誤**：鴨嘴獸雖長年在水中覓食、棲息於水域環境，但身為哺乳動物，**終生皆以肺呼吸**，潛水時閉氣，幼體亦無鰓。\n   - **(C) 錯誤**：鴨嘴獸為卵生，受精卵產出體外孵化，胚胎發育所需的養分**完全由卵內的卵黃提供**，而非由母體血液直接供應。\n   - **(D) 正確**：\n     - 鴨嘴獸為**卵生**，受精卵產出後獨立在外界發育，必須仰賴卵內的卵黃提供胚胎發育所需的全部養分，故**卵徑較大、富含卵黃**。\n     - 無尾熊為**胎生**哺乳類（有袋類），其卵只需提供受精初期極微量的養分，受精後胚胎即由母體提供養分（進入育兒袋吸乳長大），故**卵非常微小**。\n     - 因此鴨嘴獸的卵遠比無尾熊的卵大。\n\n標準答案為 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-16",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "reviewedMondays": [
+      "2026-09-14",
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789880494188,
+        "isMastered": false
+      },
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790591302968,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_bio_animal_reproductive_behavior_seahorse_037",
@@ -6147,14 +7220,33 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細破題解析：\n\n1. **各選項動物生殖與育幼行為逐一剖析**：\n   - **(A) 敘述正確**：雄蛙具有鳴囊（通常位於咽喉兩側或下頜），在繁殖季節會藉由充氣鳴叫來宣示領域並吸引雌蛙進行假交配。\n   - **(B) 敘述正確**：許多鳥類在春夏繁殖季節會換上鮮豔或具特殊裝飾的「繁殖羽」（婚羽），例如雄白鷺鷥頭後方會長出 2～3 根細長如絲的飾羽，用於求偶炫耀以吸引雌鳥。\n   - **(C) 敘述正確**：五色鳥常於枯木上鑿洞築巢，幼鳥孵化後親鳥會捕捉小昆蟲回樹洞巢中餵食，屬於典型的**育幼行為**。\n   - **(D) 敘述錯誤（與真實行為有異，為本題正解）**：\n     - 海馬屬於硬骨魚類，其最著名的生殖特徵為**由雄性懷胎育兒**。\n     - 具有「育兒囊」（孵卵囊）的是**雄海馬**而非雌海馬！交配時雌海馬會將成熟卵子排入雄海馬腹部的育兒囊中，在囊內受精、吸取母體與雄性囊壁提供的養分發育，最後由**雄海馬**產出孵化成熟的小海馬。\n\n標準答案為 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-16",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "reviewedMondays": [
+      "2026-09-14",
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789880558946,
+        "isMastered": false
+      },
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790591345953,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_bio_flower_structure_haploid_gametes_038",
@@ -6176,14 +7268,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_bio_flower_structure_haploid_gametes_038.png",
     "solution": "○ 詳細破題解析：\n\n1. **圖中各代號構造精確判讀**：\n   - **甲**：雄蕊頂端的**花藥**（Anther），內含花粉囊。\n   - **乙**：雌蕊的**柱頭與花柱**（Stigma & Style），負責黏附花粉與引導花粉管萌發。\n   - **丙**：雌蕊子房內部的**胚珠**（Ovule）。\n   - **丁**：**花瓣**（Petal），組成花冠吸引傳粉昆蟲。\n   - **戊**：雌蕊基部膨大的**子房**（Ovary）。\n   - **己**：花朵最外層的**花萼**（Sepal），花苞期具保護功能。\n\n2. **單套染色體細胞（生殖細胞）的產生機制**：\n   - 植物體細胞染色體為雙套（$2n$），只有在製造**生殖細胞（配子）**時，才在特定生殖器官中進行**減數分裂**，產生染色體套數減半的單套細胞（$n$）：\n     - **甲（花藥）**：花粉囊中的花粉母細胞進行減數分裂，產生單套（$n$）的**花粉粒**（內含雄配子：精細胞）。\n     - **丙（胚珠）**：胚珠內部的大孢子母細胞進行減數分裂，發育產生單套（$n$）的**卵細胞**（雌配子）。\n   - **乙、丁、戊、己**皆由母體體細胞有絲分裂構成，染色體套數皆為雙套（$2n$）。\n     - 特別注意：**戊（子房）**受精後發育為果實，果肉與果皮皆來自母體子房壁，為雙套（$2n$），不可與內部產生卵細胞的「丙（胚珠）」混淆。\n\n因此能產生單套染色體細胞的部位為 **甲、丙**，標準答案為 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-16",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789880626924,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_triangle_ratio_abe_abc_039",
@@ -6205,14 +7309,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_triangle_ratio_abe_abc_039.png",
     "solution": "○ 詳細解題步驟：\n\n1. **步驟一：分析大三角形的底邊分割與面積比**：\n   - 在 $\\triangle ABC$ 中，線段 $\\overline{AD}$ 將 $\\triangle ABC$ 分割為 $\\triangle ABD$ 與 $\\triangle ACD$。\n   - 兩者頂點同為 $A$，高相等，面積比等於底邊長度比：\n     $$\\frac{\\triangle ABD \\text{ 面積}}{\\triangle ABC \\text{ 面積}} = \\frac{\\overline{BD}}{\\overline{BC}} = \\frac{3}{3 + 4} = \\frac{3}{7}$$\n     即 $\\triangle ABD \\text{ 面積} = \\frac{3}{7} \\triangle ABC \\text{ 面積}$。\n\n2. **步驟二：在 $\\triangle ABD$ 內部進行二次面積分割**：\n   - 在 $\\triangle ABD$ 中，線段 $\\overline{BE}$ 將其分割為 $\\triangle ABE$ 與 $\\triangle BDE$。\n   - 兩者頂點同為 $B$，高相等，底邊在同一條直線 $\\overline{AD}$ 上：\n     $$\\frac{\\triangle ABE \\text{ 面積}}{\\triangle ABD \\text{ 面積}} = \\frac{\\overline{AE}}{\\overline{AD}} = \\frac{2}{2 + 3} = \\frac{2}{5}$$\n     即 $\\triangle ABE \\text{ 面積} = \\frac{2}{5} \\triangle ABD \\text{ 面積}$。\n\n3. **步驟三：連乘比例求出面積比**：\n   - 代入 $\\triangle ABD$ 的比例關係：\n     $$\\triangle ABE \\text{ 面積} = \\frac{2}{5} \\times \\left(\\frac{3}{7} \\triangle ABC \\text{ 面積}\\right) = \\frac{6}{35} \\triangle ABC \\text{ 面積}$$\n   - 故兩者面積比為：\n     $$\\triangle ABE \\text{ 面積} : \\triangle ABC \\text{ 面積} = 6 : 35$$\n\n標準答案為 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-16",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791025792819,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_parallel_segments_triangle_area_040",
@@ -6238,10 +7354,22 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-16",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790589601773,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_math_parallel_angle_bisector_perimeter_041",
@@ -6263,14 +7391,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_parallel_angle_bisector_perimeter_041.png",
     "solution": "○ 詳細解題步驟：\n\n1. **步驟一：識別「平行線 + 角平分線」導出等腰三角形**：\n   - 已知 $\\overline{BD}$ 平分 $\\angle ABC$，故 $\\angle EBD = \\angle DBC$。\n   - 又已知 $\\overline{DE} \\parallel \\overline{BC}$，由兩平行線內錯角相等得：\n     $$\\angle EDB = \\angle DBC$$\n   - 因此 $\\angle EBD = \\angle EDB$，可知 $\\triangle EBD$ 為**等腰三角形**，兩腰相等：\n     $$\\overline{EB} = \\overline{ED}$$\n\n2. **步驟二：設未知數並利用相似三角形列比例式求邊長**：\n   - 設 $\\overline{EB} = \\overline{ED} = x$。\n   - 則 $\\overline{AE} = \\overline{AB} - \\overline{EB} = 12 - x$。\n   - 由 $\\overline{DE} \\parallel \\overline{BC}$，可知 $\\triangle ADE \\sim \\triangle ABC$（$AA$ 相似），對應邊成比例：\n     $$\\frac{\\overline{AE}}{\\overline{AB}} = \\frac{\\overline{DE}}{\\overline{BC}}$$\n   - 代入已知數據：\n     $$\\frac{12 - x}{12} = \\frac{x}{4}$$\n   - 兩邊同乘以 12：\n     $$12 - x = 3x \\implies 4x = 12 \\implies x = 3$$\n   - 故得 $\\overline{DE} = 3$，$\\overline{AE} = 12 - 3 = 9$。\n\n3. **步驟三：求 $\\triangle ADE$ 的周長**：\n   - 因為原三角形 $\\overline{AB} = \\overline{AC} = 12$ 為等腰三角形，且 $\\overline{DE} \\parallel \\overline{BC}$，故 $\\triangle ADE$ 亦為等腰三角形，$\\overline{AD} = \\overline{AE} = 9$。\n   - $\\triangle ADE$ 的周長為：\n     $$\\text{周長} = \\overline{AE} + \\overline{AD} + \\overline{DE} = 9 + 9 + 3 = 21$$\n   - **【速算法（相似形周長比等於對應邊長比）】**：\n     $\\triangle ABC$ 周長 $= 12 + 12 + 4 = 28$。\n     對應邊長比 $= \\frac{\\overline{AE}}{\\overline{AB}} = \\frac{9}{12} = \\frac{3}{4}$。\n     $$\\triangle ADE \\text{ 周長} = 28 \\times \\frac{3}{4} = 21$$\n\n標準答案為 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-16",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789896316969,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_bio_animal_reproduction_fertilization_042",
@@ -6292,14 +7432,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細觀念解析：\n\n1. **(甲) 敘述正確**：\n   - 陸生動物（如昆蟲、爬蟲類、鳥類、哺乳類）生活在陸地乾燥環境，精子若暴露於空氣中極易脫水死亡，因此**必須透過交配將精子直接送入雌性體內**，在濕潤的生殖道內完成受精，故適應陸地生活的動物**均為體內受精**。\n\n2. **(乙) 敘述錯誤**：\n   - 「以水為媒介」僅適用於**體外受精**的動物（如多數魚類、兩生類），牠們將精卵直接排入水中，精子藉由水游向卵。\n   - **體內受精**的動物（如爬蟲類、鳥類、哺乳類），精子在母體生殖器官的分泌液中游動，**不需要外界的水作為媒介**。\n\n3. **(丙) 敘述錯誤**：\n   - 生活在水中的動物**不一定**均為體外受精。\n   - 例如：生活在水中的**哺乳類**（鯨魚、海豚、海牛）以及**軟骨魚類**（鯊魚、魟魚）均進行**體內受精**。\n\n4. **(丁) 敘述錯誤**：\n   - 自然界中許多生物**兼具無性生殖與有性生殖**的能力。\n   - 例如：**水螅**在環境適宜、養分充足時進行「出芽生殖（無性）」；而在環境惡劣或季節交替時，則會形成睪丸與卵巢產生精卵進行「有性生殖」以度過逆境。\n   - 渦蟲、海葵、蚜蟲等亦具備雙女生殖/無性與有性交替的能力。\n\n5. **(戊) 敘述正確**：\n   - 卵生動物的受精方式有兩種：\n     - **體外受精 ＋ 卵生**：如硬骨魚類、青蛙、蟾蜍。\n     - **體內受精 ＋ 卵生**：如昆蟲、爬蟲類（蛇、蜥蜴、龜）、鳥類（雞、鴨、企鵝），以及原始哺乳動物（鴨嘴獸、針鼴）。\n   - 故卵生動物可為體內受精或體外受精。\n\n綜合以上分析，正確的說法只有 **(甲)(戊)**，標準答案為 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-17",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789880680952,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_bio_egg_structure_043",
@@ -6325,10 +7477,22 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-17",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789880723983,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_bio_strawberry_fruit_reproduction_044",
@@ -6350,14 +7514,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_bio_strawberry_fruit_reproduction_044.png",
     "solution": "○ 詳細解題觀念剖析：\n\n1. **基本發育對應關係（植物生殖黃金法則）**：\n   - 被子植物在完成傳粉與受精作用後：\n     - **子房** $\\to$ 發育為 **果實**（提供保護、協助散播）。\n     - **胚珠** $\\to$ 發育為 **種子**（內含受精卵發育成的胚與提供養分的胚乳或子葉）。\n     - **受精卵** $\\to$ 發育為 **胚**（新植物體幼體）。\n     - **花瓣、雄蕊** $\\to$ 通常枯萎脫落。\n\n2. **題意鎖定破題**：\n   - 題目明確指出：『若圖(二)中的 $*$ 構造是由草莓的**子房**發育而成』。\n   - 根據上述生物學定義，凡是由「子房」發育而成的構造，其名稱即為**果實**，故此 $*$ 構造即為果實（選 **(C)**）。\n\n3. **草莓的特殊構造補充（會考跨章節熱門題）**：\n   - 一朵草莓花中央的花托上長著許多密密麻麻的「離生雌蕊」（如圖一所示）。\n   - 受精後，**花托**迅速膨大肉質化，變為我們日常食用鮮紅多汁的部分（非子房發育，生物學上稱為「假果」）。\n   - 花托上密生的一顆顆雌蕊，其**子房**各自發育為一粒粒細小的**瘦果**（如圖二的 $*$ 構造，屬於聚合瘦果）。\n   - 每一粒小瘦果內部才包含著一粒由**胚珠**發育而成的**種子**。\n\n正確答案為 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-17",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789882443984,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_bio_animal_classification_tree_045",
@@ -6379,14 +7555,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_bio_animal_classification_tree_045.png",
     "solution": "○ 五種臺灣特有種動物所屬分類群與核心生理特徵對照表：\n\n| 動物名稱 | 所屬分類群 | 體溫調節（內溫/外溫） | 受精方式（體內/體外） | 生殖方式（卵生/胎生） | 主要呼吸器官 |\n| :--- | :---: | :---: | :---: | :---: | :---: |\n| **臺灣鈍頭蛇** | 爬蟲綱 | **外溫**（變溫） | **體內受精** | 卵生 | 肺 |\n| **臺北樹蛙** | 兩生綱 | **外溫**（變溫） | **體外受精** | 卵生 | 幼體鰓；成體肺與皮膚 |\n| **臺灣馬口魚** | 硬骨魚綱 | **外溫**（變溫） | **體外受精** | 卵生 | 鰓 |\n| **臺灣藍鵲** | 鳥綱 | **內溫**（恆溫） | **體內受精** | 卵生 | 肺（輔以氣囊） |\n| **臺灣野兔** | 哺乳綱 | **內溫**（恆溫） | **體內受精** | **胎生** | 肺 |\n\n○ 檢索樹狀分支節點（甲、乙、丙、丁）逐一推論：\n1. **甲節點**：\n   - 將「臺灣鈍頭蛇、臺北樹蛙、臺灣馬口魚」與「臺灣藍鵲、臺灣野兔」區分開來。\n   - 前三者均為**外溫動物**，後兩者均為**內溫動物**。\n   - 故甲的分類依據應為：**「是否為內溫動物（體溫是否恆定）」**。\n   - 鈍頭蛇、樹蛙、馬口魚、藍鵲均為卵生，只有野兔為胎生，故甲無法以「是否卵生」來二分，選項 (A) 不合理。\n\n2. **乙節點**：\n   - 將「臺灣鈍頭蛇」與「臺北樹蛙、臺灣馬口魚」區分開來。\n   - 鈍頭蛇（爬蟲類）為**體內受精**；樹蛙（兩生類）與馬口魚（魚類）皆為**體外受精**。\n   - 故乙的分類依據應為：**「是否為體內受精」**，選項 **(B) 最合理**。\n\n3. **丙節點**：\n   - 將「臺北樹蛙」與「臺灣馬口魚」區分開來。\n   - 兩者皆為**外溫動物、體外受精、卵生**。\n   - 差異在於呼吸器官（成體樹蛙用**肺與皮膚**；馬口魚用**鰓**）或生活環境（陸生/水生）。\n   - 兩者皆為卵生，故丙絕不可能為「是否為卵生」，選項 (C) 不合理。\n\n4. **丁節點**：\n   - 將「臺灣藍鵲」與「臺灣野兔」區分開來。\n   - 兩者皆為**內溫動物、體內受精**。\n   - 差異在於生殖方式：藍鵲為**卵生**；野兔為**胎生**。\n   - 故丁的分類依據應為：**「是否為卵生（或是否為胎生）」**。\n   - 兩者皆為體內受精，無法以「是否體內受精」區分，選項 (D) 不合理。\n\n綜合以上推論，最合理之敘述為 **(B) 乙：是否為體內受精**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-17",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789883654171,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_bio_fruitfly_gamete_combinations_046",
@@ -6408,14 +7596,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_bio_fruitfly_chromosome_set_046.png",
     "solution": "○ 詳細解題觀念與計算步驟：\n\n1. **判讀染色體套數與對數**：\n   - 題目說明「甲細胞為配子，具有 4 條染色體」，且圖中 4 條染色體大小形狀皆不同（不成對），故為**單套（$n = 4$）**。\n   - 「乙細胞為一般體細胞」，共有 8 條染色體，且大小形狀兩兩成對，故為**雙套（$2n = 8$）**，即具有 **$4$ 對同源染色體**。\n\n2. **減數分裂同源染色體分離與自由配合（獨立分配）**：\n   - 生殖母細胞（$2n$）在減數分裂第一次分裂時，**同源染色體彼此分離**，分別進入不同的子細胞。\n   - 每一對同源染色體的分離是獨立的，每對同源染色體中究竟是哪一條（來自父方或母方）進入同一個配子，皆有 $2$ 種獨立等可能的選擇。\n   - 果蠅體細胞具有 $4$ 對同源染色體，根據乘法原理：\n     $$\\text{配子染色體組合數} = 2 \\times 2 \\times 2 \\times 2 = 2^4 = 16 \\text{ 種}$$\n\n標準答案為 **(B) 16**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-17",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789883722416,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_bio_fruitfly_gamete_somatic_comparison_047",
@@ -6437,14 +7637,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_bio_fruitfly_chromosome_set_046.png",
     "solution": "○ 各選項深度觀念剖析：\n\n- **(A) 甲細胞為 1N，乙細胞為 2N**：**正確**。\n  甲為配子（精子或卵），同源染色體已分離，故為單套（$1N = 4$ 條）；乙為體細胞，具成對同源染色體，為雙套（$2N = 8$ 條）。\n\n- **(B) 乙細胞形成的過程中，複製染色體會進行分離**：**正確**。\n  乙為一般體細胞，是由受精卵進行「細胞分裂（有絲分裂）」增殖而來。細胞分裂的過程中，染色體複製一次、分裂一次，在分裂後期**複製的同胞染色體（姐妹染色單體）會互相分離**進入兩個子細胞。\n\n- **(C) 乙細胞染色體的對數是甲細胞的兩倍**：**錯誤（為本題所求）**。\n  - **核心文字陷阱**：\n    - 乙細胞（體細胞）有 8 條染色體，共 **4 對**同源染色體。\n    - 甲細胞（配子）只有 4 條染色體，每條皆單獨存在、**根本不成對（對數為 0 對）**！\n    - 因此，乙的「**條數**」是甲的兩倍（$8$ 條 vs $4$ 條），乙的「**套數**」是甲的兩倍（$2N$ vs $1N$），但**絕不能說「對數是甲的兩倍」**（因為甲根本沒有成對的同源染色體）！\n\n- **(D) 生殖母細胞減數分裂後會產生四個甲細胞**：**正確**。\n  一個雙套（$2N$）的生殖母細胞經過減數分裂（連續分裂兩次），最終會形成 $4$ 個單套（$1N$）的配子（精子或卵／極體）。\n\n故錯誤的敘述為 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-17",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789883777507,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_marathon_constant_speed_ratio_048",
@@ -6466,14 +7678,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解題觀念與算式步驟：\n\n1. **計算「洛基到達終點時」，妙麗與威利各自已跑的距離**：\n   - 全程共 $10$ 公里。\n   - 當洛基抵達終點時（洛基跑了 $10$ 公里）：\n     - 妙麗離終點還差 $4$ 公里 $\\implies$ 妙麗跑了 $10 - 4 = 6$ 公里。\n     - 威利離終點還差 $2.5$ 公里 $\\implies$ 威利跑了 $10 - 2.5 = 7.5$ 公里。\n\n2. **求出妙麗與威利的「速率比（距離比）」**：\n   - 因為全程三人皆維持「一定速率」，在相同時間內，所跑的距離與速率成正比：\n     $$v_{\\text{妙}} : v_{\\text{威}} = 6 : 7.5 = 12 : 15 = 4 : 5$$\n   - 即：威利每跑 $5$ 公里，妙麗在此相同時間內跑 $4$ 公里。\n\n3. **計算「威利抵達終點時」，妙麗所跑的總距離**：\n   - 當威利抵達終點時，威利總共跑了 $10$ 公里。\n   - 設此時妙麗總共跑了 $x$ 公里，列出比例式：\n     $$\\frac{\\text{妙麗跑的距離}}{\\text{威利跑的距離}} = \\frac{x}{10} = \\frac{4}{5}$$\n     $$5x = 40 \\implies x = 8 \\text{ (公里)}$$\n\n4. **求妙麗離終點還差的距離**：\n   $$\\text{距離終點} = 10 - 8 = 2 \\text{ (公里)}$$\n\n標準答案為 **2 公里**（選 **(B)**）。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-17",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789901193038,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_rectangle_area_ratio_049",
@@ -6495,14 +7719,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_rectangle_area_ratio_049.png",
     "solution": "○ 詳細解題觀念與秒殺算式：\n\n1. **方法一：總面積比例分配法（最推薦，神速秒殺）**：\n   - 觀察圖形，甲、乙、丙三個小長方形完整拼成大長方形 $ABCD$。\n   - 計算大長方形 $ABCD$ 的總面積：\n     $$\\text{總面積} = \\overline{AB} \\times \\overline{AD} = 12 \\times 21 = 252$$\n   - 已知甲、乙、丙的面積比為 $3 : 1 : 5$，總份數為：\n     $$\\text{總份數} = 3 + 1 + 5 = 9 \\text{ 份}$$\n   - 計算每一份對應的面積值：\n     $$\\text{每份面積} = \\frac{252}{9} = 28$$\n   - 題目所求為「甲、丙兩長方形的面積差」：\n     - 丙佔 5 份，甲佔 3 份，兩者相差 $5 - 3 = 2$ 份。\n     - 故面積差為：\n       $$\\text{面積差} = 2 \\times 28 = 56$$\n\n2. **方法二：分別求出各塊面積後相減（驗算）**：\n   - 甲的面積 $= 252 \\times \\frac{3}{9} = 84$\n   - 乙的面積 $= 252 \\times \\frac{1}{9} = 28$\n   - 丙的面積 $= 252 \\times \\frac{5}{9} = 140$\n   - 甲、丙面積相差：\n     $$140 - 84 = 56$$\n\n3. **幾何邊長驗證（鞏固觀念）**：\n   - 甲的高 $\\overline{AE} = \\frac{84}{12} = 7$。\n   - 乙、丙共用的高 $= 21 - 7 = 14$。\n   - 乙的底 $\\overline{CH} = \\frac{28}{14} = 2$。\n   - 丙的底 $\\overline{HD} = \\frac{140}{14} = 10$。\n   - 總底長 $\\overline{CD} = 2 + 10 = 12 = \\overline{AB}$，數據完美吻合！\n\n標準答案為 **56**（選 **(A)**）。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-17",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789901523159,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_gear_turn_inverse_ratio_050",
@@ -6524,14 +7760,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解題觀念與算式步驟：\n\n1. **分析物理機制：嚙合齒輪轉過的總齒數必相同**：\n   - 因為甲、乙、丙三個齒輪相互緊密接合，齒與齒一對一推動，在相同時間內，每個齒輪轉過的「總齒數」必然相等。\n   - 總齒數公式：\n     $$\\text{總齒數} = \\text{齒數} \\times \\text{轉動圈數}$$\n   - 因此，當總齒數固定時，**齒數與轉動圈數成「反比」**。\n\n2. **列出等式求連比**：\n   - 設甲、乙、丙在同一時間內轉動的圈數分別為 $x$、$y$、$z$ 圈。\n   - 由總齒數相同可得：\n     $$60 \\times x = 50 \\times y = 40 \\times z$$\n   - 各項同除以 10：\n     $$6x = 5y = 4z$$\n\n3. **利用倒數求最簡整數比**：\n   - 由 $6x = 5y = 4z$，可知 $x : y : z$ 等於係數的倒數比：\n     $$x : y : z = \\frac{1}{6} : \\frac{1}{5} : \\frac{1}{4}$$\n   - 取分母 $6, 5, 4$ 的最小公倍數 $[6, 5, 4] = 60$，各項同乘以 60：\n     $$x : y : z = \\left(\\frac{1}{6} \\times 60\\right) : \\left(\\frac{1}{5} \\times 60\\right) : \\left(\\frac{1}{4} \\times 60\\right) = 10 : 12 : 15$$\n\n標準答案為 **10 : 12 : 15**（選 **(A)**）。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-17",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789901662925,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_wire_squares_area_sum_051",
@@ -6553,14 +7801,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解題步驟：\n\n1. **步驟一：求出三段鐵線的長度（即三個正方形的周長）**：\n   - 鐵線總長 $= 96$ 公分，按 $3 : 4 : 5$ 剪成三段。\n   - 總比例份數：\n     $$\\text{總份數} = 3 + 4 + 5 = 12 \\text{ 份}$$\n   - 每 $1$ 份的長度：\n     $$\\text{每份長度} = \\frac{96}{12} = 8 \\text{ (公分)}$$\n   - 三段鐵線的長度（三個正方形的周長）：\n     - 第一段周長 $= 3 \\times 8 = 24$ 公分\n     - 第二段周長 $= 4 \\times 8 = 32$ 公分\n     - 第三段周長 $= 5 \\times 8 = 40$ 公分\n\n2. **步驟二：由周長求各正方形的邊長**：\n   - 正方形邊長 $= \\frac{\\text{周長}}{4}$：\n     - 第一個正方形邊長 $= \\frac{24}{4} = 6$ 公分\n     - 第二個正方形邊長 $= \\frac{32}{4} = 8$ 公分\n     - 第三個正方形邊長 $= \\frac{40}{4} = 10$ 公分\n\n3. **步驟三：求三個正方形的面積和**：\n   $$\\text{面積和} = 6^2 + 8^2 + 10^2 = 36 + 64 + 100 = 200 \\text{ (平方公分)}$$\n\n○ 速算方法（比例平方倍數法）：\n   - 周長比 $= 3 : 4 : 5 \\implies$ 邊長比亦為 $3 : 4 : 5$。\n   - 每個比例份數對應的邊長為 $\\frac{8}{4} = 2$ 公分。\n   - 面積和 $= (3^2 + 4^2 + 5^2) \\times 2^2 = (9 + 16 + 25) \\times 4 = 50 \\times 4 = 200$ 平方公分。\n\n標準答案為 **200** 平方公分（選 **(A)**）。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-17",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789901691757,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_clothing_production_ratio_workdays_052",
@@ -6582,14 +7842,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解題觀念與算式步驟：\n\n1. **步驟一：設比例常數表示單件衣物所需工時**：\n   - 已知製作 1 件上衣、1 件長褲、1 件外套所需時間比為 $1 : 2 : 3$。\n   - 設製作 1 件上衣需 $r$ 單位時間、1 件長褲需 $2r$ 單位時間、1 件外套需 $3r$ 單位時間（其中 $r > 0$）。\n\n2. **步驟二：計算每天固定產能的「總工時」**：\n   - 每天產能剛好可完成 4 件上衣、3 件長褲與 2 件外套：\n     $$\\text{每天總工時} = 4 \\times r + 3 \\times (2r) + 2 \\times (3r)$$\n     $$= 4r + 6r + 6r = 16r$$\n\n3. **步驟三：計算新訂單所需的「總工時」**：\n   - 訂單需要上衣、長褲、外套各 8 件：\n     $$\\text{訂單總工時} = 8 \\times r + 8 \\times (2r) + 8 \\times (3r)$$\n     $$= 8 \\times (r + 2r + 3r) = 8 \\times 6r = 48r$$\n\n4. **步驟四：求完成訂單至少所需的工作天數**：\n   $$\\text{所需天數} = \\frac{\\text{訂單總工時}}{\\text{每天總工時}} = \\frac{48r}{16r} = 3 \\text{ (天)}$$\n\n標準答案為 **3 個工作天**（選 **(A)**）。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-17",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789901787674,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_ice_shop_revenue_ratio_053",
@@ -6611,14 +7883,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_ice_shop_bar_chart_053.png",
     "solution": "○ 詳細解題觀念與步驟：\n\n1. **步驟一：依題意列出固定成本等式**：\n   - 設 7 月、8 月、9 月的總營業額分別為 $a$ 萬元、$b$ 萬元、$c$ 萬元。\n   - 已知每個月的固定成本皆相同，且分別占當月總營業額的 $\\frac{1}{4}$、$\\frac{2}{5}$、$\\frac{2}{3}$：\n     $$\\frac{1}{4}a = \\frac{2}{5}b = \\frac{2}{3}c$$\n\n2. **步驟二：利用倒數比求營業額連比**：\n   - 由等式可求出 $a : b : c$：\n     $$a : b : c = \\frac{1}{\\frac{1}{4}} : \\frac{1}{\\frac{2}{5}} : \\frac{1}{\\frac{2}{3}} = 4 : \\frac{5}{2} : \\frac{3}{2}$$\n   - 各項同乘以分母 2，化為最簡整數比：\n     $$a : b : c = (4 \\times 2) : \\left(\\frac{5}{2} \\times 2\\right) : \\left(\\frac{3}{2} \\times 2\\right) = 8 : 5 : 3$$\n\n故 7 月到 9 月的營業額比為 **8 : 5 : 3**（選 **(A)**）。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-17",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789901873608,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_ice_shop_fixed_cost_054",
@@ -6640,14 +7924,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_ice_shop_bar_chart_053.png",
     "solution": "○ 詳細解題觀念與步驟：\n\n1. **步驟一：設比例常數表示各月營業額**：\n   - 由第 (1) 小題已知 7 月到 9 月營業額比為 $8 : 5 : 3$。\n   - 設 7 月、8 月、9 月營業額分別為 $8r$ 萬元、$5r$ 萬元、$3r$ 萬元（其中 $r \\neq 0$）。\n\n2. **步驟二：利用營業額總和求出 $r$**：\n   - 7 月到 9 月營業額總和為 64 萬元：\n     $$8r + 5r + 3r = 64 \\implies 16r = 64 \\implies r = 4$$\n\n3. **步驟三：求各月營業額並計算固定成本**：\n   - 7 月營業額 $= 8r = 8 \\times 4 = 32$（萬元）。\n   - 8 月營業額 $= 5r = 5 \\times 4 = 20$（萬元）。\n   - 9 月營業額 $= 3r = 3 \\times 4 = 12$（萬元）。\n   - 計算每個月的固定成本（任選一月計算即可）：\n     $$\\text{固定成本} = \\frac{1}{4} \\times 32 = \\mathbf{8} \\text{ (萬元)} = \\mathbf{80,000} \\text{ (元)}$$\n   - 驗算：\n     - 8 月固定成本 $= 20 \\times \\frac{2}{5} = 8$ 萬元。\n     - 9 月固定成本 $= 12 \\times \\frac{2}{3} = 8$ 萬元。\n     - 三個月固定成本完全相符！\n\n標準答案為 **8 萬元（80,000 元）**（選 **(A)**）。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-17",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789905714257,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_mediterranean_climate_italy_055",
@@ -6669,14 +7965,33 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解題觀念與背景剖析：\n\n1. **判斷義大利所屬氣候類型**：\n   - 義大利位於南歐、地中海北岸，屬於典型的**溫帶地中海型氣候**。\n\n2. **地中海型氣候之成因與降水特徵**：\n   - **夏季（約 6～8 月）**：氣壓帶與風系隨太陽直射點北移，受到**副熱帶高壓帶**下沉氣流籠罩，氣候**炎熱乾燥、萬里無雲（夏乾）**。\n   - **冬季（約 11～2 月）**：氣壓帶與風系南移，副熱帶高壓退去，迎受來自大西洋的**盛行西風帶**吹拂，且鋒面氣旋活動頻繁，帶來豐沛降水，氣候**溫和濕潤多雨（冬雨）**。\n\n3. **威尼斯高水位水患（Acqua Alta）之季節**：\n   - 威尼斯地處亞得里亞海頂端之潟湖，由於地勢低窪，每逢**冬季雨季**，在西風吹拂、海潮高漲與氣壓偏低的共同作用下，極易發生海水倒灌與街區淹水積水現象。\n\n4. **選項日期比對分析**：\n   - (A) 5月8日：北半球春末初夏，副熱帶高壓逐漸北移，降水偏少。\n   - (B) 7月19日：北半球盛夏，副熱帶高壓完全籠罩，為全年最炎熱乾燥之乾季。\n   - (C) 9月30日：北半球初秋。\n   - (D) 12月6日：**北半球冬季**，正值盛行西風帶籠罩之典型雨季，符合題幹所述。\n\n故最可能的出發日期為 **(D) 12月6日**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-17",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "reviewedMondays": [
+      "2026-09-21",
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-25",
+    "reviewHistory": [
+      {
+        "date": "2026-09-25",
+        "monday": "2026-09-21",
+        "timestamp": 1790314961964,
+        "isMastered": false
+      },
+      {
+        "date": "2026-10-06",
+        "monday": "2026-09-28",
+        "timestamp": 1791274639965,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_finland_lake_telecom_056",
@@ -6698,14 +8013,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細地理觀念與背景剖析：\n\n1. **芬蘭自然地理特徵：冰蝕地形與「千湖國」稱號**：\n   - 芬蘭位於北歐波羅的海沿岸，在地質上屬於古老結晶地盾，地形起伏平緩。\n   - 第四紀大冰期時全境受到**大陸冰河**劇烈侵蝕，冰河消退後地表坑洞積水形成密集的**冰蝕湖**與冰磧湖。全境湖泊數量超過 18 萬個，因而擁有**「千湖國」**之美稱。\n\n2. **人文環境限制與無線通訊突破**：\n   - 湖泊星羅棋布、森林密布，造成芬蘭人口分散，屬於典型的**「地廣人稀」**國家。\n   - 若要建立傳統有線電話網，必須橫跨無數湖泊與原始森林，架設電線桿與鋪設線路之成本極其龐大，後續風雪維護更是困難。\n   - 因此，芬蘭選擇跳過傳統電話線，全力發展僅需建設『點狀』基地台的**無線行動通訊網絡**，進而孕育出全球通訊巨頭**諾基亞（Nokia）**！\n\n3. **其他選項地理特徵診斷排除**：\n   - (A) 土壤貧瘠：北歐受冰河刮蝕確實土壤貧瘠，但並非拉電話線的最大地形障礙。\n   - (B) 山勢陡峭、河短流急：為板塊擠壓之新褶曲山地（如臺灣、日本、瑞士阿爾卑斯山）之特徵，芬蘭地勢起伏平緩。\n   - (D) 峽灣發達、海岸曲折：為**挪威**的大西洋海岸特徵（谷冰川侵蝕後海水倒灌），芬蘭位於波羅的海內側，非峽灣海岸。\n\n故最合理的選項為 **(C) 湖泊眾多、地廣人稀**。\n\n🔗 **延伸學習影音推薦**：[觀看芬蘭地理與科技發展解說影片](https://www.youtube.com/watch?v=kQfe2qxbyik&t=120s)",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-17",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-25",
+    "reviewHistory": [
+      {
+        "date": "2026-09-25",
+        "monday": "2026-09-21",
+        "timestamp": 1790314970875,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_geo_maritime_silk_road_monsoon_057",
@@ -6731,10 +8058,35 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-18",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "reviewedMondays": [
+      "2026-09-21",
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-25",
+    "reviewHistory": [
+      {
+        "date": "2026-09-25",
+        "monday": "2026-09-21",
+        "timestamp": 1790315008960,
+        "isMastered": true
+      },
+      {
+        "date": "2026-09-25",
+        "monday": "2026-09-21",
+        "timestamp": 1790315022041,
+        "isMastered": false
+      },
+      {
+        "date": "2026-10-06",
+        "monday": "2026-09-28",
+        "timestamp": 1791274668195,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_eng_voc_experience_engineer_shop_058",
@@ -6766,6 +8118,14 @@ const INITIAL_SEED_DATA = [
     "lastReviewedDate": "2026-09-19",
     "reviewedMondays": [
       "2026-09-14"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789880162323,
+        "isMastered": true
+      }
     ]
   },
   {
@@ -6798,6 +8158,14 @@ const INITIAL_SEED_DATA = [
     "lastReviewedDate": "2026-09-19",
     "reviewedMondays": [
       "2026-09-14"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789880206234,
+        "isMastered": true
+      }
     ]
   },
   {
@@ -6830,6 +8198,14 @@ const INITIAL_SEED_DATA = [
     "lastReviewedDate": "2026-09-19",
     "reviewedMondays": [
       "2026-09-14"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789880243237,
+        "isMastered": true
+      }
     ]
   },
   {
@@ -6862,6 +8238,14 @@ const INITIAL_SEED_DATA = [
     "lastReviewedDate": "2026-09-19",
     "reviewedMondays": [
       "2026-09-14"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789880263812,
+        "isMastered": true
+      }
     ]
   },
   {
@@ -6894,6 +8278,14 @@ const INITIAL_SEED_DATA = [
     "lastReviewedDate": "2026-09-19",
     "reviewedMondays": [
       "2026-09-14"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789880275916,
+        "isMastered": true
+      }
     ]
   },
   {
@@ -6926,6 +8318,14 @@ const INITIAL_SEED_DATA = [
     "lastReviewedDate": "2026-09-19",
     "reviewedMondays": [
       "2026-09-14"
+    ],
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789880288940,
+        "isMastered": true
+      }
     ]
   },
   {
@@ -6948,14 +8348,33 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細地理觀念與經濟轉型深度剖析：\n\n1. **東歐轉型歷史背景與跨國企業投資動機**：\n   - 1990 年代東歐劇變、蘇聯解體後，東歐各國（如波蘭、捷克、斯洛伐克、匈牙利、羅馬尼亞等）紛紛擺脫共產計畫經濟，推行自由市場經濟改革。\n   - 2004 年起東歐多國相繼加入**歐洲聯盟（EU）**，引發西歐跨國企業的大規模直接投資（FDI）浪潮。\n\n2. **吸引外資進駐的兩大核心關鍵區位優勢**：\n   - **(甲) 廉價且高素質的勞工**：\n     - 西歐（英、法、德等國）經濟高度發達、社會福利優渥，勞動工資與土地成本極高。\n     - 東歐勞工工資水準遠低於西歐（通常僅西歐的 1/3 至 1/2），且基礎教育紮實、工藝技術良好，具備極高性價比（CP值）。\n   - **(丙) 減免關稅（歐盟單一市場與經濟整合）**：\n     - 加入歐盟後，會員國之間消除貿易壁壘，實現商品、勞務、人員與資金的自由流通。\n     - 外資在東歐生產的商品出口至西歐及歐盟廣大市場，**享有完全免徵關稅**的極大優勢，大幅降低生產與物流成本。\n   - 結合以上兩點，西歐跨國企業（特別是**德國汽車工業**與電子組裝業）紛紛將生產組裝工廠遷往東歐，東歐因而成為歐洲新興的「製造代工基地」。\n\n3. **其他選項為何非主要吸引外資因素**：\n   - **(乙) 農礦產豐富**：外資投資主要集中於**精密機械、汽車組裝、電子零件等製造業**，並非初級原料加工業；且東歐各國礦產分布不均，非推動 2008 年外資佔比達 GDP 36% 的關鍵。\n   - **(丁) 政治穩定**：東歐民主轉型初期社會動盪、政黨輪替頻繁，部分巴爾幹半島國家甚至爆發內戰；加上與俄羅斯的地緣政治角力長期存在，因此「政治高度穩定」絕非其吸引外資的主因。\n\n故正確選項為 **(C) (甲)(丙)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-19",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "reviewedMondays": [
+      "2026-09-21",
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-25",
+    "reviewHistory": [
+      {
+        "date": "2026-09-25",
+        "monday": "2026-09-21",
+        "timestamp": 1790315059341,
+        "isMastered": false
+      },
+      {
+        "date": "2026-10-06",
+        "monday": "2026-09-28",
+        "timestamp": 1791274730003,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_car_east_west_acceleration_065",
@@ -6977,14 +8396,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細物理觀念與向量運算深度解析：\n\n1. **核心觀念：速度（Velocity）是「向量」，兼具「大小」與「方向」**：\n   - 在一直線上運動，通常以「正負號」來代表運動方向。\n   - 規定基準方向：**設向東為正（+），向西為負（-）**。\n\n2. **物理量條列與速度變化量 Δv 計算**：\n   - 初速度 v₁ = +20 m/s（向東）\n   - 末速度 v₂ = -20 m/s（向西）\n   - 經過時間 Δt = 5 秒\n   - 速度變化量定義為「末速度 − 初速度」：\n     Δv = v₂ - v₁ = (-20) - (+20) = -40 m/s\n     （負號代表速度變化量的方向朝向「西方」）\n\n3. **平均加速度 ā 與大小**：\n   - 由平均加速度定義式：\n     ā = Δv / Δt = (-40 m/s) / 5 s = -8 m/s²\n   - 表示此車具有**向西 8 m/s²** 的平均加速度。\n   - 題目詢問的是「平均加速度大小」，純量量值取絕對值：\n     |ā| = 8 m/s²\n\n4. **各選項分析與診斷**：\n   - **(A) 0**：【最常犯典型錯誤】忽略方向，直接用純量 20 - 20 = 0 計算。\n   - **(B) 4m / s²**：計算或公式帶入錯誤。\n   - **(C) 5m / s²**：誤用時間數值。\n   - **(D) 8m / s²**：正確，|-20 - 20| / 5 = 8 m/s²。\n\n故正確答案為 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-19",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789883823391,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_ticker_tape_bd_avg_vel_066",
@@ -7006,14 +8437,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_sci_phy_ticker_tape_bd_avg_vel_066.png",
     "solution": "○ 詳細物理步驟與軌跡分析：\n\n1. **求各相鄰兩點間的時間間隔（頻率與週期概念）**：\n   - 題目給定：由「啟動點」移動至「E 點」共歷時 0.5 秒。\n   - 觀察紙帶上的相鄰區間：\n     - 啟動點 → A（第 1 個間隔）\n     - A → B（第 2 個間隔）\n     - B → C（第 3 個間隔）\n     - C → D（第 4 個間隔）\n     - D → E（第 5 個間隔）\n   - 總共包含 5 個相等的時間間隔：\n     Δt = 0.5 秒 / 5 = 0.1 秒\n\n2. **求 B 點至 D 點的位移 Δx_BD**：\n   - 由圖中標示的相鄰兩點間距：\n     - B 到 C 距離 = 3.5 cm\n     - C 到 D 距離 = 5.5 cm\n   - B 到 D 的總位移：\n     Δx_BD = 3.5 + 5.5 = 9.0 cm\n\n3. **求 B 點至 D 點所歷經的時間 Δt_BD**：\n   - B 到 D 共有 2 個時間間隔（BC 與 CD）：\n     Δt_BD = 2 × 0.1 秒 = 0.2 秒\n\n4. **計算 B、D 兩點間的平均速度大小 v̄**：\n   - 由平均速度定義式：\n     v̄ = 位移 / 時間 = 9.0 cm / 0.2 秒 = 45 cm/s\n\n故正確答案為 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-19",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789885492089,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_train_brake_stopping_distance_067",
@@ -7035,14 +8478,33 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細等加速度運動觀念與逐步推導（公式解法 vs. v-t 圖幾何解法）：\n\n1. **分析第一階段煞車（由 30 m/s 減速至 10 m/s，位移 400 m）**：\n   - 初速度 v₀ = 30 m/s\n   - 減速後末速度 v = 10 m/s\n   - 滑行位移 x₁ = 400 m\n   - **(A) 求此段煞車時間 t₁**：\n     利用等加速度直線運動平均速度公式：\n     x₁ = [(v₀ + v) / 2] × t₁ ⟹ 400 = [(30 + 10) / 2] × t₁ = 20 × t₁ ⟹ t₁ = 20 秒\n     故 **(A) 此段煞車時間為 20 秒** 是正確的。\n\n   - **(B) 求煞車時的加速度 a**：\n     a = (v - v₀) / t₁ = (10 - 30) / 20 = -20 / 20 = -1 m/s²\n     （負號表示加速度方向與運動方向相反，為減速運動）\n     故 **(B) 煞車時的加速度為 -1 m/s²** 是正確的。\n\n2. **分析第二階段：由車速 30 m/s 完全煞停至靜止（v_末 = 0）**：\n   - **(C) 火車完全停靠月臺所需的總時間 t_總**：\n     v_末 = v₀ + a · t_總 ⟹ 0 = 30 + (-1) × t_總 ⟹ t_總 = 30 秒\n     故 **(C) 歷時 30 秒，火車才能停靠月臺** 是正確的。\n\n   - **(D) 火車準確停靠月臺所需煞車總距離 S_總**：\n     - **方法一（v-t 圖三角形面積法）**：\n       以縱軸為速度 v、橫軸為時間 t 畫出直角三角形，底為總時間 30 秒，高為初速度 30 m/s：\n       S_總 = (底 × 高) / 2 = (30 × 30) / 2 = 450 公尺\n     - **方法二（無時間公式 v² = v₀² + 2as）**：\n       0² = 30² + 2 × (-1) × S_總 ⟹ 0 = 900 - 2 S_總 ⟹ S_總 = 450 公尺\n     - 故火車欲準確停靠月臺，必須在 **450 公尺** 前開始煞車，而非 600 公尺。\n     故 **(D) 敘述錯誤**，為本題應選答案。\n\n故正確答案為 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
-    "isArchived": false,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 2,
+    "isArchived": true,
     "nextReviewDate": "2026-09-19",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14",
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789885557931,
+        "isMastered": true
+      },
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790592850232,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_car_brake_vt_graph_acceleration_068",
@@ -7064,14 +8526,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_sci_phy_car_brake_vt_graph_acceleration_068.png",
     "solution": "○ 詳細物理步驟與 v-t 圖深度解析：\n\n1. **觀察 v-t 圖之運動各階段分析**：\n   - 0 ～ 10 秒：水平直線，速度維持 +20 m/s（向北等速度運動）。\n   - **10 ～ 20 秒**：斜向右下直線，速度由 +20 m/s 降至 0 m/s（**此階段即為題目所指的「減速煞車時」**）。\n   - 20 ～ 25 秒：速度為 0 m/s（靜止狀態）。\n   - 25 ～ 35 秒：斜向右上直線，速度由 0 m/s 增加至 +25 m/s（向北加速運動）。\n   - 35 ～ 50 秒：速度維持 +25 m/s（向北等速度運動）。\n\n2. **計算減速煞車時的加速度**：\n   - 初速度 v₁ = +20 m/s（向北）\n   - 末速度 v₂ = 0 m/s\n   - 經歷時間 Δt = 20 - 10 = 10 秒\n   - 根據加速度公式：\n     a = Δv / Δt = (v₂ - v₁) / Δt = (0 - 20) / 10 = -20 / 10 = -2 m/s²\n\n3. **判斷量值與方向**：\n   - **量值（大小）**：取絕對值 |a| = 2 m/s²。\n   - **方向**：題目設定向北為正（+），故計算出的負號（-）代表方向**向南**。\n   - 因此此車減速煞車時的加速度為 **2 m/s²，向南**。\n\n故正確答案為 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-19",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789885697008,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_four_motion_graphs_speed_comparison_069",
@@ -7093,14 +8567,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_sci_phy_four_motion_graphs_speed_comparison_069.png",
     "solution": "○ 詳細圖表判讀與逐一運算深度解析：\n\n題目詢問啟動後**第 3 秒末瞬間的速度**（瞬時速度），我們分別針對甲、乙、丙、丁四張圖深入分析：\n\n1. **【甲圖：x-t 位置與時間關係圖】**：\n   - 0 ～ 2 秒：等速度運動，由 0 m 移動至 20 m。\n   - **2 ～ 5 秒**：呈現**水平直線**，代表物體的位置始終停留在 x = 20 m，處於**靜止狀態**。\n   - 因此第 3 秒末瞬間的速度：\n     v_甲 = 0 m/s\n\n2. **【乙圖：x-t 位置與時間關係圖】**：\n   - 圖形為一條過原點的**傾斜直線**，代表物體正在進行**等速度直線運動**。\n   - x-t 圖的斜率即為速度：\n     v_乙 = Δx / Δt = (20 - 0) / (5 - 0) = 4 m/s\n   - 因為是等速度運動，全程速度皆相同，故第 3 秒末瞬間的速度：\n     v_乙 = 4 m/s\n\n3. **【丙圖：v-t 速度與時間關係圖】**：\n   - 圖形為過原點的傾斜直線，代表物體由靜止出發做**等加速度運動**。\n   - 加速度（斜率）：a_丙 = (5 - 0) / (5 - 0) = 1 m/s²。\n   - 在第 3 秒末時的瞬時速度：\n     v_丙 = a_丙 × t = 1 m/s² × 3 s = 3 m/s\n\n4. **【丁圖：a-t 加速度與時間關係圖】**：\n   - 圖形為一條水平直線，表示物體的加速度恆為 a = 1 m/s²（等加速度運動）。\n   - 題目說明由「靜止啟動」（初速度 v₀ = 0）。\n   - 在第 3 秒末時的速度（或由 a-t 圖 0 ～ 3 秒的面積求速度變化量）：\n     v_丁 = v₀ + a × t = 0 + 1 m/s² × 3 s = 3 m/s\n\n5. **【綜合比較第 3 秒末瞬間速度大小】**：\n   - v_甲 = 0 m/s\n   - v_乙 = 4 m/s\n   - v_丙 = 3 m/s\n   - v_丁 = 3 m/s\n   - 比較大小順序：v_乙 (4) > v_丙 (3) = v_丁 (3) > v_甲 (0)。\n   - 故速度最大者為 **乙**。\n\n故正確答案為 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-19",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789885722186,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_his_egypt_memphis_pyramid_070",
@@ -7122,14 +8608,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解題觀念與歷史背景剖析：\n\n1. **時空定位：古埃及古王國時代與首都孟斐斯**：\n   - **時間**：西元前 2500 年左右，正值古埃及的「古王國時期」（約西元前 2686 ～ 前 2181 年）。\n   - **地點**：孟斐斯（Memphis）位於尼羅河下游三角洲頂端，為古王國時期的政經宗教首都。\n   - **時代特色**：古王國時期中央集權極盛，法老被視為神在人間的化身，掌管全埃及。法老會在生前動員龐大人力物力修建雄偉的金字塔作為陵墓，因此古王國時期亦被稱為「金字塔時期（Pyramid Age）」。在尼羅河氾濫的農閒期間，人民經常受官員徵召前往工廠與陵寢工地從事大型石造陵墓的建造工程。因此在孟斐斯最容易目睹的景象為 (A)。\n\n2. **逐一診斷錯誤選項**：\n   - **(B) 許多男性公民趕赴廣場參與公共事務的討論**：\n     - 此為**古希臘城邦（如雅典）的民主政治特色**。雅典男性公民在公民大會（廣場）行使直接民主權利，時間大約在西元前 6 世紀至西元前 4 世紀，地理位置在地中海愛琴海地區，與西元前 2500 年的埃及神權專制完全不符。\n   - **(C) 人們將交易往來紀錄用楔形文字刻在泥版上**：\n     - 楔形文字與泥版是**兩河流域（美索不達米亞文明）**的標誌性發明（蘇美人在西元前 3000 多年發明）。埃及使用的書寫系統為「象形文字（聖書體）」，書寫載體多為「紙莎草紙（Papyrus）」或鐫刻於石柱神廟石壁上，並非泥版。\n   - **(D) 有人熱忱傳播《聖經》，宣揚信上帝可得永生**：\n     - 《聖經》（新約）與傳播基督信仰、信上帝得永生是**基督教**的核心教義。基督教於**西元 1 世紀**發源於羅馬帝國統治下的巴勒斯坦地區。西元前 2500 年時基督教根本尚未誕生（此時距耶穌降生尚有約兩千五百年之遙）。\n\n故正確答案為 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-19",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-25",
+    "reviewHistory": [
+      {
+        "date": "2026-09-25",
+        "monday": "2026-09-21",
+        "timestamp": 1790315098691,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_his_hammurabi_code_babylon_071",
@@ -7151,14 +8649,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細題意解析與法典條文深度剖析：\n\n1. **判斷法典名稱與出處**：\n   - 由引文「傷了貴族的眼睛，還傷其眼」、「折了貴族的手足，還折其手足」、「奴隸打了自由民...處割耳之刑」等條文，可確定此法典為世界現存最早完備的成文法典之一——**《漢摩拉比法典》（Code of Hammurabi）**。\n\n2. **逐項檢驗題目敘述**：\n   - **(甲) 由條文可見當時有階級概念**：**正確**。\n     - 條文中明確區分「貴族」、「自由民（平民）」與「奴隸」三種不同的社會階級。\n     - 刑罰標準因被害者與加害者的階級地位而有極大差異（例如傷害貴族須以同等肉體傷害報復；奴隸犯上則處以嚴酷割耳之刑；貴族內部互傷則罰銀）。這充分體現了當時社會「法律保障特定統治階層」且「身分等級森嚴」的階級社會特質。\n   - **(乙) 強調「以牙還牙」的報復原則**：**正確**。\n     - 第 196 條「傷人眼，還傷其眼」、第 197 條「折人手足，還折其手足」，即為法學上著名的**同態復仇原則（以牙還牙、以眼還眼，Lex Talionis）**。\n   - **(丙) 為波斯國王漢摩拉比下令編訂**：**錯誤**。\n     - 漢摩拉比是**古巴比倫王國（位於美索不達米亞／兩河流域）**的國王，於約西元前 18 世紀統一兩河流域後下令編訂法典，**並非「波斯」國王**（波斯帝國興起於西元前 6 世紀，兩者相隔逾千年）。\n   - **(丁) 法典的原文應是由象形文字寫成**：**錯誤**。\n     - 兩河流域文明使用的書寫文字為蘇美人所創發的**「楔形文字（釘頭字）」**。《漢摩拉比法典》原文是用阿卡德語楔形文字刻在黑色玄武岩圓柱石碑上，**並非埃及的「象形文字」**。\n\n3. **結論**：\n   - 敘述正確者為 **(甲)** 與 **(乙)**。\n\n故正確答案為 **(A) 甲乙**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-19",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-25",
+    "reviewHistory": [
+      {
+        "date": "2026-09-25",
+        "monday": "2026-09-21",
+        "timestamp": 1790315162607,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_parallel_segments_ratio_trapezoid_072",
@@ -7180,14 +8690,33 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_parallel_segments_ratio_trapezoid_072.png",
     "solution": "○ 詳細解題幾何推導與比例分析：\n\n1. **利用 $\\triangle BCD$ 中的平行線求底邊分割比**：\n   - 題目給定 $\\overline{EF} // \\overline{CD}$，在 $\\triangle BCD$ 中：\n     $$\\triangle BEF \\sim \\triangle BDC$$\n   - 由對應邊成比例：\n     $$\\frac{\\overline{BF}}{\\overline{BC}} = \\frac{\\overline{BE}}{\\overline{BD}} = \\frac{\\overline{EF}}{\\overline{CD}} = \\frac{2}{5}$$\n   - 即 $\\overline{BF}$ 佔 2 份，全段 $\\overline{BC}$ 佔 5 份：\n     $$\\overline{CF} = \\overline{BC} - \\overline{BF} = 5 - 2 = 3 \\text{ 份}$$\n     $$\\implies \\overline{BF} : \\overline{CF} = 2 : 3$$\n     $$\\implies \\overline{CF} : \\overline{BC} = 3 : 5$$\n\n2. **利用 $\\triangle CAB$ 求 $\\overline{EF} : \\overline{AB}$ 的比值**：\n   - 因為 $\\overline{EF} // \\overline{AB}$，在 $\\triangle CAB$ 中：\n     $$\\triangle CEF \\sim \\triangle CAB$$\n   - 由對應邊成比例：\n     $$\\frac{\\overline{EF}}{\\overline{AB}} = \\frac{\\overline{CF}}{\\overline{CB}} = \\frac{\\overline{CE}}{\\overline{CA}}$$\n   - 代入剛剛求得的 $\\overline{CF} : \\overline{CB} = 3 : 5$：\n     $$\\overline{EF} : \\overline{AB} = 3 : 5$$\n   - **選項 (A) 完全正確！**\n\n3. **逐一檢驗其他選項之錯誤**：\n   - **(B) $\\overline{BE} : \\overline{BD}$**：\n     由第 1 步推導可知 $\\overline{BE} : \\overline{BD} = \\overline{EF} : \\overline{CD} = \\mathbf{2 : 5}$（非 $3 : 5$），故 (B) 錯誤。\n   - **(C) $\\overline{BE} : \\overline{DE}$**：\n     因為 $\\overline{BE}$ 佔 2 份、全段 $\\overline{BD}$ 佔 5 份，故 $\\overline{DE} = 5 - 2 = 3$ 份：\n     $$\\overline{BE} : \\overline{DE} = \\mathbf{2 : 3} \\text{ （非 } 3 : 2 \\text{）}$$，故 (C) 錯誤。\n   - **(D) $\\overline{AB} : \\overline{CD}$**：\n     - 設 $\\overline{EF} = 6k$（取 2 與 3 的公倍數方可整除）：\n       - 由 $\\overline{EF} : \\overline{CD} = 2 : 5 \\implies \\overline{CD} = 6k \\times \\frac{5}{2} = 15k$\n       - 由 $\\overline{EF} : \\overline{AB} = 3 : 5 \\implies \\overline{AB} = 6k \\times \\frac{5}{3} = 10k$\n     - 故：\n       $$\\overline{AB} : \\overline{CD} = 10k : 15k = \\mathbf{2 : 3} \\neq 1 : 1$$，故 (D) 錯誤。\n\n4. **經典公式快速驗證（延伸學習）**：\n   在交叉平行線模型中，恆有倒數和公式：\n   $$\\frac{1}{\\overline{EF}} = \\frac{1}{\\overline{AB}} + \\frac{1}{\\overline{CD}}$$\n   代入 $\\overline{EF} = 6$、$\\overline{AB} = 10$、$\\overline{CD} = 15$：\n   $$\\frac{1}{10} + \\frac{1}{15} = \\frac{3 + 2}{30} = \\frac{5}{30} = \\frac{1}{6}$$，完全吻合！\n\n故正確答案為 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
-    "isArchived": false,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 2,
+    "isArchived": true,
     "nextReviewDate": "2026-09-19",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14",
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789905888704,
+        "isMastered": true
+      },
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790589743603,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_free_fall_pisa_height_073",
@@ -7209,14 +8738,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細物理觀念與步驟解析：\n\n1. **基本物理條件分析**：\n   - 「由靜止往下釋放」：初速度 $v_0 = 0\\text{ m/s}$。\n   - 物體僅受地球重力作用，進行等加速度運動（自由落體）。\n   - 重力加速度：$g = 9.8\\text{ m/s}^2$。\n   - 下落總時間：$t = 3\\text{ 秒}$。\n\n2. **第一步：計算蘋果著地時的瞬間末速度**：\n   - 根據速度公式（每經過 1 秒速度增加 9.8 m/s）：\n     $$v = v_0 + gt = 0 + 9.8 \\times 3 = 29.4\\text{ m/s}$$\n   - 故經過 3 秒落地時，蘋果的瞬間速度為 $29.4\\text{ m/s}$。\n\n3. **第二步：利用 v-t 圖面積求下落高度（位移）**：\n   - 畫出蘋果運動的速度—時間關係圖（v-t 圖）：\n     - 橫軸（時間 $t$）：從 $0$ 到 $3$ 秒，底邊長度 $= 3$。\n     - 縱軸（速度 $v$）：從 $0$ 增加到 $29.4\\text{ m/s}$，三角形高 $= 29.4$。\n   - v-t 圖線下所圍成的三角形面積，即代表物體移動的距離（阿翰所在處的高度）：\n     $$\\text{高度 } h = \\frac{\\text{底 } \\times \\text{高}}{2} = \\frac{3 \\times 29.4}{2} = 1.5 \\times 29.4 = \\mathbf{44.1}\\text{ 公尺}$$\n\n4. **公式法直接驗算（等加速度運動位移公式）**：\n   - 代入自由落體位移公式：\n     $$h = v_0 t + \\frac{1}{2}gt^2$$\n   - 因為 $v_0 = 0$：\n     $$h = \\frac{1}{2} \\times 9.8 \\times 3^2 = 4.9 \\times 9 = \\mathbf{44.1}\\text{ 公尺}$$\n\n標準答案為 **44.1 公尺**（或 **44.1 m**）。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-19",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789885823483,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_free_fall_tower_time_speed_074",
@@ -7238,14 +8779,33 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解題觀念與步驟解析：\n\n1. **題目物理條件分析**：\n   - 「自由掉落」：初速度 $v_0 = 0\\text{ m/s}$，只受重力作用進行等加速度直線運動。\n   - 重力加速度：$g = 9.8\\text{ m/s}^2$。\n   - 下落高度（位移）：$h = 78.4\\text{ 公尺}$。\n\n2. **第 (1) 小題：求經幾秒後會著地（著地時間 $t$）**：\n   - **方法一：v-t 圖面積推導法（核心觀念）**：\n     - 自由落體由靜止開始下落，經過 $t$ 秒時的瞬間末速度為 $v = gt = 9.8t\\text{ (m/s)}$。\n     - 繪出物體的 v-t 關係圖為過原點的直角三角形，線下斜線面積代表下落高度：\n       $$\\text{塔高 } h = \\frac{\\text{底 } \\times \\text{高}}{2} = \\frac{t \\times (9.8t)}{2} = 4.9t^2$$\n     - 代入塔高 $h = 78.4\\text{ 公尺}$：\n       $$4.9t^2 = 78.4 \\implies t^2 = \\frac{78.4}{4.9} = \\frac{784}{49} = 16$$\n     - 開根號得：\n       $$t = 4\\text{ 秒 (s)}$$（時間取正值）。\n\n3. **第 (2) 小題：求著地時的速度（瞬間末速度 $v$）**：\n   - 蘋果經過 $4$ 秒著地，根據等加速度運動速度公式：\n     $$v = v_0 + gt = 0 + 9.8 \\times 4 = \\mathbf{39.2}\\text{ 公尺/秒 (m/s)}$$\n   - （亦可用末速與位移公式驗算：$v^2 = 2gh = 2 \\times 9.8 \\times 78.4 = 1536.64 \\implies v = 39.2\\text{ m/s}$）。\n\n標準答案為：\n**(1) 4 秒（4s）**；\n**(2) 39.2 公尺/秒（39.2 m/s）**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-19",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "reviewedMondays": [
+      "2026-09-14",
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789895425746,
+        "isMastered": false
+      },
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790592928306,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_free_fall_characteristics_075",
@@ -7267,14 +8827,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細物理觀念與各選項剖析：\n\n1. **自由落體之物理本質**：\n   - 定義：物體由靜止出發（$v_0 = 0$），在空中僅受地球引力（重力）作用而垂直下落的運動。\n   - 特徵：受定值重力，產生定值重力加速度 $g = 9.8\\text{ m/s}^2$。\n\n2. **逐項檢視選項特徵**：\n   - **(A)「單位時間內的位移量一定」：不包括（為本題所求）**。\n     - 「單位時間內的位移量」即為**速度（$v = \\frac{\\Delta x}{\\Delta t}$）**。\n     - 自由落體下落時速度持續均勻增加（$v = gt$），下落距離隨時間平方倍增（$h = \\frac{1}{2}gt^2$）。在每個相等的 1 秒內，下落的位移量分別為 $4.9\\text{ m}$、$14.7\\text{ m}$、$24.5\\text{ m}$……越掉越快、位移越來越大，並非常數！\n     - 只有在「等速度運動」中，單位時間內的位移量才會固定。\n   - **(B)「等加速度運動」：包括**。\n     - 全程加速度恆為 $g = 9.8\\text{ m/s}^2$（大小與方向皆固定），故確為等加速度運動。\n   - **(C)「單位時間內的速度變化量一定」：包括**。\n     - 根據加速度定義 $a = \\frac{\\Delta v}{\\Delta t}$，加速度為常數即表示單位時間（每 1 秒）內的速度增加量恆為 $9.8\\text{ m/s}$。\n   - **(D)「全程只受重力作用」：包括**。\n     - 自由落體的定義即在於不受手推力、支撐力或空氣阻力等其他外力，全程僅受地球引力。\n\n故不包括之敘述為 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-19",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789895453905,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_free_fall_vt_graph_options_076",
@@ -7296,14 +8868,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_sci_phy_free_fall_vt_graph_options_076.png",
     "solution": "○ 詳細運動圖表深度解析：\n\n1. **分析「自由落下」的物理條件**：\n   - ① **初速度為零（$v_0 = 0$）**：\n     在出發時刻 $t = 0$ 時，速度 $v = 0$。因此在以時間 $t$ 為橫軸、速度 $v$ 為縱軸的 v-t 圖中，函數圖形必須**通過原點 $(0, 0)$**。\n   - ② **等加速度運動（加速度 $a = g = 9.8\\text{ m/s}^2$ 為正的定值）**：\n     在 v-t 圖中，**圖形的「斜率（傾斜程度）」代表物體的加速度**。\n     因為重力加速度大小與方向固定不變，故斜率必為**固定正值**。\n   - 綜合以上兩點，速度隨時間的函數式為 $v = gt$，其圖形必為**一條通過原點且向右上方傾斜的直線**（即選項 (A)）。\n\n2. **逐一檢討各選項圖形代表之運動狀態**：\n   - **圖 (A)**：通過原點向右上延伸之直線，表示初速為 0、加速度為定值的等加速度運動，**完全符合自由落體**，為正確答案。\n   - **圖 (B)**：呈現一條水平直線，表示速度隨時間完全不變（加速度 $a = 0$），代表「等速度直線運動」。\n   - **圖 (C)**：在 $t = 0$ 時具有較大的初速度，且隨著時間增加速度直線遞減至 0，代表「具有初速的等減速度運動」（例如鉛直向上拋出之物體在上升過程的速率變化）。\n   - **圖 (D)**：圖形為曲線且斜率越來越陡，表示加速度並非固定常數，不符合自由落體定值重力加速度的特徵。\n\n故正確答案為 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-19",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789895480942,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_phy_vertical_throw_gravity_acceleration_constant_077",
@@ -7325,14 +8909,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解題觀念與受力深度分析：\n\n1. **根據牛頓第二運動定律分析棒球在空中的受力情形**：\n   - 棒球被拋出「離開手」之後，在空中運動期間（無論是上升中、到達最高點瞬間、還是下落過程中），在題目設定「不計空氣阻力」的前提下：\n     - 棒球**全程只受到唯一的力——地球引力（重力 $W = mg$）**，方向恆垂直向下。\n     - 手的作用力在球離手的瞬間就已經完全消失，手無法隔空對球施力。\n\n2. **推求棒球在各階段的加速度**：\n   - 根據牛頓第二定律 $F_{\\text{合}} = ma$：\n     $$a = \\frac{F_{\\text{合}}}{m} = \\frac{mg}{m} = g = 9.8\\text{ m/s}^2$$\n   - 方向：恆垂直向下。\n   - 因此：\n     - **剛離開手時**：合力為重力，加速度 $= 9.8\\text{ m/s}^2$ 向下。\n     - **上升途中**：合力為重力，加速度 $= 9.8\\text{ m/s}^2$ 向下。\n     - **到達最高點瞬間**：雖然瞬間速度 $v = 0$，但地球依然拉著球，合力仍為重力，加速度**依然是 $9.8\\text{ m/s}^2$ 向下**！\n     - **下落與墜地前**：合力仍為重力，加速度 $= 9.8\\text{ m/s}^2$ 向下。\n   - 故在空中的任何時刻，加速度的大小均為定值 $g$，**全程皆相同**。\n\n3. **常見概念混淆澄清**：\n   - 題目問的是「**加速度**」（速度變化的快慢），不是問「速度」！\n   - 速度雖然在不同時刻會改變（最高點為 0、墜地前最快），但加速度全程保持不變。\n\n故正確答案為 **(D) 全程皆相同**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-19",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-14"
+    ],
+    "lastReviewedMonday": "2026-09-14",
+    "lastReviewedDate": "2026-09-20",
+    "reviewHistory": [
+      {
+        "date": "2026-09-20",
+        "monday": "2026-09-14",
+        "timestamp": 1789895502568,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_civ_job_opportunity_cost_comparison_078",
@@ -7354,14 +8950,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解題觀念與深度剖析：\n\n1. **核心概念：機會成本的定義**：\n   - 機會成本（Opportunity Cost）是指在面臨多個互斥的選擇時，**「所放棄的所有其他選擇中，價值（薪資）最高的那一個」**。\n\n2. **第一步：由題目條件推導甲、乙、丙三份工作的「薪資高低順序」**：\n   - **昨天（甲 vs 乙）**：\n     大雄最佳選擇為甲工作，表示大雄認為甲的價值最高，即：**甲的薪資 > 乙的薪資**。\n     此時若選擇甲，放棄的只有乙，故甲的機會成本為「乙的薪資」。\n   - **今天（加入丙工作）**：\n     大雄再三考量後，「甲工作仍是最佳選擇」，表示甲的價值依然最高，即：**甲的薪資 > 丙的薪資**。\n     但大雄特別提到「**甲工作的機會成本增加了**」，這說明原本選甲放棄的最高代價是「乙的薪資」，現在變成放棄價值更高的「丙的薪資」，因此：**丙的薪資 > 乙的薪資**。\n   - **綜合三者薪資大小排序**：\n     **甲工作薪資 > 丙工作薪資 > 乙工作薪資**。\n\n3. **第二步：分別計算「選擇甲、乙、丙」三者的機會成本**：\n   - ① **若選擇「甲工作」**：\n     放棄的選項有乙和丙，其中價值最高者為丙，因此：\n     **甲的機會成本 = 丙工作的薪資**。\n   - ② **若選擇「乙工作」**：\n     放棄的選項有甲和丙，其中價值最高者為甲，因此：\n     **乙的機會成本 = 甲工作的薪資**。\n   - ③ **若選擇「丙工作」**：\n     放棄的選項有甲和乙，其中價值最高者為甲，因此：\n     **丙的機會成本 = 甲工作的薪資**。\n\n4. **第三步：比較三者的機會成本大小**：\n   - 乙的機會成本（甲薪資） = 丙的機會成本（甲薪資）。\n   - 因為「甲工作的薪資 > 丙工作的薪資」，所以：\n     甲的機會成本（丙薪資） < 乙的機會成本（甲薪資） = 丙的機會成本（甲薪資）。\n   - 排序為：**甲 < 丙 = 乙**（即 甲 < 乙 = 丙）。\n\n故正確答案為 **(D) 甲 < 丙 = 乙**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-21",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-25",
+    "reviewHistory": [
+      {
+        "date": "2026-09-25",
+        "monday": "2026-09-21",
+        "timestamp": 1790315219603,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_soc_civ_trip_opportunity_cost_explicit_implicit_079",
@@ -7383,14 +8991,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ 詳細解題步驟與成本分類剖析：\n\n1. **核心經濟學觀念：機會成本的構成**：\n   - 在經濟學中，**機會成本 ＝ 外顯成本（Explicit Cost）＋ 隱藏成本（Implicit Cost）**。\n   - **外顯成本**：因這項決策而「實際支付的金錢（看得見的支出）」。\n   - **隱藏成本**：因這項決策而「放棄的其他利益或收益（看不見的代價）」。\n\n2. **逐項檢視小櫻出遊過程中的各項金錢與利益**：\n   - ① **賞櫻團團費 40,000 元**：\n     屬於實際掏錢支付的旅遊費用，計入**外顯成本**（40,000 元）。\n   - ② **購買名產 3,000 元**：\n     在旅途中因旅遊而實際支出的費用，計入**外顯成本**（3,000 元）。\n   - ③ **請假 5 天少賺薪資 8,800 元**：\n     如果不出遊去上班原本可以領到的薪水，為了出遊而選擇放棄，計入**隱藏成本**（8,800 元）。\n   - ④ **好友送的要價 1,000 元公仔**：\n     這是好友贈送的生日禮物，屬於此趟旅程獲得的**額外福利或利益（贈品）**，並非小櫻為了旅遊所承擔的「犧牲或代價」，因此**不屬於機會成本**，不可計入成本！\n\n3. **計算總機會成本**：\n   - 外顯成本 ＝ 40,000 ＋ 3,000 ＝ 43,000 元\n   - 隱藏成本 ＝ 8,800 元\n   - 總機會成本 ＝ 43,000 ＋ 8,800 ＝ **51,800 元**。\n\n故正確答案為 **(C) 51,800 元**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-21",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-26",
+    "reviewHistory": [
+      {
+        "date": "2026-09-26",
+        "monday": "2026-09-21",
+        "timestamp": 1790392474971,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_eng_present_perfect_visited_lake_080",
@@ -7415,10 +9035,29 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-22",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "reviewedMondays": [
+      "2026-09-21",
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-09-25",
+        "monday": "2026-09-21",
+        "timestamp": 1790314649711,
+        "isMastered": false
+      },
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791006277563,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_eng_present_perfect_short_answer_never_081",
@@ -7439,14 +9078,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "1. **題目句型分析**：\n   - 題目為 `Have you ever ...?`（你曾……過嗎？）的問句，答句開頭為 `No, ...`，表示否定簡答。\n\n2. **頻率副詞在簡答句中的位置規則**：\n   - 在標準現在完成式詳答中，頻率副詞放在 have/has 與過去分詞 (p.p.) 之間：`I have never danced...`。\n   - 但在**簡答句**中，因為省略了後方的 p.p.（danced），**頻率副詞必須前移至助動詞 have/has 的前面**！\n   - 正確簡答形式為：`No, I never have.`。\n\n3. **選項排除**：\n   - (A) `I never have`：位置正確，符合否定簡答文法規範。\n   - (B) `I have never`：頻率副詞未前移至 have 前面，於簡答句中為不正確結構。\n   - (C) `I have`：與前方的 `No` 矛盾。\n   - (D) `I never`：缺少助動詞 have，文法不完整。\n\n故正確答案選 **(A) I never have**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-22",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-25",
+    "reviewHistory": [
+      {
+        "date": "2026-09-25",
+        "monday": "2026-09-21",
+        "timestamp": 1790314669407,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_eng_present_perfect_passive_great_wall_082",
@@ -7471,10 +9122,29 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-09-22",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "reviewedMondays": [
+      "2026-09-21",
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-09-25",
+        "monday": "2026-09-21",
+        "timestamp": 1790314736359,
+        "isMastered": false
+      },
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791006338626,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_math_triangle_midpoint_angle_ghf_080",
@@ -7495,14 +9165,33 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_triangle_midpoint_angle_ghf_080.png",
     "solution": "○ **詳細幾何證明與計算步驟**：\n\n1. **第一步：應用三角形中點定理推導平行線與角度**：\n   - 在 $\\triangle DBE$ 中，因為 $F$、$G$ 分別為 $\\overline{DE}$ 與 $\\overline{BE}$ 的中點：\n     $$\\overline{FG} // \\overline{DB} \\quad \\text{且} \\quad \\overline{FG} = \\frac{1}{2} \\overline{BD}$$\n     由平行線同位角相等可得：\n     $$\\angle FGE = \\angle DBE = 30^\\circ$$\n   - 在 $\\triangle BEC$ 中，因為 $G$、$H$ 分別為 $\\overline{BE}$ 與 $\\overline{BC}$ 的中點：\n     $$\\overline{GH} // \\overline{CE} \\quad \\text{且} \\quad \\overline{GH} = \\frac{1}{2} \\overline{CE}$$\n     由平行線同位角相等可得：\n     $$\\angle BGH = \\angle BEC = 88^\\circ$$\n\n2. **第二步：求頂角 $\\angle FGH$ 的度數**：\n   - 觀察平角 $\\angle BGE = 180^\\circ$：\n     $$\\angle EGH = 180^\\circ - \\angle BGH = 180^\\circ - 88^\\circ = 92^\\circ$$\n   - 因此 $\\triangle FGH$ 的頂角 $\\angle FGH$ 為：\n     $$\\angle FGH = \\angle FGE + \\angle EGH = 30^\\circ + 92^\\circ = 122^\\circ$$\n\n3. **第三步：證明 $\\triangle FGH$ 為等腰三角形並計算底角 $\\angle GHF$**：\n   - 題目已知 $\\overline{BD} = \\overline{CE}$：\n     $$\\overline{FG} = \\frac{1}{2} \\overline{BD} = \\frac{1}{2} \\overline{CE} = \\overline{GH}$$\n   - 因為 $\\overline{FG} = \\overline{GH}$，故 $\\triangle FGH$ 為以 $G$ 為頂角的**等腰三角形**。\n   - 底角 $\\angle GHF$ 等於：\n     $$\\angle GHF = \\frac{180^\\circ - \\angle FGH}{2} = \\frac{180^\\circ - 122^\\circ}{2} = \\frac{58^\\circ}{2} = 29^\\circ$$\n\n故正確答案選 **(D) 29°**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-22",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21",
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790590162054,
+        "isMastered": false
+      },
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791025964719,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_triangle_angle_bisector_ef_cd_083",
@@ -7523,14 +9212,40 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_triangle_angle_bisector_ef_cd_083.png",
     "solution": "○ **詳細幾何幾何證明與計算步驟**：\n\n1. **第一步：應用內角平分線定理求線段比例與線段長**：\n   - 在 $\\triangle ABC$ 中，因為 $\\overline{AD}$ 為 $\\angle BAC$ 的角平分線：\n     $$\\overline{BD} : \\overline{CD} = \\overline{AB} : \\overline{AC} = 8 : 6 = 4 : 3$$\n     已知 $\\overline{BC} = 7$，故：\n     $$\\overline{BD} = 7 \\times \\frac{4}{4+3} = 4, \\quad \\overline{CD} = 7 \\times \\frac{3}{4+3} = 3$$\n   - 同理，因為 $\\overline{BF}$ 為 $\\angle ABC$ 的角平分線：\n     $$\\overline{AF} : \\overline{CF} = \\overline{AB} : \\overline{BC} = 8 : 7$$\n     因此 $\\overline{AF}$ 佔全線段 $\\overline{AC}$ 的比例為 $\\frac{8}{8+7} = \\frac{8}{15}$。\n\n2. **第二步：應用平行線截比例線段求 $\\overline{EF}$**：\n   - 題目已知 $\\overline{EF} // \\overline{CD}$，由 $\\triangle AEF \\sim \\triangle ADC$ 可得：\n     $$\\overline{EF} : \\overline{CD} = \\overline{AF} : \\overline{AC} = 8 : 15$$\n   - 代入已求得的 $\\overline{CD} = 3$：\n     $$\\overline{EF} = \\frac{8}{15} \\overline{CD} = \\frac{8}{15} \\times 3 = \\frac{8}{5}$$\n\n3. **第三步：計算最簡整數比 $\\overline{BD} : \\overline{EF}$**：\n   - 代入已知數據：\n     $$\\overline{BD} : \\overline{EF} = 4 : \\frac{8}{5} = 20 : 8 = 5 : 2$$\n\n故正確答案選 **(C) 5 : 2**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-22",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "reviewedMondays": [
+      "2026-09-21",
+      "2026-09-28",
+      "2026-10-05"
+    ],
+    "lastReviewedMonday": "2026-10-05",
+    "lastReviewedDate": "2026-10-11",
+    "reviewHistory": [
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790590541936,
+        "isMastered": false
+      },
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791032353155,
+        "isMastered": false
+      },
+      {
+        "date": "2026-10-11",
+        "monday": "2026-10-05",
+        "timestamp": 1791709816344,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_phy_galileo_inclined_plane_length_084",
@@ -7551,14 +9266,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_phy_galileo_inclined_plane_length_084.png",
     "solution": "○ **詳細物理觀念與幾何比例計算步驟**：\n\n1. **第一步：力學能守恆判定最高垂直高度**：\n   - 在忽略摩擦力與阻力的理想狀況下，小鋼珠在斜面上運動符合**力學能守恆定律**（重力位能與動能互相轉換）。\n   - 小鋼珠自左側斜面 A 點（垂直高度 15 公分）靜止釋放，到達右側斜面動能歸零（最高點）時，其**垂直高度必定等於出發點高度 15 公分**。\n\n2. **第二步：利用斜面幾何相似三角形求斜面長度**：\n   - 觀察右側斜面，斜面長度與垂直高度形成相似直角三角形，比例維持常數：\n     $$\\frac{\\text{右側斜面長度}}{\\text{右側垂直高度}} = \\frac{40 \\text{ 公分}}{24 \\text{ 公分}} = \\frac{5}{3}$$\n   - 設小鋼珠在右側斜面上滑過的長度為 $X$ 公分，此時對應的垂直高度為 15 公分：\n     $$40 : 24 = X : 15$$\n     $$X = 15 \\times \\frac{40}{24} = 15 \\times \\frac{5}{3} = 25 \\text{ (公分)}$$\n\n故正確答案選 **(C) 25**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-22",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790592967731,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_phy_newton_first_law_true_statements_085",
@@ -7579,14 +9306,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ **詳細選項迷思剖析與診斷**：\n\n1. **選項 (A) 診斷（錯誤）**：\n   - 當物體所受合力等於零時，若物體原本已有速度，依據慣性定律將保持**等速度直線運動**，此時速度並不為零！故『只有合力不為零時速度才不為零』為常見迷思觀念。\n\n2. **選項 (B) 診斷（錯誤）**：\n   - 靜置於水平桌面上的物體，至少同時承受地球向下的**重力**與桌面向上的**支持力（法向力）**，兩力大小相等、方向相反（合力＝0），並非『不受任何外力作用』。\n\n3. **選項 (C) 診斷（錯誤）**：\n   - 當物體不受任何外力（或合力為零）時，物體可能保持**靜止**，也可能保持**等速度直線運動**，並非『必為靜止』。\n\n4. **選項 (D) 診斷（正確）**：\n   - 伽利略雙斜面實驗是在『忽略摩擦力』的理想心靈實驗假設下進行推論，進而提出慣性觀念，並由牛頓整理為第一運動定律。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-22",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790592995751,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_phy_bus_brake_inertia_friction_086",
@@ -7607,14 +9346,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ **詳細物理機制與原因解析**：\n\n1. **(甲) 慣性定律作用**：\n   - 當前進中的公車緊急煞車時，車體速度減慢；但乘客的上半身因**慣性定律（牛頓第一定律）**，仍欲維持原本向前的運動速度與方向，因此上半身會順著原運動方向稍向車頭前傾。\n\n2. **(丙) 摩擦力的存在**：\n   - 乘客之所以能平穩站在車內而不滑倒，是因為雙腳鞋底與公車地板間存在**靜摩擦力**，使雙腳能隨著公車一同減速止步。\n\n3. **(乙) 錯誤說明排除**：\n   - 煞車過程中，並沒有任何物體對乘客施加『向前的推力』。向前傾斜純粹是慣性現象與腳底摩擦力共同作用的結果。\n\n故正確選項為 **(B) 甲丙**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-22",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790593010021,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_phy_constant_velocity_car_net_force_087",
@@ -7635,14 +9386,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ **詳細受力與運動狀態剖析**：\n\n1. **運動狀態與加速度關係**：\n   - 汽車進行**等速度運動**，意味著速度的大小與方向均不改變，因此**加速度 $a = 0$**。\n\n2. **牛頓運動定律與合力判斷**：\n   - 依據牛頓第二運動定律 $F_{\\text{合}} = ma$，當加速度 $a = 0$ 時，物體所受的**合力必等於零（$F_{\\text{合}} = 0$）**。\n\n3. **實際受力狀況診斷**：\n   - 汽車在公路上行駛時，承受重力、路面支持力、引擎牽引力、空氣阻力及摩擦力等多個外力作用，並非不受外力；而是這些外力的矢量和相互抵銷，達到**受力平衡（合力等於零）**。\n\n故正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-22",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790593033285,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_phy_horse_rider_jump_trajectory_088",
@@ -7663,14 +9426,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ **詳細運動獨立性與軌跡合成解析**：\n\n1. **水平方向運動分解（慣性）**：\n   - 騎師在離開馬背前具有向前的水平速度 $v_x$。跳起後在水平方向不受外力作用（忽略空氣阻力），依據**慣性定律**，騎師在水平方向將繼續維持**等速度運動**。\n\n2. **垂直方向運動分解（重力）**：\n   - 騎師相對於馬背向上跳起，具有向上的初速度 $v_y$，僅受向下重力作用，故垂直方向進行**鉛直上拋後自由落體**運動。\n\n3. **運動軌跡合成（地面觀察者視角）**：\n   - 將水平方向的『等速直線運動』與垂直方向的『鉛直上拋運動』合成，地面觀察者所看到的騎師運動軌跡為一條拋物線，即**向前斜向拋射運動**。\n\n故正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-22",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790593070436,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_phy_xt_graph_cart_net_force_089",
@@ -7691,14 +9466,33 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_phy_xt_graph_cart_net_force_089.png",
     "solution": "○ **詳細 x-t 圖形解析與加速度判讀步驟**：\n\n1. **圖形斜率物理意義**：\n   - 在位置對時間圖（x-t 圖）中，**圖線的斜率代表物體的運動速度 $v$**。\n   - 只要圖線為『斜直線』或『水平直線』，均代表物體處於等速度或靜止狀態，**加速度 $a$ 均為零**。\n\n2. **分段運動狀態剖析**：\n   - **$0 \\sim 2$ 秒**：圖線為正斜率直線，代表物體以 $v = \\frac{10 - 0}{2 - 0} = 5 \\text{ m/s}$ 作**等速度運動**（$a = 0$）。\n   - **$2 \\sim 4$ 秒**：圖線為水平線（位置維持在 10 m），代表物體**靜止**（$v = 0, a = 0$）。\n   - **$4 \\sim 8$ 秒**：圖線為負斜率直線，代表物體以 $v = \\frac{0 - 10}{8 - 4} = -2.5 \\text{ m/s}$ 作**等速度運動**（$a = 0$）。\n\n3. **合力計算**：\n   - 在全過程 $0 \\sim 8$ 秒中，加速度 $a$ 全程均為 0，依據 $F_{\\text{合}} = ma$，滑車所受到的**合力全程皆為零**。\n\n故正確答案選 **(D)**。\n\n🔗 **延伸學習影音推薦**：[觀看 YouTube 詳細影音解題教學影片](https://www.youtube.com/watch?v=N7urCLu3HoI)",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-22",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21",
+      "2026-09-28"
+    ],
+    "lastReviewedMonday": "2026-09-28",
+    "lastReviewedDate": "2026-10-03",
+    "reviewHistory": [
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790593236321,
+        "isMastered": false
+      },
+      {
+        "date": "2026-10-03",
+        "monday": "2026-09-28",
+        "timestamp": 1791037740084,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_bio_selective_breeding_sweet_pepper_090",
@@ -7719,14 +9513,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ **選項逐一剖析**：\n\n1. **(A) 錯誤**：此過程為傳統的人為篩選與雜交育種，利用個體間原本存在的基因組合進行選擇，**並未將外源基因轉殖**入植株中，因此不屬於基因改造生物（GMO）。\n2. **(B) 錯誤**：選育過程是由「農民」根據人類喜好（果實含辣椒素較少）進行挑選，屬於**人為選擇（人擇）**，而非自然環境競爭所進行的「天擇（大自然的篩選）」。\n3. **(C) 正確**：題目提及「雜交培育」與利用「種子」進行繁殖。雜交需要經過花粉（精細胞）與胚珠（卵細胞）的受精作用，產生種子發育為新植株，故**培育過程必定需要經過有性生殖**。\n4. **(D) 錯誤**：彩色甜椒是不含辣椒素的人工選育品種，合乎人為喜好，但**並不代表其比原始辣椒植株更能適應自然環境**（甚至在野外可能因缺乏辣椒素的防禦機制而較易受蟲害）。\n\n故正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-23",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790593314870,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_triangle_parallel_segment_ratio_091",
@@ -7775,14 +9581,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "assets/questions/q_math_perpendicular_lines_ratio_092.png",
     "solution": "○ **詳細觀念與解題步驟**：\n\n1. **平行線判定與代數假設**：\n   - 因線段 AB、HD、GF 均垂直於底邊 BF，故線段 AB // HD // GF。\n   - 設線段 BC ＝ EF ＝ x，線段 CD ＝ a，線段 DE ＝ b，底邊全長 CF ＝ a ＋ b ＋ x。\n\n2. **在 △ABE 中利用 △HDE ～ △ABE**：\n   - 因線段 HD // AB，對應高與邊長成比例：\n     $$\\text{線段 } HD : AB = \\text{線段 } ED : EB$$\n     $$1 : 2 = b : (a + b + x) \\implies a + b + x = 2b$$\n\n3. **在 △CGF 中利用 △HDC ～ △GFC**：\n   - 因線段 HD // GF，對應高與邊長成比例：\n     $$\\text{線段 } HD : GF = \\text{線段 } CD : CF$$\n     $$1 : 3 = a : (a + b + x) \\implies a + b + x = 3a$$\n\n4. **聯立比較求線段比**：\n   - 由上兩式可得：$$2b = 3a \\implies a : b = 2 : 3$$\n   - 故線段 CD : DE ＝ a : b ＝ 2 : 3。\n\n正確答案選 **(A)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-09-23",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-09-21"
+    ],
+    "lastReviewedMonday": "2026-09-21",
+    "lastReviewedDate": "2026-09-28",
+    "reviewHistory": [
+      {
+        "date": "2026-09-28",
+        "monday": "2026-09-21",
+        "timestamp": 1790590859079,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_math_triangle_cevian_intersection_ratio_093",
@@ -7943,14 +9761,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ **詳細觀念與選項剖析**：\n\n1. **各選項地質作用解析**：\n   - **(A) 正確**：U 型谷是冰川向下移動時，廣泛侵蝕谷壁與谷底所形成的典型冰蝕地貌。\n   - **(B) 錯誤（選此項）**：屏東恆春的「風吹砂」是強勁落山風將海岸沙粒吹向陸地坡面沉積，屬於風的**搬運與沉積現象**，而非風蝕現象。\n   - **(C) 正確**：風稜石是強風挾帶細砂對岩石長期進行打磨（風蝕作用）所形成的稜角分明岩石。\n   - **(D) 正確**：沙洲是沿岸流與波浪將陸地河流攜帶入海的泥沙在近岸堆積而成的沉積地貌。\n\n正確答案選 **(B)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-05",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-10-12"
+    ],
+    "lastReviewedMonday": "2026-10-12",
+    "lastReviewedDate": "2026-10-12",
+    "reviewHistory": [
+      {
+        "date": "2026-10-12",
+        "monday": "2026-10-12",
+        "timestamp": 1791792834811,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_geo_frost_wedging_temp_range_112",
@@ -7971,14 +9801,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ **詳細觀念與選項剖析**：\n\n1. **水結冰膨脹物理風化（凍融作用/楔裂作用）機制**：\n   - 液態水滲入岩石裂縫中，當氣溫降至 0°C 以下時水結成冰，體積膨脹約 9%，產生強大張力撐開岩縫。\n   - 當氣溫回升至 0°C 以上時冰融化成水，再次深入裂縫，等待下一次結冰。\n\n2. **氣溫條件分析**：\n   - 要引發頻繁的「結冰膨脹風化」，氣溫必須在 **0°C 上下反覆波動（跨越冰點 0°C）**。\n   - **(A) -8°C ～ -5°C**：全程低於 0°C，水一直保持冰塊，無法熔化重新滲入。\n   - **(B) 3°C ～ 10°C**：全程高於 0°C，水不會結冰膨脹。\n   - **(C) -20°C ～ -10°C**：全程遠低於 0°C，無法發生凍融循環。\n   - **(D) -5°C ～ 5°C**：氣溫在 0°C 上下震盪，白天融化滲入、夜晚結冰膨脹，最容易引發結晶風化與楔裂作用！\n\n正確答案選 **(D)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-05",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-10-12"
+    ],
+    "lastReviewedMonday": "2026-10-12",
+    "lastReviewedDate": "2026-10-12",
+    "reviewHistory": [
+      {
+        "date": "2026-10-12",
+        "monday": "2026-10-12",
+        "timestamp": 1791792871326,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_geo_iron_mineral_oxidation_color_113",
@@ -8003,10 +9845,22 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-10-05",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "unmastered",
+    "reviewedMondays": [
+      "2026-10-12"
+    ],
+    "lastReviewedMonday": "2026-10-12",
+    "lastReviewedDate": "2026-10-12",
+    "reviewHistory": [
+      {
+        "date": "2026-10-12",
+        "monday": "2026-10-12",
+        "timestamp": 1791793187114,
+        "isMastered": false
+      }
+    ]
   },
   {
     "id": "q_sci_geo_sedimentary_rock_grain_size_114",
@@ -8027,14 +9881,26 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "○ **詳細觀念與選項剖析**：\n\n1. **沉積岩顆粒粒徑大小分類**：\n   - **礫岩（Conglomerate）**：碎屑顆粒最大，粒徑大於 2 mm。\n   - **砂岩（Sandstone）**：中等顆粒，粒徑介於 0.0625 mm ～ 2 mm 之間。\n   - **頁岩（Shale/Mudstone）**：顆粒最細緻，粒徑小於 0.0625 mm。\n\n2. **順序比較**：\n   - 由粗至細依序為：**礫岩 ＞ 砂岩 ＞ 頁岩**。\n\n正確答案選 **(C)**。",
     "errorCount": 1,
-    "ebbinghausStage": 1,
-    "consecutiveMastered": 0,
+    "ebbinghausStage": 2,
+    "consecutiveMastered": 1,
     "isArchived": false,
     "nextReviewDate": "2026-10-05",
-    "isReviewed": false,
-    "reviewStatus": "unreviewed",
-    "lastReviewDecision": null,
-    "reviewedMondays": []
+    "isReviewed": true,
+    "reviewStatus": "reviewed",
+    "lastReviewDecision": "mastered",
+    "reviewedMondays": [
+      "2026-10-12"
+    ],
+    "lastReviewedMonday": "2026-10-12",
+    "lastReviewedDate": "2026-10-12",
+    "reviewHistory": [
+      {
+        "date": "2026-10-12",
+        "monday": "2026-10-12",
+        "timestamp": 1791793294016,
+        "isMastered": true
+      }
+    ]
   },
   {
     "id": "q_sci_geo_metamorphic_protolith_sources_115",
@@ -8644,15 +10510,18 @@ class DataManager {
 
   isQuestionReviewed(q, mondayDate = null) {
     if (!q) return false;
-    const currentMonday = mondayDate || this.getCurrentMondayDate();
-    if (currentMonday && currentMonday !== 'ALL') {
-      return (Array.isArray(q.reviewedMondays) && q.reviewedMondays.includes(currentMonday)) ||
-             q.lastReviewedMonday === currentMonday;
+    // 依麥麥最高準則與 AGENTS.md 規範：只要題目曾被點擊「已擊敗」或「未擊敗」、
+    // 或已被標記 reviewed、或掌握次數 > 0、或有複習痕跡，即永久認定為【已複習】！
+    if (q.isReviewed === true || q.reviewStatus === 'reviewed' || !!q.lastReviewDecision || (q.consecutiveMastered || 0) > 0) {
+      return true;
     }
-    return q.isReviewed === true ||
-           q.reviewStatus === 'reviewed' ||
-           (Array.isArray(q.reviewedMondays) && q.reviewedMondays.length > 0) ||
-           !!q.lastReviewDecision;
+    if (Array.isArray(q.reviewedMondays) && q.reviewedMondays.length > 0) {
+      return true;
+    }
+    if (Array.isArray(q.reviewHistory) && q.reviewHistory.length > 0) {
+      return true;
+    }
+    return false;
   }
 
   updateQuestionMastery(id, isMastered, mondayDate = null) {
