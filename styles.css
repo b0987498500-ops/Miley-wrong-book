@@ -2328,6 +2328,34 @@ body.fullscreen-review-mode .sidebar-resizer {
   font-size: 0.65rem;
 }
 
+.progress-ticks.mega-compact-ticks .progress-tick-dot {
+  min-width: 10px;
+  height: 10px;
+  font-size: 0.52rem;
+  padding: 0;
+  border-width: 1px;
+}
+
+.progress-ticks.mega-compact-ticks .progress-tick-dot .station-num-label {
+  display: none;
+}
+
+.progress-ticks.mega-compact-ticks .progress-tick-dot.current .station-num-label,
+.progress-ticks.mega-compact-ticks .progress-tick-dot:hover .station-num-label {
+  display: block;
+  position: absolute;
+  top: -22px;
+  background: rgba(15, 23, 42, 0.95);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+  z-index: 50;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
 /* Magnetic Knob / Thumb (磁吸拉鈕) */
 .progress-thumb {
   position: absolute;

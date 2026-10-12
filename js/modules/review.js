@@ -912,7 +912,7 @@ window.ReviewModule = {
     if (!ticksContainer) return;
     
     const total = this.activeQuestions ? this.activeQuestions.length : 0;
-    if (total <= 1 || total > 70) {
+    if (total <= 1) {
       ticksContainer.innerHTML = '';
       return;
     }

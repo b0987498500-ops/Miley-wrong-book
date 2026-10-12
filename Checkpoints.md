@@ -4,6 +4,41 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v2.26] - 2026-10-12 (徹底根除自然科目跨週倒灌 80 題病灶：精準回歸 10/5 真實 25 題、修復進度條刻度題號丟失問題、側邊欄科目點選預設週次防呆優化、自動收錄 8 道歷史與數學最新錯題，升級題庫至 v231 與快取 v2.01)
+- **類型**：錯題暴增問題修復 / 進度條題號顯示修復 / 歷史週次歸屬純淨化 / 最新國二歷史與數學 8 道錯題收錄 / PWA 快取升級 v2.01
+- **問題根因與麥麥反饋剖析**：
+  1. **10/5 自然題目暴增至 82 題（麥麥反映「自然題目不會這麼多到 80 題」）**：
+     - 原程式 `carryOverUnreviewedQuestionsToCurrentWeek()` 每次載入時，只要判定過去週次題目「未標記複習」，便自動將 `currentMonday` 強制 push 進各題目的 `mondayDates` 陣列中！
+     - 導致 9/21 的 42 題理化/生物、9/28 的 15 題地科全數被強行塞入 10/5（及 10/12），使 10/5 自然題目從真實的 25 題暴增至 82 題。且因本地儲存修改與雲端同步拉扯，造成「題目突然變多、重新整理後又變回原本」的浮動不穩定問題。
+  2. **進度條題號消失（麥麥反映「進度條要有題號，但那一頁卻沒有題號」）**：
+     - 在 `review.js` 第 915 行之 `renderProgressTicks()` 中存在寫死限制：`if (total <= 1 || total > 70) { ticksContainer.innerHTML = ''; return; }`。
+     - 當題目數因跨週倒灌超過 70 題時（82 題），進度條上的刻度點與題號數字（`station-num-label`）直接被粗暴清空！
+  3. **側邊欄科目點擊預設過濾範圍問題**：
+     - 麥麥從側邊欄點選「自然」時，若先前尚未點擊週次晶片，系統預設以 `mondayFilter = 'ALL'` 載入，導致一口氣拉取全學期所有週次的自然題目（共 82 題）。
+- **改進內容**：
+  1. **歷史題目週次純淨化與自動結轉安全化**：
+     - 重構 `carryOverUnreviewedQuestionsToCurrentWeek()`，停用會竄改題目 `mondayDates` 歷史歸屬的強制灌入邏輯，保留每道題目的原始收錄週次。
+     - 於 `DataManager` 初始化加入跨版本清理，自動將受污染題目的 `mondayDates` 還原為乾淨的種子設定，讓 10/5 自然題目精準回歸真實的 **25 題**。
+  2. **進度條刻度題號完全修復與超密集樣式 (`mega-compact-ticks`)**：
+     - 移除 `review.js` 中 `total > 70` 直接清空刻度的限制，確保任何題數下題號均能完整呈現。
+     - 於 `styles.css` 補齊 `.mega-compact-ticks` 樣式，大於 60 題時提供緊湊刻度與懸浮/當前題號浮動提示，兼顧視覺美觀與清晰題號導覽。
+  3. **側邊欄科目點擊預設週次優化**：
+     - 點選側邊欄科目按鈕時，若當前未選定週次，自動優先綁定目前已選週次或本週最新週次，並同步點亮對應週次晶片，避免無預警倒灌全學期題目的混亂。
+  4. **收錄 8 道最新核心錯題（Q161 ~ Q168，歸入 2026-10-12 最新週次）**：
+     - **社會（國二歷史羅馬時期 3 題）**：
+       - `q_soc_hist_rome_republic_three_continents_expansion_161`：自「共和」時期起羅馬積極向外擴張地跨歐亞非三洲。
+       - `q_soc_hist_rome_caesar_dictatorship_first_citizen_162`：羅馬共和末期首先破壞平衡走向獨裁之人為凱撒。
+       - `q_soc_hist_rome_three_periods_chronological_order_163`：羅馬三大時期演進時間順序（王政 → 共和 → 帝國）。
+     - **數學（國二幾何與代數 5 題）**：
+       - `q_math_geom_rectangle_diagonal_fold_area_164`：長方形對摺對角線之等腰三角形性質與畢氏定理求面積（內嵌 YouTube 影音講解連結）。
+       - `q_math_pythagoras_quadrilateral_integer_sides_165`：雙直角三角形共用斜邊平方差整數分解與排除重複邊長。
+       - `q_math_equilateral_side_5_height_area_166`：正三角形邊長 5 求高與面積之 30-60-90 公式。
+       - `q_math_equilateral_area_perimeter_height_167`：正三角形面積 16√3 反求邊長、周長與高（防呆乘以 3）。
+       - `q_math_poly_factor_theorem_ab_value_168`：多項式因式定理代入法 vs 常數項反推秒殺法求 a-b。
+  5. **版本升級與離線快取同步**：
+     - 升級 `STORAGE_KEY` 至 `v231`，`sw.js` 快取版本更新至 `v2.01`。
+     - `index.html` 資源版本更新至 `data.js?v=231`、`review.js?v=219`、`styles.css?v=163`、`sw.js?v=218`。
+
 ## [v2.25] - 2026-10-11 (徹底根治 LocalStorage QuotaExceededError 5MB 上限報錯：新增歷史版本動態清除機制 purgeLegacyStorageKeys 自動清除 170+ 舊版 key 釋放 4.5MB 空間、移除阻斷式 alert 彈窗、升級快取至 v2.00)
 - **類型**：效能與儲存架構優化 / LocalStorage 儲存上限錯誤修復 / 歷史版本快取自動清理 / PWA 快取升級 v2.00
 - **問題根因與控制台報錯**：

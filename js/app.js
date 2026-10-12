@@ -322,8 +322,19 @@ class App {
           window.ArchiveModule.currentSubject = subject;
         }
 
+        // 麥麥防呆優化：點選科目時，若未手動選定週次，優先鎖定目前選中之週次或最新週，避免一口氣倒灌全學期所有舊題目
+        const activeChip = document.querySelector('.monday-chip.active');
+        const defaultMonday = activeChip ? activeChip.dataset.monday : (window.dataManager ? window.dataManager.getCurrentMondayDate() : '2026-10-05');
+        const targetMonday = this.currentMondayFilter || defaultMonday;
+        this.currentMondayFilter = targetMonday;
+
+        // 同步點亮週次 Chip
+        document.querySelectorAll('.monday-chip').forEach(c => {
+          c.classList.toggle('active', c.dataset.monday === targetMonday);
+        });
+
         // Direct jump into Review Mode (Standard view first, let user choose fullscreen)
-        this.startReviewWithFilter(subject, this.currentMondayFilter || 'ALL', false);
+        this.startReviewWithFilter(subject, targetMonday, false);
       });
     });
 

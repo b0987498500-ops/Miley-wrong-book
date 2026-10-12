@@ -3,10 +3,251 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v229';
+const STORAGE_KEY = 'miley_wrong_questions_v231';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+{
+  "id": "q_soc_hist_rome_republic_three_continents_expansion_161",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "國二歷史：古羅馬共和時期的對外擴張與版圖橫跨歐亞非三洲",
+  "uploadDate": "2026-10-12",
+  "mondayDate": "2026-10-12",
+  "mondayDates": [
+    "2026-10-12"
+  ],
+  "weekLabel": "2026-10-12 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 **易錯警示筆記**：羅馬三大時期（王政 → 共和 → 帝國）對外擴張關鍵字！\n1. **自「共和」時期起積極向外擴張**：\n   - 羅馬在共和時期（西元前 509～前 27 年）推翻王政，對外發動布匿戰爭擊敗迦太基，版圖橫跨歐、亞、非三洲！\n   - 帝國時期（西元前 27 年起）屋大維建立元首制，版圖達到全盛，地中海成為羅馬帝國的「內海」。\n2. **審題關鍵字**：注意題幹「**自 ______ 時期起**」，擴張起點正是「共和時期」！",
+  "stem": "自 ______ 時期起，羅馬人積極向外擴張，版圖橫跨歐、亞、非三洲。\n\n○ (A) 王政\n○ (B) 共和\n○ (C) 帝國\n○ (D) 拜占庭",
+  "answer": "(B) 共和",
+  "diagramUrl": "",
+  "solution": "1. **羅馬三大歷史時期分界**：\n   - **王政時期**（西元前 8 世紀～西元前 509 年）：伊特魯里亞人王政統治。\n   - **共和時期**（西元前 509 年～西元前 27 年）：推翻王政建立共和政體，設執政官、元老院與公民大會分權制衡。自此時期起，羅馬人積極對外擴張，征服義大利半島及地中海周邊，版圖橫跨歐、亞、非三洲。\n   - **帝國時期**（西元前 27 年～西元 476 年）：屋大維建立元首制，羅馬進入帝國時代，版圖進一步擴大達到極盛。\n\n2. **破題重點**：題幹提及「自……時期起，羅馬人積極向外擴張，版圖橫跨歐、亞、非三洲」，此起點正是「**共和時期**」。\n\n故本題正確答案為 **(B) 共和**（填空：共和）。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-10-12",
+  "isReviewed": false,
+  "reviewStatus": "unreviewed",
+  "lastReviewDecision": null,
+  "lastReviewedMonday": null,
+  "lastReviewedDate": null,
+  "reviewedMondays": []
+},
+{
+  "id": "q_soc_hist_rome_caesar_dictatorship_first_citizen_162",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "國二歷史：羅馬共和末期政治動盪與凱撒首先破壞平衡走向個人獨裁",
+  "uploadDate": "2026-10-12",
+  "mondayDate": "2026-10-12",
+  "mondayDates": [
+    "2026-10-12"
+  ],
+  "weekLabel": "2026-10-12 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 **易錯警示筆記**：【何人「首先」破壞平衡走向獨裁？】考點精準辨析！\n1. **凱撒（Caesar）**：共和末期征服高盧的軍事統帥，進軍羅馬並出任「終身獨裁官」，集中軍政大權於一身，是**最先打破分權制衡體制、走向個人獨裁**的人！\n2. **屋大維（奧古斯都）**：是凱撒的養子，在凱撒死後結束內戰，正式開啟元首制（帝國時期），自稱「第一公民」。但題目問的是「**何人首先破壞平衡走向獨裁**」，始作俑者是**凱撒**！",
+  "stem": "以下三則資料，分別為羅馬三個時期的人物述說當代的情況。閱讀資料並回答問題：\n資料一：我們有分權且制衡的政治體制，成文法的頒布，使法律的精神得以確立，同時我們也積極向外擴張。\n資料二：國家昔日的平等遭到剝奪，所有人都一股腦兒，仰望聽命於「第一公民」一人。\n資料三：外族的國王非常殘暴、厲行苛政，有朝一日，我們一定要將異族政權推翻，建立一個新的政治體制。\n\n【題目】資料二提及國家昔日的平等遭到剝奪，請問何人首先破壞平衡走向獨裁？\n\n○ (A) 屋大維\n○ (B) 奧古斯都\n○ (C) 凱撒\n○ (D) 君士坦丁",
+  "answer": "(C) 凱撒",
+  "diagramUrl": "",
+  "solution": "1. **題幹資料定位**：\n   - 資料二提及「國家昔日的平等遭到剝奪，所有人都一股腦兒，仰望聽命於『第一公民』一人」，描述的是羅馬走向獨裁與帝國元首統治的轉變。\n\n2. **破題關鍵（何人「首先」走向獨裁）**：\n   - 羅馬共和末期因貧富懸殊、土地兼併與軍閥爭權，憲政秩序瓦解。\n   - **凱撒（Julius Caesar）** 憑藉征服高盧的強大軍隊進軍羅馬，被任命為「終身獨裁官」，獨攬統治大權，是歷史上**最先破壞共和制衡、走向個人軍事獨裁**的代表人物。\n   - 凱撒遇刺後，其養子屋大維（即奧古斯都）擊敗政敵建立帝國（元首制），自稱第一公民。但開啟獨裁先河者為凱撒。\n\n故本題正確答案為 **(C) 凱撒**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-10-12",
+  "isReviewed": false,
+  "reviewStatus": "unreviewed",
+  "lastReviewDecision": null,
+  "lastReviewedMonday": null,
+  "lastReviewedDate": null,
+  "reviewedMondays": []
+},
+{
+  "id": "q_soc_hist_rome_three_periods_chronological_order_163",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "國二歷史：古羅馬歷史演進三大階段時間順序（王政 → 共和 → 帝國）",
+  "uploadDate": "2026-10-12",
+  "mondayDate": "2026-10-12",
+  "mondayDates": [
+    "2026-10-12"
+  ],
+  "weekLabel": "2026-10-12 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 **易錯警示筆記**：羅馬演進三大時期特徵與時間軸速記！\n1. **資料三（王政時期，最先）**：「外族國王非常殘暴、將異族政權推翻」⟹ 指伊特魯里亞人王政統治末期。\n2. **資料一（共和時期，居中）**：「分權制衡體制、成文法（十二表法）、積極向外擴張」⟹ 指西元前 509 年推翻王政後建立的共和政體。\n3. **資料二（帝國時期，最晚）**：「聽命於第一公民一人」⟹ 指西元前 27 年屋大維開創的羅馬帝國。\n- **時間順序**：資料三（王政）→ 資料一（共和）→ 資料二（帝國）！",
+  "stem": "以下三則資料，分別為羅馬三個時期的人物述說當代的情況。閱讀資料並回答問題：\n資料一：我們有分權且制衡的政治體制，成文法的頒布，使法律的精神得以確立，同時我們也積極向外擴張。\n資料二：國家昔日的平等遭到剝奪，所有人都一股腦兒，仰望聽命於「第一公民」一人。\n資料三：外族的國王非常殘暴、厲行苛政，有朝一日，我們一定要將異族政權推翻，建立一個新的政治體制。\n\n【題目】三則資料依時間如何排序？\n\n○ (A) 資料一 → 資料二 → 資料三\n○ (B) 資料二 → 資料三 → 資料一\n○ (C) 資料三 → 資料一 → 資料二\n○ (D) 資料三 → 資料二 → 資料一",
+  "answer": "(C) 資料三 → 資料一 → 資料二",
+  "diagramUrl": "",
+  "solution": "1. **逐一解構三則資料之歷史時期**：\n   - **資料三【王政時期（西元前 8 世紀～西元前 509 年）】**：早期羅馬受外族伊特魯里亞人國王殘暴統治，羅馬人起義推翻苛政，結束王政。\n   - **資料一【共和時期（西元前 509 年～西元前 27 年）】**：推翻王政後建立共和政體，以執政官、元老院與公民大會分權制衡；制定《十二表法》確立成文法精神，並積極對外軍事擴張。\n   - **資料二【帝國時期（西元前 27 年～西元 476 年）】**：共和末期內戰結束，屋大維獲封「奧古斯都」，自稱「第一公民」，開創帝國元首政治。\n\n2. **時間先後排序**：\n   - 順序為：**王政（資料三） → 共和（資料一） → 帝國（資料二）**。\n\n【考卷原版解析】\n資料一：共和時期。資料二：帝國時期。資料三：王政時期。\n\n故本題正確答案為 **(C) 資料三 → 資料一 → 資料二**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-10-12",
+  "isReviewed": false,
+  "reviewStatus": "unreviewed",
+  "lastReviewDecision": null,
+  "lastReviewedMonday": null,
+  "lastReviewedDate": null,
+  "reviewedMondays": []
+},
+{
+  "id": "q_math_geom_rectangle_diagonal_fold_area_164",
+  "examPeriod": "一段",
+  "subject": "數學",
+  "errorReason": "觀念不懂",
+  "concept": "國二數學幾何：長方形紙條對角線對摺之等腰三角形性質與畢氏定理求面積",
+  "uploadDate": "2026-10-12",
+  "mondayDate": "2026-10-12",
+  "mondayDates": [
+    "2026-10-12"
+  ],
+  "weekLabel": "2026-10-12 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 **易錯警示筆記**：【長方形對摺幾何】秒殺兩大定律！\n1. **摺疊對稱 ＋ 平行線內錯角 ＝ 必出等腰三角形！**\n   - 摺疊角相等：∠D'AC ＝ ∠DAC。\n   - 平行線內錯角相等：∠DAC ＝ ∠BCA。\n   - 兩底角相等 ⟹ △APC 為等腰三角形，斜邊 AP ＝ CP！\n2. **設未知數 x 技巧**：\n   - 設直角短邊 BP ＝ x，則 CP ＝ 6 － x ⟹ 斜邊 AP ＝ 6 － x。\n   - 代入畢氏定理：2² ＋ x² ＝ (6 － x)² ⟹ 12x ＝ 32 ⟹ x ＝ 8/3。\n   - △ABP 面積 ＝ 1/2 × 2 × (8/3) ＝ 8/3！",
+  "stem": "如圖，長方形紙條中，將此紙條沿對角線 AC 對摺，設 P 為 AD 與 BC 的交點，AB = 2，AD = 6，則 △ABP 的面積為多少平方單位？\n\n○ (A) 5/3\n○ (B) 8/3\n○ (C) 3\n○ (D) 10/3",
+  "answer": "(B) 8/3",
+  "diagramUrl": "",
+  "solution": "🎥 **老師影音詳解教學**：https://www.youtube.com/watch?v=_q-gENhsLjU\n\n### 💡 完整破題四步驟：\n\n1. **第一步：由摺疊與平行線證明等腰三角形**：\n   - 沿對角線 $\\overline{AC}$ 對摺，摺疊角相等：$\\angle D'AC = \\angle DAC$。\n   - 長方形對邊平行 $\\overline{AD} // \\overline{BC}$，內錯角相等：$\\angle DAC = \\angle BCA$。\n   - 因此 $\\angle D'AC = \\angle BCA$，即在 $\\triangle APC$ 中兩底角相等：\n     $$\\triangle APC \\text{ 為等腰三角形} \\implies \\overline{AP} = \\overline{CP}$$\n\n2. **第二步：設未知數 $x$，建立畢氏定理方程式**：\n   - 長方形中 $\\overline{BC} = \\overline{AD} = 6$。\n   - 設 $\\overline{BP} = x$，則 $\\overline{CP} = 6 - x$。\n   - 由 $\\overline{AP} = \\overline{CP}$ 可得斜邊 $\\overline{AP} = 6 - x$。\n   - 在直角 $\\triangle ABP$ 中（$\\angle B = 90^\\circ, \\overline{AB} = 2$）：\n     $$\\overline{AB}^2 + \\overline{BP}^2 = \\overline{AP}^2$$\n     $$2^2 + x^2 = (6 - x)^2$$\n     $$4 + x^2 = 36 - 12x + x^2$$\n\n3. **第三步：解一元一次方程式求 $x$**：\n   $$4 = 36 - 12x \\implies 12x = 32 \\implies x = \\frac{32}{12} = \\frac{8}{3}$$\n\n4. **第四步：計算 $\\triangle ABP$ 面積**：\n   $$\\triangle ABP \\text{ 面積} = \\frac{1}{2} \\times \\overline{AB} \\times \\overline{BP} = \\frac{1}{2} \\times 2 \\times \\frac{8}{3} = \\frac{8}{3}$$\n\n故本題正確答案為 **(B) 8/3**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-10-12",
+  "isReviewed": false,
+  "reviewStatus": "unreviewed",
+  "lastReviewDecision": null,
+  "lastReviewedMonday": null,
+  "lastReviewedDate": null,
+  "reviewedMondays": []
+},
+{
+  "id": "q_math_pythagoras_quadrilateral_integer_sides_165",
+  "examPeriod": "一段",
+  "subject": "數學",
+  "errorReason": "觀念不懂",
+  "concept": "國二數學：共用斜邊直角三角形畢氏定理、平方差整數分解與排除重複邊長",
+  "uploadDate": "2026-10-12",
+  "mondayDate": "2026-10-12",
+  "mondayDates": [
+    "2026-10-12"
+  ],
+  "weekLabel": "2026-10-12 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 **易錯警示筆記**：【共用斜邊平方差整數分解】避坑重點！\n1. **列出平方差等式**：\n   - AC² ＝ 7² ＋ a² ＝ 9² ＋ b² ⟹ a² － b² ＝ 9² － 7² ＝ 81 － 49 ＝ 32。\n   - (a ＋ b)(a － b) ＝ 32，因同奇同偶，兩者必同為正偶數！\n2. **排除重複邊長（審題關鍵！）**：\n   - 組合 (16, 2) ⟹ a ＝ 9, b ＝ 7。但題目要求「四邊均為整數且**不等長**」，已有 AB＝7, AD＝9，若 a＝9, b＝7 則重複，**不合**！\n   - 組合 (8, 4) ⟹ a ＝ 6, b ＝ 2。四邊分別為 7, 6, 2, 9，完全不等長，**合**！\n3. **總面積** ＝ 1/2×7×6 ＋ 1/2×9×2 ＝ 21 ＋ 9 ＝ 30！",
+  "stem": "如圖，四邊形 ABCD 為兩個直角三角形合併而成（∠B = ∠D = 90°），已知四邊長均為整數且不等長，若 AB = 7，AD = 9，則四邊形 ABCD 面積為多少平方單位？\n\n○ (A) 30\n○ (B) 36\n○ (C) 42\n○ (D) 48",
+  "answer": "(A) 30",
+  "diagramUrl": "",
+  "solution": "1. **共用斜邊 AC 建立方程式**：\n   - 設 $\\overline{BC} = a, \\overline{CD} = b$（$a, b$ 為正整數）。\n   - 在直角 $\\triangle ABC$ 中：$\\overline{AC}^2 = 7^2 + a^2$。\n   - 在直角 $\\triangle ADC$ 中：$\\overline{AC}^2 = 9^2 + b^2$。\n   - 兩式相等：\n     $$7^2 + a^2 = 9^2 + b^2 \\implies a^2 - b^2 = 9^2 - 7^2 = 81 - 49 = 32$$\n     $$(a + b)(a - b) = 32$$\n\n2. **因數分解與條件檢驗**：\n   - 因為 $(a+b) + (a-b) = 2a$（為偶數），所以 $(a+b)$ 與 $(a-b)$ 必同為偶數。\n   - 將 32 拆解為兩正偶數之積（$a+b > a-b$）：\n     - **組合一**：$a+b = 16, a-b = 2 \\implies a = 9, b = 7$。\n       ⚠️ 題目條件：「四邊長均為整數且**不等長**」，若 $a=9, b=7$ 則四邊長為 $7, 9, 7, 9$，邊長重複，**不合**！\n     - **組合二**：$a+b = 8, a-b = 4 \\implies a = 6, b = 2$。\n       四邊長分別為 $7, 6, 2, 9$，全部為整數且互不相等，**完全合適**！\n\n3. **計算四邊形 ABCD 面積**：\n   $$\\text{面積} = \\triangle ABC + \\triangle ADC = \\left(\\frac{1}{2} \\times 7 \\times 6\\right) + \\left(\\frac{1}{2} \\times 9 \\times 2\\right) = 21 + 9 = 30$$\n\n故本題正確答案為 **(A) 30**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-10-12",
+  "isReviewed": false,
+  "reviewStatus": "unreviewed",
+  "lastReviewDecision": null,
+  "lastReviewedMonday": null,
+  "lastReviewedDate": null,
+  "reviewedMondays": []
+},
+{
+  "id": "q_math_equilateral_side_5_height_area_166",
+  "examPeriod": "一段",
+  "subject": "數學",
+  "errorReason": "觀念不懂",
+  "concept": "國二數學：30-60-90 特殊直角三角形邊長比與正三角形高、面積公式",
+  "uploadDate": "2026-10-12",
+  "mondayDate": "2026-10-12",
+  "mondayDates": [
+    "2026-10-12"
+  ],
+  "weekLabel": "2026-10-12 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 **易錯警示筆記**：【正三角形三大必背黃金公式】！\n1. **高公式**：$h = \\frac{\\sqrt{3}}{2}a$\n2. **面積公式**：$A = \\frac{\\sqrt{3}}{4}a^2$\n3. **推導原理**：從頂點向底邊作高，形成 30°-60°-90° 直角三角形，邊長比為 $1 : \\sqrt{3} : 2$。底邊一半為 $a/2$，高為 $(\\sqrt{3}/2)a$，面積為 $(1/2) \\times a \\times (\\sqrt{3}/2)a = (\\sqrt{3}/4)a^2$！",
+  "stem": "正三角形的邊長是 5，求其高與面積。\n\n○ (A) 高 = 5√3/2，面積 = 25√3/4\n○ (B) 高 = 5√3/4，面積 = 25√3/2\n○ (C) 高 = 5/2，面積 = 25/4\n○ (D) 高 = 5√2/2，面積 = 25√2/4",
+  "answer": "(A) 高 = 5√3/2，面積 = 25√3/4",
+  "diagramUrl": "",
+  "solution": "1. **公式推導**：\n   - 正三角形邊長為 $a$。\n   - 作垂直高平分底邊，底邊的一半為 $\\frac{a}{2}$。\n   - 形成 $30^\\circ-60^\\circ-90^\\circ$ 直角三角形，邊長比為 $1 : \\sqrt{3} : 2$。\n   - 高 $h = \\frac{\\sqrt{3}}{2}a$。\n   - 面積 $A = \\frac{1}{2} \\times \\text{底} \\times \\text{高} = \\frac{1}{2} \\times a \\times \\left(\\frac{\\sqrt{3}}{2}a\\right) = \\frac{\\sqrt{3}}{4}a^2$。\n\n2. **代入邊長 $a = 5$**：\n   - **高** $= \\frac{\\sqrt{3}}{2} \\times 5 = \\mathbf{\\frac{5\\sqrt{3}}{2}}$\n   - **面積** $= \\frac{\\sqrt{3}}{4} \\times 5^2 = \\mathbf{\\frac{25\\sqrt{3}}{4}}$\n\n故本題正確答案為 **(A)**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-10-12",
+  "isReviewed": false,
+  "reviewStatus": "unreviewed",
+  "lastReviewDecision": null,
+  "lastReviewedMonday": null,
+  "lastReviewedDate": null,
+  "reviewedMondays": []
+},
+{
+  "id": "q_math_equilateral_area_perimeter_height_167",
+  "examPeriod": "一段",
+  "subject": "數學",
+  "errorReason": "觀念不懂",
+  "concept": "國二數學：正三角形面積逆向推導邊長、周長與高（防呆乘3）",
+  "uploadDate": "2026-10-12",
+  "mondayDate": "2026-10-12",
+  "mondayDates": [
+    "2026-10-12"
+  ],
+  "weekLabel": "2026-10-12 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 **易錯警示筆記**：【面積反求周長與高】逆向破題步驟！\n1. **第一步（求邊長 a）**：$(\\sqrt{3}/4)a^2 = 16\\sqrt{3} \\implies a^2/4 = 16 \\implies a^2 = 64 \\implies a = 8$。\n2. **第二步（注意題目問的是「周長」）**：\n   - ⚠️ 算出 $a=8$ 切莫直接填答案！題目問的是「**周長**」，周長 $= 3a = 3 \\times 8 = 24$ 公分！\n3. **第三步（求高）**：$h = (\\sqrt{3}/2)a = (\\sqrt{3}/2) \\times 8 = 4\\sqrt{3}$ 公分！",
+  "stem": "若一正三角形的面積為 16√3 平方公分，則此三角形的周長與高分別為何？\n\n○ (A) 周長 = 8 公分，高 = 4√3 公分\n○ (B) 周長 = 24 公分，高 = 4√3 公分\n○ (C) 周長 = 24 公分，高 = 8√3 公分\n○ (D) 周長 = 16 公分，高 = 4√3 公分",
+  "answer": "(B) 周長 = 24 公分，高 = 4√3 公分",
+  "diagramUrl": "",
+  "solution": "1. **第一步：由面積公式逆推邊長 $a$**：\n   $$\\frac{\\sqrt{3}}{4}a^2 = 16\\sqrt{3}$$\n   - 兩邊同除以 $\\sqrt{3}$：\n     $$\\frac{a^2}{4} = 16$$\n   - 兩邊同乘以 4：\n     $$a^2 = 64 \\implies a = 8 \\quad (\\text{邊長為正})$$\n\n2. **第二步：求周長**：\n   $$\\text{周長} = 3 \\times a = 3 \\times 8 = \\mathbf{24} \\text{ 公分}$$\n\n3. **第三步：求高**：\n   $$\\text{高 } h = \\frac{\\sqrt{3}}{2}a = \\frac{\\sqrt{3}}{2} \\times 8 = \\mathbf{4\\sqrt{3}} \\text{ 公分}$$\n\n故本題正確答案為 **(B) 周長 = 24 公分，高 = 4√3 公分**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-10-12",
+  "isReviewed": false,
+  "reviewStatus": "unreviewed",
+  "lastReviewDecision": null,
+  "lastReviewedMonday": null,
+  "lastReviewedDate": null,
+  "reviewedMondays": []
+},
+{
+  "id": "q_math_poly_factor_theorem_ab_value_168",
+  "examPeriod": "一段",
+  "subject": "數學",
+  "errorReason": "觀念不懂",
+  "concept": "國二數學：多項式因式定理代入法 vs 常數項反推秒殺法求 a-b",
+  "uploadDate": "2026-10-12",
+  "mondayDate": "2026-10-12",
+  "mondayDates": [
+    "2026-10-12"
+  ],
+  "weekLabel": "2026-10-12 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 **易錯警示筆記**：【因式求未知數】放棄長除法，改用因式定理秒殺！\n1. **因式定理（令因式為 0 代入使多項式等於 0）**：\n   - 代入 $x = -2$：$(-2)^3 + a(-2)^2 + b(-2) - 6 = 0 \\implies 2a - b = 7 \\quad \\cdots (1)$\n   - 代入 $x = 3$：$(3)^3 + a(3)^2 + b(3) - 6 = 0 \\implies 3a + b = -7 \\quad \\cdots (2)$\n   - $(1) + (2)$ 直接消去 $b$：$5a = 0 \\implies a = 0$。\n   - 代回 $(1)$：$-b = 7 \\implies b = -7$。\n   - 所求 $a - b = 0 - (-7) = 7$！\n2. **常數項反推秒殺法（口算 15 秒）**：\n   - $(x+2)(x-3)(x-k) = (x^2-x-6)(x-k)$，常數項 $(-6)(-k) = -6 \\implies k = -1$。\n   - $(x^2-x-6)(x+1) = x^3 - 7x - 6 \\implies a = 0, b = -7 \\implies a - b = 7$！",
+  "stem": "若 x+2 與 x-3 均為 x³ + ax² + bx - 6 的因式，求 a - b 之值。\n\n○ (A) -7\n○ (B) 0\n○ (C) 7\n○ (D) 14",
+  "answer": "(C) 7",
+  "diagramUrl": "",
+  "solution": "### 💡 兩種超快秒殺解法：\n\n#### 🏆 解法一：因式定理代入法（最推薦！最不易出錯）\n設 $f(x) = x^3 + ax^2 + bx - 6$：\n1. 因為 $x+2$ 是因式，令 $x = -2$ 代入得餘式為 0：\n   $$f(-2) = (-2)^3 + a(-2)^2 + b(-2) - 6 = 0$$\n   $$-8 + 4a - 2b - 6 = 0 \\implies 4a - 2b = 14 \\implies 2a - b = 7 \\quad \\cdots (1)$$\n2. 因為 $x-3$ 是因式，令 $x = 3$ 代入得餘式為 0：\n   $$f(3) = 3^3 + a(3)^2 + b(3) - 6 = 0$$\n   $$27 + 9a + 3b - 6 = 0 \\implies 9a + 3b = -21 \\implies 3a + b = -7 \\quad \\cdots (2)$$\n3. 將 $(1) + (2)$ 相加消去 $b$：\n   $$(2a - b) + (3a + b) = 7 + (-7) \\implies 5a = 0 \\implies a = 0$$\n4. 代回 $(1)$：\n   $$2(0) - b = 7 \\implies -b = 7 \\implies b = -7$$\n5. 計算所求：\n   $$a - b = 0 - (-7) = \\mathbf{7}$$\n\n---\n\n#### ⚡ 解法二：常數項反推秒殺法（口算 15 秒）\n1. 三次多項式首項係數為 1，常數項為 $-6$。\n2. 已知兩因式為 $(x+2)$ 與 $(x-3)$，乘積為 $(x^2 - x - 6)$。\n3. 設第三個因式為 $(x - k)$：\n   $$(x^2 - x - 6)(x - k) = x^3 + ax^2 + bx - 6$$\n4. 比對常數項：$(-6) \\times (-k) = -6 \\implies 6k = -6 \\implies k = -1$。\n5. 故第三個因式為 $(x + 1)$，展開：\n   $$(x^2 - x - 6)(x + 1) = x^3 - 7x - 6$$\n6. 比對係數直接得到：$a = 0, b = -7 \\implies a - b = 0 - (-7) = \\mathbf{7}$！\n\n故本題正確答案為 **(C) 7**。",
+  "errorCount": 1,
+  "ebbinghausStage": 1,
+  "consecutiveMastered": 0,
+  "isArchived": false,
+  "nextReviewDate": "2026-10-12",
+  "isReviewed": false,
+  "reviewStatus": "unreviewed",
+  "lastReviewDecision": null,
+  "lastReviewedMonday": null,
+  "lastReviewedDate": null,
+  "reviewedMondays": []
+},
+
   {
     "id": "q_eng_vocab_lazy_couch_housework_155",
     "examPeriod": "一段",
@@ -8188,6 +8429,16 @@ class DataManager {
       }
     });
 
+    // 依麥麥指示：徹底清除舊版 AutoCarryover 污染進歷史題目的跨週 mondayDates 標籤，讓各週題數精準回歸真實收錄狀況
+    INITIAL_SEED_DATA.forEach(seed => {
+      const idx = this.questions.findIndex(q => q && q.id === seed.id);
+      if (idx !== -1 && Array.isArray(seed.mondayDates)) {
+        this.questions[idx].mondayDates = [...seed.mondayDates];
+        this.questions[idx].mondayDate = seed.mondayDate;
+        this.questions[idx].weekLabel = seed.weekLabel;
+      }
+    });
+
     // Strictly purge questions before 2026-09-07 as requested by user
     if (Array.isArray(this.questions)) {
       this.questions = this.questions.filter(q => q && (q.mondayDate >= '2026-09-07' || (Array.isArray(q.mondayDates) && q.mondayDates.some(m => m >= '2026-09-07'))));
@@ -8386,41 +8637,9 @@ class DataManager {
    * 將其自動編入最新一週 (currentMonday) 的複習隊列中！
    */
   carryOverUnreviewedQuestionsToCurrentWeek() {
-    const currentMonday = this.getCurrentMondayDate();
-    if (!currentMonday) return 0;
-
-    let carriedCount = 0;
-
-    this.questions.forEach(q => {
-      if (!q || q.isArchived) return;
-
-      const mondays = Array.isArray(q.mondayDates) && q.mondayDates.length > 0
-        ? q.mondayDates
-        : [q.mondayDate || currentMonday];
-
-      const hasPastWeek = mondays.some(m => m && m < currentMonday);
-      if (!hasPastWeek) return;
-
-      const isReviewedInCurrent = this.isQuestionReviewed(q, currentMonday);
-      const isReviewedOverall = q.isReviewed === true || q.reviewStatus === 'reviewed';
-
-      if (!isReviewedInCurrent && !isReviewedOverall) {
-        if (!mondays.includes(currentMonday)) {
-          mondays.push(currentMonday);
-          q.mondayDates = mondays;
-          q.mondayDate = currentMonday;
-          q.weekLabel = `${currentMonday} (最新週次)`;
-          carriedCount++;
-        }
-      }
-    });
-
-    if (carriedCount > 0) {
-      this.save();
-      console.log(`[AutoCarryover] 已將 ${carriedCount} 道過去週次未複習題目自動編入最新週 (${currentMonday})`);
-    }
-
-    return carriedCount;
+    // 依麥麥指示：題目所屬歷史週次（mondayDates）必須保持純淨且固定，
+    // 絕不自動修改歷史題目的 mondayDates，避免題目數量異常膨脹或忽多忽少！
+    return 0;
   }
 
   isQuestionReviewed(q, mondayDate = null) {
