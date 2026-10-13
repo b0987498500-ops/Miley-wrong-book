@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v233';
+const STORAGE_KEY = 'miley_wrong_questions_v234';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -385,6 +385,36 @@ const INITIAL_SEED_DATA = [
     "answer": "(B) any other boy",
     "diagramUrl": "",
     "solution": "1. **語境與同範圍比較分析**：\n   - 主詞 Brian 是班上的學生（in his class），屬於「同班級」這個相同範圍內。\n   - 同範圍的比較級必須排除主詞本人，因此要用 other 將 Brian 排除在外。\n\n2. **選項文法結構逐一檢驗**：\n   - (A) any the boy：any 與 the 皆為限定詞（Determiners），不可重疊並列使用，且缺少 other。\n   - (B) any other boy：完全正確！any other 後面接單數名詞 boy，符合同範圍比較排除自身之標準句型。\n   - (C) all the other boy：錯誤！all the other 後面必須接複數名詞（應為 all the other boys），此處 boy 為單數。\n   - (D) all boy：all 後面接可數名詞必須為複數（all boys），且未加 the other 排除 Brian 本身。\n\n故本題正確答案為 (B)。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-13",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_modal_must_deduction_love_wife_174",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "助動詞 must 之肯定推測（一定、必定）／情境語氣與助動詞辨析",
+    "uploadDate": "2026-10-13",
+    "mondayDate": "2026-10-12",
+    "mondayDates": [
+      "2026-10-12"
+    ],
+    "weekLabel": "2026-10-12 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【must 的兩大考點】義務「必須」vs. 推論「一定」！\n1. **肯定推測用法（高度確定）**：\n   - must + 原形動詞：表示「必定、一定」（推測把握度高達 95% 以上）。\n   - 從前後文情境線索：*always keep your wife in mind*（心裡總惦記著老婆）與 *How lucky she is!*（她真幸運），強烈推論出你「一定」很愛她！\n2. **選項致命破綻**：\n   - (A) has to：主詞是 You，動詞不能用 has（主謂不一致秒殺）！且 have to 表「不得不」，語意荒謬。\n   - (B) should（應該）：表建議，愛一個人不是被規勸的義務。\n   - (C) need to（需要）：表需求，愛不是任務，語氣不符。",
+    "stem": "You always keep your wife in mind. You ______ love her a lot. How lucky she is!\n\n○ (A) has to\n○ (B) should\n○ (C) need to\n○ (D) must",
+    "answer": "(D) must",
+    "diagramUrl": "",
+    "solution": "1. **前後文語境與情感情態分析**：\n   - 第一句：「You always keep your wife in mind.（你總是把妻子放在心上／念念不忘妻子）」。\n   - 第三句感嘆句：「How lucky she is!（她是多麼幸運啊！）」。\n   - 中間句是根據前句事實所做出的高度肯定推論：你「**一定**」非常深愛著她。\n\n2. **助動詞詞義與文法結構檢驗**：\n   - (A) has to：主詞為第二人稱 You，若使用 have to 形式也必須是 have to 而非 has to，文法結構錯誤直接排除；且 have to 表示「被迫、不得不」，語意不符。\n   - (B) should：表示「應該」（給予勸告或道德責任），語氣生硬且不合情理。\n   - (C) need to：表示「需要」，不符語境。\n   - (D) must：助動詞除了「必須」之外，最常考的用法即為「**肯定推測（一定、必定）**」，完全符合上下文邏輯。\n\n故本題正確答案為 **(D)**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
