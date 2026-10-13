@@ -4,6 +4,25 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v2.28] - 2026-10-13 (自動收錄 5 道國中英語必考比較級與最高級核心考題：形容詞補語 more careful vs 副詞修飾 more carefully、109會考劣等最高級 the least、同範圍比較排除自身 all the other buildings vs any other boy Q169~Q173，升級數據庫至 v233，快取升級 v2.03)
+- **類型**：錯題自動收錄 / 國中英語 / 形容詞 vs 情狀副詞比較級 / 109年會考英語第15題劣等最高級 / 同範圍比較排除自身原則 / 數據庫升級 v233 / 快取升級 v2.03
+- **主要變更**：
+  1. **收錄 5 道英語比較級與最高級經典考題（Q169～Q173，歸入 2026-10-12 最新週次）**：
+     - `q_eng_grammar_more_careful_be_verb_169`（英文）：空格受主要子句 be 動詞 was 支配需接形容詞作主詞補語，火災發生前後心態對照使用比較級 **more careful**，正解 **(B)**。
+     - `q_eng_grammar_more_carefully_drive_than_170`（英文）：修飾一般動作動詞 drives 必須使用情狀副詞，句中有 than 表示兩者比較使用副詞比較級 **more carefully**，正解 **(B)**。
+     - `q_eng_grammar_the_least_important_jeans_171`（英文）：出自 109 年國中教育會考第 15 題，由第二句「even more about the shape and the size...」語意推論價格為所有考慮中「最不重要」的事，使用劣等最高級 **the least**，附 YouTube 影音詳解連結，正解 **(D)**。
+     - `q_eng_grammar_all_the_other_buildings_taipei101_172`（英文）：臺北 101 同範圍比較必須使用 other 排除自身避免邏輯矛盾，搭配複數名詞 buildings 使用 **all the other buildings**（對比 any other + 單數 building），正解 **(B)**。
+     - `q_eng_grammar_any_other_boy_thinner_than_173`（英文）：Brian 同班同範圍比較排除自身，使用 **any other boy**（any other 搭配單數名詞 boy，對比 all the other + 複數 boys），正解 **(B)**。
+  2. **零符號純淨排版與 FIFO 自然時間序**：
+     - 所有題幹、選項、解析皆嚴格依循純淨繁體中文排版，無未渲染 LaTeX 代碼。
+     - 末尾題號自然遞增（Q169～Q173），自然銜接在 Q168 之後，確保複習隊列先收錄在前、後收錄在後。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v233`（`miley_wrong_questions_v233`），無痛自動繼承現有本地進度並觸發舊版快取清理。
+     - Service Worker 快取名稱升級至 `miley-pwa-cache-v2.03`。
+     - 核心腳本更新版本標籤：`index.html` 升級 `sw.js?v=220` 與 `js/data.js?v=233`。
+
+---
+
 ## [v2.27] - 2026-10-12 (麥麥做題進度全面對齊與零死角修復：烘焙 190 道已複習狀態至種子資料庫與雲端、修復跨週日期造成已複習標記與進度條不同步問題、根除雲端拉取歷史週次再污染、修復 Canvas2D willReadFrequently 警告，升級題庫至 v232 與快取 v2.02)
 - **類型**：複習進度完全對齊 / 跨週判定 Bug 修復 / 雲端週次防污染 / Canvas2D 效能警告修復 / PWA 快取升級 v2.02
 - **麥麥語音反饋與控制台報錯深度剖析**：
