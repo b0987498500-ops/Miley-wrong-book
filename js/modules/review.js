@@ -630,6 +630,7 @@ window.ReviewModule = {
   currentMondayFilter: null,
 
   loadReviewQueue: function(subjectFilter = null, mondayFilter = null, targetIndex = null) {
+    this.skippedQuestionIds = new Set();
     if (subjectFilter !== undefined) this.currentSubjectFilter = subjectFilter;
     if (mondayFilter !== undefined) {
       this.currentMondayFilter = mondayFilter;
@@ -804,6 +805,11 @@ window.ReviewModule = {
         return keyA.localeCompare(keyB);
       });
       unreviewed.sort((a, b) => {
+        const isSkipA = this.skippedQuestionIds && this.skippedQuestionIds.has(a.id);
+        const isSkipB = this.skippedQuestionIds && this.skippedQuestionIds.has(b.id);
+        // 被跳過的難題永久堅定留在未複習隊列的最末尾（直到所有其他未跳過題目都完成）
+        if (isSkipA && !isSkipB) return 1;
+        if (!isSkipA && isSkipB) return -1;
         const keyA = window.dataManager.getQuestionSortKey(a);
         const keyB = window.dataManager.getQuestionSortKey(b);
         return keyA.localeCompare(keyB);
@@ -831,12 +837,23 @@ window.ReviewModule = {
 
     this.saveCurrentQuestionScratchState();
 
+    if (!this.skippedQuestionIds) {
+      this.skippedQuestionIds = new Set();
+    }
+    this.skippedQuestionIds.add(currentQ.id);
+
+    // 移至隊列最後一題
     const [item] = this.activeQuestions.splice(this.currentIndex, 1);
     this.activeQuestions.push(item);
     this.showToast('⏭️ 已將本題移至【隊列最後一題】，先做其它題目再來挑戰！');
 
-    if (this.currentIndex >= this.activeQuestions.length) {
-      this.currentIndex = 0;
+    // 重新排序 unreviewed 隊列，確保被跳過題目堅定排列在所有未複習題目之後
+    this.reorderQueueReviewedFirst();
+
+    const reviewedCount = this.activeQuestions.filter(q => this.isQuestionReviewed(q)).length;
+    // 下一題為目前第一個未被複習的題目（絕非被跳過的題目）
+    if (this.currentIndex >= this.activeQuestions.length || this.currentIndex < reviewedCount) {
+      this.currentIndex = reviewedCount;
     }
 
     this.renderCurrentCard();
@@ -1575,7 +1592,7 @@ window.ReviewModule = {
         skipBtn.title = '本題已是【已複習】狀態，點擊前往下一題';
         skipBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i> 下一題';
       } else {
-        skipBtn.title = '這題較複雜，先跳過往後排一個，稍後再回來挑戰';
+        skipBtn.title = '這題較複雜，先跳過排到最後一題，等做完其它題目再回來挑戰';
         skipBtn.innerHTML = '<i class="fa-solid fa-forward-step"></i> 先跳過，晚點做';
       }
     }
@@ -1701,6 +1718,9 @@ window.ReviewModule = {
 
     // 1. Mark as reviewed in session and in question object
     this.sessionReviewedIds.add(q.id);
+    if (this.skippedQuestionIds) {
+      this.skippedQuestionIds.delete(q.id);
+    }
     q.isReviewed = true;
     q.reviewStatus = 'reviewed';
 

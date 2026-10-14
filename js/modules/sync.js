@@ -526,23 +526,19 @@ window.SyncModule = {
         });
       }
 
-      // 4. 下週排程 (mondayDates) 安全對齊：
-      // 依麥麥指示：種子題目所屬歷史週次絕對固定純淨，嚴禁跨週倒灌或污染！
-      const isSeed = Array.isArray(INITIAL_SEED_DATA) && INITIAL_SEED_DATA.some(s => s && s.id === localQ.id);
-      if (!isSeed) {
-        if (!Array.isArray(localQ.mondayDates)) localQ.mondayDates = [];
-        const removedForThisQ = rmMap[localQ.id] || [];
-        if (Array.isArray(remote.mds)) {
-          remote.mds.forEach(m => {
-            if (!localQ.mondayDates.includes(m) && !removedForThisQ.includes(m)) {
-              localQ.mondayDates.push(m);
-              hasUpdate = true;
-            }
-          });
-        }
-        if (remote.md && !removedForThisQ.includes(remote.md)) {
-          localQ.mondayDate = remote.md;
-        }
+      // 4. 下週排程 (mondayDates) 安全對齊：允許跨裝置同步未擊敗題目滾動至新一週的排程
+      if (!Array.isArray(localQ.mondayDates)) localQ.mondayDates = [];
+      const removedForThisQ = rmMap[localQ.id] || [];
+      if (Array.isArray(remote.mds)) {
+        remote.mds.forEach(m => {
+          if (!localQ.mondayDates.includes(m) && !removedForThisQ.includes(m)) {
+            localQ.mondayDates.push(m);
+            hasUpdate = true;
+          }
+        });
+      }
+      if (remote.md && !removedForThisQ.includes(remote.md)) {
+        localQ.mondayDate = remote.md;
       }
 
       // 5. 做題歷史紀錄合併
