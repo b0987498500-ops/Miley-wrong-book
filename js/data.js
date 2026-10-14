@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v234';
+const STORAGE_KEY = 'miley_wrong_questions_v235';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -420,6 +420,66 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-10-13",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_bio_ecology_gut_microbiota_community_level_175",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "國中生物：生命世界與生態系層級（個體 → 族群 → 群集 → 生態系 → 生物圈）／腸道菌相由多種細菌組成屬於「群集」",
+    "uploadDate": "2026-10-14",
+    "mondayDate": "2026-10-12",
+    "mondayDates": [
+      "2026-10-12"
+    ],
+    "weekLabel": "2026-10-12 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【生態層次秒殺口訣：看物種數量與非生物環境！】\n1. **族群（同種生物）**：例如腸道內的「大腸桿菌」。\n2. **群集（多種生物總和）**：題幹強調「超過 500 種細菌，有益菌也有壞菌，統稱腸道菌相」，包含數百種不同物種且不含無生命環境，標準為「群集」！\n3. **生態系（群集＋環境）**：若加上腸道黏液、pH值與消化液環境，才構成微生態系。\n4. 影音詳解可參閱：https://www.youtube.com/watch?v=TwF1ulrvGyY",
+    "stem": "人類腸道中有超過 500 種細菌，其中有益菌也有壞菌，這些細菌統稱為腸道菌相，研究發現腸道菌相會隨著飲食習慣和生活型態而改變。從生態學的角度來看，「腸道菌相」可以視為下列哪一個層級？\n\n○ (A) 族群\n○ (B) 群集\n○ (C) 生態系\n○ (D) 生物圈",
+    "answer": "(B) 群集",
+    "diagramUrl": "",
+    "solution": "1. **生態組織層級定義解析**：\n   - **族群**：生活在同一區域的「同一物種」個體總和。\n   - **群集**：生活在同一環境中的「所有不同種生物族群之總合」（僅含生物，不含非生物環境）。\n   - **生態系**：生物群集與其所生存的非生物環境（如陽光、水、溫度、土壤、消化液等）共同組成的互動體系。\n   - **生物圈**：地球上所有生物及其生存環境的總稱。\n\n2. **破題重點分析**：\n   - 題幹明確指明「人類腸道中有超過 500 種細菌，其中有益菌也有壞菌，這些細菌統稱為腸道菌相」。\n   - 因為包含多種不同物種的細菌，排除了 (A) 族群；\n   - 又因題目僅指「腸道菌相（細菌本身）」，未包含非生物環境（腸壁黏膜、消化液等），故排除了 (C) 生態系。\n\n故本題正確答案為 **(B) 群集**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-14",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_bio_symbiosis_commensalism_remora_shark_176",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "國中生物：生物間交互作用關係（片利共生 ＋/0、互利共生 ＋/＋、寄生 ＋/－、捕食 ＋/－）／鮣魚與鯊魚為片利共生",
+    "uploadDate": "2026-10-14",
+    "mondayDate": "2026-10-12",
+    "mondayDates": [
+      "2026-10-12"
+    ],
+    "weekLabel": "2026-10-12 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【生物互動關係四天王符號與速記經典】\n1. **片利共生（＋, 0）**：一方得利、一方沒影響！\n   - **鮣魚與鯊魚**（吸附搭便車＋吃殘渣，鯊魚無影響）、**山蘇／鳥巢蕨附生於大樹**（爭取陽光，大樹無害無利）。\n2. **互利共生（＋, ＋）**：雙方雙贏、互相依賴！\n   - **螞蟻與蚜蟲**（蜜露換保鏢）、**小丑魚與海葵**、**地衣（藻類＋真菌）**、**根瘤菌與豆科植物**、**榕小蜂與稜果榕**。\n3. **寄生（＋, －）**：一方獲利、一方受害！\n   - **寄生蜂與蛾幼蟲**、**跳蚤與狗**、**菟絲子與樹木**。",
+    "stem": "生物間「共生」的關係又可細分成「片利共生」與「互利共生」，請問下列何者是屬於「片利共生」的關係？\n\n○ (A) 鮣魚、鯊魚\n○ (B) 螞蟻、蚜蟲\n○ (C) 榕小蜂、稜果榕\n○ (D) 寄生蜂、蛾",
+    "answer": "(A) 鮣魚、鯊魚",
+    "diagramUrl": "",
+    "solution": "1. **生物間交互作用利益符號速記表**：\n   - **互利共生（＋, ＋）**：雙方皆獲益，彼此互助。\n   - **片利共生（＋, 0）**：一方獲益，另一方無害也無益。\n   - **寄生（＋, －）**：寄生者獲益，宿主受害。\n   - **捕食（＋, －）**：捕食者獲益，被捕食者死亡。\n   - **競爭（－, －）**：爭奪相同資源，雙方皆蒙受負面代價。\n\n2. **選項逐一精闢解析**：\n   - **(A) 鮣魚、鯊魚【片利共生（＋, 0），本題正解】**：鮣魚利用特化的背鰭吸盤附著於鯊魚體表，隨鯊魚游動並分食殘渣（鮣魚獲利 ＋）；鯊魚體型龐大且不受影響，無受害也無獲利（鯊魚無影響 0）。\n   - **(B) 螞蟻、蚜蟲【互利共生（＋, ＋）】**：蚜蟲提供含糖蜜露給螞蟻（螞蟻獲利 ＋）；螞蟻保護蚜蟲免受瓢蟲等天敵捕食（蚜蟲獲利 ＋）。\n   - **(C) 榕小蜂、稜果榕【互利共生（＋, ＋）】**：榕小蜂在隱頭花序內產卵孵化繁衍（榕小蜂獲利 ＋）；進出時協助稜果榕傳粉授精（稜果榕獲利 ＋）。\n   - **(D) 寄生蜂、蛾【寄生（＋, －）】**：寄生蜂產卵於蛾體內，幼蟲孵化吸取蛾體營養（寄生蜂獲利 ＋），最終導致蛾受害死亡（蛾受害 －）。\n\n故本題正確答案為 **(A) 鮣魚、鯊魚**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-14",
     "isReviewed": false,
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
