@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v237';
+const STORAGE_KEY = 'miley_wrong_questions_v238';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -510,6 +510,36 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-10-14",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_bio_ecology_ecosystem_definition_lotus_pond_178",
+    "examPeriod": "一段",
+    "subject": "自然/生物",
+    "errorReason": "觀念不懂",
+    "concept": "國中生物：生態系判定標準（生物群集 ＋ 非生物環境）／荷花池為生態系辨析",
+    "uploadDate": "2026-10-15",
+    "mondayDate": "2026-10-12",
+    "mondayDates": [
+      "2026-10-12"
+    ],
+    "weekLabel": "2026-10-12 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【生態系判定黃金法則：必須「生物群集 ＋ 非生物環境」缺一不可！】\n1. **生態系的核心公式**：\n   - **生態系 (Ecosystem) ＝ 群集 (所有生物) ＋ 環境 (水/土/陽光/空氣/養分)**。\n   - 必須兼具生物因子與非生物環境因子，且彼此間存在能量流動與物質循環。\n2. **選項致命破綻拆解**：\n   - (A) 校園中「所有的生物」：只有生物因子，缺少校園建築、土壤、空氣等非生物環境，屬於**「群集 (Community)」**！\n   - (B) 森林裡「所有的附生植物」：只有植物（生物因子），連其他動物或環境都沒有，僅為**群集的一部分**。\n   - (C) 腐爛番茄中之「果蠅」：果蠅為同一物種，屬於**「族群 (Population)」**！\n   - (D) 臺中公園內的「荷花池」：包含荷花、魚蝦、微生物等「生物群集」，以及池水、底泥、陽光等「非生物環境」，構成完整且自給自足的**「生態系」**！",
+    "stem": "下列選項中，何者可視為一個生態系？\n\n○ (A) 校園中所有的生物\n○ (B) 森林裡所有的附生植物\n○ (C) 腐爛番茄中之果蠅\n○ (D) 臺中公園內的荷花池",
+    "answer": "(D) 臺中公園內的荷花池",
+    "diagramUrl": "",
+    "solution": "1. **生態系（Ecosystem）的本質定義**：\n   - 生態系是指在一定的空間範圍內，所有生存於該處的**生物群集（包括生產者、消費者、分解者）**與其共同生活的**非生物物理環境（包括陽光、空氣、水、土壤、溫度、礦物質等）**，透過**能量流動**與**物質循環**相互作用，所構成的一個動態平衡整體系統。\n   - **判斷基準**：判斷是否為生態系，關鍵在於「是否同時包含生物與其所處的非生物環境」。\n\n2. **選項逐一深入剖析**：\n   - **(A) 校園中所有的生物**：指校園這一特定範圍內的所有生物個體總和，僅包含「生物因子」，沒有包含非生物環境，在生態學層次上屬於**「群集（Community）」**。\n   - **(B) 森林裡所有的附生植物**：附生植物（如山蘇、蘭花等）雖有多種，但僅指植物類群，既未包含森林中的動物、微生物，亦未包含非生物環境，僅為**群集的一部分**。\n   - **(C) 腐爛番茄中之果蠅**：果蠅指單一物種（同一物種生物的集合），在生態學層次上屬於**「族群（Population）」**。\n   - **(D) 臺中公園內的荷花池【本題正解】**：荷花池是一個明確具體的地點與空間，既包含池內的荷花（生產者）、魚蝦螺類（消費者）、水草、水生昆蟲與淤泥中的細菌微生物（分解者）等「生物因子」，又包含池水、泥土、溶解氧、陽光與水溫等「非生物環境因子」，兩者相互作用形成一個完整、獨立且能進行能量與物質交換的池塘微型系統，完全符合**「生態系」**的定義。\n\n故本題正確答案為 **(D) 臺中公園內的荷花池**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-15",
     "isReviewed": false,
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
