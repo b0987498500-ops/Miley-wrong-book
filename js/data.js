@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v240';
+const STORAGE_KEY = 'miley_wrong_questions_v241';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -600,6 +600,36 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-10-15",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_greater_bay_area_hk_shenzhen_electronics_181",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "國中地理：中國南部地區／粵港澳大灣區（香港與深圳）區位優勢與電子高科技產業發展",
+    "uploadDate": "2026-10-16",
+    "mondayDate": "2026-10-12",
+    "mondayDates": [
+      "2026-10-12"
+    ],
+    "weekLabel": "2026-10-12 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【粵港澳大灣區「前店後廠」與電子高科技產業升級！】\n1. **港深合作模式（香港技術與金融 ＋ 深圳硬體與製造）**：\n   - 香港具備資金、技術、國際商業貿易與資訊優勢。\n   - 深圳具備龐大硬體製造組裝與科技創新能力。\n   - 兩地優勢互補，重點發展**高技術、高附加價值的「電子高科技產業」**。\n2. **重工業與農業選項秒殺排雷**：\n   - 港深**無煤鐵礦與石油**，且**地價昂貴、環保嚴格**，絕不可能重點發展**石化工業 (A)** 或 **鋼鐵工業 (D)**。\n   - 港深為世界級都會商業區，更不可能從事**熱帶栽培 (C)** 農業！",
+    "stem": "香港與深圳作為「粵港澳大灣區」的中心城市，兩個地區以各自的優勢進行合作，成為區域發展的重點。以當地的區位條件判斷，其重點產業應該為下列何者？\n\n○ (A) 石化工業\n○ (B) 電子產業\n○ (C) 熱帶栽培\n○ (D) 鋼鐵工業",
+    "answer": "(B) 電子產業",
+    "diagramUrl": "",
+    "solution": "1. **香港與深圳的區位條件與優勢互補**：\n   - **香港**：擁有高度自由開放的經濟體系、健全的金融法律制度、世界級的國際金融中心地位，以及頂尖的大學科研機構與國際貿易網絡，提供充沛的資金、生產技術研發與全球商業行銷通道（扮演「前店」與創新中樞的角色）。\n   - **深圳**：作為中國最早的經濟特區之一，擁有完整的現代工業供應鏈、強大的硬體製造組裝能力與高科技人才庫（如華為、騰訊、大疆等知名科技企業總部所在地），扮演高科技研發轉化與先進製造基地（由傳統「後廠」升級為創新型科技重鎮）。\n   - **兩地合作重點**：港深兩地優勢深度整合，聚焦於技術密集、資金密集且附加價值極高的**電子資訊與高科技產業（電子產業）**。\n\n2. **選項逐一深入剖析與排除**：\n   - **(A) 石化工業【錯誤】**：石化工業屬於重污染、高耗能且占地廣大的傳統重化學工業，多分布於原料產地（如油田）或特定遠離都會核心的石化專業港區。港深兩地土地租金昂貴、人口極度稠密且環保標準嚴格，非其重點發展產業。\n   - **(B) 電子產業【正確，本題正解】**：香港的先進研發技術與商業金融，帶動深圳硬體與軟體資訊工業的高速成長，使電子科技與半導體、通訊設備成為粵港澳大灣區最具全球競爭力的龍頭重點產業。\n   - **(C) 熱帶栽培【錯誤】**：熱帶栽培業（熱帶栽培農場）是指在大規模農場中以商業化方式種植橡膠、油棕、咖啡、可可等熱帶經濟作物，屬於熱帶地區的第一級農業生產型態。香港與深圳為高度現代化的大都會工商業區，不可能以此為重點。\n   - **(D) 鋼鐵工業【錯誤】**：鋼鐵工業屬於典型的原料導向或動力導向重工業，需要大量的鐵礦石、煤炭與廣闊的儲存加工腹地。港深兩地缺乏煤鐵礦藏，且地價昂貴，不具備發展傳統鋼鐵工業的區位優勢。\n\n故本題重點產業為 **(B) 電子產業**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-16",
     "isReviewed": false,
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
