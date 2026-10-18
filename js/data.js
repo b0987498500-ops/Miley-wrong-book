@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v246';
+const STORAGE_KEY = 'miley_wrong_questions_v247';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -870,6 +870,36 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-10-17",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_geo_belt_and_road_maritime_silk_road_kazakhstan_190",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "國中地理：中國「一帶一路」倡議核心架構／「絲綢之路經濟帶（陸路）」vs.「21 世紀海上絲綢之路（海路）」之沿線國家與地理特徵",
+    "uploadDate": "2026-10-18",
+    "mondayDate": "2026-10-12",
+    "mondayDates": [
+      "2026-10-12"
+    ],
+    "weekLabel": "2026-10-12 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【「一帶」是陸路，「一路」是海路！千萬別望文生義！】\n1. **「帶」與「路」的相反直覺陷阱**：\n   - 「絲綢之路經濟**帶**（一帶）」：指的是**陸上**（走鐵路、公路穿過中亞內陸如哈薩克、俄羅斯到歐洲）。\n   - 「21 世紀海上絲綢之**路**（一路）」：指的才是**海上**（走海運港口，經南海、印度洋、東非肯亞到歐洲）。\n2. **常識秒殺法**：\n   - 看到「海上」，馬上檢查哪個國家「根本沒靠海」！\n   - **哈薩克是世界最大內陸國**，四面不靠海，絕不可能走「海上」絲綢之路！",
+    "stem": "請問下列何者國家，並非為中國一帶一路政策當中的「21 世紀海上絲綢之路」的目標國家呢？\n\n○ (A) 越南\n○ (B) 印度\n○ (C) 哈薩克\n○ (D) 肯亞。",
+    "answer": "(C) 哈薩克",
+    "diagramUrl": "",
+    "solution": "1. **中國「一帶一路」核心架構與路徑劃分**：\n   - **「一帶」＝ 絲綢之路經濟帶（陸上）**：\n     - **核心路線**：由中國中西部（如西安、新疆）出發，沿著古代絲綢之路向西穿越**中亞五國（哈薩克、吉爾吉斯、塔吉克、烏茲別克、土庫曼）**、西亞、俄羅斯，直達歐洲。\n     - **地理特點**：主要依託陸路鐵路（中歐班列）、公路與輸油管線，沿線包含大量**內陸國家**。其中**哈薩克為全球面積最大的內陸國**，是陸上「絲綢之路經濟帶」向西推進的首要關鍵樞紐。\n   - **「一路」＝ 21 世紀海上絲綢之路（海上）**：\n     - **核心路線**：由中國東南沿海港口（廣州、泉州、寧波等）出發，經由南海與麻六甲海峽進入印度洋，串連**東南亞、南亞、東非、北非乃至南歐（地中海）**區域。\n     - **地理特點**：依託海洋航運與深水港口，目標國家皆為**臨海國或重要航運節點**。\n\n2. **選項逐一深入排雷**：\n   - **(A) 越南**：位於中南半島東側，瀕臨南海，是「海上絲綢之路」南向進入東南亞的第一站。\n   - **(B) 印度**：位於南亞次大陸，南瀕印度洋，是「海上絲綢之路」連接東南亞與中東、非洲的必經海上樞紐。\n   - **(C) 哈薩克【完全正確，本題正解】**：位於中亞，是世界上面積最大的**內陸國家**（境內無任何海洋海岸線），屬於陸上的「絲綢之路經濟帶」，**絕非「海上絲綢之路」的目標國家**。\n   - **(D) 肯亞**：位於東非印度洋沿岸，其主要海港蒙巴薩港是「海上絲綢之路」延伸至非洲大陸的指標性合作樞紐。\n\n故本題正確答案為 **(C) 哈薩克**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-18",
     "isReviewed": false,
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
