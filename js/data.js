@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v249';
+const STORAGE_KEY = 'miley_wrong_questions_v250';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -956,6 +956,99 @@ const INITIAL_SEED_DATA = [
     "answer": "(B) a + c",
     "diagramUrl": "",
     "solution": "1. **深入剖析與因式分解推導**：\n   - 觀察題幹代數式：c(a² - b²) - a(b² - c²)\n   - 此式兩括號內部並無相同的公因式可直接提出，解題關鍵在於「先全部乘開展開，再重新兩兩分組提公因式」。\n\n2. **第一步：乘開展開代數式**：\n   - 原式 = a²c - b²c - ab² + ac²\n\n3. **第二步：重新分組尋找公因式**：\n   - 將含有 ac 的第 1 項與第 4 項分在一組，將含有 b² 的第 2 項與第 3 項分在另一組：\n     原式 = (a²c + ac²) - (b²c + ab²)\n   - 第一組提出公因式 ac：\n     a²c + ac² = ac(a + c)\n   - 第二組提出公因式 -b²：\n     -(b²c + ab²) = -b²(c + a) = -b²(a + c)\n   - 兩組均含有共同公因式 (a + c)，提出 (a + c)：\n     原式 = ac(a + c) - b²(a + c) = (a + c)(ac - b²)\n\n4. **第三步：比對選項判定因式**：\n   - 由因式分解結果 (a + c)(ac - b²)，可知原式的因式包含：\n     - (a + c)\n     - (ac - b²) 或其相反數 (b² - ac)\n     - 以及原多項式本身與非零常數。\n   - 逐一比對各選項：\n     - **(A) a - c**：非原式之因式（原式因式為 a + c）。\n     - **(B) a + c【完全正確，本題正解】**：完全符合因式分解結果，為原式之因式。\n     - **(C) a² - bc**：非原式之因式（偷換項次與次方，正確因式為 ac - b²）。\n     - **(D) b² + ac**：非原式之因式（正負號錯誤，正確因式為 ac - b² 或 -(b² - ac) = b² - ac，絕非相加的 b² + ac）。\n\n故本題正確答案為 **(B) a + c**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_factoring_perfect_square_grouping_193",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國二數學：多項式因式分解／完全平方式與分組提公因式",
+    "uploadDate": "2026-10-19",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-12",
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【完全平方式結合分組提公因式】兩大關鍵步驟！\n1. **前段完全平方式快速辨識**：\n   - 看到 4x² - 4x + 1，直接聯想到差的平方公式 (2x - 1)²！\n2. **後段四項式兩兩分組提公因式**：\n   - 6xy - 3y + 10x - 5 = 3y(2x - 1) + 5(2x - 1)，成功湊出共同公因式 (2x - 1)！\n3. **合併括號內常數項加減法常犯粗心**：\n   - 提出 (2x - 1) 後，剩下的是 [(2x - 1) + 3y + 5]。\n   - 常數項是 -1 + 5 = +4，千萬別粗心算成 -6 或 -4！",
+    "stem": "因式分解 (4x² - 4x + 1) + (6xy - 3y + 10x - 5) 之結果為何？\n\n○ (A) (2x - 1)(2x + 3y + 4)\n○ (B) (2x - 1)(2x - 3y + 4)\n○ (C) (2x + 1)(2x + 3y + 4)\n○ (D) (2x - 1)(2x + 3y - 4)",
+    "answer": "(A) (2x - 1)(2x + 3y + 4)",
+    "diagramUrl": "",
+    "solution": "1. **深入剖析題幹結構**：\n   - 原式由前後兩部分組合而成：(4x² - 4x + 1) + (6xy - 3y + 10x - 5)。\n   - 觀察前半段為「二次三項式」，後半段為「四項式」，解題策略為：前半段配成完全平方，後半段兩兩分組提公因式，最後再提出兩者的共同公因式。\n\n2. **第一步：前半段完全平方公式分解**：\n   - 4x² - 4x + 1 = (2x)² - 2·(2x)·1 + 1² = (2x - 1)²\n\n3. **第二步：後半段兩兩分組提公因式**：\n   - 6xy - 3y + 10x - 5\n   - 前兩項提出 3y：3y(2x - 1)\n   - 後兩項提出 5：5(2x - 1)\n   - 提出共同公因式 (2x - 1)：\n     6xy - 3y + 10x - 5 = 3y(2x - 1) + 5(2x - 1) = (3y + 5)(2x - 1)\n\n4. **第三步：整體提出共同公因式 (2x - 1)**：\n   - 原式 = (2x - 1)² + [3y(2x - 1) + 5(2x - 1)]\n   - 原式 = (2x - 1)² + (3y + 5)(2x - 1)\n   - 提出 (2x - 1)：\n     = (2x - 1)[(2x - 1) + (3y + 5)]\n     = (2x - 1)(2x + 3y - 1 + 5)\n     = (2x - 1)(2x + 3y + 4)\n\n5. **比對選項**：\n   - **(A) (2x - 1)(2x + 3y + 4)【完全正確，本題正解】**\n   - (B) (2x - 1)(2x - 3y + 4)：y 的係數正負號錯誤。\n   - (C) (2x + 1)(2x + 3y + 4)：完全平方公式誤判為 (2x + 1)²。\n   - (D) (2x - 1)(2x + 3y - 4)：常數項計算錯誤（誤將 -1 + 5 算為 -4）。\n\n故本題正確答案為 **(A) (2x - 1)(2x + 3y + 4)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_factoring_difference_of_squares_video_194",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國二數學：多項式因式分解／負號分配律與完全平方配平方差公式",
+    "uploadDate": "2026-10-19",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-12",
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【負號變號陷阱 ＋ 完全平方配平方差雙重組合】！\n1. **第一重陷阱：負號分配律變號**：\n   - -(9a² - 4b²) = -9a² + 4b²！負負得正，+4b² 是正號！\n2. **第二重核心：三項配成完全平方式**：\n   - 將 x² + 4bx + 4b² 配成 (x + 2b)²。\n3. **第三重核心：平方差公式分解**：\n   - (x + 2b)² - (3a)² = (x + 2b + 3a)(x + 2b - 3a)。\n4. **選項 (B) 誘答陷阱**：\n   - 注意兩個因式中 b 的前面都是「+2b」，差別在於 3a 的正負號（+3a 或 -3a），千萬不要選錯成 -2b 的選項 (B)！",
+    "stem": "下列何者是 x² + 4bx - (9a² - 4b²) 的因式？\n\n○ (A) x + 3a + 2b\n○ (B) x + 3a - 2b\n○ (C) x² - 3a - 2b\n○ (D) x + 9a - 4b",
+    "answer": "(A) x + 3a + 2b",
+    "diagramUrl": "",
+    "solution": "1. **第一步：去括號並注意正負號變號**：\n   - 原式 = x² + 4bx - (9a² - 4b²)\n   - 注意負號分配律：-(9a² - 4b²) = -9a² + 4b²\n   - 展開得：原式 = x² + 4bx - 9a² + 4b²\n\n2. **第二步：重新排列組合，配成完全平方式**：\n   - 觀察含 x 與 b 的項：x² + 4bx + 4b²\n   - 此三項恰為和的平方公式：\n     x² + 4bx + 4b² = x² + 2·x·(2b) + (2b)² = (x + 2b)²\n   - 故原式改寫為：\n     原式 = (x² + 4bx + 4b²) - 9a²\n     原式 = (x + 2b)² - (3a)²\n\n3. **第三步：利用平方差公式 A² - B² = (A + B)(A - B) 進行分解**：\n   - 令 A = (x + 2b)，B = 3a：\n     原式 = [(x + 2b) + 3a][(x + 2b) - 3a]\n     原式 = (x + 3a + 2b)(x - 3a + 2b)\n\n4. **第四步：比對選項判定因式**：\n   - 原式的因式為：(x + 3a + 2b) 與 (x - 3a + 2b)。\n   - **(A) x + 3a + 2b【完全符合，本題正解】**\n   - (B) x + 3a - 2b：錯誤，b 前面符號應為 +2b（正確因式為 x - 3a + 2b）。\n   - (C) x² - 3a - 2b：錯誤，因式為一次式，非 x²。\n   - (D) x + 9a - 4b：錯誤，未開方提取平方差。\n\n故本題正確答案為 **(A) x + 3a + 2b**。\n\n📺 **老師影音詳細解題影片**：\n[觀看 YouTube 詳細影音解題教學影片 (第二題)](https://www.youtube.com/watch?v=Zpx7zbZgJP4)",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_factoring_fraction_lcm_cross_multiplication_195",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國二數學：多項式因式分解／分數型係數提出分母最小公倍數與十字交乘法",
+    "uploadDate": "2026-10-19",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-12",
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【分數型多項式因式分解】超高頻必錯大陷阱！\n1. **因式分解 vs 解方程式（絕對不能直接同乘 42 把分母消掉！）**：\n   - ⚠️ 若是「方程式 = 0」，可以兩邊同乘 42 去分母。\n   - 但這是「多項式因式分解」，式子的數值不能改變，必須將 1/42「提出放在最前面」！\n   - 漏掉 1/42 選 (B) 是全臺灣國中生最常犯的經典死穴！\n2. **通分求分母最小公倍數**：\n   - [14, 6, 21] = 42，括號內各項分子分別乘以 3、7、2，得到 9y² + 35y - 4。\n3. **十字交乘正負號核對**：\n   - 一次項為 +35y，十字交乘為 9·(+4) + 1·(-1) = +35，常數項為 -1 與 +4！",
+    "stem": "3/14 y² + 5/6 y - 2/21 可因式分解為下列何者？\n\n○ (A) 1/42 (3y - 1)(y + 2)\n○ (B) (9y - 1)(y + 4)\n○ (C) 1/42 (9y - 1)(y + 4)\n○ (D) (9y + 1)(y - 4)",
+    "answer": "(C) 1/42 (9y - 1)(y + 4)",
+    "diagramUrl": "",
+    "solution": "1. **深入剖析題幹與解題黃金第一步**：\n   - 題幹多項式：3/14 y² + 5/6 y - 2/21\n   - 係數皆為分數，直接十字交乘極易出錯。解題最佳策略為：**「先提出所有分母的最小公倍數之倒數」**，將括號內部轉化為最純淨的整數二次式！\n\n2. **第一步：求分母最小公倍數並提出公因數**：\n   - 三個分數的分母分別為 14, 6, 21：\n     - 14 = 2 × 7\n     - 6 = 2 × 3\n     - 21 = 3 × 7\n     - 最小公倍數 [14, 6, 21] = 2 × 3 × 7 = 42\n   - 將各項通分後提出 1/42：\n     - 3/14 y² = 9/42 y²\n     - 5/6 y = 35/42 y\n     - -2/21 = -4/42\n     - 原式 = 1/42 (9y² + 35y - 4)\n\n3. **第二步：對括號內部整數式進行十字交乘分解**：\n   - 9y² + 35y - 4 的十字交乘拆解：\n     - 二次項拆成：9y 與 y\n     - 常數項 -4 拆成：-1 與 +4\n     - 交叉相乘核算：(9y) × (+4) + y × (-1) = 36y - y = +35y（與中間一次項完全相符！）\n   - 故整數式分解結果為：\n     9y² + 35y - 4 = (9y - 1)(y + 4)\n\n4. **第三步：結合前面提出的 1/42 得到最終答案**：\n   - 原式 = 1/42 (9y - 1)(y + 4)\n\n5. **選項逐一深入排雷**：\n   - (A) 1/42 (3y - 1)(y + 2)：分解錯誤，(3y - 1)(y + 2) = 3y² + 5y - 2，二次項非 9y²。\n   - (B) (9y - 1)(y + 4)：【最常見致命盲點】誤將因式分解當成解方程式，擅自把分母 42 丟棄！因式分解必須保留係數 1/42。\n   - **(C) 1/42 (9y - 1)(y + 4)【完全正確，本題正解】**：包含係數 1/42 且十字交乘正確。\n   - (D) (9y + 1)(y - 4)：漏掉 1/42 且十字交乘正負號顛倒（展開為 -35y）。\n\n故本題正確答案為 **(C) 1/42 (9y - 1)(y + 4)**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
