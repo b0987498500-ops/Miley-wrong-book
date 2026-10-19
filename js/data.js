@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v254';
+const STORAGE_KEY = 'miley_wrong_questions_v255';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1173,6 +1173,37 @@ const INITIAL_SEED_DATA = [
     "answer": "(C) 1/4",
     "diagramUrl": "assets/questions/q199_square_extended_diagonal_similar_triangles_diagram.png",
     "solution": "1. **正方形對角線性質與垂直角判定**：\n   - 因為四邊形 ABCD 為正方形，對角線互相垂直且平分：\n     線段 AC ⊥ 線段 BD 於 O 點，故：**∠AOF = 90°**。\n     且 O 為對角線中點：**線段 AC = 2 × 線段 OA**。\n   - 正方形內角 ∠BCD = 90°，因為 B、C、E 共線，其鄰補角：\n     **∠GCE = 180° - ∠BCD = 90°**。\n   - 因此，**∠AOF = ∠GCE = 90°**。\n\n2. **等腰三角形底角相等性質**：\n   - 題目給定：延長線段 BC 且取 **線段 CE = 線段 AC**。\n   - 考慮 △ACE：\n     兩腰長度相等（線段 AC = 線段 CE），故 △ACE 為等腰三角形。\n     因此底角對應相等：**∠CAE = ∠E**（即 ∠OAF = ∠CEG）。\n\n3. **證明 △AOF 與 △ECG 相似（AA 相似性質）**：\n   - 在 △AOF 與 △ECG 中：\n     (1) ∠AOF = ∠GCE = 90°（直角對應相等）\n     (2) ∠OAF = ∠CEG（等腰三角形底角對應相等）\n   - 根據 **AA 相似性質**，可得：\n     **△AOF ~ △ECG**（頂點 A 對應 E，O 對應 C，F 對應 G）。\n\n4. **利用相似三角形面積比等於對應邊長平方比求比值**：\n   - 相似三角形對應邊：\n     線段 OA 對應 線段 CE。\n   - 由前述條件可知：\n     線段 CE = 線段 AC = 2 × 線段 OA，即：\n     **線段 OA : 線段 CE = 1 : 2**\n   - 相似三角形中，「**面積比等於對應邊長之平方比**」：\n     比值 = (△AOF 面積) / (△ECG 面積)\n          = (線段 OA / 線段 CE)²\n          = [線段 OA / (2 × 線段 OA)]²\n          = (1/2)²\n          = 1/4\n\n5. **結論**：\n   △AOF 面積和 △ECG 面積的比值為 **1/4**。\n\n故本題正確答案為 **(C) 1/4**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_triangle_midpoint_medians_area_ratio_200",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國三數學：相似三角形應用／三角形兩邊中點連線性質與中線重心面積比例",
+    "uploadDate": "2026-10-19",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-12",
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【三角形中點連線 × 重心中線分段 × 面積比例】破題核心！\n1. **中點連線段與重心的結合點**：\n   - D、E 為中點，線段 BE、線段 CD 為中線，交點 F 為 △ABC 的重心！\n   - 中點連線性質：線段 DE // 線段 BC 且 線段 DE ＝ 1/2 線段 BC。\n2. **兩大相似形面積比與重心面積分配**：\n   - △ADE ～ △ABC ➔ 面積比 ＝ 1² : 2² ＝ 1 : 4（△ADE ＝ 1/4 △ABC）。\n   - 重心 F 分割出的三塊大三角形面積相等（△FBC ＝ 1/3 △ABC）。\n   - △DEF ～ △CBF ➔ 相似比 1 : 2，面積比 ＝ 1² : 2² ＝ 1 : 4，故 △DEF ＝ 1/4 × (1/3 △ABC) ＝ 1/12 △ABC。\n3. **秒殺比值**：\n   - △DEF 面積 : △ADE 面積 ＝ (1/12) : (1/4) ＝ 1 : 3！\n   - **易錯盲點**：切勿誤將 △DEF 與 △ADE 當成相似形而誤選 (C) 1 : 4！兩者底同為 DE，但高之比為 1 : 3，因此面積比為 1 : 3！",
+    "stem": "如圖，在 △ABC 中，D、E 分別為線段 AB、線段 AC 的中點，線段 BE 與線段 CD 相交於 F 點，則 △DEF 面積 : △ADE 面積 = ？\n\n○ (A) 1 : 2\n○ (B) 1 : 3\n○ (C) 1 : 4\n○ (D) 1 : 6",
+    "answer": "(B) 1 : 3",
+    "diagramUrl": "assets/questions/q200_midpoint_median_centroid_triangle_area_ratio_diagram.png",
+    "solution": "1. **三角形兩邊中點連線段性質**：\n   - 已知 D、E 分別為線段 AB、線段 AC 的中點。\n   - 根據三角形兩邊中點連線段性質：\n     線段 DE // 線段 BC，且 線段 DE = 1/2 線段 BC。\n     即：**線段 DE : 線段 BC = 1 : 2**。\n\n2. **利用重心與相似三角形求線段比**：\n   - 因為 D、E 為中點，線段 CD 與線段 BE 為 △ABC 的兩條中線，交點 F 為 △ABC 之重心。\n   - 由於線段 DE // 線段 BC，可得：\n     **△DEF ~ △CBF（AA 相似性質）**\n   - 相似比為 線段 DE : 線段 BC = 1 : 2。\n   - 對應邊成比例：\n     **線段 DF : 線段 FC = 線段 EF : 線段 FB = 1 : 2**。\n\n3. **同高三角形面積轉化**：\n   - **考慮 △CDE 中**：\n     △DEF 與 △CEF 共用頂點 E，且底邊線段 DF 與線段 FC 在同一直線 CD 上（同高）。\n     由「同高三角形面積比等於底邊長度比」：\n     △DEF 面積 : △CEF 面積 = 線段 DF : 線段 FC = 1 : 2。\n     因此，△DEF 面積佔 △CDE 面積的：\n     **△DEF 面積 = 1/(1+2) × △CDE 面積 = 1/3 × △CDE 面積**。\n   - **考慮 △ADC 中**：\n     E 為線段 AC 的中點，△ADE 與 △CDE 共用頂點 D，底邊線段 AE = 線段 CE。\n     同底等高，因此：\n     **△ADE 面積 = △CDE 面積**。\n\n4. **得出面積比**：\n   - 將 △CDE 面積替換為 △ADE 面積：\n     △DEF 面積 = 1/3 × △ADE 面積\n   - 故：\n     **△DEF 面積 : △ADE 面積 = 1 : 3**。\n\n5. **全圖面積份數驗算法（設 △ABC 面積為 12）**：\n   - △ADE 面積 = (1/2)² × △ABC 面積 = 1/4 × 12 = 3。\n   - △DEF 面積 = 1/4 × △CBF 面積 = 1/4 × (1/3 × 12) = 1/4 × 4 = 1。\n   - 故 △DEF 面積 : △ADE 面積 = 1 : 3，完全吻合！\n\n故本題正確答案為 **(B) 1 : 3**（填空答案：1 : 3）。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
