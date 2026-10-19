@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v251';
+const STORAGE_KEY = 'miley_wrong_questions_v252';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1080,6 +1080,37 @@ const INITIAL_SEED_DATA = [
     "answer": "(A) A 型",
     "diagramUrl": "assets/questions/q196_card_tiles_rectangle_assembly_diagram.png",
     "solution": "1. **核心觀念（幾何拼圖面積與因式分解之對應關係）**：\n   - 拼出一個緊密、不重疊的「大長方形」，代表大長方形的「總面積」必須剛好等於各紙板面積的總和。\n   - 設大長方形的長與寬分別為 (aπ + b) 與 (cπ + d)，則：\n     大長方形總面積 = (長) × (寬) = (aπ + b)(cπ + d)\n   - 因此，**「能夠拼成大長方形」的數學等價條件就是：「總面積多項式必須能夠成功進行十字交乘因式分解」**！\n\n2. **原有 36 塊紙板之總面積計算**：\n   - A 型（正方形）：每塊面積 = π × π = π²，共 7 塊 ➔ 面積 7π²\n   - B 型（長方形）：每塊面積 = π × 1 = π，共 17 塊 ➔ 面積 17π\n   - C 型（正方形）：每塊面積 = 1 × 1 = 1，共 12 塊 ➔ 面積 12\n   - 原有全部總面積 = 7π² + 17π + 12\n\n3. **逐一檢驗選項（拿掉哪一塊紙板後能夠因式分解）**：\n   - **【檢驗 (D)：完全不用拿掉】**\n     總面積 = 7π² + 17π + 12\n     十字交乘法檢驗：二次項 7 只能拆成 7 × 1；常數項 12 可拆為 1×12、2×6、3×4。\n     可能的一次項係數：7×1 + 1×12 = 19、7×2 + 1×6 = 20、7×3 + 1×4 = 25、7×4 + 1×3 = 31... 皆無法湊出 17π！\n     因此無法因式分解，不可拼成大長方形，排除 (D)。\n\n   - **【檢驗 (A)：拿掉 1 塊 A 型紙板】**\n     剩下面積 = (7 - 1)π² + 17π + 12 = 6π² + 17π + 12\n     進行十字交乘分解：\n     將 6π² 拆成 2π 與 3π；將 12 拆成 3 與 4：\n     (2π) × 4 + (3π) × 3 = 8π + 9π = 17π（完全吻合一次項！）\n     故 6π² + 17π + 12 = (2π + 3)(3π + 4)！\n     代表剩下的紙板恰好可以緊密拼成一個「長為 (3π + 4) 公分、寬為 (2π + 3) 公分」的大長方形！\n     因此拿掉 A 型完全正確（本題正解）！\n\n   - **【檢驗 (B)：拿掉 1 塊 B 型紙板】**\n     剩下面積 = 7π² + 16π + 12\n     判別式檢驗：Δ = 16² - 4 × 7 × 12 = 256 - 336 = -80 < 0，無實數根，完全無法因式分解，排除 (B)。\n\n   - **【檢驗 (C)：拿掉 1 塊 C 型紙板】**\n     剩下面積 = 7π² + 17π + 11\n     常數項 11 為質數（只能拆成 1 × 11），交叉相乘可能值為 7×1 + 1×11 = 18 或 7×11 + 1×1 = 78，皆不等於 17，無法因式分解，排除 (C)。\n\n故本題正確答案為 **(A) A 型**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_similar_triangles_semicircle_radius_197",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國三數學：相似三角形應用／平行線截線段比例與對應高的比求內接半圓半徑",
+    "uploadDate": "2026-10-19",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-12",
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【幾何相似形 × 內接半圓半徑】解題核心雙關鍵！\n1. **直徑 vs 半徑的符號設定陷阱**：\n   - 題目以「線段 DE 為直徑」，若設半徑為 r，切記線段 DE 長度是「2r」而不是 r！許多同學在此漏乘 2，導致誤列出 r/30 = (10-r)/10 而算出錯誤半徑 7.5。\n2. **平行線間距離的等長轉化**：\n   - 圓心 O 到切點 F 的垂直線段 OF 為半徑 r。\n   - 因為 DE // BC，所以平行線間距離 GH ＝ OF ＝ r，頂端小三角形 ADE 的高 AG 就等於「大高減半徑」，即「10 - r」。\n3. **秒殺比例式**：\n   - 看到平行線截相似三角形，立刻列出「底邊比 ＝ 高之比」：\n     (底 DE : 底 BC) ＝ (高 AG : 高 AH) ➔ 2r / 30 ＝ (10 - r) / 10，一元一次方程式交叉相乘秒解 r ＝ 6！",
+    "stem": "如圖，在 △ABC 中，D、E 兩點分別在線段 AB、線段 AC 上，線段 DE // 線段 BC，以線段 DE 為直徑畫半圓 O，且線段 OF ⊥ 線段 BC，線段 AH 為線段 BC 上的高，G 為線段 AH 與線段 DE 的交點。若線段 BC = 30，線段 AH = 10，則此半圓 O 的半徑為多少？\n\n○ (A) 5\n○ (B) 6\n○ (C) 7.5\n○ (D) 8",
+    "answer": "(B) 6",
+    "diagramUrl": "assets/questions/q197_triangle_semicircle_similar_triangles_diagram.png",
+    "solution": "1. **設未知數與幾何量表示**：\n   - 設半圓 O 的半徑為 r。\n   - 因為線段 DE 為半圓 O 的「直徑」，圓心 O 落在線段 DE 上，所以直徑長度：**線段 DE = 2r**。\n   - 半圓 O 與底邊線段 BC 切於 F 點，且線段 OF ⊥ 線段 BC，所以切線垂直半徑：**線段 OF = r**。\n\n2. **平行線截高與頂部三角形之高**：\n   - 已知線段 DE // 線段 BC，且線段 AH 為線段 BC 上的高（線段 AH ⊥ 線段 BC），G 為線段 AH 與線段 DE 之交點。\n   - 由於線段 GH 垂直線段 BC 且夾在兩平行線之間，線段 OF 亦垂直線段 BC，平行線間距離處處相等，故：\n     **線段 GH = 線段 OF = r**\n   - 因此，△ADE 中對應底邊 DE 的高為：\n     **線段 AG = 線段 AH - 線段 GH = 10 - r**\n\n3. **利用相似三角形對應邊與對應高的比值列式**：\n   - 在 △ABC 中，因為線段 DE // 線段 BC，所以 △ADE ~ △ABC（AA 相似）。\n   - 由相似三角形性質：「**對應底邊長之比等於對應高之比**」，可列出比例式：\n     線段 DE : 線段 BC = 線段 AG : 線段 AH\n   - 將已知數值與未知數代入：\n     (2r) / 30 = (10 - r) / 10\n\n4. **求解一元一次方程式**：\n   - 等號兩邊同乘以 30 消去分母：\n     2r = 3 × (10 - r)\n     2r = 30 - 3r\n     2r + 3r = 30\n     5r = 30\n     r = 6\n\n5. **結論**：\n   - 此半圓 O 的半徑為 6。\n\n故本題正確答案為 **(B) 6**（填空答案：6）。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
