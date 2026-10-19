@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v252';
+const STORAGE_KEY = 'miley_wrong_questions_v253';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1111,6 +1111,37 @@ const INITIAL_SEED_DATA = [
     "answer": "(B) 6",
     "diagramUrl": "assets/questions/q197_triangle_semicircle_similar_triangles_diagram.png",
     "solution": "1. **設未知數與幾何量表示**：\n   - 設半圓 O 的半徑為 r。\n   - 因為線段 DE 為半圓 O 的「直徑」，圓心 O 落在線段 DE 上，所以直徑長度：**線段 DE = 2r**。\n   - 半圓 O 與底邊線段 BC 切於 F 點，且線段 OF ⊥ 線段 BC，所以切線垂直半徑：**線段 OF = r**。\n\n2. **平行線截高與頂部三角形之高**：\n   - 已知線段 DE // 線段 BC，且線段 AH 為線段 BC 上的高（線段 AH ⊥ 線段 BC），G 為線段 AH 與線段 DE 之交點。\n   - 由於線段 GH 垂直線段 BC 且夾在兩平行線之間，線段 OF 亦垂直線段 BC，平行線間距離處處相等，故：\n     **線段 GH = 線段 OF = r**\n   - 因此，△ADE 中對應底邊 DE 的高為：\n     **線段 AG = 線段 AH - 線段 GH = 10 - r**\n\n3. **利用相似三角形對應邊與對應高的比值列式**：\n   - 在 △ABC 中，因為線段 DE // 線段 BC，所以 △ADE ~ △ABC（AA 相似）。\n   - 由相似三角形性質：「**對應底邊長之比等於對應高之比**」，可列出比例式：\n     線段 DE : 線段 BC = 線段 AG : 線段 AH\n   - 將已知數值與未知數代入：\n     (2r) / 30 = (10 - r) / 10\n\n4. **求解一元一次方程式**：\n   - 等號兩邊同乘以 30 消去分母：\n     2r = 3 × (10 - r)\n     2r = 30 - 3r\n     2r + 3r = 30\n     5r = 30\n     r = 6\n\n5. **結論**：\n   - 此半圓 O 的半徑為 6。\n\n故本題正確答案為 **(B) 6**（填空答案：6）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_trapezoid_diagonals_triangle_area_ratio_198",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國三數學：相似三角形應用／梯形對角線分割三角形面積比（蝴蝶定理與同高面積比）",
+    "uploadDate": "2026-10-19",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-12",
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【梯形對角線分割四塊面積（蝴蝶定理）】秒殺與排雷指南！\n1. **分清「相似三角形」vs「同高三角形」**：\n   - **上下兩個三角形**（△AED 與 △CEB）是「相似三角形」：面積比 ＝ 邊長平方比 ＝ 2² : 3² ＝ 4 : 9！\n   - **相鄰兩個三角形**（如 △AED 與 △AEB、△AEB 與 △BEC）不是相似形，而是「同高不同底」：面積比 ＝ 底邊比 ＝ 2 : 3！\n2. **連比換算核心**：\n   - 由 △AED : △AEB ＝ 2 : 3，且 △AEB : △BEC ＝ 2 : 3，中間項 △AEB 的係數 3 與 2 需通分取最小公倍數 6，化為 4 : 6 與 6 : 9，得出 4 : 6 : 9！切勿誤寫成 2 : 3 : 9 或直接將邊長平方當成全部面積比。\n3. **蝴蝶模型秒殺口訣**：\n   - 梯形上下底比若為 a : b，對角線分割的四塊面積比為「上 : 左右各一 : 下 ＝ a² : ab : b²」！本題 a＝2, b＝3，直接口算：上＝4，左＝6，下＝9，連比秒出 4 : 6 : 9！",
+    "stem": "如圖，四邊形 ABCD 為梯形，其中線段 AD // 線段 BC，線段 AC 與線段 BD 交於 E 點。若線段 AD : 線段 BC = 2 : 3，則 △AED 面積 : △AEB 面積 : △BEC 面積 = ？\n\n○ (A) 2 : 3 : 4\n○ (B) 4 : 6 : 9\n○ (C) 4 : 5 : 9\n○ (D) 4 : 9 : 6",
+    "answer": "(B) 4 : 6 : 9",
+    "diagramUrl": "assets/questions/q198_trapezoid_diagonals_area_ratio_diagram.png",
+    "solution": "1. **相似三角形對應邊成比例**：\n   - 因為四邊形 ABCD 為梯形，上底線段 AD // 下底線段 BC。\n   - 根據平行線內錯角相等（∠EAD = ∠ECB，∠EDA = ∠EBC），可推得：\n     **△AED ~ △CEB（AA 相似性質）**\n   - 由相似三角形對應邊成比例，得：\n     **線段 DE : 線段 BE = 線段 AE : 線段 CE = 線段 AD : 線段 BC = 2 : 3**\n\n2. **同高三角形面積比等於底邊長度比**：\n   - **考慮 △AED 與 △AEB**：\n     兩三角形共用頂點 A，其底邊線段 DE 與線段 BE 在同一直線 BD 上，因此兩三角形在直線 BD 上的高相同。\n     由「同高三角形面積比等於底邊比」：\n     **△AED 面積 : △AEB 面積 = 線段 DE : 線段 BE = 2 : 3**\n   - **考慮 △AEB 與 △BEC**：\n     兩三角形共用頂點 B，其底邊線段 AE 與線段 CE 在同一直線 AC 上，因此兩三角形在直線 AC 上的高相同。\n     同理可得：\n     **△AEB 面積 : △BEC 面積 = 線段 AE : 線段 CE = 2 : 3**\n\n3. **求三個三角形面積的連比**：\n   - 已知：\n     △AED 面積 : △AEB 面積 = 2 : 3\n     △AEB 面積 : △BEC 面積 = 2 : 3\n   - 尋找共同項「△AEB 面積」的最小公倍數：[3, 2] = 6。\n   - 第一組比例擴分同乘以 2：△AED 面積 : △AEB 面積 = 4 : 6\n   - 第二組比例擴分同乘以 3：△AEB 面積 : △BEC 面積 = 6 : 9\n   - 合併為連比：\n     **△AED 面積 : △AEB 面積 : △BEC 面積 = 4 : 6 : 9**\n\n4. **幾何蝴蝶模型（Butterfly Theorem）快速驗證**：\n   - 梯形上下底比為 a : b 時，對角線分割出的四個三角形面積比滿足：\n     **上 : 左 : 右 : 下 = a² : ab : ab : b²**\n   - 本題 a = 2, b = 3：\n     上 (△AED) = 2² = 4\n     左 (△AEB) = 2 × 3 = 6\n     下 (△BEC) = 3² = 9\n     故 △AED : △AEB : △BEC = 4 : 6 : 9，完全吻合！\n\n故本題正確答案為 **(B) 4 : 6 : 9**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
