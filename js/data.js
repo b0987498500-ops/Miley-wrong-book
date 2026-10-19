@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v253';
+const STORAGE_KEY = 'miley_wrong_questions_v254';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1142,6 +1142,37 @@ const INITIAL_SEED_DATA = [
     "answer": "(B) 4 : 6 : 9",
     "diagramUrl": "assets/questions/q198_trapezoid_diagonals_area_ratio_diagram.png",
     "solution": "1. **相似三角形對應邊成比例**：\n   - 因為四邊形 ABCD 為梯形，上底線段 AD // 下底線段 BC。\n   - 根據平行線內錯角相等（∠EAD = ∠ECB，∠EDA = ∠EBC），可推得：\n     **△AED ~ △CEB（AA 相似性質）**\n   - 由相似三角形對應邊成比例，得：\n     **線段 DE : 線段 BE = 線段 AE : 線段 CE = 線段 AD : 線段 BC = 2 : 3**\n\n2. **同高三角形面積比等於底邊長度比**：\n   - **考慮 △AED 與 △AEB**：\n     兩三角形共用頂點 A，其底邊線段 DE 與線段 BE 在同一直線 BD 上，因此兩三角形在直線 BD 上的高相同。\n     由「同高三角形面積比等於底邊比」：\n     **△AED 面積 : △AEB 面積 = 線段 DE : 線段 BE = 2 : 3**\n   - **考慮 △AEB 與 △BEC**：\n     兩三角形共用頂點 B，其底邊線段 AE 與線段 CE 在同一直線 AC 上，因此兩三角形在直線 AC 上的高相同。\n     同理可得：\n     **△AEB 面積 : △BEC 面積 = 線段 AE : 線段 CE = 2 : 3**\n\n3. **求三個三角形面積的連比**：\n   - 已知：\n     △AED 面積 : △AEB 面積 = 2 : 3\n     △AEB 面積 : △BEC 面積 = 2 : 3\n   - 尋找共同項「△AEB 面積」的最小公倍數：[3, 2] = 6。\n   - 第一組比例擴分同乘以 2：△AED 面積 : △AEB 面積 = 4 : 6\n   - 第二組比例擴分同乘以 3：△AEB 面積 : △BEC 面積 = 6 : 9\n   - 合併為連比：\n     **△AED 面積 : △AEB 面積 : △BEC 面積 = 4 : 6 : 9**\n\n4. **幾何蝴蝶模型（Butterfly Theorem）快速驗證**：\n   - 梯形上下底比為 a : b 時，對角線分割出的四個三角形面積比滿足：\n     **上 : 左 : 右 : 下 = a² : ab : ab : b²**\n   - 本題 a = 2, b = 3：\n     上 (△AED) = 2² = 4\n     左 (△AEB) = 2 × 3 = 6\n     下 (△BEC) = 3² = 9\n     故 △AED : △AEB : △BEC = 4 : 6 : 9，完全吻合！\n\n故本題正確答案為 **(B) 4 : 6 : 9**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_square_extended_diagonal_similar_triangles_199",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國三數學：相似三角形應用／正方形對角線與等腰三角形性質求面積比值（AA 相似與邊長平方比）",
+    "uploadDate": "2026-10-19",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-12",
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【正方形對角線 × 等腰三角形底角 × 相似形面積比】破題核心！\n1. **等腰三角形藏在延長線裡**：\n   - 審題關鍵字「取線段 CE ＝ 線段 AC」！看到兩邊等長，立刻在圖上標註 △ACE 為等腰三角形，迅速得到 ∠CAE ＝ ∠E！\n2. **正方形對角線垂直平分的幾何特質**：\n   - 正方形對角線互相垂直（∠AOF ＝ 90°），且與正方形頂角外角（∠GCE ＝ 90°）形成直角對應！\n   - 兩角對應相等（90° 與 ∠CAE ＝ ∠E），直接鎖定 △AOF ～ △ECG（AA 相似）！\n3. **面積比 ＝ 邊長「平方比」而非邊長比**：\n   - 對應邊 OA : CE ＝ OA : 2 OA ＝ 1 : 2。\n   - 易錯陷阱：很多同學算到邊長比 1 : 2 就急著選 (A) 1/2！切記題目求的是「面積比值」，必須平方化：(1/2)² ＝ 1/4！",
+    "stem": "如圖，在正方形 ABCD 中，對角線線段 AC、線段 BD 相交於 O 點，延長線段 BC，且取線段 CE = 線段 AC，連接線段 AE 分別交線段 BD 於 F 點、交線段 CD 於 G 點，則 △AOF 面積和 △ECG 面積的比值為何？\n\n○ (A) 1/2\n○ (B) 1/3\n○ (C) 1/4\n○ (D) 1/8",
+    "answer": "(C) 1/4",
+    "diagramUrl": "assets/questions/q199_square_extended_diagonal_similar_triangles_diagram.png",
+    "solution": "1. **正方形對角線性質與垂直角判定**：\n   - 因為四邊形 ABCD 為正方形，對角線互相垂直且平分：\n     線段 AC ⊥ 線段 BD 於 O 點，故：**∠AOF = 90°**。\n     且 O 為對角線中點：**線段 AC = 2 × 線段 OA**。\n   - 正方形內角 ∠BCD = 90°，因為 B、C、E 共線，其鄰補角：\n     **∠GCE = 180° - ∠BCD = 90°**。\n   - 因此，**∠AOF = ∠GCE = 90°**。\n\n2. **等腰三角形底角相等性質**：\n   - 題目給定：延長線段 BC 且取 **線段 CE = 線段 AC**。\n   - 考慮 △ACE：\n     兩腰長度相等（線段 AC = 線段 CE），故 △ACE 為等腰三角形。\n     因此底角對應相等：**∠CAE = ∠E**（即 ∠OAF = ∠CEG）。\n\n3. **證明 △AOF 與 △ECG 相似（AA 相似性質）**：\n   - 在 △AOF 與 △ECG 中：\n     (1) ∠AOF = ∠GCE = 90°（直角對應相等）\n     (2) ∠OAF = ∠CEG（等腰三角形底角對應相等）\n   - 根據 **AA 相似性質**，可得：\n     **△AOF ~ △ECG**（頂點 A 對應 E，O 對應 C，F 對應 G）。\n\n4. **利用相似三角形面積比等於對應邊長平方比求比值**：\n   - 相似三角形對應邊：\n     線段 OA 對應 線段 CE。\n   - 由前述條件可知：\n     線段 CE = 線段 AC = 2 × 線段 OA，即：\n     **線段 OA : 線段 CE = 1 : 2**\n   - 相似三角形中，「**面積比等於對應邊長之平方比**」：\n     比值 = (△AOF 面積) / (△ECG 面積)\n          = (線段 OA / 線段 CE)²\n          = [線段 OA / (2 × 線段 OA)]²\n          = (1/2)²\n          = 1/4\n\n5. **結論**：\n   △AOF 面積和 △ECG 面積的比值為 **1/4**。\n\n故本題正確答案為 **(C) 1/4**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
