@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v248';
+const STORAGE_KEY = 'miley_wrong_questions_v249';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -920,7 +920,7 @@ const INITIAL_SEED_DATA = [
     ],
     "weekLabel": "2026-10-12 (最新週次)",
     "isGuessedOrUnstable": false,
-    "mistakeNote": "💡 **易錯警示筆記**：【緯度 vs. 地形季風迎風背風：為什麼東京緯度較高卻比京都早開花？】\n1. **打破「緯度低一定先開花」的死板直覺！**：\n   - 植物開花受「早春氣溫回暖速度與日照」決定，而非單純看緯度！\n   - **京都（迎風側）**：受冬春西北季風迎風影響，雲多濕冷、積雪融雪吸熱，初春回暖慢。\n   - **東京（背風側）**：本州中央山脈擋住西北季風，背風坡空氣乾燥、下沉晴朗增溫快，因此東京雖然緯度較高，初春氣溫卻回升更快，櫻花提早一週盛開！\n2. **快速排雷要訣**：\n   - 看到日本東西兩側氣候差異 $\implies$ 優先鎖定**「中央山脈阻擋季風（迎風坡 vs. 背風坡）」**！\n   - (D) 洋流都是黑潮暖流，不可選；(B) 經度只管時差，不管溫度！",
+    "mistakeNote": "💡 **易錯警示筆記**：【緯度 vs. 地形季風迎風背風：為什麼東京緯度較高卻比京都早開花？】\n1. **打破「緯度低一定先開花」的死板直覺！**：\n   - 植物開花受「早春氣溫回暖速度與日照」決定，而非單純看緯度！\n   - **京都（迎風側）**：受冬春西北季風迎風影響，雲多濕冷、積雪融雪吸熱，初春回暖慢。\n   - **東京（背風側）**：本州中央山脈擋住西北季風，背風坡空氣乾燥、下沉晴朗增溫快，因此東京雖然緯度較高，初春氣溫卻回升更快，櫻花提早一週盛開！\n2. **快速排雷要訣**：\n   - 看到日本東西兩側氣候差異 ➔ 優先鎖定**「中央山脈阻擋季風（迎風坡 vs. 背風坡）」**！\n   - (D) 洋流都是黑潮暖流，不可選；(B) 經度只管時差，不管溫度！",
     "stem": "普遍來說，在日本，位於關東平原的東京的櫻花開花時間，相比於位於關西平原的京都，早了一個禮拜，就緯度來看，東京的緯度較京都高，理論上應該要更晚開花，為何日本會有這樣的現象呢？\n\n○ (A) 兩地距海位置不同\n○ (B) 兩地經度位置不同\n○ (C) 兩地迎風背風不同\n○ (D) 兩地洋流性質不同。",
     "answer": "(C) 兩地迎風背風不同",
     "diagramUrl": "assets/questions/q191_japan_tokyo_kyoto_cherry_blossom_map.png",
@@ -930,6 +930,37 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-10-18",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_factoring_grouping_common_factor_192",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國二數學：多項式因式分解／展開後重新分組提公因式法",
+    "uploadDate": "2026-10-19",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-12",
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【展開後重新分組提公因式】關鍵技巧與符號陷阱！\n1. **原括號無公因式時，「先展開、再分組」**：\n   - c(a² - b²) - a(b² - c²) 無法直接提公因式，先乘開成 4 項：a²c - b²c - ab² + ac²。\n2. **兩兩分組技巧（含相同變數湊同組）**：\n   - (a²c + ac²) - (b²c + ab²) = ac(a + c) - b²(a + c) = (a + c)(ac - b²)。\n3. **高頻誘答陷阱精準排雷**：\n   - 陷阱 (C) a² - bc：故意調換平方位置與字母，看到 a² 就想選是常見粗心！\n   - 陷阱 (D) b² + ac：正負號陷阱！因式是 ac - b² 或 b² - ac，中間是「減號」，絕不是加號！",
+    "stem": "下列何者是 c(a² - b²) - a(b² - c²) 的因式？\n\n○ (A) a - c\n○ (B) a + c\n○ (C) a² - bc\n○ (D) b² + ac",
+    "answer": "(B) a + c",
+    "diagramUrl": "",
+    "solution": "1. **深入剖析與因式分解推導**：\n   - 觀察題幹代數式：c(a² - b²) - a(b² - c²)\n   - 此式兩括號內部並無相同的公因式可直接提出，解題關鍵在於「先全部乘開展開，再重新兩兩分組提公因式」。\n\n2. **第一步：乘開展開代數式**：\n   - 原式 = a²c - b²c - ab² + ac²\n\n3. **第二步：重新分組尋找公因式**：\n   - 將含有 ac 的第 1 項與第 4 項分在一組，將含有 b² 的第 2 項與第 3 項分在另一組：\n     原式 = (a²c + ac²) - (b²c + ab²)\n   - 第一組提出公因式 ac：\n     a²c + ac² = ac(a + c)\n   - 第二組提出公因式 -b²：\n     -(b²c + ab²) = -b²(c + a) = -b²(a + c)\n   - 兩組均含有共同公因式 (a + c)，提出 (a + c)：\n     原式 = ac(a + c) - b²(a + c) = (a + c)(ac - b²)\n\n4. **第三步：比對選項判定因式**：\n   - 由因式分解結果 (a + c)(ac - b²)，可知原式的因式包含：\n     - (a + c)\n     - (ac - b²) 或其相反數 (b² - ac)\n     - 以及原多項式本身與非零常數。\n   - 逐一比對各選項：\n     - **(A) a - c**：非原式之因式（原式因式為 a + c）。\n     - **(B) a + c【完全正確，本題正解】**：完全符合因式分解結果，為原式之因式。\n     - **(C) a² - bc**：非原式之因式（偷換項次與次方，正確因式為 ac - b²）。\n     - **(D) b² + ac**：非原式之因式（正負號錯誤，正確因式為 ac - b² 或 -(b² - ac) = b² - ac，絕非相加的 b² + ac）。\n\n故本題正確答案為 **(B) a + c**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
     "isReviewed": false,
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
