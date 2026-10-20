@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v261';
+const STORAGE_KEY = 'miley_wrong_questions_v262';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1390,6 +1390,37 @@ const INITIAL_SEED_DATA = [
     "answer": "(C) 2.45",
     "diagramUrl": "assets/questions/q206_table_pulley_blocks_acceleration_diagram.png",
     "solution": "🎥 **老師影音詳解教學**：https://www.youtube.com/watch?v=67uxYyIq16Y\n\n### 💡 完整破題步驟與連體運動系統分析：\n\n1. **第一步：將兩物體視為「同一運動系統」**：\n   - 桌面上 3 kg 的木塊與懸掛 1 kg 的木塊由不可伸長的輕繩相連。\n   - 當懸掛木塊向下加速時，桌面木塊以相同的加速度向右加速前進。\n   - 因此，**兩者的加速度大小完全相等**，可合為一個運動系統：\n     $$m_{\\text{系統}} = m_{\\text{桌}} + m_{\\text{懸}} = 3\\text{ kg} + 1\\text{ kg} = \\mathbf{4\\text{ kg}}$$\n\n2. **第二步：找出拉動整個系統的「合外力 $F$」**：\n   - 桌面光滑（題目明示「沒有摩擦的情形」）。\n   - 桌面上 3 kg 木塊的重力與桌面的垂直正向力抵消，在水平方向不產生驅動力。\n   - 驅使整個系統運動的**唯一外力**，就是懸掛在空中 1 kg 物體所受到的**重力**：\n     $$F = W_{\\text{懸}} = 1\\text{ kg} \\times 9.8\\text{ m/s}^2 = \\mathbf{9.8\\text{ 牛頓 (N)}}$$\n\n3. **第三步：代入牛頓第二運動定律 $F = ma$**：\n   - 根據系統牛頓第二運動定律：\n     $$F_{\\text{合力}} = m_{\\text{系統}} \\times a$$\n     $$9.8 = (3 + 1) \\times a$$\n     $$9.8 = 4a$$\n     $$a = \\frac{9.8}{4} = \\mathbf{2.45\\text{ m/s}^2}$$\n\n4. **常見錯誤選項診斷**：\n   - **(A) 9.8**：誤以為 1 kg 懸掛物是自由落體（忽略了後方拖曳著 3 kg 的阻礙）。\n   - **(B) 4.9**：誤以為分母是 2 kg 或只除以 2（計算粗心）。\n   - **(C) 2.45【完全正確，本題正解】**：外力 9.8 N 由總質量 4 kg 平分加速，加速度為 2.45 m/s²。\n   - **(D) 0**：誤以為系統呈靜止或平衡狀態。\n\n故本題正確答案為 **(C) 2.45**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_two_blocks_string_tensions_ratio_207",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國三理化力與運動：牛頓第二運動定律連體運動／整體法求總外力 vs 隔離法求繩子張力之比值",
+    "uploadDate": "2026-10-20",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-12",
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【連體繩子拉力比】整體法 vs 隔離法秒殺！\n1. **最大致命陷阱：誤以為 T₁ 只有拉物體 A（誤選 D 2 : 1）！**\n   - $T_1$ 拉在最前面，它後面拖著 A，A 又拖著 B，所以** $T_1$ 必須負責拉動「A ＋ B 兩者」**！\n2. **秒殺兩步驟（整體法與隔離法）**：\n   - **看整體求 T₁**：外力 $T_1$ 拉動整個系統（$m_A + m_B$），故 $T_1 = (m_A + m_B)a = (2 + 1)a = 3a$！\n   - **看後面的 B 求 T₂**：繩子張力 $T_2$ 只需要負責拉動身後的物體 B，故 $T_2 = m_B \\times a = 1a$！\n   - **拉力比值**：$T_1 : T_2 = 3a : 1a = \\mathbf{3 : 1}$！\n3. **誰在前面拉越多，質量總和成正比**：\n   - 在相同加速度下，繩子的拉力大小恰好等於**「該繩子後方所拖曳的所有物體質量總和」**！\n   - $T_1$ 後面有 $2+1=3\\text{ kg}$；$T_2$ 後面只有 $1\\text{ kg}$ ➔ 比值直接秒殺：**3 : 1**！",
+    "stem": "如圖，置於光滑平面上的 A、B 兩個物體，以兩條不計其質量的輕繩連結，且 A = 2 kg、B = 1 kg。今以 T₁ 的拉力向右拉 A 物體，T₂ 為向右拉 B 物體的拉力，而使兩木塊皆獲得一相同的加速度，則 T₁ : T₂ 為何？\n\n○ (A) 1 : 3\n○ (B) 3 : 1\n○ (C) 1 : 2\n○ (D) 2 : 1",
+    "answer": "(B) 3 : 1",
+    "diagramUrl": "assets/questions/q207_two_blocks_string_tensions_ratio_diagram.png",
+    "solution": "🎥 **老師影音詳解教學**：https://www.youtube.com/watch?v=fmr0gfszXmk\n\n### 💡 完整破題步驟（整體法 ＋ 隔離法）：\n\n1. **第一步：利用「整體法」分析外力 $T_1$**：\n   - 將 A 物體（2 kg）與 B 物體（1 kg）視為同一個運動系統。\n   - 系統受到水平向右的最外側拉力為 $T_1$。\n   - 光滑平面無摩擦力，兩物體獲得相同的水平加速度 $a$。\n   - 由牛頓第二運動定律 $F = ma$：\n     $$T_1 = (m_A + m_B) \\times a = (2 + 1) \\times a = \\mathbf{3a}$$\n\n2. **第二步：利用「隔離法」分析繩子張力 $T_2$**：\n   - 單獨隔離最後面的 B 物體（質量 $m_B = 1\\text{ kg}$）。\n   - B 物體在水平方向上只受到輕繩向右的拉力 $T_2$。\n   - B 物體的加速度同樣為 $a$。\n   - 對 B 物體列牛頓第二運動定律方程式：\n     $$T_2 = m_B \\times a = 1 \\times a = \\mathbf{1a}$$\n\n3. **第三步：計算拉力比值 $T_1 : T_2$**：\n   $$\\frac{T_1}{T_2} = \\frac{3a}{1a} = \\frac{3}{1} \\implies T_1 : T_2 = \\mathbf{3 : 1}$$\n\n4. **各選項誘答陷阱診斷**：\n   - **(A) 1 : 3**：比值順序倒置（誤寫為 $T_2 : T_1$）。\n   - **(B) 3 : 1【完全正確，本題正解】**：$T_1$ 拖動 $3\\text{ kg}$，$T_2$ 拖動 $1\\text{ kg}$，比值為 $3 : 1$。\n   - **(C) 1 : 2**：誤以為 $T_1$ 只拉 A、$T_2$ 只拉 B，且順序倒置。\n   - **(D) 2 : 1（最常見陷阱）**：粗心誤以為 $T_1$ 只有拉物體 A（$2a$），忽略了 A 後面還掛著 B，整列都在被 $T_1$ 拉動！\n\n故本題正確答案為 **(B) 3 : 1**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
