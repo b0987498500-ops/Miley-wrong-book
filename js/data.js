@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v263';
+const STORAGE_KEY = 'miley_wrong_questions_v265';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1452,6 +1452,66 @@ const INITIAL_SEED_DATA = [
     "answer": "(C) 若 F = 0.1 kgw，則木塊將作等加速度運動",
     "diagramUrl": "assets/questions/q208_smooth_surface_block_constant_force_diagram.png",
     "solution": "🎥 **老師影音詳解教學**：https://www.youtube.com/watch?v=7ez5KvnwCN8\n\n### 💡 完整破題步驟與核心觀念解析：\n\n1. **「光滑水平面」的物理意義（摩擦力為 0）**：\n   - 題幹明確指出「**光滑水平面**」，代表接觸面**完全沒有摩擦力**（靜摩擦力與動摩擦力皆為 0）。\n   - 在垂直方向上：木塊重量 1 kgw 向下，桌面支撐力（正向力）1 kgw 向上，垂直方向合力為 0，互相抵消。\n   - 在水平方向上：沒有任何阻力阻礙運動。因此，**無論水平施力 $F$ 多麼微小（哪怕只有 0.001 kgw），都不需要克服任何靜摩擦力，木塊必然會立刻開始運動**！故選項 (A)「維持靜止」錯誤。\n\n2. **「持續施一固定力 $F$」的運動型態（牛頓第二運動定律）**：\n   - 水平方向上，合外力即為持續施加的固定推力 $F$（合外力為定值且不等於 0）。\n   - 根據牛頓第二運動定律：\n     $$F = ma \\implies a = \\frac{F}{m} \\quad (\\text{定值})$$\n   - 當物體受到的合外力為**定值**時，物體必然產生**固定的加速度**，其運動型態必為**「等加速度運動」**（速度隨時間均勻增加）！\n\n3. **各選項逐一剖析**：\n   - **(A) 錯誤**：光滑平面無摩擦力，即使 $F = 0.5\\text{ kgw}$ 也必然會被推動，不會維持靜止。\n   - **(B) 錯誤**：$F = 1\\text{ kgw}$ 是定力，加速度 $a = \\frac{F}{m}$ 為定值，木塊應作「等加速度運動」，而非等速度運動。\n   - **(C) 完全正確（本題正解）**：只要 $F = 0.1\\text{ kgw}$ 是固定的力，合力為定值，木塊即作「等加速度運動」。\n   - **(D) 錯誤**：$F = 1.5\\text{ kgw}$ 持續施力下，木塊作「等加速度運動」，絕非等速度運動。\n\n故本題正確答案為 **(C) 若 F = 0.1 kgw，則木塊將作等加速度運動**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_ticker_timer_tape_acceleration_209",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國三理化力與運動：打點計時器頻率求週期（t = 1/f）與等加速度運動相鄰位移差（ΔS = a·t²）求加速度",
+    "uploadDate": "2026-10-20",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：打點計時器紙帶求加速度的兩大常見陷阱！\n1. **頻率換週期要倒數**：\n   - 題目給打點計時器頻率 $f = 5\\text{ 赫（Hz）}$，相鄰兩點的時間間隔是週期 $t = \\frac{1}{f} = \\frac{1}{5} = \\mathbf{0.2\\text{ 秒}}$！\n   - ⚠️ **常犯粗心**：誤將 5 赫直接當作 $t = 5\\text{ 秒}$，或者將 $0.2\\text{ 秒}$ 平方算成 $0.4$，導致答案相差數十倍！注意 $(0.2)^2 = 0.04$！\n2. **等加速度紙帶相鄰位移差秒殺公式**：\n   - 相鄰連續且等時距的位移差 $\\Delta S = S_2 - S_1 = a \\cdot t^2$！\n   - $\\Delta S = 1.2 - 0.4 = 0.8\\text{ cm}$，所以 $a = \\frac{\\Delta S}{t^2} = \\frac{0.8}{(0.2)^2} = \\frac{0.8}{0.04} = \\mathbf{20\\text{ 公分／秒}^2}$！",
+    "stem": "如圖(一)所示的裝置中，做「力和加速度變化」的實驗步驟如下：\n甲：滑車上先載兩個砝碼（每個砝碼均 20 公克），滑輪下端懸掛一個砝碼，扣住滑車。\n乙：滑車之後拉著紙帶，使紙帶通過打點計時器，而打點計時器的振動頻率是 5 赫。\n丙：釋放滑車使打點計時器在紙帶上打點。\n丁：將滑車上砝碼逐一拿到懸掛砝碼的一端，並重複丙步驟。\n\n試回答下列問題：\n某次實驗後，建豪撕下紙帶，測量前三點間的距離如圖(二)所示，則滑車滑動的加速度大小為多少公分／秒²？（補充題）\n\n○ (A) 10 公分／秒²\n○ (B) 20 公分／秒²\n○ (C) 40 公分／秒²\n○ (D) 80 公分／秒²",
+    "answer": "(B) 20 公分／秒²",
+    "diagramUrl": "assets/questions/q209_pulley_timer_tape_dots_acceleration_diagram.png",
+    "solution": "### 💡 完整破題步驟與公式推導：\n\n1. **第一步：由打點計時器頻率求相鄰兩點時間間隔（週期 $t$）**：\n   - 題幹步驟乙說明：打點計時器的振動頻率為 $f = 5\\text{ 赫（Hz）}$。\n   - 每打一個點的時間間隔（即週期 $t$）：\n     $$t = \\frac{1}{f} = \\frac{1}{5} = \\mathbf{0.2\\text{ 秒}}$$\n   - 因此，紙帶上從 A 點到 B 點經歷 $0.2\\text{ 秒}$，從 B 點到 C 點也經歷 $0.2\\text{ 秒}$。\n\n2. **第二步：由紙帶圖(二)讀取連續位移**：\n   - 第一段位移（A 到 B）：$S_1 = 0.4\\text{ 公分}$。\n   - 第二段位移（B 到 C）：$S_2 = 1.2\\text{ 公分}$。\n\n3. **第三步：利用等加速度運動「相鄰位移差公式」求加速度**：\n   - 在等加速度運動中，相鄰等時間間隔的位移差滿足：\n     $$\\Delta S = S_2 - S_1 = a \\cdot t^2$$\n   - 代入數據：\n     $$1.2 - 0.4 = a \\times (0.2)^2$$\n     $$0.8 = a \\times 0.04$$\n     $$a = \\frac{0.8}{0.04} = \\mathbf{20\\text{ 公分／秒}^2}$$\n\n4. **另解（平均速度法驗算）**：\n   - AB 段平均速度 $\\bar{v}_1 = \\frac{0.4\\text{ cm}}{0.2\\text{ s}} = 2\\text{ cm/s}$（也是 AB 中點時刻的瞬時速度）。\n   - BC 段平均速度 $\\bar{v}_2 = \\frac{1.2\\text{ cm}}{0.2\\text{ s}} = 6\\text{ cm/s}$（也是 BC 中點時刻的瞬時速度）。\n   - 兩中點時刻相隔恰好為 $t = 0.2\\text{ 秒}$：\n     $$a = \\frac{\\Delta v}{\\Delta t} = \\frac{6 - 2}{0.2} = \\frac{4}{0.2} = \\mathbf{20\\text{ 公分／秒}^2}$$\n   - 兩種方法結果完全一致！\n\n故滑車滑動的加速度大小為 **(B) 20 公分／秒²**（填空：20）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_ticker_timer_system_tension_force_210",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "計算粗心",
+    "concept": "國三理化力與運動：牛頓第二運動定律 F = ma 之單位標準化換算（公克轉公斤、cm/s²轉m/s²求牛頓 N）",
+    "uploadDate": "2026-10-20",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：牛頓第二定律 $F = ma$ 嚴格單位對應守則！\n1. **牛頓（N）是 MKS 國際標準制單位**：\n   - 力的單位：**牛頓（N）**\n   - 質量的單位必須換成：**公斤（kg）**！題目給 $800\\text{ 公克} = \\mathbf{0.8\\text{ 公斤}}$！\n   - 加速度的單位必須換成：**公尺／秒²（m/s²）**！上題算出的 $20\\text{ cm/s}^2 = \\mathbf{0.2\\text{ m/s}^2}$！\n2. **常見粗心爆點**：\n   - ⚠️ 若直接拿公克和公分／秒²相乘：$800 \\times 20 = 16000$（達因 dyn），若沒換算就寫成 $160$ 或 $1.6$，小數點位數大錯特錯！\n   - 一定要先換算標準單位再代入：$F = 0.8\\text{ kg} \\times 0.2\\text{ m/s}^2 = \\mathbf{0.16\\text{ N}}$！",
+    "stem": "承上題實驗，若系統總質量共 800 公克，則繩子對滑車的拉力為多少牛頓？（補充題）\n\n○ (A) 0.08 牛頓\n○ (B) 0.16 牛頓\n○ (C) 1.6 牛頓\n○ (D) 160 牛頓",
+    "answer": "(B) 0.16 牛頓",
+    "diagramUrl": "assets/questions/q209_pulley_timer_tape_dots_acceleration_diagram.png",
+    "solution": "### 💡 完整破題步驟與單位換算精解：\n\n1. **第一步：承接前一題求出的滑車系統加速度並進行單位換算**：\n   - 由第 (2) 題得知，系統運動加速度為 $a = 20\\text{ 公分／秒}^2$。\n   - 因為牛頓（N）的定義為「使質量 $1\\text{ 公斤}$ 的物體產生 $1\\text{ 公尺／秒}^2$ 的加速度所需的外力」，即 $1\\text{ N} = 1\\text{ kg} \\cdot \\text{m/s}^2$。\n   - 故必須將加速度單位換算為公尺／秒²：\n     $$a = 20\\text{ 公分／秒}^2 = \\frac{20}{100}\\text{ 公尺／秒}^2 = \\mathbf{0.2\\text{ 公尺／秒}^2}$$\n\n2. **第二步：將系統總質量換算為公斤**：\n   - 題幹給定：系統總質量 $m = 800\\text{ 公克}$。\n   - 換算為標準單位公斤：\n     $$m = 800\\text{ 公克} = \\frac{800}{1000}\\text{ 公斤} = \\mathbf{0.8\\text{ 公斤}}$$\n\n3. **第三步：代入牛頓第二運動定律公式 $F = ma$**：\n   - 由牛頓第二運動定律：\n     $$F = m \\times a$$\n     $$F = 0.8\\text{ 公斤} \\times 0.2\\text{ 公尺／秒}^2 = \\mathbf{0.16\\text{ 牛頓 (N)}}$$\n\n4. **各選項誘答陷阱診斷**：\n   - **(A) 0.08 牛頓**：算式中質量或加速度除錯 2 倍。\n   - **(B) 0.16 牛頓【完全正確，本題正解】**：$0.8\\text{ kg} \\times 0.2\\text{ m/s}^2 = 0.16\\text{ N}$。\n   - **(C) 1.6 牛頓**：忘記將公分換成公尺，小數點少移一位。\n   - **(D) 160 牛頓**：完全未注意單位轉換造成的嚴重數量級錯誤。\n\n故繩子對滑車的拉力為 **(B) 0.16 牛頓**（填空：0.16）。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
