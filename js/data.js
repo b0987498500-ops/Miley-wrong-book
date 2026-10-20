@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v258';
+const STORAGE_KEY = 'miley_wrong_questions_v259';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1297,6 +1297,37 @@ const INITIAL_SEED_DATA = [
     "answer": "(D) 1 牛頓的力，能使 1 公斤質量的物體，產生 9.8 公尺／秒² 的加速度",
     "diagramUrl": "",
     "solution": "### 💡 力的兩大單位系統與各選項深度剖析：\n\n1. **選項 (A) 正確**：\n   - **公式**：由牛頓第二運動定律 $F = ma$。\n   - **換算**：$1\\text{ 公斤重 (kgw)} = 9.8\\text{ 牛頓 (N)}$。\n   - **加速度**：$a = \\frac{F}{m} = \\frac{9.8\\text{ N}}{1\\text{ kg}} = \\mathbf{9.8\\text{ 公尺／秒}^2}$。\n   - 故 1 公斤重的力能使 1 公斤質量的物體產生 $9.8\\text{ m/s}^2$ 的加速度，敘述完全正確。\n\n2. **選項 (B) 正確**：\n   - **重力單位定義**：在地表附近，質量 1 公克的物體所受到的地球萬有引力（重力）大小，即定義為「**1 公克重（1 gw）**」，敘述完全正確。\n\n3. **選項 (C) 正確**：\n   - **重力換算關係**：在地表附近重力加速度 $g \\approx 9.8\\text{ m/s}^2$。\n   - $W = mg = 1\\text{ kg} \\times 9.8\\text{ m/s}^2 = 9.8\\text{ N}$。\n   - 因此 $1\\text{ kgw} = \\mathbf{9.8\\text{ 牛頓}}$，敘述完全正確。\n\n4. **選項 (D) 錯誤（本題所選）**：\n   - **牛頓的本質定義**：由 $F = ma$，當 $m = 1\\text{ 公斤}$，$F = 1\\text{ 牛頓}$ 時：\n     $$a = \\frac{F}{m} = \\frac{1\\text{ N}}{1\\text{ kg}} = \\mathbf{1\\text{ 公尺／秒}^2}$$\n   - 即：**1 牛頓的力，能使 1 公斤質量的物體產生 1 公尺／秒² 的加速度**。\n   - 選項 (D) 誤寫為 $9.8\\text{ 公尺／秒}^2$，將「牛頓」與「公斤重」混為一談，故敘述錯誤。\n\n故本題正確答案為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_newton_second_law_unit_conversion_kgw_to_n_204",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國三理化力與運動：牛頓第二運動定律 F = ma 代入前之單位換算（公斤重 kgw 轉為牛頓 N）",
+    "uploadDate": "2026-10-20",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-12",
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【F = ma 代入前，先檢查力是不是「牛頓」！】秒殺避坑重點！\n1. **最大致命陷阱：看到 1 公斤重直接代 F = 1！**\n   - 若直接把 $F = 1$ 代入：$1 = 9.8 \\times a \\implies a = \\frac{1}{9.8}$ ➔ 就會掉入選項 (A) 的邪惡陷阱！\n2. **標準解題口訣（公式強制使用 MKS 制）**：\n   - 在 $F = ma$ 中：\n     - 力 $F$ 的單位必須是「**牛頓（N）**」！\n     - 質量 $m$ 的單位必須是「**公斤（kg）**」！\n     - 加速度 $a$ 的單位才是「**公尺／秒²（m/s²）**」！\n   - **先換算再代入**：$1\\text{ 公斤重} = 9.8\\text{ 牛頓}$！\n   - 代入公式：$9.8\\text{ N} = 9.8\\text{ kg} \\times a \\implies a = \\mathbf{1\\text{ m/s}^2}$！",
+    "stem": "施 1 公斤重之力於質量 9.8 公斤之物體上，所得之加速度大小為多少公尺／秒²？\n\n○ (A) 1/9.8\n○ (B) 1\n○ (C) 9.8\n○ (D) 4.9",
+    "answer": "(B) 1",
+    "diagramUrl": "",
+    "solution": "### 💡 完整破題步驟與單位換算陷阱剖析：\n\n1. **第一步：檢查物理量單位（避坑關鍵！）**：\n   - 牛頓第二運動定律公式為：\n     $$F = ma$$\n   - **嚴格單位限制（SI 制 / MKS 制）**：\n     - 外力 $F$ 的法定單位是「**牛頓（N）**」，**絕不能直接代入公斤重（kgw）**！\n     - 質量 $m$ 的單位是「**公斤（kg）**」。\n     - 加速度 $a$ 的單位是「**公尺／秒²（m/s²）**」。\n\n2. **第二步：力的單位換算**：\n   - 題幹給予的外力是「$1\\text{ 公斤重 (kgw)}$」。\n   - 根據地表重力加速度 $g = 9.8\\text{ m/s}^2$：\n     $$1\\text{ 公斤重} = 1\\text{ kg} \\times 9.8\\text{ m/s}^2 = \\mathbf{9.8\\text{ 牛頓 (N)}}$$\n\n3. **第三步：代入公式求加速度 $a$**：\n   - 將 $F = 9.8\\text{ N}$ 與 $m = 9.8\\text{ kg}$ 代入公式：\n     $$F = ma$$\n     $$9.8 = 9.8 \\times a$$\n     $$a = \\frac{9.8}{9.8} = \\mathbf{1\\text{ 公尺／秒}^2}$$\n\n4. **常見誘答陷阱解析**：\n   - **陷阱 (A) 1/9.8**：若粗心忘記將「公斤重」轉為「牛頓」，直接將 $F=1$ 代入 $1 = 9.8 \\times a$，就會算出 $a = 1/9.8$ 誤選 (A)。\n   - **正解 (B) 1**：換算成 9.8 牛頓後除以 9.8 公斤，剛好等於 1。\n\n故本題正確答案為 **(B) 1**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
