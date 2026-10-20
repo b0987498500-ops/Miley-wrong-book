@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v260';
+const STORAGE_KEY = 'miley_wrong_questions_v261';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1359,6 +1359,37 @@ const INITIAL_SEED_DATA = [
     "answer": "(B) 滑車與秤盤上的砝碼總數不變",
     "diagramUrl": "assets/questions/q205_pulley_cart_weights_experiment_diagram.png",
     "solution": "🎥 **老師影音詳解教學**：https://www.youtube.com/watch?v=7JwDjmdu9mY\n\n### 💡 完整破題關鍵與滑車實驗控制變因解析：\n\n1. **實驗目的與控制變因法定位**：\n   - 本實驗目的為探討：「**不同拉力下，物體質量不變，產生不同加速度**」（驗證 $F \\propto a$）。\n   - **操作變因（要改變的量）**：拉力 $F$（由懸掛的砝碼重力提供）。\n   - **控制變因（必須維持固定不變的量）**：**系統總質量 $m$**。\n   - **應變變因（測量結果）**：滑車系統的加速度 $a$。\n\n2. **物理核心概念：運動系統的「總質量」定義**：\n   - 在滑車與滑輪實驗裝置中，懸掛的砝碼在重力作用下向下加速運動，同時透過細繩拉動水平桌面上的滑車前進。\n   - 由於細繩不可伸縮，**懸掛的砝碼與滑車具有完全相同的加速度大小**，必須將兩者視為**「同一個運動系統（System）」**！\n   - 系統的牛頓第二運動定律方程式為：\n     $$F_{\\text{合力}} = m_{\\text{系統}} \\times a$$\n     $$\\text{懸掛砝碼重力} = (M_{\\text{滑車}} + m_{\\text{車上砝碼}} + m_{\\text{秤盤與懸掛砝碼}}) \\times a$$\n\n3. **如何做到「改變拉力，但系統總質量不變」？**：\n   - **若要增加拉力**：必須增加懸掛端的砝碼數。\n   - **若要同時維持系統總質量不變**：增加的砝碼**絕不能從外部額外添加**，而是必須**從滑車上取下砝碼，轉移移至懸掛秤盤上**！\n   - 如此一來，懸掛端變重（拉力 $F$ 增大），但滑車端減輕，**「滑車與秤盤上的砝碼總數維持不變」**，整個系統的總質量 $m$ 才能真正保持固定！\n\n4. **各選項逐一剖析**：\n   - **(A) 錯誤**：兩邊砝碼數均增加，會使系統總質量變大，違反控制變因。\n   - **(B) 完全正確（本題正解）**：砝碼僅在滑車與秤盤間互相挪動，總數保持不變，外力改變而總質量維持固定。\n   - **(C) 錯誤（最常見陷阱）**：滑車砝碼不變而直接增加秤盤砝碼，會使系統總質量增加，無法維持質量不變。\n   - **(D) 錯誤**：秤盤砝碼不變代表拉力固定，僅改變滑車砝碼會變成探討「拉力不變，質量與加速度關係」的實驗，與題旨相反。\n\n故本題正確答案為 **(B) 滑車與秤盤上的砝碼總數不變**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_pulley_connected_masses_acceleration_206",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國三理化力與運動：牛頓第二運動定律連體運動／滑輪連體系統合力與系統總質量求加速度",
+    "uploadDate": "2026-10-20",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-12",
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【滑輪連體運動三大致命陷阱】秒殺解題口訣！\n1. **陷阱一：誤以為 1 kg 物體自由落體（誤選 A 9.8）！**\n   - 1 kg 物體被繩子吊著，後面還拖著桌面上沈重的 3 kg 木塊，它不是自己單獨掉落，所以加速度**絕對小於重力加速度 9.8**！\n2. **陷阱二：系統總質量忘記「連體相加」！**\n   - 整條繩子綁著兩個物體一起動，一個向右跑、一個向下掉，加速度大小完全相同。\n   - 因此運動系統的總質量必須是：$m_{\\text{系統}} = m_1 + m_2 = 3 + 1 = \\mathbf{4\\text{ kg}}$！\n3. **誰在提供驅動力（外力 F）？**\n   - 水平桌面上的 3 kg 木塊重力被桌面支撐力抵消，不提供前進的力；\n   - 只有**懸掛在空中的 1 kg 物體所受的重力**才是拉動整個系統的「唯一合外力」：$F = 1\\text{ kg} \\times 9.8\\text{ m/s}^2 = 9.8\\text{ N}$！\n   - 加速度秒算：$a = \\frac{F}{m_{\\text{系統}}} = \\frac{9.8\\text{ N}}{3 + 1\\text{ kg}} = \\frac{9.8}{4} = \\mathbf{2.45\\text{ m/s}^2}$！",
+    "stem": "如圖，在沒有摩擦的情形下，放手後，質量 1 kg 的物體落下的加速度大小為多少 m／s²？\n\n○ (A) 9.8\n○ (B) 4.9\n○ (C) 2.45\n○ (D) 0",
+    "answer": "(C) 2.45",
+    "diagramUrl": "assets/questions/q206_table_pulley_blocks_acceleration_diagram.png",
+    "solution": "🎥 **老師影音詳解教學**：https://www.youtube.com/watch?v=67uxYyIq16Y\n\n### 💡 完整破題步驟與連體運動系統分析：\n\n1. **第一步：將兩物體視為「同一運動系統」**：\n   - 桌面上 3 kg 的木塊與懸掛 1 kg 的木塊由不可伸長的輕繩相連。\n   - 當懸掛木塊向下加速時，桌面木塊以相同的加速度向右加速前進。\n   - 因此，**兩者的加速度大小完全相等**，可合為一個運動系統：\n     $$m_{\\text{系統}} = m_{\\text{桌}} + m_{\\text{懸}} = 3\\text{ kg} + 1\\text{ kg} = \\mathbf{4\\text{ kg}}$$\n\n2. **第二步：找出拉動整個系統的「合外力 $F$」**：\n   - 桌面光滑（題目明示「沒有摩擦的情形」）。\n   - 桌面上 3 kg 木塊的重力與桌面的垂直正向力抵消，在水平方向不產生驅動力。\n   - 驅使整個系統運動的**唯一外力**，就是懸掛在空中 1 kg 物體所受到的**重力**：\n     $$F = W_{\\text{懸}} = 1\\text{ kg} \\times 9.8\\text{ m/s}^2 = \\mathbf{9.8\\text{ 牛頓 (N)}}$$\n\n3. **第三步：代入牛頓第二運動定律 $F = ma$**：\n   - 根據系統牛頓第二運動定律：\n     $$F_{\\text{合力}} = m_{\\text{系統}} \\times a$$\n     $$9.8 = (3 + 1) \\times a$$\n     $$9.8 = 4a$$\n     $$a = \\frac{9.8}{4} = \\mathbf{2.45\\text{ m/s}^2}$$\n\n4. **常見錯誤選項診斷**：\n   - **(A) 9.8**：誤以為 1 kg 懸掛物是自由落體（忽略了後方拖曳著 3 kg 的阻礙）。\n   - **(B) 4.9**：誤以為分母是 2 kg 或只除以 2（計算粗心）。\n   - **(C) 2.45【完全正確，本題正解】**：外力 9.8 N 由總質量 4 kg 平分加速，加速度為 2.45 m/s²。\n   - **(D) 0**：誤以為系統呈靜止或平衡狀態。\n\n故本題正確答案為 **(C) 2.45**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
