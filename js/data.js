@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v262';
+const STORAGE_KEY = 'miley_wrong_questions_v263';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1421,6 +1421,37 @@ const INITIAL_SEED_DATA = [
     "answer": "(B) 3 : 1",
     "diagramUrl": "assets/questions/q207_two_blocks_string_tensions_ratio_diagram.png",
     "solution": "🎥 **老師影音詳解教學**：https://www.youtube.com/watch?v=fmr0gfszXmk\n\n### 💡 完整破題步驟（整體法 ＋ 隔離法）：\n\n1. **第一步：利用「整體法」分析外力 $T_1$**：\n   - 將 A 物體（2 kg）與 B 物體（1 kg）視為同一個運動系統。\n   - 系統受到水平向右的最外側拉力為 $T_1$。\n   - 光滑平面無摩擦力，兩物體獲得相同的水平加速度 $a$。\n   - 由牛頓第二運動定律 $F = ma$：\n     $$T_1 = (m_A + m_B) \\times a = (2 + 1) \\times a = \\mathbf{3a}$$\n\n2. **第二步：利用「隔離法」分析繩子張力 $T_2$**：\n   - 單獨隔離最後面的 B 物體（質量 $m_B = 1\\text{ kg}$）。\n   - B 物體在水平方向上只受到輕繩向右的拉力 $T_2$。\n   - B 物體的加速度同樣為 $a$。\n   - 對 B 物體列牛頓第二運動定律方程式：\n     $$T_2 = m_B \\times a = 1 \\times a = \\mathbf{1a}$$\n\n3. **第三步：計算拉力比值 $T_1 : T_2$**：\n   $$\\frac{T_1}{T_2} = \\frac{3a}{1a} = \\frac{3}{1} \\implies T_1 : T_2 = \\mathbf{3 : 1}$$\n\n4. **各選項誘答陷阱診斷**：\n   - **(A) 1 : 3**：比值順序倒置（誤寫為 $T_2 : T_1$）。\n   - **(B) 3 : 1【完全正確，本題正解】**：$T_1$ 拖動 $3\\text{ kg}$，$T_2$ 拖動 $1\\text{ kg}$，比值為 $3 : 1$。\n   - **(C) 1 : 2**：誤以為 $T_1$ 只拉 A、$T_2$ 只拉 B，且順序倒置。\n   - **(D) 2 : 1（最常見陷阱）**：粗心誤以為 $T_1$ 只有拉物體 A（$2a$），忽略了 A 後面還掛著 B，整列都在被 $T_1$ 拉動！\n\n故本題正確答案為 **(B) 3 : 1**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_smooth_surface_constant_force_acceleration_208",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國三理化力與運動：光滑平面無摩擦力（摩擦力為 0）／受定力必作等加速度運動 vs 牛頓第一定律",
+    "uploadDate": "2026-10-20",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-12",
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【光滑水平面三大審題關鍵】！\n1. **看見「光滑」＝ 摩擦力為 0！**\n   - 光滑平面不需要克服任何最大靜摩擦力！**只要有任何微小的水平外力（哪怕只有 0.0001 kgw），木塊就一定會被推動！**\n   - ⚠️ 陷阱 (A) 誤以為重量 1 kgw 需要至少 1 kgw 才能推動，這是把「垂直重力」和「水平推力」搞混了！\n2. **「持續施定力」物體會怎麼動？**\n   - **合力 F ＝ 0** ➔ 靜止或「**等速度運動**」（牛頓第一運動定律）。\n   - **合力 F ＝ 定值（不為 0）** ➔ $a = \\frac{F}{m}$ 為定值 ➔ **必作「等加速度運動」**（速度越來越快）！\n   - ⚠️ 陷阱 (B)(D) 誤以為「用力一直推就是等速度」，在沒有摩擦力的情況下持續施力，速度一定會一直飆升，絕不是等速度！",
+    "stem": "有一個木塊原本靜止在一光滑水平面上。已知木塊的重量為 1 kgw，當在水平方向對木塊持續施一力 F，如圖所示，則下列敘述何者正確？\n\n○ (A) 若 F = 0.5 kgw，則木塊維持靜止\n○ (B) 若 F = 1 kgw，則木塊將作等速度運動\n○ (C) 若 F = 0.1 kgw，則木塊將作等加速度運動\n○ (D) 若 F = 1.5 kgw，則木塊將作等速度運動",
+    "answer": "(C) 若 F = 0.1 kgw，則木塊將作等加速度運動",
+    "diagramUrl": "assets/questions/q208_smooth_surface_block_constant_force_diagram.png",
+    "solution": "🎥 **老師影音詳解教學**：https://www.youtube.com/watch?v=7ez5KvnwCN8\n\n### 💡 完整破題步驟與核心觀念解析：\n\n1. **「光滑水平面」的物理意義（摩擦力為 0）**：\n   - 題幹明確指出「**光滑水平面**」，代表接觸面**完全沒有摩擦力**（靜摩擦力與動摩擦力皆為 0）。\n   - 在垂直方向上：木塊重量 1 kgw 向下，桌面支撐力（正向力）1 kgw 向上，垂直方向合力為 0，互相抵消。\n   - 在水平方向上：沒有任何阻力阻礙運動。因此，**無論水平施力 $F$ 多麼微小（哪怕只有 0.001 kgw），都不需要克服任何靜摩擦力，木塊必然會立刻開始運動**！故選項 (A)「維持靜止」錯誤。\n\n2. **「持續施一固定力 $F$」的運動型態（牛頓第二運動定律）**：\n   - 水平方向上，合外力即為持續施加的固定推力 $F$（合外力為定值且不等於 0）。\n   - 根據牛頓第二運動定律：\n     $$F = ma \\implies a = \\frac{F}{m} \\quad (\\text{定值})$$\n   - 當物體受到的合外力為**定值**時，物體必然產生**固定的加速度**，其運動型態必為**「等加速度運動」**（速度隨時間均勻增加）！\n\n3. **各選項逐一剖析**：\n   - **(A) 錯誤**：光滑平面無摩擦力，即使 $F = 0.5\\text{ kgw}$ 也必然會被推動，不會維持靜止。\n   - **(B) 錯誤**：$F = 1\\text{ kgw}$ 是定力，加速度 $a = \\frac{F}{m}$ 為定值，木塊應作「等加速度運動」，而非等速度運動。\n   - **(C) 完全正確（本題正解）**：只要 $F = 0.1\\text{ kgw}$ 是固定的力，合力為定值，木塊即作「等加速度運動」。\n   - **(D) 錯誤**：$F = 1.5\\text{ kgw}$ 持續施力下，木塊作「等加速度運動」，絕非等速度運動。\n\n故本題正確答案為 **(C) 若 F = 0.1 kgw，則木塊將作等加速度運動**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
