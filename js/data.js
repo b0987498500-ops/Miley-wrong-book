@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v265';
+const STORAGE_KEY = 'miley_wrong_questions_v267';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1512,6 +1512,36 @@ const INITIAL_SEED_DATA = [
     "answer": "(B) 0.16 牛頓",
     "diagramUrl": "assets/questions/q209_pulley_timer_tape_dots_acceleration_diagram.png",
     "solution": "### 💡 完整破題步驟與單位換算精解：\n\n1. **第一步：承接前一題求出的滑車系統加速度並進行單位換算**：\n   - 由第 (2) 題得知，系統運動加速度為 $a = 20\\text{ 公分／秒}^2$。\n   - 因為牛頓（N）的定義為「使質量 $1\\text{ 公斤}$ 的物體產生 $1\\text{ 公尺／秒}^2$ 的加速度所需的外力」，即 $1\\text{ N} = 1\\text{ kg} \\cdot \\text{m/s}^2$。\n   - 故必須將加速度單位換算為公尺／秒²：\n     $$a = 20\\text{ 公分／秒}^2 = \\frac{20}{100}\\text{ 公尺／秒}^2 = \\mathbf{0.2\\text{ 公尺／秒}^2}$$\n\n2. **第二步：將系統總質量換算為公斤**：\n   - 題幹給定：系統總質量 $m = 800\\text{ 公克}$。\n   - 換算為標準單位公斤：\n     $$m = 800\\text{ 公克} = \\frac{800}{1000}\\text{ 公斤} = \\mathbf{0.8\\text{ 公斤}}$$\n\n3. **第三步：代入牛頓第二運動定律公式 $F = ma$**：\n   - 由牛頓第二運動定律：\n     $$F = m \\times a$$\n     $$F = 0.8\\text{ 公斤} \\times 0.2\\text{ 公尺／秒}^2 = \\mathbf{0.16\\text{ 牛頓 (N)}}$$\n\n4. **各選項誘答陷阱診斷**：\n   - **(A) 0.08 牛頓**：算式中質量或加速度除錯 2 倍。\n   - **(B) 0.16 牛頓【完全正確，本題正解】**：$0.8\\text{ kg} \\times 0.2\\text{ m/s}^2 = 0.16\\text{ N}$。\n   - **(C) 1.6 牛頓**：忘記將公分換成公尺，小數點少移一位。\n   - **(D) 160 牛頓**：完全未注意單位轉換造成的嚴重數量級錯誤。\n\n故繩子對滑車的拉力為 **(B) 0.16 牛頓**（填空：0.16）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_triangle_midpoints_parallel_similar_area_211",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國三數學相似形：平行線截比例線段與相似三角形面積比等於邊長平方比",
+    "uploadDate": "2026-10-20",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【相似三角形面積比】與【梯形分割面積】核心口訣！\n1. **相似三角形邊長比與面積比的關係**：\n   - 若邊長比為 $a : b$，則相似三角形的面積比必為平方比 $a^2 : b^2$！\n   - ⚠️ **常犯粗心**：誤將邊長比直接當作面積比（例如誤以為邊長比 2 : 3，面積就相差 1 份），一定要先平方！\n2. **中點再中點的邊長切割手法**：\n   - $D$ 為中點 ➔ $AD = 2$ 份，$DB = 2$ 份。\n   - $E$ 為 $DB$ 中點 ➔ $DE = 1$ 份，$EB = 1$ 份。\n   - 因此邊長總和：$AD : AE : AB = 2 : 3 : 4$！\n   - 三個相似三角形面積比為 $2^2 : 3^2 : 4^2 = 4 : 9 : 16$！\n3. **梯形面積是相扣出來的**：\n   - 中間梯形 $DEGF$ 面積比例 $= 9 - 4 = 5$ 份。\n   - $5$ 份對應面積 $10$ ➔ 每 $1$ 份面積為 $2$！\n   - 整體大三角形 $\\triangle ABC$ 面積 $= 16$ 份 $\\times 2 = \\mathbf{32}$！",
+    "stem": "如圖，在 △ABC 中，D、F 分別為線段 AB、線段 AC 的中點，E、G 分別為線段 DB、線段 FC 的中點，且 DF // EG // BC。若四邊形 DEGF 的面積為 10，則 △ABC 的面積為何？\n\n○ (A) 24\n○ (B) 30\n○ (C) 32\n○ (D) 36",
+    "answer": "(C) 32",
+    "diagramUrl": "assets/questions/q211_triangle_midpoints_parallel_area_ratio_diagram.png",
+    "solution": "### 💡 完整破題步驟與幾何比例推導：\n\n1. **第一步：分析各邊線段之長度比例（中點分割）**：\n   - 設線段 AB 的全長為 $4x$。\n   - 已知 $D$ 為線段 AB 的中點，因此：\n     $$AD = DB = 2x$$\n   - 又已知 $E$ 為線段 DB 的中點，因此：\n     $$DE = EB = \\frac{2x}{2} = 1x$$\n   - 由此可得頂點 A 出發的三段長度分別為：\n     - $AD = 2x$\n     - $AE = AD + DE = 2x + 1x = 3x$\n     - $AB = 4x$\n   - 線段比例為：\n     $$AD : AE : AB = 2 : 3 : 4$$\n   - 同理，在線段 AC 上，$F$ 為 AC 中點，$G$ 為 FC 中點，亦有：\n     $$AF : AG : AC = 2 : 3 : 4$$\n\n2. **第二步：利用平行線性質確立相似三角形**：\n   - 題幹給定 $DF // EG // BC$。\n   - 根據同位角相等與平行線截比例線段性質，可得三層三角形皆彼此相似：\n     $$\\triangle ADF \\sim \\triangle AEG \\sim \\triangle ABC$$\n   - 其對應邊長比為：\n     $$AD : AE : AB = 2 : 3 : 4$$\n\n3. **第三步：由邊長比求出「面積平方比」**：\n   - 相似三角形的面積比等於對應邊長的平方比：\n     - $\\text{面積}(\\triangle ADF) \\propto 2^2 = 4$\n     - $\\text{面積}(\\triangle AEG) \\propto 3^2 = 9$\n     - $\\text{面積}(\\triangle ABC) \\propto 4^2 = 16$\n\n4. **第四步：利用「面積差」求出梯形 DEGF 的所佔份數**：\n   - 四邊形 $DEGF$ 的面積為 $\\triangle AEG$ 扣除頂部 $\\triangle ADF$：\n     $$\\text{面積}(DEGF) = \\text{面積}(\\triangle AEG) - \\text{面積}(\\triangle ADF) = 9 - 4 = \\mathbf{5\\text{ 份}}$$\n   - 題幹給定四邊形 $DEGF$ 的面積為 $10$：\n     $$5\\text{ 份} = 10 \\implies 1\\text{ 份} = \\frac{10}{5} = \\mathbf{2}$$\n\n5. **第五步：計算大三角形 $\\triangle ABC$ 的總面積**：\n   - 大三角形 $\\triangle ABC$ 佔 $16$ 份：\n     $$\\text{面積}(\\triangle ABC) = 16\\text{ 份} \\times 2 = \\mathbf{32}$$\n\n6. **各選項誘答陷阱診斷**：\n   - **(A) 24**：誤用邊長比 $2 : 3 : 4$（相差 1 份得 10，大三角形直接算成 $2.4 \\times 10$）的典型錯誤。\n   - **(B) 30**：誤將頂部三角形算為梯形的一半，比例計算偏差。\n   - **(C) 32【完全正確，本題正解】**：面積比為 $4 : 9 : 16$，梯形佔 $5$ 份得面積 $10$，故大三角形為 $16 \\times 2 = 32$。\n   - **(D) 36**：梯形公式高與底邊重複放大計算錯誤。\n\n故 $\\triangle ABC$ 的面積為 **(C) 32**（填空：32）。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
