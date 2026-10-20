@@ -4,6 +4,26 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v2.50] - 2026-10-20 (自動收錄 1 道國中英文文法考題：because 從屬連接詞接完整子句 vs because of 介系詞片語接名詞片語 Q201，希臘神話艾柯與水仙少年納西瑟斯典故，升級數據庫至 v256，快取升級 v2.26)
+- **類型**：錯題自動收錄 / 國中英文文法核心概念 / because vs because of 結構判斷 / 名詞片語識別 / 希臘神話背景 / 升級數據庫至 v256 / 快取升級 v2.26
+- **主要變更**：
+  1. **收錄 1 道國中英文文法核心考題（Q201，歸入 2026-10-19 最新週次）**：
+     - `q_eng_grammar_because_vs_because_of_narcissus_201`（英文）：Echo was a beautiful nymph. She lived in the woods and liked to follow this young man, Narcissus, here and there ______ his handsome face and body.
+       - 核心文法概念：because 是從屬連接詞，後方須接完整子句（S + V）；because of 是介系詞片語，後方接名詞、名詞片語或動名詞。
+       - 審題破題關鍵：空格後為 `his handsome face and body`（所有格＋形容詞＋名詞），內部完全沒有動詞，是純名詞片語，故答案必為介系詞片語 **(B) because of**。
+       - 錯誤選項診斷：(A) because 後缺子句；(C) by 語意不通；(D) so 因果邏輯與文法結構皆不合。
+       - 文化背景典故：融入希臘神話森林仙女艾柯（Echo，回音）與美男子納西瑟斯（Narcissus，水仙花）典故，增進學習趣味。
+  2. **純文字題規範處理**：
+     - 本題為純文字閱讀填空考題，截圖無實質幾何圖形或統計圖表，嚴格遵照 AGENTS.md 規範不放截圖，`diagramUrl: ""` 設為空字串，以純文字高對比排版呈現。
+  3. **零符號純淨繁體中文排版與自然時間序 (FIFO)**：
+     - 題號 Q201 自然銜接於 Q200 之後，嚴格遵守 FIFO 先進先出與收錄時序自然排列。
+  4. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v256`（`miley_wrong_questions_v256`）。
+     - Service Worker 快取升級至 `miley-pwa-cache-v2.26`。
+     - 核心腳本更新版本標籤：`index.html` 升級 `sw.js?v=243` 與 `js/data.js?v=256`。
+
+---
+
 ## [v2.49] - 2026-10-19 (自動收錄 1 道國三數學相似形中點連線與中線重心面積比例考題：同底等高與同高中線分段面積比 Q200，幾何圖形 3x 獨立高清去痕保存，升級數據庫至 v255，快取升級 v2.25)
 - **類型**：錯題自動收錄 / 國三數學相似三角形應用 / 三角形兩邊中點連線段性質 / 中線交點重心性質 / 同高三角形面積比等於底邊比 / 附圖 3x 高解析獨立裁切 / 升級數據庫至 v255 / 快取升級 v2.25
 - **主要變更**：

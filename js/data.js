@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v255';
+const STORAGE_KEY = 'miley_wrong_questions_v256';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1204,6 +1204,37 @@ const INITIAL_SEED_DATA = [
     "answer": "(B) 1 : 3",
     "diagramUrl": "assets/questions/q200_midpoint_median_centroid_triangle_area_ratio_diagram.png",
     "solution": "1. **三角形兩邊中點連線段性質**：\n   - 已知 D、E 分別為線段 AB、線段 AC 的中點。\n   - 根據三角形兩邊中點連線段性質：\n     線段 DE // 線段 BC，且 線段 DE = 1/2 線段 BC。\n     即：**線段 DE : 線段 BC = 1 : 2**。\n\n2. **利用重心與相似三角形求線段比**：\n   - 因為 D、E 為中點，線段 CD 與線段 BE 為 △ABC 的兩條中線，交點 F 為 △ABC 之重心。\n   - 由於線段 DE // 線段 BC，可得：\n     **△DEF ~ △CBF（AA 相似性質）**\n   - 相似比為 線段 DE : 線段 BC = 1 : 2。\n   - 對應邊成比例：\n     **線段 DF : 線段 FC = 線段 EF : 線段 FB = 1 : 2**。\n\n3. **同高三角形面積轉化**：\n   - **考慮 △CDE 中**：\n     △DEF 與 △CEF 共用頂點 E，且底邊線段 DF 與線段 FC 在同一直線 CD 上（同高）。\n     由「同高三角形面積比等於底邊長度比」：\n     △DEF 面積 : △CEF 面積 = 線段 DF : 線段 FC = 1 : 2。\n     因此，△DEF 面積佔 △CDE 面積的：\n     **△DEF 面積 = 1/(1+2) × △CDE 面積 = 1/3 × △CDE 面積**。\n   - **考慮 △ADC 中**：\n     E 為線段 AC 的中點，△ADE 與 △CDE 共用頂點 D，底邊線段 AE = 線段 CE。\n     同底等高，因此：\n     **△ADE 面積 = △CDE 面積**。\n\n4. **得出面積比**：\n   - 將 △CDE 面積替換為 △ADE 面積：\n     △DEF 面積 = 1/3 × △ADE 面積\n   - 故：\n     **△DEF 面積 : △ADE 面積 = 1 : 3**。\n\n5. **全圖面積份數驗算法（設 △ABC 面積為 12）**：\n   - △ADE 面積 = (1/2)² × △ABC 面積 = 1/4 × 12 = 3。\n   - △DEF 面積 = 1/4 × △CBF 面積 = 1/4 × (1/3 × 12) = 1/4 × 4 = 1。\n   - 故 △DEF 面積 : △ADE 面積 = 1 : 3，完全吻合！\n\n故本題正確答案為 **(B) 1 : 3**（填空答案：1 : 3）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_grammar_because_vs_because_of_narcissus_201",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "國中英文文法：because（從屬連接詞＋完整子句）vs because of（介系詞片語＋名詞片語）",
+    "uploadDate": "2026-10-20",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-12",
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【because vs. because of】秒殺判斷口訣！\n1. **看空格後面「有沒有動詞」**：\n   - 後面有主詞＋動詞（子句） ➔ 選 **because**（連接詞）。\n   - 後面只有名詞、名詞片語或動名詞（無動詞） ➔ 選 **because of**（介系詞片語）！\n2. **審題抓結構**：\n   - 空格後是 his handsome face and body（所有格＋形容詞＋名詞），**完全沒有動詞**，是純名詞片語！\n   - 看到「因為」千萬不要直覺秒選 because，一定要檢查後面是「句子」還是「名詞」！",
+    "stem": "Echo was a beautiful nymph. She lived in the woods and liked to follow this young man, Narcissus, here and there ______ his handsome face and body.\n\n○ (A) because\n○ (B) because of\n○ (C) by\n○ (D) so",
+    "answer": "(B) because of",
+    "diagramUrl": "",
+    "solution": "1. **詞性結構定勝負（破題關鍵）**：\n   - **because（從屬連接詞）**：後方必須接「完整子句」（主詞 ＋ 動詞，S + V）。例如：Echo followed Narcissus because he was handsome.\n   - **because of（介系詞片語）**：後方只能接「名詞」、「名詞片語（Noun Phrase）」或「動名詞（V-ing）」，絕不能有動詞！例如：Echo followed Narcissus because of his good looks.\n\n2. **審題結構拆解**：\n   - 觀察空格後方的文字：his handsome face and body\n   - his（所有格代名詞）＋ handsome（形容詞）＋ face and body（名詞），整體是一個**名詞片語**，內部**完全沒有動詞**！\n   - 既然受詞是純名詞片語，前面就必須使用介系詞片語 **because of**，不能用從屬連接詞 because。\n\n3. **逐一診斷錯誤選項**：\n   - **(A) because（常見陷阱）**：從屬連接詞，後方缺少主詞與動詞構成之完整子句。若要選 because，後方須改為 because he had a handsome face and body。\n   - **(B) because of【完全正確，本題正解】**：介系詞片語，後接名詞片語 his handsome face and body，語意「因為他英俊的容貌與體態」完全合乎文法。\n   - **(C) by**：介系詞，表示「藉由……方式/手段」或「在……旁邊」，放入句中語意為「藉由他的長相來跟隨他」，文意不通。\n   - **(D) so**：對等連接詞，表示「所以」，連接因果關係之兩個獨立子句（原因, so 結果），此處後面不是子句且因果邏輯顛倒。\n\n4. **希臘神話趣味背景（神話小知識）**：\n   - 本題出自希臘神話經典典故：森林仙女艾柯（Echo）深深愛上了美少年納西瑟斯（Narcissus），但納西瑟斯只迷戀自己在水中的倒影，最終化為水仙花（Narcissus），而艾柯傷心欲絕，肉體消逝，只留下了聲音在山谷間永遠迴盪（即 echo 回音）。\n\n故本題正確答案為 **(B) because of**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
