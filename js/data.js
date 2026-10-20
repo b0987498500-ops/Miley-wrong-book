@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v256';
+const STORAGE_KEY = 'miley_wrong_questions_v257';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1235,6 +1235,37 @@ const INITIAL_SEED_DATA = [
     "answer": "(B) because of",
     "diagramUrl": "",
     "solution": "1. **詞性結構定勝負（破題關鍵）**：\n   - **because（從屬連接詞）**：後方必須接「完整子句」（主詞 ＋ 動詞，S + V）。例如：Echo followed Narcissus because he was handsome.\n   - **because of（介系詞片語）**：後方只能接「名詞」、「名詞片語（Noun Phrase）」或「動名詞（V-ing）」，絕不能有動詞！例如：Echo followed Narcissus because of his good looks.\n\n2. **審題結構拆解**：\n   - 觀察空格後方的文字：his handsome face and body\n   - his（所有格代名詞）＋ handsome（形容詞）＋ face and body（名詞），整體是一個**名詞片語**，內部**完全沒有動詞**！\n   - 既然受詞是純名詞片語，前面就必須使用介系詞片語 **because of**，不能用從屬連接詞 because。\n\n3. **逐一診斷錯誤選項**：\n   - **(A) because（常見陷阱）**：從屬連接詞，後方缺少主詞與動詞構成之完整子句。若要選 because，後方須改為 because he had a handsome face and body。\n   - **(B) because of【完全正確，本題正解】**：介系詞片語，後接名詞片語 his handsome face and body，語意「因為他英俊的容貌與體態」完全合乎文法。\n   - **(C) by**：介系詞，表示「藉由……方式/手段」或「在……旁邊」，放入句中語意為「藉由他的長相來跟隨他」，文意不通。\n   - **(D) so**：對等連接詞，表示「所以」，連接因果關係之兩個獨立子句（原因, so 結果），此處後面不是子句且因果邏輯顛倒。\n\n4. **希臘神話趣味背景（神話小知識）**：\n   - 本題出自希臘神話經典典故：森林仙女艾柯（Echo）深深愛上了美少年納西瑟斯（Narcissus），但納西瑟斯只迷戀自己在水中的倒影，最終化為水仙花（Narcissus），而艾柯傷心欲絕，肉體消逝，只留下了聲音在山谷間永遠迴盪（即 echo 回音）。\n\n故本題正確答案為 **(B) because of**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_newton_second_law_water_cart_acceleration_202",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國三理化力與運動：牛頓第二運動定律 F = ma、外力固定時加速度與質量成反比",
+    "uploadDate": "2026-10-20",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-12",
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【牛頓第二運動定律 F = ma 三大變數控制】秒殺口訣！\n1. **控制變因法三定律**：\n   - **F 固定時**：$a = \\frac{F}{m}$ ➔ **加速度與質量成反比**（質量越小、越好推、衝越快，加速度越大）！\n   - **m 固定時**：$F = ma$ ➔ 加速度與外力成正比（力越大，加速度越大）。\n   - **a 固定時**：$F = ma$ ➔ 外力與質量成正比（載重越重，想維持相同加速就要出更多力）。\n2. **生活直覺結合物理公式**：\n   - 想像推一台載滿水的水車，本來很重很難推；水流掉變輕了，用同樣大小的力氣去推，車子自然「加速得越來越快」（加速度變大）！",
+    "stem": "阿牛以一固定的力推動一部裝水的車子，若車子的水逐漸流失，則車子的加速度如何？\n\n○ (A) 變大\n○ (B) 變小\n○ (C) 不變\n○ (D) 不一定",
+    "answer": "(A) 變大",
+    "diagramUrl": "",
+    "solution": "1. **核心物理定律（牛頓第二運動定律）**：\n   - 根據牛頓第二運動定律公式：\n     $$F = ma \\implies a = \\frac{F}{m}$$\n     （其中 $F$ 為合外力，$m$ 為物體總質量，$a$ 為物體獲得之加速度）。\n\n2. **控制變因與變數分析**：\n   - **外力 $F$**：題幹明確說明「阿牛以一**固定的力**推動」，表示合外力 $F$ 為**定值（固定不變）**。\n   - **質量 $m$**：題幹說明「車子的水**逐漸流失**」，表示車子與水之總質量 $m$ **逐漸變小**。\n   - **加速度 $a$**：由反比關係 $a = \\frac{F}{m}$ 可知，分子 $F$ 保持不變，分母 $m$ 逐漸變小，因此數值 $a$ **逐漸變大**。\n\n3. **直觀生活經驗驗證**：\n   - 推推車時，若車上的重物或水一路漏掉，車身越來越輕（質量變小），而推力始終保持不變，推動這部變輕的推車會感到越來越輕鬆，速度增加的幅度（加速度）會越來越快。\n\n故本題正確答案為 **(A) 變大**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
