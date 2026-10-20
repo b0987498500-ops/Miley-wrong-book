@@ -4,6 +4,27 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v2.60] - 2026-10-20 (自動收錄 1 道國三數學相似形考題：平行四邊形蝴蝶形相似與等高三角形面積比求割補四邊形面積 Q212，高清 2x 獨立裁切平行四邊形幾何圖，升級數據庫至 v269，快取升級 v2.39)
+- **類型**：錯題自動收錄 / 國三數學幾何相似形 / 平行四邊形對邊等長 / 蝴蝶形（沙漏形）AA 相似 / 邊長平方比求面積 / 等高三角形底邊一次方比 / 對角線半分平行四邊形割補 / 附圖 2x Retina 高清裁切保存 / 升級數據庫至 v269 / 快取升級 v2.39
+- **主要變更**：
+  1. **收錄 1 道國三數學相似形核心考題（Q212，歸入 2026-10-19 最新週次）**：
+     - `q_math_parallelogram_butterfly_similar_area_212`（數學）：如圖，在平行四邊形 ABCD 中，E 為線段 BC 上一點，線段 BD 和線段 AE 交於 F 點。已知 BE : EC = 3 : 2，若 △BEF 面積為 a，則四邊形 CDFE 面積可用 a 表示為何？
+       - 核心對邊比：$BE : EC = 3 : 2 \implies BC = 5k$，平行四邊形對邊 $AD = BC = 5k$，得蝴蝶形邊長比 $BE : AD = 3 : 5$。
+       - 蝴蝶形相似面積比（平方比）：$\triangle BEF \sim \triangle DAF \implies \text{面積}(\triangle DAF) = (5/3)^2 a = \frac{25}{9} a$。
+       - 等高三角形面積比（一次比）：$\triangle ABF$ 與 $\triangle BEF$ 等高 $\implies \text{面積}(\triangle ABF) = (5/3) a = \frac{15}{9} a$。
+       - 半平行四邊形與割補：$\text{面積}(\triangle BCD) = \text{面積}(\triangle ABD) = \frac{15}{9} a + \frac{25}{9} a = \frac{40}{9} a$。
+       - 四邊形 $CDFE$ 面積 $= \triangle BCD - \triangle BEF = \frac{40}{9} a - a = \mathbf{\frac{31}{9} a}$（正解 **(C)**）。
+  2. **圖表高清獨立裁切與保存**：
+     - 精確裁切平行四邊形幾何示意圖，濾除解答推導筆跡，以 2x Retina 高解析度獨立保存為 `assets/questions/q212_parallelogram_butterfly_similar_area_diagram.png`，支援點擊燈箱檢視。
+  3. **零符號純淨繁體中文排版與自然時間序 (FIFO)**：
+     - 題號 Q212 嚴格遵循自然收錄時序銜接於 Q211 之後，所有數學公式與幾何符號乾淨優美。
+  4. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v269`（`miley_wrong_questions_v269`）。
+     - Service Worker 快取升級至 `miley-pwa-cache-v2.39`。
+     - 核心腳本更新版本標籤：`index.html` 升級 `sw.js?v=256` 與 `js/data.js?v=269`。
+
+---
+
 ## [v2.59] - 2026-10-20 (自動收錄 1 道國三數學相似形考題：平行線截比例線段與相似三角形面積比等於邊長平方比求面積 Q211，高清 2x 獨立裁切幾何示意圖，升級數據庫至 v267，快取升級 v2.37)
 - **類型**：錯題自動收錄 / 國三數學幾何相似形 / 平行線截比例線段 / 中點再中點分割 / 相似三角形面積比等於邊長平方比 / 梯形面積差分 / 附圖 2x Retina 高清裁切保存 / 升級數據庫至 v267 / 快取升級 v2.37
 - **主要變更**：

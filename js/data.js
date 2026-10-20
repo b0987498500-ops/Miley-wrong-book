@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v267';
+const STORAGE_KEY = 'miley_wrong_questions_v269';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1542,6 +1542,36 @@ const INITIAL_SEED_DATA = [
     "answer": "(C) 32",
     "diagramUrl": "assets/questions/q211_triangle_midpoints_parallel_area_ratio_diagram.png",
     "solution": "### 💡 完整破題步驟與幾何比例推導：\n\n1. **第一步：分析各邊線段之長度比例（中點分割）**：\n   - 設線段 AB 的全長為 $4x$。\n   - 已知 $D$ 為線段 AB 的中點，因此：\n     $$AD = DB = 2x$$\n   - 又已知 $E$ 為線段 DB 的中點，因此：\n     $$DE = EB = \\frac{2x}{2} = 1x$$\n   - 由此可得頂點 A 出發的三段長度分別為：\n     - $AD = 2x$\n     - $AE = AD + DE = 2x + 1x = 3x$\n     - $AB = 4x$\n   - 線段比例為：\n     $$AD : AE : AB = 2 : 3 : 4$$\n   - 同理，在線段 AC 上，$F$ 為 AC 中點，$G$ 為 FC 中點，亦有：\n     $$AF : AG : AC = 2 : 3 : 4$$\n\n2. **第二步：利用平行線性質確立相似三角形**：\n   - 題幹給定 $DF // EG // BC$。\n   - 根據同位角相等與平行線截比例線段性質，可得三層三角形皆彼此相似：\n     $$\\triangle ADF \\sim \\triangle AEG \\sim \\triangle ABC$$\n   - 其對應邊長比為：\n     $$AD : AE : AB = 2 : 3 : 4$$\n\n3. **第三步：由邊長比求出「面積平方比」**：\n   - 相似三角形的面積比等於對應邊長的平方比：\n     - $\\text{面積}(\\triangle ADF) \\propto 2^2 = 4$\n     - $\\text{面積}(\\triangle AEG) \\propto 3^2 = 9$\n     - $\\text{面積}(\\triangle ABC) \\propto 4^2 = 16$\n\n4. **第四步：利用「面積差」求出梯形 DEGF 的所佔份數**：\n   - 四邊形 $DEGF$ 的面積為 $\\triangle AEG$ 扣除頂部 $\\triangle ADF$：\n     $$\\text{面積}(DEGF) = \\text{面積}(\\triangle AEG) - \\text{面積}(\\triangle ADF) = 9 - 4 = \\mathbf{5\\text{ 份}}$$\n   - 題幹給定四邊形 $DEGF$ 的面積為 $10$：\n     $$5\\text{ 份} = 10 \\implies 1\\text{ 份} = \\frac{10}{5} = \\mathbf{2}$$\n\n5. **第五步：計算大三角形 $\\triangle ABC$ 的總面積**：\n   - 大三角形 $\\triangle ABC$ 佔 $16$ 份：\n     $$\\text{面積}(\\triangle ABC) = 16\\text{ 份} \\times 2 = \\mathbf{32}$$\n\n6. **各選項誘答陷阱診斷**：\n   - **(A) 24**：誤用邊長比 $2 : 3 : 4$（相差 1 份得 10，大三角形直接算成 $2.4 \\times 10$）的典型錯誤。\n   - **(B) 30**：誤將頂部三角形算為梯形的一半，比例計算偏差。\n   - **(C) 32【完全正確，本題正解】**：面積比為 $4 : 9 : 16$，梯形佔 $5$ 份得面積 $10$，故大三角形為 $16 \\times 2 = 32$。\n   - **(D) 36**：梯形公式高與底邊重複放大計算錯誤。\n\n故 $\\triangle ABC$ 的面積為 **(C) 32**（填空：32）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_parallelogram_butterfly_similar_area_212",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國三數學相似形：平行四邊形蝴蝶形（沙漏形）相似與等高三角形面積比求割補四邊形面積",
+    "uploadDate": "2026-10-20",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【蝴蝶形相似＋等高三角形面積比】三大拆解步驟！\n1. **平行四邊形對邊等長先抓出來**：\n   - $BE : EC = 3 : 2 \\implies BC = 3 + 2 = 5$ 份。\n   - 因為平行四邊形對邊相等，所以對邊 $AD = BC = 5$ 份！\n   - 蝴蝶形上下邊長比為 $BE : AD = 3 : 5$！\n2. **區分【相似形（邊長平方比）】與【等高三角形（邊長一次方比）】**：\n   - $\\triangle BEF$ 與 $\\triangle DAF$ 為「**相似形**」➔ 面積比為平方比 $3^2 : 5^2 = 9 : 25$！\n   - $\\triangle ABF$ 與 $\\triangle BEF$ 為「**等高三角形**」➔ 面積比為底邊比 $5 : 3$ ➔ 面積為 $\\frac{5}{3} \\times a = \\frac{15}{9} a$！\n3. **對角線半分平行四邊形求四邊形**：\n   - 對角線 $BD$ 將平行四邊形切成兩半：$\\text{面積}(\\triangle BCD) = \\text{面積}(\\triangle ABD) = \\frac{15}{9} a + \\frac{25}{9} a = \\frac{40}{9} a$。\n   - 四邊形 $CDFE = \\triangle BCD - \\triangle BEF = \\frac{40}{9} a - a = \\mathbf{\\frac{31}{9} a}$！",
+    "stem": "如圖，在平行四邊形 ABCD 中，E 為線段 BC 上一點，線段 BD 和線段 AE 交於 F 點。已知 BE : EC = 3 : 2，若 △BEF 面積為 a，則四邊形 CDFE 面積可用 a 表示為何？\n\n○ (A) 16/9 a\n○ (B) 25/9 a\n○ (C) 31/9 a\n○ (D) 35/9 a",
+    "answer": "(C) 31/9 a",
+    "diagramUrl": "assets/questions/q212_parallelogram_butterfly_similar_area_diagram.png",
+    "solution": "### 💡 完整破題步驟與幾何推導：\n\n1. **第一步：由平行四邊形性質求上下對邊長度比**：\n   - 在平行四邊形 $ABCD$ 中，對邊平行且等長：$AD // BC$ 且 $AD = BC$。\n   - 題幹給定 $BE : EC = 3 : 2$，設 $BE = 3k$，$EC = 2k$。\n   - 則底邊總長 $BC = 3k + 2k = 5k$，故上底 $AD = BC = 5k$。\n   - 因此線段長度比：\n     $$BE : AD = 3k : 5k = 3 : 5$$\n\n2. **第二步：利用內錯角相等證明「蝴蝶形（沙漏形）」相似**：\n   - 因 $AD // BC$：\n     - $\\angle FBE = \\angle FDA$（內錯角相等）\n     - $\\angle FEB = \\angle FAD$（內錯角相等）\n   - 根據 AA 相似性質：\n     $$\\triangle BEF \\sim \\triangle DAF$$\n   - 對應邊長比例：\n     $$\\frac{BE}{AD} = \\frac{EF}{AF} = \\frac{BF}{DF} = \\frac{3}{5}$$\n\n3. **第三步：由相似三角形求頂部 $\\triangle DAF$ 的面積**：\n   - 相似三角形的面積比等於對應邊長的平方比：\n     $$\\frac{\\text{面積}(\\triangle DAF)}{\\text{面積}(\\triangle BEF)} = \\left(\\frac{AD}{BE}\\right)^2 = \\left(\\frac{5}{3}\\right)^2 = \\frac{25}{9}$$\n   - 已知 $\\text{面積}(\\triangle BEF) = a$：\n     $$\\text{面積}(\\triangle DAF) = \\frac{25}{9} a$$\n\n4. **第四步：利用「等高三角形」求相鄰 $\\triangle ABF$ 的面積**：\n   - 觀察 $\\triangle ABF$ 與 $\\triangle BEF$，共用頂點 $B$，底邊在同一直線 $AE$ 上（底邊分別為 $AF$ 與 $EF$）。\n   - 兩三角形等高，面積比等於底邊長比：\n     $$\\frac{\\text{面積}(\\triangle ABF)}{\\text{面積}(\\triangle BEF)} = \\frac{AF}{EF} = \\frac{5}{3}$$\n   - 故：\n     $$\\text{面積}(\\triangle ABF) = \\frac{5}{3} \\times a = \\frac{15}{9} a$$\n\n5. **第五步：利用對角線求半個平行四邊形 $\\triangle BCD$ 的面積**：\n   - 平行四邊形的對角線 $BD$ 將其分割為兩個面積相等的三角形：\n     $$\\text{面積}(\\triangle BCD) = \\text{面積}(\\triangle ABD)$$\n   - 而 $\\triangle ABD$ 是由 $\\triangle ABF$ 與 $\\triangle DAF$ 組合而成：\n     $$\\text{面積}(\\triangle ABD) = \\text{面積}(\\triangle ABF) + \\text{面積}(\\triangle DAF) = \\frac{15}{9} a + \\frac{25}{9} a = \\frac{40}{9} a$$\n   - 因此：\n     $$\\text{面積}(\\triangle BCD) = \\frac{40}{9} a$$\n\n6. **第六步：割補計算四邊形 CDFE 的面積**：\n   - 四邊形 $CDFE$ 可由下半部的 $\\triangle BCD$ 扣除 $\\triangle BEF$ 得到：\n     $$\\text{面積}(CDFE) = \\text{面積}(\\triangle BCD) - \\text{面積}(\\triangle BEF) = \\frac{40}{9} a - a = \\frac{40}{9} a - \\frac{9}{9} a = \\mathbf{\\frac{31}{9} a}$$\n\n7. **各選項誘答陷阱診斷**：\n   - **(A) 16/9 a**：誤拿相似三角形面積相減（$25/9 a - 9/9 a$）而忽略了旁邊的三角形。\n   - **(B) 25/9 a**：誤將四邊形面積等同於頂部三角形 $\\triangle DAF$。\n   - **(C) 31/9 a【完全正確，本題正解】**：嚴格依循蝴蝶形相似（平方比）與等高三角形（一次比）推導，半個平行四邊形為 $40/9 a$，扣除 $a$ 得到 $31/9 a$。\n   - **(D) 35/9 a**：通分扣減時分子計算粗心錯誤。\n\n故四邊形 CDFE 的面積可用 a 表示為 **(C) 31/9 a**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
