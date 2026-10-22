@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v274';
+const STORAGE_KEY = 'miley_wrong_questions_v275';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1966,6 +1966,36 @@ const INITIAL_SEED_DATA = [
     "diagramUrl": "",
     "solution": "### 💡 完整破題步驟與化學推導（113 會考經典試題）：\n\n1. **第一步：由「原子守恆」判斷兩反應的鹽酸消耗質量**：\n   - 化學反應本質為原子重新排列組合，反應前後原子的種類與數量不變（原子守恆）。\n   - 反應生成物為**「氫氣（H₂）」**與**「金屬氯化物」**。\n   - 觀察生成物氫氣中的氫原子（H）：\n     - 甲、乙均為金屬元素，其組成成分中完全不含氫原子。\n     - 因此，生成物氫氣中的所有氫原子，**必定全部來自於反應物「鹽酸（HCl）」**！\n   - 題目明確指出：兩反應生成的氫氣質量均為 $2.0\\text{ g}$（對應氫氣莫耳數均為 $2.0 \\div 2 = 1.0\\text{ 莫耳}$，即 2.0 莫耳的氫原子）。\n   - 由氫原子守恆可知：兩反應所消耗的氯化氫（HCl）莫耳數相同（均為 2.0 莫耳），因此**兩反應所消耗的鹽酸質量必定「相同」**！\n\n2. **第二步：由「質量守恆定律」判斷兩反應的產物總質量**：\n   - 根據質量守恆定律：\n     $$\\text{反應物消耗的總質量} = \\text{產物生成的總質量}$$\n   - 即：\n     $$\\text{產物總質量} = \\text{金屬質量} + \\text{鹽酸消耗質量}$$\n   - 設兩反應消耗的鹽酸質量皆為 $W$ 公克：\n     - **甲反應的產物總質量** ＝ $24.3\\text{ g} + W$\n     - **乙反應的產物總質量** ＝ $65.4\\text{ g} + W$\n   - 顯然：\n     $$24.3 + W \\neq 65.4 + W$$\n   - 因此，**兩反應的產物總質量必定「不同」**（乙反應的產物總質量大於甲反應）！\n\n3. **第三步：綜合比對選項表格**：\n   - 「兩反應的鹽酸消耗質量」：**相同**\n   - 「兩反應的產物總質量」：**不同**\n   - 對應選項表格，正確者為 **(B)**。\n\n---\n\n### 🎯 各選項誘答盲點診斷：\n- **(A) 相同、相同**：誤以為產生的氫氣質量相同，產物總質量就會相同，忽略了投入的金屬質量差距（乙比甲多了 41.1 g），違反質量守恆。\n- **(B) 相同、不同【完全正確，本題正解】**：由原子守恆知鹽酸消耗量相同，由質量守恆知反應物總質量不同故產物總質量不同。\n- **(C) 不同、相同**：雙重推導錯誤。\n- **(D) 不同、不同**：誤以為金屬質量不同，消耗的鹽酸質量就一定不同，忘記「氫原子全部來自鹽酸」的原子守恆原理。\n\n故正確答案為 **(B)**。\n\n📺 **名師影音詳細解題教學**：\n[點擊觀看 YouTube 解題影片](https://www.youtube.com/watch?v=yEDdf7PFBaY)",
     "videoUrl": "https://www.youtube.com/watch?v=yEDdf7PFBaY",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_chem_lithium_extraction_multistep_stoichiometry_226",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國二理化化學計量：多步驟工業製程（鋰礦石提煉金屬鋰）、反應式係數平衡、原子守恆法與莫耳數換算質量",
+    "uploadDate": "2026-10-22",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【多步驟反應化學計量：原子守恆法 10 秒秒殺】！\n1. **方法一：多步驟係數追蹤（標準解法）**：\n   - 步驟一平衡：2 LiAl(SiO₃)₂ + 1 K₂SO₄ → 1 Li₂SO₄ + 2 KAl(SiO₃)₂。\n     （1 莫耳 K₂SO₄ 產生 1 莫耳 Li₂SO₄）\n   - 步驟二：1 莫耳 Li₂SO₄ 產生 2 莫耳 LiCl。\n   - 步驟三：2 莫耳 LiCl 電解產生 2 莫耳 Li 金屬。\n   - **係數總結比例**：1 莫耳 K₂SO₄ ➔ 2 莫耳 Li 金屬！（莫耳比 K₂SO₄ : Li ＝ 1 : 2）\n2. **方法二：鋰原子守恆法（極速秒殺！）**：\n   - 觀察整體反應從起點到終點：\n     1 個 K₂SO₄ 只能結合 2 個鋰原子形成 Li₂SO₄。\n     最終所有鋰原子全部電解還原成鋰金屬（Li）。\n     因此：**K₂SO₄ 的莫耳數 ＝ 鋰原子（Li）莫耳數的一半（÷ 2）**！\n3. **常犯致命陷阱**：\n   - ❌ 忘記單位換算：題目給定「35 公斤」，計算莫耳數時必須乘 1000 換算成 35000 公克！\n   - ❌ 漏乘除比例：忘記 1 莫耳 K₂SO₄ 提供 2 莫耳 Li，直接拿 5000 莫耳乘 174 算出 870 公斤（誤選 A）！",
+    "stem": "鋰金屬是現代電池工業中最要的材料，有能源密度高，質量輕等等優勢。自然界中的鋰礦石主要以 LiAl(SiO₃)₂ 的形態存在，想要製成鋰金屬需要經過下列三步驟：\n\n步驟一：a LiAl(SiO₃)₂ + 1 K₂SO₄ ─(加熱)→ b Li₂SO₄ + c KAl(SiO₃)₂\n步驟二：Li₂SO₄ + BaCl₂ → 2 LiCl + BaSO₄\n步驟三：2 LiCl ─(電解)→ 2 Li + Cl₂\n\n如果想要得到 35 公斤的鋰金屬，則需要多少公斤的 K₂SO₄？（Li 原子量：7；K₂SO₄ 分子量：174）\n\n○ (A) 870 公斤\n○ (B) 358 公斤\n○ (C) 1740 公斤\n○ (D) 435 公斤",
+    "answer": "(D) 435 公斤",
+    "diagramUrl": "",
+    "solution": "### 💡 完整破題步驟與化學推導：\n\n1. **第一步：平衡步驟一的化學反應式係數**：\n   - 反應式：$a\\,\\text{LiAl(SiO}_3)_2 + 1\\,\\text{K}_2\\text{SO}_4 \\rightarrow b\\,\\text{Li}_2\\text{SO}_4 + c\\,\\text{KAl(SiO}_3)_2$\n   - 根據原子守恆逐一平衡：\n     - **鉀原子（K）**：左邊 $1 \\times 2 = 2$，故右邊 $c = 2$。\n     - **鋁（Al）與矽酸根 [Al(SiO₃)₂]**：右邊有 $c = 2$ 個，故左邊 $a = 2$。\n     - **鋰原子（Li）**：左邊 $a = 2$ 個 Li，右邊 $\\text{Li}_2\\text{SO}_4$ 中含 2 個 Li，故 $b = 1$。\n     - **硫酸根（SO₄）**：左邊 1 個，右邊 1 個，完全平衡。\n   - 平衡後的反應式為：\n     $$2\\,\\text{LiAl(SiO}_3)_2 + 1\\,\\text{K}_2\\text{SO}_4 \\rightarrow 1\\,\\text{Li}_2\\text{SO}_4 + 2\\,\\text{KAl(SiO}_3)_2$$\n\n2. **第二步：串聯三步驟反應，找出 K₂SO₄ 與產物 Li 的莫耳數關係**：\n   - **步驟一**：每消耗 $1\\text{ 莫耳}$ 的 $\\text{K}_2\\text{SO}_4$，可產生 $1\\text{ 莫耳}$ 的 $\\text{Li}_2\\text{SO}_4$。\n   - **步驟二**：每 $1\\text{ 莫耳}$ 的 $\\text{Li}_2\\text{SO}_4$，可產生 $2\\text{ 莫耳}$ 的 $\\text{LiCl}$。\n   - **步驟三**：每 $2\\text{ 莫耳}$ 的 $\\text{LiCl}$ 電解，可獲得 $2\\text{ 莫耳}$ 的金屬鋰（$\\text{Li}$）。\n   - **整體莫耳數比例**：\n     $$\\text{消耗 } 1\\text{ 莫耳 } \\text{K}_2\\text{SO}_4 \\implies \\text{獲得 } 2\\text{ 莫耳 } \\text{Li}$$\n     $$\\text{莫耳數比 } \\text{K}_2\\text{SO}_4 : \\text{Li} = 1 : 2$$\n\n3. **第三步：計算得到 35 公斤鋰金屬所需的 K₂SO₄ 質量**：\n   - 欲得鋰金屬質量 ＝ $35\\text{ 公斤} = 35000\\text{ 公克}$。\n   - 鋰金屬的莫耳數：\n     $$\\text{Li 莫耳數} = \\frac{35000\\text{ g}}{7\\text{ g/mole}} = 5000\\text{ 莫耳}$$\n   - 所需 $\\text{K}_2\\text{SO}_4$ 的莫耳數（為鋰莫耳數的一半）：\n     $$\\text{K}_2\\text{SO}_4 \\text{ 莫耳數} = 5000 \\times \\frac{1}{2} = 2500\\text{ 莫耳}$$\n   - 計算所需 $\\text{K}_2\\text{SO}_4$ 的質量：\n     $$\\text{質量} = \\text{莫耳數} \\times \\text{分子量} = 2500\\text{ 莫耳} \\times 174\\text{ g/mole} = 435000\\text{ 公克} = \\mathbf{435\\text{ 公斤}}$$\n\n---\n\n### ⚡ 鋰原子守恆秒殺法（直接看頭尾）：\n- 從反應原料到最終產物，所有的鋰原子來源均為鋰礦石，而結合沉澱的介質為 $\\text{K}_2\\text{SO}_4$。\n- 每一分子 $\\text{K}_2\\text{SO}_4$ 攜帶 1 個 $\\text{SO}_4^{2-}$ 根，在產物 $\\text{Li}_2\\text{SO}_4$ 中必然與 **2 個 $\\text{Li}^+$ 結合**。\n- 因此：\n  $$\\text{K}_2\\text{SO}_4 \\text{ 莫耳數} = \\frac{1}{2} \\times \\text{Li 莫耳數} = \\frac{1}{2} \\times \\frac{35000}{7} = 2500\\text{ 莫耳}$$\n  $$\\text{K}_2\\text{SO}_4 \\text{ 質量} = 2500 \\times 174 = 435000\\text{ g} = \\mathbf{435\\text{ 公斤}}$$\n\n---\n\n### 🎯 各選項誘答盲點診斷：\n- **(A) 870 公斤**：漏掉係數比 $1 : 2$，直接用 5000 莫耳乘 174（$5000 \\times 174 = 870000\\text{ g} = 870\\text{ kg}$），算出兩倍數值。\n- **(B) 358 公斤**：計算粗心或帶錯原子量。\n- **(C) 1740 公斤**：誤將比例乘以 2 算成 4 倍質量。\n- **(D) 435 公斤【完全正確，本題正解】**：正確求得 2500 莫耳，換算為 435 公斤。\n\n故需要 **(D) 435 公斤** 的 K₂SO₄。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
