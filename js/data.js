@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v272';
+const STORAGE_KEY = 'miley_wrong_questions_v273';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1844,6 +1844,97 @@ const INITIAL_SEED_DATA = [
     "answer": "(B) 1 : 8",
     "diagramUrl": "assets/questions/q221_parallelogram_butterfly_similar_area_ratio_diagram.png",
     "solution": "### 💡 完整破題步驟與幾何推導：\n\n1. **第一步：由已知比例求平行四邊形上下對邊長度比**：\n   - 題目給定：$2\\overline{AE} = \\overline{DE} \\implies \\overline{AE} : \\overline{DE} = 1 : 2$。\n   - 故上底總長 $\\overline{AD} = \\overline{AE} + \\overline{DE} = 1 + 2 = 3$ 份。\n   - 因四邊形 $ABCD$ 為平行四邊形，對邊等長：$\\overline{BC} = \\overline{AD} = 3$ 份。\n   - 得比例關係：\n     $$\\overline{AE} : \\overline{BC} = 1 : 3$$\n\n2. **第二步：利用內錯角相等證明沙漏形 AA 相似**：\n   - 因 $\\overline{AD} // \\overline{BC}$：\n     - $\\angle FAE = \\angle FCB$（內錯角相等）\n     - $\\angle FEA = \\angle FBC$（內錯角相等）\n   - 由 AA 相似性質得：\n     $$\\triangle AEF \\sim \\triangle CBF$$\n   - 對應邊成比例：\n     $$\\frac{\\overline{AF}}{\\overline{CF}} = \\frac{\\overline{AE}}{\\overline{BC}} = \\frac{1}{3} \\implies \\overline{AF} : \\overline{CF} = 1 : 3$$\n\n3. **第三步：利用等高三角形底邊比求面積**：\n   - 觀察 $\\triangle ABF$ 與 $\\triangle BCF$：\n     - 兩三角形共用頂點 $B$，且底邊 $\\overline{AF}$ 與 $\\overline{CF}$ 位於同一直線 $\\overline{AC}$ 上，故**兩三角形等高**。\n   - 等高三角形面積比等於底邊長比：\n     $$\\frac{\\text{面積}(\\triangle ABF)}{\\text{面積}(\\triangle BCF)} = \\frac{\\overline{AF}}{\\overline{CF}} = \\frac{1}{3}$$\n   - 設 $\\text{面積}(\\triangle ABF) = a$，則 $\\text{面積}(\\triangle BCF) = 3a$。\n\n4. **第四步：利用對角線求半個平行四邊形與總面積**：\n   - 對角線 $\\overline{AC}$ 下方的三角形 $\\triangle ABC$ 面積為：\n     $$\\text{面積}(\\triangle ABC) = \\text{面積}(\\triangle ABF) + \\text{面積}(\\triangle BCF) = a + 3a = 4a$$\n   - 平行四邊形的對角線平分其總面積：\n     $$\\text{面積}(\\text{平行四邊形 } ABCD) = 2 \\times \\text{面積}(\\triangle ABC) = 2 \\times 4a = 8a$$\n\n5. **第五步：計算所求面積比**：\n   - $\\triangle ABF$ 面積 與 平行四邊形 $ABCD$ 的面積比為：\n     $$\\text{面積}(\\triangle ABF) : \\text{面積}(\\text{平行四邊形 } ABCD) = a : 8a = \\mathbf{1 : 8}$$\n\n故正確答案為 **(B) 1 : 8**（比值為 1 : 8）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_similar_triangles_tree_wall_shadow_222",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國三數學相似形應用：陽光平行投影直立竿長與影長比、殘影在牆面垂直分割矩形與相似三角形求樹高",
+    "uploadDate": "2026-10-22",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【影子折上牆壁的樹高計算兩大拆解步驟】！\n1. **常犯致命錯誤**：\n   - ❌ 誤把地面影長 21 公尺直接加 2 公尺算成 23 公尺當總影長！牆上的影子是「直立垂直」的，地上的影子是「水平」的，絕不可直接相加！\n2. **破題核心分割法（水準輔助線分割為矩形與三角形）**：\n   - 從牆上影子頂端 C 點向樹幹作水平垂直線 CE 垂直 AB 於 E。\n   - 得到下方長方形 EBDC：EB = CD = 2 公尺，EC = BD = 21 公尺。\n   - 上方的 △AEC 即為完全受陽光照射的相似直角三角形！\n   - 物高 : 影長 = 1 : 1.5 = 2 : 3。\n   - AE : EC = 1 : 1.5 ➔ AE : 21 = 1 : 1.5 ➔ AE = 21 ÷ 1.5 = 14 公尺！\n   - 樹總高 AB = AE + EB = 14 + 2 = **16 公尺**！\n3. **秒殺口訣**：【樹高 = (地面影長 ÷ 影長比) + 牆上影高】！\n   - 樹高 = (21 ÷ 1.5) + 2 = 14 + 2 = **16 公尺**！",
+    "stem": "如圖，小明想測量樹高，他在同一時間測得 1 公尺高的竹竿直立時的影長為 1.5 公尺，同時量得樹影落在地面上的長度線段 BD 為 21 公尺，留在牆面上的高度線段 CD 為 2 公尺，則樹高線段 AB 為多少公尺？\n\n○ (A) 14\n○ (B) 15\n○ (C) 16\n○ (D) 18",
+    "answer": "(C) 16",
+    "diagramUrl": "assets/questions/q222_tree_wall_shadow_sunlight_diagram.png",
+    "solution": "### 💡 完整破題步驟與幾何推導：\n\n1. **第一步：建立物高與影長的定值比（陽光平行光性質）**：\n   - 陽光在同一時間同一地點可視為互相平行的平行光束，因此直立物體與其在地面水平影長的比值為定值。\n   - 已知竹竿高 1 公尺時，水平影長為 1.5 公尺：\n     $$\\frac{\\text{物高}}{\\text{水平影長}} = \\frac{1}{1.5} = \\frac{2}{3}$$\n\n2. **第二步：作水平輔助線分割圖形**：\n   - 由牆壁上影子的頂點 $C$ 向樹幹 $\\overline{AB}$ 作水平垂線，垂足為 $E$。\n   - 觀察下方的四邊形 $EBDC$：\n     - $\\overline{AB} \\perp \\overline{BD}$（樹垂直於地面），$\\overline{CD} \\perp \\overline{BD}$（牆垂直於地面），$\\overline{EC} \\perp \\overline{AB}$（水平線垂直直立樹幹）。\n     - 四邊形 $EBDC$ 為**長方形（矩形）**！\n     - 因此對邊等長：\n       $$\\overline{EB} = \\overline{CD} = 2\\text{ 公尺}$$\n       $$\\overline{EC} = \\overline{BD} = 21\\text{ 公尺}$$\n\n3. **第三步：利用相似三角形計算上方樹高線段 AE**：\n   - 頂部的 $\\triangle AEC$ 為直角三角形，其中 $\\overline{EC}$ 為水平底邊（等同於上方虛擬地面影長），$\\overline{AC}$ 為光線投射路徑。\n   - $\\triangle AEC$ 與竹竿影長三角形 $\\triangle A'E'C'$ 為相似直角三角形（AA 相似）：\n     $$\\frac{\\overline{AE}}{\\overline{EC}} = \\frac{\\overline{A'E'}}{\\overline{E'C'}} = \\frac{1}{1.5}$$\n   - 代入 $\\overline{EC} = 21$：\n     $$\\frac{\\overline{AE}}{21} = \\frac{1}{1.5} \\implies \\overline{AE} = \\frac{21}{1.5} = 14\\text{ 公尺}$$\n\n4. **第四步：合併求出樹的總高線段 AB**：\n   - 樹的總高度 $\\overline{AB}$ 由上方 $\\overline{AE}$ 與下方 $\\overline{EB}$ 組成：\n     $$\\overline{AB} = \\overline{AE} + \\overline{EB} = 14 + 2 = \\mathbf{16\\text{ 公尺}}$$\n\n---\n\n### 🎯 各選項誘答盲點診斷：\n- **(A) 14**：只算出了上方的 $\\overline{AE} = 14$，忘記加上被牆壁擋住抬高的下方 $2$ 公尺（$\\overline{EB}$）。\n- **(B) 15**：誤以為 $21 \\div 1.5 = 14$，再加上 1（竹竿長）得到 15。\n- **(C) 16【完全正確，本題正解】**：$\\overline{AE} = 14$，加上長方形對邊 $\\overline{EB} = 2$，總樹高為 16 公尺。\n- **(D) 18**：計算失誤或比例錯誤。\n\n故樹高線段 AB 為 **(C) 16** 公尺（填空答案：16）。\n\n📺 **名師影音詳細解題教學**：\n[點擊觀看 YouTube 解題影片](https://www.youtube.com/watch?v=tiY1NbIDxRQ)",
+    "videoUrl": "https://www.youtube.com/watch?v=tiY1NbIDxRQ",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_analytic_geom_light_reflection_shortest_path_223",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國二/國三數學幾何對稱與畢氏定理：坐標平面光線反射（入射角等於反射角）、對稱點轉化兩點間直線距離為最短路徑",
+    "uploadDate": "2026-10-22",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【平面鏡反射與兩點折線長度求法秒殺秘訣】！\n1. **反射路徑秒殺核心：作對稱點化折線為直線！**：\n   - 光線自 A(0, 1) 射向 x 軸上的 C 點，經反射到達 B(3, 3)。\n   - 根據光的反射定律：入射角等於反射角。\n   - 將 A(0, 1) 關於 x 軸（鏡面）作「**線對稱點**」A'：\n     - A 點坐標為 (0, 1) ➔ 關於 x 軸對稱點為 **A'(0, -1)**！\n   - 連接 A' 與 B，線段 A'B 與 x 軸的交點正是 C 點！\n   - 幾何等長代換：AC = A'C，因此光線總長度 AC + CB = A'C + CB = **A'B**！\n2. **畢氏定理秒殺兩點距離**：\n   - A'(0, -1) 到 B(3, 3)：\n     - 水平距離 Δx = 3 - 0 = 3\n     - 垂直距離 Δy = 3 - (-1) = 4\n     - 直角三角形 3 : 4 : 5 ➔ 距離 A'B = √(3² + 4²) = **5**！\n3. **常見盲點排雷**：\n   - 很多同學會嘗試假設 C(x, 0) 列方程式解 x，其實利用對稱點轉化為線段 A'B 長度只需 5 秒直接心算得出！",
+    "stem": "如圖，有一束光線自 A(0, 1) 投射經過 x 軸上的 C 點，反射經過 B(3, 3)，則光線自 A 點到 B 點所經過的長度為多少？\n\n○ (A) 4\n○ (B) 5\n○ (C) 6\n○ (D) 3√2",
+    "answer": "(B) 5",
+    "diagramUrl": "assets/questions/q223_coordinate_light_reflection_distance_diagram.png",
+    "solution": "### 💡 完整破題步驟與幾何推導：\n\n1. **第一步：理解光線反射定律與幾何對稱性質**：\n   - 光線在 x 軸上的 C 點發生反射，滿足「入射角 ＝ 反射角」。\n   - 在幾何坐標中，法線垂直於 x 軸，因此光線入射線段 AC 與 x 軸的夾角等於反射線段 CB 與 x 軸的夾角。\n   - 這意味著：若將點 A 關於反射面（x 軸）取對稱點 $A'$，則 $A'$、C、B 三點將**共線在一條直線上**！\n\n2. **第二步：求 A 點關於 x 軸的對稱點坐標**：\n   - 已知 $A$ 點坐標為 $(0, 1)$。\n   - 點 $(x, y)$ 關於 x 軸的對稱點為 $(x, -y)$。\n   - 故 $A$ 點關於 x 軸的對稱點為：\n     $$A'(0, -1)$$\n\n3. **第三步：將折線長度轉化為兩點間直線距離**：\n   - 根據線對稱性質：線段 $\\overline{AC}$ 的長度恆等於線段 $\\overline{A'C}$ 的長度（$\\overline{AC} = \\overline{A'C}$）。\n   - 因此光線自 A 點經 C 點到達 B 點所走過的路徑總長度為：\n     $$\\text{路徑長} = \\overline{AC} + \\overline{CB} = \\overline{A'C} + \\overline{CB} = \\overline{A'B}$$\n\n4. **第四步：利用兩點距離公式（畢氏定理）計算線段 A'B 的長度**：\n   - $A'(0, -1)$ 與 $B(3, 3)$ 兩點間的距離：\n     $$\\overline{A'B} = \\sqrt{(x_B - x_{A'})^2 + (y_B - y_{A'})^2}$$\n     $$\\overline{A'B} = \\sqrt{(3 - 0)^2 + [3 - (-1)]^2} = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = \\mathbf{5}$$\n\n故光線自 A 點到 B 點所經過的長度為 **(B) 5**（填空答案：5）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_chem_baking_soda_sodium_intake_moles_224",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國二理化生活化學計量：小蘇打碳酸氫鈉 NaHCO₃ 質量轉莫耳數計算與每日鈉攝取量比較評估",
+    "uploadDate": "2026-10-22",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【化學計量質量轉莫耳數兩大計算步驟】！\n1. **莫耳數基本計算公式**：\n   - 莫耳數 ＝ 質量（公克）÷ 分子量。\n   - 小蘇打化學式為 NaHCO₃，題目給定分子量為 84。\n   - 喝進小蘇打的莫耳數 ＝ 1.68 ÷ 84 ＝ **0.02 莫耳**！\n2. **原子化學計量對照**：\n   - 每一分子 NaHCO₃ 恰含有「1 個鈉原子（Na）」。\n   - 因此 0.02 莫耳的 NaHCO₃ 中，含有的鈉（Na）也是 **0.02 莫耳**！\n3. **健康標準比對**：\n   - 衛福部建議每日鈉攝取量上限約 2400 毫克 ＝ 0.104 莫耳。\n   - 小軒喝進的鈉為 0.02 莫耳，因為 0.02 < 0.104，所以**「否（未超過）」**！\n4. **選項陷阱排雷**：\n   - (C)、(D) 50 莫耳：顛倒算成分子量除以克數（84 ÷ 1.68 = 50），公式嚴重用錯！莫耳數必為「克數除以分子量」！",
+    "stem": "衛生福利部建議每天鈉攝取量最好不要超過 2400 毫克，約等於 0.104 莫耳，請問小軒喝了一瓶用了 1.68 公克小蘇打（NaHCO₃）的自製汽水，相當於喝進多少莫耳的鈉？是否超過每天鈉攝取量？（NaHCO₃ 分子量=84）\n\n○ (A) 0.02 莫耳，是\n○ (B) 0.02 莫耳，否\n○ (C) 50 莫耳，是\n○ (D) 50 莫耳，否",
+    "answer": "(B) 0.02 莫耳，否",
+    "diagramUrl": "",
+    "solution": "### 💡 完整破題步驟與化學計量計算：\n\n1. **第一步：計算喝進的小蘇打（NaHCO₃）莫耳數**：\n   - 根據物質的質量與分子量換算莫耳數公式：\n     $$\\text{莫耳數} = \\frac{\\text{質量 (公克)}}{\\text{分子量}}$$\n   - 題目給定小蘇打用量為 $1.68$ 公克，分子量為 $84$：\n     $$\\text{NaHCO}_3 \\text{ 莫耳數} = \\frac{1.68}{84} = \\mathbf{0.02\\text{ 莫耳}}$$\n\n2. **第二步：求出喝進的「鈉（Na）」莫耳數**：\n   - 觀察碳酸氫鈉的化學式 $\\text{NaHCO}_3$，每個分子中含有：\n     - 1 個鈉原子（Na）、1 個氫原子（H）、1 個碳原子（C）、3 個氧原子（O）。\n   - 因此 $\\text{Na}$ 原子的莫耳數與 $\\text{NaHCO}_3$ 的莫耳數為 $1 : 1$：\n     $$\\text{鈉 (Na) 的莫耳數} = 0.02\\text{ 莫耳}$$\n\n3. **第三步：比對衛福部建議的每天鈉攝取上限**：\n   - 衛福部建議每日鈉攝取量上限為 $2400$ 毫克，題幹已直接換算約為 $0.104$ 莫耳。\n   - 比較數值大小：\n     $$0.02\\text{ 莫耳} < 0.104\\text{ 莫耳}$$\n   - 因此小軒喝進的鈉含量**「否（未超過）」**每日建議攝取上限。\n\n---\n\n### 🎯 各選項誘答盲點診斷：\n- **(A) 0.02 莫耳，是**：莫耳數計算正確，但比對大小粗心誤判為超過。\n- **(B) 0.02 莫耳，否【完全正確，本題正解】**：正確求得 0.02 莫耳，且未超過每日建議之 0.104 莫耳。\n- **(C) 50 莫耳，是**：公式顛倒誤算成 $84 \\div 1.68 = 50$。\n- **(D) 50 莫耳，否**：同樣犯了公式顛倒的分子量除以質量之嚴重計算錯誤。\n\n故正確答案為 **(B) 0.02 莫耳，否**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
