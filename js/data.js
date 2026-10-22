@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v269';
+const STORAGE_KEY = 'miley_wrong_questions_v270';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1572,6 +1572,36 @@ const INITIAL_SEED_DATA = [
     "answer": "(C) 31/9 a",
     "diagramUrl": "assets/questions/q212_parallelogram_butterfly_similar_area_diagram.png",
     "solution": "### 💡 完整破題步驟與幾何推導：\n\n1. **第一步：由平行四邊形性質求上下對邊長度比**：\n   - 在平行四邊形 $ABCD$ 中，對邊平行且等長：$AD // BC$ 且 $AD = BC$。\n   - 題幹給定 $BE : EC = 3 : 2$，設 $BE = 3k$，$EC = 2k$。\n   - 則底邊總長 $BC = 3k + 2k = 5k$，故上底 $AD = BC = 5k$。\n   - 因此線段長度比：\n     $$BE : AD = 3k : 5k = 3 : 5$$\n\n2. **第二步：利用內錯角相等證明「蝴蝶形（沙漏形）」相似**：\n   - 因 $AD // BC$：\n     - $\\angle FBE = \\angle FDA$（內錯角相等）\n     - $\\angle FEB = \\angle FAD$（內錯角相等）\n   - 根據 AA 相似性質：\n     $$\\triangle BEF \\sim \\triangle DAF$$\n   - 對應邊長比例：\n     $$\\frac{BE}{AD} = \\frac{EF}{AF} = \\frac{BF}{DF} = \\frac{3}{5}$$\n\n3. **第三步：由相似三角形求頂部 $\\triangle DAF$ 的面積**：\n   - 相似三角形的面積比等於對應邊長的平方比：\n     $$\\frac{\\text{面積}(\\triangle DAF)}{\\text{面積}(\\triangle BEF)} = \\left(\\frac{AD}{BE}\\right)^2 = \\left(\\frac{5}{3}\\right)^2 = \\frac{25}{9}$$\n   - 已知 $\\text{面積}(\\triangle BEF) = a$：\n     $$\\text{面積}(\\triangle DAF) = \\frac{25}{9} a$$\n\n4. **第四步：利用「等高三角形」求相鄰 $\\triangle ABF$ 的面積**：\n   - 觀察 $\\triangle ABF$ 與 $\\triangle BEF$，共用頂點 $B$，底邊在同一直線 $AE$ 上（底邊分別為 $AF$ 與 $EF$）。\n   - 兩三角形等高，面積比等於底邊長比：\n     $$\\frac{\\text{面積}(\\triangle ABF)}{\\text{面積}(\\triangle BEF)} = \\frac{AF}{EF} = \\frac{5}{3}$$\n   - 故：\n     $$\\text{面積}(\\triangle ABF) = \\frac{5}{3} \\times a = \\frac{15}{9} a$$\n\n5. **第五步：利用對角線求半個平行四邊形 $\\triangle BCD$ 的面積**：\n   - 平行四邊形的對角線 $BD$ 將其分割為兩個面積相等的三角形：\n     $$\\text{面積}(\\triangle BCD) = \\text{面積}(\\triangle ABD)$$\n   - 而 $\\triangle ABD$ 是由 $\\triangle ABF$ 與 $\\triangle DAF$ 組合而成：\n     $$\\text{面積}(\\triangle ABD) = \\text{面積}(\\triangle ABF) + \\text{面積}(\\triangle DAF) = \\frac{15}{9} a + \\frac{25}{9} a = \\frac{40}{9} a$$\n   - 因此：\n     $$\\text{面積}(\\triangle BCD) = \\frac{40}{9} a$$\n\n6. **第六步：割補計算四邊形 CDFE 的面積**：\n   - 四邊形 $CDFE$ 可由下半部的 $\\triangle BCD$ 扣除 $\\triangle BEF$ 得到：\n     $$\\text{面積}(CDFE) = \\text{面積}(\\triangle BCD) - \\text{面積}(\\triangle BEF) = \\frac{40}{9} a - a = \\frac{40}{9} a - \\frac{9}{9} a = \\mathbf{\\frac{31}{9} a}$$\n\n7. **各選項誘答陷阱診斷**：\n   - **(A) 16/9 a**：誤拿相似三角形面積相減（$25/9 a - 9/9 a$）而忽略了旁邊的三角形。\n   - **(B) 25/9 a**：誤將四邊形面積等同於頂部三角形 $\\triangle DAF$。\n   - **(C) 31/9 a【完全正確，本題正解】**：嚴格依循蝴蝶形相似（平方比）與等高三角形（一次比）推導，半個平行四邊形為 $40/9 a$，扣除 $a$ 得到 $31/9 a$。\n   - **(D) 35/9 a**：通分扣減時分子計算粗心錯誤。\n\n故四邊形 CDFE 的面積可用 a 表示為 **(C) 31/9 a**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_metal_oxide_sulfuric_acid_mole_ratio_213",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國二理化化學計量：化學反應式係數比等於莫耳數比、原子量式量計算與質量守恆求產物水質量",
+    "uploadDate": "2026-10-22",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【化學計量破題雙絕招，莫耳數比與式量差法】！\n1. **常犯錯誤一：忘了「莫耳數比等於係數比」**：\n   - 反應式係數比為 1 : 1 : 1 : 1，代表消耗 1 莫耳 XO 就會產生 1 莫耳 XSO₄ 與 1 莫耳 H₂O。\n   - 絕對「不能」直接拿質量成比例（例如以為 20 公克生 60 公克就是三倍，水就是硫酸的三倍）！因為質量 ＝ 莫耳數 × 分子量（式量），必須透過莫耳數作為橋樑轉換。\n2. **常犯錯誤二：算錯式量（忘記原子個數乘積）**：\n   - XO 的式量 ＝ X + 16。\n   - XSO₄ 的式量 ＝ X + 32 + (16 × 4) ＝ X + 32 + 64 ＝ X + 96。\n   - H₂O 的式量 ＝ (1 × 2) + 16 ＝ 18。\n   - 很多同學會把 XSO₄ 算成 X + 32 + 16 ＝ X + 48，少乘了氧原子的個數 4，導致解不出 X！\n3. **神速解題密技（式量差與質量差法）**：\n   - 觀察 XO 變成 XSO₄，金屬原子 X 沒變，本質上就是把 O 換成了 SO₄，也就是多增加了「SO₃」（硫＋三個氧）。\n   - 式量差 ＝ 32 + (16 × 3) ＝ 80。\n   - 反應質量差 ＝ 60 - 20 ＝ 40 公克。\n   - 反應莫耳數 ＝ 40 ÷ 80 ＝ 0.5 莫耳！\n   - 產生水 H₂O 的莫耳數也是 0.5 莫耳，所以質量 m ＝ 0.5 × 18 ＝ 9 公克！口算 10 秒直接秒殺！",
+    "stem": "已知 H、O、S 的原子量分別為 1、16、32。取 20 公克的金屬 X 氧化物（XO），在適當條件下與足量的硫酸完全反應，理論上會產生 60 公克的 XSO₄ 和 m 公克的 H₂O，反應式為：XO + H₂SO₄ → XSO₄ + H₂O，此反應式的係數已平衡，m 值應為下列何者？〔103. 會考〕\n\n○ (A) 9\n○ (B) 18\n○ (C) 24\n○ (D) 40",
+    "answer": "(A) 9",
+    "diagramUrl": "",
+    "solution": "### 💡 完整破題步驟與化學計量推導：\n\n1. **第一步：列出各物質的化學式與式量（分子量）**：\n   - 題目給定原子量：H ＝ 1、O ＝ 16、S ＝ 32。\n   - 設金屬元素 X 的原子量為 x。\n   - **XO 的式量** ＝ x + 16\n   - **XSO₄ 的式量** ＝ x + 32 + (16 × 4) ＝ x + 32 + 64 ＝ x + 96\n   - **H₂O 的式量** ＝ (1 × 2) + 16 ＝ 18\n\n2. **第二步：利用化學反應式係數比求金屬 X 的原子量**：\n   - 已平衡反應式：XO + H₂SO₄ → XSO₄ + H₂O\n   - 反應式中各物質的**係數比為 1 : 1 : 1 : 1**。\n   - 根據化學計量原理：**反應物消耗與產物生成的「莫耳數比」等於「反應式係數比」**。\n   - 因此，消耗的 XO 莫耳數 ＝ 生成的 XSO₄ 莫耳數：\n     莫耳數 ＝ 質量 ÷ 式量\n     20 / (x + 16) ＝ 60 / (x + 96)\n   - 兩邊同除以 20 簡化：\n     1 / (x + 16) ＝ 3 / (x + 96)\n   - 交叉相乘展開：\n     x + 96 ＝ 3(x + 16)\n     x + 96 ＝ 3x + 48\n     2x ＝ 48\n     **x ＝ 24**（金屬 X 為鎂 Mg，XO 即為氧化鎂 MgO）\n\n3. **第三步：計算反應莫耳數並求出生成水（H₂O）的質量 m**：\n   - 將 x ＝ 24 代回求反應之莫耳數：\n     XO 莫耳數 ＝ 20 / (24 + 16) ＝ 20 / 40 ＝ 0.5 莫耳\n   - 因係數比為 1 : 1，故生成水 H₂O 的莫耳數同樣為 **0.5 莫耳**。\n   - 水的質量 m ＝ 莫耳數 × 分子量：\n     **m ＝ 0.5 × 18 ＝ 9 公克**\n\n---\n\n### ⚡ 秒殺速解法（原子守恆與質量差值法）：\n- 觀察反應產物 XSO₄ 與反應物 XO 的組成差異：\n  XSO₄ 比 XO 多了一個「SO₃」原子團。\n- SO₃ 的式量 ＝ 32 + (16 × 3) ＝ 80。\n- 反應物 XO 為 20 公克，生成 XSO₄ 為 60 公克，質量增加了：\n  60 - 20 ＝ 40 公克\n- 增加的 40 公克即為結合進去的 SO₃ 質量：\n  反應莫耳數 ＝ 40 ÷ 80 ＝ 0.5 莫耳\n- 生成水 H₂O 的莫耳數 ＝ 0.5 莫耳\n  水質量 m ＝ 0.5 × 18 ＝ **9 公克**（神速 10 秒解出！）\n\n---\n\n### 🎯 各選項誘答盲點診斷：\n- **(A) 9【完全正確，本題正解】**：正確求得反應莫耳數為 0.5 莫耳，水質量為 0.5 × 18 ＝ 9 公克。\n- **(B) 18**：誤以為係數是 1 就直接以「1 莫耳的水」（18 公克）作答，忘記實際參與反應的 XO 只有 0.5 莫耳。\n- **(C) 24**：算出了金屬 X 的原子量為 24，卻誤把 X 的原子量當成題目的答案 m。\n- **(D) 40**：算出了 XO 的式量為 40（24 + 16），粗心誤選。\n\n故 m 值應為 **(A) 9**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
