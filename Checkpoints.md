@@ -4,6 +4,34 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v2.63] - 2026-10-22 (自動收錄 4 道國中理化與數學考題：自熱罐生石灰加水放熱反應 Q218、光滑面互推受力恆相等與質量加速度反比求加速度比附 YouTube 名師解題影片 Q219、柯瑞與柏金斯空中相撞作用力與反作用力碰撞受力相等 Q220、平行四邊形沙漏形相似與等高三角形面積比 Q221，升級數據庫至 v272，快取升級 v2.42)
+- **類型**：錯題自動收錄 / 國二理化生活化學反應 / 111 會考題生石灰 CaO 加水放熱生成熟石灰 Ca(OH)₂ / 國三理化牛頓第三定律互推受力相等 (30 kgw) 與牛頓第二定律 F=ma 加速度比 / 依麥麥語音與連結指示精準嵌入圖二 (Q219) 專屬 YouTube 解題教學 / 國三理化空中碰撞作用力與反作用力 / 國三數學平行四邊形沙漏形 AA 相似與等高三角形面積比 1:8 / 附圖 2x Retina 高清裁切保存 / 升級數據庫至 v272 / 快取升級 v2.42
+- **主要變更**：
+  1. **一口氣收錄 4 道理化與數學核心考題（Q218 ~ Q221，歸入 2026-10-19 最新週次）**：
+     - **第 1 題（Q218，理化）**：`q_phy_chem_self_heating_can_quicklime_reaction_218`：自熱罐飲料隔層有 CaO 和水，混合放熱使溫度上升至 60 ℃，說明產生的物質有誤應更正為何種物質？〔111. 會考〕
+       - 核心反應：生石灰遇水反應放熱，生成鹼性氫氧化鈣（熟石灰／消石灰）：$\text{CaO} + \text{H}_2\text{O} \to \text{Ca(OH)}_2 + \text{熱量}$（正解 **(D) 氫氧化鈣**）。
+       - 附圖處理：獨立裁切新聞報導三步驟示意圖保存至 `assets/questions/q218_self_heating_can_cao_reaction_diagram.png`。
+     - **第 2 題（Q219，理化・圖二）**：`q_phy_newton_third_law_skaters_push_action_reaction_219`：質量比 2:1 的甲乙兩人在絕對光滑平面上互推，甲用 20 kgw 推乙，乙用 10 kgw 推甲，下列何者正確？
+       - 核心受力分析：依牛頓第三定律，甲受乙推力 10 kgw 及反作用力 20 kgw 總合力 30 kgw；乙受甲推力 20 kgw 及反作用力 10 kgw 總合力 30 kgw。兩人受力恆相等（1:1，均為 30 kgw）。
+       - 加速度比：$F=ma \implies a$ 與 $m$ 成反比，$a_{\text{甲}} : a_{\text{乙}} = m_{\text{乙}} : m_{\text{甲}} = \mathbf{1 : 2}$（正解 **(C)**）。
+       - 分開後狀態：光滑平面分開後合力為 0，依慣性定律作「等速度運動」。
+       - 麥麥專屬影音整合：依麥麥指示嵌入專屬 YouTube 解題影片：`https://www.youtube.com/watch?v=O1fZ-nhK4e0`。
+       - 格式處理：純文字觀念計算題，依規範不設截圖（`diagramUrl: ""`）。
+     - **第 3 題（Q220，理化）**：`q_phy_newton_third_law_curry_perkins_collision_220`：NBA 籃球賽 84 kgw 的 Curry 與 122 kgw 的 Perkins 空中水平相撞，相撞瞬間何者正確？
+       - 核心觀念：相撞瞬間兩人互施作用力與反作用力，受力大小恆相等！Curry 體重較輕（質量小），由 $a = \frac{F}{m}$ 可知其獲得較大加速度，運動狀態改變顯著（正解 **(C)**）。兩力作用在不同人身上，絕不能互相抵銷。
+       - 格式處理：純文字觀念考題，依規範不設截圖（`diagramUrl: ""`）。
+     - **第 4 題（Q221，數學）**：`q_math_parallelogram_butterfly_similar_area_ratio_221`：平行四邊形 ABCD 中，E 為 AD 上一點，$2AE = DE$，對角線 AC 與 BE 交於 F，則 △ABF 與平行四邊形 ABCD 的面積比為何？
+       - 核心推導：$AE : DE = 1 : 2 \implies AD = BC = 3$ 份。沙漏形 $\triangle AEF \sim \triangle CBF \implies AF : CF = AE : BC = 1 : 3$。等高三角形 $\text{面積}(\triangle ABF) : \text{面積}(\triangle BCF) = 1 : 3$。設 $\triangle ABF = a$，則 $\triangle BCF = 3a$。半平行四邊形 $\triangle ABC = 4a$，平行四邊形總面積為 $2 \times 4a = 8a$，故面積比為 $\mathbf{1 : 8}$（正解 **(B) 1 : 8**）。
+       - 附圖處理：獨立裁切平行四邊形與對角線幾何示意圖保存至 `assets/questions/q221_parallelogram_butterfly_similar_area_ratio_diagram.png`。
+  2. **零符號純淨繁體中文排版與自然時間序 (FIFO)**：
+     - 題號 Q218、Q219、Q220、Q221 嚴格遵循自然收錄時序緊接於 Q217 之後自然排列，所有物理化學幾何公式均採純淨優美繁體中文呈現。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v272`（`miley_wrong_questions_v272`）。
+     - Service Worker 快取升級至 `miley-pwa-cache-v2.42`。
+     - 核心腳本更新版本標籤：`index.html` 升級 `sw.js?v=259` 與 `js/data.js?v=272`。
+
+---
+
 ## [v2.62] - 2026-10-22 (自動收錄 4 道自然生物與理化考題：臺灣國家公園文化與生態特色 Q214、外來入侵種立足繁殖力條件 Q215、繩拉木塊作用力與反作用力配對 Q216、壓縮彈簧釋放反作用力相等與質量反比計算附 YouTube 名師解題影片 Q217，升級數據庫至 v271，快取升級 v2.41)
 - **類型**：錯題自動收錄 / 國一生物生態系與國家公園 / 國一生物外來種繁殖能力與檢疫 / 國三理化牛頓第三運動定律（作用力與反作用力施力受力者互換）/ 國三理化壓縮彈簧釋放 F=ma 與質量反比求質量 / 依麥麥指示嵌入第 4 題專屬 YouTube 影音解題教學 / 附圖獨立去痕高清裁切保存 / 升級數據庫至 v271 / 快取升級 v2.41
 - **主要變更**：

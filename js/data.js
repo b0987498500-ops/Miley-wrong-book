@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v271';
+const STORAGE_KEY = 'miley_wrong_questions_v272';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -1721,11 +1721,129 @@ const INITIAL_SEED_DATA = [
     "stem": "如圖，在完全光滑的平面上，將甲、乙兩物體各放在彈簧的一端，用力壓縮彈簧後釋放，1 秒後甲物的速度為 2 m／s，乙物的速度為 5 m／s，已知乙物的質量為 20 公斤，則甲物的質量為多少公斤？\n\n○ (A) 4\n○ (B) 20\n○ (C) 25\n○ (D) 50",
     "answer": "(D) 50",
     "diagramUrl": "assets/questions/q217_smooth_surface_spring_recoil_diagram.png",
-    "solution": "### 💡 完整破題步驟與物理公式推導：\n\n1. **第一步：求出甲物與乙物運動的加速度**：\n   - 原本兩物體被壓縮處於靜止狀態，初速度皆為 0（v₀ = 0）。\n   - 釋放經時間 t = 1 秒後：\n     - 甲物的末速度 v_甲 = 2 m/s ➔ 加速度 a_甲 = (2 - 0) ÷ 1 = **2 m/s²**\n     - 乙物的末速度 v_乙 = 5 m/s ➔ 加速度 a_乙 = (5 - 0) ÷ 1 = **5 m/s²**\n\n2. **第二步：分析物體所受彈力（作用力與反作用力）**：\n   - 水平面為「完全光滑」，即表面摩擦力為 0。\n   - 彈簧向外伸展時，彈簧推甲物向左的力，與彈簧推乙物向右的力，互為一對作用力與反作用力（或者由輕彈簧內部張力/彈力處處相等分析）。\n   - 因此，甲物體所受合力 F_甲 與乙物體所受合力 F_乙 大小相等：\n     F_甲 = F_乙\n\n3. **第三步：由牛頓第二運動定律 F = ma 計算甲物質量**：\n   - 根據牛頓第二運動定律：\n     F = m × a\n   - 代入合力相等關係式：\n     m_甲 × a_甲 = m_乙 × a_乙\n   - 已知乙物質量 m_乙 = 20 公斤，代入已知數值：\n     m_甲 × 2 = 20 × 5\n     m_甲 × 2 = 100\n     **m_甲 = 50 公斤**\n\n4. **第四步：物理直覺檢驗（慣性與加速度成反比）**：\n   - 同樣的力推動兩個物體，乙物獲得高達 5 m/s 的高速，而甲物只獲得 2 m/s 的速度。\n   - 這說明甲物的慣性顯著大於乙物（質量比 = 加速度反比 = 5 : 2）。\n   - 甲物質量 = 20 × (5 / 2) = **50 公斤**，完全合乎物理規律！\n\n---\n\n### 🎯 各選項誘答盲點診斷：\n- **(A) 4**：誤用除法多除了一次質量（20 ÷ 5 = 4），計算失誤。\n- **(B) 20**：誤以為兩物體質量必定相同。\n- **(C) 25**：誤算比例關係（50 的一半），公式推導錯誤。\n- **(D) 50【完全正確，本題正解】**：嚴格應用牛頓第二定律與牛頓第三定律，正確求得甲物質量為 50 公斤。\n\n故甲物的質量為 **(D) 50** 公斤。
-
-📺 **名師影音詳細解題教學**：
-[點擊觀看 YouTube 解題影片](https://www.youtube.com/watch?v=3A3MyWFvzys)",
+    "solution": "### 💡 完整破題步驟與物理公式推導：\n\n1. **第一步：求出甲物與乙物運動的加速度**：\n   - 原本兩物體被壓縮處於靜止狀態，初速度皆為 0（v₀ = 0）。\n   - 釋放經時間 t = 1 秒後：\n     - 甲物的末速度 v_甲 = 2 m/s ➔ 加速度 a_甲 = (2 - 0) ÷ 1 = **2 m/s²**\n     - 乙物的末速度 v_乙 = 5 m/s ➔ 加速度 a_乙 = (5 - 0) ÷ 1 = **5 m/s²**\n\n2. **第二步：分析物體所受彈力（作用力與反作用力）**：\n   - 水平面為「完全光滑」，即表面摩擦力為 0。\n   - 彈簧向外伸展時，彈簧推甲物向左的力，與彈簧推乙物向右的力，互為一對作用力與反作用力（或者由輕彈簧內部張力/彈力處處相等分析）。\n   - 因此，甲物體所受合力 F_甲 與乙物體所受合力 F_乙 大小相等：\n     F_甲 = F_乙\n\n3. **第三步：由牛頓第二運動定律 F = ma 計算甲物質量**：\n   - 根據牛頓第二運動定律：\n     F = m × a\n   - 代入合力相等關係式：\n     m_甲 × a_甲 = m_乙 × a_乙\n   - 已知乙物質量 m_乙 = 20 公斤，代入已知數值：\n     m_甲 × 2 = 20 × 5\n     m_甲 × 2 = 100\n     **m_甲 = 50 公斤**\n\n4. **第四步：物理直覺檢驗（慣性與加速度成反比）**：\n   - 同樣的力推動兩個物體，乙物獲得高達 5 m/s 的高速，而甲物只獲得 2 m/s 的速度。\n   - 這說明甲物的慣性顯著大於乙物（質量比 = 加速度反比 = 5 : 2）。\n   - 甲物質量 = 20 × (5 / 2) = **50 公斤**，完全合乎物理規律！\n\n---\n\n### 🎯 各選項誘答盲點診斷：\n- **(A) 4**：誤用除法多除了一次質量（20 ÷ 5 = 4），計算失誤。\n- **(B) 20**：誤以為兩物體質量必定相同。\n- **(C) 25**：誤算比例關係（50 的一半），公式推導錯誤。\n- **(D) 50【完全正確，本題正解】**：嚴格應用牛頓第二定律與牛頓第三定律，正確求得甲物質量為 50 公斤。\n\n故甲物的質量為 **(D) 50** 公斤。\n\n📺 **名師影音詳細解題教學**：\n[點擊觀看 YouTube 解題影片](https://www.youtube.com/watch?v=3A3MyWFvzys)",
     "videoUrl": "https://www.youtube.com/watch?v=3A3MyWFvzys",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_chem_self_heating_can_quicklime_reaction_218",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國二理化生活中的化學反應：氧化鈣（生石灰 CaO）遇水劇烈放熱生成氫氧化鈣（熟石灰 Ca(OH)₂）",
+    "uploadDate": "2026-10-22",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【常見鈣化合物俗名、化學式與反應速記】！\n1. **三大鈣化合物黃金三角**：\n   - **生石灰（氧化鈣，CaO）**：白色固體，吸水性極強，常用作食品乾燥劑。\n   - **熟石灰／消石灰（氫氧化鈣，Ca(OH)₂）**：生石灰加水反應後生成，水溶液俗稱「石灰水」，呈鹼性，可檢驗二氧化碳！\n   - **灰石／石灰石／大理石（碳酸鈣，CaCO₃）**：石灰水通入二氧化碳生成之白色沉澱，或鐘乳石主成分。\n2. **化學反應式**：\n   - CaO + H₂O → Ca(OH)₂ + 熱量（放熱反應）\n3. **常犯誘答陷阱**：\n   - 誤選 (C) 氫氧化鈉：反應物為 CaO（含鈣），產物絕不可能無中生有變成「鈉（Na）」！遵守原子守恆！",
+    "stem": "圖(一)～圖(三)為一則新聞報導，有一種「自熱罐」飲料，罐身下方隔層有 CaO 和水，兩者混合後會放出熱量，可使飲料溫度上升至 60 ℃左右，且續熱半小時以上，在寒冷的冬天相當方便。小禾認為附圖中說明產生的物質有誤，應更正為如何種物質？〔111. 會考〕\n\n○ (A) 碳酸鈉\n○ (B) 硫酸鈣\n○ (C) 氫氧化鈉\n○ (D) 氫氧化鈣",
+    "answer": "(D) 氫氧化鈣",
+    "diagramUrl": "assets/questions/q218_self_heating_can_cao_reaction_diagram.png",
+    "solution": "### 💡 完整破題步驟與化學反應推導：\n\n1. **新聞情境與化學反應原理**：\n   - 「自熱罐」下方隔層存放的是**生石灰（氧化鈣，化學式 CaO）**與**水（H₂O）**。\n   - 當拉下拉環或壓破隔層使兩者接觸時，會發生強烈的放熱化學反應：\n     $$\\text{CaO} + \\text{H}_2\\text{O} \\rightarrow \\text{Ca(OH)}_2 + \\text{熱量}$$\n   - 產物為**「氫氧化鈣」**（俗稱消石灰或熟石灰），其水溶液即為常用來檢驗二氧化碳的「澄清石灰水」。\n\n2. **排查圖示說明之謬誤**：\n   - 報導圖示中若誤植產物為其他物質，依據化學反應的原子守恆定律：\n     - 反應物包含鈣（Ca）、氧（O）、氫（H）三種元素。\n     - 生成物必定是由鈣、氧、氫組成的鹼性化合物，即**氫氧化鈣 Ca(OH)₂**。\n\n3. **各選項診斷排除**：\n   - **(A) 碳酸鈉（Na₂CO₃）**：反應物中完全沒有鈉元素（Na）與碳元素（C），絕不可能生成。\n   - **(B) 硫酸鈣（CaSO₄）**：反應物中無硫元素（S），不可能生成。\n   - **(C) 氫氧化鈉（NaOH）**：雖然也是常見強鹼，但反應物無鈉元素，不可混淆。\n   - **(D) 氫氧化鈣【完全正確，本題正解】**：CaO + H₂O → Ca(OH)₂。\n\n故應更正為 **(D) 氫氧化鈣**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_newton_third_law_skaters_push_action_reaction_219",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國三理化力與運動：牛頓第三定律（互推各受對方施力與反作用力之合力）與牛頓第二定律 F=ma 加速度比反比於質量",
+    "uploadDate": "2026-10-22",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【互推問題受力秒殺口訣：各人受力大小必恆相等！】！\n1. **互推受力絕對相等（1 : 1）**：\n   - 甲推乙 20 kgw ➔ 反作用力為「乙給甲 20 kgw」。\n   - 乙推甲 10 kgw ➔ 反作用力為「甲給乙 10 kgw」。\n   - 甲身上所受的水平總力 ＝ 20 kgw（反作用力）+ 10 kgw（乙的推力）＝ **30 kgw**。\n   - 乙身上所受的水平總力 ＝ 20 kgw（甲的推力）+ 10 kgw（反作用力）＝ **30 kgw**。\n   - **結論**：不論誰力氣大，兩人受到的合力大小**絕對永遠相等（1 : 1，均為 30 kgw）**！\n2. **加速度比與質量成反比**：\n   - 由牛頓第二運動定律 F = m × a ➔ 當 F 相等時，a 與 m 成反比！\n   - 質量比 甲 : 乙 = 2 : 1 ➔ 加速度比 a_甲 : a_乙 = 1 : 2！\n3. **分開後的運動狀態（牛頓第一定律）**：\n   - 在「絕對光滑」的平面上，分開後不再受任何水平外力（合力 F = 0），根據慣性定律，兩人必維持**「等速度運動」**，絕非等加速度運動！",
+    "stem": "質量比為 2 : 1 的甲、乙兩人在絕對光滑的平面上互推，甲用 20 kgw 之力推乙，乙用 10 kgw 之力推甲，則下列何者正確？\n\n○ (A) 甲、乙受力比為 1 : 2\n○ (B) 當兩人分開後均作等加速度運動\n○ (C) 甲、乙由靜止而後退，加速度比為 1 : 2\n○ (D) 因兩推力方向相反，故甲、乙均受 10 kgw 的力。",
+    "answer": "(C) 甲、乙由靜止而後退，加速度比為 1 : 2",
+    "diagramUrl": "",
+    "solution": "### 💡 完整破題步驟與力學規律推導：\n\n1. **第一步：分析互推過程中兩人的受力情況（牛頓第三運動定律）**：\n   - 甲推乙施力 20 kgw（方向向乙） ➔ 依牛頓第三定律，乙同時給甲一個反作用力 20 kgw（方向向甲）。\n   - 乙推甲施力 10 kgw（方向向甲） ➔ 依牛頓第三定律，甲同時給乙一個反作用力 10 kgw（方向向乙）。\n   - 因此在互推接觸的期間：\n     - **甲所受的合力** ＝ 乙給甲的反作用力 (20 kgw) + 乙主動推甲的力 (10 kgw) ＝ **30 kgw**（方向向後退）。\n     - **乙所受的合力** ＝ 甲主動推乙的力 (20 kgw) + 甲給乙的反作用力 (10 kgw) ＝ **30 kgw**（方向向後退）。\n   - 兩人的受力大小完全相等（受力比為 **1 : 1**，皆受 30 kgw 的力）！\n\n2. **第二步：由牛頓第二定律 F = ma 計算加速度比**：\n   - 在接觸加速過程中，兩人受到的合力大小相同（F_甲 = F_乙）。\n   - 根據公式 $F = ma \\implies a = \\frac{F}{m}$，在力相同的情況下，**加速度與質量成反比**：\n     $$\\frac{a_{\\text{甲}}}{a_{\\text{乙}}} = \\frac{m_{\\text{乙}}}{m_{\\text{甲}}} = \\frac{1}{2}$$\n   - 故甲、乙兩人的**加速度比為 1 : 2**，選項 **(C) 完全正確**！\n\n3. **第三步：分開後的運動狀態（牛頓第一運動定律）**：\n   - 題目設定水平面為「絕對光滑」（摩擦力為 0）。\n   - 當兩人分開後，彼此不再有推力作用，兩人在水平方向所受**合力為 0**。\n   - 依據牛頓第一運動定律（慣性定律），動者恆作「等速度直線運動」，故分開後兩人均作**等速度運動**（加速度 a = 0），選項 (B) 錯誤。\n\n---\n\n### 🎯 各選項誘答盲點診斷：\n- **(A) 錯誤**：甲、乙受力比恆為 1 : 1（皆為 30 kgw）。\n- **(B) 錯誤**：分開後合力為 0，應作「等速度運動」。\n- **(C) 完全正確，本題正解**：受力相同，加速度與質量成反比（1 : 2）。\n- **(D) 錯誤**：兩推力分別由甲、乙作用於彼此，反作用力方向相同相加，兩人均受 30 kgw 的力，並非相減抵消成 10 kgw。\n\n故正確答案為 **(C)**。\n\n📺 **名師影音詳細解題教學**：\n[點擊觀看 YouTube 解題影片](https://www.youtube.com/watch?v=O1fZ-nhK4e0)",
+    "videoUrl": "https://www.youtube.com/watch?v=O1fZ-nhK4e0",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_newton_third_law_curry_perkins_collision_220",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國三理化力與運動：空中碰撞作用力與反作用力大小相等、質量輕者加速度大反彈明顯",
+    "uploadDate": "2026-10-22",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【大卡車撞小轎車／重物撞輕物碰撞受力秒殺口訣】！\n1. **不管誰重誰輕、誰快誰慢，碰撞瞬間受力大小絕對相等**：\n   - Perkins 給 Curry 的力，與 Curry 給 Perkins 的力，互為一組「作用力與反作用力」！\n   - 碰撞瞬間兩者受力大小完全相等（F 相等）！\n2. **為什麼輕的人看起來被撞飛得比較慘？**：\n   - 因為 $F = ma \\implies a = \\frac{F}{m}$。\n   - 兩個人承受完全一樣大的衝擊力 $F$。\n   - Curry 體重只有 84 kgw（質量較小），所以產生的**加速度 $a$ 明顯較大**，運動狀態改變劇烈（被彈開較遠）！\n   - Perkins 體重高達 122 kgw（質量大、慣性大），加速度 $a$ 較小，運動狀態改變不明顯！\n3. **作用力與反作用力絕不能抵消**：\n   - 兩力分別作用在「不同物體」上（一個在 Curry 身上，一個在 Perkins 身上），受力體不同，絕不能相互抵消！",
+    "stem": "NBA 籃球賽，勇士隊體重 84 kgw 的 Curry 與塞爾提克隊體重 122 kgw 的 Perkins 為了搶籃板球而在空中水平相撞。對於兩人相撞的瞬間，下列敘述何者正確？\n\n○ (A) 體重較重的 Perkins 會給 Curry 較大的力，故兩人相撞時，Curry 受力較大\n○ (B) 兩人相撞的力，因為符合作用力與反作用力定律，所以兩力剛好抵銷\n○ (C) 兩人在空中相撞的瞬間受力相等，但因為 Curry 比較輕，因此會有較大的加速度\n○ (D) 由於 Curry 體重比較輕，碰撞後彈開距離比較遠，所以碰撞時 Curry 受到的力比較大",
+    "answer": "(C) 兩人在空中相撞的瞬間受力相等，但因為 Curry 比較輕，因此會有較大的加速度",
+    "diagramUrl": "",
+    "solution": "### 💡 各選項觀念逐一剖析：\n\n- **(A) 錯誤**：依據牛頓第三運動定律，不論兩人的質量大小、速度快慢為何，相撞瞬間 Perkins 作用於 Curry 的力，與 Curry 作用於 Perkins 的力，大小恆相等、方向相反。Curry 與 Perkins 受力一樣大。\n- **(B) 錯誤**：作用力與反作用力分別作用在**不同的受力物體**上（Perkins 受的力作用在 Perkins 上，Curry 受的力作用在 Curry 上），受力對象不同，因此**絕不能互相抵銷**（只有作用在同一個物體上的兩平衡力才能抵銷）。\n- **(C) 完全正確，本題正解**：\n  - 碰撞瞬間兩者受力大小相等（$F_1 = F_2 = F$）。\n  - 依據牛頓第二運動定律 $F = ma \\implies a = \\frac{F}{m}$。\n  - Curry 體重 84 kgw 較 Perkins 的 122 kgw 輕，質量較小，因此在相同碰撞外力下，Curry 獲得的**加速度較大**（運動狀態改變較為顯著）。\n- **(D) 錯誤**：Curry 被彈開較遠是因為其「質量小、加速度大、速度變化量大」，並非因為「受到的力比較大」，碰撞瞬間受力依然相等。\n\n故正確答案為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-19",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_parallelogram_butterfly_similar_area_ratio_221",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國三數學相似形：平行四邊形沙漏形（蝴蝶形）AA 相似、等高三角形面積比求 △ABF 與平行四邊形 ABCD 面積比",
+    "uploadDate": "2026-10-22",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【平行四邊形相似沙漏形與等高三角形面積比秒殺步驟】！\n1. **第一步：看清比例線段**：\n   - 2 AE = DE ➔ AE : DE = 1 : 2。\n   - AD = AE + DE = 1 + 2 = 3 份。\n   - 平行四邊形對邊相等 ➔ BC = AD = 3 份！\n2. **第二步：沙漏形 AA 相似求對角線交點線段比**：\n   - AD // BC ➔ △AEF ~ △CBF ➔ AF : CF = AE : BC = 1 : 3！\n3. **第三步：等高三角形面積轉化**：\n   - 觀察 △ABF 與 △BCF，共用頂點 B，底邊在同一直線 AC 上 ➔ 兩三角形等高！\n   - 面積比 = 底邊比 ➔ 面積(△ABF) : 面積(△BCF) = AF : CF = 1 : 3。\n   - 設 △ABF 面積 = a，則 △BCF 面積 = 3a。\n4. **第四步：半個平行四邊形面積翻倍**：\n   - 對角線 AC 將平行四邊形平分為兩半：面積(△ABC) = a + 3a = 4a。\n   - 平行四邊形 ABCD 總面積 = 2 × 面積(△ABC) = 2 × 4a = 8a！\n   - 面積比 = a : 8a = **1 : 8**！",
+    "stem": "如圖，在平行四邊形 ABCD 中，E 為線段 AD 上一點，若 2 AE = DE，對角線 AC 和線段 BE 相交於 F 點，則 △ABF 與平行四邊形 ABCD 的面積比為何？\n\n○ (A) 1 : 6\n○ (B) 1 : 8\n○ (C) 1 : 9\n○ (D) 2 : 15",
+    "answer": "(B) 1 : 8",
+    "diagramUrl": "assets/questions/q221_parallelogram_butterfly_similar_area_ratio_diagram.png",
+    "solution": "### 💡 完整破題步驟與幾何推導：\n\n1. **第一步：由已知比例求平行四邊形上下對邊長度比**：\n   - 題目給定：$2\\overline{AE} = \\overline{DE} \\implies \\overline{AE} : \\overline{DE} = 1 : 2$。\n   - 故上底總長 $\\overline{AD} = \\overline{AE} + \\overline{DE} = 1 + 2 = 3$ 份。\n   - 因四邊形 $ABCD$ 為平行四邊形，對邊等長：$\\overline{BC} = \\overline{AD} = 3$ 份。\n   - 得比例關係：\n     $$\\overline{AE} : \\overline{BC} = 1 : 3$$\n\n2. **第二步：利用內錯角相等證明沙漏形 AA 相似**：\n   - 因 $\\overline{AD} // \\overline{BC}$：\n     - $\\angle FAE = \\angle FCB$（內錯角相等）\n     - $\\angle FEA = \\angle FBC$（內錯角相等）\n   - 由 AA 相似性質得：\n     $$\\triangle AEF \\sim \\triangle CBF$$\n   - 對應邊成比例：\n     $$\\frac{\\overline{AF}}{\\overline{CF}} = \\frac{\\overline{AE}}{\\overline{BC}} = \\frac{1}{3} \\implies \\overline{AF} : \\overline{CF} = 1 : 3$$\n\n3. **第三步：利用等高三角形底邊比求面積**：\n   - 觀察 $\\triangle ABF$ 與 $\\triangle BCF$：\n     - 兩三角形共用頂點 $B$，且底邊 $\\overline{AF}$ 與 $\\overline{CF}$ 位於同一直線 $\\overline{AC}$ 上，故**兩三角形等高**。\n   - 等高三角形面積比等於底邊長比：\n     $$\\frac{\\text{面積}(\\triangle ABF)}{\\text{面積}(\\triangle BCF)} = \\frac{\\overline{AF}}{\\overline{CF}} = \\frac{1}{3}$$\n   - 設 $\\text{面積}(\\triangle ABF) = a$，則 $\\text{面積}(\\triangle BCF) = 3a$。\n\n4. **第四步：利用對角線求半個平行四邊形與總面積**：\n   - 對角線 $\\overline{AC}$ 下方的三角形 $\\triangle ABC$ 面積為：\n     $$\\text{面積}(\\triangle ABC) = \\text{面積}(\\triangle ABF) + \\text{面積}(\\triangle BCF) = a + 3a = 4a$$\n   - 平行四邊形的對角線平分其總面積：\n     $$\\text{面積}(\\text{平行四邊形 } ABCD) = 2 \\times \\text{面積}(\\triangle ABC) = 2 \\times 4a = 8a$$\n\n5. **第五步：計算所求面積比**：\n   - $\\triangle ABF$ 面積 與 平行四邊形 $ABCD$ 的面積比為：\n     $$\\text{面積}(\\triangle ABF) : \\text{面積}(\\text{平行四邊形 } ABCD) = a : 8a = \\mathbf{1 : 8}$$\n\n故正確答案為 **(B) 1 : 8**（比值為 1 : 8）。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
