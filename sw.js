@@ -1,4 +1,4 @@
-const CACHE_NAME = 'miley-pwa-cache-v2.47';
+const CACHE_NAME = 'miley-pwa-cache-v2.48';
 
 const ASSETS_TO_CACHE = [
   './',
@@ -8,6 +8,7 @@ const ASSETS_TO_CACHE = [
   'assets/icon-192.png',
   'assets/icon-512.png',
   'assets/z_img_line.png',
+  'assets/ghibli_magic_desk.jpg',
   'js/app.js',
   'js/data.js',
   'js/modules/review.js',
