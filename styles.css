@@ -8043,3 +8043,155 @@ html.is-pwa-standalone #app-bottom-bar {
   }
 }
 
+
+
+/* ========================================================
+   🌿 麥麥自然手繪風格全域注入 (Miley Organic Vine & Capsule Design System)
+   - 頂部導航欄與區塊底部的綠葉藤蔓花苞裝飾分隔線
+   - 按鍵膠囊化 (Capsule Pill Buttons with 3D Depth)
+   - 手機直立防圖片/文字重疊全面保證
+   ======================================================== */
+
+/* 🌿 頂部與各主要區塊的手繪綠葉花苞藤蔓分隔線 */
+.top-header {
+  position: relative;
+}
+.top-header::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 12px;
+  right: 12px;
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 12' width='80' height='12'%3E%3Cpath d='M0,6 Q20,2 40,6 T80,6' fill='none' stroke='%236366f1' stroke-width='2' stroke-linecap='round' opacity='0.55'/%3E%3Cpath d='M18,5 Q24,1 28,4 Q24,7 18,5 Z' fill='%234ade80' stroke='%236366f1' stroke-width='0.8' opacity='0.75'/%3E%3Ccircle cx='36' cy='4' r='2' fill='%23f59e0b' stroke='%236366f1' stroke-width='0.8' opacity='0.85'/%3E%3Cpath d='M58,7 Q64,11 68,8 Q64,5 58,7 Z' fill='%2310b981' stroke='%236366f1' stroke-width='0.8' opacity='0.75'/%3E%3Ccircle cx='72' cy='7' r='1.8' fill='%23ec4899' stroke='%236366f1' stroke-width='0.8' opacity='0.85'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 80px 12px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* 🌿 複習卡片頂部動作列裝飾線 */
+.card-top-bar {
+  position: relative;
+  border-bottom: none !important;
+  padding-bottom: 12px !important;
+}
+.card-top-bar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 12' width='80' height='12'%3E%3Cpath d='M0,6 Q20,2 40,6 T80,6' fill='none' stroke='%236366f1' stroke-width='1.8' stroke-linecap='round' opacity='0.45'/%3E%3Cpath d='M18,5 Q24,1 28,4 Q24,7 18,5 Z' fill='%234ade80' opacity='0.6'/%3E%3Ccircle cx='36' cy='4' r='1.8' fill='%23f59e0b' opacity='0.7'/%3E%3Cpath d='M58,7 Q64,11 68,8 Q64,5 58,7 Z' fill='%2310b981' opacity='0.6'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 80px 12px;
+  pointer-events: none;
+}
+
+/* 💊 按鈕全面膠囊化與微立體回彈 (Capsule Pill Design) */
+.btn-primary,
+.btn-secondary,
+.btn-accent,
+.btn-accent-sm,
+.sync-nav-btn,
+.wisdom-nav-btn,
+.btn-sidebar-install,
+.btn-bookmark-hub,
+.btn-check-answer,
+.btn-reveal,
+.btn-skip-later,
+.btn-retry-card,
+.btn-note-portal,
+.btn-mastered,
+.btn-unmastered,
+.sidebar-subject-btn .subj-char {
+  border-radius: 9999px !important;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  font-weight: 700 !important;
+}
+
+.sync-nav-btn,
+.wisdom-nav-btn {
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.35) !important;
+}
+.sync-nav-btn:hover,
+.wisdom-nav-btn:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.45), 0 8px 18px rgba(99, 102, 241, 0.3) !important;
+}
+.sync-nav-btn:active,
+.wisdom-nav-btn:active {
+  transform: translateY(1px) scale(0.98) !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35) !important;
+}
+
+/* 📱 手機直立防題目插圖與文字重疊保證 */
+@media (max-width: 640px) {
+  .flashcard-stage-main {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  
+  .flashcard-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .fc-diagram-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 14px 0 !important;
+    clear: both !important;
+    display: flex !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  .fc-diagram-container img,
+  #fc-diagram-img {
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 380px !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+    border-radius: 12px !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  .stem-katex-text {
+    clear: both !important;
+    width: 100% !important;
+    word-break: break-word !important;
+  }
+}
+
+/* 🔄 手機橫向 (Landscape) 專屬佈局 */
+@media (max-height: 520px) and (orientation: landscape) {
+  .top-header {
+    padding: 6px 14px !important;
+  }
+  .main-content {
+    padding: 6px 12px 50px 12px !important;
+  }
+  .flashcard-stage-main .flashcard-card {
+    padding: 12px 14px !important;
+  }
+}
+
+/* 📟 平板端 (Tablet 769px ~ 1180px) 佈局最佳化 */
+@media (min-width: 769px) and (max-width: 1180px) {
+  .sidebar {
+    width: 160px !important;
+  }
+  .main-content {
+    padding: 16px 20px 60px 20px !important;
+  }
+  .flashcard-stage-main .flashcard-card {
+    max-width: 900px !important;
+    margin: 0 auto !important;
+  }
+}
