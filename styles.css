@@ -8046,16 +8046,17 @@ html.is-pwa-standalone #app-bottom-bar {
 
 
 /* ========================================================
-   🪵 麥麥筆記同款：卡通手繪木牌按鈕與藤蔓花苞裝飾系統 (Miley Notes Style System)
-   - 告別平淡膠囊按鍵，全面轉化為自然手切不規則方塊木牌、手繪深色線稿邊框與 3D 浮雕木質質感
-   - 徹底去除生硬平直灰色線條，全面改為可愛手繪綠葉花苞藤蔓分隔線
-   - 注入微風呼吸律動與萌系嫩芽生機
+   🎨 麥麥旗艦 UI/UX 尊榮美學：高對比清晰手繪卡通立體按鈕與雅緻藤蔓系統
+   - 告別土褐色木牌與模糊木紋：保留可愛有機圓角 (12px 6px 14px 7px)，全面換裝乾淨純色微漸層
+   - 最高準則：字體極限清晰度 (AAA 高對比度)，絕不使用遮蔽字體的重複線條木紋
+   - 雅緻微夜光深色細邊框與 3D 浮雕按壓回彈，保留手繪活潑感，同時完美融入黑藍色系背景
+   - 柔和純淨的自然藤蔓分隔線，不搶眼喧賓奪主
    ======================================================== */
 
-/* 🌿 頂部與各主要區塊的手繪綠葉花苞藤蔓分隔線（徹底替換單調直線） */
+/* 🌿 頂部導航與區塊的手繪綠葉花苞藤蔓分隔線（精靈森林微光微調，自然柔和） */
 .top-header {
   position: relative;
-  border-bottom: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 .top-header::after {
   content: '';
@@ -8063,62 +8064,64 @@ html.is-pwa-standalone #app-bottom-bar {
   bottom: -4px;
   left: 0;
   right: 0;
-  height: 12px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 12' width='80' height='12'%3E%3Cpath d='M0,6 Q20,2 40,6 T80,6' fill='none' stroke='%235a3819' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M18,5 Q24,1 28,4 Q24,7 18,5 Z' fill='%234ade80' stroke='%235a3819' stroke-width='1.2'/%3E%3Ccircle cx='36' cy='4' r='2' fill='%23f59e0b' stroke='%235a3819' stroke-width='1'/%3E%3Cpath d='M58,7 Q64,11 68,8 Q64,5 58,7 Z' fill='%2322c55e' stroke='%235a3819' stroke-width='1.2'/%3E%3Ccircle cx='72' cy='7' r='1.8' fill='%23fb7185' stroke='%235a3819' stroke-width='1'/%3E%3C/svg%3E");
+  height: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 10' width='80' height='10'%3E%3Cpath d='M0,5 Q20,2 40,5 T80,5' fill='none' stroke='%236366f1' stroke-width='1.8' stroke-linecap='round' opacity='0.45'/%3E%3Cpath d='M18,4 Q24,1 28,3 Q24,6 18,4 Z' fill='%2310b981' opacity='0.6'/%3E%3Ccircle cx='36' cy='3' r='1.5' fill='%23fbbf24' opacity='0.7'/%3E%3Cpath d='M58,6 Q64,9 68,7 Q64,4 58,6 Z' fill='%2334d399' opacity='0.6'/%3E%3Ccircle cx='72' cy='6' r='1.4' fill='%23ec4899' opacity='0.65'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
-  background-size: 80px 12px;
+  background-size: 80px 10px;
   pointer-events: none;
   z-index: 10;
 }
 
-/* 🌿 複習卡片頂部動作列裝飾線（手繪樹枝嫩葉花苞風格） */
+/* 🌿 複習卡片頂部動作列裝飾線（輕柔葉脈） */
 .card-top-bar {
   position: relative;
-  border-bottom: none !important;
-  padding-bottom: 14px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding-bottom: 12px !important;
 }
 .card-top-bar::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   right: 0;
-  height: 12px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 12' width='80' height='12'%3E%3Cpath d='M0,6 Q20,2 40,6 T80,6' fill='none' stroke='%235a3819' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M18,5 Q24,1 28,4 Q24,7 18,5 Z' fill='%234ade80' stroke='%235a3819' stroke-width='1.2'/%3E%3Ccircle cx='36' cy='4' r='2' fill='%23f59e0b' stroke='%235a3819' stroke-width='1'/%3E%3Cpath d='M58,7 Q64,11 68,8 Q64,5 58,7 Z' fill='%2322c55e' stroke='%235a3819' stroke-width='1.2'/%3E%3Ccircle cx='72' cy='7' r='1.8' fill='%23fb7185' stroke='%235a3819' stroke-width='1'/%3E%3C/svg%3E");
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 8' width='80' height='8'%3E%3Cpath d='M0,4 Q20,1 40,4 T80,4' fill='none' stroke='%23818cf8' stroke-width='1.5' stroke-linecap='round' opacity='0.35'/%3E%3Cpath d='M18,3 Q24,1 27,3 Q24,5 18,3 Z' fill='%2334d399' opacity='0.55'/%3E%3Ccircle cx='36' cy='2.5' r='1.2' fill='%23fbbf24' opacity='0.65'/%3E%3Cpath d='M58,5 Q63,7 66,5 Q63,3 58,5 Z' fill='%2310b981' opacity='0.55'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
-  background-size: 80px 12px;
+  background-size: 80px 8px;
   pointer-events: none;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
-/* 🌿 側邊欄右側交界替換為垂直攀爬藤蔓背骨 */
+/* 🌿 側邊欄細微藤蔓光澤 */
 .sidebar {
-  border-right: none !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 .sidebar::after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
-  right: -5px;
-  width: 12px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 60' width='14' height='60'%3E%3Cpath d='M7,0 Q11,15 7,30 Q3,45 7,60' fill='none' stroke='%235a3819' stroke-width='2' stroke-linecap='round' opacity='0.45'/%3E%3Cpath d='M7,15 Q12,12 13,16 Q10,19 7,15 Z' fill='%234ade80' opacity='0.6'/%3E%3Cpath d='M7,45 Q2,42 1,46 Q4,49 7,45 Z' fill='%2322c55e' opacity='0.6'/%3E%3C/svg%3E");
+  right: -3px;
+  width: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 60' width='10' height='60'%3E%3Cpath d='M5,0 Q8,15 5,30 Q2,45 5,60' fill='none' stroke='%236366f1' stroke-width='1.5' stroke-linecap='round' opacity='0.25'/%3E%3Cpath d='M5,15 Q9,12 9,15 Q7,18 5,15 Z' fill='%2310b981' opacity='0.4'/%3E%3Cpath d='M5,45 Q1,42 1,45 Q3,48 5,45 Z' fill='%2334d399' opacity='0.4'/%3E%3C/svg%3E");
   background-repeat: repeat-y;
-  background-size: 12px 60px;
+  background-size: 8px 60px;
   pointer-events: none;
   z-index: 25;
 }
 
-/* 🌿 隨身草稿、各彈窗底部與重要分隔欄一律融入樹枝藤蔓花苞線條 */
 .toolbar-divider {
   width: 2px !important;
-  height: 22px !important;
-  background: #5a3819 !important;
-  opacity: 0.6;
+  height: 20px !important;
+  background: rgba(255, 255, 255, 0.15) !important;
   border-radius: 2px;
 }
 
-/* 🪵 全面移除膠囊造型：全面套用麥麥筆記同款手繪卡通小木牌！ */
+/* 🎨 全站核心按鈕：手切立體卡片 (Tactile Cartoon Badge System)
+   - 純淨無噪點背景，字體 100% 銳利清晰
+   - 3D 立體底影按壓反饋
+   - 依功能清晰分色，不使用灰沉沉的木板色
+*/
 .btn-primary,
 .btn-secondary,
 .btn-accent,
@@ -8143,71 +8146,19 @@ html.is-pwa-standalone #app-bottom-bar {
 .compact-date-chip,
 .notes-cross-link-btn,
 .btn-chip-action {
-  /* 徹底告別 9999px 橢圓膠囊，改為卡通手切不規則自然鋸齒木牌造型 */
-  border-radius: 14px 6px 16px 8px / 8px 16px 6px 14px !important;
-  /* 粗實深色手繪線稿描邊 */
-  border: 2.5px solid #5a3819 !important;
-  /* 溫暖蜂蜜橡木手繪木紋與微立體層次 */
-  background:
-    repeating-linear-gradient(
-      180deg,
-      transparent 0px,
-      transparent 5px,
-      rgba(110, 68, 28, 0.06) 6px,
-      transparent 7px
-    ),
-    linear-gradient(180deg, #fffcf6 0%, #fef3e2 35%, #f6dfbc 75%, #ebd1a6 100%) !important;
-  color: #3e220a !important;
-  font-weight: 900 !important;
-  /* 3D 卡通立體木牌厚度底影 */
-  box-shadow:
-    0 4px 0 #3e240e,
-    0 6px 14px rgba(62, 36, 14, 0.22) !important;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) !important;
-  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-  position: relative;
+  /* 可愛自然有機圓角切角 */
+  border-radius: 12px 6px 14px 7px / 7px 14px 6px 12px !important;
+  font-family: inherit;
+  font-weight: 700 !important;
+  cursor: pointer;
   user-select: none;
+  position: relative;
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease !important;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: none !important;
 }
 
-/* 木牌 Hover 浮起微彈動態 */
-.btn-primary:hover,
-.btn-secondary:hover,
-.btn-accent:hover,
-.btn-accent-sm:hover,
-.sync-nav-btn:hover,
-.wisdom-nav-btn:hover,
-.btn-sidebar-install:hover,
-.btn-bottom-install:hover,
-.btn-bookmark-hub:hover,
-.btn-check-answer:hover,
-.btn-reveal:hover,
-.btn-skip-later:hover,
-.btn-retry-card:hover,
-.btn-note-portal:hover,
-.btn-attack-monster:hover,
-.btn-cloud-refresh:hover,
-.btn-cloud-refresh-lg:hover,
-.monday-chip:hover,
-.current-date-chip:hover,
-.notes-cross-link-btn:hover,
-.btn-chip-action:hover {
-  transform: translateY(-3px) scale(1.03) !important;
-  box-shadow:
-    0 6px 0 #3e240e,
-    0 10px 20px rgba(62, 36, 14, 0.3) !important;
-  color: #261102 !important;
-  background:
-    repeating-linear-gradient(
-      180deg,
-      transparent 0px,
-      transparent 5px,
-      rgba(110, 68, 28, 0.08) 6px,
-      transparent 7px
-    ),
-    linear-gradient(180deg, #ffffff 0%, #fff8ec 35%, #fae2bc 75%, #f4cca1 100%) !important;
-}
-
-/* 木牌點擊下按反饋 */
+/* 按鍵點擊下壓立體反饋 */
 .btn-primary:active,
 .btn-secondary:active,
 .btn-accent:active,
@@ -8230,163 +8181,278 @@ html.is-pwa-standalone #app-bottom-bar {
 .monday-chip:active,
 .notes-cross-link-btn:active,
 .btn-chip-action:active {
-  transform: translateY(2px) scale(0.98) !important;
-  box-shadow: 0 1px 0 #3e240e !important;
+  transform: translateY(2px) !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4) !important;
 }
 
-/* 🌸 主要核心行動按鈕（如查看解析、立即對齊、擊敗按鈕）：專屬卡通木紋染色 */
-/* 查看解析按鈕：陽光楓木金牌 */
-.btn-reveal {
-  border-color: #b45309 !important;
-  background:
-    repeating-linear-gradient(180deg, transparent 0px, transparent 5px, rgba(180, 83, 9, 0.08) 6px, transparent 7px),
-    linear-gradient(180deg, #fef3c7 0%, #fde68a 40%, #fbbf24 80%, #f59e0b 100%) !important;
-  color: #78350f !important;
-  box-shadow: 0 4px 0 #78350f, 0 8px 18px rgba(180, 83, 9, 0.35) !important;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+/* 🌟 次要與輔助按鈕 (btn-secondary / btn-skip-later / btn-chip-action)：高質感深色卡片 + 亮白清晰文字 */
+.btn-secondary,
+.btn-skip-later,
+.btn-chip-action {
+  background: linear-gradient(180deg, #243049 0%, #1a2234 100%) !important;
+  border: 1.5px solid #3b4d6b !important;
+  color: #f1f5f9 !important;
+  box-shadow: 0 3px 0 #0f172a, 0 4px 10px rgba(0, 0, 0, 0.3) !important;
 }
-.btn-reveal:hover {
-  box-shadow: 0 6px 0 #78350f, 0 12px 24px rgba(180, 83, 9, 0.45) !important;
-}
-
-/* 已擊敗按鈕：草本活力嫩綠木牌 */
-.btn-mastered {
-  border-color: #064e3b !important;
-  background:
-    repeating-linear-gradient(180deg, transparent 0px, transparent 5px, rgba(6, 78, 59, 0.08) 6px, transparent 7px),
-    linear-gradient(180deg, #d1fae5 0%, #a7f3d0 40%, #34d399 80%, #10b981 100%) !important;
-  color: #022c22 !important;
-  box-shadow: 0 4px 0 #064e3b, 0 8px 18px rgba(16, 185, 129, 0.35) !important;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) !important;
-}
-.btn-mastered:hover {
-  box-shadow: 0 6px 0 #064e3b, 0 12px 24px rgba(16, 185, 129, 0.45) !important;
+.btn-secondary:hover,
+.btn-skip-later:hover,
+.btn-chip-action:hover {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(180deg, #2e3d5d 0%, #1e293b 100%) !important;
+  border-color: #60a5fa !important;
+  color: #ffffff !important;
+  box-shadow: 0 5px 0 #0f172a, 0 8px 16px rgba(0, 0, 0, 0.4) !important;
 }
 
-/* 未擊敗按鈕：粉櫻楓木手切木牌 */
-.btn-unmastered {
-  border-color: #701a2b !important;
-  background:
-    repeating-linear-gradient(180deg, transparent 0px, transparent 5px, rgba(112, 26, 43, 0.08) 6px, transparent 7px),
-    linear-gradient(180deg, #ffe4e6 0%, #fecdd3 40%, #fb7185 80%, #f43f5e 100%) !important;
-  color: #4c0519 !important;
-  box-shadow: 0 4px 0 #3a000e, 0 8px 18px rgba(112, 26, 43, 0.35) !important;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+/* 🌟 主要按鈕 (btn-primary / btn-accent)：皇家靛藍晶瑩質感 */
+.btn-primary,
+.btn-accent,
+.btn-accent-sm {
+  background: linear-gradient(180deg, #6366f1 0%, #4f46e5 100%) !important;
+  border: 1.5px solid #818cf8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 3px 0 #312e81, 0 6px 14px rgba(79, 70, 229, 0.35) !important;
 }
-.btn-unmastered:hover {
-  box-shadow: 0 6px 0 #3a000e, 0 12px 24px rgba(112, 26, 43, 0.45) !important;
-}
-
-/* 筆記傳送門木牌按鈕 */
-.btn-note-portal {
-  border-color: #5b21b6 !important;
-  background:
-    repeating-linear-gradient(180deg, transparent 0px, transparent 5px, rgba(91, 33, 182, 0.08) 6px, transparent 7px),
-    linear-gradient(180deg, #ede9fe 0%, #ddd6fe 40%, #a78bfa 80%, #8b5cf6 100%) !important;
-  color: #2e1065 !important;
-  box-shadow: 0 4px 0 #3b0764, 0 8px 18px rgba(139, 92, 246, 0.35) !important;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+.btn-primary:hover,
+.btn-accent:hover,
+.btn-accent-sm:hover {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(180deg, #7c3aed 0%, #6366f1 100%) !important;
+  border-color: #a5b4fc !important;
+  box-shadow: 0 5px 0 #312e81, 0 10px 20px rgba(79, 70, 229, 0.5) !important;
 }
 
-/* 智慧寶庫木牌 */
-.wisdom-nav-btn {
-  border-color: #b45309 !important;
-  background:
-    repeating-linear-gradient(180deg, transparent 0px, transparent 5px, rgba(180, 83, 9, 0.08) 6px, transparent 7px),
-    linear-gradient(180deg, #fef3c7 0%, #fde68a 40%, #fbbf24 80%, #f59e0b 100%) !important;
-  color: #78350f !important;
-  box-shadow: 0 4px 0 #78350f, 0 6px 14px rgba(180, 83, 9, 0.25) !important;
-}
-
-/* 跨裝置同步木牌 */
-.sync-nav-btn {
-  border-color: #0369a1 !important;
-  background:
-    repeating-linear-gradient(180deg, transparent 0px, transparent 5px, rgba(3, 105, 161, 0.08) 6px, transparent 7px),
-    linear-gradient(180deg, #e0f2fe 0%, #bae6fd 40%, #38bdf8 80%, #0284c7 100%) !important;
-  color: #0c4a6e !important;
-  box-shadow: 0 4px 0 #075985, 0 6px 14px rgba(2, 132, 199, 0.25) !important;
-}
-
-/* 麥麥筆記跨站捷徑木牌 */
+/* 🌟 頂部【麥麥筆記】手帳捷徑：溫暖蜜糖金卡片 + 深褐清晰字體 */
 .notes-cross-link-btn {
-  border-color: #854d0e !important;
-  background:
-    repeating-linear-gradient(180deg, transparent 0px, transparent 5px, rgba(133, 77, 14, 0.08) 6px, transparent 7px),
-    linear-gradient(180deg, #fef9c3 0%, #fef08a 40%, #facc15 80%, #eab308 100%) !important;
-  color: #713f12 !important;
-  box-shadow: 0 4px 0 #713f12, 0 6px 14px rgba(234, 179, 8, 0.25) !important;
+  background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 40%, #fde68a 100%) !important;
+  border: 1.5px solid #f59e0b !important;
+  color: #78350f !important;
+  box-shadow: 0 3px 0 #b45309, 0 4px 12px rgba(245, 158, 11, 0.25) !important;
+}
+.notes-cross-link-btn:hover {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #fef3c7 100%) !important;
+  border-color: #d97706 !important;
+  color: #451a03 !important;
+  box-shadow: 0 5px 0 #b45309, 0 8px 16px rgba(245, 158, 11, 0.35) !important;
 }
 
-/* 安裝 App 木牌 */
+/* 🌟 頂部【跨裝置進度同步】：蔚藍晴空水晶質感 + 鮮明白字 */
+.sync-nav-btn:not(.notes-cross-link-btn) {
+  background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%) !important;
+  border: 1.5px solid #38bdf8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 3px 0 #075985, 0 4px 12px rgba(2, 132, 199, 0.3) !important;
+}
+.sync-nav-btn:not(.notes-cross-link-btn):hover {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%) !important;
+  border-color: #7dd3fc !important;
+  box-shadow: 0 5px 0 #075985, 0 8px 16px rgba(2, 132, 199, 0.45) !important;
+}
+
+/* 🌟 頂部【智慧寶庫】：向日葵璀璨金 + 白字深邃底影 */
+.wisdom-nav-btn {
+  background: linear-gradient(180deg, #d97706 0%, #b45309 100%) !important;
+  border: 1.5px solid #fbbf24 !important;
+  color: #ffffff !important;
+  box-shadow: 0 3px 0 #78350f, 0 4px 12px rgba(217, 119, 6, 0.35) !important;
+}
+.wisdom-nav-btn:hover {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(180deg, #f59e0b 0%, #d97706 100%) !important;
+  border-color: #fde68a !important;
+  box-shadow: 0 5px 0 #78350f, 0 8px 16px rgba(217, 119, 6, 0.5) !important;
+}
+
+/* 🌟 日曆標記膠囊 (compact-date-chip) */
+.current-date-chip,
+.compact-date-chip {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important;
+  border: 1.5px solid #475569 !important;
+  color: #f8fafc !important;
+  box-shadow: 0 3px 0 #020617, 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+}
+.current-date-chip:hover,
+.compact-date-chip:hover {
+  transform: translateY(-2px) !important;
+  border-color: #94a3b8 !important;
+  box-shadow: 0 5px 0 #020617, 0 8px 14px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 🌟 安裝 App 按鈕：活力薄荷綠 */
 .btn-bottom-install,
 .btn-sidebar-install {
-  border-color: #064e3b !important;
-  background:
-    repeating-linear-gradient(180deg, transparent 0px, transparent 5px, rgba(6, 78, 59, 0.08) 6px, transparent 7px),
-    linear-gradient(180deg, #d1fae5 0%, #a7f3d0 40%, #34d399 80%, #10b981 100%) !important;
-  color: #022c22 !important;
-  box-shadow: 0 4px 0 #064e3b, 0 6px 14px rgba(16, 185, 129, 0.3) !important;
+  background: linear-gradient(180deg, #059669 0%, #047857 100%) !important;
+  border: 1.5px solid #34d399 !important;
+  color: #ffffff !important;
+  box-shadow: 0 3px 0 #064e3b, 0 4px 12px rgba(5, 150, 105, 0.3) !important;
+}
+.btn-bottom-install:hover,
+.btn-sidebar-install:hover {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(180deg, #10b981 0%, #059669 100%) !important;
+  border-color: #6ee7b7 !important;
+  box-shadow: 0 5px 0 #064e3b, 0 8px 16px rgba(5, 150, 105, 0.45) !important;
 }
 
-/* 週次小木牌 (Monday Chips) */
-.monday-chip {
-  padding: 6px 14px !important;
-  border-radius: 12px 6px 14px 7px / 7px 14px 6px 12px !important;
-  border: 2px solid #5a3819 !important;
-  animation: woodTabFloat 4.6s ease-in-out infinite alternate;
+/* 🌟 查看解析按鈕 (btn-reveal)：璀璨活力陽光金 + 鮮明黑字 (最高清晰度) */
+.btn-reveal {
+  background: linear-gradient(180deg, #fef08a 0%, #fde047 35%, #eab308 100%) !important;
+  border: 2px solid #ca8a04 !important;
+  color: #422006 !important;
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 0 #854d0e, 0 6px 16px rgba(234, 179, 8, 0.35) !important;
 }
-.monday-chip:nth-child(even) {
-  animation-delay: 0.5s;
+.btn-reveal:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  background: linear-gradient(180deg, #fef9c3 0%, #fef08a 35%, #facc15 100%) !important;
+  border-color: #a16207 !important;
+  box-shadow: 0 6px 0 #854d0e, 0 10px 22px rgba(234, 179, 8, 0.45) !important;
+}
+
+/* 🌟 已擊敗按鈕 (btn-mastered)：翡翠綠 + 純白文字 */
+.btn-mastered {
+  background: linear-gradient(180deg, #10b981 0%, #059669 100%) !important;
+  border: 1.8px solid #34d399 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 0 #064e3b, 0 6px 16px rgba(16, 185, 129, 0.35) !important;
+}
+.btn-mastered:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  background: linear-gradient(180deg, #34d399 0%, #10b981 100%) !important;
+  border-color: #6ee7b7 !important;
+  box-shadow: 0 6px 0 #064e3b, 0 10px 20px rgba(16, 185, 129, 0.5) !important;
+}
+
+/* 🌟 未擊敗按鈕 (btn-unmastered)：玫瑰珊瑚紅 + 純白文字 */
+.btn-unmastered {
+  background: linear-gradient(180deg, #f43f5e 0%, #e11d48 100%) !important;
+  border: 1.8px solid #fb7185 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 0 #881337, 0 6px 16px rgba(225, 29, 72, 0.35) !important;
+}
+.btn-unmastered:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  background: linear-gradient(180deg, #fb7185 0%, #f43f5e 100%) !important;
+  border-color: #fda4af !important;
+  box-shadow: 0 6px 0 #881337, 0 10px 20px rgba(225, 29, 72, 0.5) !important;
+}
+
+/* 🌟 筆記傳送門 (btn-note-portal)：魔法紫羅蘭 + 純白文字 */
+.btn-note-portal {
+  background: linear-gradient(180deg, #8b5cf6 0%, #7c3aed 100%) !important;
+  border: 1.8px solid #a78bfa !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 0 #4c1d95, 0 6px 16px rgba(124, 58, 237, 0.35) !important;
+}
+.btn-note-portal:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  background: linear-gradient(180deg, #a78bfa 0%, #8b5cf6 100%) !important;
+  border-color: #c4b5fd !important;
+  box-shadow: 0 6px 0 #4c1d95, 0 10px 20px rgba(124, 58, 237, 0.5) !important;
+}
+
+/* 🌟 重新測驗 / 對答案 (btn-retry-card / btn-check-answer) */
+.btn-retry-card,
+.btn-check-answer {
+  background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%) !important;
+  border: 1.8px solid #38bdf8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 0 #075985, 0 6px 14px rgba(2, 132, 199, 0.3) !important;
+}
+.btn-retry-card:hover,
+.btn-check-answer:hover {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%) !important;
+  border-color: #7dd3fc !important;
+  box-shadow: 0 6px 0 #075985, 0 10px 18px rgba(2, 132, 199, 0.45) !important;
+}
+
+/* 🌟 揮刀打擊錯題怪按鈕 (btn-attack-monster) */
+.btn-attack-monster {
+  background: linear-gradient(180deg, #f59e0b 0%, #d97706 100%) !important;
+  border: 2px solid #fbbf24 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 0 #78350f, 0 8px 18px rgba(217, 119, 6, 0.35) !important;
+}
+.btn-attack-monster:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  background: linear-gradient(180deg, #fbbf24 0%, #f59e0b 100%) !important;
+  box-shadow: 0 6px 0 #78350f, 0 12px 24px rgba(217, 119, 6, 0.5) !important;
+}
+
+/* 🌟 週次選擇按鈕 (Monday Chips)：極度清晰的活潑徽章 */
+.monday-chip {
+  padding: 7px 16px !important;
+  background: linear-gradient(180deg, #1e293b 0%, #151d2a 100%) !important;
+  border: 1.5px solid #334155 !important;
+  color: #cbd5e1 !important;
+  box-shadow: 0 3px 0 #0b0f19, 0 4px 10px rgba(0, 0, 0, 0.25) !important;
+}
+.monday-chip:hover {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(180deg, #27354f 0%, #1b2638 100%) !important;
+  border-color: #64748b !important;
+  color: #ffffff !important;
+  box-shadow: 0 5px 0 #0b0f19, 0 6px 14px rgba(0, 0, 0, 0.35) !important;
+}
+.monday-chip .chip-week-title {
+  color: #94a3b8;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+.monday-chip .chip-week-date {
+  color: #f1f5f9;
+  font-size: 0.88rem;
+  font-weight: 800;
 }
 .monday-chip.active {
-  border-color: #312e81 !important;
-  background:
-    repeating-linear-gradient(180deg, transparent 0px, transparent 5px, rgba(49, 46, 129, 0.1) 6px, transparent 7px),
-    linear-gradient(180deg, #e0e7ff 0%, #c7d2fe 40%, #818cf8 80%, #6366f1 100%) !important;
-  color: #1e1b4b !important;
-  box-shadow: 0 4px 0 #1e1b4b, 0 8px 18px rgba(79, 70, 229, 0.35) !important;
+  background: linear-gradient(180deg, #4f46e5 0%, #3730a3 100%) !important;
+  border-color: #818cf8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 0 #1e1b4b, 0 0 18px rgba(99, 102, 241, 0.55) !important;
+  transform: translateY(-2px) !important;
 }
-.monday-chip.active .chip-week-title,
+.monday-chip.active .chip-week-title {
+  color: #c7d2fe !important;
+}
 .monday-chip.active .chip-week-date {
-  color: #1e1b4b !important;
-  font-weight: 900 !important;
+  color: #ffffff !important;
 }
 
-/* 側邊欄科目按鈕：全面木牌化 (桌面端與手機端) */
+/* 🌟 側邊欄科目按鈕：現代手繪卡片風格，字體高清晰度 */
 .sidebar-subject-btn {
-  border-radius: 14px 6px 16px 8px / 8px 16px 6px 14px !important;
-  border: 2.5px solid #5a3819 !important;
-  background:
-    repeating-linear-gradient(180deg, transparent 0px, transparent 5px, rgba(110, 68, 28, 0.06) 6px, transparent 7px),
-    linear-gradient(180deg, #fffcf6 0%, #fef3e2 40%, #f6dfbc 80%, #ebd1a6 100%) !important;
-  color: #3e220a !important;
-  box-shadow: 0 3px 0 #3e240e, 0 5px 12px rgba(62, 36, 14, 0.16) !important;
-  margin-bottom: 4px;
+  border-radius: 12px 6px 14px 7px / 7px 14px 6px 12px !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.1) !important;
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.75) 0%, rgba(20, 27, 45, 0.85) 100%) !important;
+  color: #cbd5e1 !important;
+  box-shadow: 0 2px 0 #090d16, 0 4px 10px rgba(0, 0, 0, 0.25) !important;
+  margin-bottom: 6px;
+  transition: all 0.18s ease !important;
 }
 .sidebar-subject-btn:hover {
   transform: translateY(-2px) scale(1.02) !important;
-  box-shadow: 0 5px 0 #3e240e, 0 8px 16px rgba(62, 36, 14, 0.25) !important;
+  background: linear-gradient(180deg, rgba(45, 59, 85, 0.85) 0%, rgba(30, 41, 59, 0.95) 100%) !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 0 #090d16, 0 6px 14px rgba(0, 0, 0, 0.35) !important;
 }
 .sidebar-subject-btn.active {
-  border-color: #312e81 !important;
-  background:
-    repeating-linear-gradient(180deg, transparent 0px, transparent 5px, rgba(49, 46, 129, 0.08) 6px, transparent 7px),
-    linear-gradient(180deg, #e0e7ff 0%, #c7d2fe 40%, #818cf8 80%, #6366f1 100%) !important;
-  color: #1e1b4b !important;
-  box-shadow: 0 4px 0 #1e1b4b, 0 8px 20px rgba(79, 70, 229, 0.4) !important;
+  background: linear-gradient(180deg, rgba(79, 70, 229, 0.35) 0%, rgba(49, 46, 129, 0.45) 100%) !important;
+  border-color: #6366f1 !important;
+  color: #ffffff !important;
+  box-shadow: 0 3px 0 #1e1b4b, 0 0 16px rgba(99, 102, 241, 0.4) !important;
 }
 .sidebar-subject-btn .subj-char {
   border-radius: 8px 4px 8px 4px !important;
-  border: 1.5px solid #5a3819 !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
   font-weight: 900 !important;
 }
-
-/* 木牌輕柔呼吸晃動動畫 */
-@keyframes woodTabFloat {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
-  100% { transform: translateY(1.5px); }
+.sidebar-subject-btn .subj-name {
+  color: #f1f5f9 !important;
+  font-weight: 700 !important;
 }
 
 /* 📱 手機直立防題目插圖與文字重疊保證 */
