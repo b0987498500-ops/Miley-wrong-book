@@ -8397,158 +8397,514 @@ html.is-pwa-standalone #app-bottom-bar {
   box-shadow: 0 5px 0 #14371f, 0 6px 14px rgba(41, 104, 62, 0.35) !important;
 }
 
-/* 🌟 查看解析按鈕 (btn-reveal)：璀璨陽光古金 + 鮮明黑褐粗字 */
-.btn-reveal {
-  background: linear-gradient(180deg, #fff3c4 0%, #fde072 40%, #eab308 100%) !important;
-  border: 2px solid #b48512 !important;
-  color: #422006 !important;
-  font-size: 1.05rem !important;
+/* ==========================================================================
+   🏰 STUDIO GHIBLI MAGIC STUDY SYSTEM - TACTILE RETRO STYLING (v2.72)
+   Material Textures: Warm Wood, Antique Brass, Starry Sky & Aged Parchment
+   ========================================================================== */
+
+/* 1. 🌌 左側側邊欄：深色星空/木質感羊皮紙與金色星芒背景 */
+.sidebar {
+  background-color: #1e2638 !important;
+  background-image: 
+    radial-gradient(circle at 15% 25%, rgba(251, 191, 36, 0.18) 1px, transparent 1.5px),
+    radial-gradient(circle at 75% 15%, rgba(251, 191, 36, 0.22) 1.5px, transparent 2px),
+    radial-gradient(circle at 85% 65%, rgba(251, 191, 36, 0.15) 1px, transparent 1.5px),
+    radial-gradient(circle at 30% 80%, rgba(251, 191, 36, 0.2) 1.5px, transparent 2px),
+    radial-gradient(circle at 50% 45%, rgba(147, 197, 253, 0.12) 1.5px, transparent 2px),
+    linear-gradient(180deg, #1c2333 0%, #171d2b 40%, #121722 100%) !important;
+  border-right: 2px solid #5a452a !important;
+  box-shadow: 4px 0 16px rgba(15, 23, 42, 0.35) !important;
+}
+
+/* 品牌區：手作羊皮紙銘牌貼在深色星空木質上 */
+.sidebar .brand {
+  background: linear-gradient(180deg, #fefae0 0%, #faedcd 100%);
+  border: 2px solid #b89758;
+  border-radius: 12px 6px 14px 7px / 7px 14px 6px 12px;
+  padding: 8px 10px;
+  box-shadow: 0 4px 0 #785928, 0 4px 12px rgba(0, 0, 0, 0.25);
+  margin-bottom: 8px;
+}
+
+.sidebar .brand-text h2 {
+  color: #38240f !important;
+  font-weight: 800;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.sidebar .brand-text .sub-title {
+  color: #7c5835 !important;
+  font-weight: 600;
+}
+
+.sidebar .sidebar-toggle-btn {
+  background: #ecd9b3;
+  border: 1.5px solid #a47e43;
+  color: #4a3319;
+  border-radius: 6px;
+  box-shadow: 0 2px 0 #785928;
+}
+
+.sidebar .sidebar-toggle-btn:hover {
+  background: #fdf3dc;
+  color: #2b1805;
+}
+
+/* 🌟 側邊欄科目按鈕：復古黃銅金屬邊框銘牌（Brass/Bronze Trim） */
+.sidebar-subject-btn {
+  border-radius: 12px 7px 14px 8px / 8px 14px 7px 12px !important;
+  border: 2px solid #c8a261 !important;
+  background: linear-gradient(180deg, #fffcf5 0%, #f7ecd7 50%, #edd9b9 100%) !important;
+  color: #3b2813 !important;
+  box-shadow: 0 4px 0 #7d5b24, 0 4px 10px rgba(0, 0, 0, 0.35), inset 0 1px 0 #ffffff !important;
+  margin-bottom: 10px !important;
+  padding: 8px 12px !important;
+  transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.sidebar-subject-btn:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #fff4df 50%, #f6e2c3 100%) !important;
+  border-color: #dfb974 !important;
+  box-shadow: 0 6px 0 #7d5b24, 0 6px 16px rgba(0, 0, 0, 0.45), inset 0 1px 0 #ffffff !important;
+}
+
+.sidebar-subject-btn:active {
+  transform: translateY(2px) scale(0.99) !important;
+  box-shadow: 0 1px 0 #7d5b24, 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 啟動狀態（Active）：黃銅金屬銘牌浮雕發光 */
+.sidebar-subject-btn.active {
+  background: linear-gradient(180deg, #faeed4 0%, #f2d79d 50%, #e0b86a 100%) !important;
+  border-color: #9e6c1e !important;
+  box-shadow: 0 3px 0 #613f0a, 0 0 14px rgba(234, 179, 8, 0.4), inset 0 1px 0 #fff8e8 !important;
+}
+
+.sidebar-subject-btn .subj-name {
+  color: #2e1d09 !important;
   font-weight: 800 !important;
-  box-shadow: 0 4px 0 #855d05, 0 4px 14px rgba(180, 133, 18, 0.3) !important;
-}
-.btn-reveal:hover {
-  transform: translateY(-2px) scale(1.02) !important;
-  background: linear-gradient(180deg, #fff9dc 0%, #fde88d 40%, #f5be18 100%) !important;
-  box-shadow: 0 6px 0 #855d05, 0 8px 18px rgba(180, 133, 18, 0.4) !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.5px;
 }
 
-/* 🌟 已擊敗按鈕 (btn-mastered)：水彩森林綠 + 純白文字 */
-.btn-mastered {
-  background: linear-gradient(180deg, #3d885a 0%, #25673d 100%) !important;
-  border: 1.8px solid #184729 !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 0 #10331d, 0 4px 14px rgba(37, 103, 61, 0.3) !important;
-}
-.btn-mastered:hover {
-  transform: translateY(-2px) scale(1.02) !important;
-  background: linear-gradient(180deg, #4c9e6c 0%, #2b7445 100%) !important;
-  box-shadow: 0 6px 0 #10331d, 0 8px 18px rgba(37, 103, 61, 0.4) !important;
+/* 科目小徽章：深沉宮崎駿復古墨水印章風格 */
+.sidebar-subject-btn .subj-char {
+  border-radius: 6px !important;
+  font-weight: 900 !important;
+  font-size: 1.05rem !important;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.2), 0 1px 0 rgba(255,255,255,0.6) !important;
 }
 
-/* 🌟 未擊敗按鈕 (btn-unmastered)：水彩珊瑚紅 + 純白文字 */
-.btn-unmastered {
-  background: linear-gradient(180deg, #d44d47 0%, #b3322d 100%) !important;
-  border: 1.8px solid #7c1c18 !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 0 #57100d, 0 4px 14px rgba(179, 50, 45, 0.3) !important;
-}
-.btn-unmastered:hover {
-  transform: translateY(-2px) scale(1.02) !important;
-  background: linear-gradient(180deg, #e35d57 0%, #c43b35 100%) !important;
-  box-shadow: 0 6px 0 #57100d, 0 8px 18px rgba(179, 50, 45, 0.4) !important;
+.subj-zh { color: #854d0e !important; background: #fef08a !important; border: 1.5px solid #ca8a04 !important; }
+.subj-en { color: #831843 !important; background: #fbcfe8 !important; border: 1.5px solid #db2777 !important; }
+.subj-math { color: #1e3a8a !important; background: #bfdbfe !important; border: 1.5px solid #2563eb !important; }
+.subj-sci { color: #064e3b !important; background: #a7f3d0 !important; border: 1.5px solid #059669 !important; }
+.subj-soc { color: #581c87 !important; background: #e9d5ff !important; border: 1.5px solid #9333ea !important; }
+
+/* 題數計數圓角標籤 */
+.sidebar-subject-btn .subj-count-badge {
+  background: #47321c !important;
+  color: #faeed4 !important;
+  border: 1px solid #7d5b24 !important;
+  border-radius: 9999px !important;
+  font-weight: 800 !important;
+  padding: 2px 7px !important;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.4) !important;
 }
 
-/* 🌟 筆記傳送門 (btn-note-portal)：魔法紫羅蘭 + 純白文字 */
-.btn-note-portal {
-  background: linear-gradient(180deg, #7c58a8 0%, #603d8d 100%) !important;
-  border: 1.8px solid #432468 !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 0 #2f174c, 0 4px 14px rgba(96, 61, 141, 0.3) !important;
-}
-.btn-note-portal:hover {
-  transform: translateY(-2px) scale(1.02) !important;
-  background: linear-gradient(180deg, #8d67bd 0%, #6e469f 100%) !important;
-  box-shadow: 0 6px 0 #2f174c, 0 8px 18px rgba(96, 61, 141, 0.4) !important;
+.sidebar-subject-btn.active .subj-count-badge {
+  background: #78350f !important;
+  color: #fef3c7 !important;
+  border-color: #b45309 !important;
 }
 
-/* 🌟 重新測驗 / 對答案 (btn-retry-card / btn-check-answer) */
-.btn-retry-card,
-.btn-check-answer {
-  background: linear-gradient(180deg, #467697 0%, #315a77 100%) !important;
-  border: 1.8px solid #23455d !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 0 #1b3547, 0 4px 12px rgba(49, 90, 119, 0.25) !important;
-}
-.btn-retry-card:hover,
-.btn-check-answer:hover {
-  transform: translateY(-2px) !important;
-  background: linear-gradient(180deg, #5185aa 0%, #3a6889 100%) !important;
-  box-shadow: 0 6px 0 #1b3547, 0 8px 16px rgba(49, 90, 119, 0.35) !important;
+/* 艾賓浩斯週期面板：深藍星空木質飾板 */
+.ebbinghaus-summary-box {
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%) !important;
+  border: 1.5px solid #856331 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 0 #4a3416, 0 4px 12px rgba(0,0,0,0.3) !important;
 }
 
-/* 🌟 揮刀打擊錯題怪按鈕 (btn-attack-monster) */
-.btn-attack-monster {
-  background: linear-gradient(180deg, #d4952d 0%, #b37719 100%) !important;
-  border: 2px solid #825208 !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 0 #573603, 0 6px 14px rgba(179, 119, 25, 0.3) !important;
-}
-.btn-attack-monster:hover {
-  transform: translateY(-2px) scale(1.03) !important;
-  background: linear-gradient(180deg, #e3a63e 0%, #c48520 100%) !important;
-  box-shadow: 0 6px 0 #573603, 0 10px 20px rgba(179, 119, 25, 0.4) !important;
-}
-
-/* 🌟 週次選擇按鈕 (Monday Chips)：極度溫潤的手繪羊皮紙小卡片 */
-.monday-chip {
-  padding: 7px 16px !important;
-  background: linear-gradient(180deg, #ffffff 0%, #f6f0e6 100%) !important;
-  border: 1.5px solid #d4c2a3 !important;
-  color: #3b2c1f !important;
-  box-shadow: 0 3px 0 #a38c6b, 0 2px 6px rgba(88, 59, 28, 0.08) !important;
-}
-.monday-chip:hover {
-  transform: translateY(-2px) !important;
-  background: linear-gradient(180deg, #ffffff 0%, #fbf3e8 100%) !important;
-  border-color: #b59b73 !important;
-  color: #1f140a !important;
-  box-shadow: 0 5px 0 #a38c6b, 0 4px 10px rgba(88, 59, 28, 0.15) !important;
-}
-.monday-chip .chip-week-title {
-  color: #7d674f;
-  font-size: 0.76rem;
+.ebb-title {
+  color: #fef08a !important;
   font-weight: 700;
 }
-.monday-chip .chip-week-date {
-  color: #2b1d10;
-  font-size: 0.88rem;
-  font-weight: 800;
-}
-.monday-chip.active {
-  background: linear-gradient(180deg, #467697 0%, #315a77 100%) !important;
-  border-color: #23455d !important;
+
+.ebb-count {
   color: #ffffff !important;
-  box-shadow: 0 4px 0 #1b3547, 0 0 16px rgba(49, 90, 119, 0.35) !important;
+}
+
+.ebb-count span,
+.ebb-count strong {
+  color: #34d399 !important;
+}
+
+.ebb-desc {
+  color: #94a3b8 !important;
+}
+
+/* 2. 🪵 上方標題列：深色溫潤雕刻木紋（Carved Wood）與黃銅邊框 */
+.top-header {
+  background: linear-gradient(180deg, #3d2a1b 0%, #2e1e12 60%, #24160d 100%) !important;
+  border-bottom: 3px solid #8e6c38 !important;
+  box-shadow: 0 6px 18px rgba(15, 10, 5, 0.45) !important;
+  position: relative;
+}
+
+.top-header::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #eab308 30%, #fef08a 50%, #eab308 70%, transparent);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* 標題銘牌：麥麥錯題本雕刻黃銅木銘牌 */
+.brand-heading-group {
+  background: linear-gradient(180deg, #78532f 0%, #56391d 60%, #3e2612 100%);
+  border: 2px solid #b8934a;
+  border-radius: 12px 6px 14px 7px / 7px 14px 6px 12px;
+  padding: 6px 18px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 3px 0 #281709, 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.top-header h1 {
+  color: #fef3c7 !important;
+  font-weight: 900 !important;
+  letter-spacing: 1px !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* 上方功能導覽按鈕：宮崎駿復古徽章（Badge）與水彩魔導具手繪感 */
+/* 麥麥筆記書本捷徑 */
+.notes-cross-link-btn {
+  background: linear-gradient(180deg, #fef6e2 0%, #fae6bd 50%, #f3d492 100%) !important;
+  border: 2px solid #b88636 !important;
+  color: #4a2800 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 3px 0 #66430d, 0 3px 8px rgba(0,0,0,0.3) !important;
+  border-radius: 12px 6px 14px 7px / 7px 14px 6px 12px !important;
+  padding: 7px 14px !important;
+}
+
+.notes-cross-link-btn:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #fff1d4 50%, #f7dfa7 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 0 #66430d, 0 6px 14px rgba(0,0,0,0.4) !important;
+}
+
+/* 跨裝置進度同步（星空水彩藍徽章） */
+.sync-nav-btn {
+  background: linear-gradient(180deg, #4b7b99 0%, #325f7a 50%, #22465c 100%) !important;
+  border: 2px solid #72a5c4 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  box-shadow: 0 3px 0 #132b3a, 0 3px 8px rgba(0,0,0,0.35) !important;
+  border-radius: 12px 6px 14px 7px / 7px 14px 6px 12px !important;
+  padding: 7px 14px !important;
+}
+
+.sync-nav-btn:hover {
+  background: linear-gradient(180deg, #598ba9 0%, #3d6e8b 50%, #29536c 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 0 #132b3a, 0 6px 14px rgba(0,0,0,0.45) !important;
+}
+
+/* 智慧寶庫（復古暖木寶箱金徽章） */
+.wisdom-nav-btn {
+  background: linear-gradient(180deg, #b67b45 0%, #955d2b 50%, #754418 100%) !important;
+  border: 2px solid #e1ab68 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  box-shadow: 0 3px 0 #4a280a, 0 3px 8px rgba(0,0,0,0.35) !important;
+  border-radius: 12px 6px 14px 7px / 7px 14px 6px 12px !important;
+  padding: 7px 14px !important;
+}
+
+.wisdom-nav-btn:hover {
+  background: linear-gradient(180deg, #c78c54 0%, #a66a34 50%, #854f20 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 0 #4a280a, 0 6px 14px rgba(0,0,0,0.45) !important;
+}
+
+/* 日曆選擇器膠囊：復古手抄筆記小皮書樣式 */
+.compact-date-chip,
+.current-date-chip {
+  background: linear-gradient(180deg, #fffcf5 0%, #f6ecd6 50%, #edd9b8 100%) !important;
+  border: 2px solid #b88f4b !important;
+  color: #3b250e !important;
+  border-radius: 12px 6px 14px 7px / 7px 14px 6px 12px !important;
+  box-shadow: 0 3px 0 #6e4c19, 0 3px 8px rgba(0,0,0,0.3) !important;
+  padding: 6px 14px !important;
+}
+
+.compact-date-chip:hover,
+.current-date-chip:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #fff4df 50%, #f7e2c2 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 0 #6e4c19, 0 6px 14px rgba(0,0,0,0.4) !important;
+}
+
+.compact-date-chip .date-chip-badge {
+  background: #78350f !important;
+  color: #fef3c7 !important;
+  border: 1px solid #b45309 !important;
+  font-weight: 800 !important;
+}
+
+.compact-date-chip .date-chip-val {
+  color: #2b1704 !important;
+  font-weight: 900 !important;
+}
+
+.compact-date-chip .cal-chip-icon,
+.compact-date-chip .date-dropdown-arrow {
+  color: #85531d !important;
+}
+
+/* 頂部欄折疊按鈕 */
+#topbar-toggle-btn {
+  background: #4a3423 !important;
+  border: 1.8px solid #9e7542 !important;
+  color: #fde68a !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 0 #28180d !important;
+}
+
+#topbar-toggle-btn:hover {
+  background: #61442e !important;
+  color: #ffffff !important;
+}
+
+/* 3. 📜 中央主內容區：帶有歲月痕跡的暖黃羊皮紙（Aged Parchment）色調與質感紋理 */
+body, 
+.app-container,
+.main-content {
+  background-color: #eee2ce !important;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(197, 160, 107, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(175, 137, 85, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(255, 252, 240, 0.4) 0%, transparent 60%),
+    linear-gradient(180deg, #f4ead7 0%, #ede0c8 50%, #e5d5b7 100%) !important;
+}
+
+/* 卡片與面板：哈爾移動城堡魔導手抄書頁質感 */
+.flashcard-card,
+.glass-panel,
+.review-welcome-stage {
+  background: linear-gradient(180deg, #fffdf8 0%, #fbf5e8 40%, #f6ecda 100%) !important;
+  border: 2px solid #c9a871 !important;
+  border-radius: 18px 10px 20px 12px / 12px 20px 10px 18px !important;
+  box-shadow: 
+    0 4px 0 #9e7f4a,
+    0 10px 28px rgba(78, 54, 25, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 0 30px rgba(214, 185, 137, 0.15) !important;
+  position: relative;
+}
+
+/* 題幹與文字：純淨深墨水黑褐色（墨水感） */
+.stem-katex-text,
+.sol-steps,
+.card-body-stem {
+  color: #2a1b0c !important;
+  line-height: 1.85 !important;
+  font-weight: 500 !important;
+}
+
+/* 🌟 週次選擇按鈕 (Monday Chips)：手抄書籤膠囊 */
+.monday-chip {
+  padding: 6px 16px !important;
+  background: linear-gradient(180deg, #fffcf5 0%, #f5e8d3 100%) !important;
+  border: 1.8px solid #c2a168 !important;
+  color: #3d2711 !important;
+  box-shadow: 0 3px 0 #856531, 0 2px 6px rgba(60, 40, 15, 0.15) !important;
+  border-radius: 9999px !important;
+}
+
+.monday-chip:hover {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #faefdc 100%) !important;
+  border-color: #dfb877 !important;
+  box-shadow: 0 5px 0 #856531, 0 4px 10px rgba(60, 40, 15, 0.2) !important;
+}
+
+.monday-chip .chip-week-title {
+  color: #785328 !important;
+  font-size: 0.76rem !important;
+  font-weight: 800 !important;
+}
+
+.monday-chip .chip-week-date {
+  color: #291705 !important;
+  font-size: 0.88rem !important;
+  font-weight: 900 !important;
+}
+
+.monday-chip.active {
+  background: linear-gradient(180deg, #3d6885 0%, #294e68 100%) !important;
+  border-color: #17364b !important;
+  color: #ffffff !important;
+  box-shadow: 0 3px 0 #0f2433, 0 0 14px rgba(41, 78, 104, 0.4) !important;
   transform: translateY(-2px) !important;
 }
+
 .monday-chip.active .chip-week-title {
-  color: #d1e5f2 !important;
+  color: #cae3f5 !important;
 }
+
 .monday-chip.active .chip-week-date {
   color: #ffffff !important;
 }
 
-/* 🌟 側邊欄科目按鈕：吉卜力手帳標籤卡片，水彩純淨 */
-.sidebar-subject-btn {
-  border-radius: 12px 6px 14px 7px / 7px 14px 6px 12px !important;
-  border: 1.5px solid #dfd2b5 !important;
-  background: linear-gradient(180deg, #ffffff 0%, #faf5eb 100%) !important;
-  color: #3b2c1f !important;
-  box-shadow: 0 2px 0 #bda984, 0 2px 6px rgba(88, 59, 28, 0.06) !important;
-  margin-bottom: 6px;
-  transition: all 0.18s ease !important;
-}
-.sidebar-subject-btn:hover {
-  transform: translateY(-2px) scale(1.02) !important;
-  background: linear-gradient(180deg, #ffffff 0%, #f6ecd8 100%) !important;
-  border-color: #c29b38 !important;
-  color: #1f140a !important;
-  box-shadow: 0 4px 0 #bda984, 0 4px 10px rgba(88, 59, 28, 0.12) !important;
-}
-.sidebar-subject-btn.active {
-  background: linear-gradient(180deg, #fdf4dd 0%, #f9e2b0 100%) !important;
-  border-color: #b45309 !important;
-  color: #4a2800 !important;
-  box-shadow: 0 3px 0 #854203, 0 0 12px rgba(180, 83, 9, 0.25) !important;
-}
-.sidebar-subject-btn .subj-char {
-  border-radius: 8px 4px 8px 4px !important;
-  border: 1px solid #c9b493 !important;
+/* 🌟 操作按鈕群：古董黃銅金屬邊框與厚重浮雕手感 */
+/* 查看解析按鈕 (btn-reveal)：璀璨黃銅金金屬徽章 */
+.btn-reveal {
+  background: linear-gradient(180deg, #fef08a 0%, #f59e0b 50%, #d97706 100%) !important;
+  border: 2.2px solid #8f5305 !important;
+  color: #3b1d03 !important;
+  font-size: 1.05rem !important;
   font-weight: 900 !important;
+  border-radius: 30px !important;
+  box-shadow: 0 4px 0 #573102, 0 6px 16px rgba(217, 119, 6, 0.35), inset 0 1px 0 #fffbeb !important;
+  letter-spacing: 0.5px;
 }
-.sidebar-subject-btn .subj-name {
-  color: #2b1d10 !important;
-  font-weight: 700 !important;
+
+.btn-reveal:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  background: linear-gradient(180deg, #fef9c3 0%, #fbbf24 50%, #ea580c 100%) !important;
+  box-shadow: 0 6px 0 #573102, 0 10px 22px rgba(217, 119, 6, 0.45), inset 0 1px 0 #fffbeb !important;
+}
+
+/* 先跳過晚點做按鈕 */
+.btn-skip-later {
+  background: linear-gradient(180deg, #fffcf5 0%, #ede0cb 100%) !important;
+  border: 2px solid #a88753 !important;
+  color: #4a3219 !important;
+  font-weight: 800 !important;
+  border-radius: 30px !important;
+  box-shadow: 0 3px 0 #6e5025, 0 3px 8px rgba(0,0,0,0.12) !important;
+}
+
+.btn-skip-later:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #f6ebd8 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 0 #6e5025, 0 6px 12px rgba(0,0,0,0.18) !important;
+}
+
+/* 已擊敗按鈕 (btn-mastered)：吉卜力森林古木深綠印記 */
+.btn-mastered {
+  background: linear-gradient(180deg, #3fa169 0%, #25794a 50%, #175732 100%) !important;
+  border: 2px solid #0d381f !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 0 #072212, 0 6px 16px rgba(23, 87, 50, 0.35), inset 0 1px 0 rgba(255,255,255,0.3) !important;
+}
+
+.btn-mastered:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  background: linear-gradient(180deg, #4cb579 0%, #2e8b56 50%, #1e673c 100%) !important;
+  box-shadow: 0 6px 0 #072212, 0 8px 20px rgba(23, 87, 50, 0.45) !important;
+}
+
+/* 未擊敗按鈕 (btn-unmastered)：復古封蠟紅金屬印章 */
+.btn-unmastered {
+  background: linear-gradient(180deg, #df4f46 0%, #be3028 50%, #941e17 100%) !important;
+  border: 2px solid #5a0e0a !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 0 #3b0704, 0 6px 16px rgba(148, 30, 23, 0.35), inset 0 1px 0 rgba(255,255,255,0.3) !important;
+}
+
+.btn-unmastered:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  background: linear-gradient(180deg, #ee5e55 0%, #cf3d35 50%, #a82720 100%) !important;
+  box-shadow: 0 6px 0 #3b0704, 0 8px 20px rgba(148, 30, 23, 0.45) !important;
+}
+
+/* 筆記傳送門 (btn-note-portal)：魔法星空紫晶印章 */
+.btn-note-portal {
+  background: linear-gradient(180deg, #8b5fb8 0%, #6e409c 50%, #52297d 100%) !important;
+  border: 2px solid #331553 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 0 #200a36, 0 6px 16px rgba(110, 64, 156, 0.35), inset 0 1px 0 rgba(255,255,255,0.3) !important;
+}
+
+.btn-note-portal:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  background: linear-gradient(180deg, #9d70cc 0%, #7d4dae 50%, #60338f 100%) !important;
+  box-shadow: 0 6px 0 #200a36, 0 8px 20px rgba(110, 64, 156, 0.45) !important;
+}
+
+/* 左右切換題目箭頭按鈕：古董黃銅金屬圓盾 */
+.fc-nav-arrow {
+  background: linear-gradient(180deg, #fef6e2 0%, #fae6bd 50%, #edd39e 100%) !important;
+  border: 2px solid #b88636 !important;
+  color: #4a2b06 !important;
+  box-shadow: 0 4px 0 #6e4b17, 0 4px 12px rgba(60, 40, 15, 0.25) !important;
+  border-radius: 12px 6px 14px 7px / 7px 14px 6px 12px !important;
+}
+
+.fc-nav-arrow:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #fff1d4 50%, #f7dfa7 100%) !important;
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 6px 0 #6e4b17, 0 6px 16px rgba(60, 40, 15, 0.35) !important;
+}
+
+/* 詳解區域：微溫暖手抄紙底板 */
+.solution-content-box {
+  background: #fbf6ec !important;
+  border: 2px solid #d4b88a !important;
+  border-radius: 12px !important;
+  box-shadow: inset 0 1px 3px rgba(100, 70, 30, 0.08) !important;
+}
+
+.sol-answer {
+  color: #175732 !important;
+  font-weight: 800 !important;
+}
+
+/* 選擇題選項卡片：吉卜力手作木籤紙牌 */
+.fc-option-card {
+  background: linear-gradient(180deg, #ffffff 0%, #faf3e6 100%) !important;
+  border: 1.8px solid #c9a871 !important;
+  color: #2f1d0b !important;
+  box-shadow: 0 2px 0 #997843, 0 2px 6px rgba(60, 40, 15, 0.08) !important;
+  border-radius: 12px 6px 14px 7px / 7px 14px 6px 12px !important;
+}
+
+.fc-option-card:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #fff6e8 100%) !important;
+  border-color: #b45309 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 0 #997843, 0 4px 12px rgba(60, 40, 15, 0.16) !important;
+}
+
+.fc-option-card.selected {
+  background: linear-gradient(180deg, #e8f4fc 0%, #d4e8f7 100%) !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 3px 0 #1e40af, 0 0 14px rgba(37, 99, 235, 0.25) !important;
+}
+
+.fc-option-pill {
+  background: #f3e6cf !important;
+  border: 1.5px solid #a8844a !important;
+  color: #4a3012 !important;
+  font-weight: 900 !important;
+  border-radius: 6px !important;
+}
+
+.fc-option-card.selected .fc-option-pill {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #1d4ed8 !important;
 }
 
 /* 📱 手機直立防題目插圖與文字重疊保證 */
