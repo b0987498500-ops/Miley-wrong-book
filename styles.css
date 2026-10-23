@@ -4,39 +4,40 @@
    ========================================================================== */
 
 :root {
-  /* Color Palette - Modern Sleek Indigo & Emerald Dark Theme (Default) */
-  --bg-primary: #0b0f19;
-  --bg-secondary: #111827;
-  --bg-card: rgba(30, 41, 59, 0.7);
-  --bg-card-hover: rgba(51, 65, 85, 0.8);
-  --border-color: rgba(255, 255, 255, 0.1);
-  --border-focus: #6366f1;
+  /* Color Palette - Studio Ghibli-esque Warm Parchment & Antique Brass Magic Study Theme */
+  --bg-primary: #f5efeb;          /* 溫潤羊皮紙底色 (暖和明亮、極致護眼) */
+  --bg-secondary: #fdfbf7;        /* 輕柔米白羊皮書頁色 */
+  --bg-card: rgba(255, 252, 245, 0.94); /* 溫暖水彩畫紙質感卡片 */
+  --bg-card-hover: #ffffff;
   
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-sub: #cbd5e1;
+  --border-color: #d8c7a5;        /* 復古羊皮紙與溫木淺邊框 */
+  --border-focus: #b45309;        /* 溫暖黃銅金屬邊框焦點色 */
+  
+  --text-main: #2b2118;           /* 典雅復古深墨色 (高對比度、極致清晰，遠比死黑溫潤) */
+  --text-muted: #786452;          /* 溫和柔和的墨水次要文字 */
+  --text-sub: #4a3b2c;            /* 古典手抄墨色 */
 
-  --accent-primary: #6366f1;
-  --accent-primary-hover: #4f46e5;
-  --accent-secondary: #ec4899;
-  --accent-success: #10b981;
-  --accent-warning: #f59e0b;
-  --accent-danger: #ef4444;
+  --accent-primary: #3b6b88;      /* 吉卜力復古天空靛藍 (水彩墨水藍) */
+  --accent-primary-hover: #294d63;
+  --accent-secondary: #c25953;    /* 溫暖茜草紅 (復古水彩印章紅) */
+  --accent-success: #2e7d53;      /* 宮崎駿森林苔綠 (生機草木綠) */
+  --accent-warning: #b45309;      /* 溫潤黃銅金色 */
+  --accent-danger: #b91c1c;
 
-  /* Fluorescent Yellow Mistake Note Token (SPECIAL STYLING) */
-  --yellow-fluorescent-bg: #FFE600;
-  --yellow-fluorescent-border: #FFD600;
-  --yellow-fluorescent-text: #18181b;
-  --yellow-fluorescent-shadow: 0 0 20px rgba(255, 230, 0, 0.4);
+  /* Fluorescent Yellow Mistake Note Token (SPECIAL STYLING) - 暖陽淡金便籤 */
+  --yellow-fluorescent-bg: #fef3c7;
+  --yellow-fluorescent-border: #f59e0b;
+  --yellow-fluorescent-text: #451a03;
+  --yellow-fluorescent-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
 
   /* Fonts */
   --font-sans: 'Outfit', 'Noto Sans TC', -apple-system, sans-serif;
   --font-code: 'Fira Code', monospace;
 
-  /* Shadows & Glassmorphism */
-  --glass-bg: rgba(17, 24, 39, 0.75);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.12);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  /* Shadows & Parchment Tactile System */
+  --glass-bg: rgba(253, 251, 247, 0.94);
+  --glass-border: 1.5px solid #d8c7a5;
+  --glass-shadow: 0 8px 24px rgba(88, 59, 28, 0.08), 0 2px 6px rgba(88, 59, 28, 0.04);
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
@@ -46,20 +47,20 @@
   --sidebar-width: 157px;
 }
 
-/* Light Theme Variables */
+/* Light Theme Variables (保持一致的吉卜力羊皮紙質地) */
 body.light-theme {
-  --bg-primary: #f1f5f9;
+  --bg-primary: #f9f6ee;
   --bg-secondary: #ffffff;
-  --bg-card: rgba(255, 255, 255, 0.9);
-  --bg-card-hover: rgba(241, 245, 249, 1);
-  --border-color: rgba(0, 0, 0, 0.08);
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --text-sub: #334155;
+  --bg-card: #fefdfa;
+  --bg-card-hover: #ffffff;
+  --border-color: #dfd2b5;
+  --text-main: #2b2118;
+  --text-muted: #786452;
+  --text-sub: #4a3b2c;
 
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: 1px solid rgba(0, 0, 0, 0.08);
-  --glass-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  --glass-bg: rgba(255, 255, 255, 0.94);
+  --glass-border: 1.5px solid #dfd2b5;
+  --glass-shadow: 0 8px 24px rgba(88, 59, 28, 0.06);
 }
 
 /* Reset & Base Styles */
@@ -8134,36 +8135,57 @@ html.is-pwa-standalone #app-bottom-bar {
 
 
 /* ========================================================
-   🎨 麥麥旗艦 UI/UX 尊榮美學：高對比清晰手繪卡通立體按鈕與雅緻藤蔓系統
-   - 告別土褐色木牌與模糊木紋：保留可愛有機圓角 (12px 6px 14px 7px)，全面換裝乾淨純色微漸層
-   - 最高準則：字體極限清晰度 (AAA 高對比度)，絕不使用遮蔽字體的重複線條木紋
-   - 雅緻微夜光深色細邊框與 3D 浮雕按壓回彈，保留手繪活潑感，同時完美融入黑藍色系背景
-   - 柔和純淨的自然藤蔓分隔線，不搶眼喧賓奪主
+   🌿 宮崎駿吉卜力風 (Ghibli-esque) 魔法手帳主題系統 (Parchment & Antique Brass System)
+   - 溫暖羊皮紙底色 (#F5EFEB / #F9F6EE)、溫潤書頁白卡片
+   - 復古黃銅金屬邊框 (#C29B38 / #B45309)、溫暖原木手感
+   - 柔和圓角、溫暖水彩筆觸陰影，將網站直接化身為一本宮崎駿動畫中的「魔法學習手帳」
    ======================================================== */
 
 /* 🌿 頂部導航與區塊的手繪綠葉花苞藤蔓分隔線（精靈森林微光微調，自然柔和） */
 .top-header {
   position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(253, 251, 247, 0.95) !important;
+  border-bottom: 2px solid #d8c7a5 !important;
+  box-shadow: 0 4px 16px rgba(88, 59, 28, 0.05);
 }
 .top-header::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: -5px;
   left: 0;
   right: 0;
   height: 10px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 10' width='80' height='10'%3E%3Cpath d='M0,5 Q20,2 40,5 T80,5' fill='none' stroke='%236366f1' stroke-width='1.8' stroke-linecap='round' opacity='0.45'/%3E%3Cpath d='M18,4 Q24,1 28,3 Q24,6 18,4 Z' fill='%2310b981' opacity='0.6'/%3E%3Ccircle cx='36' cy='3' r='1.5' fill='%23fbbf24' opacity='0.7'/%3E%3Cpath d='M58,6 Q64,9 68,7 Q64,4 58,6 Z' fill='%2334d399' opacity='0.6'/%3E%3Ccircle cx='72' cy='6' r='1.4' fill='%23ec4899' opacity='0.65'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 10' width='80' height='10'%3E%3Cpath d='M0,5 Q20,2 40,5 T80,5' fill='none' stroke='%238c6d46' stroke-width='1.5' stroke-linecap='round' opacity='0.45'/%3E%3Cpath d='M18,4 Q24,1 28,3 Q24,6 18,4 Z' fill='%235b8c5a' opacity='0.75'/%3E%3Ccircle cx='36' cy='3' r='1.5' fill='%23c29b38' opacity='0.8'/%3E%3Cpath d='M58,6 Q64,9 68,7 Q64,4 58,6 Z' fill='%233d7a5a' opacity='0.75'/%3E%3Ccircle cx='72' cy='6' r='1.4' fill='%23c25953' opacity='0.75'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-size: 80px 10px;
   pointer-events: none;
   z-index: 10;
 }
 
+/* 🌿 側邊欄：溫暖羊皮紙底、右側手繪黃銅藤蔓細線 */
+.sidebar {
+  background: #fbf7ee !important;
+  border-right: 2px solid #dfd2b5 !important;
+  box-shadow: 4px 0 16px rgba(88, 59, 28, 0.04);
+}
+.sidebar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -3px;
+  width: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 60' width='10' height='60'%3E%3Cpath d='M5,0 Q8,15 5,30 Q2,45 5,60' fill='none' stroke='%238c6d46' stroke-width='1.5' stroke-linecap='round' opacity='0.35'/%3E%3Cpath d='M5,15 Q9,12 9,15 Q7,18 5,15 Z' fill='%235b8c5a' opacity='0.6'/%3E%3Cpath d='M5,45 Q1,42 1,45 Q3,48 5,45 Z' fill='%233d7a5a' opacity='0.6'/%3E%3C/svg%3E");
+  background-repeat: repeat-y;
+  background-size: 8px 60px;
+  pointer-events: none;
+  z-index: 25;
+}
+
 /* 🌿 複習卡片頂部動作列裝飾線（輕柔葉脈） */
 .card-top-bar {
   position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1.5px solid #e8dec8 !important;
   padding-bottom: 12px !important;
 }
 .card-top-bar::after {
@@ -8173,42 +8195,34 @@ html.is-pwa-standalone #app-bottom-bar {
   left: 0;
   right: 0;
   height: 8px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 8' width='80' height='8'%3E%3Cpath d='M0,4 Q20,1 40,4 T80,4' fill='none' stroke='%23818cf8' stroke-width='1.5' stroke-linecap='round' opacity='0.35'/%3E%3Cpath d='M18,3 Q24,1 27,3 Q24,5 18,3 Z' fill='%2334d399' opacity='0.55'/%3E%3Ccircle cx='36' cy='2.5' r='1.2' fill='%23fbbf24' opacity='0.65'/%3E%3Cpath d='M58,5 Q63,7 66,5 Q63,3 58,5 Z' fill='%2310b981' opacity='0.55'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 8' width='80' height='8'%3E%3Cpath d='M0,4 Q20,1 40,4 T80,4' fill='none' stroke='%23b45309' stroke-width='1.2' stroke-linecap='round' opacity='0.35'/%3E%3Cpath d='M18,3 Q24,1 27,3 Q24,5 18,3 Z' fill='%235b8c5a' opacity='0.6'/%3E%3Ccircle cx='36' cy='2.5' r='1.2' fill='%23c29b38' opacity='0.7'/%3E%3Cpath d='M58,5 Q63,7 66,5 Q63,3 58,5 Z' fill='%233d7a5a' opacity='0.6'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-size: 80px 8px;
   pointer-events: none;
   opacity: 0.8;
 }
 
-/* 🌿 側邊欄細微藤蔓光澤 */
-.sidebar {
-  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-.sidebar::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: -3px;
-  width: 8px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 60' width='10' height='60'%3E%3Cpath d='M5,0 Q8,15 5,30 Q2,45 5,60' fill='none' stroke='%236366f1' stroke-width='1.5' stroke-linecap='round' opacity='0.25'/%3E%3Cpath d='M5,15 Q9,12 9,15 Q7,18 5,15 Z' fill='%2310b981' opacity='0.4'/%3E%3Cpath d='M5,45 Q1,42 1,45 Q3,48 5,45 Z' fill='%2334d399' opacity='0.4'/%3E%3C/svg%3E");
-  background-repeat: repeat-y;
-  background-size: 8px 60px;
-  pointer-events: none;
-  z-index: 25;
-}
-
 .toolbar-divider {
   width: 2px !important;
   height: 20px !important;
-  background: rgba(255, 255, 255, 0.15) !important;
+  background: #d8c7a5 !important;
   border-radius: 2px;
 }
 
-/* 🎨 全站核心按鈕：手切立體卡片 (Tactile Cartoon Badge System)
-   - 純淨無噪點背景，字體 100% 銳利清晰
-   - 3D 立體底影按壓反饋
-   - 依功能清晰分色，不使用灰沉沉的木板色
+/* 📖 核心複習卡片：宮崎駿手繪魔法筆記本大頁面質感 */
+.flashcard-card,
+.glass-panel,
+.review-welcome-stage {
+  background: #fdfbf7 !important;
+  border: 1.5px solid #d8c7a5 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 30px rgba(88, 59, 28, 0.08), 0 2px 8px rgba(88, 59, 28, 0.04) !important;
+  color: #2b2118 !important;
+}
+
+/* 🎨 全站核心按鈕：吉卜力手繪圓角黃銅木質卡片 (Ghibli Brass & Wood Badge System)
+   - 純淨羊皮紙/水彩質地，文字極致清晰
+   - 3D 浮雕沉浸回彈按壓，溫潤工藝質感
 */
 .btn-primary,
 .btn-secondary,
@@ -8234,7 +8248,6 @@ html.is-pwa-standalone #app-bottom-bar {
 .compact-date-chip,
 .notes-cross-link-btn,
 .btn-chip-action {
-  /* 可愛自然有機圓角切角 */
   border-radius: 12px 6px 14px 7px / 7px 14px 6px 12px !important;
   font-family: inherit;
   font-weight: 700 !important;
@@ -8270,276 +8283,271 @@ html.is-pwa-standalone #app-bottom-bar {
 .notes-cross-link-btn:active,
 .btn-chip-action:active {
   transform: translateY(2px) !important;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 1px 0 rgba(88, 59, 28, 0.3) !important;
 }
 
-/* 🌟 次要與輔助按鈕 (btn-secondary / btn-skip-later / btn-chip-action)：高質感深色卡片 + 亮白清晰文字 */
+/* 🌟 次要與輔助按鈕 (btn-secondary / btn-skip-later / btn-chip-action)：溫潤白紙 + 復古深褐邊框與文字 */
 .btn-secondary,
 .btn-skip-later,
 .btn-chip-action {
-  background: linear-gradient(180deg, #243049 0%, #1a2234 100%) !important;
-  border: 1.5px solid #3b4d6b !important;
-  color: #f1f5f9 !important;
-  box-shadow: 0 3px 0 #0f172a, 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f6efe6 100%) !important;
+  border: 1.5px solid #c9b493 !important;
+  color: #3b2c1f !important;
+  box-shadow: 0 3px 0 #9c8360, 0 3px 8px rgba(88, 59, 28, 0.1) !important;
 }
 .btn-secondary:hover,
 .btn-skip-later:hover,
 .btn-chip-action:hover {
   transform: translateY(-2px) !important;
-  background: linear-gradient(180deg, #2e3d5d 0%, #1e293b 100%) !important;
-  border-color: #60a5fa !important;
-  color: #ffffff !important;
-  box-shadow: 0 5px 0 #0f172a, 0 8px 16px rgba(0, 0, 0, 0.4) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #faecd7 100%) !important;
+  border-color: #a37d45 !important;
+  color: #21170e !important;
+  box-shadow: 0 5px 0 #9c8360, 0 6px 14px rgba(88, 59, 28, 0.16) !important;
 }
 
-/* 🌟 主要按鈕 (btn-primary / btn-accent)：皇家靛藍晶瑩質感 */
+/* 🌟 主要按鈕 (btn-primary / btn-accent)：吉卜力天空墨水藍 + 純白文字 */
 .btn-primary,
 .btn-accent,
 .btn-accent-sm {
-  background: linear-gradient(180deg, #6366f1 0%, #4f46e5 100%) !important;
-  border: 1.5px solid #818cf8 !important;
+  background: linear-gradient(180deg, #467697 0%, #315a77 100%) !important;
+  border: 1.5px solid #23455d !important;
   color: #ffffff !important;
-  box-shadow: 0 3px 0 #312e81, 0 6px 14px rgba(79, 70, 229, 0.35) !important;
+  box-shadow: 0 3px 0 #1b3547, 0 4px 12px rgba(49, 90, 119, 0.25) !important;
 }
 .btn-primary:hover,
 .btn-accent:hover,
 .btn-accent-sm:hover {
   transform: translateY(-2px) !important;
-  background: linear-gradient(180deg, #7c3aed 0%, #6366f1 100%) !important;
-  border-color: #a5b4fc !important;
-  box-shadow: 0 5px 0 #312e81, 0 10px 20px rgba(79, 70, 229, 0.5) !important;
+  background: linear-gradient(180deg, #5185aa 0%, #3a6889 100%) !important;
+  border-color: #1b3547 !important;
+  box-shadow: 0 5px 0 #1b3547, 0 8px 16px rgba(49, 90, 119, 0.35) !important;
 }
 
 /* 🌟 頂部【麥麥筆記】手帳捷徑：溫暖蜜糖金卡片 + 深褐清晰字體 */
 .notes-cross-link-btn {
-  background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 40%, #fde68a 100%) !important;
-  border: 1.5px solid #f59e0b !important;
-  color: #78350f !important;
-  box-shadow: 0 3px 0 #b45309, 0 4px 12px rgba(245, 158, 11, 0.25) !important;
+  background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 45%, #fde68a 100%) !important;
+  border: 1.5px solid #c29b38 !important;
+  color: #5c3807 !important;
+  box-shadow: 0 3px 0 #8c6717, 0 3px 10px rgba(194, 155, 56, 0.25) !important;
 }
 .notes-cross-link-btn:hover {
   transform: translateY(-2px) !important;
   background: linear-gradient(180deg, #ffffff 0%, #fef3c7 100%) !important;
-  border-color: #d97706 !important;
-  color: #451a03 !important;
-  box-shadow: 0 5px 0 #b45309, 0 8px 16px rgba(245, 158, 11, 0.35) !important;
+  border-color: #a88020 !important;
+  color: #382103 !important;
+  box-shadow: 0 5px 0 #8c6717, 0 6px 14px rgba(194, 155, 56, 0.35) !important;
 }
 
-/* 🌟 頂部【跨裝置進度同步】：蔚藍晴空水晶質感 + 鮮明白字 */
+/* 🌟 頂部【跨裝置進度同步】：復古水彩藍天色 + 晶瑩黃銅邊框 */
 .sync-nav-btn:not(.notes-cross-link-btn) {
-  background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%) !important;
-  border: 1.5px solid #38bdf8 !important;
-  color: #ffffff !important;
-  box-shadow: 0 3px 0 #075985, 0 4px 12px rgba(2, 132, 199, 0.3) !important;
+  background: linear-gradient(180deg, #edf5fa 0%, #d8e9f3 100%) !important;
+  border: 1.5px solid #6b99b5 !important;
+  color: #1e4560 !important;
+  box-shadow: 0 3px 0 #4a7590, 0 3px 8px rgba(74, 117, 144, 0.2) !important;
 }
 .sync-nav-btn:not(.notes-cross-link-btn):hover {
   transform: translateY(-2px) !important;
-  background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%) !important;
-  border-color: #7dd3fc !important;
-  box-shadow: 0 5px 0 #075985, 0 8px 16px rgba(2, 132, 199, 0.45) !important;
+  background: linear-gradient(180deg, #f7fbfe 0%, #e1eff7 100%) !important;
+  border-color: #3b6b88 !important;
+  color: #123146 !important;
+  box-shadow: 0 5px 0 #4a7590, 0 6px 12px rgba(74, 117, 144, 0.3) !important;
 }
 
-/* 🌟 頂部【智慧寶庫】：向日葵璀璨金 + 白字深邃底影 */
+/* 🌟 頂部【智慧寶庫】：向日葵金黃銅卡片 + 溫暖古金字體 */
 .wisdom-nav-btn {
-  background: linear-gradient(180deg, #d97706 0%, #b45309 100%) !important;
-  border: 1.5px solid #fbbf24 !important;
-  color: #ffffff !important;
-  box-shadow: 0 3px 0 #78350f, 0 4px 12px rgba(217, 119, 6, 0.35) !important;
+  background: linear-gradient(180deg, #fef8eb 0%, #fde8c2 100%) !important;
+  border: 1.5px solid #d4a73b !important;
+  color: #633f07 !important;
+  box-shadow: 0 3px 0 #997217, 0 3px 8px rgba(212, 167, 59, 0.25) !important;
 }
 .wisdom-nav-btn:hover {
   transform: translateY(-2px) !important;
-  background: linear-gradient(180deg, #f59e0b 0%, #d97706 100%) !important;
-  border-color: #fde68a !important;
-  box-shadow: 0 5px 0 #78350f, 0 8px 16px rgba(217, 119, 6, 0.5) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #fef0d4 100%) !important;
+  border-color: #b88a22 !important;
+  box-shadow: 0 5px 0 #997217, 0 6px 14px rgba(212, 167, 59, 0.35) !important;
 }
 
 /* 🌟 日曆標記膠囊 (compact-date-chip) */
 .current-date-chip,
 .compact-date-chip {
-  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important;
-  border: 1.5px solid #475569 !important;
-  color: #f8fafc !important;
-  box-shadow: 0 3px 0 #020617, 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f7f1e7 100%) !important;
+  border: 1.5px solid #c9b493 !important;
+  color: #382718 !important;
+  box-shadow: 0 3px 0 #9c8360, 0 3px 8px rgba(88, 59, 28, 0.1) !important;
 }
 .current-date-chip:hover,
 .compact-date-chip:hover {
   transform: translateY(-2px) !important;
-  border-color: #94a3b8 !important;
-  box-shadow: 0 5px 0 #020617, 0 8px 14px rgba(0, 0, 0, 0.4) !important;
+  border-color: #9c7b4f !important;
+  box-shadow: 0 5px 0 #9c8360, 0 6px 12px rgba(88, 59, 28, 0.16) !important;
 }
 
-/* 🌟 安裝 App 按鈕：活力薄荷綠 */
+/* 🌟 安裝 App 按鈕：吉卜力草木綠 */
 .btn-bottom-install,
 .btn-sidebar-install {
-  background: linear-gradient(180deg, #059669 0%, #047857 100%) !important;
-  border: 1.5px solid #34d399 !important;
+  background: linear-gradient(180deg, #41895a 0%, #29683e 100%) !important;
+  border: 1.5px solid #1c4b2b !important;
   color: #ffffff !important;
-  box-shadow: 0 3px 0 #064e3b, 0 4px 12px rgba(5, 150, 105, 0.3) !important;
+  box-shadow: 0 3px 0 #14371f, 0 3px 10px rgba(41, 104, 62, 0.25) !important;
 }
 .btn-bottom-install:hover,
 .btn-sidebar-install:hover {
   transform: translateY(-2px) !important;
-  background: linear-gradient(180deg, #10b981 0%, #059669 100%) !important;
-  border-color: #6ee7b7 !important;
-  box-shadow: 0 5px 0 #064e3b, 0 8px 16px rgba(5, 150, 105, 0.45) !important;
+  background: linear-gradient(180deg, #4f9d6a 0%, #307446 100%) !important;
+  box-shadow: 0 5px 0 #14371f, 0 6px 14px rgba(41, 104, 62, 0.35) !important;
 }
 
-/* 🌟 查看解析按鈕 (btn-reveal)：璀璨活力陽光金 + 鮮明黑字 (最高清晰度) */
+/* 🌟 查看解析按鈕 (btn-reveal)：璀璨陽光古金 + 鮮明黑褐粗字 */
 .btn-reveal {
-  background: linear-gradient(180deg, #fef08a 0%, #fde047 35%, #eab308 100%) !important;
-  border: 2px solid #ca8a04 !important;
+  background: linear-gradient(180deg, #fff3c4 0%, #fde072 40%, #eab308 100%) !important;
+  border: 2px solid #b48512 !important;
   color: #422006 !important;
   font-size: 1.05rem !important;
   font-weight: 800 !important;
-  box-shadow: 0 4px 0 #854d0e, 0 6px 16px rgba(234, 179, 8, 0.35) !important;
+  box-shadow: 0 4px 0 #855d05, 0 4px 14px rgba(180, 133, 18, 0.3) !important;
 }
 .btn-reveal:hover {
   transform: translateY(-2px) scale(1.02) !important;
-  background: linear-gradient(180deg, #fef9c3 0%, #fef08a 35%, #facc15 100%) !important;
-  border-color: #a16207 !important;
-  box-shadow: 0 6px 0 #854d0e, 0 10px 22px rgba(234, 179, 8, 0.45) !important;
+  background: linear-gradient(180deg, #fff9dc 0%, #fde88d 40%, #f5be18 100%) !important;
+  box-shadow: 0 6px 0 #855d05, 0 8px 18px rgba(180, 133, 18, 0.4) !important;
 }
 
-/* 🌟 已擊敗按鈕 (btn-mastered)：翡翠綠 + 純白文字 */
+/* 🌟 已擊敗按鈕 (btn-mastered)：水彩森林綠 + 純白文字 */
 .btn-mastered {
-  background: linear-gradient(180deg, #10b981 0%, #059669 100%) !important;
-  border: 1.8px solid #34d399 !important;
+  background: linear-gradient(180deg, #3d885a 0%, #25673d 100%) !important;
+  border: 1.8px solid #184729 !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 0 #064e3b, 0 6px 16px rgba(16, 185, 129, 0.35) !important;
+  box-shadow: 0 4px 0 #10331d, 0 4px 14px rgba(37, 103, 61, 0.3) !important;
 }
 .btn-mastered:hover {
   transform: translateY(-2px) scale(1.02) !important;
-  background: linear-gradient(180deg, #34d399 0%, #10b981 100%) !important;
-  border-color: #6ee7b7 !important;
-  box-shadow: 0 6px 0 #064e3b, 0 10px 20px rgba(16, 185, 129, 0.5) !important;
+  background: linear-gradient(180deg, #4c9e6c 0%, #2b7445 100%) !important;
+  box-shadow: 0 6px 0 #10331d, 0 8px 18px rgba(37, 103, 61, 0.4) !important;
 }
 
-/* 🌟 未擊敗按鈕 (btn-unmastered)：玫瑰珊瑚紅 + 純白文字 */
+/* 🌟 未擊敗按鈕 (btn-unmastered)：水彩珊瑚紅 + 純白文字 */
 .btn-unmastered {
-  background: linear-gradient(180deg, #f43f5e 0%, #e11d48 100%) !important;
-  border: 1.8px solid #fb7185 !important;
+  background: linear-gradient(180deg, #d44d47 0%, #b3322d 100%) !important;
+  border: 1.8px solid #7c1c18 !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 0 #881337, 0 6px 16px rgba(225, 29, 72, 0.35) !important;
+  box-shadow: 0 4px 0 #57100d, 0 4px 14px rgba(179, 50, 45, 0.3) !important;
 }
 .btn-unmastered:hover {
   transform: translateY(-2px) scale(1.02) !important;
-  background: linear-gradient(180deg, #fb7185 0%, #f43f5e 100%) !important;
-  border-color: #fda4af !important;
-  box-shadow: 0 6px 0 #881337, 0 10px 20px rgba(225, 29, 72, 0.5) !important;
+  background: linear-gradient(180deg, #e35d57 0%, #c43b35 100%) !important;
+  box-shadow: 0 6px 0 #57100d, 0 8px 18px rgba(179, 50, 45, 0.4) !important;
 }
 
 /* 🌟 筆記傳送門 (btn-note-portal)：魔法紫羅蘭 + 純白文字 */
 .btn-note-portal {
-  background: linear-gradient(180deg, #8b5cf6 0%, #7c3aed 100%) !important;
-  border: 1.8px solid #a78bfa !important;
+  background: linear-gradient(180deg, #7c58a8 0%, #603d8d 100%) !important;
+  border: 1.8px solid #432468 !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 0 #4c1d95, 0 6px 16px rgba(124, 58, 237, 0.35) !important;
+  box-shadow: 0 4px 0 #2f174c, 0 4px 14px rgba(96, 61, 141, 0.3) !important;
 }
 .btn-note-portal:hover {
   transform: translateY(-2px) scale(1.02) !important;
-  background: linear-gradient(180deg, #a78bfa 0%, #8b5cf6 100%) !important;
-  border-color: #c4b5fd !important;
-  box-shadow: 0 6px 0 #4c1d95, 0 10px 20px rgba(124, 58, 237, 0.5) !important;
+  background: linear-gradient(180deg, #8d67bd 0%, #6e469f 100%) !important;
+  box-shadow: 0 6px 0 #2f174c, 0 8px 18px rgba(96, 61, 141, 0.4) !important;
 }
 
 /* 🌟 重新測驗 / 對答案 (btn-retry-card / btn-check-answer) */
 .btn-retry-card,
 .btn-check-answer {
-  background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%) !important;
-  border: 1.8px solid #38bdf8 !important;
+  background: linear-gradient(180deg, #467697 0%, #315a77 100%) !important;
+  border: 1.8px solid #23455d !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 0 #075985, 0 6px 14px rgba(2, 132, 199, 0.3) !important;
+  box-shadow: 0 4px 0 #1b3547, 0 4px 12px rgba(49, 90, 119, 0.25) !important;
 }
 .btn-retry-card:hover,
 .btn-check-answer:hover {
   transform: translateY(-2px) !important;
-  background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%) !important;
-  border-color: #7dd3fc !important;
-  box-shadow: 0 6px 0 #075985, 0 10px 18px rgba(2, 132, 199, 0.45) !important;
+  background: linear-gradient(180deg, #5185aa 0%, #3a6889 100%) !important;
+  box-shadow: 0 6px 0 #1b3547, 0 8px 16px rgba(49, 90, 119, 0.35) !important;
 }
 
 /* 🌟 揮刀打擊錯題怪按鈕 (btn-attack-monster) */
 .btn-attack-monster {
-  background: linear-gradient(180deg, #f59e0b 0%, #d97706 100%) !important;
-  border: 2px solid #fbbf24 !important;
+  background: linear-gradient(180deg, #d4952d 0%, #b37719 100%) !important;
+  border: 2px solid #825208 !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 0 #78350f, 0 8px 18px rgba(217, 119, 6, 0.35) !important;
+  box-shadow: 0 4px 0 #573603, 0 6px 14px rgba(179, 119, 25, 0.3) !important;
 }
 .btn-attack-monster:hover {
   transform: translateY(-2px) scale(1.03) !important;
-  background: linear-gradient(180deg, #fbbf24 0%, #f59e0b 100%) !important;
-  box-shadow: 0 6px 0 #78350f, 0 12px 24px rgba(217, 119, 6, 0.5) !important;
+  background: linear-gradient(180deg, #e3a63e 0%, #c48520 100%) !important;
+  box-shadow: 0 6px 0 #573603, 0 10px 20px rgba(179, 119, 25, 0.4) !important;
 }
 
-/* 🌟 週次選擇按鈕 (Monday Chips)：極度清晰的活潑徽章 */
+/* 🌟 週次選擇按鈕 (Monday Chips)：極度溫潤的手繪羊皮紙小卡片 */
 .monday-chip {
   padding: 7px 16px !important;
-  background: linear-gradient(180deg, #1e293b 0%, #151d2a 100%) !important;
-  border: 1.5px solid #334155 !important;
-  color: #cbd5e1 !important;
-  box-shadow: 0 3px 0 #0b0f19, 0 4px 10px rgba(0, 0, 0, 0.25) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f6f0e6 100%) !important;
+  border: 1.5px solid #d4c2a3 !important;
+  color: #3b2c1f !important;
+  box-shadow: 0 3px 0 #a38c6b, 0 2px 6px rgba(88, 59, 28, 0.08) !important;
 }
 .monday-chip:hover {
   transform: translateY(-2px) !important;
-  background: linear-gradient(180deg, #27354f 0%, #1b2638 100%) !important;
-  border-color: #64748b !important;
-  color: #ffffff !important;
-  box-shadow: 0 5px 0 #0b0f19, 0 6px 14px rgba(0, 0, 0, 0.35) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #fbf3e8 100%) !important;
+  border-color: #b59b73 !important;
+  color: #1f140a !important;
+  box-shadow: 0 5px 0 #a38c6b, 0 4px 10px rgba(88, 59, 28, 0.15) !important;
 }
 .monday-chip .chip-week-title {
-  color: #94a3b8;
+  color: #7d674f;
   font-size: 0.76rem;
   font-weight: 700;
 }
 .monday-chip .chip-week-date {
-  color: #f1f5f9;
+  color: #2b1d10;
   font-size: 0.88rem;
   font-weight: 800;
 }
 .monday-chip.active {
-  background: linear-gradient(180deg, #4f46e5 0%, #3730a3 100%) !important;
-  border-color: #818cf8 !important;
+  background: linear-gradient(180deg, #467697 0%, #315a77 100%) !important;
+  border-color: #23455d !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 0 #1e1b4b, 0 0 18px rgba(99, 102, 241, 0.55) !important;
+  box-shadow: 0 4px 0 #1b3547, 0 0 16px rgba(49, 90, 119, 0.35) !important;
   transform: translateY(-2px) !important;
 }
 .monday-chip.active .chip-week-title {
-  color: #c7d2fe !important;
+  color: #d1e5f2 !important;
 }
 .monday-chip.active .chip-week-date {
   color: #ffffff !important;
 }
 
-/* 🌟 側邊欄科目按鈕：現代手繪卡片風格，字體高清晰度 */
+/* 🌟 側邊欄科目按鈕：吉卜力手帳標籤卡片，水彩純淨 */
 .sidebar-subject-btn {
   border-radius: 12px 6px 14px 7px / 7px 14px 6px 12px !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.1) !important;
-  background: linear-gradient(180deg, rgba(30, 41, 59, 0.75) 0%, rgba(20, 27, 45, 0.85) 100%) !important;
-  color: #cbd5e1 !important;
-  box-shadow: 0 2px 0 #090d16, 0 4px 10px rgba(0, 0, 0, 0.25) !important;
+  border: 1.5px solid #dfd2b5 !important;
+  background: linear-gradient(180deg, #ffffff 0%, #faf5eb 100%) !important;
+  color: #3b2c1f !important;
+  box-shadow: 0 2px 0 #bda984, 0 2px 6px rgba(88, 59, 28, 0.06) !important;
   margin-bottom: 6px;
   transition: all 0.18s ease !important;
 }
 .sidebar-subject-btn:hover {
   transform: translateY(-2px) scale(1.02) !important;
-  background: linear-gradient(180deg, rgba(45, 59, 85, 0.85) 0%, rgba(30, 41, 59, 0.95) 100%) !important;
-  border-color: rgba(255, 255, 255, 0.22) !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 0 #090d16, 0 6px 14px rgba(0, 0, 0, 0.35) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f6ecd8 100%) !important;
+  border-color: #c29b38 !important;
+  color: #1f140a !important;
+  box-shadow: 0 4px 0 #bda984, 0 4px 10px rgba(88, 59, 28, 0.12) !important;
 }
 .sidebar-subject-btn.active {
-  background: linear-gradient(180deg, rgba(79, 70, 229, 0.35) 0%, rgba(49, 46, 129, 0.45) 100%) !important;
-  border-color: #6366f1 !important;
-  color: #ffffff !important;
-  box-shadow: 0 3px 0 #1e1b4b, 0 0 16px rgba(99, 102, 241, 0.4) !important;
+  background: linear-gradient(180deg, #fdf4dd 0%, #f9e2b0 100%) !important;
+  border-color: #b45309 !important;
+  color: #4a2800 !important;
+  box-shadow: 0 3px 0 #854203, 0 0 12px rgba(180, 83, 9, 0.25) !important;
 }
 .sidebar-subject-btn .subj-char {
   border-radius: 8px 4px 8px 4px !important;
-  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border: 1px solid #c9b493 !important;
   font-weight: 900 !important;
 }
 .sidebar-subject-btn .subj-name {
-  color: #f1f5f9 !important;
+  color: #2b1d10 !important;
   font-weight: 700 !important;
 }
 
