@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>智慧錯題複習系統 | Smart Question Review</title>
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Ghibli Vintage Picture Book & Steampunk Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Marcellus&family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -105,7 +105,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=206">
+  <link rel="stylesheet" href="styles.css?v=275">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -578,20 +578,23 @@
               <div id="review-welcome-stage" class="review-welcome-stage glass-panel">
 
                 <div class="hero-battle-container">
+                  <div class="hero-stage-scroll-title" id="hero-stage-scroll-title">
+                    <span id="hero-welcome-title-text">此科目（社會）目前尚無錯題，太棒了！感謝筵…</span>
+                  </div>
                   <div class="battle-stats-header">
                     <div class="battle-stat-pill main-badge">
                       <i class="fa-solid fa-trophy"></i>
-                      <span>已擊敗 <strong id="defeated-monsters-count">0</strong> 題錯題怪！</span>
+                      <span>已擊敗 <strong id="defeated-monsters-count">205</strong> 題錯題怪！</span>
                     </div>
                     <div class="battle-stat-pill sub-badge">
                       <i class="fa-solid fa-fire-flame-curved"></i>
-                      <span id="mastery-rate-badge">錯題討伐進行中</span>
+                      <span id="mastery-rate-badge">討伐率 65% (205/313題)</span>
                     </div>
                   </div>
 
                   <div class="battle-arena">
                     <div class="hero-character" id="hero-character">
-                      <div class="character-avatar">
+                      <div class="character-avatar watercolor-avatar hero-circle">
                         <i class="fa-solid fa-user-ninja"></i>
                         <div class="hero-weapon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                       </div>
@@ -605,17 +608,24 @@
                     </div>
 
                     <div class="monster-character" id="monster-character">
-                      <div class="monster-avatar">
+                      <div class="monster-avatar watercolor-avatar monster-circle">
                         <i class="fa-solid fa-dragon"></i>
                       </div>
                       <div class="monster-name" id="monster-name">粗心失分怪 (Lv.99)</div>
                       <div class="monster-hp-bar"><div class="monster-hp-fill" id="monster-hp-fill" style="width: 75%;"></div></div>
                     </div>
+                    <!-- Susuwatari Soot Sprite Floating Easter Egg 1 -->
+                    <div class="soot-sprite soot-sprite-arena soot-1" title="煤煤蟲 (灰塵精靈) 抓到了！">
+                      <div class="soot-body"></div>
+                      <div class="soot-eye left"></div>
+                      <div class="soot-eye right"></div>
+                    </div>
                   </div>
 
                   <div class="battle-cta-box">
-                    <button type="button" id="btn-attack-monster" class="btn-attack-monster">
-                      <i class="fa-solid fa-hand-fist"></i> 點擊揮刀打擊錯題怪！
+                    <button type="button" id="btn-attack-monster" class="btn-attack-monster antique-sword-btn" title="揮動傳奇黃銅古劍打擊錯題怪！">
+                      <span class="sword-paw-icon">🐾</span>
+                      <span class="sword-btn-text">點擊揮刀打擊錯題怪！</span>
                     </button>
                     <p class="battle-instruction">
                       <span class="desktop-instruction">
@@ -626,6 +636,22 @@
                       </span>
                     </p>
                   </div>
+                </div>
+                <!-- Susuwatari Soot Sprite Floating Easter Egg 2 & 3 -->
+                <div class="soot-sprite soot-sprite-stage soot-top-right" title="煤煤蟲悄悄在一旁看著妳複習">
+                  <div class="soot-body"></div>
+                  <div class="soot-eye left"></div>
+                  <div class="soot-eye right"></div>
+                </div>
+                <div class="soot-sprite soot-sprite-stage soot-bottom-right" title="煤煤蟲吃了一顆星星金平糖 ✨">
+                  <div class="soot-body"></div>
+                  <div class="soot-eye left"></div>
+                  <div class="soot-eye right"></div>
+                </div>
+                <div class="soot-sprite soot-sprite-stage soot-mid-left" title="煤煤蟲躲在卷軸邊緣">
+                  <div class="soot-body"></div>
+                  <div class="soot-eye left"></div>
+                  <div class="soot-eye right"></div>
                 </div>
               </div>
 
