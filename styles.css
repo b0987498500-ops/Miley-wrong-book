@@ -10048,73 +10048,542 @@ body::before {
     0 3px 8px rgba(0, 0, 0, 0.8) !important;
 }
 
-/* 5. 左側與頂部結構的自然銜接：柔和暖褐色立體投射陰影 (Warm Drop Shadow) 與金屬邊緣高光 */
-.sidebar {
-  box-shadow: 
-    inset -3px 0 15px rgba(0, 0, 0, 0.7),
-    6px 0 22px rgba(35, 20, 8, 0.65) !important;
+/* ==========================================================================
+   🌸 日系向量插畫風 (Japanese Vector Illustration & Enamel Pins Theme)
+   Clean, Crisp, Modern & Delightfully Hand-Drawn Vector Art Style
+   ========================================================================== */
+
+:root {
+  /* 向量日系柔和清新色盤 */
+  --jp-bg-canvas: #f8f6f0;           /* 清新柔和畫布米白 */
+  --jp-sidebar-bg: #2b3a4a;         /* 深海藍日系向量色 */
+  --jp-card-bg: #fffefb;            /* 極淡奶油色插畫紙卷 */
+  --jp-border-main: #334155;        /* 俐落精細描邊深色 */
+  --jp-text-main: #1e293b;          /* 乾淨清爽日系墨黑 */
+  --jp-text-sub: #475569;           /* 柔和輔助次要文字 */
+  --jp-cream-pill: #fdfaf2;         /* 向量標籤淺奶油色 */
+  --jp-pin-shadow: 0 4px 0 #1e293b; /* 經典日系向量貼紙/徽章立體下投影 */
+  --jp-card-shadow: 0 8px 0 rgba(30, 41, 59, 0.12), 0 20px 30px rgba(30, 41, 59, 0.06);
 }
 
-.sidebar-subject-btn {
-  /* 錯落手作不規則立體感 */
-  border-radius: 255px 12px 225px 12px / 12px 225px 12px 255px !important;
-  box-shadow: 
-    inset 0 1.5px 0 rgba(255, 240, 180, 0.5),
-    inset 0 -1.5px 0 rgba(0, 0, 0, 0.8),
-    inset 1.5px 0 0 rgba(255, 240, 180, 0.3),
-    0 4px 10px rgba(25, 12, 4, 0.65) !important;
+/* 全域畫布背景：徹底告別粗糙擬真木紋與沉重暗角，採用乾淨細膩的日系插畫畫布 */
+body {
+  background-color: var(--jp-bg-canvas) !important;
+  background-image: 
+    radial-gradient(#e2ddd3 1.2px, transparent 1.2px),
+    radial-gradient(#f1eee6 1.2px, var(--jp-bg-canvas) 1.2px) !important;
+  background-size: 24px 24px !important;
+  background-position: 0 0, 12px 12px !important;
+  color: var(--jp-text-main) !important;
 }
+
+body::before {
+  display: none !important; /* 移除沉重的古典角落黑影 */
+}
+
+body::after {
+  opacity: 0.3 !important; /* 螢火蟲粒子改為柔和純淨的插畫光點 */
+}
+
+/* --- 1. 側邊欄 (Sidebar)：乾淨深藍日系向量風 + 琺瑯徽章科目按鈕 --- */
+.sidebar {
+  background-color: var(--jp-sidebar-bg) !important;
+  background-image: none !important;
+  border-right: 2.5px solid #1a232c !important;
+  box-shadow: 4px 0 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+.sidebar::before {
+  display: none !important;
+}
+
+.sidebar .brand {
+  background: #1f2b37 !important;
+  border: 2px solid #475569 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 3px 0 #0f172a !important;
+  padding: 10px !important;
+}
+
+.sidebar .brand-text h2 {
+  color: #f8fafc !important;
+  font-family: 'Outfit', 'Noto Sans TC', sans-serif !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+  letter-spacing: 0.5px !important;
+}
+
+.sidebar .brand-text .sub-title {
+  color: #94a3b8 !important;
+  font-weight: 600 !important;
+}
+
+/* 科目按鈕：向量色塊銘牌 / 琺瑯徽章 (Enamel Pin Subject Buttons) */
+.sidebar-subject-btn {
+  background: #334454 !important;
+  border: 2px solid #1e293b !important;
+  border-radius: 12px !important;
+  box-shadow: 0 3px 0 #151d24 !important;
+  color: #f8fafc !important;
+  padding: 10px 12px !important;
+  margin-bottom: 4px !important;
+  transform: none !important;
+  transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.sidebar-subject-btn::before,
+.sidebar-subject-btn::after {
+  display: none !important; /* 徹底移除金屬鉚釘 */
+}
+
+.sidebar-subject-btn .subj-name {
+  color: #f1f5f9 !important;
+  font-family: 'Outfit', 'Noto Sans TC', sans-serif !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  font-size: 0.95rem !important;
+}
+
+/* 向量徽章小圓印 */
+.sidebar-subject-btn .subj-char {
+  border-radius: 8px !important;
+  border: 2px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2) !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
+/* 個別科目向量主題色 */
+.sidebar-subject-btn[data-subject="國文"] .subj-char { background: #f59e0b !important; color: #ffffff !important; }
+.sidebar-subject-btn[data-subject="英文"] .subj-char { background: #ec4899 !important; color: #ffffff !important; }
+.sidebar-subject-btn[data-subject="數學"] .subj-char { background: #3b82f6 !important; color: #ffffff !important; }
+.sidebar-subject-btn[data-subject="自然"] .subj-char { background: #10b981 !important; color: #ffffff !important; }
+.sidebar-subject-btn[data-subject="社會"] .subj-char { background: #8b5cf6 !important; color: #ffffff !important; }
 
 .sidebar-subject-btn:hover {
-  transform: translateY(-2px) scale(1.02) !important;
-  box-shadow: 
-    inset 0 2px 0 #ffffff,
-    0 6px 14px rgba(25, 12, 4, 0.75),
-    0 0 12px rgba(245, 158, 11, 0.4) !important;
+  background: #3e5366 !important;
+  border-color: #38bdf8 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 0 #151d24 !important;
 }
 
-/* 頂部刻痕老木桌：漆面磨損與手繪木紋刮痕細節 */
+.sidebar-subject-btn.active {
+  background: #f8fafc !important;
+  border: 2.5px solid #0f172a !important;
+  box-shadow: 0 4px 0 #0f172a !important;
+}
+
+.sidebar-subject-btn.active .subj-name {
+  color: #0f172a !important;
+}
+
+.sidebar-subject-btn .subj-count-badge {
+  background: #1e293b !important;
+  border: 1px solid #475569 !important;
+  color: #f1f5f9 !important;
+  border-radius: 20px !important;
+  box-shadow: none !important;
+  font-weight: 700 !important;
+}
+
+.sidebar-subject-btn.active .subj-count-badge {
+  background: #0f172a !important;
+  color: #38bdf8 !important;
+}
+
+/* 底部待複習與安裝 App */
+.ebbinghaus-summary-box {
+  background: #1f2b37 !important;
+  border: 2px solid #334155 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 3px 0 #0f172a !important;
+}
+
+.ebbinghaus-summary-box .ebb-title {
+  color: #38bdf8 !important;
+  text-shadow: none !important;
+}
+
+.ebbinghaus-summary-box .ebb-count {
+  color: #f8fafc !important;
+}
+
+.btn-sidebar-install {
+  background: #3b82f6 !important;
+  border: 2px solid #1d4ed8 !important;
+  color: #ffffff !important;
+  border-radius: 10px !important;
+  box-shadow: 0 3px 0 #1e3a8a !important;
+  font-weight: 700 !important;
+}
+
+/* --- 2. 頂部控制列 (Top Header Bar)：簡約俐落向量板條 + 清新標籤按鈕 --- */
 .top-header {
-  background-image: 
-    /* 漆面微弱斑駁刮痕 (Hand-painted Wood Scratches) */
-    radial-gradient(1px 1px at 30px 15px, rgba(255, 230, 150, 0.35), transparent),
-    radial-gradient(1px 1px at 180px 25px, rgba(255, 230, 150, 0.25), transparent),
-    radial-gradient(1px 1px at 340px 18px, rgba(255, 230, 150, 0.3), transparent),
-    /* 手切深木溝凹凸 (Wood Carved Grooves) */
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 118px,
-      rgba(10, 5, 2, 0.65) 119px,
-      rgba(90, 58, 28, 0.45) 120px,
-      rgba(8, 4, 1, 0.75) 121px,
-      transparent 122px
-    ),
-    linear-gradient(180deg, #3d2411 0%, #2b180a 45%, #1c0e05 100%) !important;
-  box-shadow: 
-    inset 0 1.5px 0 rgba(255, 235, 170, 0.35),
-    0 8px 24px rgba(20, 10, 3, 0.7) !important;
+  background: #ffffff !important;
+  background-image: none !important;
+  border-bottom: 2.5px solid #e2e8f0 !important;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.03) !important;
+  padding: 12px 24px !important;
 }
 
-/* 6. 全頁面暖色漫射光 (Warm Ambient Glow) 與螢火蟲微粒強化 */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 999;
-  background-image: 
-    radial-gradient(2px 2px at 40px 60px, rgba(254, 240, 138, 0.85), transparent),
-    radial-gradient(3.5px 3.5px at 180px 220px, rgba(251, 191, 36, 0.8), transparent),
-    radial-gradient(2px 2px at 320px 140px, rgba(254, 240, 138, 0.9), transparent),
-    radial-gradient(3px 3px at 520px 310px, rgba(251, 191, 36, 0.85), transparent),
-    radial-gradient(3.5px 3.5px at 780px 180px, rgba(254, 240, 138, 0.9), transparent),
-    radial-gradient(2.5px 2.5px at 980px 290px, rgba(245, 158, 11, 0.8), transparent),
-    radial-gradient(2px 2px at 1180px 160px, rgba(254, 240, 138, 0.85), transparent);
-  background-repeat: repeat;
-  background-size: 800px 500px;
-  animation: fireflyAmbientDrift 12s ease-in-out infinite alternate;
-  opacity: 0.65 !important;
+.top-header::before,
+.top-header::after {
+  display: none !important; /* 移除金屬收邊條與符號 */
 }
+
+/* 大標題（麥麥錯題本）：日系簡約無印俐落感 */
+.brand-heading-group {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.top-header h1#page-title {
+  color: #0f172a !important;
+  font-family: 'Outfit', 'Noto Sans TC', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1.5rem !important;
+  letter-spacing: -0.5px !important;
+  text-shadow: none !important;
+}
+
+/* 頂部功能標籤按鈕（麥麥筆記、跨裝置同步、智慧寶庫、日曆）：日系向量膠囊貼紙 */
+.sync-nav-btn,
+.wisdom-nav-btn,
+.compact-date-chip,
+.current-date-chip {
+  background: #f8fafc !important;
+  border: 2px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  color: #1e293b !important;
+  font-family: 'Outfit', 'Noto Sans TC', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 0.88rem !important;
+  box-shadow: 0 2.5px 0 #cbd5e1 !important;
+  padding: 6px 14px !important;
+  transition: all 0.15s ease !important;
+}
+
+.sync-nav-btn span,
+.wisdom-nav-btn span,
+.compact-date-chip span,
+.current-date-chip span {
+  color: #1e293b !important;
+}
+
+.compact-date-chip .date-chip-badge {
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 6px !important;
+}
+
+.compact-date-chip .date-chip-val {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+}
+
+.sync-nav-btn:hover,
+.wisdom-nav-btn:hover,
+.compact-date-chip:hover,
+.current-date-chip:hover {
+  background: #ffffff !important;
+  border-color: #3b82f6 !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 4px 0 #3b82f6 !important;
+}
+
+/* 週次選擇列（09/07、09/14... 本週）：簡約日系貼紙籤條 */
+.weekly-monday-bar {
+  border-top: 1.5px solid #f1f5f9 !important;
+  padding-top: 8px !important;
+}
+
+.monday-chip {
+  background: #f8fafc !important;
+  border: 2px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  color: #334155 !important;
+  font-family: 'Outfit', 'Noto Sans TC', sans-serif !important;
+  box-shadow: 0 2px 0 #e2e8f0 !important;
+  padding: 4px 12px !important;
+  transition: all 0.15s ease !important;
+}
+
+.monday-chip .chip-week-title {
+  color: #64748b !important;
+}
+
+.monday-chip .chip-week-date {
+  color: #1e293b !important;
+}
+
+.monday-chip:hover {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* 「本週」選中的按鈕：日系清爽湛藍重點標籤 */
+.monday-chip.active {
+  background: #eff6ff !important;
+  border: 2px solid #3b82f6 !important;
+  box-shadow: 0 3px 0 #3b82f6 !important;
+  transform: translateY(-1px) !important;
+}
+
+.monday-chip.active .chip-week-title {
+  color: #3b82f6 !important;
+  font-weight: 800 !important;
+}
+
+.monday-chip.active .chip-week-date {
+  color: #1d4ed8 !important;
+  font-weight: 800 !important;
+}
+
+/* --- 3. 主內容區（中央容器）：極淡奶油色向量插畫紙卷 (Vector Art Paper Scroll) --- */
+.review-welcome-stage,
+.flashcard-stage-main .flashcard-card,
+.archive-main,
+.archive-sidebar,
+.upload-panel,
+.sprint-header-panel,
+.analytics-dashboard {
+  background-color: var(--jp-card-bg) !important;
+  background-image: none !important;
+  border: 2.5px solid #cbd5e1 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 0 rgba(203, 213, 225, 0.6), 0 16px 28px rgba(0, 0, 0, 0.04) !important;
+  padding: 24px !important;
+}
+
+/* 移除古典木頭軸心，換裝為簡約乾淨的日系向量書卷圓角邊緣裝飾 */
+.review-welcome-stage::before,
+.flashcard-stage-main .flashcard-card::before,
+.review-welcome-stage::after,
+.flashcard-stage-main .flashcard-card::after {
+  display: none !important;
+}
+
+/* 題目文字：高清晰乾淨現代印刷 */
+.stem-katex-text,
+.solution-content-box,
+.card-body-stem,
+.steps-katex-text {
+  color: #1e293b !important;
+  font-family: 'Noto Sans TC', -apple-system, sans-serif !important;
+  line-height: 1.8 !important;
+}
+
+/* 分隔線：簡約乾淨的點狀/實線向量分隔 */
+.card-top-bar,
+.save-action-bar,
+.solution-content-box .sol-answer {
+  border-bottom: 2px dashed #e2e8f0 !important;
+}
+
+.card-top-bar::after,
+.solution-content-box .sol-answer::after {
+  display: none !important;
+}
+
+/* --- 4. 互動按鈕與功能按鈕：日系向量插畫徽章與貼紙 --- */
+
+/* 狀態卡片標籤：「已擊敗 205 題錯題怪！」等標籤 */
+.battle-stat-pill.main-badge,
+.battle-stat-pill.sub-badge {
+  background: #fffbeb !important;
+  border: 2px solid #fde68a !important;
+  border-radius: 10px !important;
+  color: #92400e !important;
+  font-family: 'Outfit', 'Noto Sans TC', sans-serif !important;
+  box-shadow: 0 3px 0 #fde68a !important;
+  padding: 6px 16px !important;
+  font-weight: 700 !important;
+}
+
+.battle-stat-pill.sub-badge {
+  background: #f0fdf4 !important;
+  border-color: #bbf7d0 !important;
+  color: #166534 !important;
+  box-shadow: 0 3px 0 #bbf7d0 !important;
+}
+
+.hero-stage-scroll-title {
+  color: #1e293b !important;
+  font-family: 'Outfit', 'Noto Sans TC', sans-serif !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
+/* 動作按鈕：日系電玩向量徽章按鈕 */
+.btn-attack-monster,
+.antique-sword-btn {
+  background: #f59e0b !important;
+  border: 2.5px solid #b45309 !important;
+  border-radius: 12px !important;
+  color: #ffffff !important;
+  font-family: 'Outfit', 'Noto Sans TC', sans-serif !important;
+  font-weight: 800 !important;
+  box-shadow: 0 5px 0 #b45309 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+  padding: 12px 28px !important;
+  transform: none !important;
+}
+
+.btn-attack-monster:hover {
+  background: #fbbf24 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 7px 0 #b45309 !important;
+}
+
+.btn-attack-monster:active {
+  transform: translateY(2px) !important;
+  box-shadow: 0 2px 0 #b45309 !important;
+}
+
+.btn-attack-monster::before {
+  display: none !important;
+}
+
+/* 控制列小按鈕（全螢幕、草稿區、出題似題、匯出 PDF）：乾淨俐落向量膠囊鈕 */
+#btn-toggle-fullscreen,
+#toggle-scratchpad-btn,
+#btn-generate-similar-q,
+#export-pdf-main-btn,
+.review-top-actions .btn-secondary,
+.review-top-actions .btn-accent-sm,
+.review-top-actions .btn-primary,
+.review-top-actions .btn-similar-question {
+  background: #ffffff !important;
+  border: 2px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  color: #334155 !important;
+  font-family: 'Outfit', 'Noto Sans TC', sans-serif !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2.5px 0 #cbd5e1 !important;
+  padding: 6px 12px !important;
+  text-shadow: none !important;
+}
+
+#export-pdf-main-btn {
+  background: #3b82f6 !important;
+  border-color: #1d4ed8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2.5px 0 #1e3a8a !important;
+}
+
+#export-pdf-main-btn:hover {
+  background: #2563eb !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 4px 0 #1e3a8a !important;
+}
+
+#btn-generate-similar-q {
+  background: #ec4899 !important;
+  border-color: #be185d !important;
+  color: #ffffff !important;
+  box-shadow: 0 2.5px 0 #9d174d !important;
+}
+
+#btn-generate-similar-q:hover {
+  background: #db2777 !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 4px 0 #9d174d !important;
+}
+
+/* 題目導航點陣小火車：乾淨鮮明的日系向量圓點 */
+.progress-track {
+  background: #e2e8f0 !important;
+  border: none !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06) !important;
+  border-radius: 20px !important;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #3b82f6, #06b6d4) !important;
+  box-shadow: none !important;
+}
+
+.progress-tick-dot {
+  border-radius: 50% !important;
+  border: 2px solid #cbd5e1 !important;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+.progress-tick-dot.tick-reviewed {
+  background: #10b981 !important;
+  border-color: #059669 !important;
+  color: #ffffff !important;
+}
+
+.progress-tick-dot.tick-unreviewed {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #64748b !important;
+}
+
+.progress-tick-dot.current {
+  background: #3b82f6 !important;
+  border-color: #1d4ed8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* 答題動作按鈕（查看解析、已擊敗、未擊敗） */
+.btn-reveal,
+.btn-mastered,
+.btn-unmastered,
+.btn-skip-later,
+.btn-retry-card {
+  font-family: 'Outfit', 'Noto Sans TC', sans-serif !important;
+  font-weight: 800 !important;
+  border-radius: 10px !important;
+  border: 2px solid transparent !important;
+  padding: 10px 20px !important;
+  transition: all 0.15s ease !important;
+}
+
+.btn-reveal {
+  background: #f59e0b !important;
+  border-color: #d97706 !important;
+  color: #ffffff !important;
+  box-shadow: 0 3.5px 0 #b45309 !important;
+}
+
+.btn-reveal:hover {
+  background: #fbbf24 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 0 #b45309 !important;
+}
+
+.btn-mastered {
+  background: #10b981 !important;
+  border-color: #059669 !important;
+  color: #ffffff !important;
+  box-shadow: 0 3.5px 0 #047857 !important;
+}
+
+.btn-mastered:hover {
+  background: #34d399 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 0 #047857 !important;
+}
+
+.btn-unmastered {
+  background: #ef4444 !important;
+  border-color: #dc2626 !important;
+  color: #ffffff !important;
+  box-shadow: 0 3.5px 0 #b91c1c !important;
+}
+
+.btn-unmastered:hover {
+  background: #f87171 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 0 #b91c1c !important;
+}
+
 
 
