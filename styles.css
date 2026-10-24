@@ -9108,3 +9108,658 @@ body::after {
   font-size: 1.15rem;
   margin-right: 4px;
 }
+
+/* ==========================================================================
+   🎯 宮崎駿魔法繪本質感：復古黃銅 + 星象羊皮紙 + 刻痕木紋 + 古代卷軸
+   Ghibli Magic Study & Antique Brass Steampunk Theme System
+   ========================================================================== */
+
+/* --- 1. 左側導覽列 (Left Navigation Sidebar) ---
+   深藍色手繪羊皮紙 (Dark Constellation Blue) + 金色星象軌跡 + 齒輪裝飾
+*/
+.sidebar {
+  background-color: #0b1326 !important;
+  background-image: 
+    /* 金色手繪星象圖/星座軌跡 (Constellation Lines & Stars) */
+    radial-gradient(1.5px 1.5px at 25px 35px, rgba(253, 224, 71, 0.95), transparent),
+    radial-gradient(2px 2px at 110px 75px, rgba(250, 204, 21, 0.9), transparent),
+    radial-gradient(1.5px 1.5px at 60px 140px, rgba(254, 240, 138, 0.8), transparent),
+    radial-gradient(2px 2px at 135px 210px, rgba(253, 224, 71, 0.95), transparent),
+    radial-gradient(1.5px 1.5px at 45px 290px, rgba(250, 204, 21, 0.85), transparent),
+    radial-gradient(2.5px 2.5px at 120px 370px, rgba(254, 240, 138, 0.9), transparent),
+    radial-gradient(1.5px 1.5px at 30px 450px, rgba(253, 224, 71, 0.85), transparent),
+    radial-gradient(2px 2px at 105px 530px, rgba(250, 204, 21, 0.9), transparent),
+    /* 手繪星象軌跡連線 (Gold Constellation Orbit Track) */
+    radial-gradient(circle at 140px 120px, transparent 65px, rgba(217, 119, 6, 0.22) 66px, rgba(251, 191, 36, 0.35) 67px, transparent 68px),
+    radial-gradient(circle at 20px 380px, transparent 80px, rgba(217, 119, 6, 0.18) 81px, rgba(251, 191, 36, 0.28) 82px, transparent 83px),
+    /* 黃銅齒輪 (Steampunk Brass Gears SVG pattern) */
+    radial-gradient(circle at 130px 240px, rgba(180, 83, 9, 0.2) 18px, transparent 19px),
+    radial-gradient(circle at 130px 240px, transparent 24px, rgba(217, 119, 6, 0.25) 25px, rgba(251, 191, 36, 0.3) 27px, transparent 28px),
+    /* 深藍羊皮紙水彩渲染底色 (Dark Constellation Blue Parchment) */
+    radial-gradient(circle at 50% 30%, #152244 0%, #0b1326 65%, #060a14 100%) !important;
+  border-right: 3px solid #8e6c38 !important;
+  box-shadow: inset -2px 0 10px rgba(0, 0, 0, 0.6), 4px 0 16px rgba(0, 0, 0, 0.45) !important;
+  position: relative;
+}
+
+.sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #d4af37 0%, #8e6c38 30%, #d4af37 50%, #5c431d 70%, #d4af37 100%);
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+/* 側邊欄頂部 Logo 品牌銘牌 */
+.sidebar .brand {
+  background: linear-gradient(180deg, #24180d 0%, #170f07 100%);
+  border: 2px solid #b48a44;
+  border-radius: 8px;
+  padding: 8px 10px;
+  box-shadow: inset 0 1px 0 rgba(255, 230, 150, 0.3), 0 3px 8px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.sidebar .brand-text h2 {
+  color: #fef3c7 !important;
+  font-family: 'Cinzel', 'Noto Serif TC', serif !important;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+.sidebar .brand-text .sub-title {
+  color: #d1b17a !important;
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+}
+
+/* 科目按鈕 (Subject Buttons)：長方形立體黃銅銘牌 (Aged Brass Plaque) + 四角金屬鉚釘 (Rivet dots) */
+.sidebar-subject-btn {
+  background: linear-gradient(180deg, #3d2d18 0%, #261b0d 50%, #1c1409 100%) !important;
+  border: 2px solid #a6803e !important;
+  border-radius: 6px !important;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 235, 160, 0.4),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.8),
+    inset 1px 0 0 rgba(255, 235, 160, 0.2),
+    inset -1px 0 0 rgba(0, 0, 0, 0.6),
+    0 3px 6px rgba(0, 0, 0, 0.5) !important;
+  color: #fef08a !important;
+  padding: 9px 12px !important;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  overflow: visible !important;
+}
+
+/* 四角立體黃銅金屬鉚釘 (Rivet dots) */
+.sidebar-subject-btn::before,
+.sidebar-subject-btn::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff5cc 0%, #d4af37 40%, #735118 90%, #301f05 100%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), inset 0 0 1px rgba(0, 0, 0, 0.9);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.sidebar-subject-btn::before {
+  top: 3px;
+  left: 3px;
+}
+
+.sidebar-subject-btn::after {
+  bottom: 3px;
+  right: 3px;
+}
+
+/* 科目名稱文字：溫暖金色/皮革雕刻立體質感 */
+.sidebar-subject-btn .subj-name {
+  color: #fdf6e2 !important;
+  font-family: 'Noto Serif TC', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.8px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9), 0 0 4px rgba(217, 119, 6, 0.3);
+}
+
+/* 左側文字小圖標：金屬徽章般嵌入銘牌 */
+.sidebar-subject-btn .subj-char {
+  background: radial-gradient(circle at 35% 35%, #d4af37 0%, #946f29 60%, #4a340f 100%) !important;
+  color: #1a0f02 !important;
+  border: 1.5px solid #ffe599 !important;
+  border-radius: 4px !important;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), 0 2px 4px rgba(0, 0, 0, 0.6) !important;
+  font-family: 'Cinzel', 'Noto Serif TC', serif !important;
+  font-weight: 900 !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* 科目按鈕 Hover & Active 狀態 */
+.sidebar-subject-btn:hover {
+  background: linear-gradient(180deg, #4f3b20 0%, #332412 50%, #24190c 100%) !important;
+  border-color: #ffd700 !important;
+  transform: translateY(-1.5px);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 245, 190, 0.6),
+    0 5px 12px rgba(0, 0, 0, 0.6),
+    0 0 10px rgba(245, 158, 11, 0.3) !important;
+}
+
+.sidebar-subject-btn.active {
+  background: linear-gradient(180deg, #5c4424 0%, #3f2d16 50%, #2b1e0d 100%) !important;
+  border-color: #ffd700 !important;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 245, 190, 0.8),
+    inset 0 0 12px rgba(245, 158, 11, 0.35),
+    0 4px 10px rgba(0, 0, 0, 0.7),
+    0 0 14px rgba(251, 191, 36, 0.45) !important;
+}
+
+.sidebar-subject-btn .subj-count-badge {
+  background: linear-gradient(180deg, #1f1408 0%, #120b04 100%) !important;
+  border: 1px solid #946f29 !important;
+  color: #fbbf24 !important;
+  font-family: 'Cinzel', sans-serif !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* 底部「本週待複習」追蹤區：羊皮紙/金屬邊框風格 */
+.ebbinghaus-summary-box {
+  background: linear-gradient(180deg, #2a1e12 0%, #1a1208 100%) !important;
+  border: 2px solid #a6803e !important;
+  border-radius: 6px !important;
+  box-shadow: inset 0 1px 0 rgba(255, 235, 160, 0.3), 0 3px 8px rgba(0, 0, 0, 0.6) !important;
+  position: relative;
+}
+
+.ebbinghaus-summary-box .ebb-title {
+  color: #fbbf24 !important;
+  font-family: 'Noto Serif TC', serif !important;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.ebbinghaus-summary-box .ebb-count {
+  color: #fef08a !important;
+  font-family: 'Cinzel', serif !important;
+}
+
+.ebbinghaus-summary-box .ebb-desc {
+  color: #c9ad7d !important;
+}
+
+.btn-sidebar-install {
+  background: linear-gradient(180deg, #3d2d18 0%, #24190c 100%) !important;
+  border: 1.5px solid #a6803e !important;
+  color: #fef08a !important;
+  font-family: 'Noto Serif TC', serif !important;
+  border-radius: 6px !important;
+}
+
+/* --- 2. 頂部控制與日期選單列 (Header & Control Bar) ---
+   深色刻痕木紋板 (Dark Carved Wood Panel) + 深色木溝刻痕 + 黃銅金屬收邊條
+*/
+.top-header {
+  background-color: #2b1a0d !important;
+  background-image: 
+    /* 深色木溝刻痕 (Wood Carved Grooves) */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 118px,
+      rgba(20, 11, 4, 0.6) 119px,
+      rgba(80, 52, 26, 0.4) 120px,
+      rgba(15, 8, 3, 0.7) 121px,
+      transparent 122px
+    ),
+    /* 刻痕深木紋漸層 (Dark Carved Wood Grain) */
+    linear-gradient(180deg, #382312 0%, #2b1a0d 40%, #201308 100%) !important;
+  border-bottom: 3.5px solid #8e6c38 !important;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 230, 160, 0.25),
+    inset 0 -2px 0 #543b17,
+    0 6px 18px rgba(0, 0, 0, 0.6) !important;
+  position: relative;
+}
+
+/* 木板上下邊緣金屬收邊條與黃銅鉚釘裝飾 (Brass Trim Edges) */
+.top-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8e6c38 0%, #d4af37 25%, #fff1b8 50%, #d4af37 75%, #8e6c38 100%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.top-header::after {
+  content: '✦ 🐾 ✦';
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  color: #b48a44;
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9), 0 0 6px rgba(245, 158, 11, 0.4);
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+/* 大標題（麥麥錯題本）：嵌入在木紋底板上的雕刻黃銅大銘牌 + 金屬內陰影 */
+.brand-heading-group {
+  background: linear-gradient(180deg, #443018 0%, #2c1e0e 50%, #1e1308 100%);
+  border: 2px solid #b8914b;
+  border-radius: 6px;
+  padding: 6px 18px;
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(255, 235, 160, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.top-header h1#page-title {
+  color: #fff4d1 !important;
+  font-family: 'Cinzel', 'Noto Serif TC', serif !important;
+  font-weight: 800 !important;
+  font-size: 1.55rem !important;
+  letter-spacing: 1.5px;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.9),
+    0 0 10px rgba(245, 158, 11, 0.5),
+    0 0 2px #d4af37 !important;
+}
+
+/* 頂部功能按鈕（麥麥筆記、跨裝置同步、智慧寶庫、日期選擇器）：古銅色/羊皮紙小按鈕 + 細金邊 + 微陰影 */
+.sync-nav-btn,
+.wisdom-nav-btn,
+.compact-date-chip,
+.current-date-chip {
+  background: linear-gradient(180deg, #fdf8ee 0%, #f3e6cd 60%, #e6d3ad 100%) !important;
+  border: 1.5px solid #9e7a3b !important;
+  border-radius: 5px !important;
+  color: #3b240f !important;
+  font-family: 'Noto Serif TC', serif !important;
+  font-weight: 700 !important;
+  box-shadow: 
+    inset 0 1px 0 #ffffff,
+    0 2px 5px rgba(0, 0, 0, 0.35) !important;
+  transition: all 0.2s ease !important;
+}
+
+.sync-nav-btn span,
+.wisdom-nav-btn span,
+.compact-date-chip span,
+.current-date-chip span {
+  color: #3b240f !important;
+  font-weight: 700 !important;
+}
+
+.compact-date-chip .date-chip-badge {
+  background: #3b240f !important;
+  color: #fef08a !important;
+  border: 1px solid #b48a44 !important;
+  border-radius: 3px !important;
+}
+
+.compact-date-chip .date-chip-val {
+  color: #2b1704 !important;
+  font-family: 'Cinzel', serif !important;
+  font-weight: 800 !important;
+}
+
+.sync-nav-btn:hover,
+.wisdom-nav-btn:hover,
+.compact-date-chip:hover,
+.current-date-chip:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #faf1db 60%, #f0ddb8 100%) !important;
+  border-color: #ffd700 !important;
+  transform: translateY(-1.5px);
+  box-shadow: 
+    inset 0 1px 0 #ffffff,
+    0 4px 10px rgba(0, 0, 0, 0.45),
+    0 0 8px rgba(245, 158, 11, 0.35) !important;
+}
+
+/* 週次選擇按鈕（09/07、09/14... 本週）：小張羊皮紙籤條 (Parchment Label Tags) + 本週黃銅金邊 */
+.weekly-monday-bar {
+  border-top: 1px dashed rgba(200, 160, 90, 0.35) !important;
+  padding-top: 10px !important;
+}
+
+.monday-chip {
+  background: linear-gradient(180deg, #fffcf5 0%, #f6ecd5 60%, #eadaba 100%) !important;
+  border: 1.5px solid #a88546 !important;
+  border-radius: 4px 4px 6px 6px !important;
+  color: #3d240d !important;
+  font-family: 'Noto Serif TC', serif !important;
+  box-shadow: 
+    inset 0 1px 0 #ffffff,
+    0 2px 5px rgba(0, 0, 0, 0.3) !important;
+  padding: 4px 12px !important;
+  position: relative;
+  transition: all 0.2s ease !important;
+}
+
+.monday-chip .chip-week-title {
+  color: #6d4720 !important;
+  font-size: 0.76rem !important;
+  font-weight: 700 !important;
+}
+
+.monday-chip .chip-week-date {
+  color: #241203 !important;
+  font-family: 'Cinzel', serif !important;
+  font-weight: 800 !important;
+}
+
+.monday-chip:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #fdf5e2 60%, #f5e4c0 100%) !important;
+  border-color: #d4af37 !important;
+  transform: translateY(-1px);
+}
+
+/* 「本週」選中的按鈕：光澤黃銅金邊強調 (Luminous Brass Gold Edge) */
+.monday-chip.active {
+  background: linear-gradient(180deg, #fff7dc 0%, #fdedb9 50%, #f3dc91 100%) !important;
+  border: 2px solid #d4af37 !important;
+  box-shadow: 
+    inset 0 1px 0 #ffffff,
+    0 0 12px rgba(251, 191, 36, 0.6),
+    0 3px 8px rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-1px) scale(1.02);
+}
+
+.monday-chip.active .chip-week-title {
+  color: #78450c !important;
+  font-weight: 800 !important;
+}
+
+.monday-chip.active .chip-week-date {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+/* --- 3. 主內容區（中央容器）(Main Content Container) ---
+   展開的古代羊皮紙卷軸 (Ancient Parchment Scroll) + 兩側立體木質卷軸軸心 (Scroll Rollers) + 水彩淡黃斑駁與破損歲月暗角
+*/
+body {
+  background-color: #1f140b !important;
+  background-image: 
+    /* 桌面深木紋底板背景 (Oak Wood Planks Study Desk) */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 138px,
+      rgba(15, 9, 4, 0.5) 139px,
+      rgba(70, 44, 20, 0.35) 140px,
+      rgba(10, 5, 2, 0.6) 141px,
+      transparent 142px
+    ),
+    radial-gradient(ellipse at 50% 40%, #2f1d0f 0%, #1f140b 60%, #110a05 100%) !important;
+  color: #2b1704 !important;
+}
+
+.main-content {
+  background: transparent !important;
+  position: relative;
+}
+
+/* 中央羊皮紙卷軸容器：徹底取消白框，換為展開古代書卷 */
+.review-welcome-stage,
+.flashcard-stage-main .flashcard-card,
+.archive-main,
+.archive-sidebar,
+.upload-panel,
+.sprint-header-panel,
+.analytics-dashboard {
+  background-color: #f7eed7 !important;
+  background-image: 
+    /* 水彩渲染淡黃斑駁質感 (Watercolor Stains & Parchment Noise) */
+    radial-gradient(circle at 15% 20%, rgba(220, 185, 135, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(200, 160, 110, 0.22) 0%, transparent 40%),
+    radial-gradient(circle at 45% 85%, rgba(235, 205, 155, 0.3) 0%, transparent 35%),
+    /* 微暗邊角 (Vignette Effect) 與古紙邊緣渲染 */
+    radial-gradient(ellipse at center, rgba(255, 252, 242, 0.98) 60%, rgba(240, 222, 190, 0.95) 85%, rgba(205, 175, 130, 0.9) 100%) !important;
+  border: 2px solid #b8955c !important;
+  border-radius: 8px !important;
+  box-shadow: 
+    /* 左右雙向卷軸圓弧立體陰影 (Scroll Curvature Shadow) */
+    inset 16px 0 24px -10px rgba(110, 75, 35, 0.3),
+    inset -16px 0 24px -10px rgba(110, 75, 35, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 0 rgba(110, 75, 35, 0.4),
+    0 8px 26px rgba(0, 0, 0, 0.65),
+    0 2px 6px rgba(0, 0, 0, 0.4) !important;
+  position: relative;
+  overflow: visible !important;
+}
+
+/* 左右兩側立體木質卷軸軸心 (Scroll Rollers) 質感樣式 */
+.review-welcome-stage::before,
+.flashcard-stage-main .flashcard-card::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  left: -14px;
+  width: 12px;
+  background: linear-gradient(
+    90deg,
+    #2a1608 0%,
+    #4a2c14 25%,
+    #8f5c2c 50%,
+    #d4af37 60%,
+    #5c3716 75%,
+    #2a1608 100%
+  );
+  border-radius: 4px;
+  box-shadow: -3px 0 8px rgba(0, 0, 0, 0.6), inset 0 2px 3px rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.review-welcome-stage::after,
+.flashcard-stage-main .flashcard-card::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  right: -14px;
+  width: 12px;
+  background: linear-gradient(
+    90deg,
+    #2a1608 0%,
+    #5c3716 25%,
+    #d4af37 40%,
+    #8f5c2c 50%,
+    #4a2c14 75%,
+    #2a1608 100%
+  );
+  border-radius: 4px;
+  box-shadow: 3px 0 8px rgba(0, 0, 0, 0.6), inset 0 2px 3px rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* 羊皮紙卷軸內文字：深沉古典手抄黑褐色墨水 */
+.stem-katex-text,
+.solution-content-box,
+.card-body-stem,
+.steps-katex-text {
+  color: #261405 !important;
+  font-family: 'Noto Serif TC', serif !important;
+}
+
+/* --- 4. 互動元件與遊戲化元素 (Interactive Elements & RPG Components) --- */
+
+/* 底部動作按鈕：橫放的黃銅/騎士長劍形狀按鈕 (Brass Sword-shaped Button) + 文字寫在劍身上 */
+.btn-attack-monster,
+.antique-sword-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  padding: 14px 44px 14px 38px !important;
+  font-family: 'Cinzel', 'Noto Serif TC', serif !important;
+  font-size: 1.12rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px !important;
+  color: #2b1704 !important;
+  background: linear-gradient(
+    180deg,
+    #fff4cf 0%,
+    #ffd56b 25%,
+    #dfa72c 50%,
+    #ffd56b 75%,
+    #a87413 100%
+  ) !important;
+  border: 2px solid #85570c !important;
+  border-radius: 4px 48px 48px 4px !important; /* 劍柄方正，劍尖微收的劍身形狀 */
+  box-shadow: 
+    inset 0 2px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -2px 0 rgba(100, 60, 10, 0.6),
+    0 6px 18px rgba(0, 0, 0, 0.5),
+    0 0 14px rgba(251, 191, 36, 0.4) !important;
+  cursor: pointer !important;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+/* 劍格與劍柄細節 (Sword Crossguard & Pommel) */
+.btn-attack-monster::before {
+  content: '⚔️';
+  position: absolute;
+  left: 10px;
+  font-size: 1.15rem;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+}
+
+.btn-attack-monster:hover {
+  transform: translateY(-2px) scale(1.04) !important;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #ffe28a 25%,
+    #f3be43 50%,
+    #ffe28a 75%,
+    #bd8518 100%
+  ) !important;
+  box-shadow: 
+    inset 0 2px 0 #ffffff,
+    0 8px 24px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(251, 191, 36, 0.65) !important;
+}
+
+.btn-attack-monster:active {
+  transform: translateY(1px) scale(0.98) !important;
+}
+
+/* 狀態卡片與標籤：「已擊敗 205 題錯題怪！」等標籤，改用小型羊皮紙小卷軸 (Mini Parchment Scrolls) 包覆 */
+.battle-stat-pill.main-badge,
+.battle-stat-pill.sub-badge {
+  background: linear-gradient(180deg, #fffdf7 0%, #f6ecd5 60%, #ead7b3 100%) !important;
+  border: 1.5px solid #a88448 !important;
+  border-radius: 14px !important;
+  padding: 7px 20px !important;
+  color: #3b220c !important;
+  font-family: 'Noto Serif TC', serif !important;
+  font-weight: 700 !important;
+  box-shadow: 
+    inset 6px 0 8px -4px rgba(130, 90, 45, 0.3),
+    inset -6px 0 8px -4px rgba(130, 90, 45, 0.3),
+    0 3px 8px rgba(0, 0, 0, 0.35) !important;
+  position: relative;
+}
+
+.battle-stat-pill.main-badge span,
+.battle-stat-pill.main-badge strong {
+  color: #8f4b00 !important;
+  font-family: 'Cinzel', serif !important;
+  font-weight: 900 !important;
+}
+
+.battle-stat-pill.sub-badge span {
+  color: #1e6b3f !important;
+  font-weight: 800 !important;
+}
+
+/* 錯題複習狀態徽章：小羊皮紙卷軸風格 */
+.review-status-badge {
+  background: linear-gradient(180deg, #fffdf7 0%, #f4e8ce 100%) !important;
+  border: 1.5px solid #a88448 !important;
+  color: #3d240d !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25) !important;
+}
+
+.review-status-badge.reviewed {
+  border-color: #2e7d53 !important;
+  color: #1b5e37 !important;
+  background: linear-gradient(180deg, #f0fdf4 0%, #dcfce7 100%) !important;
+}
+
+/* 答題動作按鈕 (查看解析、已擊敗、未擊敗)：黃銅銘牌浮雕質感 */
+.btn-reveal,
+.btn-mastered,
+.btn-unmastered,
+.btn-skip-later,
+.btn-retry-card {
+  font-family: 'Noto Serif TC', serif !important;
+  font-weight: 800 !important;
+  border-radius: 6px !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35) !important;
+}
+
+.btn-reveal {
+  background: linear-gradient(180deg, #fff5d1 0%, #fedb72 50%, #d89f1f 100%) !important;
+  border: 1.5px solid #8e6211 !important;
+  color: #301903 !important;
+  box-shadow: inset 0 1px 0 #ffffff, 0 3px 8px rgba(0, 0, 0, 0.35) !important;
+}
+
+.btn-mastered {
+  background: linear-gradient(180deg, #e6f9ed 0%, #a7f3d0 50%, #34d399 100%) !important;
+  border: 1.5px solid #065f46 !important;
+  color: #064e3b !important;
+}
+
+.btn-unmastered {
+  background: linear-gradient(180deg, #fee2e2 0%, #fca5a5 50%, #f87171 100%) !important;
+  border: 1.5px solid #991b1b !important;
+  color: #7f1d1d !important;
+}
+
+/* --- 5. 畫面氛圍與光影粒子 (Atmosphere & Particle Effects) ---
+   古老魔法圖書館溫暖角落陰影 (Warm Soft Ambient Lighting) + 暖黃螢火蟲光點
+*/
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  /* 溫暖角落陰影與中央閱讀檯燈光暈 (Warm Reading Lamp Glow) */
+  background: radial-gradient(
+    ellipse at 50% 35%,
+    rgba(255, 243, 204, 0.08) 0%,
+    rgba(40, 24, 10, 0.25) 60%,
+    rgba(15, 8, 3, 0.75) 100%
+  );
+}
+
+/* 卷軸周圍懸浮的小灰塵精靈煤煤蟲彩蛋 */
+.soot-sprite {
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 3px rgba(251, 191, 36, 0.4));
+}
+
