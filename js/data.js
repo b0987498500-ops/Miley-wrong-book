@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v281';
+const STORAGE_KEY = 'miley_wrong_questions_v282';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2446,6 +2446,36 @@ const INITIAL_SEED_DATA = [
     "answer": "(A) 何水能如河水清",
     "diagramUrl": "assets/questions/q_chi_comic_su_shi_su_zhe_foyin_couplet_241.png",
     "solution": "### 💡 漫畫語境與對聯格律深度剖析：\n\n#### 🖼️ 漫畫情節逐格解析：\n1. **第一格**：佛印禪師與蘇軾、蘇轍兄弟結伴出遊至長江巫山。\n2. **第二格**：佛印觸景生情，出了一句絕妙的七言上聯：\n   - **上聯**：「**無山得似巫山好**」\n   - **構思妙處**：利用同音字諧音雙關，「無山（沒有哪座山）」諧音「巫山（長江巫山）」，天然成趣！\n3. **第三格**：蘇軾立即對出：「**何葉能如荷葉圓**」\n   - 雖然「何葉」對「荷葉」亦有同音之妙，但「荷葉」為池塘植物，與大自然壯麗的「巫山」相比，氣象略嫌微小。\n4. **第四格**：蘇轍從容應答，道出勝過兄長的更工整下聯！\n\n#### 🔍 各選項對仗與意境對比：\n- **(A)「何水能如河水清」**（正解）：\n  - **字詞嚴格對偶**：\n    - 「何水（哪條江河）」對「無山（沒有哪座山）」；\n    - 「能如（能夠像）」對「得似（得以像）」；\n    - 「河水（黃河之水）」對「巫山（三峽巫山）」；\n    - 「清（形容詞）」對「好（形容詞）」。\n  - **諧音與意境**：\n    - 「何水」諧音雙關「河水」，精準呼應上聯「無山」諧音「巫山」！\n    - 「山」與「水」正對，巫山對河水，山水相映成趣、大開大闔，難怪能「勝過兄長」！\n\n- **(B)「某僧不若木僧高」**：\n  - 僧人對巫山非自然之景，且意境譏誚狹隘，不符出遊巫山之高雅情致。\n\n- **(C)「更有何處過此山」**：\n  - 詞性無法字字對仗，且缺乏首尾字諧音雙關之妙。\n\n- **(D)「各花自比個花紅」**：\n  - 花草對山水未臻典雅，且平仄、意境皆不及 (A) 之山水壯闊。\n\n故本題正確答案為 **(A) 何水能如河水清**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-24",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_physics_newton_second_law_vt_graph_force_direction_242",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國二理化：牛頓第二運動定律 F = ma 與 v-t 圖斜率計算物體受力大小與方向（向東為正、向西為負）",
+    "uploadDate": "2026-10-24",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【牛頓第二運動定律與 v-t 圖正負方向判讀】！\n1. **加速度方向即為合力方向**：\n   - 由牛頓第二運動定律：$F = ma$（$m$ 必為正值，故 $F$ 之正負方向完全由加速度 $a$ 決定！）。\n   - 本題以「**東**」為正方向：若計算出 $a > 0$ 則受力向東；若 $a < 0$ 則受力**向西**！\n2. **4～7 秒加速度計算**：\n   - $t = 4\\text{ s}$ 時速度 $v_1 = 30\\text{ m/s}$；$t = 7\\text{ s}$ 時速度 $v_2 = 0\\text{ m/s}$。\n   - 加速度 $a = \\frac{v_2 - v_1}{t_2 - t_1} = \\frac{0 - 30}{7 - 4} = \\frac{-30}{3} = -10\\text{ m/s}^2$。\n3. **受力大小與方向**：\n   - 合力 $F = ma = 10 \\times (-10) = -100\\text{ N}$。\n   - 負號代表「**向西**」，受力大小為 **100 N**！\n4. **常見陷阱對照**：\n   - 勿忽略時間區間 $\\Delta t = 7 - 4 = 3\\text{ 秒}$（切勿直接拿分母除以 7！）。\n   - 勿將負號方向搞混，以東為正，負號即為向西！",
+    "stem": "某物體的質量為 10 公斤，在光滑水平面上作直線運動，其速度與時間的關係如右圖所示，以東為正。\n試問在 4～7 秒期間，物體受力大小與方向為何？\n\n○ (A) 150 N，向東\n○ (B) 100 N，向東\n○ (C) 100 N，向西\n○ (D) 0 N，不受力",
+    "answer": "(C) 100 N，向西",
+    "diagramUrl": "assets/questions/q_sci_vt_graph_mass10kg_newton_law_242.png",
+    "solution": "### 💡 牛頓第二運動定律與 v-t 圖深度解析：\n\n#### 📌 一、破題關鍵觀念：\n1. **$v-t$ 圖的斜率代表加速度 $a$**：\n   $$\\text{加速度 } a = \\frac{\\Delta v}{\\Delta t} = \\frac{\\text{末速度 } - \\text{初速度}}{\\text{經過時間}}$$\n2. **牛頓第二運動定律公式**：\n   $$F = ma$$\n   - 其中 $F$ 為物體所受合力（單位：牛頓，N）\n   - $m$ 為物體質量（單位：公斤，kg）\n   - $a$ 為物體之加速度（單位：$\\text{m/s}^2$）\n3. **正負號代表方向**：\n   - 題目明確規定：「**以東為正**」。\n   - 算出的力若為正值（$+$），方向向東；若為負值（$-$），方向**向西**。\n\n---\n\n#### 🔍 二、第 (3) 小題詳細計算步驟（4～7 秒期間）：\n1. **找出 4～7 秒之初速與末速**：\n   - 在時間 $t = 4\\text{ s}$ 時，速度 $v_1 = 30\\text{ m/s}$（初速度）\n   - 在時間 $t = 7\\text{ s}$ 時，速度 $v_2 = 0\\text{ m/s}$（末速度）\n   - 經過時間區間 $\\Delta t = 7 - 4 = 3\\text{ 秒}$\n2. **計算此期間之加速度 $a$**：\n   $$a = \\frac{0 - 30}{7 - 4} = \\frac{-30}{3} = -10\\text{ m/s}^2$$\n3. **利用牛頓第二定律求受力 $F$**：\n   $$F = ma = 10 \\times (-10) = -100\\text{ N}$$\n4. **判定大小與方向**：\n   - 大小：$100\\text{ N}$\n   - 方向：負號表示與正方向（向東）相反，即為**向西**。\n\n---\n\n#### 📚 三、原題其他小題延伸對照（融會貫通）：\n- **(1) 0～2 秒期間**：\n  - 加速度 $a_1 = \\frac{30 - 0}{2 - 0} = 15\\text{ m/s}^2$\n  - 受力 $F_1 = 10 \\times 15 = 150\\text{ N}$，方向**向東**。\n- **(2) 2～4 秒期間**：\n  - 速度維持 $30\\text{ m/s}$ 不變（水平線，作**等速度運動**），加速度 $a = 0\\text{ m/s}^2$\n  - 受力 $F_2 = 0\\text{ N}$（合力為零）。\n\n故第 (3) 小題物體在 4～7 秒期間受力為 **100 N，向西**，正解為 **(C)**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
