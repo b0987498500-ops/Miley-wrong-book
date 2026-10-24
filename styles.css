@@ -9763,3 +9763,358 @@ body::before {
   filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 3px rgba(251, 191, 36, 0.4));
 }
 
+/* ==========================================================================
+   🌿 吉卜力手繪靈魂大進化：有機不規則邊緣、水彩暈染暗角、黃銅印章與手作木珠
+   Organic Ghibli Hand-Drawn Edge, Watercolor Vignette & Tactile Craft
+   ========================================================================== */
+
+/* 1. 消除幾何僵硬感：手繪不規則邊緣 (Organic Rough Edge) 與破除純圓角 */
+.review-welcome-stage,
+.flashcard-stage-main .flashcard-card,
+.archive-main,
+.archive-sidebar,
+.upload-panel,
+.sprint-header-panel,
+.analytics-dashboard {
+  /* 手繪不對稱自然手切圓角 (Organic Irregular Hand-cut Radii) */
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px !important;
+  border-width: 2.5px !important;
+  border-style: solid !important;
+  border-color: #b08d51 !important;
+  position: relative !important;
+  /* 多重水彩紙層與微弱歲月深褐斑點 (Aged Parchment Stains & Texture) */
+  background-color: #f7edd4 !important;
+  background-image: 
+    /* 手作紙張粗糙顆粒感 (Subtle Pulp Grain) */
+    radial-gradient(1.5px 1.5px at 12% 18%, rgba(139, 90, 43, 0.25), transparent),
+    radial-gradient(2px 2px at 88% 28%, rgba(120, 75, 30, 0.2), transparent),
+    radial-gradient(1.5px 1.5px at 35% 82%, rgba(150, 95, 45, 0.22), transparent),
+    radial-gradient(2px 2px at 75% 78%, rgba(110, 65, 25, 0.25), transparent),
+    radial-gradient(3px 3px at 48% 38%, rgba(160, 110, 55, 0.15), transparent),
+    /* 水彩自然暈染暗角 (Deep Watercolor Vignette Effect) */
+    radial-gradient(ellipse at 50% 50%, rgba(255, 253, 245, 0.98) 45%, rgba(246, 230, 198, 0.95) 75%, rgba(214, 185, 138, 0.96) 92%, #a47c43 100%) !important;
+  box-shadow: 
+    /* 羊皮紙兩側微捲立體陰影 */
+    inset 22px 0 35px -12px rgba(90, 55, 20, 0.38),
+    inset -22px 0 35px -12px rgba(90, 55, 20, 0.38),
+    inset 0 12px 24px -10px rgba(110, 75, 35, 0.25),
+    inset 0 -12px 24px -10px rgba(80, 45, 15, 0.35),
+    0 14px 34px rgba(0, 0, 0, 0.72),
+    0 3px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 邊框線條：水彩手繪微彎粗細不均筆觸 (Hand-drawn Brush Stroke Dividers) */
+.save-action-bar,
+.card-top-bar,
+.solution-content-box .sol-answer,
+.weekly-monday-bar,
+.panel-header,
+.preview-header {
+  border-bottom: 2px dashed rgba(160, 120, 65, 0.45) !important;
+  border-top: none !important;
+  position: relative !important;
+}
+
+.card-top-bar::after,
+.solution-content-box .sol-answer::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(145, 105, 50, 0.3) 10%,
+    rgba(175, 130, 65, 0.75) 30%,
+    rgba(125, 85, 40, 0.85) 60%,
+    rgba(165, 120, 55, 0.5) 85%,
+    transparent 100%
+  );
+  border-radius: 50% 50% 0 0;
+  pointer-events: none;
+}
+
+/* 立體卷軸兩側木軸：加入深色內陰影、高光與車削圓頭 (Turned Wooden Scroll Rollers) */
+.review-welcome-stage::before,
+.flashcard-stage-main .flashcard-card::before {
+  left: -18px !important;
+  width: 16px !important;
+  top: -14px !important;
+  bottom: -14px !important;
+  border-radius: 8px 3px 3px 8px !important;
+  background: linear-gradient(
+    90deg,
+    #170c04 0%,
+    #3b200d 20%,
+    #7a471e 40%,
+    #e8c878 50%,
+    #5a3112 70%,
+    #210e05 90%,
+    #0f0702 100%
+  ) !important;
+  box-shadow: 
+    -5px 0 14px rgba(0, 0, 0, 0.8),
+    inset 0 4px 6px rgba(255, 235, 160, 0.7),
+    inset 0 -4px 6px rgba(0, 0, 0, 0.8),
+    inset 1px 0 2px rgba(255, 255, 255, 0.5) !important;
+}
+
+.review-welcome-stage::after,
+.flashcard-stage-main .flashcard-card::after {
+  right: -18px !important;
+  width: 16px !important;
+  top: -14px !important;
+  bottom: -14px !important;
+  border-radius: 3px 8px 8px 3px !important;
+  background: linear-gradient(
+    90deg,
+    #0f0702 0%,
+    #210e05 10%,
+    #5a3112 30%,
+    #e8c878 50%,
+    #7a471e 60%,
+    #3b200d 80%,
+    #170c04 100%
+  ) !important;
+  box-shadow: 
+    5px 0 14px rgba(0, 0, 0, 0.8),
+    inset 0 4px 6px rgba(255, 235, 160, 0.7),
+    inset 0 -4px 6px rgba(0, 0, 0, 0.8),
+    inset -1px 0 2px rgba(255, 255, 255, 0.5) !important;
+}
+
+/* 3. 淨化現代功能按鈕：徹底淘汰灰色/藍色現代塑膠感！
+   全螢幕、草稿區、出題似題、匯出 PDF 換裝為「黃銅印章」與「古典羊皮紙小木鈕」
+*/
+#btn-toggle-fullscreen,
+#toggle-scratchpad-btn,
+#btn-generate-similar-q,
+#export-pdf-main-btn,
+.review-top-actions .btn-secondary,
+.review-top-actions .btn-accent-sm,
+.review-top-actions .btn-primary,
+.review-top-actions .btn-similar-question {
+  background: linear-gradient(180deg, #fffcf4 0%, #f4e7cd 50%, #e1cb9f 100%) !important;
+  border: 1.8px solid #9e7a3b !important;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px !important;
+  color: #3b2108 !important;
+  font-family: 'Noto Serif TC', serif !important;
+  font-weight: 800 !important;
+  font-size: 0.86rem !important;
+  padding: 6px 14px !important;
+  box-shadow: 
+    inset 0 1px 0 #ffffff,
+    inset 0 -1px 0 rgba(80, 45, 15, 0.3),
+    0 3px 8px rgba(0, 0, 0, 0.35) !important;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  position: relative;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* 匯出 PDF 按鈕：精緻古典黃銅金漆火漆印章質感 (Brass Seal Stamp) */
+#export-pdf-main-btn {
+  background: linear-gradient(180deg, #fff3cf 0%, #fedb72 40%, #d89f24 80%, #b37e12 100%) !important;
+  border: 2px solid #78500c !important;
+  color: #2b1403 !important;
+  box-shadow: 
+    inset 0 1.5px 0 #ffffff,
+    inset 0 -1.5px 0 rgba(0, 0, 0, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.45),
+    0 0 10px rgba(245, 158, 11, 0.35) !important;
+}
+
+#export-pdf-main-btn:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #ffe894 40%, #eab438 80%, #c48c18 100%) !important;
+  border-color: #ffd700 !important;
+  transform: translateY(-2px) scale(1.04) !important;
+  box-shadow: 
+    inset 0 1.5px 0 #ffffff,
+    0 6px 16px rgba(0, 0, 0, 0.55),
+    0 0 16px rgba(251, 191, 36, 0.6) !important;
+}
+
+/* 出類似題按鈕：魔法羽毛羊皮紙小籤鈕 */
+#btn-generate-similar-q {
+  background: linear-gradient(180deg, #fef8eb 0%, #f1e0be 55%, #dfc79b 100%) !important;
+  border: 1.8px solid #a67c33 !important;
+  color: #61370b !important;
+}
+
+#btn-generate-similar-q:hover,
+#btn-toggle-fullscreen:hover,
+#toggle-scratchpad-btn:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #fbf0d8 55%, #edd4aa 100%) !important;
+  border-color: #d4af37 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 
+    inset 0 1px 0 #ffffff,
+    0 5px 12px rgba(0, 0, 0, 0.4),
+    0 0 8px rgba(245, 158, 11, 0.3) !important;
+}
+
+/* 題目字體放大縮小鈕：黃銅刻字小鈕 */
+.review-font-control-inline {
+  background: linear-gradient(180deg, #2b1a0d 0%, #170d05 100%) !important;
+  border: 1.5px solid #8e6c38 !important;
+  border-radius: 6px !important;
+  padding: 3px 6px !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.review-font-tag {
+  color: #fef08a !important;
+  font-family: 'Cinzel', serif !important;
+  font-weight: 800 !important;
+}
+
+.font-quick-btn {
+  background: linear-gradient(180deg, #4d361c 0%, #2f1e0d 100%) !important;
+  border: 1px solid #a88448 !important;
+  color: #fde68a !important;
+  border-radius: 4px !important;
+}
+
+/* PDF 下拉清單：古老羊皮紙捲選單 */
+.pdf-dropdown-menu {
+  background: #fbf5e6 !important;
+  border: 2px solid #9e7a3b !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.65) !important;
+}
+
+.pdf-dropdown-menu button {
+  color: #3b2108 !important;
+  font-family: 'Noto Serif TC', serif !important;
+  font-weight: 700 !important;
+  border-bottom: 1px dashed rgba(160, 120, 65, 0.3) !important;
+}
+
+.pdf-dropdown-menu button:hover {
+  background: #f1dfbc !important;
+  color: #000000 !important;
+}
+
+/* 4. 題目導航小火車軌道與點陣：手繪小木珠 / 小銅扣質感 (Handmade Wooden Beads & Brass Rivet Stations) */
+.progress-track {
+  background: linear-gradient(180deg, #1c1106 0%, #301d0c 50%, #150c04 100%) !important;
+  border: 2px solid #78501c !important;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.9), 0 2px 5px rgba(0, 0, 0, 0.4) !important;
+  border-radius: 12px !important;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #78501c 0%, #d4af37 50%, #fef08a 100%) !important;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.7) !important;
+}
+
+/* 手感小木珠站點 (Wooden Bead Dots) */
+.progress-tick-dot {
+  border-radius: 50% !important;
+  border: 1.5px solid #8e6224 !important;
+  box-shadow: 
+    inset 0 1.5px 2px rgba(255, 235, 160, 0.5),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.7),
+    0 2px 5px rgba(0, 0, 0, 0.6) !important;
+  font-family: 'Cinzel', serif !important;
+  font-weight: 900 !important;
+}
+
+/* 已複習站點：翡翠青苔琉璃手繪小珠 (Moss Jade Glaze Bead) */
+.progress-tick-dot.tick-reviewed {
+  background: radial-gradient(circle at 35% 35%, #86efac 0%, #16a34a 50%, #14532d 100%) !important;
+  border-color: #bbf7d0 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.7), 0 2px 5px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 未複習待挑戰：天然原木胡桃木珠 (Walnut Wood Bead) */
+.progress-tick-dot.tick-unreviewed {
+  background: radial-gradient(circle at 35% 35%, #785025 0%, #452b12 60%, #211306 100%) !important;
+  border-color: #a87e46 !important;
+  color: #fef08a !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* 當前作答站點：璀璨黃銅金扣 (Luminous Brass Button) */
+.progress-tick-dot.current {
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #ffd700 45%, #b45309 100%) !important;
+  border: 2px solid #ffffff !important;
+  color: #2b1403 !important;
+  box-shadow: 
+    0 0 16px rgba(251, 191, 36, 1),
+    0 0 24px rgba(217, 119, 6, 0.8),
+    0 3px 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* 5. 左側與頂部結構的自然銜接：柔和暖褐色立體投射陰影 (Warm Drop Shadow) 與金屬邊緣高光 */
+.sidebar {
+  box-shadow: 
+    inset -3px 0 15px rgba(0, 0, 0, 0.7),
+    6px 0 22px rgba(35, 20, 8, 0.65) !important;
+}
+
+.sidebar-subject-btn {
+  /* 錯落手作不規則立體感 */
+  border-radius: 255px 12px 225px 12px / 12px 225px 12px 255px !important;
+  box-shadow: 
+    inset 0 1.5px 0 rgba(255, 240, 180, 0.5),
+    inset 0 -1.5px 0 rgba(0, 0, 0, 0.8),
+    inset 1.5px 0 0 rgba(255, 240, 180, 0.3),
+    0 4px 10px rgba(25, 12, 4, 0.65) !important;
+}
+
+.sidebar-subject-btn:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 
+    inset 0 2px 0 #ffffff,
+    0 6px 14px rgba(25, 12, 4, 0.75),
+    0 0 12px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* 頂部刻痕老木桌：漆面磨損與手繪木紋刮痕細節 */
+.top-header {
+  background-image: 
+    /* 漆面微弱斑駁刮痕 (Hand-painted Wood Scratches) */
+    radial-gradient(1px 1px at 30px 15px, rgba(255, 230, 150, 0.35), transparent),
+    radial-gradient(1px 1px at 180px 25px, rgba(255, 230, 150, 0.25), transparent),
+    radial-gradient(1px 1px at 340px 18px, rgba(255, 230, 150, 0.3), transparent),
+    /* 手切深木溝凹凸 (Wood Carved Grooves) */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 118px,
+      rgba(10, 5, 2, 0.65) 119px,
+      rgba(90, 58, 28, 0.45) 120px,
+      rgba(8, 4, 1, 0.75) 121px,
+      transparent 122px
+    ),
+    linear-gradient(180deg, #3d2411 0%, #2b180a 45%, #1c0e05 100%) !important;
+  box-shadow: 
+    inset 0 1.5px 0 rgba(255, 235, 170, 0.35),
+    0 8px 24px rgba(20, 10, 3, 0.7) !important;
+}
+
+/* 6. 全頁面暖色漫射光 (Warm Ambient Glow) 與螢火蟲微粒強化 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  background-image: 
+    radial-gradient(2px 2px at 40px 60px, rgba(254, 240, 138, 0.85), transparent),
+    radial-gradient(3.5px 3.5px at 180px 220px, rgba(251, 191, 36, 0.8), transparent),
+    radial-gradient(2px 2px at 320px 140px, rgba(254, 240, 138, 0.9), transparent),
+    radial-gradient(3px 3px at 520px 310px, rgba(251, 191, 36, 0.85), transparent),
+    radial-gradient(3.5px 3.5px at 780px 180px, rgba(254, 240, 138, 0.9), transparent),
+    radial-gradient(2.5px 2.5px at 980px 290px, rgba(245, 158, 11, 0.8), transparent),
+    radial-gradient(2px 2px at 1180px 160px, rgba(254, 240, 138, 0.85), transparent);
+  background-repeat: repeat;
+  background-size: 800px 500px;
+  animation: fireflyAmbientDrift 12s ease-in-out infinite alternate;
+  opacity: 0.65 !important;
+}
+
+
