@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v276';
+const STORAGE_KEY = 'miley_wrong_questions_v277';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2061,6 +2061,36 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-10-23",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_chi_literature_su_shi_biography_crow_terrace_poetry_229",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "觀念不懂",
+    "concept": "國文文學常識：蘇軾生平與成就（北宋大文豪、字子瞻號東坡居士、烏臺詩案貶黃州團練副使、一生仕途坎坷）",
+    "uploadDate": "2026-10-24",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【蘇軾生平與烏臺詩案常考陷阱】！\n1. **朝代陷阱**：蘇軾是「**北宋**」大文豪（宋神宗、哲宗時期），不是南宋！\n2. **字號名銜**：蘇軾，字「**子瞻**」，號「**東坡居士**」，世稱「蘇東坡」。與其父蘇洵、其弟蘇轍合稱「三蘇」，皆名列唐宋八大家。\n3. **烏臺詩案處分**：蘇軾因烏臺詩案差點被殺，後經各方營救獲釋，被貶為「**黃州團練副使**（本州安置，不得簽書公事）」，並**非貶為庶民**！\n4. **仕途際遇**：蘇軾一生仕途極為**坎坷**，屢遭新黨、舊黨排擠，一貶黃州、再貶惠州、三貶儋州（海南島），並非「晚年才被陷害放逐」！",
+    "stem": "下列有關蘇軾的生平介紹，何者正確？\n\n○ (A) 字子瞻，號東坡居士\n○ (B) 才氣縱橫，學識淵博的南宋大文豪\n○ (C) 因為烏臺詩案入獄，貶為庶民\n○ (D) 一生仕途通順，僅於晚年被陷害放逐。",
+    "answer": "(A) 字子瞻，號東坡居士",
+    "diagramUrl": "",
+    "solution": "### 💡 各選項逐一深入剖析：\n\n- **(A) 正確（正解）**：\n  - 蘇軾（西元 1037～1101 年），四川眉山人。\n  - **字「子瞻」**，**號「東坡居士」**，為北宋著名文學家、書畫家、政治家。\n\n- **(B) 錯誤（朝代錯誤）**：\n  - 蘇軾為 **北宋** 大文豪，活動於北宋仁宗、英宗、神宗、哲宗、徽宗年間，非「南宋」。\n\n- **(C) 錯誤（貶官官職錯誤）**：\n  - 宋神宗元豐二年（1079 年），蘇軾因反對王安石新法，遭新黨李定、舒亶等人以其詩文指控諷刺朝政而入御史臺獄（即「**烏臺詩案**」）。\n  - 經多方營救免除死罪，被責授檢校水部員外郎、充 **黃州團練副使**（本州安置，受地方官監督，不得簽署公事），**並未貶為庶民**。\n  - 蘇軾在黃州生活窮困，躬耕於城東荒地，故自號「東坡居士」，寫下著名的《赤壁賦》、《後赤壁賦》與《念奴嬌·赤壁懷古》。\n\n- **(D) 錯誤（生平際遇錯誤）**：\n  - 蘇軾一生 **仕途極為坎坷，屢遭貶謫**。因其政見堅持原則、不肯阿諛，既不容於新黨（變法派），亦不容於舊黨保守派。\n  - 先後歷經烏臺詩案貶黃州、哲宗親政後貶惠州、更遠貶至荒涼的儋州（今海南島），一生「問汝平生功業，黃州惠州儋州」，絕非「仕途通順」。\n\n故本題正確答案為 **(A) 字子瞻，號東坡居士**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-24",
     "isReviewed": false,
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
