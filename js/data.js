@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v282';
+const STORAGE_KEY = 'miley_wrong_questions_v283';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2476,6 +2476,36 @@ const INITIAL_SEED_DATA = [
     "answer": "(C) 100 N，向西",
     "diagramUrl": "assets/questions/q_sci_vt_graph_mass10kg_newton_law_242.png",
     "solution": "### 💡 牛頓第二運動定律與 v-t 圖深度解析：\n\n#### 📌 一、破題關鍵觀念：\n1. **$v-t$ 圖的斜率代表加速度 $a$**：\n   $$\\text{加速度 } a = \\frac{\\Delta v}{\\Delta t} = \\frac{\\text{末速度 } - \\text{初速度}}{\\text{經過時間}}$$\n2. **牛頓第二運動定律公式**：\n   $$F = ma$$\n   - 其中 $F$ 為物體所受合力（單位：牛頓，N）\n   - $m$ 為物體質量（單位：公斤，kg）\n   - $a$ 為物體之加速度（單位：$\\text{m/s}^2$）\n3. **正負號代表方向**：\n   - 題目明確規定：「**以東為正**」。\n   - 算出的力若為正值（$+$），方向向東；若為負值（$-$），方向**向西**。\n\n---\n\n#### 🔍 二、第 (3) 小題詳細計算步驟（4～7 秒期間）：\n1. **找出 4～7 秒之初速與末速**：\n   - 在時間 $t = 4\\text{ s}$ 時，速度 $v_1 = 30\\text{ m/s}$（初速度）\n   - 在時間 $t = 7\\text{ s}$ 時，速度 $v_2 = 0\\text{ m/s}$（末速度）\n   - 經過時間區間 $\\Delta t = 7 - 4 = 3\\text{ 秒}$\n2. **計算此期間之加速度 $a$**：\n   $$a = \\frac{0 - 30}{7 - 4} = \\frac{-30}{3} = -10\\text{ m/s}^2$$\n3. **利用牛頓第二定律求受力 $F$**：\n   $$F = ma = 10 \\times (-10) = -100\\text{ N}$$\n4. **判定大小與方向**：\n   - 大小：$100\\text{ N}$\n   - 方向：負號表示與正方向（向東）相反，即為**向西**。\n\n---\n\n#### 📚 三、原題其他小題延伸對照（融會貫通）：\n- **(1) 0～2 秒期間**：\n  - 加速度 $a_1 = \\frac{30 - 0}{2 - 0} = 15\\text{ m/s}^2$\n  - 受力 $F_1 = 10 \\times 15 = 150\\text{ N}$，方向**向東**。\n- **(2) 2～4 秒期間**：\n  - 速度維持 $30\\text{ m/s}$ 不變（水平線，作**等速度運動**），加速度 $a = 0\\text{ m/s}^2$\n  - 受力 $F_2 = 0\\text{ N}$（合力為零）。\n\n故第 (3) 小題物體在 4～7 秒期間受力為 **100 N，向西**，正解為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-24",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_physics_car_brake_friction_force_newton_second_law_243",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國二理化：牛頓第二運動定律 F = ma 與煞車減速摩擦力大小計算",
+    "uploadDate": "2026-10-24",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【煞車減速摩擦力與牛頓第二運動定律】！\n1. **摩擦力即為讓車輛停下來的合力**：\n   - 車輛在水平道路上煞車時，沿運動方向上只受到輪胎與地面間向後的摩擦力提供減速加速度。\n   - 由牛頓第二運動定律：$F = ma$（所求摩擦力大小即等於車輛受到的合力大小）。\n2. **減速度計算**：\n   - 初速 $v_1 = 20\\text{ 公尺/秒}$，煞車停止末速 $v_2 = 0\\text{ 公尺/秒}$，經過時間 $\\Delta t = 4\\text{ 秒}$。\n   - 加速度大小 $a = \\frac{|v_2 - v_1|}{\\Delta t} = \\frac{20}{4} = 5\\text{ 公尺/秒}^2$。\n3. **合力/摩擦力大小計算**：\n   - $F = ma = 1500\\text{ 公斤} \\times 5\\text{ 公尺/秒}^2 = 7500\\text{ 牛頓}$。\n4. **審題關鍵防呆**：\n   - 質量單位為公斤（kg）、速度為公尺/秒（m/s），皆為標準 SI 制單位，直接相乘計算即可，切勿多除以或乘以重力加速度 $g = 9.8$！",
+    "stem": "質量 1500 公斤的小客車在道路上以 20 公尺／秒的速度行駛，遇前方緊急事故，在 4 秒內沿直線方向煞車停止，則煞車期間小客車所受摩擦力大小為多少牛頓？\n\n○ (A) 5000\n○ (B) 7500\n○ (C) 15000\n○ (D) 30000",
+    "answer": "(B) 7500",
+    "diagramUrl": "",
+    "solution": "### 💡 牛頓第二運動定律與煞車摩擦力深度剖析：\n\n#### 📌 一、破題核心觀念：\n1. **煞車停止的受力分析**：\n   - 小客車在水平地面沿直線行駛，當踩下煞車時，提供車輛減速並最終停止的力，即為地面給予車輪之**摩擦力**。\n   - 摩擦力在此過程中扮演「**合力**」的角色，產生與運動方向相反的減速度。\n2. **牛頓第二運動定律公式**：\n   $$F = ma$$\n   - 其中 $F$ 為合力（摩擦力大小，單位：牛頓，N）\n   - $m$ 為小客車質量（單位：公斤，kg）\n   - $a$ 為煞車期間之加速度（單位：$\\text{m/s}^2$）\n\n---\n\n#### 🔍 二、詳細計算步驟：\n1. **計算小客車煞車時的加速度大小 $a$**：\n   - 初速度 $v_0 = 20\\text{ m/s}$\n   - 末速度 $v = 0\\text{ m/s}$（煞車停止）\n   - 煞車所耗時間 $t = 4\\text{ 秒}$\n   - 加速度大小為：\n     $$a = \\frac{|v - v_0|}{t} = \\frac{20 - 0}{4} = 5\\text{ (m/s}^2\\text{)}$$\n2. **代入牛頓第二運動定律求摩擦力 $F$**：\n   $$F = ma = 1500 \\times 5 = 7500\\text{ (牛頓)}$$\n\n故煞車期間小客車所受摩擦力大小為 **7500 牛頓**。\n\n本題正確答案為 **(B) 7500**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
