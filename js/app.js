@@ -528,10 +528,27 @@ class App {
     const toggleBtn = document.getElementById('theme-toggle-btn');
     if (!toggleBtn) return;
 
+    // Apply stored theme if present
+    const savedTheme = localStorage.getItem('miley_theme_mode');
+    if (savedTheme === 'light') {
+      document.body.classList.add('light-theme');
+      document.documentElement.classList.add('light-theme');
+      toggleBtn.innerHTML = '<i class="fa-solid fa-sun" style="color: #f59e0b;"></i>';
+      toggleBtn.title = '目前為白底模式，點擊切換為黑底深色模式';
+    } else {
+      document.body.classList.remove('light-theme');
+      document.documentElement.classList.remove('light-theme');
+      toggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+      toggleBtn.title = '目前為黑底模式，點擊切換為白底淺色模式';
+    }
+
     toggleBtn.addEventListener('click', () => {
       document.body.classList.toggle('light-theme');
+      document.documentElement.classList.toggle('light-theme');
       const isLight = document.body.classList.contains('light-theme');
-      toggleBtn.innerHTML = isLight ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+      localStorage.setItem('miley_theme_mode', isLight ? 'light' : 'dark');
+      toggleBtn.innerHTML = isLight ? '<i class="fa-solid fa-sun" style="color: #f59e0b;"></i>' : '<i class="fa-solid fa-moon"></i>';
+      toggleBtn.title = isLight ? '目前為白底模式，點擊切換為黑底深色模式' : '目前為黑底模式，點擊切換為白底淺色模式';
     });
   }
 

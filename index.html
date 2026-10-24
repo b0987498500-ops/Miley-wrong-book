@@ -53,7 +53,7 @@
       // Register Service Worker
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('sw.js?v=271').then(function(reg) {
+          navigator.serviceWorker.register('sw.js?v=272').then(function(reg) {
             if (typeof reg.update === 'function') {
               reg.update();
             }
@@ -63,6 +63,20 @@
           });
         });
       }
+    })();
+    // Immediate theme preference initialization (Dark by default, supports Light theme)
+    (function() {
+      try {
+        var theme = localStorage.getItem('miley_theme_mode');
+        if (theme === 'light') {
+          document.documentElement.classList.add('light-theme');
+          document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('light-theme');
+            var btn = document.getElementById('theme-toggle-btn');
+            if (btn) btn.innerHTML = '<i class="fa-solid fa-sun" style="color: #f59e0b;"></i>';
+          });
+        }
+      } catch (e) {}
     })();
     // Reset and cleanup any legacy page zoom
     (function() {
@@ -105,7 +119,7 @@
   <meta http-equiv="Expires" content="0">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=280">
+  <link rel="stylesheet" href="styles.css?v=281">
 
   <!-- External CDNs: KaTeX, Chart.js, jsPDF, html2canvas -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -384,6 +398,11 @@
               </div>
             </div>
 
+            <!-- 黑底深色 / 白底淺色模式切換按鈕 -->
+            <button id="theme-toggle-btn" class="icon-btn theme-toggle-btn" title="切換黑底深色 / 白底淺色模式">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+
             <!-- 收合頂部欄按鈕 -->
             <button id="topbar-toggle-btn" class="icon-btn" title="收合頂部欄">
               <i class="fa-solid fa-chevron-up"></i>
@@ -579,7 +598,7 @@
 
                 <div class="hero-battle-container">
                   <div class="hero-stage-scroll-title" id="hero-stage-scroll-title">
-                    <span id="hero-welcome-title-text">此科目（社會）目前尚無錯題，太棒了！感謝筵…</span>
+                    <span id="hero-welcome-title-text">🐾 歡迎回到麥麥錯題複習特訓營 · 點選科目或週次開始挑戰！</span>
                   </div>
                   <div class="battle-stats-header">
                     <div class="battle-stat-pill main-badge">
@@ -1282,12 +1301,12 @@
   <script src="js/utils/pdf_export.js?v=216"></script>
   <script src="js/modules/upload.js?v=216"></script>
   <script src="js/modules/archive.js?v=216"></script>
-  <script src="js/modules/review.js?v=221"></script>
+  <script src="js/modules/review.js?v=222"></script>
   <script src="js/modules/sprint.js?v=216"></script>
   <script src="js/modules/analytics.js?v=216"></script>
   <script src="js/modules/calendar.js?v=216"></script>
   <script src="js/modules/wisdom.js?v=216"></script>
   <script src="js/modules/sync.js?v=218"></script>
-  <script src="js/app.js?v=217"></script>
+  <script src="js/app.js?v=218"></script>
 </body>
 </html>

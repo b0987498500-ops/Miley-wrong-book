@@ -709,6 +709,11 @@ window.ReviewModule = {
     const allQuestions = window.dataManager.getAll();
     const defeatedCount = allQuestions.filter(q => q.isArchived || (q.consecutiveMastered || 0) > 0).length;
 
+    const welcomeTitleEl = document.getElementById('hero-welcome-title-text');
+    if (welcomeTitleEl) {
+      welcomeTitleEl.innerText = '🐾 歡迎回到麥麥錯題複習特訓營 · 點選科目或週次開始挑戰！';
+    }
+
     const countEl = document.getElementById('defeated-monsters-count');
     if (countEl) countEl.innerText = defeatedCount;
 
