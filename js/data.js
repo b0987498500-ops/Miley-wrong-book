@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v283';
+const STORAGE_KEY = 'miley_wrong_questions_v284';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2506,6 +2506,66 @@ const INITIAL_SEED_DATA = [
     "answer": "(B) 7500",
     "diagramUrl": "",
     "solution": "### 💡 牛頓第二運動定律與煞車摩擦力深度剖析：\n\n#### 📌 一、破題核心觀念：\n1. **煞車停止的受力分析**：\n   - 小客車在水平地面沿直線行駛，當踩下煞車時，提供車輛減速並最終停止的力，即為地面給予車輪之**摩擦力**。\n   - 摩擦力在此過程中扮演「**合力**」的角色，產生與運動方向相反的減速度。\n2. **牛頓第二運動定律公式**：\n   $$F = ma$$\n   - 其中 $F$ 為合力（摩擦力大小，單位：牛頓，N）\n   - $m$ 為小客車質量（單位：公斤，kg）\n   - $a$ 為煞車期間之加速度（單位：$\\text{m/s}^2$）\n\n---\n\n#### 🔍 二、詳細計算步驟：\n1. **計算小客車煞車時的加速度大小 $a$**：\n   - 初速度 $v_0 = 20\\text{ m/s}$\n   - 末速度 $v = 0\\text{ m/s}$（煞車停止）\n   - 煞車所耗時間 $t = 4\\text{ 秒}$\n   - 加速度大小為：\n     $$a = \\frac{|v - v_0|}{t} = \\frac{20 - 0}{4} = 5\\text{ (m/s}^2\\text{)}$$\n2. **代入牛頓第二運動定律求摩擦力 $F$**：\n   $$F = ma = 1500 \\times 5 = 7500\\text{ (牛頓)}$$\n\n故煞車期間小客車所受摩擦力大小為 **7500 牛頓**。\n\n本題正確答案為 **(B) 7500**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-24",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_physics_table_luggage_balance_forces_244",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國二理化：力與運動——靜態平衡條件與一對平衡力辨析（作用於同一物體、大小相等、方向相反、在同一直線上）",
+    "uploadDate": "2026-10-24",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【平衡力 vs. 作用力與反作用力】秒殺關鍵！\n1. **平衡力（兩力平衡）**：\n   - **受力對象是「同一個物體」**！\n   - 題目問：「使【行李】能靜止於桌面的一對平衡力」➔ 找「**受力對象都是行李**」的兩個力！\n     - $GW$：地球吸引【行李】的重力（受力者：**行李**，方向向下）。\n     - $OQ$：桌面支持【行李】向上的支撐力（受力者：**行李**，方向向上）。\n     - 兩者作用於同一物體（行李）、大小相等、方向相反、在同一直線上，故使行李靜止平衡！正解為 **GW 和 OQ**！\n2. **容易混淆的 OP 陷阱**：\n   - $OP$ 是「行李施於【桌面】向下的力」（受力者是**桌面**，不是行李！），故 $OP$ 絕對不能與作用在行李上的力構成平衡力！",
+    "stem": "桌面上靜置一行李，如圖，GW 表示行李所受的重力，OP 表示行李施於桌面向下的力，OQ 表示桌面支持行李向上的力。\n試回答下列問題：\n(1) 使行李能靜止於桌面上的「一對平衡力」為下列何者？\n\n○ (A) OP 和 OQ\n○ (B) GW 和 OQ\n○ (C) GW 和 OP\n○ (D) OQ 和 OP、GW",
+    "answer": "(B) GW 和 OQ",
+    "diagramUrl": "assets/questions/q_sci_luggage_table_action_reaction_forces_244.png",
+    "solution": "### 💡 一對平衡力的判斷法則與深度解析：\n\n#### 📌 一、各力的「施力者」與「受力者」清晰定位：\n- **$GW$**：地球對**行李**的萬有引力（重力），作用點在行李重心 $G$，方向**向下**（受力體：**行李**）。\n- **$OP$**：行李壓在**桌面**向下的正向力，作用點在桌面接觸點 $O$，方向**向下**（受力體：**桌面**）。\n- **$OQ$**：桌面支持**行李**向上的支撐力，作用點在接觸點 $O$，方向**向上**（受力體：**行李**）。\n\n---\n\n#### 🔍 二、兩力平衡（一對平衡力）的核心要件：\n1. **必須作用在「同一個物體」上**（合力才能相消！）。\n2. **大小相等**。\n3. **方向相反**。\n4. **作用在同一直線上**。\n\n#### 🎯 三、破題分析：\n- 題幹要求「**使行李能靜止於桌面上的一對平衡力**」，受力體必須是「**行李**」！\n- 檢視各力受力對象：\n  - 作用在行李上的力只有兩個：向下的重力 **$GW$** 與向上的桌面支撐力 **$OQ$**。\n  - 兩力大小相等、方向相反、同在鉛直線且皆作用在行李上，使得行李所受合力為零保持靜止。\n\n故使行李靜止的一對平衡力為 **GW 和 OQ**，本題正確答案為 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-24",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_physics_table_luggage_action_reaction_forces_245",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國二理化：牛頓第三運動定律——作用力與反作用力辨析（A 對 B 施力 vs. B 對 A 施力、互為主詞與受詞）",
+    "uploadDate": "2026-10-24",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【作用力與反作用力】互換主受詞口訣！\n1. **互為主受詞（A 對 B vs. B 對 A）**：\n   - 牛頓第三運動定律：**若甲對乙施力，乙必同時對甲施予反作用力**！\n   - $OP$：【行李】施於【桌面】向下的力（行李 ➔ 桌面）。\n   - $OQ$：【桌面】支持【行李】向上的力（桌面 ➔ 行李）。\n   - 「行李對桌面」與「桌面對行李」，兩者主詞受詞完全對調，必為一對**作用力與反作用力**！正解為 **OP 和 OQ**！\n2. **重力的反作用力是什麼？（進階常考）**：\n   - $GW$ 是「【地球】吸引【行李】向下的重力」。\n   - 其反作用力為「【行李】吸引【地球】向上的引力」（作用點在地球地心，不是桌面！）。\n3. **絕對原則**：作用力與反作用力分別作用在「**兩個不同物體**」上，彼此絕對**不能抵消**，也絕非平衡力！",
+    "stem": "桌面上靜置一行李，如圖，GW 表示行李所受的重力，OP 表示行李施於桌面向下的力，OQ 表示桌面支持行李向上的力。\n試回答下列問題：\n(2) 屬於「作用力與反作用力」的是下列何者？\n\n○ (A) OP 和 OQ\n○ (B) GW 和 OQ\n○ (C) GW 和 OP\n○ (D) OQ 和 OP、GW",
+    "answer": "(A) OP 和 OQ",
+    "diagramUrl": "assets/questions/q_sci_luggage_table_action_reaction_forces_244.png",
+    "solution": "### 💡 牛頓第三運動定律：作用力與反作用力深度解析：\n\n#### 📌 一、作用力與反作用力之三大鐵律：\n1. **互為主受詞**：甲對乙施力 $F_{甲\\to乙}$，乙必同時對甲施反作用力 $F_{乙\\to甲}$。\n2. **性質相同、同時產生同時消失**：兩者皆為接觸力（或皆為超距力）。\n3. **作用在不同物體上**：\n   - 作用力作用於乙，反作用力作用於甲。\n   - **兩力分別在不同受力體上，絕不能互相抵消**！\n\n---\n\n#### 🔍 二、圖中各力的受力配對解析：\n- **$OP$**：**行李**施於**桌面**向下的力（施力體：行李；受力體：**桌面**）。\n- **$OQ$**：**桌面**支持**行李**向上的力（施力體：桌面；受力體：**行李**）。\n- **結論**：「行李推桌面」與「桌面推行李」，施力者與受力者互換，正是最標準的**一對作用力與反作用力**！\n\n---\n\n#### 📚 三、各選項逐一檢核：\n- **(A) OP 和 OQ**（正解）：行李對桌面 vs. 桌面對行李，互為主受詞，為作用力與反作用力。\n- **(B) GW 和 OQ**：重力與支撐力皆作用在「行李」上，是使行李靜止的一對「**平衡力**」，不是作用力與反作用力。\n- **(C) GW 和 OP**：兩者方向皆向下，受力對象亦不同，既非平衡力亦非作用力反作用力。\n- **(D) OQ 和 OP、GW**：多力組合，不符成對的作用力與反作用力定義。\n\n故第 (2) 小題屬於作用力與反作用力的是 **OP 和 OQ**，本題正確答案為 **(A)**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
