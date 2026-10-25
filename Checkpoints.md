@@ -4,6 +4,28 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v2.93] - 2026-10-25 (自動收錄數學銳角三角比經典幾何題 Q254：外角定理構造等腰三角形求 tan 15°，高清去痕幾何圖表保存，升級數據庫至 v290)
+- **類型**：錯題自動收錄 / 國三數學銳角三角比 / 外角定理 30°=15°+15° 構造等腰三角形 / 30°-60°-90° 特殊邊長比求 tan 15° / 高清去痕幾何圖表保存 / 升級數據庫至 v290
+- **主要變更**：
+  1. **深度收錄國中數學會考經典銳角三角比考題（Q254，歸入 2026-10-19 最新週次）**：
+     - **Q254** `q_math_triangle_tan15_bdc30_bac15_254`（直角三角形中求 $\tan 15^\circ$）：
+       - **題幹**：如圖，在直角 $\triangle ABC$ 中，若 $\angle BDC = 30^\circ$，$\angle BAC = 15^\circ$，$\angle C = 90^\circ$，則 $\tan 15^\circ = $ ______。
+       - **選項**：○ (A) $2 - \sqrt{3}$  ○ (B) $2 + \sqrt{3}$  ○ (C) $\sqrt{3} - 1$  ○ (D) $\frac{\sqrt{3} - 1}{2}$
+       - **正解**：**(A) 2－√3**。
+       - **破題精要**：
+         - 關鍵外角定理：$\angle BDC = 30^\circ$ 為 $\triangle ABD$ 之頂點 $D$ 處外角 $\implies \angle ABD = 30^\circ - 15^\circ = 15^\circ$。
+         - 因為 $\angle A = \angle ABD = 15^\circ$，所以 $\triangle ABD$ 為等腰三角形，兩腰長相等：$AD = BD$！
+         - 設 $30^\circ-60^\circ-90^\circ$ 的直角 $\triangle BDC$ 最短邊 $BC = 1$，則斜邊 $BD = 2$，底邊 $CD = \sqrt{3}$。
+         - 等腰得 $AD = BD = 2$，大直角 $\triangle ABC$ 的底邊 $AC = AD + CD = 2 + \sqrt{3}$。
+         - $\tan 15^\circ = \frac{BC}{AC} = \frac{1}{2 + \sqrt{3}} = 2 - \sqrt{3}$！
+  2. **圖文去痕規範**：
+     - 精細提取直角三角形與點 D 分割圖，完整去除手寫與答案筆跡，保存至 `assets/questions/q_math_triangle_tan15_bdc30_bac15_254.png`，支援燈箱放大檢視。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v290`（`miley_wrong_questions_v290`），保留前版相容 fallback 鏈。
+     - 核心腳本更新版本標籤：`index.html` 升級 `js/data.js?v=290`。
+
+---
+
 ## [v2.92] - 2026-10-25 (自動收錄理化牛頓第三定律拉船運動與接觸面推力大小題 Q252~Q253：浮水兩船拉繩相互靠近、接觸面作用力反作用力必相等 F12=F21，高清圖表去痕保存，升級數據庫至 v289)
 - **類型**：錯題自動收錄 / 國二理化牛頓第三運動定律 / 浮水兩船拉繩反作用力運動分析 / 接觸面相互作用力大小必定相等（F12=F21） / 高清木塊圖表保存 / 升級數據庫至 v289
 - **主要變更**：

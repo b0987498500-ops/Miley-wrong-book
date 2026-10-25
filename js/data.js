@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v289';
+const STORAGE_KEY = 'miley_wrong_questions_v290';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2806,6 +2806,36 @@ const INITIAL_SEED_DATA = [
     "answer": "(A) F12＝F21",
     "diagramUrl": "assets/questions/q_sci_m1_m2_f12_f21_action_reaction_253.png",
     "solution": "### 💡 物體接觸推力與牛頓第三運動定律深度解析：\n\n#### 📌 一、破題核心關鍵：\n1. **定義審題**：\n   - $F_{12}$：$m_1$ 作用於 $m_2$ 的力（施力體：$m_1$；受力體：$m_2$）。\n   - $F_{21}$：$m_2$ 作用於 $m_1$ 的力（施力體：$m_2$；受力體：$m_1$）。\n2. **判斷力之關係**：\n   - $m_1$ 對 $m_2$ 施力，$m_2$ 必同時對 $m_1$ 施加反作用力。\n   - 此兩力為一對標準的**「作用力與反作用力」**。\n\n---\n\n#### 🔍 二、牛頓第三運動定律特性：\n- **大小必定相等**：$|F_{12}| = |F_{21}|$。\n- **方向必定相反**：$F_{12}$ 向右，$F_{21}$ 向左。\n- **作用在同一直線上**。\n- **分別作用在不同物體上**。\n\n無論外部施加的推力 $F$ 是大是小，也無論兩木塊的質量比例為何，接觸面上彼此交互作用的這一對力，其大小永遠必然嚴格相等！\n\n故本題正確答案為 **(A) F12＝F21**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-25",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_triangle_tan15_bdc30_bac15_254",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國三數學：直角三角形的銳角三角比——利用 30°-60°-90° 與等腰三角形構造求 tan 15°",
+    "uploadDate": "2026-10-25",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【構造 15° 等腰三角形求 tan 15° 經典幾何模型】！\n1. **關鍵外角定理與等腰發現**：\n   - $\\angle BDC = 30^\\circ$，且 $\\angle BDC$ 為 $\\triangle ABD$ 的外角。\n   - $\\angle BDC = \\angle A + \\angle ABD \\implies 30^\\circ = 15^\\circ + \\angle ABD \\implies \\angle ABD = 15^\\circ$！\n   - 因為 $\\angle A = \\angle ABD = 15^\\circ$，所以 $\\triangle ABD$ 為**等腰三角形**，兩腰相等：$AD = BD$！\n2. **設直角 $\\triangle BDC$ 之邊長比例（30°-60°-90°）**：\n   - 令對邊 $BC = 1$。\n   - 則斜邊 $BD = 2$，鄰邊 $CD = \\sqrt{3}$。\n   - 由等腰性質得：$AD = BD = 2$。\n3. **大直角 $\\triangle ABC$ 計算 tan 15°**：\n   - 底邊 $AC = AD + CD = 2 + \\sqrt{3}$。\n   - 對邊 $BC = 1$。\n   - $\\tan 15^\\circ = \\frac{BC}{AC} = \\frac{1}{2 + \\sqrt{3}} = \\frac{2 - \\sqrt{3}}{(2 + \\sqrt{3})(2 - \\sqrt{3})} = 2 - \\sqrt{3}$！\n4. **考點記憶**：\n   - 此題為會考與高中銜接最經典的特殊角幾何求值題，請務必牢記「外角 $30^\\circ = 15^\\circ + 15^\\circ$ 形成等腰」之破題捷徑！",
+    "stem": "如圖，在直角 $\\triangle ABC$ 中，若 $\\angle BDC = 30^\\circ$，$\\angle BAC = 15^\\circ$，$\\angle C = 90^\\circ$，則 $\\tan 15^\\circ = $ ______。\n\n○ (A) $2 - \\sqrt{3}$\n○ (B) $2 + \\sqrt{3}$\n○ (C) $\\sqrt{3} - 1$\n○ (D) $\\frac{\\sqrt{3} - 1}{2}$",
+    "answer": "(A) 2－√3",
+    "diagramUrl": "assets/questions/q_math_triangle_tan15_bdc30_bac15_254.png",
+    "solution": "### 💡 幾何構造法求 $\\tan 15^\\circ$ 深度解析：\n\n#### 📌 一、外角定理與等腰三角形判斷：\n1. **觀察 $\\triangle ABD$**：\n   - 在 $\\triangle ABD$ 中，$\\angle BDC$ 為其頂點 $D$ 處的外角。\n   - 由三角形外角定理可知：\n     $$\\angle BDC = \\angle BAC + \\angle ABD$$\n   - 代入已知角度：\n     $$30^\\circ = 15^\\circ + \\angle ABD \\implies \\angle ABD = 30^\\circ - 15^\\circ = 15^\\circ$$\n2. **判定等腰**：\n   - 由於 $\\angle BAC = \\angle ABD = 15^\\circ$（兩底角相等），\n   - 故 $\\triangle ABD$ 為等腰三角形，兩腰長度相等：\n     $$\\overline{AD} = \\overline{BD}$$\n\n---\n\n#### 🔍 二、利用 $30^\\circ-60^\\circ-90^\\circ$ 特殊直角三角形設邊長：\n1. 在直角 $\\triangle BDC$ 中，$\\angle C = 90^\\circ$、$\\angle BDC = 30^\\circ$、$\\angle DBC = 60^\\circ$：\n   - 三邊長邊長比為 $1 : \\sqrt{3} : 2$。\n   - 為計算簡便，我們不妨直接設定最短邊（$30^\\circ$ 的對邊）：\n     $$\\overline{BC} = 1$$\n   - 則斜邊：\n     $$\\overline{BD} = 2 \\times \\overline{BC} = 2$$\n   - 鄰邊：\n     $$\\overline{CD} = \\sqrt{3} \\times \\overline{BC} = \\sqrt{3}$$\n2. 由前述等腰關係：\n   $$\\overline{AD} = \\overline{BD} = 2$$\n\n---\n\n#### 📐 三、在大直角 $\\triangle ABC$ 中計算 $\\tan 15^\\circ$：\n1. **求大三角形底邊 $\\overline{AC}$**：\n   $$\\overline{AC} = \\overline{AD} + \\overline{CD} = 2 + \\sqrt{3}$$\n2. **定義正切值（$\\tan 15^\\circ$）**：\n   - 在直角 $\\triangle ABC$ 中，$\\angle A = 15^\\circ$：\n     $$\\tan 15^\\circ = \\frac{\\text{對邊}}{\\text{鄰邊}} = \\frac{\\overline{BC}}{\\overline{AC}} = \\frac{1}{2 + \\sqrt{3}}$$\n3. **分母有理化**：\n   $$\\tan 15^\\circ = \\frac{1 \\times (2 - \\sqrt{3})}{(2 + \\sqrt{3})(2 - \\sqrt{3})} = \\frac{2 - \\sqrt{3}}{2^2 - (\\sqrt{3})^2} = \\frac{2 - \\sqrt{3}}{4 - 3} = 2 - \\sqrt{3}$$\n\n故填空答案為 **$2 - \\sqrt{3}$**（選項為 **(A) 2－√3**）。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
