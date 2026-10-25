@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v284';
+const STORAGE_KEY = 'miley_wrong_questions_v285';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2571,6 +2571,96 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-10-24",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_physics_m1_m2_blocks_overall_acceleration_246",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國二理化：牛頓第二運動定律——接觸並排木塊系統整體加速度計算（F = (m1 + m2)a）",
+    "uploadDate": "2026-10-25",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【並排木塊系統題第一步：先求整體加速度】！\n1. **將兩木塊視為一個整體系統**：\n   - 光滑平面無摩擦力阻礙，外力 $F = 3\\text{ 牛頓}$ 推動兩木塊一起運動。\n   - 系統總質量 $M_{總} = m_1 + m_2 = 2\\text{ kg} + 1\\text{ kg} = 3\\text{ kg}$。\n2. **整體加速度計算**：\n   - 由牛頓第二運動定律：$F = M_{總} \\times a$。\n   - $3 = (2 + 1) \\times a \\implies a = 1\\text{ m/s}^2$。\n3. **關鍵提醒**：\n   - 無論是從左推還是從右推，只要外力大小不變，整體系統的加速度大小必定相同（皆為 $1\\text{ m/s}^2$）！",
+    "stem": "如圖，$m_1$（2 kg）與 $m_2$（1 kg）並排在光滑水平面上，施以 3 牛頓水平力向右於 $m_1$ 上，試回答下列問題：\n(1) 整體的加速度為多少 $\\text{m/s}^2$？\n\n○ (A) 0.5\n○ (B) 1\n○ (C) 1.5\n○ (D) 3",
+    "answer": "(B) 1",
+    "diagramUrl": "assets/questions/q_sci_m1_m2_block_contact_force_246.png",
+    "solution": "### 💡 並排木塊整體系統加速度計算解析：\n\n#### 📌 一、破題核心觀念：\n1. **系統整體分析法**：\n   - 當多個物體靠在一起同時移動時，各物體的加速度相同，可先將它們視為「**一個整體系統**」。\n   - 桌面為「光滑水平面」，摩擦力為零。\n   - 外力只有向右水平推力 $F = 3\\text{ 牛頓}$。\n2. **牛頓第二運動定律公式**：\n   $$F_{外} = (m_1 + m_2) \\times a$$\n\n---\n\n#### 🔍 二、詳細計算步驟：\n1. **計算系統總質量**：\n   $$M_{總} = m_1 + m_2 = 2\\text{ kg} + 1\\text{ kg} = 3\\text{ kg}$$\n2. **代入公式求整體加速度 $a$**：\n   $$a = \\frac{F}{M_{總}} = \\frac{3\\text{ N}}{3\\text{ kg}} = 1\\text{ m/s}^2$$\n\n故整體的加速度為 **1** $\\text{m/s}^2$。\n本題正確答案為 **(B) 1**（填空：1）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-25",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_physics_m1_push_m2_contact_force_247",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國二理化：隔離體受力分析——向右推動時，木塊 m1 對 m2 之接觸推力計算（F_12 = m2 * a）",
+    "uploadDate": "2026-10-25",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【隔離受力分析：誰推動了 m2？】\n1. **隔離 $m_2$ 分析**：\n   - 外力 3 牛頓是施加在 $m_1$ 上，並沒有直接接觸 $m_2$！\n   - 在水平方向上，$m_2$ 唯一受到的力就是「$m_1$ 施加給它的接觸推力 $F_{1\\to 2}$」！\n2. **利用 $m_2$ 自身的牛頓第二定律求力**：\n   - $m_2$ 的質量為 $1\\text{ kg}$，其加速度跟著整體為 $a = 1\\text{ m/s}^2$。\n   - 故 $m_1$ 作用於 $m_2$ 的力 $F_{1\\to 2} = m_2 \\times a = 1\\text{ kg} \\times 1\\text{ m/s}^2 = 1\\text{ 牛頓}$！\n3. **直觀巧思**：\n   - 3 牛頓推動 3 公斤，相當於每 1 公斤分配到 1 牛頓的合力；$m_2$ 只有 1 公斤，故只需 1 牛頓！",
+    "stem": "如圖，$m_1$（2 kg）與 $m_2$（1 kg）並排在光滑水平面上，施以 3 牛頓水平力向右於 $m_1$ 上，試回答下列問題：\n(2) $m_1$ 作用於 $m_2$ 的力為多少牛頓？\n\n○ (A) 1\n○ (B) 2\n○ (C) 3\n○ (D) 0",
+    "answer": "(A) 1",
+    "diagramUrl": "assets/questions/q_sci_m1_m2_block_contact_force_246.png",
+    "solution": "### 💡 隔離體受力分析：m1 作用於 m2 的推力解析：\n\n#### 📌 一、破題關鍵思考：\n- 當外力 $F = 3\\text{ N}$ 由左向右推 $m_1$ 時，$m_1$ 與 $m_2$ 接觸面上會產生一對交互作用力（作用力與反作用力）。\n- $m_2$ 之所以在光滑平面上產生 $a = 1\\text{ m/s}^2$ 的加速度，完全仰賴 $m_1$ 向右推擠它的力！\n\n---\n\n#### 🔍 二、詳細計算步驟（隔離 $m_2$）：\n1. **檢視 $m_2$ 水平方向唯一受力**：\n   - $F_{合, 2} = F_{1\\to 2}$（即 $m_1$ 作用於 $m_2$ 之力）。\n2. **套用牛頓第二運動定律**：\n   $$F_{1\\to 2} = m_2 \\times a$$\n3. **代入已知數值**：\n   - $m_2 = 1\\text{ kg}$\n   - $a = 1\\text{ m/s}^2$\n   $$F_{1\\to 2} = 1\\text{ kg} \\times 1\\text{ m/s}^2 = 1\\text{ 牛頓}$$\n\n故 $m_1$ 作用於 $m_2$ 的力為 **1** 牛頓。\n本題正確答案為 **(A) 1**（填空：1）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-25",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_physics_m2_push_m1_reverse_force_248",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國二理化：受力方向反轉分析——改由右向左推 m2 時，m2 作用於 m1 之接觸推力計算（F_21 = m1 * a）",
+    "uploadDate": "2026-10-25",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【施力方向反轉陷阱：接觸力大小不對稱！】\n1. **常見致命直覺錯誤**：\n   - 很多同學以為向左推接觸力還是 1 牛頓，這是大錯特錯！\n2. **改由右向左推 $m_2$ 時的隔離分析**：\n   - 整體總質量仍為 $2 + 1 = 3\\text{ kg}$，推力仍為 3 牛頓向左，故整體加速度仍為 $a = 1\\text{ m/s}^2$（向左）。\n   - 此時 $m_1$ 是被 $m_2$ 推著走的！\n   - 隔離受力者【$m_1$】：$m_1$ 唯一受到的水平外力就是「$m_2$ 對它的推力 $F_{2\\to 1}$」！\n3. **計算 $F_{2\\to 1}$**：\n   - $F_{2\\to 1} = m_1 \\times a = 2\\text{ kg} \\times 1\\text{ m/s}^2 = 2\\text{ 牛頓}$！\n4. **口訣秒殺**：\n   - 「推大帶小」接觸力小（3N 推 2kg 帶 1kg ➔ 接觸力 1N）；\n   - 「推小帶大」接觸力大（3N 推 1kg 帶 2kg ➔ 接觸力 2N）！",
+    "stem": "如圖，$m_1$（2 kg）與 $m_2$（1 kg）並排在光滑水平面上，施以 3 牛頓水平力向右於 $m_1$ 上。\n試回答下列問題：\n(3) 若施力改自右向左作用於 $m_2$，則 $m_2$ 作用於 $m_1$ 之力為多少牛頓？\n\n○ (A) 1\n○ (B) 2\n○ (C) 3\n○ (D) 1.5",
+    "answer": "(B) 2",
+    "diagramUrl": "assets/questions/q_sci_m1_m2_block_contact_force_246.png",
+    "solution": "### 💡 施力方向反轉深度剖析：m2 作用於 m1 的力計算：\n\n#### 📌 一、情境轉變與整體加速度：\n1. 當 3 牛頓外力改從**右側向左**推動 $m_2$ 時：\n   - 系統總質量仍為：$M_{總} = m_1 + m_2 = 2 + 1 = 3\\text{ kg}$。\n   - 整體系統加速度大小依然為：\n     $$a = \\frac{F}{M_{總}} = \\frac{3\\text{ N}}{3\\text{ kg}} = 1\\text{ m/s}^2$$\n\n---\n\n#### 🔍 二、隔離被推動的物體（$m_1$）：\n1. **分析 $m_1$ 在水平方向上的受力**：\n   - 3 牛頓外力是直接作用在 $m_2$ 上，並無直接碰觸 $m_1$。\n   - 因此，$m_1$ 在水平方向上唯一受到的推力，即為接觸面上「**$m_2$ 作用於 $m_1$ 之力（$F_{2\\to 1}$）**」。\n2. **對 $m_1$ 列牛頓第二運動定律**：\n   $$F_{2\\to 1} = m_1 \\times a$$\n3. **代入數值**：\n   - $m_1 = 2\\text{ kg}$\n   - $a = 1\\text{ m/s}^2$\n   $$F_{2\\to 1} = 2\\text{ kg} \\times 1\\text{ m/s}^2 = 2\\text{ 牛頓}$$\n\n---\n\n#### 📊 三、前後小題對比總結：\n- **向右推 $m_1$**：$m_1$ 推 $m_2$ 需提供 $m_2$（1 kg）加速度 $\\implies 1\\text{ N}$。\n- **向左推 $m_2$**：$m_2$ 推 $m_1$ 需提供 $m_1$（2 kg）加速度 $\\implies 2\\text{ N}$。\n\n故本題正確答案為 **(B) 2**（填空：2）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-25",
     "isReviewed": false,
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
