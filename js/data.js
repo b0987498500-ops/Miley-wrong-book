@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v285';
+const STORAGE_KEY = 'miley_wrong_questions_v286';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2656,6 +2656,36 @@ const INITIAL_SEED_DATA = [
     "answer": "(B) 2",
     "diagramUrl": "assets/questions/q_sci_m1_m2_block_contact_force_246.png",
     "solution": "### 💡 施力方向反轉深度剖析：m2 作用於 m1 的力計算：\n\n#### 📌 一、情境轉變與整體加速度：\n1. 當 3 牛頓外力改從**右側向左**推動 $m_2$ 時：\n   - 系統總質量仍為：$M_{總} = m_1 + m_2 = 2 + 1 = 3\\text{ kg}$。\n   - 整體系統加速度大小依然為：\n     $$a = \\frac{F}{M_{總}} = \\frac{3\\text{ N}}{3\\text{ kg}} = 1\\text{ m/s}^2$$\n\n---\n\n#### 🔍 二、隔離被推動的物體（$m_1$）：\n1. **分析 $m_1$ 在水平方向上的受力**：\n   - 3 牛頓外力是直接作用在 $m_2$ 上，並無直接碰觸 $m_1$。\n   - 因此，$m_1$ 在水平方向上唯一受到的推力，即為接觸面上「**$m_2$ 作用於 $m_1$ 之力（$F_{2\\to 1}$）**」。\n2. **對 $m_1$ 列牛頓第二運動定律**：\n   $$F_{2\\to 1} = m_1 \\times a$$\n3. **代入數值**：\n   - $m_1 = 2\\text{ kg}$\n   - $a = 1\\text{ m/s}^2$\n   $$F_{2\\to 1} = 2\\text{ kg} \\times 1\\text{ m/s}^2 = 2\\text{ 牛頓}$$\n\n---\n\n#### 📊 三、前後小題對比總結：\n- **向右推 $m_1$**：$m_1$ 推 $m_2$ 需提供 $m_2$（1 kg）加速度 $\\implies 1\\text{ N}$。\n- **向左推 $m_2$**：$m_2$ 推 $m_1$ 需提供 $m_1$（2 kg）加速度 $\\implies 2\\text{ N}$。\n\n故本題正確答案為 **(B) 2**（填空：2）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-25",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_physics_free_fall_basketball_forces_249",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國二理化：力與運動——自由落體運動之定義與受力分析（忽略空氣阻力下僅受重力作用）",
+    "uploadDate": "2026-10-25",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【自由落體受力三大致命陷阱】！\n1. **自由落體的標準物理定義**：\n   - 「物體由靜止釋放，**在不考慮空氣阻力（或只在重力作用）的情況下**向下落下的運動」。\n   - 因此在理想的自由落體運動中，**「空氣阻力」視為零**，絕不可選 (C) 或 (D)！\n2. **「作用力與反作用力」受力者陷阱（最常上當！）**：\n   - 題目問的是「【籃球】受有什麼力？」➔ **只能看作用在「籃球」身上的力**！\n   - 「地球吸引籃球的重力」：施力者是地球，受力者是**籃球**（算在籃球身上！）。\n   - 「重力的反作用力」：是「籃球吸引地球的萬有引力」，施力者是籃球，**受力者是【地球】（作用在地球地心，不是籃球受到的力！）**。\n   - 故籃球本身「**絕對沒有受到重力的反作用力**」！選 (B) 或 (D) 的同學就是犯了把反作用力加在受力物體身上的經典錯誤！\n3. **結論秒殺**：\n   - 籃球在落下期間，身上所受到的力**「僅有重力」**！正解為 **(A)**！",
+    "stem": "有一籃球自空中釋放，作自由落體運動，在落下期間，籃球受有什麼力？\n\n○ (A) 僅重力\n○ (B) 僅重力和重力的反作用力\n○ (C) 僅重力和空氣阻力\n○ (D) 重力、空氣阻力、重力的反作用力",
+    "answer": "(A) 僅重力",
+    "diagramUrl": "",
+    "solution": "### 💡 自由落體運動與物體受力分析深度剖析：\n\n#### 📌 一、何謂「自由落體運動」？\n1. **定義**：\n   - 物體初速度為零（自空中靜止釋放）。\n   - **在運動過程中僅受地球引力（重力）的作用**，其餘外力（如空氣阻力、浮力等）均忽略不計或不存在。\n   - 物體以等加速度 $g \\approx 9.8\\text{ m/s}^2$ 朝地心方向向下加速落下。\n2. **因此外力排除**：\n   - 題幹明確指出「**作自由落體運動**」，即已設定**不計空氣阻力**，故選項中含有空氣阻力者（C、D）均不正確。\n\n---\n\n#### 🔍 二、「重力的反作用力」為什麼不能算在籃球上？\n- **牛頓第三運動定律（作用力與反作用力）**：\n  - 若物體 A 對物體 B 施力，則物體 B 必對物體 A 施以大小相等、方向相反的反作用力。\n- **檢視重力這對力**：\n  - **作用力（重力）**：【地球】吸引【籃球】的力 $\\implies$ **受力體為「籃球」**。\n  - **反作用力**：【籃球】吸引【地球】的引力 $\\implies$ **受力體為「地球」**（作用在地球身上，作用點在地心！）。\n- **結論**：\n  - 題目問的是「**籃球受有什麼力**」，我們只能統計「受力對象為籃球」的力。\n  - 反作用力是作用在地球上，籃球自己並不會受到重力的反作用力！\n\n---\n\n#### 🎯 三、選項全面檢核：\n- **(A) 僅重力**（正解）：籃球僅受地球向下的萬有引力（重力）。\n- **(B) 僅重力和重力的反作用力**（錯誤）：重力的反作用力作用在地球上，非籃球受力。\n- **(C) 僅重力和空氣阻力**（錯誤）：自由落體定義下不計空氣阻力。\n- **(D) 重力、空氣阻力、重力的反作用力**（錯誤）：既不計阻力，反作用力亦非作用於籃球。\n\n故本題正確答案為 **(A) 僅重力**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
