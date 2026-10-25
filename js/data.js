@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v287';
+const STORAGE_KEY = 'miley_wrong_questions_v288';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2716,6 +2716,36 @@ const INITIAL_SEED_DATA = [
     "answer": "(B) 噴出去的氣體施給火箭的反作用力，使火箭前進",
     "diagramUrl": "",
     "solution": "### 💡 火箭推進原理與牛頓第三運動定律深度剖析：\n\n#### 📌 一、破題核心物理機制：\n1. **牛頓第三運動定律（作用力與反作用力）**：\n   - 當物體 A 對物體 B 施力時，物體 B 同時會對物體 A 施以大小相等、方向相反的反作用力。\n2. **火箭發射的受力系統**：\n   - **作用力**：火箭發動機向後噴出高速燃燒氣體（火箭 $\\to$ 噴出氣體，方向：**向後**）。\n   - **反作用力**：被噴出的高速氣體對火箭施加的反推力（噴出氣體 $\\to$ 火箭，方向：**向前**）。\n   - 這個向前的反作用力正是推動火箭在地面發射升空、以及在太空中加速航行的主要動力來源！\n\n---\n\n#### 🔍 二、常見錯誤選項逐一破解：\n- **(A) 噴出去的氣體施力於空氣，空氣給火箭的反作用力**：\n  - **錯誤**！此為最常見迷思概念。火箭在太空中（真空、完全無空氣環境）依然能夠自由前進與轉向，證明火箭推進完全不需要依賴外部空氣的支撐或反作用力。\n- **(C) 噴出氣體使重量減輕，致使浮力大於重量而上升**：\n  - **錯誤**！火箭上升靠的是巨大推力，而非空氣浮力（靠浮力上升的是熱氣球或飛船）。\n- **(D) 噴出去的高速氣流減少空氣阻力**：\n  - **錯誤**！氣流由尾部噴出，無法減少車頭迎風面的空氣阻力，且此並非前進推力的成因。\n\n故本題正確答案為 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-25",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_physics_mutual_push_net_force_251",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國二理化：牛頓第三運動定律——兩人同時互推之受力與合力分析（自身推力之反作用力＋對方主動推力，合力疊加）",
+    "uploadDate": "2026-10-25",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【兩人互推合力疊加：絕非各自 2 kgw 或 5 kgw、3 kgw！】\n1. **常犯致命錯誤 (C) 或 (D)**：\n   - 很多同學以為「甲出 5 就受 5」、「乙出 3 就受 3」，或誤以為反作用力互相抵消變成 2 kgw！\n2. **受力體嚴謹剖析（以甲為例）**：\n   - **力 1（乙主動推甲）**：乙主動出力 $3\\text{ kgw}$ 推甲 ➔ **甲受到乙給的 $3\\text{ kgw}$**（方向向後）。\n   - **力 2（甲推乙的反作用力）**：甲主動出力 $5\\text{ kgw}$ 推乙，依牛頓第三運動定律，乙必同時給甲一個向後的反作用力 $5\\text{ kgw}$ ➔ **甲又受到 $5\\text{ kgw}$ 反作用力**（方向向後）。\n   - **甲所受合力**：兩力方向相同（皆向後），合力 $= 3\\text{ kgw} + 5\\text{ kgw} = 8\\text{ kgw}$！\n3. **受力體嚴謹剖析（以乙為例）**：\n   - **力 1（甲主動推乙）**：甲主動出 $5\\text{ kgw}$ 推乙 ➔ **乙受到甲給的 $5\\text{ kgw}$**（方向向後）。\n   - **力 2（乙推甲的反作用力）**：乙出 $3\\text{ kgw}$ 推甲，甲給乙反作用力 $3\\text{ kgw}$ ➔ **乙又受到 $3\\text{ kgw}$ 反作用力**（方向向後）。\n   - **乙所受合力**：兩力同向，合力 $= 5\\text{ kgw} + 3\\text{ kgw} = 8\\text{ kgw}$！\n4. **秒殺結論**：\n   - 兩人同時互推，各自所受合力必定相等，且大小皆為「兩人出力之和」：$5 + 3 = 8\\text{ kgw}$！正解為 **(B) 甲、乙均為 8kgw**！",
+    "stem": "甲、乙兩人同時互推，其中甲出力 5 kgw，乙出力 3 kgw，則兩人所受的合力各為多少？\n\n○ (A) 甲、乙均為 2 kgw\n○ (B) 甲、乙均為 8 kgw\n○ (C) 甲為 3 kgw、乙為 5 kgw\n○ (D) 甲為 5 kgw、乙為 3 kgw",
+    "answer": "(B) 甲、乙均為 8 kgw",
+    "diagramUrl": "",
+    "solution": "### 💡 兩人互推受力與合力深度剖析：\n\n#### 📌 一、破題核心觀念：\n1. **單一物體受力分析（只能算加在該物體身上的力）**：\n   - 當甲、乙兩人同時互推時，接觸面上會同時存在兩組獨立的「作用力與反作用力」：\n     - **第 1 組（甲主動推乙）**：甲出 $5\\text{ kgw}$ 推乙（作用力作用在乙身上），乙必同時給甲 $5\\text{ kgw}$ 的反作用力（反作用力作用在甲身上，方向推開甲）。\n     - **第 2 組（乙主動推甲）**：乙出 $3\\text{ kgw}$ 推甲（作用力作用在甲身上），甲必同時給乙 $3\\text{ kgw}$ 的反作用力（反作用力作用在乙身上，方向推開乙）。\n\n---\n\n#### 🔍 二、計算各自所受的合力：\n1. **甲所受到的力**：\n   - 乙主動推甲的力：$3\\text{ kgw}$（方向朝甲後方）。\n   - 甲推乙所獲得的反作用力：$5\\text{ kgw}$（方向朝甲後方）。\n   - 兩力方向相同，合力疊加：\n     $$F_{合, 甲} = 3\\text{ kgw} + 5\\text{ kgw} = 8\\text{ kgw}$$\n\n2. **乙所受到的力**：\n   - 甲主動推乙的力：$5\\text{ kgw}$（方向朝乙後方）。\n   - 乙推甲所獲得的反作用力：$3\\text{ kgw}$（方向朝乙後方）。\n   - 兩力方向相同，合力疊加：\n     $$F_{合, 乙} = 5\\text{ kgw} + 3\\text{ kgw} = 8\\text{ kgw}$$\n\n---\n\n#### 🎯 三、結論與對照：\n- 甲所受合力為 **8 kgw**，乙所受合力亦為 **8 kgw**。\n- 兩人互推時，各自感受到的向後推力皆為兩人出力的總和。\n\n本題正確答案為 **(B) 甲、乙均為 8kgw**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
