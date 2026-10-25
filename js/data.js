@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v288';
+const STORAGE_KEY = 'miley_wrong_questions_v289';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2746,6 +2746,66 @@ const INITIAL_SEED_DATA = [
     "answer": "(B) 甲、乙均為 8 kgw",
     "diagramUrl": "",
     "solution": "### 💡 兩人互推受力與合力深度剖析：\n\n#### 📌 一、破題核心觀念：\n1. **單一物體受力分析（只能算加在該物體身上的力）**：\n   - 當甲、乙兩人同時互推時，接觸面上會同時存在兩組獨立的「作用力與反作用力」：\n     - **第 1 組（甲主動推乙）**：甲出 $5\\text{ kgw}$ 推乙（作用力作用在乙身上），乙必同時給甲 $5\\text{ kgw}$ 的反作用力（反作用力作用在甲身上，方向推開甲）。\n     - **第 2 組（乙主動推甲）**：乙出 $3\\text{ kgw}$ 推甲（作用力作用在甲身上），甲必同時給乙 $3\\text{ kgw}$ 的反作用力（反作用力作用在乙身上，方向推開乙）。\n\n---\n\n#### 🔍 二、計算各自所受的合力：\n1. **甲所受到的力**：\n   - 乙主動推甲的力：$3\\text{ kgw}$（方向朝甲後方）。\n   - 甲推乙所獲得的反作用力：$5\\text{ kgw}$（方向朝甲後方）。\n   - 兩力方向相同，合力疊加：\n     $$F_{合, 甲} = 3\\text{ kgw} + 5\\text{ kgw} = 8\\text{ kgw}$$\n\n2. **乙所受到的力**：\n   - 甲主動推乙的力：$5\\text{ kgw}$（方向朝乙後方）。\n   - 乙推甲所獲得的反作用力：$3\\text{ kgw}$（方向朝乙後方）。\n   - 兩力方向相同，合力疊加：\n     $$F_{合, 乙} = 5\\text{ kgw} + 3\\text{ kgw} = 8\\text{ kgw}$$\n\n---\n\n#### 🎯 三、結論與對照：\n- 甲所受合力為 **8 kgw**，乙所受合力亦為 **8 kgw**。\n- 兩人互推時，各自感受到的向後推力皆為兩人出力的總和。\n\n本題正確答案為 **(B) 甲、乙均為 8kgw**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-25",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_physics_boats_pulling_action_reaction_252",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國二理化：牛頓第三運動定律——甲船拉乙船之作用力與反作用力（兩船皆受拉力，兩船皆動且互相靠近）",
+    "uploadDate": "2026-10-25",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【拉船問題：主動用力拉，自己也會被反向拉動！】\n1. **常犯直覺錯誤 (A) 或 (B)**：\n   - 很多人直覺以為「甲主動出力拉乙，所以只有乙被拉過來，甲不動」；這在沒有外力固定的水面上是絕對錯誤的！\n2. **物理受力真相（繩子張力與作用力反作用力）**：\n   - 甲對繩子施力拉乙（向甲的方向拉乙），乙船受到朝向甲船的拉力。\n   - 依牛頓第三運動定律，繩子也必同時施予甲船一個反作用力（朝向乙的方向拉甲船）。\n   - 水面幾乎無摩擦力阻礙，兩艘船在水平方向皆受到指向彼此的合力。\n3. **結論秒殺**：\n   - 甲、乙兩船皆受到向對方靠近的拉力，因此**「兩船皆動，互相靠近」**！正解為 **(C)**！",
+    "stem": "甲、乙兩船漂浮於水面，甲船上的人以繩繫住乙船並用力拉之，則下列何者正確？\n\n○ (A) 甲船不動，乙船向其靠近\n○ (B) 乙船不動，甲船向其靠近\n○ (C) 兩船皆動，互相靠近\n○ (D) 兩船皆不動",
+    "answer": "(C) 兩船皆動，互相靠近",
+    "diagramUrl": "",
+    "solution": "### 💡 漂浮兩船拉繩受力深度剖析：\n\n#### 📌 一、破題核心觀念：\n1. **牛頓第三運動定律（作用力與反作用力）**：\n   - 當甲船上的人用力拉繩子牽引乙船時，甲對乙施加了一個朝向甲船的拉力（作用力 $F_{甲\\to乙}$）。\n   - 與此同時，乙船（透過緊繃的繩子）亦必同時對甲船施加一個大小相等、方向相反朝向乙船的反拉力（反作用力 $F_{乙\\to甲}$）。\n\n---\n\n#### 🔍 二、運動狀態推導：\n1. **水平方向受力檢視**：\n   - 甲、乙兩船皆漂浮於水面上，在水平方向上沒有固定點，水阻力相對於拉力極小。\n   - **乙船受力**：受到指向甲船的水平拉力，產生朝向甲的加速度，向甲靠近。\n   - **甲船受力**：受到指向乙船的水平反拉力，產生朝向乙的加速度，向乙靠近。\n2. **運動結果**：\n   - 甲船向乙船移動，乙船向甲船移動，**兩船同時運動，彼此加速互相靠近**！\n   - （兩船最終相遇的位置取決於兩船質量比例，質量小者加速度大、移動距離長，但兩者皆會運動）。\n\n故本題正確答案為 **(C) 兩船皆動，互相靠近**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-25",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_sci_physics_m1_m2_action_reaction_magnitude_equal_253",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國二理化：牛頓第三運動定律——接觸面間作用力與反作用力必大小相等（F12 = F21，與外力大小、質量大小無關）",
+    "uploadDate": "2026-10-25",
+    "mondayDate": "2026-10-19",
+    "mondayDates": [
+      "2026-10-19"
+    ],
+    "weekLabel": "2026-10-19 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【作用力與反作用力：永遠大小相等！千萬不要被外力 F 或質量騙了！】\n1. **常見直覺陷阱 (C) 或 (B)**：\n   - 很多同學看到「外力 F 是從左邊推 m1」，就直覺以為「m1 比較大/受外力推擠，所以推 m2 的力一定大於反彈回來的力（誤選 F12 > F21）」，這是嚴重的迷思！\n2. **物理鐵律秒殺**：\n   - 題目明確定義：\n     - $F_{12}$：$m_1$ 對 $m_2$ 之作用力。\n     - $F_{21}$：$m_2$ 對 $m_1$ 之作用力。\n   - 兩力互為主受詞（$m_1$ 推 $m_2$ vs. $m_2$ 推 $m_1$），**為最標準的一對「作用力與反作用力」**！\n   - **牛頓第三運動定律唯一真理：作用力與反作用力大小必定相等（$F_{12} = F_{21}$）**，方向相反，同時產生同時消失！\n3. **結論**：無論 $F$ 多大、無論 $m_1$ 與 $m_2$ 質量誰大誰小、$F_{12}$ 永遠等於 $F_{21}$！正解為 **(A)**！",
+    "stem": "如圖所示，在光滑平面上，F 為作用於 $m_1$、$m_2$ 系統之外力，$F_{12}$ 為 $m_1$ 對 $m_2$ 之作用力，$F_{21}$ 為 $m_2$ 對 $m_1$ 之作用力。當 F 沿水平方向向右作用於 $m_1$ 上，則 $F_{12}$ 與 $F_{21}$ 之大小關係為何？\n\n○ (A) $F_{12} = F_{21}$\n○ (B) $F_{12} < F_{21}$\n○ (C) $F_{12} > F_{21}$\n○ (D) 無法比較",
+    "answer": "(A) F12＝F21",
+    "diagramUrl": "assets/questions/q_sci_m1_m2_f12_f21_action_reaction_253.png",
+    "solution": "### 💡 物體接觸推力與牛頓第三運動定律深度解析：\n\n#### 📌 一、破題核心關鍵：\n1. **定義審題**：\n   - $F_{12}$：$m_1$ 作用於 $m_2$ 的力（施力體：$m_1$；受力體：$m_2$）。\n   - $F_{21}$：$m_2$ 作用於 $m_1$ 的力（施力體：$m_2$；受力體：$m_1$）。\n2. **判斷力之關係**：\n   - $m_1$ 對 $m_2$ 施力，$m_2$ 必同時對 $m_1$ 施加反作用力。\n   - 此兩力為一對標準的**「作用力與反作用力」**。\n\n---\n\n#### 🔍 二、牛頓第三運動定律特性：\n- **大小必定相等**：$|F_{12}| = |F_{21}|$。\n- **方向必定相反**：$F_{12}$ 向右，$F_{21}$ 向左。\n- **作用在同一直線上**。\n- **分別作用在不同物體上**。\n\n無論外部施加的推力 $F$ 是大是小，也無論兩木塊的質量比例為何，接觸面上彼此交互作用的這一對力，其大小永遠必然嚴格相等！\n\n故本題正確答案為 **(A) F12＝F21**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
