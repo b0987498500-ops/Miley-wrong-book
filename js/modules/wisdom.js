@@ -169,6 +169,166 @@ window.WisdomModule = {
       title: '二百題討伐宗師',
       content: '「討伐 200 題成就達成！你已經將錯題轉化為浩瀚的智慧知識庫，無畏任何考試挑戰！」',
       author: '麥麥錯題本 宗師勳章'
+    },
+    {
+      id: 'w_210',
+      requiredCount: 210,
+      category: '🧠 學習心理學',
+      title: '沉浸流理論 (Flow State)',
+      content: '當挑戰難度與你的解題技巧達到絕妙平衡時，大腦會進入高度專注、忘記時間的「心流」境界，學習效率飆升至最高點！',
+      author: '心理學家 米哈里·契克森米哈伊 (Mihaly Csikszentmihalyi)'
+    },
+    {
+      id: 'w_220',
+      requiredCount: 220,
+      category: '📜 勵志金句',
+      title: '淬鍊極致之美',
+      content: '「完美不是沒有缺點可以挑剔，而是沒有任何多餘可以捨去。每一次釐清盲點，都是替思維雕刻出最純粹的光芒。」',
+      author: '安東尼·聖修伯里 (Antoine de Saint-Exupéry)'
+    },
+    {
+      id: 'w_230',
+      requiredCount: 230,
+      category: '🧠 學習心理學',
+      title: '精準認知負荷 (Cognitive Load)',
+      content: '將複雜題目的長題幹拆解為數個微小步驟，能有效釋放大腦工作記憶空間，徹底消除解題卡關與粗心焦慮！',
+      author: '教育心理學家 John Sweller'
+    },
+    {
+      id: 'w_240',
+      requiredCount: 240,
+      category: '📜 勵志金句',
+      title: '深水靜流的沉潛',
+      content: '「大音希聲，大象無形。那些在無人注意時默默死磕的錯題，終將在考場上化作你最堅不可摧的底氣。」',
+      author: '老子《道德經》'
+    },
+    {
+      id: 'w_250',
+      requiredCount: 250,
+      category: '🧠 學習心理學',
+      title: '睡眠鞏固效應 (Memory Consolidation)',
+      content: '白天認真消化與訂正的難題，會在夜間深度睡眠（慢波睡眠）中被海馬迴自動重播並固化傳輸至大腦皮層，睡醒後觀念更通透！',
+      author: '神經科學與睡眠研究'
+    },
+    {
+      id: 'w_260',
+      requiredCount: 260,
+      category: '📜 勵志金句',
+      title: '點亮思維燈塔',
+      content: '「教育不是注滿一桶水，而是點燃一把燃燒好奇與求知慾的火焰。懂得追問題目本質的人，永遠不會迷失方向。」',
+      author: '詩人 威廉·巴特勒·葉慈 (W. B. Yeats)'
+    },
+    {
+      id: 'w_270',
+      requiredCount: 270,
+      category: '🧠 學習心理學',
+      title: '自我效能感 (Self-Efficacy)',
+      content: '一次次看著錯題被自己親手擊敗的實戰經歷，是大腦建立「強大自信心」最堅實的基石。相信自己做得到，成功率已過半！',
+      author: '心理學泰斗 阿爾伯特·班杜拉 (Albert Bandura)'
+    },
+    {
+      id: 'w_280',
+      requiredCount: 280,
+      category: '📜 勵志金句',
+      title: '泰山不讓土壤',
+      content: '「九層之台，起於累土；千里之行，始於足下。沒有任何一道高分題不是由基礎定義一步步推導而來的。」',
+      author: '李斯《諫逐客書》'
+    },
+    {
+      id: 'w_290',
+      requiredCount: 290,
+      category: '🧠 學習心理學',
+      title: '生成效應 (Generation Effect)',
+      content: '比起直接偷看解答解析，先在計算紙上親手推導公式、列算式與繪製草圖，大腦記憶留存率會直接提升 3 倍！',
+      author: '認知記憶科學實驗'
+    },
+    {
+      id: 'w_300',
+      requiredCount: 300,
+      category: '📜 勵志金句',
+      title: '三百題傳奇·學霸巔峰',
+      content: '「不可思議的 300 題討伐大關！你的自律、專注與對真理的執著，已經讓這本錯題魔導書閃爍著無可匹敵的璀璨金光！」',
+      author: '麥麥錯題本 巔峰傳奇勳章'
+    },
+    {
+      id: 'w_310',
+      requiredCount: 310,
+      category: '🧠 學習心理學',
+      title: '預測編碼理論 (Predictive Coding)',
+      content: '大腦本質上是一部主動預測機器！在讀題時預先猜測可能的考點與解題方向，再核對解析修正偏差，能以最快速度形成頂級直覺。',
+      author: '神經認知科學家 Karl Friston'
+    },
+    {
+      id: 'w_320',
+      requiredCount: 320,
+      category: '📜 勵志金句',
+      title: '破曉前的星辰',
+      content: '「黎明前的那段時光總是最黑的，但只要抬頭，就能看見滿天最耀眼的星辰。堅持下去，破曉即在眼前。」',
+      author: '勵志格言'
+    },
+    {
+      id: 'w_330',
+      requiredCount: 330,
+      category: '🧠 學習心理學',
+      title: '情境依存記憶 (Context-Dependent Memory)',
+      content: '複習時模擬真實考試的寧靜環境與計時節奏，考場上大腦能以最少阻力提取平日訓練的記憶迴路，發揮 120% 穩定實力！',
+      author: 'Godden & Baddeley 認知實驗'
+    },
+    {
+      id: 'w_340',
+      requiredCount: 340,
+      category: '📜 勵志金句',
+      title: '百煉方能成鋼',
+      content: '「寶劍鋒從磨礪出，梅花香自苦寒來。每一次在挫折後重新站起，都是讓自己的心志更加堅韌不摧的修煉。」',
+      author: '古代格言'
+    },
+    {
+      id: 'w_350',
+      requiredCount: 350,
+      category: '🧠 學習心理學',
+      title: '具身認知 (Embodied Cognition)',
+      content: '動手畫幾何輔助線、親手書寫推導過程，手部的運動神經訊號能直接活化大腦空間運算皮質，讓抽象觀念瞬間立體清晰！',
+      author: '認知科學與心理學'
+    },
+    {
+      id: 'w_360',
+      requiredCount: 360,
+      category: '📜 勵志金句',
+      title: '乘風破浪的勇者',
+      content: '「長風破浪會有時，直掛雲帆濟滄海。所有的伏筆都是為了最後震撼人心的綻放，勇敢無畏地往前衝吧！」',
+      author: '唐代詩仙 李白'
+    },
+    {
+      id: 'w_370',
+      requiredCount: 370,
+      category: '🧠 學習心理學',
+      title: '頓悟學習 (Insight Learning)',
+      content: '當思路卡關時，嘗試從全局視角重新俯瞰問題全貌，思維重構的瞬間往往會迎來恍然大悟的「尤里卡 (Eureka!)」時刻！',
+      author: '完形心理學家 沃爾夫岡·苛勒 (Wolfgang Köhler)'
+    },
+    {
+      id: 'w_380',
+      requiredCount: 380,
+      category: '📜 勵志金句',
+      title: '靜水深流的智慧',
+      content: '「非淡泊無以明志，非寧靜無以致遠。在沉著冷靜的思考中，哪怕是最刁鑽的幾何怪獸也將無所遁形。」',
+      author: '諸葛亮《誡子書》'
+    },
+    {
+      id: 'w_390',
+      requiredCount: 390,
+      category: '🧠 學習心理學',
+      title: '知識模組化 (Chunking Mastery)',
+      content: '高手的特點不是記憶力超群，而是能將零散瑣碎的知識點組裝成高階知識塊。看透題型底層邏輯，一通百通！',
+      author: '認知心理學家 喬治·米勒 (George A. Miller)'
+    },
+    {
+      id: 'w_400',
+      requiredCount: 400,
+      category: '📜 勵志金句',
+      title: '四百題登峰造極·終極大宗師',
+      content: '「四百題絕頂登峰！在知識的浩瀚星空中，你已經親手構築了一座堅不可摧的智慧神殿，任何考題都無法撼動你的從容自信！」',
+      author: '麥麥錯題本 終極至尊神殿勳章'
     }
   ],
 
@@ -210,36 +370,17 @@ window.WisdomModule = {
     return allQuestions.filter(q => q.isArchived || (q.consecutiveMastered || 0) > 0).length;
   },
 
-  // Returns all currently unlocked items (supports dynamic generation for N > 200)
+  // Returns all currently unlocked items (100% unique milestones with NO duplicates!)
   getUnlockedItems: function() {
     const defeated = this.getDefeatedCount();
     const unlocked = [];
 
-    // 1. Check fixed items array
+    // Filter items based on defeated milestones
     this.items.forEach(item => {
       if (defeated >= item.requiredCount) {
         unlocked.push(item);
       }
     });
-
-    // 2. Dynamic generator for defeated >= 210, 220, 230... if user passes max pre-defined items
-    if (defeated >= 210) {
-      const maxDefinedCount = this.items[this.items.length - 1].requiredCount;
-      const extraTiers = Math.floor((defeated - maxDefinedCount) / 10);
-      for (let i = 1; i <= extraTiers; i++) {
-        const req = maxDefinedCount + i * 10;
-        const templateIdx = (i - 1) % this.items.length;
-        const refItem = this.items[templateIdx];
-        unlocked.push({
-          id: `w_dyn_${req}`,
-          requiredCount: req,
-          category: refItem.category,
-          title: `${refItem.title} (${req}題進階紀念)`,
-          content: refItem.content,
-          author: refItem.author
-        });
-      }
-    }
 
     // Sort from newest to oldest: highest requiredCount at the top, earlier ones below!
     unlocked.sort((a, b) => b.requiredCount - a.requiredCount);
