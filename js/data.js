@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v294';
+const STORAGE_KEY = 'miley_wrong_questions_v295';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -104,16 +104,17 @@ const INITIAL_SEED_DATA = [
     "errorReason": "觀念不懂",
     "concept": "國二數學幾何：長方形紙條對角線對摺之等腰三角形性質與畢氏定理求面積",
     "uploadDate": "2026-10-12",
-    "mondayDate": "2026-10-12",
+    "mondayDate": "2026-10-26",
     "mondayDates": [
-      "2026-10-12"
+      "2026-10-12",
+      "2026-10-26"
     ],
-    "weekLabel": "2026-10-12 (最新週次)",
+    "weekLabel": "2026-10-26 (最新週次)",
     "isGuessedOrUnstable": false,
     "mistakeNote": "💡 **易錯警示筆記**：【長方形對摺幾何】秒殺兩大定律！\n1. **摺疊對稱 ＋ 平行線內錯角 ＝ 必出等腰三角形！**\n   - 摺疊角相等：∠D'AC ＝ ∠DAC。\n   - 平行線內錯角相等：∠DAC ＝ ∠BCA。\n   - 兩底角相等 ⟹ △APC 為等腰三角形，斜邊 AP ＝ CP！\n2. **設未知數 x 技巧**：\n   - 設直角短邊 BP ＝ x，則 CP ＝ 6 － x ⟹ 斜邊 AP ＝ 6 － x。\n   - 代入畢氏定理：2² ＋ x² ＝ (6 － x)² ⟹ 12x ＝ 32 ⟹ x ＝ 8/3。\n   - △ABP 面積 ＝ 1/2 × 2 × (8/3) ＝ 8/3！",
     "stem": "如圖，長方形紙條中，將此紙條沿對角線 AC 對摺，設 P 為 AD 與 BC 的交點，AB = 2，AD = 6，則 △ABP 的面積為多少平方單位？\n\n○ (A) 5/3\n○ (B) 8/3\n○ (C) 3\n○ (D) 10/3",
     "answer": "(B) 8/3",
-    "diagramUrl": "",
+    "diagramUrl": "assets/questions/q_math_geom_rectangle_diagonal_fold_area_164.png",
     "solution": "🎥 **老師影音詳解教學**：https://www.youtube.com/watch?v=_q-gENhsLjU\n\n### 💡 完整破題四步驟：\n\n1. **第一步：由摺疊與平行線證明等腰三角形**：\n   - 沿對角線 $\\overline{AC}$ 對摺，摺疊角相等：$\\angle D'AC = \\angle DAC$。\n   - 長方形對邊平行 $\\overline{AD} // \\overline{BC}$，內錯角相等：$\\angle DAC = \\angle BCA$。\n   - 因此 $\\angle D'AC = \\angle BCA$，即在 $\\triangle APC$ 中兩底角相等：\n     $$\\triangle APC \\text{ 為等腰三角形} \\implies \\overline{AP} = \\overline{CP}$$\n\n2. **第二步：設未知數 $x$，建立畢氏定理方程式**：\n   - 長方形中 $\\overline{BC} = \\overline{AD} = 6$。\n   - 設 $\\overline{BP} = x$，則 $\\overline{CP} = 6 - x$。\n   - 由 $\\overline{AP} = \\overline{CP}$ 可得斜邊 $\\overline{AP} = 6 - x$。\n   - 在直角 $\\triangle ABP$ 中（$\\angle B = 90^\\circ, \\overline{AB} = 2$）：\n     $$\\overline{AB}^2 + \\overline{BP}^2 = \\overline{AP}^2$$\n     $$2^2 + x^2 = (6 - x)^2$$\n     $$4 + x^2 = 36 - 12x + x^2$$\n\n3. **第三步：解一元一次方程式求 $x$**：\n   $$4 = 36 - 12x \\implies 12x = 32 \\implies x = \\frac{32}{12} = \\frac{8}{3}$$\n\n4. **第四步：計算 $\\triangle ABP$ 面積**：\n   $$\\triangle ABP \\text{ 面積} = \\frac{1}{2} \\times \\overline{AB} \\times \\overline{BP} = \\frac{1}{2} \\times 2 \\times \\frac{8}{3} = \\frac{8}{3}$$\n\n故本題正確答案為 **(B) 8/3**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
