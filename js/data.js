@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v290';
+const STORAGE_KEY = 'miley_wrong_questions_v291';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2841,6 +2841,36 @@ const INITIAL_SEED_DATA = [
     "consecutiveMastered": 0,
     "isArchived": false,
     "nextReviewDate": "2026-10-25",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_triangle_parallel_trisection_area_ratio_255",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國三數學相似形：平行線截比例線段與相似三角形面積比等於對應邊長平方比",
+    "uploadDate": "2026-10-26",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【相似三角形面積比 vs. 分割梯形面積比】兩大避坑關鍵！\n1. **面積比 ＝ 邊長平方比（不是邊長比！）**：\n   - △ADF、△AEG、△ABC 的邊長比為 1 : 2 : 3。\n   - ⚠️ 很多同學粗心直接選 (B) 1 : 2 : 3，大錯特錯！面積比必須平方：1² : 2² : 3² ＝ 1 : 4 : 9！\n2. **乙、丙是「梯形」，要用扣減法！**：\n   - ⚠️ 很多同學直接選 (D) 1 : 4 : 9，忘記題目問的是分出來的「甲、乙、丙」三塊獨立面積！\n   - 甲 ＝ △ADF ＝ 1r\n   - 乙 ＝ △AEG － △ADF ＝ 4r － 1r ＝ 3r\n   - 丙 ＝ △ABC － △AEG ＝ 9r － 4r ＝ 5r\n   - 故甲、乙、丙之比為 **1 : 3 : 5**（連續奇數比！）",
+    "stem": "如右圖，在 △ABC 中，D、E 為 AB 的三等分點，F、G 為 AC 的三等分點，將 △ABC 分成甲、乙、丙三部分，則甲、乙、丙三部分的面積比為何？\n\n○ (A) 1 : 1 : 1\n○ (B) 1 : 2 : 3\n○ (C) 1 : 3 : 5\n○ (D) 1 : 4 : 9",
+    "answer": "(C) 1 : 3 : 5",
+    "diagramUrl": "assets/questions/q_math_triangle_parallel_trisection_area_ratio_255.png",
+    "solution": "### 💡 完整破題步驟與幾何推導：\n\n1. **第一步：由三等分點性質判定平行與相似形**：\n   - 由題意知，D、E 為 AB 的三等分點 ⟹ AD ＝ DE ＝ EB ＝ 1/3 AB。\n   - F、G 為 AC 的三等分點 ⟹ AF ＝ FG ＝ GC ＝ 1/3 AC。\n   - 邊長比例相等：\n     $$\\frac{AD}{AB} = \\frac{AF}{AC} = \\frac{1}{3}$$，且 ∠A ＝ ∠A（公用角）\n   - 故 DF // EG // BC，且由 AA 相似性質可得：\n     $$\\triangle ADF \\sim \\triangle AEG \\sim \\triangle ABC$$\n\n2. **第二步：找出三個相似三角形的對應邊長比**：\n   - AD : AE : AB ＝ 1 : 2 : 3\n\n3. **第三步：利用「相似三角形面積比等於對應邊長平方比」求面積比**：\n   - △ADF 面積 : △AEG 面積 : △ABC 面積\n     ＝ AD² : AE² : AB²\n     ＝ 1² : 2² : 3²\n     ＝ 1 : 4 : 9\n   - 設 △ADF 面積 ＝ 1r（r ≠ 0）\n   - 則 △AEG 面積 ＝ 4r\n   - △ABC 面積 ＝ 9r\n\n4. **第四步：扣減計算甲、乙、丙三部分的面積**：\n   - **甲部分（△ADF）** ＝ 1r\n   - **乙部分（梯形 DEGF）** ＝ △AEG － △ADF ＝ 4r － 1r ＝ 3r\n   - **丙部分（梯形 EBCG）** ＝ △ABC － △AEG ＝ 9r － 4r ＝ 5r\n   - 因此甲、乙、丙三部分的面積比為：\n     $$\\text{甲} : \\text{乙} : \\text{丙} = 1r : 3r : 5r = \\mathbf{1 : 3 : 5}$$\n\n---\n\n### 🎯 各選項誘答盲點診斷：\n- **(A) 1 : 1 : 1**：直覺誤以為等分邊長就會等分面積，忽略了越下方的梯形底邊越寬，面積越大。\n- **(B) 1 : 2 : 3**：誤將「邊長比」當作「面積比」，忘記相似形面積與邊長的平方成正比。\n- **(C) 1 : 3 : 5【完全正確，本題正解】**：邊長比 1:2:3 ➔ 面積比 1:4:9 ➔ 分割面積比 1:(4-1):(9-4) ＝ 1:3:5。\n- **(D) 1 : 4 : 9**：算出了 △ADF、△AEG、△ABC 的面積比，但未扣除重疊部分，忘記乙、丙為梯形。\n\n故本題正確答案為 **(C) 1 : 3 : 5**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-26",
     "isReviewed": false,
     "reviewStatus": "unreviewed",
     "lastReviewDecision": null,
