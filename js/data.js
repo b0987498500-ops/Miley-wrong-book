@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v292';
+const STORAGE_KEY = 'miley_wrong_questions_v293';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2896,6 +2896,36 @@ const INITIAL_SEED_DATA = [
     "answer": "(B) 3/4",
     "diagramUrl": "assets/questions/q_math_triangle_midpoint_median_ade_bfc_ratio_256.png",
     "solution": "### 💡 完整破題步驟與幾何推導：\n\n#### 📌 方法一：利用「三角形重心」三等分性質（10 秒極速秒殺法）\n1. **中點連線與中線判定**：\n   - 點 D、E 分別為 AB、AC 的中點，因此線段 BE 與 CD 為 △ABC 的**兩條中線**。\n   - 兩中線的交點 F 即為 △ABC 的**重心（Centroid）**。\n\n2. **求頂部 △ADE 佔全部面積的比例**：\n   - 由中點連線性質可知：DE // BC 且 DE ＝ 1/2 BC。\n   - △ADE 與 △ABC 相似（AA 相似），邊長比為 1 : 2。\n   - 面積比等於邊長平方比：\n     $$\\triangle ADE \\text{ 面積} = \\left(\\frac{1}{2}\\right)^2 \\times \\triangle ABC = \\frac{1}{4} \\triangle ABC$$\n\n3. **求下方 △BFC 佔全部面積的比例**：\n   - 重心 F 與三頂點相連，將整個大三角形 △ABC 分成三個面積相等的三角形（△ABF、△ACF、△BFC）：\n     $$\\triangle BFC \\text{ 面積} = \\frac{1}{3} \\triangle ABC$$\n\n4. **計算兩面積之比值**：\n   $$\\frac{\\triangle ADE \\text{ 面積}}{\\triangle BFC \\text{ 面積}} = \\frac{\\frac{1}{4}\\triangle ABC}{\\frac{1}{3}\\triangle ABC} = \\frac{1}{4} \\div \\frac{1}{3} = \\frac{1}{4} \\times \\frac{3}{1} = \\mathbf{\\frac{3}{4}}$$\n\n---\n\n#### 📐 方法二：利用蝴蝶形相似與高比推導（標準相似形解法）\n1. **蝴蝶形相似比**：\n   - 因為 DE // BC 且 DE : BC ＝ 1 : 2，故 △DEF ∼ △CBF（AA 相似）。\n   - 對應高之比為 1 : 2。\n   - 設 △ABC 的高為 h，則 DE 到頂點 A 的高為 1/2 h，梯形 BCED 的高為 1/2 h。\n   - 在梯形中，△DEF 的高為 (1/2 h) × 1/3 ＝ 1/6 h；△BFC 的高為 (1/2 h) × 2/3 ＝ 1/3 h。\n2. **分別以 BC ＝ 2b、DE ＝ b 表示面積**：\n   - △ADE 面積 ＝ 1/2 × b × (1/2 h) ＝ 1/4 bh。\n   - △BFC 面積 ＝ 1/2 × (2b) × (1/3 h) ＝ 1/3 bh。\n3. **比值**：\n   $$\\frac{\\triangle ADE}{\\triangle BFC} = \\frac{\\frac{1}{4}bh}{\\frac{1}{3}bh} = \\mathbf{\\frac{3}{4}}$$\n\n---\n\n### 🎯 各選項誘答盲點診斷：\n- **(A) 2/3**：誤將中線線段比 2:1 或高之比混淆帶入。\n- **(B) 3/4【完全正確，本題正解】**：頂部佔 1/4，重心底角佔 1/3，比值 (1/4)/(1/3) ＝ 3/4。\n- **(C) 4/5**：計算失誤或比例加總錯誤。\n- **(D) 5/6**：猜測梯形剩餘面積比例。\n\n故本題正確答案為 **(B) 3/4**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-26",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_triangle_square_dbef_adf_fec_ratio_257",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國三數學相似形：直角三角形內接正方形、AA 相似性質與面積比等於對應邊長平方比",
+    "uploadDate": "2026-10-26",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【直角三角形內接正方形：兩相似小三角形面積比】避坑關鍵！\n1. **看清邊長對應關係（不要盲目平方）**：\n   - △ADF 中：∠A＝30°，∠ADF＝90°，30°-60°-90° 邊長比為 AD : DF : AF ＝ √3 : 1 : 2。\n   - 正方形四邊等長：DF ＝ EF ＝ x。\n   - △FEC 中：∠CFE＝30°，∠FEC＝90°，30°-60°-90° 邊長比為 CE : EF : CF ＝ 1 : √3 : 2。\n2. **面積比 ＝ 對應邊長平方比**：\n   - △ADF 與 △FEC 對應邊長比為 DF : CE。\n   - 代入邊長比：DF＝x，CE＝x / √3 ⟹ DF : CE ＝ √3 : 1。\n   - 面積比 ＝ (√3 : 1)² ＝ **3 : 1**，比值為 **3**！\n3. **常見陷阱排雷**：\n   - ❌ 誤選 (C) √3：只算出邊長比（√3），忘記題目問的是「**面積的比值**」，面積必須平方！\n   - ❌ 誤選 (B) √3/2：誤用 30° 正弦或餘弦值。\n   - 牢記口訣：邊長比是 √3，面積比要平方，(√3)² ＝ 3！",
+    "stem": "如右圖，在 △ABC 中，∠B＝90°，∠A＝30°，D、E、F 分別在 AB、BC、AC 上，若四邊形 DBEF 為正方形，則 △ADF 面積與 △FEC 面積的比值為何？\n\n○ (A) 3/4\n○ (B) √3/2\n○ (C) √3\n○ (D) 3",
+    "answer": "(D) 3",
+    "diagramUrl": "assets/questions/q_math_triangle_square_dbef_adf_fec_ratio_257.png",
+    "solution": "### 💡 完整破題步驟與幾何推導：\n\n#### 📌 第一步：證明 △ADF 與 △FEC 相似（AA 相似）\n1. **正方形性質與平行線判定**：\n   - 四邊形 DBEF 為正方形 ⟹ 四個內角均為 90°，且四邊等長：$\\overline{DB} = \\overline{BE} = \\overline{EF} = \\overline{FD}$。\n   - 因為 $\\angle ADF = \\angle B = 90^\\circ$，所以 $\\overline{DF} // \\overline{BC}$。\n   - 兩平行線被 $\\overline{AC}$ 所截，同位角相等：\n     $$\\angle AFD = \\angle C$$\n2. **角角度數計算（30°-60°-90°）**：\n   - 在大直角 $\\triangle ABC$ 中：$\\angle B = 90^\\circ, \\angle A = 30^\\circ \\implies \\angle C = 90^\\circ - 30^\\circ = 60^\\circ$。\n   - 因此 $\\angle AFD = \\angle C = 60^\\circ$。\n   - 在直角 $\\triangle FEC$ 中：$\\angle FEC = 90^\\circ, \\angle C = 60^\\circ \\implies \\angle CFE = 30^\\circ$。\n   - 由兩組對應角相等（$\\angle A = \\angle CFE = 30^\\circ, \\angle ADF = \\angle FEC = 90^\\circ$），可知：\n     $$\\triangle ADF \\sim \\triangle FEC \\quad (AA \\text{ 相似性質})$$\n\n---\n\n#### 📌 第二步：求兩相似三角形的對應邊長比\n1. **設正方形邊長為 $x$**：\n   $$\\overline{DF} = \\overline{EF} = x$$\n2. **在直角 $\\triangle FEC$ 中利用 30°-60°-90° 比例求 $\\overline{CE}$**：\n   - 在 $\\triangle FEC$ 中，$\\angle CFE = 30^\\circ$，$\\angle C = 60^\\circ$。\n   - 對邊比鄰邊：$\\tan 30^\\circ = \\frac{\\overline{CE}}{\\overline{EF}} = \\frac{1}{\\sqrt{3}}$。\n   - 故：\n     $$\\overline{CE} = \\frac{\\overline{EF}}{\\sqrt{3}} = \\frac{x}{\\sqrt{3}}$$\n3. **計算對應邊長比（$\\overline{DF} : \\overline{CE}$）**：\n   $$\\frac{\\overline{DF}}{\\overline{CE}} = \\frac{x}{\\frac{x}{\\sqrt{3}}} = \\sqrt{3}$$\n\n---\n\n#### 📌 第三步：由邊長比求面積比值\n- 相似三角形的面積比等於對應邊長的平方比：\n  $$\\frac{\\triangle ADF \\text{ 面積}}{\\triangle FEC \\text{ 面積}} = \\left(\\frac{\\overline{DF}}{\\overline{CE}}\\right)^2 = (\\sqrt{3})^2 = \\mathbf{3}$$\n\n---\n\n### 🎯 各選項誘答盲點診斷：\n- **(A) 3/4**：將其他幾何圖形比例混淆代入。\n- **(B) √3/2**：誤用特殊角三角函數值 $\\cos 30^\\circ$。\n- **(C) √3**：只計算出對應邊長比 $\\frac{\\overline{DF}}{\\overline{CE}} = \\sqrt{3}$，忘記題目問的是**「面積比值」**，漏做了平方運算！\n- **(D) 3【完全正確，本題正解】**：邊長比為 $\\sqrt{3}$，面積比為 $(\\sqrt{3})^2 = 3$。\n\n故本題正確答案為 **(D) 3**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
