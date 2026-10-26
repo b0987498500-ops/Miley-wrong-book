@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v291';
+const STORAGE_KEY = 'miley_wrong_questions_v292';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2866,6 +2866,36 @@ const INITIAL_SEED_DATA = [
     "answer": "(C) 1 : 3 : 5",
     "diagramUrl": "assets/questions/q_math_triangle_parallel_trisection_area_ratio_255.png",
     "solution": "### 💡 完整破題步驟與幾何推導：\n\n1. **第一步：由三等分點性質判定平行與相似形**：\n   - 由題意知，D、E 為 AB 的三等分點 ⟹ AD ＝ DE ＝ EB ＝ 1/3 AB。\n   - F、G 為 AC 的三等分點 ⟹ AF ＝ FG ＝ GC ＝ 1/3 AC。\n   - 邊長比例相等：\n     $$\\frac{AD}{AB} = \\frac{AF}{AC} = \\frac{1}{3}$$，且 ∠A ＝ ∠A（公用角）\n   - 故 DF // EG // BC，且由 AA 相似性質可得：\n     $$\\triangle ADF \\sim \\triangle AEG \\sim \\triangle ABC$$\n\n2. **第二步：找出三個相似三角形的對應邊長比**：\n   - AD : AE : AB ＝ 1 : 2 : 3\n\n3. **第三步：利用「相似三角形面積比等於對應邊長平方比」求面積比**：\n   - △ADF 面積 : △AEG 面積 : △ABC 面積\n     ＝ AD² : AE² : AB²\n     ＝ 1² : 2² : 3²\n     ＝ 1 : 4 : 9\n   - 設 △ADF 面積 ＝ 1r（r ≠ 0）\n   - 則 △AEG 面積 ＝ 4r\n   - △ABC 面積 ＝ 9r\n\n4. **第四步：扣減計算甲、乙、丙三部分的面積**：\n   - **甲部分（△ADF）** ＝ 1r\n   - **乙部分（梯形 DEGF）** ＝ △AEG － △ADF ＝ 4r － 1r ＝ 3r\n   - **丙部分（梯形 EBCG）** ＝ △ABC － △AEG ＝ 9r － 4r ＝ 5r\n   - 因此甲、乙、丙三部分的面積比為：\n     $$\\text{甲} : \\text{乙} : \\text{丙} = 1r : 3r : 5r = \\mathbf{1 : 3 : 5}$$\n\n---\n\n### 🎯 各選項誘答盲點診斷：\n- **(A) 1 : 1 : 1**：直覺誤以為等分邊長就會等分面積，忽略了越下方的梯形底邊越寬，面積越大。\n- **(B) 1 : 2 : 3**：誤將「邊長比」當作「面積比」，忘記相似形面積與邊長的平方成正比。\n- **(C) 1 : 3 : 5【完全正確，本題正解】**：邊長比 1:2:3 ➔ 面積比 1:4:9 ➔ 分割面積比 1:(4-1):(9-4) ＝ 1:3:5。\n- **(D) 1 : 4 : 9**：算出了 △ADF、△AEG、△ABC 的面積比，但未扣除重疊部分，忘記乙、丙為梯形。\n\n故本題正確答案為 **(C) 1 : 3 : 5**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-26",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_triangle_midpoint_median_ade_bfc_ratio_256",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國三數學相似形：三角形兩邊中點連線段性質與中線交點（重心）蝴蝶形相似比",
+    "uploadDate": "2026-10-26",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【中點連線 △ADE vs. 重心底角 △BFC 面積比】秒殺對照！\n1. **兩三角形「不是相似形」！**：\n   - △ADE 是頂部三角形，△BFC 是下方重心交角三角形，兩者形狀不同，不可直接用平方比算！\n2. **以大三角形 △ABC 為基準設定面積代數**：\n   - 設 △ABC 面積 ＝ 12r（取 4 與 3 的最小公倍數 12，計算零分數）：\n     - D、E 為中點 ⟹ △ADE 邊長為 1/2，面積為 (1/2)² ＝ 1/4 △ABC ＝ **3r**。\n     - BE、CD 為中線，交點 F 為「**三角形重心 G**」！\n     - 重心到三頂點將大三角形三等分：△BFC 面積 ＝ 1/3 △ABC ＝ **4r**！\n3. **極速求比值**：\n   - 比值 ＝ △ADE 面積 ÷ △BFC 面積 ＝ 3r ÷ 4r ＝ **3/4**！\n4. **常見陷阱排雷**：\n   - ❌ 誤以為兩者相似算成 1/4 或 1/2。\n   - ❌ 顛倒分子分母算成 4/3。\n   - 牢記口訣：中點頂角佔 1/4，重心底角佔 1/3，比值 1/4 ÷ 1/3 ＝ 3/4！",
+    "stem": "如右圖，△ABC 中，D、E 分別為 AB、AC 的中點，BE 與 CD 相交於 F 點，則 △ADE 面積與 △BFC 面積的比值為何？\n\n○ (A) 2/3\n○ (B) 3/4\n○ (C) 4/5\n○ (D) 5/6",
+    "answer": "(B) 3/4",
+    "diagramUrl": "assets/questions/q_math_triangle_midpoint_median_ade_bfc_ratio_256.png",
+    "solution": "### 💡 完整破題步驟與幾何推導：\n\n#### 📌 方法一：利用「三角形重心」三等分性質（10 秒極速秒殺法）\n1. **中點連線與中線判定**：\n   - 點 D、E 分別為 AB、AC 的中點，因此線段 BE 與 CD 為 △ABC 的**兩條中線**。\n   - 兩中線的交點 F 即為 △ABC 的**重心（Centroid）**。\n\n2. **求頂部 △ADE 佔全部面積的比例**：\n   - 由中點連線性質可知：DE // BC 且 DE ＝ 1/2 BC。\n   - △ADE 與 △ABC 相似（AA 相似），邊長比為 1 : 2。\n   - 面積比等於邊長平方比：\n     $$\\triangle ADE \\text{ 面積} = \\left(\\frac{1}{2}\\right)^2 \\times \\triangle ABC = \\frac{1}{4} \\triangle ABC$$\n\n3. **求下方 △BFC 佔全部面積的比例**：\n   - 重心 F 與三頂點相連，將整個大三角形 △ABC 分成三個面積相等的三角形（△ABF、△ACF、△BFC）：\n     $$\\triangle BFC \\text{ 面積} = \\frac{1}{3} \\triangle ABC$$\n\n4. **計算兩面積之比值**：\n   $$\\frac{\\triangle ADE \\text{ 面積}}{\\triangle BFC \\text{ 面積}} = \\frac{\\frac{1}{4}\\triangle ABC}{\\frac{1}{3}\\triangle ABC} = \\frac{1}{4} \\div \\frac{1}{3} = \\frac{1}{4} \\times \\frac{3}{1} = \\mathbf{\\frac{3}{4}}$$\n\n---\n\n#### 📐 方法二：利用蝴蝶形相似與高比推導（標準相似形解法）\n1. **蝴蝶形相似比**：\n   - 因為 DE // BC 且 DE : BC ＝ 1 : 2，故 △DEF ∼ △CBF（AA 相似）。\n   - 對應高之比為 1 : 2。\n   - 設 △ABC 的高為 h，則 DE 到頂點 A 的高為 1/2 h，梯形 BCED 的高為 1/2 h。\n   - 在梯形中，△DEF 的高為 (1/2 h) × 1/3 ＝ 1/6 h；△BFC 的高為 (1/2 h) × 2/3 ＝ 1/3 h。\n2. **分別以 BC ＝ 2b、DE ＝ b 表示面積**：\n   - △ADE 面積 ＝ 1/2 × b × (1/2 h) ＝ 1/4 bh。\n   - △BFC 面積 ＝ 1/2 × (2b) × (1/3 h) ＝ 1/3 bh。\n3. **比值**：\n   $$\\frac{\\triangle ADE}{\\triangle BFC} = \\frac{\\frac{1}{4}bh}{\\frac{1}{3}bh} = \\mathbf{\\frac{3}{4}}$$\n\n---\n\n### 🎯 各選項誘答盲點診斷：\n- **(A) 2/3**：誤將中線線段比 2:1 或高之比混淆帶入。\n- **(B) 3/4【完全正確，本題正解】**：頂部佔 1/4，重心底角佔 1/3，比值 (1/4)/(1/3) ＝ 3/4。\n- **(C) 4/5**：計算失誤或比例加總錯誤。\n- **(D) 5/6**：猜測梯形剩餘面積比例。\n\n故本題正確答案為 **(B) 3/4**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
