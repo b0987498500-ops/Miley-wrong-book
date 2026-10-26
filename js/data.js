@@ -3,7 +3,7 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v293';
+const STORAGE_KEY = 'miley_wrong_questions_v294';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
@@ -2926,6 +2926,36 @@ const INITIAL_SEED_DATA = [
     "answer": "(D) 3",
     "diagramUrl": "assets/questions/q_math_triangle_square_dbef_adf_fec_ratio_257.png",
     "solution": "### 💡 完整破題步驟與幾何推導：\n\n#### 📌 第一步：證明 △ADF 與 △FEC 相似（AA 相似）\n1. **正方形性質與平行線判定**：\n   - 四邊形 DBEF 為正方形 ⟹ 四個內角均為 90°，且四邊等長：$\\overline{DB} = \\overline{BE} = \\overline{EF} = \\overline{FD}$。\n   - 因為 $\\angle ADF = \\angle B = 90^\\circ$，所以 $\\overline{DF} // \\overline{BC}$。\n   - 兩平行線被 $\\overline{AC}$ 所截，同位角相等：\n     $$\\angle AFD = \\angle C$$\n2. **角角度數計算（30°-60°-90°）**：\n   - 在大直角 $\\triangle ABC$ 中：$\\angle B = 90^\\circ, \\angle A = 30^\\circ \\implies \\angle C = 90^\\circ - 30^\\circ = 60^\\circ$。\n   - 因此 $\\angle AFD = \\angle C = 60^\\circ$。\n   - 在直角 $\\triangle FEC$ 中：$\\angle FEC = 90^\\circ, \\angle C = 60^\\circ \\implies \\angle CFE = 30^\\circ$。\n   - 由兩組對應角相等（$\\angle A = \\angle CFE = 30^\\circ, \\angle ADF = \\angle FEC = 90^\\circ$），可知：\n     $$\\triangle ADF \\sim \\triangle FEC \\quad (AA \\text{ 相似性質})$$\n\n---\n\n#### 📌 第二步：求兩相似三角形的對應邊長比\n1. **設正方形邊長為 $x$**：\n   $$\\overline{DF} = \\overline{EF} = x$$\n2. **在直角 $\\triangle FEC$ 中利用 30°-60°-90° 比例求 $\\overline{CE}$**：\n   - 在 $\\triangle FEC$ 中，$\\angle CFE = 30^\\circ$，$\\angle C = 60^\\circ$。\n   - 對邊比鄰邊：$\\tan 30^\\circ = \\frac{\\overline{CE}}{\\overline{EF}} = \\frac{1}{\\sqrt{3}}$。\n   - 故：\n     $$\\overline{CE} = \\frac{\\overline{EF}}{\\sqrt{3}} = \\frac{x}{\\sqrt{3}}$$\n3. **計算對應邊長比（$\\overline{DF} : \\overline{CE}$）**：\n   $$\\frac{\\overline{DF}}{\\overline{CE}} = \\frac{x}{\\frac{x}{\\sqrt{3}}} = \\sqrt{3}$$\n\n---\n\n#### 📌 第三步：由邊長比求面積比值\n- 相似三角形的面積比等於對應邊長的平方比：\n  $$\\frac{\\triangle ADF \\text{ 面積}}{\\triangle FEC \\text{ 面積}} = \\left(\\frac{\\overline{DF}}{\\overline{CE}}\\right)^2 = (\\sqrt{3})^2 = \\mathbf{3}$$\n\n---\n\n### 🎯 各選項誘答盲點診斷：\n- **(A) 3/4**：將其他幾何圖形比例混淆代入。\n- **(B) √3/2**：誤用特殊角三角函數值 $\\cos 30^\\circ$。\n- **(C) √3**：只計算出對應邊長比 $\\frac{\\overline{DF}}{\\overline{CE}} = \\sqrt{3}$，忘記題目問的是**「面積比值」**，漏做了平方運算！\n- **(D) 3【完全正確，本題正解】**：邊長比為 $\\sqrt{3}$，面積比為 $(\\sqrt{3})^2 = 3$。\n\n故本題正確答案為 **(D) 3**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-26",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_soc_hist_rome_theodosius_christianity_state_religion_258",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "國二歷史：古羅馬宗教演變——君士坦丁合法化（米蘭詔令）vs. 狄奧多西定為國教",
+    "uploadDate": "2026-10-26",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【羅馬基督教兩大皇帝里程碑考點辨析】！\n1. **君士坦丁（西元 313 年）**：\n   - 頒布《米蘭詔令》，正式承認基督教為「**合法宗教**」（停止迫害，允許公開傳教）。\n   - ⚠️ 關鍵字是「**合法化**」，**並非國教**！\n2. **狄奧多西（西元 4 世紀末，392 年）**：\n   - 正式下令將基督教定為羅馬帝國的「**唯一國教**」，禁止其他異教信仰！\n   - 之後基督教伴隨羅馬文化傳播，成為西方世界最核心的宗教文化基礎。\n   - ⚠️ 題目問「**定為國教**」，答案必定是「**狄奧多西**」！\n3. **常見誘答排雷**：\n   - ❌ 誤選 (D) 君士坦丁：最常犯的混淆！君士坦丁是「合法化」，狄奧多西才是「定為國教」！\n   - ❌ (A) 凱撒：共和末期獨裁官，當時基督教尚未誕生（耶穌尚未降生）。\n   - ❌ (B) 屋大維：羅馬帝國首位元首（奧古斯都），耶穌在其統治時期誕生於巴勒斯坦，當時基督教尚未形成規模。",
+    "stem": "下列哪個羅馬皇帝下令讓基督教成為羅馬帝國的國教，之後並發展成為西方國家最主要的宗教？\n\n○ (A) 凱撒\n○ (B) 屋大維\n○ (C) 狄奧多西\n○ (D) 君士坦丁",
+    "answer": "(C) 狄奧多西",
+    "diagramUrl": "",
+    "solution": "### 💡 完整破題步驟與歷史脈絡剖析：\n\n#### 📌 第一步：釐清羅馬基督教發展三大關鍵歷程\n1. **創立與初期受迫害（西元 1 世紀～4 世紀初）**：\n   - 基督教由耶穌於西元 1 世紀在羅馬帝國統治下的巴勒斯坦（猶太地）創立。\n   - 由於基督徒堅持一神信仰、拒絕將羅馬皇帝視為神祇崇拜，長期遭到羅馬政府殘酷迫害（如尼祿皇帝時期的羅馬大火事件等）。\n\n2. **合法化轉折點——君士坦丁（西元 313 年）**：\n   - 羅馬皇帝**君士坦丁**頒布著名的《**米蘭詔令**》，宣布宗教信仰自由，正式承認基督教為**合法宗教**，終結了對基督徒長達數百年的迫害。\n   - ⚠️ **注意辨析**：君士坦丁讓基督教「合法化」，但當時並未定為全帝國的唯一國教。\n\n3. **定為國教里程碑——狄奧多西（西元 4 世紀末，392 年）**：\n   - 西元 4 世紀末，羅馬皇帝**狄奧多西**正式宣布基督教為**羅馬帝國的國教**，並嚴格禁止其他異教崇拜與祭祀活動。\n   - 基督教從此獲得國家政治力量的全面支持，迅速普及至歐洲全境，並在此後中世紀與近現代發展為西方國家最深厚、最主要的宗教文明根基。\n\n---\n\n#### 🎯 各選項人物誘答盲點診斷：\n- **(A) 凱撒（Julius Caesar）**：羅馬共和末期終身獨裁官，去世於西元前 44 年。當時耶穌尚未降生，基督教根本尚未出現。\n- **(B) 屋大維（Octavian / Augustus）**：羅馬帝國第一位元首（奧古斯都）。耶穌降生於其在位期間，但基督教直到西元 1 世紀中葉後才在保羅等人傳播下向羅馬擴展，非其推動。\n- **(C) 狄奧多西（Theodosius I）【完全正確，本題正解】**：四世紀末下令將基督教確立為羅馬帝國唯一「國教」。\n- **(D) 君士坦丁（Constantine I）**：四世紀初頒布《米蘭詔令》使基督教「合法化」，並非定為國教，極易審題粗心混淆！\n\n故本題正確答案為 **(C) 狄奧多西**。",
     "errorCount": 1,
     "ebbinghausStage": 1,
     "consecutiveMastered": 0,
