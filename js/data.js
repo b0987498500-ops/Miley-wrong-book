@@ -3,11 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v304';
+const STORAGE_KEY = 'miley_wrong_questions_v305';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
   {
+    "id": "q_math_quadratic_completing_square_k_expression_268",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國二數學：一元二次方程式配方法應用／利用代數符號 k 表示兩方程式之根",
+    "uploadDate": "2026-10-27",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【數字很大莫慌張：配方法與符號替換秒殺法！】\n1. **不要硬開根號求 k**：\n   - $x^2 - 3969 = 0$ 的兩解為 $\\pm k$，直接得 $k^2 = 3969$。千萬不要花時間去硬算 $\\sqrt{3969} = 63$，因為選項全部帶有符號 $k$！\n2. **第二個方程式標準配方法**：\n   - $2x^2 + 12x - 7920 = 0$\n   - 先兩邊同除以 2：$x^2 + 6x - 3960 = 0$\n   - 移項常數項：$x^2 + 6x = 3960$\n   - 兩邊同加 $(6/2)^2 = 9$：$x^2 + 6x + 9 = 3969$\n   - 完全平方式：$(x + 3)^2 = 3969 = k^2$！\n3. **開平方並移項求根**：\n   - $x + 3 = \\pm k \\implies x = -3 \\pm k$（即 $-3 + k$ 或 $-3 - k$）。\n   - 比對選項，正確答案為 (A) $-3 + k$！",
+    "stem": "若方程式 x² - 3969 = 0 的兩個解為 ±k，則下列何者為一元二次方程式 2x² + 12x - 7920 = 0 的一個解？\n\n○ (A) -3 + k\n○ (B) 3 + k\n○ (C) -6 + k\n○ (D) 6 - k",
+    "answer": "(A) -3 + k",
+    "diagramUrl": "",
+    "solution": "### 💡 完整破題思路與配方法解題步驟：\n\n1. **第一步：由第一個方程式建立 $k$ 的關係式**：\n   - 原式：$x^2 - 3969 = 0 \\implies x^2 = 3969$\n   - 題目給定兩解為 $\\pm k$，代入可得：\n     $$(\pm k)^2 = 3969 \\implies \mathbf{k^2 = 3969}$$\n   - （💡 小提示：本題無需刻意計算 $k = \\sqrt{3969} = 63$，直接保留 $k^2 = 3969$ 即可快速代換）。\n\n2. **第二步：將第二個方程式進行配方法**：\n   - 原式：$$2x^2 + 12x - 7920 = 0$$\n   - **兩邊同除以 2**（使首項係數為 1）：\n     $$x^2 + 6x - 3960 = 0$$\n   - **將常數項移至等號右邊**：\n     $$x^2 + 6x = 3960$$\n   - **等號兩邊同加一次項係數一半的平方**，即 $\\left(\\frac{6}{2}\\right)^2 = 3^2 = 9$：\n     $$x^2 + 6x + 9 = 3960 + 9$$\n     $$(x + 3)^2 = 3969$$\n\n3. **第三步：代入 $k^2 = 3969$ 開平方求根**：\n   - 因為 $3969 = k^2$，所以：\n     $$(x + 3)^2 = k^2$$\n   - 兩邊開平方根：\n     $$x + 3 = \pm k$$\n   - 將 3 移至等號右側：\n     $$\mathbf{x = -3 \pm k}$$\n   - 即兩解分別為：$$\mathbf{x = -3 + k \quad \text{或} \quad x = -3 - k}$$\n\n4. **第四步：比對選項**：\n   - 選項 (A) 為 $-3 + k$，正是其中一個正解！\n\n故本題正確答案為 **(A) -3 + k**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-27",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },\n  {
     "id": "q_math_completing_square_geometric_tiles_267",
     "examPeriod": "一段",
     "subject": "數學",
