@@ -3,11 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v302';
+const STORAGE_KEY = 'miley_wrong_questions_v303';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
   {
+    "id": "q_math_quadratic_cancel_x_root_loss_266",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國二數學：一元二次方程式解法／嚴禁等號兩邊同除含未知數式子（防漏解 x = 0）",
+    "uploadDate": "2026-10-27",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【解方程式大忌：絕不能任意同除未知數 x！】\n1. **兩邊同除以 x 的致命錯誤**：\n   - 等號兩邊同除以一個數的前提是「該數不能為 0」！\n   - 未知數 x 有可能是 0，一旦隨意除以 x，就會導致『除以 0』的數學未定義錯誤，並且直接漏掉重要的根 x ＝ 0！\n2. **一元二次方程式標準解法（移項提公因式或展開）**：\n   - 移項：x(3x ＋ 5) － 2x(x － 1) ＝ 0\n   - 提出公因式 x：x[(3x ＋ 5) － 2(x － 1)] ＝ 0\n   - 化簡：x(x ＋ 7) ＝ 0 ⟹ x ＝ 0 或 x ＝ -7（共兩解）！",
+    "stem": "下列為小明解方程式 x(3x + 5) = 2x(x - 1) 的步驟：\n步驟 1：兩邊同除以 x，得 3x + 5 = 2(x - 1)\n步驟 2：3x + 5 = 2x - 2\n步驟 3：3x - 2x = -2 - 5\n步驟 4：x = -7\n哪一個步驟開始發生錯誤？\n\n○ (A) 步驟 1\n○ (B) 步驟 2\n○ (C) 步驟 3\n○ (D) 步驟 4",
+    "answer": "(A) 步驟 1",
+    "diagramUrl": "",
+    "solution": "### 💡 核心觀念精析：\n\n1. **錯誤步驟判斷（破題關鍵）**：\n   - 在 **步驟 1** 中，小明將等號兩邊「同除以 x」。\n   - 根據等量除法公理，**只有在除數不為 0 的前提下**，等號兩邊才能同除以一個數。\n   - 但在此題中，$x$ 是未知數，完全有可能是 0（事實上若將 $x = 0$ 代回原方程式：$0(0+5) = 2(0)(0-1) \implies 0 = 0$ 完全成立，因此 $x = 0$ 是原方程式的重要正解）。\n   - 當小明在步驟 1 兩邊同除以 $x$ 時，不僅違反了不能除以 0 的數學公理，更直接**漏掉了 $x = 0$ 這個根**，導致後續解題過程失真。因此**從步驟 1 開始即發生錯誤**。\n\n2. **正確解法示範（提公因式法）**：\n   - 原式：$x(3x + 5) = 2x(x - 1)$\n   - 將右式整項移至左邊（移項法則）：\n     $$x(3x + 5) - 2x(x - 1) = 0$$\n   - 提出共同公因式 $x$：\n     $$x[(3x + 5) - 2(x - 1)] = 0$$\n   - 展開括號內部：\n     $$x(3x + 5 - 2x + 2) = 0$$\n     $$x(x + 7) = 0$$\n   - 由兩數相乘為 0，得：\n     $$\mathbf{x = 0 \quad \text{或} \quad x = -7}$$\n\n故本題正確答案為 **(A) 步驟 1**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-27",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },\n  {
     "id": "q_soc_hist_rome_republic_three_continents_expansion_161",
     "examPeriod": "一段",
     "subject": "社會",
