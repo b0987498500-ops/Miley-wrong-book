@@ -3,11 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v303';
+const STORAGE_KEY = 'miley_wrong_questions_v304';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
   {
+    "id": "q_math_completing_square_geometric_tiles_267",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國二數學：乘法公式與配方法幾何圖形化／利用面積拼成大正方形 (a+3)²",
+    "uploadDate": "2026-10-27",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【幾何拼圖配方法秒殺心法：對稱補邊角！】\n1. **題目現有圖形與面積**：\n   - 一個邊長為 a 的正方形 ⟹ 面積 $a^2$\n   - 一個長為 a、寬為 3 的長方形 ⟹ 面積 $3a$\n   - 目前總面積 ＝ $a^2 + 3a$。\n2. **拼成正方形的幾何構造**：\n   - 原本邊長 a 的大正方形，右邊貼了一個「長 a、寬 3」的長方形。\n   - 為了保持對稱擴展成大正方形，下邊必須對稱貼上另一個「長 a、寬 3」的長方形（增加面積 $3a$）！\n   - 右下角的缺口角落，則必須補上一個「邊長為 3 的小正方形」（增加面積 $3 \times 3 = 9 = 3^2$）！\n   - 總面積化為完全平方式：$a^2 + 3a + (3a + 3^2) = a^2 + 6a + 9 = (a+3)^2$。\n3. **因此需要再加上的圖形**：\n   - 一個長 a、寬 3 的長方形 ＋ 一個邊長 3 的正方形 ⟹ 即選項 (D)！",
+    "stem": "附圖為一边長為 a 的正方形和一個長為 a、寬為 3 的長方形，試問需要再加上下列哪一選項的圖形，才可拼成一個正方形？\n\n【原題目圖示說明】：\n- 現有圖形 1：邊長為 a 的正方形（面積 $a^2$）\n- 現有圖形 2：長為 a、寬為 3 的長方形（面積 $3a$）\n\n【各選項圖形說明】：\n○ (A) 邊長為 a 的正方形 1 個 ＋ 長為 a、寬為 3 的長方形 1 個\n○ (B) 邊長為 a 的正方形 1 個 ＋ 邊長為 1 的正方形 1 個\n○ (C) 長為 a、寬為 3 的長方形 2 個（上下相疊，總寬 6） ＋ 邊長為 3 的正方形 1 個\n○ (D) 長為 a、寬為 3 的長方形 1 個 ＋ 邊長為 3 的正方形 1 個",
+    "answer": "(D) 長為 a、寬為 3 的長方形 1 個 ＋ 邊長為 3 的正方形 1 個",
+    "diagramUrl": "",
+    "solution": "### 💡 完整破題思路與幾何視覺化解析：\n\n1. **代數與幾何面積對照（配方法）**：\n   - 題目現有圖形：\n     - 邊長為 $a$ 的正方形：$\text{面積} = a \times a = a^2$\n     - 長為 $a$、寬為 3 的長方形：$\text{面積} = a \times 3 = 3a$\n   - 目前現有圖形的總面積為：$$a^2 + 3a$$\n\n2. **乘法公式完全平方目標**：\n   - 欲拼成一個大正方形，其總面積必須符合完全平方式 $(a + b)^2 = a^2 + 2ab + b^2$。\n   - 目前已有 $a^2 + 3a$，要構成對稱展開的大正方形（邊長為 $a + 3$）：\n     $$(a + 3)^2 = a^2 + 2 \cdot a \cdot 3 + 3^2 = a^2 + 6a + 9$$\n   - 比對現有面積與目標面積：\n     $$\text{需要再補上的面積} = (a^2 + 6a + 9) - (a^2 + 3a) = 3a + 3^2 = 3a + 9$$\n\n3. **幾何圖形拆解（幾何拼圖法）**：\n   - 大正方形邊長為 $(a + 3)$：\n     - 左上角：邊長為 $a$ 的正方形（現有已有，面積 $a^2$）\n     - 右上角：長為 $a$、寬為 3 的長方形（現有已有，面積 $3a$）\n     - 左下角：需要補上一個**長為 $a$、寬為 3 的長方形**（面積 $3a$）\n     - 右下角：需要補上一個**邊長為 3 的正方形**（面積 $3 \times 3 = 3^2 = 9$）\n   - 兩者合計：需再加上「長為 a、寬為 3 的長方形 1 個」與「邊長為 3 的小正方形 1 個」。\n\n4. **比對選項**：\n   - 選項 (D) 恰好為一個「長 $a$ 寬 3」長方形與一個「邊長 3」正方形，完全契合！\n\n故本題正確答案為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-27",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },\n  {
     "id": "q_math_quadratic_cancel_x_root_loss_266",
     "examPeriod": "一段",
     "subject": "數學",
