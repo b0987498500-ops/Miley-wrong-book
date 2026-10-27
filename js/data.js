@@ -3,11 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v305';
+const STORAGE_KEY = 'miley_wrong_questions_v306';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
   {
+    "id": "q_math_completing_square_abc_sum_269",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國二數學：二次多項式配方法頂點式／係數比對法求 a + b + c",
+    "uploadDate": "2026-10-27",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【二次式配方法提出首項係數避坑防呆】！\n1. **提出首項係數 4**：\n   - $4x^2 + 8x + a = 4(x^2 + 2x) + a$\n2. **括號內配成完全平方，外面記得扣掉多加的常數**：\n   - 括號內補上一半平方：$(2/2)^2 = 1$\n   - ⚠️ 注意！括號內加 1，實際上因為外面乘了 4，等於多加了 $4 \\times 1 = 4$！\n   - 外面必須立即減去 4 平衡：$4(x^2 + 2x + 1) + (a - 4) = 4(x + 1)^2 + (a - 4)$！\n3. **係數對照求 a, b, c**：\n   - 比對 $b(x + c)^2 + 3$：\n     - $b = 4$\n     - $c = 1$\n     - $a - 4 = 3 \\implies a = 7$\n   - 所求 $a + b + c = 7 + 4 + 1 = 12$！",
+    "stem": "利用配方法將 4x² + 8x + a 化成 b(x + c)² + 3 的形式，則 a + b + c = ？\n\n○ (A) 9\n○ (B) 12\n○ (C) 13\n○ (D) 25",
+    "answer": "(B) 12",
+    "diagramUrl": "",
+    "solution": "### 💡 兩種超清晰解題方式：\n\n#### 🏆 解法一：正向配方法（最正規）\n1. **前兩項提出首項係數 4**：\n   $$4x^2 + 8x + a = 4(x^2 + 2x) + a$$\n\n2. **在括號內配成完全平方式**：\n   - 一次項係數為 2，其一半的平方為 $\\left(\\frac{2}{2}\\right)^2 = 1^2 = 1$。\n   - 括號內加 1，等同於整個式子多加了 $4 \\times 1 = 4$。\n   - 為了保持等值，括號外必須減去 4：\n     $$= 4(x^2 + 2x + 1) + a - 4$$\n     $$= 4(x + 1)^2 + (a - 4)$$\n\n3. **比對題目形式 $b(x + c)^2 + 3$**：\n   - 首項係數：$b = 4$\n   - 平方內常數：$c = 1$\n   - 外層常數項：$a - 4 = 3 \\implies a = 3 + 4 = 7$\n\n4. **計算所求**：\n   $$a + b + c = 7 + 4 + 1 = \\mathbf{12}$$\n\n---\n\n#### ⚡ 解法二：展開比較係數法（防配方粗心）\n1. **將目標式 $b(x + c)^2 + 3$ 直接展開**：\n   $$b(x^2 + 2cx + c^2) + 3 = bx^2 + 2bc x + (bc^2 + 3)$$\n\n2. **與原式 $4x^2 + 8x + a$ 逐項比對係數**：\n   - **$x^2$ 項係數**：$b = 4$\n   - **$x$ 項係數**：$2bc = 8 \\implies 2(4)c = 8 \\implies 8c = 8 \\implies c = 1$\n   - **常數項**：$a = bc^2 + 3 = 4(1)^2 + 3 = 4 + 3 = 7$\n\n3. **計算所求**：\n   $$a + b + c = 7 + 4 + 1 = \\mathbf{12}$$\n\n故本題正確答案為 **(B) 12**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-27",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },\n  {
     "id": "q_math_quadratic_completing_square_k_expression_268",
     "examPeriod": "一段",
     "subject": "數學",
