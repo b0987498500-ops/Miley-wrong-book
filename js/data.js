@@ -3,11 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v307';
+const STORAGE_KEY = 'miley_wrong_questions_v308';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
   {
+    "id": "q_phy_geostationary_satellite_circular_motion_gravity_271",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國中理化：圓周運動與萬有引力／地球同步衛星之運動特性、向心力來源與慣性飛行",
+    "uploadDate": "2026-10-27",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【人造衛星圓周運動四大黃金考點】！\n1. **軌道切線方向不需要施力（牛頓第一運動定律／慣性）**：\n   - 太空為真空環境，幾乎無空氣阻力。衛星維持等速率前進是依靠「慣性」，**不需要沿著軌道切線方向不斷施力或點火噴氣**！\n2. **唯一受力是「地球萬有引力」（充當向心力）**：\n   - 地球對衛星的萬有引力指向地心，恰好提供衛星作等速率圓周運動所需的「向心力」。\n   - 萬有引力與運動方向（切線）互相垂直，故**引力不對衛星作功**（作功為 0，動能保持不變）。\n3. **等速率 vs 等速度**：\n   - 衛星作等速率圓周運動，速率大小不變；但運動方向時刻在改變，故為「變速度運動」，必有加速度（向心加速度）！\n4. **萬有引力與距離平方成反比**：\n   - 衛星離地心距離改變，萬有引力大小必然隨之改變。",
+    "stem": "地球同步衛星是一種永遠固定在地球上空某個位置的衛星，它的運行週期必須和地球自轉週期時間一樣，繞一圈地球的時間約為 24 小時，同時高度需維持在 35786 公里左右，同步衛星只能定點在赤道上空。現有一個同步衛星運行地球一周，關於此衛星的運動情形，下列敘述何者錯誤？\n\n○ (A) 此衛星的運行屬於等速率運動\n○ (B) 此衛星的運行需要向心力\n○ (C) 衛星與地球之間的距離，會影響地球對此衛星的引力大小\n○ (D) 此衛星的運行需要沿著軌道方向不斷施力",
+    "answer": "(D) 此衛星的運行需要沿著軌道方向不斷施力",
+    "diagramUrl": "",
+    "solution": "### 💡 各選項精闢解析與破題核心：\n\n1. **(A) 正確**：\n   - 同步衛星在固定高度的圓形軌道上繞地球運行，軌道半徑與速率大小保持固定，因此其運行屬於「**等速率圓周運動**」（注意：因運動方向時刻改變，屬於等速率但非等速度運動）。\n\n2. **(B) 正確**：\n   - 物體作圓周運動時，必定需要一個指向圓心的力來不斷改變其運動方向，這個力稱為「**向心力**」。同步衛星所需的向心力完全由「**地球對衛星的萬有引力**」所提供。\n\n3. **(C) 正確**：\n   - 根據牛頓萬有引力定律 $F = G\\frac{M m}{r^2}$，引力大小與兩物體距離的平方成反比。因此衛星與地球之間的距離，必然會直接影響引力的大小。\n\n4. **(D) 錯誤（本題所選）**：\n   - 衛星在太空中運行，太空近乎真空狀態，無空氣阻力。\n   - 根據**牛頓第一運動定律（慣性定律）**，物體在切線方向不受外力即可藉由慣性持續保持運動速度前進，**完全不需要沿著軌道切線方向持續施力**！\n   - 衛星運行的唯一施力來源是**指向地心的萬有引力（提供向心力，方向垂直於運動軌道）**。\n\n故本題敘述錯誤的選項為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-27",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },\n  {
     "id": "q_math_quadratic_irrational_root_reverse_equation_270",
     "examPeriod": "一段",
     "subject": "數學",
