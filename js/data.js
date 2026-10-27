@@ -3,11 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v309';
+const STORAGE_KEY = 'miley_wrong_questions_v310';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
   {
+    "id": "q_phy_gravitation_action_reaction_109_exam_273",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國中理化：牛頓萬有引力定律與第三運動定律／作用力與反作用力大小相等／109會考題",
+    "uploadDate": "2026-10-27",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【109 會考萬有引力兩大經典陷阱秒殺！】\n1. **陷阱一（俊傑：橡皮擦吸引宇宙中每一個物體「力都相同」？❌ 錯！）**：\n   - 公式：$F = G\\frac{m_1 m_2}{r^2}$。\n   - 引力大小取決於『對方的質量 $m_2$』與『兩者的距離 $r$』。橡皮擦吸筆的引力、吸地球的引力、吸遙遠月球的引力，絕對各不相同，絕非「相同大小」！\n2. **陷阱二（美玲：地球質量超大，所以地球吸我大於我吸地球？❌ 錯！）**：\n   - 萬有引力是成對出現的「作用力與反作用力」（牛頓第三運動定律）！\n   - 作用力與反作用力**大小必然相等、方向相反**！\n   - 『地球吸引美玲的萬有引力』＝『美玲吸引地球的萬有引力』！\n   - 為什麼美玲掉向地球而不是地球衝向美玲？因為 $a = \\frac{F}{m}$，地球質量巨大導致加速度微乎其微，但**受力大小絕對完全相等**！",
+    "stem": "俊傑與美玲對於萬有引力定律分別提出以下看法：\n俊傑：舉例來說，我桌上的橡皮擦，它以相同大小的力吸引著宇宙中的每一個物體，這種力就是萬有引力。\n美玲：舉例來說，我腳底下的地球，它的質量非常大，所以它作用於我的萬有引力會遠大於我作用於它的萬有引力。\n關於兩人的看法是否符合萬有引力定律，下列何者正確？【109.會考】\n\n○ (A) 兩人的看法均符合\n○ (B) 兩人的看法均不符合\n○ (C) 只有俊傑的看法符合\n○ (D) 只有美玲的看法符合",
+    "answer": "(B) 兩人的看法均不符合",
+    "diagramUrl": "",
+    "solution": "### 💡 逐人觀念深度剖析（109 會考核心命題考點）：\n\n1. **俊傑的看法【不符合 ❌】**：\n   - 依據牛頓萬有引力定律：$$F = G \\frac{m_1 m_2}{r^2}$$\n   - 橡皮擦吸引宇宙中某物體的引力大小，與**該物體的質量（$m_2$）**成正比，並與**兩者間的距離平方（$r^2$）**成反比。\n   - 宇宙中不同物體的質量各異、與橡皮擦的距離也各不相同，因此橡皮擦對不同物體施加的萬有引力**絕不可能為相同大小**。故俊傑說法錯誤。\n\n2. **美玲的看法【不符合 ❌】**：\n   - 「地球吸引美玲的萬有引力」與「美玲吸引地球的萬有引力」，是一對互為**作用力與反作用力**。\n   - 根據**牛頓第三運動定律**，作用力與反作用力必定：\n     - **大小相等**\n     - **方向相反**\n     - **同時產生、同時消失**\n     - **作用在同一直線上，且分別作用於不同物體**\n   - 從萬有引力公式 $F = G\\frac{M_地 m_美}{R^2}$ 亦可看出，計算兩人之間的吸引力時，式子中包含的是兩者質量的乘積（$M_地 \\times m_美$），數值完全相同！\n   - 因此，地球吸引美玲的力**等於**美玲吸引地球的力，絕非「遠大於」。故美玲說法亦錯誤。\n\n3. **結論**：\n   - 俊傑與美玲兩人的看法**均不符合**萬有引力定律。\n\n故本題正確答案為 **(B) 兩人的看法均不符合**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-27",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },\n  {
     "id": "q_phy_kepler_orbit_universal_gravitation_distance_272",
     "examPeriod": "一段",
     "subject": "自然/理化",
