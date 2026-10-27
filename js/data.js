@@ -3,11 +3,100 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v310';
+const STORAGE_KEY = 'miley_wrong_questions_v311';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
   {
+    "id": "q_math_tilted_tree_shadow_trig_274",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國三數學幾何：傾斜樹木影子長度／外角定理與等腰三角形性質／特殊角 30-60-90 三角比求高",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【傾斜樹木影子秒殺兩步驟：外角得等腰 ＋ 特殊直角三角形！】\n1. **第一步（外角定理秒得等腰三角形）**：\n   - 在 $\\triangle ABC$ 中，外角 $\\angle ACD = 60^\\circ$，內角 $\\angle B = 30^\\circ$。\n   - 依三角形外角定理：$\\angle BAC = \\angle ACD - \\angle B = 60^\\circ - 30^\\circ = 30^\\circ$！\n   - 兩底角相等（$\\angle B = \\angle BAC = 30^\\circ$） ⟹ $\\triangle ABC$ 為等腰三角形，斜邊 $\\overline{AC} = \\overline{BC} = 10$ 公尺！\n2. **第二步（作高求樹高 AB）**：\n   - 從頂點 A 向地面作垂直高 $\\overline{AD} \\perp \\overline{CD}$。\n   - 在 $30^\\circ-60^\\circ-90^\\circ$ 直角 $\\triangle ACD$ 中（斜邊 $AC = 10$）：\n     $$\\overline{AD} = 10 \\times \\sin 60^\\circ = 10 \\times \\frac{\\sqrt{3}}{2} = 5\\sqrt{3}$$\n   - 在直角 $\\triangle ABD$ 中（$\\angle B = 30^\\circ$）：\n     $$\\sin 30^\\circ = \\frac{\\overline{AD}}{\\overline{AB}} \\implies \\frac{1}{2} = \\frac{5\\sqrt{3}}{x} \\implies x = 10\\sqrt{3}$$\n3. 樹原本的高度為 $10\\sqrt{3}$ 公尺！",
+    "stem": "如圖，颱風過後路樹傾斜與地面夾角為 30°，若現在太陽光線與地面的夾角為 60°，此時樹的影長約為 10 公尺，則此樹原來的高度為多少公尺？\n\n○ (A) 10 + 5√3\n○ (B) 10√3\n○ (C) 5 + 5√3\n○ (D) 10",
+    "answer": "(B) 10√3",
+    "diagramUrl": "assets/questions/q_math_tilted_tree_shadow_trig_274.png",
+    "solution": "### 💡 完整破題思路與幾何計算步驟：\n\n1. **幾何設定與點位定義**：\n   - 設樹根為 $B$ 點，樹頂為 $A$ 點，樹身（原樹高）為線段 $\\overline{AB} = x$。\n   - 樹傾斜與地面之夾角 $\\angle B = 30^\\circ$。\n   - 太陽光線通過樹頂 $A$，在地面投射出的影子為線段 $\\overline{BC} = 10$ 公尺（即光線與地面交於 $C$ 點）。\n   - 太陽光線與地面夾角為 $60^\\circ$，即 $\\angle ACD = 60^\\circ$（為 $\\triangle ABC$ 之頂點 $C$ 的外角）。\n\n2. **第一步：由外角定理求證 $\\triangle ABC$ 為等腰三角形**：\n   - 根據三角形外角定理（外角等於兩內對角之和）：\n     $$\\angle ACD = \\angle B + \\angle BAC$$\n     $$60^\\circ = 30^\\circ + \\angle BAC \\implies \\angle BAC = 60^\\circ - 30^\\circ = 30^\\circ$$\n   - 因為 $\\angle B = \\angle BAC = 30^\\circ$，所以在 $\\triangle ABC$ 中兩底角相等：\n     $$\\triangle ABC \\text{ 為等腰三角形} \\implies \\overline{AC} = \\overline{BC} = 10 \\text{ 公尺}$$\n\n3. **第二步：作垂線求樹頂高度 $\\overline{AD}$**：\n   - 從樹頂 $A$ 作垂直地面之高線 $\\overline{AD} \\perp \\overline{BD}$（垂足為 $D$）。\n   - 在直角 $\\triangle ACD$ 中（$\\angle ADC = 90^\\circ, \\angle ACD = 60^\\circ, \\overline{AC} = 10$）：\n     $$\\overline{AD} = \\overline{AC} \\times \\sin 60^\\circ = 10 \\times \\frac{\\sqrt{3}}{2} = 5\\sqrt{3} \\text{ 公尺}$$\n\n4. **第三步：由直角 $\\triangle ABD$ 求樹原本高度 $\\overline{AB}$**：\n   - 在直角 $\\triangle ABD$ 中（$\\angle ADB = 90^\\circ, \\angle B = 30^\\circ$）：\n     $$\\sin 30^\\circ = \\frac{\\overline{AD}}{\\overline{AB}}$$\n     $$\\frac{1}{2} = \\frac{5\\sqrt{3}}{\\overline{AB}} \\implies \\overline{AB} = 2 \\times 5\\sqrt{3} = \\mathbf{10\\sqrt{3}} \\text{ 公尺}$$\n\n故本題正確答案為 **(B) 10√3**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_parallelogram_ratio_aef_deg_cgd_275",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國三數學幾何：平行四邊形相似三角形面積比／蝴蝶型相似與同高面積比連比",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【平行四邊形三角形面積比三大破題步驟】！\n1. **相似三角形邊長比 ＝ 面積平方比**：\n   - $\\triangle AFE \\sim \\triangle DCE$（AA 相似），邊長比 $\\overline{AE} : \\overline{DE} = 2 : 3$。\n   - 面積比 $= 2^2 : 3^2 = 4 : 9$ ⟹ 設 $\\triangle AFE = 4a, \\triangle DCE = 9a$。\n2. **蝴蝶型相似抓線段比**：\n   - $\\triangle DEG \\sim \\triangle BCG$（AA 相似），邊長比 $\\overline{EG} : \\overline{CG} = \\overline{DE} : \\overline{BC} = 3 : (2+3) = 3 : 5$。\n3. **同高三角形分割線段面積比**：\n   - 在 $\\triangle DCE$ 中，線段 $\\overline{CE}$ 被 G 分成 $\\overline{EG} : \\overline{CG} = 3 : 5$。\n   - $\\triangle DEG$ 面積 $= 9a \\times \\frac{3}{8} = \\frac{27}{8}a$。\n   - $\\triangle CGD$ 面積 $= 9a \\times \\frac{5}{8} = \\frac{45}{8}a$。\n4. **同乘 8 求整數連比**：\n   - $\\triangle AEF : \\triangle DEG : \\triangle CGD = 4a : \\frac{27}{8}a : \\frac{45}{8}a = 32 : 27 : 45$！",
+    "stem": "如圖，在平行四邊形 ABCD 中，E 點在 AD 上，延長 CE 交 BA 的延長線於 F 點，CE 和 BD 相交於 G 點，若 AE : DE = 2 : 3，則 △AEF 面積 : △DEG 面積 : △CGD 面積 = ？\n\n○ (A) 3 : 2 : 5\n○ (B) 8 : 6 : 9\n○ (C) 16 : 15 : 20\n○ (D) 32 : 27 : 45",
+    "answer": "(D) 32 : 27 : 45",
+    "diagramUrl": "assets/questions/q_math_parallelogram_ratio_aef_deg_cgd_275.png",
+    "solution": "### 💡 完整破題四步驟：\n\n1. **第一步：由平行四邊形對邊平行建立第一組相似三角形（△AFE ~ △DCE）**：\n   - 在平行四邊形 $ABCD$ 中，$\\overline{AB} // \\overline{CD}$，故延長線 $\\overline{AF} // \\overline{CD}$。\n   - 內錯角與對頂角相等：\\triangle AFE \\sim \\triangle DCE$（AA 相似性質）。\n   - 已知 $\\overline{AE} : \\overline{DE} = 2 : 3$，故相似比為 $2 : 3$。\n   - **面積比等於邊長平方比**：\n     $$\\triangle AFE \\text{ 面積} : \\triangle DCE \\text{ 面積} = \\overline{AE}^2 : \\overline{DE}^2 = 2^2 : 3^2 = 4 : 9$$\n   - **設代數比例**：設 $\\triangle AFE \\text{ 面積} = 4a$、$\\triangle DCE \\text{ 面積} = 9a$（$a \\neq 0$）。\n\n2. **第二步：由對邊平行建立蝴蝶型相似三角形（△DEG ~ △BCG）求線段比**：\n   - 平行四邊形中 $\\overline{AD} // \\overline{BC}$，且 $\\overline{BC} = \\overline{AD} = \\overline{AE} + \\overline{DE} = 2r + 3r = 5r$。\n   - 在 $\\triangle DEG$ 與 $\\triangle BCG$ 中，$\\overline{DE} // \\overline{BC}$，故 $\\triangle DEG \\sim \\triangle BCG$（AA 相似性質）。\n   - 對應邊成比例：\n     $$\\overline{EG} : \\overline{CG} = \\overline{DE} : \\overline{BC} = 3 : (2 + 3) = 3 : 5$$\n\n3. **第三步：同高三角形利用底邊比分割 △DCE 面積**：\n   - 觀察 $\\triangle DEG$ 與 $\\triangle CGD$，兩者共用頂點 $D$，底邊分別為 $\\overline{EG}$ 與 $\\overline{CG}$（在同一直線 $\\overline{CE}$ 上），故兩三角形等高：\n     $$\\triangle DEG \\text{ 面積} : \\triangle CGD \\text{ 面積} = \\overline{EG} : \\overline{CG} = 3 : 5$$\n   - 又兩者合為 $\\triangle DCE$（面積為 $9a$）：\n     $$\\triangle DEG \\text{ 面積} = 9a \\times \\frac{3}{3 + 5} = \\frac{27}{8}a$$\n     $$\\triangle CGD \\text{ 面積} = 9a \\times \\frac{5}{3 + 5} = \\frac{45}{8}a$$\n\n4. **第四步：計算三者連比**：\n   $$\\triangle AEF : \\triangle DEG : \\triangle CGD = 4a : \\frac{27}{8}a : \\frac{45}{8}a$$\n   - 同乘以 8 化為最簡整數比：\n     $$= (4 \\times 8) : 27 : 45 = \\mathbf{32 : 27 : 45}$$\n\n故本題正確答案為 **(D) 32 : 27 : 45**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_math_triangle_midpoint_fbc_area_276",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國三數學幾何：平行截線相似三角形面積比／梯形內部同底三角形面積求法",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【平行線中點三角形面積秒殺技巧】！\n1. **大三角形 vs 小三角形面積比**：\n   - $\\overline{DE} // \\overline{BC} \\implies \\triangle ADE \\sim \\triangle ABC$。\n   - 邊長比 $\\overline{AD} : \\overline{AB} = 2 : (2+1) = 2 : 3$。\n   - 面積比 $= 2^2 : 3^2 = 4 : 9$。\n   - 四邊形 $DBCE$ 佔 $\\triangle ABC$ 的 $1 - \\frac{4}{9} = \\frac{5}{9}$ 面積：\n     $$\\text{四邊形 } DBCE \\text{ 面積} = 120 \\times \\frac{5}{9} = \\frac{200}{3}$$\n2. **梯形中同底同高三角形面積比**：\n   - $\\triangle FBC$ 的底為 $\\overline{BC}$，高恰好為梯形 $DBCE$ 的高！\n   - $\\triangle FBC$ 面積 $= \\frac{1}{2} \\times \\overline{BC} \\times h$。\n   - 梯形 $DBCE$ 面積 $= \\frac{1}{2} \\times (\\overline{DE} + \\overline{BC}) \\times h$。\n   - 面積比 $= \\overline{BC} : (\\overline{DE} + \\overline{BC}) = 3 : (2 + 3) = 3 : 5$！\n   - 因此 $\\triangle FBC$ 面積 $= \\frac{200}{3} \\times \\frac{3}{5} = 40$！",
+    "stem": "如圖，在 △ABC 中，D、E 兩點分別在 AB、AC 上，DE // BC，F 為 DE 的中點，若 AD : BD = 2 : 1，△ABC 面積為 120，則 △FBC 面積為何？\n\n○ (A) 60\n○ (B) 50\n○ (C) 40\n○ (D) 30",
+    "answer": "(C) 40",
+    "diagramUrl": "assets/questions/q_math_triangle_midpoint_fbc_area_276.png",
+    "solution": "### 💡 完整破題思路與解析：\n\n1. **第一步：由平行線相似求四邊形 DBCE 面積**：\n   - 在 $\\triangle ABC$ 中，$\\overline{DE} // \\overline{BC}$，故 $\\triangle ADE \\sim \\triangle ABC$（AA 相似性質）。\n   - 已知 $\\overline{AD} : \\overline{BD} = 2 : 1$，故：\n     $$\\overline{AD} : \\overline{AB} = 2 : (2 + 1) = 2 : 3$$\n   - **面積比等於對應邊長平方比**：\n     $$\\triangle ADE \\text{ 面積} : \\triangle ABC \\text{ 面積} = \\overline{AD}^2 : \\overline{AB}^2 = 2^2 : 3^2 = 4 : 9$$\n   - 已知 $\\triangle ABC \\text{ 面積} = 120$，則：\n     $$\\triangle ADE \\text{ 面積} = 120 \\times \\frac{4}{9} = \\frac{160}{3}$$\n     $$\\text{四邊形 } DBCE \\text{ 面積} = 120 - \\frac{160}{3} = \\frac{200}{3}$$\n\n2. **第二步：利用梯形高求 $\\triangle FBC$ 面積**：\n   - 因為 $F$ 點在線段 $\\overline{DE}$ 上，且 $\\overline{DE} // \\overline{BC}$，所以點 $F$ 到線段 $\\overline{BC}$ 的垂直距離，恰好等於梯形 $DBCE$ 的高 $h$。\n   - 由 $\\triangle ADE \\sim \\triangle ABC$，得對應底邊比：\n     $$\\overline{DE} : \\overline{BC} = \\overline{AD} : \\overline{AB} = 2 : 3$$\n   - 設 $\\overline{DE} = 2r, \\overline{BC} = 3r$（$r \\neq 0$）：\n     - $\\triangle FBC \\text{ 面積} = \\frac{1}{2} \\times \\overline{BC} \\times h = \\frac{1}{2} \\times 3r \\times h = \\frac{3rh}{2}$\n     - 梯形 $DBCE \\text{ 面積} = \\frac{(\\overline{DE} + \\overline{BC}) \\times h}{2} = \\frac{(2r + 3r) \\times h}{2} = \\frac{5rh}{2}$\n   - 兩者面積之比值為：\n     $$\\frac{\\triangle FBC \\text{ 面積}}{\\text{四邊形 } DBCE \\text{ 面積}} = \\frac{\\frac{3rh}{2}}{\\frac{5rh}{2}} = \\frac{3}{5}$$\n\n3. **第三步：代入計算**：\n   $$\\triangle FBC \\text{ 面積} = \\frac{200}{3} \\times \\frac{3}{5} = \\mathbf{40}$$\n\n故本題正確答案為 **(C) 40**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },\n  {
     "id": "q_phy_gravitation_action_reaction_109_exam_273",
     "examPeriod": "一段",
     "subject": "自然/理化",

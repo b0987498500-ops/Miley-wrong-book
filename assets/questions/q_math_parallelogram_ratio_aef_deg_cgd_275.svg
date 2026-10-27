@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 360" width="1000" height="720" style="background:#ffffff; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;">
+  <!-- Parallelogram ABCD:
+       Let B = (80, 280), C = (380, 280)
+       A = (160, 140), D = (460, 140)
+       E is on AD such that AE : ED = 2 : 3.
+       D - A = (300, 0). E = A + 2/5 * (300, 0) = (160 + 120, 140) = (280, 140).
+       F is on extension of BA (from B through A to F) and on CE extended!
+       Line BA: from B(80, 280) to A(160, 140). Parametric: (80 + 80t, 280 - 140t). Slope = -140/80 = -7/4.
+       Line CE: C(380, 280) to E(280, 140). Vector E - C = (-100, -140). Slope = 140/100 = 7/5.
+       Intersection F:
+       BA line: 7x + 4y = 7(80) + 4(280) = 560 + 1120 = 1680.
+       CE line: y - 280 = 1.4(x - 380) => 1.4x - y = 1.4(380) - 280 = 532 - 280 = 252 => 7x - 5y = 1260.
+       Subtract: 9y = 420 => y = 420/9 = 140/3 approx 46.67.
+       7x = 1260 + 5(140/3) = 1260 + 700/3 = 4480/3 => x = 640/3 approx 213.33.
+       F = (213.33, 46.67).
+       
+       Diagonal BD: from B(80, 280) to D(460, 140).
+       Line BD: y - 280 = ((140 - 280)/(460 - 80)) (x - 80) = (-140/380)(x - 80) = (-7/19)(x - 80).
+       7x + 19y = 7(80) + 19(280) = 560 + 5320 = 5880.
+       Intersection G of BD and CE:
+       CE line: 7x - 5y = 1260.
+       BD line: 7x + 19y = 5880.
+       Subtract: 24y = 4620 => y = 4620/24 = 192.5.
+       7x = 1260 + 5(192.5) = 1260 + 962.5 = 2222.5 => x = 317.5.
+       G = (317.5, 192.5).
+  -->
+  
+  <!-- Parallelogram ABCD base outline -->
+  <polygon points="160,140 460,140 380,280 80,280" fill="#F8F9FA" stroke="#2C3E50" stroke-width="3"/>
+
+  <!-- Extension line BA to F -->
+  <line x1="160" y1="140" x2="213.33" y2="46.67" stroke="#7F8C8D" stroke-width="2.5" stroke-dasharray="5,4"/>
+
+  <!-- Line from C through E to F -->
+  <line x1="380" y1="280" x2="213.33" y2="46.67" stroke="#E74C3C" stroke-width="2.5"/>
+
+  <!-- Diagonal BD -->
+  <line x1="80" y1="280" x2="460" y2="140" stroke="#2980B9" stroke-width="2.5"/>
+
+  <!-- Triangle AEF fill highlight subtle -->
+  <polygon points="160,140 213.33,46.67 280,140" fill="#E8F8F5" opacity="0.6"/>
+
+  <!-- Triangle DEG fill highlight subtle -->
+  <polygon points="280,140 460,140 317.5,192.5" fill="#FEF9E7" opacity="0.6"/>
+
+  <!-- Triangle CGD fill highlight subtle -->
+  <polygon points="380,280 317.5,192.5 460,140" fill="#FDEDEC" opacity="0.6"/>
+
+  <!-- Points -->
+  <circle cx="80" cy="280" r="4.5" fill="#2C3E50"/>
+  <circle cx="380" cy="280" r="4.5" fill="#2C3E50"/>
+  <circle cx="160" cy="140" r="4.5" fill="#2C3E50"/>
+  <circle cx="460" cy="140" r="4.5" fill="#2C3E50"/>
+  <circle cx="280" cy="140" r="4.5" fill="#E74C3C"/>
+  <circle cx="213.33" cy="46.67" r="4.5" fill="#8E44AD"/>
+  <circle cx="317.5" cy="192.5" r="4.5" fill="#2980B9"/>
+
+  <!-- Labels -->
+  <text x="55" y="295" font-size="20" font-weight="bold" fill="#2C3E50" font-style="italic">B</text>
+  <text x="390" y="295" font-size="20" font-weight="bold" fill="#2C3E50" font-style="italic">C</text>
+  <text x="135" y="145" font-size="20" font-weight="bold" fill="#2C3E50" font-style="italic">A</text>
+  <text x="475" y="145" font-size="20" font-weight="bold" fill="#2C3E50" font-style="italic">D</text>
+  <text x="275" y="125" font-size="20" font-weight="bold" fill="#E74C3C" font-style="italic">E</text>
+  <text x="210" y="32" font-size="22" font-weight="bold" fill="#8E44AD" font-style="italic">F</text>
+  <text x="325" y="215" font-size="20" font-weight="bold" fill="#2980B9" font-style="italic">G</text>
+</svg>
