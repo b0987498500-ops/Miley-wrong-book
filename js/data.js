@@ -3,11 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v306';
+const STORAGE_KEY = 'miley_wrong_questions_v307';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
   {
+    "id": "q_math_quadratic_irrational_root_reverse_equation_270",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國二數學：一元二次方程式根的逆推／無理根反求原方程式比對係數求 k",
+    "uploadDate": "2026-10-27",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【無理根求未知係數三大解法：千萬別硬代入！】\n1. **避坑大忌：不要把 $x = 1 + \\frac{\\sqrt{10}}{2}$ 硬代回方程式！**\n   - 若直接代入 $k(1 + \\frac{\\sqrt{10}}{2})^2 - 4(1 + \\frac{\\sqrt{10}}{2}) - 3 = 0$，分數乘開加根號計算極為繁瑣，容易算錯！\n2. **秒殺首選：孤立根號兩邊平方（逆推方程式法）**：\n   - 原根：$x = 1 + \\frac{\\sqrt{10}}{2}$\n   - 同乘 2：$2x = 2 + \\sqrt{10}$\n   - 移項孤立根號：$2x - 2 = \\sqrt{10}$\n   - 兩邊平方消去根號：$(2x - 2)^2 = (\\sqrt{10})^2 \\implies 4x^2 - 8x + 4 = 10$\n   - 移項整理成 = 0：$4x^2 - 8x - 6 = 0$\n   - 同除以 2：$2x^2 - 4x - 3 = 0$\n   - 比對原式 $kx^2 - 4x - 3 = 0$，一次項與常數項完全吻合，直接秒得 $k = 2$！",
+    "stem": "若 1 + √10/2 為方程式 kx² - 4x - 3 = 0 之一根，則 k = ？\n\n○ (A) 1\n○ (B) 2\n○ (C) 3\n○ (D) 4",
+    "answer": "(B) 2",
+    "diagramUrl": "",
+    "solution": "### 💡 兩種超強破題秒殺解法：\n\n#### 🏆 解法一：孤立根號平方法（最不易出錯、15秒秒殺，極力推薦！）\n1. **由已知的一根建立等式**：\n   $$x = 1 + \\frac{\\sqrt{10}}{2}$$\n2. **同乘以 2 去分母**：\n   $$2x = 2 + \\sqrt{10}$$\n3. **移項將「無理根號」單獨孤立在等號一側**：\n   $$2x - 2 = \\sqrt{10}$$\n4. **等號兩邊同時平方（徹底消滅根號）**：\n   $$(2x - 2)^2 = (\\sqrt{10})^2$$\n   $$4x^2 - 8x + 4 = 10$$\n5. **移項化為標準型一元二次方程式**：\n   $$4x^2 - 8x - 6 = 0$$\n6. **兩邊同除以 2**：\n   $$2x^2 - 4x - 3 = 0$$\n7. **與題目原方程式比對係數**：\n   - 題目原式：$$kx^2 - 4x - 3 = 0$$\n   - 比對 $x^2$ 的係數，立即可得：\n     $$\\mathbf{k = 2}$$\n\n---\n\n#### ⚡ 解法二：根與係數關係／共軛雙根法\n1. 有理係數方程式若有一無理根 $1 + \\frac{\\sqrt{10}}{2}$，則其共軛雙根必為：\n   $$\\alpha = 1 + \\frac{\\sqrt{10}}{2}, \\quad \\beta = 1 - \\frac{\\sqrt{10}}{2}$$\n2. **兩根之和**：\n   $$\\alpha + \\beta = \\left(1 + \\frac{\\sqrt{10}}{2}\\right) + \\left(1 - \\frac{\\sqrt{10}}{2}\\right) = 2$$\n3. 根據韋達定理（根與係數關係），兩根之和為 $-\\frac{b}{a}$：\n   $$\\alpha + \\beta = -\\frac{-4}{k} = \\frac{4}{k}$$\n4. 列出等式求解：\n   $$\\frac{4}{k} = 2 \\implies 2k = 4 \\implies \\mathbf{k = 2}$$\n\n故本題填空答案為 **2**（選擇題型對應 **(B) 2**）。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-27",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },\n  {
     "id": "q_math_completing_square_abc_sum_269",
     "examPeriod": "一段",
     "subject": "數學",
