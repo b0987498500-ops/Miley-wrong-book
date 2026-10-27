@@ -3,11 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v308';
+const STORAGE_KEY = 'miley_wrong_questions_v309';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
   {
+    "id": "q_phy_kepler_orbit_universal_gravitation_distance_272",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國中理化：萬有引力定律與橢圓軌道／引力與距離平方成反比／100年基測題",
+    "uploadDate": "2026-10-27",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【萬有引力定律核心口訣：質量乘積成正比、距離平方成反比！】\n1. **公式定律**：$F = G\\frac{M \\cdot m}{R^2}$\n   - 當太陽質量 $M$ 與小行星質量 $m$ 保持固定時，萬有引力 $F$ 與距離的平方成反比（$F \\propto \\frac{1}{R^2}$）。\n2. **大小關係逆轉（大反比關係）**：\n   - 距離越大，引力越小（離太陽越遠，吸力越弱）！\n   - 距離越近，引力越大（離太陽越近，吸力越強）！\n   - 已知距離大小：$R_甲 > R_乙 > R_丙$（甲為遠日點、丙為近日點）。\n   - 因此萬有引力大小必然相反：$F_甲 < F_乙 < F_丙$（丙處引力最大，甲處引力最小）！\n3. **延伸考點（克卜勒第二行星定律／公轉速率）**：\n   - 近日點丙處引力最大，加速度最大，公轉速率最快；\n   - 遠日點甲處引力最小，加速度最小，公轉速率最慢！",
+    "stem": "如圖所示，一顆小行星以橢圓形軌道繞著太陽運行，小行星在甲、乙、丙三個位置時與太陽的距離分別為 R甲、R乙、R丙；小行星與太陽之間萬有引力大小分別為 F甲、F乙、F丙。若運行的過程中，太陽與小行星的質量變化忽略不計，且已知 R甲 > R乙 > R丙，則下列關係何者正確？【100.基測Ⅱ】\n\n○ (A) F甲 < F乙 < F丙\n○ (B) F甲 = F乙 = F丙\n○ (C) F甲 > F乙 > F丙\n○ (D) F甲 = F乙 ≠ F丙",
+    "answer": "(A) F甲 < F乙 < F丙",
+    "diagramUrl": "",
+    "solution": "### 💡 核心破題思維與物理定律分析：\n\n1. **牛頓萬有引力定律**：\n   - 任何兩物體間的萬有引力大小公式為：\n     $$F = G \\frac{M \\cdot m}{R^2}$$\n     - $G$：萬有引力常數\n     - $M$：太陽的質量\n     - $m$：小行星的質量\n     - $R$：小行星與太陽之間的距離\n\n2. **變數關係判斷**：\n   - 題幹明確指出「太陽與小行星的質量變化忽略不計」，即 $M$ 與 $m$ 皆為定值。\n   - 因此，萬有引力 $F$ 的大小完全取決於距離 $R$：\n     $$F \\propto \\frac{1}{R^2} \\quad (\\text{萬有引力大小與物體間距離平方成反比})$$\n\n3. **大小排序比對**：\n   - 題目已知距離關係為：\n     $$R_甲 > R_乙 > R_丙$$\n     （其中甲為遠日點，距離最遠；丙為近日點，距離最近）。\n   - 因為引力大小與距離成反比（距離越遠，引力越小；距離越近，引力越大）：\n     $$\\mathbf{F_甲 < F_乙 < F_丙}$$\n\n故本題正確答案為 **(A) F甲 < F乙 < F丙**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-27",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },\n  {
     "id": "q_phy_geostationary_satellite_circular_motion_gravity_271",
     "examPeriod": "一段",
     "subject": "自然/理化",
