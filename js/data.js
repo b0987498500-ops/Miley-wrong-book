@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v317';
+const STORAGE_KEY = 'miley_wrong_questions_v318';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_phy_earth_rotation_centripetal_force_vs_gravity_283",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "地球自轉圓周運動：向心力 F 由萬有引力 W 的分力提供（F < W）／地面受力平衡與視重（W - N = F）",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【站在地表「向心力 F vs. 地球引力 W」秒殺物理模型】！\n1. **地面受力力圖分析（指向地心為正）**：\n   - 人站在地球表面，受向下指向地心的「地球萬有引力 $W$」。\n   - 地面給人向上支撐的「正向支持力 $N$」（磅秤讀數／體重）。\n   - 兩者的合力提供了人隨地球自轉做圓周運動所需的「向心力 $F$」：\n     $$W - N = F \\implies W = F + N$$\n2. **物理意義剖析**：\n   - 因為我們穩穩站在地上，地面一定有給我們向上的支撐力（$N > 0$）。\n   - 既然 $W = F + N$ 且 $N > 0$，所以 **地球引力 W 必然大於向心力 F**（即 **$F < W$**）！\n3. **極端狀況推演（秒殺誘答選項）**：\n   - **若 $F = W$**：此時 $N = 0$，表示地面不再提供支撐力，人會處於**完全失重／無重力懸浮**狀態（像人造衛星繞地運行一樣）！\n   - **若 $F > W$**：向心力不足，地球引力拉不住人，人將**被甩出外太空**！\n4. 故在正常地球自轉下，所需向心力遠小於引力，關係必為 **$F < W$** ⟹ 選 **(C)**！",
+    "stem": "地球處於不斷自轉的運動中，故你在地面上所需之向心力 F 和所受的地球引力 W，兩者比較關係為何？\n\n○ (A) F > W\n○ (B) F = W\n○ (C) F < W\n○ (D) 無法比較",
+    "answer": "(C) F < W",
+    "diagramUrl": "",
+    "solution": "### 💡 完整破題思路與圓周運動力學解析：\n\n1. **物理情境與力學分析**：\n   - 人站在地球表面，隨著地球以地軸為中心做等速率圓周運動。\n   - 根據牛頓第二運動定律，做圓周運動的物體必須有**指向圓心的合力（向心力 $F$）**。\n   - 人在鉛直方向受到兩個力作用：\n     1. **地球對人的萬有引力 $W$**：垂直向下（指向地心）。\n     2. **地表面對人的正向支撐力 $N$**：垂直向上。\n\n2. **列出力學方程式**：\n   - 由於人隨著地球做圓周運動，指向地心的合力即為所需向心力 $F$：\n     $$W - N = F$$\n   - 移項整理得：\n     $$W = F + N$$\n\n3. **判斷 $F$ 與 $W$ 的大小關係**：\n   - 因為我們能腳踏實地穩穩站在地面上，地表對我們必然存在向上的支撐力，即：\n     $$N > 0$$\n   - 由 $W = F + N$ 且 $N > 0$，可知：\n     $$W > F \\quad (\\text{即 } F < W)$$\n   - 地球引力 $W$ 只有極小的一部分被拿去當作自轉所需的向心力 $F$，剩下的絕大部分轉化為我們壓在地面上的體重（正向力 $N = W - F$）。\n\n4. **各選項極端物理狀態探討**：\n   - **(A) $F > W$**：所需向心力大於地球引力，引力不足以維持圓周運動，物體將脫離地表被甩向外太空。\n   - **(B) $F = W$**：此時 $N = 0$，地面支撐力為 0，人會處於「失重狀態」（如近地人造衛星），但正常地表絕非此狀態。\n   - **(C) $F < W$**：引力的一部分提供向心力，大部分表現為壓在地面上的正向力（視重），人穩穩立於地表。\n\n故本題正確答案為 **(C) F < W**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_phy_gravitation_inverse_square_law_distance_double_282",
     "examPeriod": "一段",
