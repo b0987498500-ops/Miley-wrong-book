@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v320';
+const STORAGE_KEY = 'miley_wrong_questions_v321';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_math_square_cef_ecd_dfg_area_290",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國三幾何綜合：等腰三角形性質／畢氏定理列方程式求線段／平行 AA 相似求底邊與面積",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【正方形延伸等腰相似面積三大通關密碼】！\n1. **密碼一：由等角得等腰三角形**：\n   - 題目給予 $\\angle CEF = \\angle ECD$，在 $\\triangle FEC$ 中兩底角相等 ⟹ 為等腰三角形，故腰長 $\\overline{EF} = \\overline{CF}$！\n2. **密碼二：作垂直高 EH 巧妙構造直角三角形列畢氏定理**：\n   - 設 $\\overline{DF} = x$，則 $\\overline{CF} = x + 4$，等腰腰長 $\\overline{EF} = x + 4$。\n   - 從 $E$ 向 $\\overline{CD}$ 作垂線 $\\overline{EH} \\perp \\overline{CD}$，則 $\\overline{EH} = 4$，$\\overline{DH} = \\overline{AE} = 2$。\n   - $\\overline{FH} = \\overline{DF} + \\overline{DH} = x + 2$。\n   - 在直角 $\\triangle FEH$ 中畢氏定理：\n     $$(x + 4)^2 = 4^2 + (x + 2)^2 \\implies x^2 + 8x + 16 = 16 + x^2 + 4x + 4 \\implies 4x = 4 \\implies x = 1$$\n   - 得 $\\overline{DF} = 1$！\n3. **密碼三：利用 AA 相似求底邊 DG**：\n   - $\\overline{AB} // \\overline{CD} \\implies \\triangle AEG \\sim \\triangle DFG$（AA 相似性質）。\n   - $\\overline{AG} : \\overline{DG} = \\overline{AE} : \\overline{DF} = 2 : 1$。\n   - $\\overline{DG} = 4 \\times \\frac{1}{2 + 1} = \\frac{4}{3}$。\n4. **算面積**：\n   - $\\triangle DFG \\text{ 面積} = \\frac{1}{2} \\times \\overline{DF} \\times \\overline{DG} = \\frac{1}{2} \\times 1 \\times \\frac{4}{3} = \\mathbf{\\frac{2}{3}}$ ⟹ 選 **(A)**！",
+    "stem": "如圖，正方形 ABCD 的邊長為 4，E 為 AB 中點，G 為 AD 上一點，延長 EG 交 CD 的延長線於 F 點，若 ∠CEF = ∠ECD，則 △DFG 的面積為何？\n\n○ (A) 2/3\n○ (B) 3/4\n○ (C) 2\n○ (D) 4",
+    "answer": "(A) 2/3",
+    "diagramUrl": "assets/questions/q_math_square_cef_ecd_dfg_area_290.png",
+    "solution": "### 💡 完整破題思路與代數幾何四步驟：\n\n1. **第一步：由等角條件推得等腰三角形**：\n   - 題目給定 $\\angle CEF = \\angle ECD$。\n   - 在 $\\triangle FEC$ 中，兩底角相等：\n     $$\\triangle FEC \\text{ 為等腰三角形} \\implies \\overline{EF} = \\overline{CF}$$\n\n2. **第二步：設未知數，利用輔助線與畢氏定理求線段 DF**：\n   - 設 $\\overline{DF} = x$。\n   - 因為正方形邊長為 4，所以 $\\overline{CD} = 4$，$F$ 在 $\\overline{CD}$ 的延長線上：\n     $$\\overline{CF} = \\overline{CD} + \\overline{DF} = 4 + x$$\n     $$\\overline{EF} = \\overline{CF} = x + 4$$\n   - 從 $E$ 點向 $\\overline{CD}$ 作垂線 $\\overline{EH} \\perp \\overline{CD}$（交 $\\overline{CD}$ 於 $H$ 點）：\n     - 四邊形 $AEHD$ 為矩形，故 $\\overline{EH} = \\overline{AD} = 4$。\n     - $E$ 為 $\\overline{AB}$ 中點，故 $\\overline{AE} = \\overline{DH} = \\frac{4}{2} = 2$。\n     - 垂足 $H$ 到頂點 $F$ 的距離：$\\overline{FH} = \\overline{FD} + \\overline{DH} = x + 2$。\n   - 在直角 $\\triangle FEH$ 中（$\\angle EHF = 90^\\circ$），依畢氏定理：\n     $$\\overline{EF}^2 = \\overline{EH}^2 + \\overline{FH}^2$$\n     $$(x + 4)^2 = 4^2 + (x + 2)^2$$\n     $$x^2 + 8x + 16 = 16 + (x^2 + 4x + 4)$$\n     $$8x = 4x + 4 \\implies 4x = 4 \\implies x = 1$$\n   - 故得 $\\overline{DF} = 1$。\n\n3. **第三步：利用 AA 相似三角形求底邊 DG**：\n   - 在正方形中，對邊平行 $\\overline{AB} // \\overline{CD}$（即 $\\overline{AE} // \\overline{DF}$）。\n   - 內錯角與對頂角相等：\n     $$\\triangle AEG \\sim \\triangle DFG \\quad (\\text{AA 相似性質})$$\n   - 對應邊成比例：\n     $$\\overline{AG} : \\overline{DG} = \\overline{AE} : \\overline{DF} = 2 : 1$$\n   - 因為 $G$ 在邊長為 4 的 $\\overline{AD}$ 上（$\\overline{AG} + \\overline{DG} = \\overline{AD} = 4$）：\n     $$\\overline{DG} = 4 \\times \\frac{1}{2 + 1} = \\frac{4}{3}$$\n\n4. **第四步：計算直角 $\\triangle DFG$ 的面積**：\n   - 因為 $\\angle FDC = 180^\\circ - 90^\\circ = 90^\\circ$，所以 $\\triangle DFG$ 為直角三角形：\n     $$\\triangle DFG \\text{ 面積} = \\frac{1}{2} \\times \\overline{DF} \\times \\overline{DG} = \\frac{1}{2} \\times 1 \\times \\frac{4}{3} = \\mathbf{\\frac{2}{3}}$$\n\n故本題正確答案為 **(A) 2/3**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_phy_planet_gravity_mass_vs_weight_radius_double_288",
     "examPeriod": "一段",
