@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v313';
+const STORAGE_KEY = 'miley_wrong_questions_v314';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_eng_parallel_gerund_infinitive_love_doing_listening_279",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "動詞受詞對等平行結構：love + V-ing and V-ing 或 love + to V1 and (to) V2／對等連接詞 and 詞性一致性",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【love 後接受詞的平行結構（動名詞 vs. 不定詞）】！\n1. **love 的兩種受詞形式**：\n   - love 後方接動作時，可以接「動名詞（V-ing）」或「不定詞（to V）」，兩者皆表示喜愛做某事。\n2. **對等連接詞 and 的平行原則（前後詞性必須對稱一致）**：\n   - 若前面選擇動名詞，後面也必須是動名詞：**love + V1-ing and V2-ing**。\n   - 若前面選擇不定詞，後面也必須是不定詞（第二個 to 通常省略）：**love + to V1 and (to) V2**。\n3. **常見混淆選項陷阱**：\n   - 選項 (A) does; listens ❌：句子已有主要動詞 loves，不能直接出現兩個第三人稱單數動詞作為受詞！\n   - 選項 (C) do; listen ❌：原形動詞不能直接作 love 的受詞（love 不是使役動詞或感官動詞）！\n   - 選項 (D) doing; to listen ❌：前面用動名詞 doing，後面卻用不定詞 to listen，破壞了 and 連接的平行對稱結構！\n4. 正確答案為 **(B) doing; listening**！",
+    "stem": "My brother loves ______ his homework and ______ to music in his bedroom.\n\n○ (A) does; listens\n○ (B) doing; listening\n○ (C) do; listen\n○ (D) doing; to listen",
+    "answer": "(B) doing; listening",
+    "diagramUrl": "",
+    "solution": "### 💡 核心解題關鍵與文法結構解析：\n\n1. **中英文句意剖析**：\n   - 原句：「My brother loves ______ his homework and ______ to music in his bedroom.」\n   - 中文意譯：「我哥哥喜歡在房間裡**寫作業**和**聽音樂**。」\n\n2. **主要動詞 love 的受詞規則**：\n   - 動詞 **love / like / hate** 後方接受詞時，接「動名詞（V-ing）」或「不定詞（to V）」皆合乎文法：\n     - 方式一（動名詞平行）：*love + V1-ing and V2-ing*\n     - 方式二（不定詞平行）：*love + to V1 and (to) V2*（and 後方的第二個 to 習慣省略）。\n\n3. **對等連接詞 and 的對稱平行原則（Parallel Structure）**：\n   - 句中的 **and** 連接兩個平行的受詞動作，兩者的文法型態必須**維持一致**：\n     - 若第一空格填入 **doing**（動名詞），則第二空格也必須對應填入 **listening**（動名詞）。\n     - 若第一空格填入 **to do**（不定詞），則第二空格為 **(to) listen**。\n\n4. **逐項檢視選項排除**：\n   - **(A) does; listens** ❌：主要動詞已是 loves，後方受詞不能再用現在式單數動詞。\n   - **(B) doing; listening** ✅：兩者皆為動名詞（V-ing and V-ing），結構完全對稱一致，符合語法。\n   - **(C) do; listen** ❌：原形動詞不可直接充當 love 的受詞。\n   - **(D) doing; to listen** ❌：前面為動名詞 (doing)，後面卻是不定詞 (to listen)，前後詞性混雜，違反對等連接詞的平行原則。\n\n故本題正確答案為 **(B) doing; listening**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_eng_gerund_stop_keep_practice_chain_278",
     "examPeriod": "一段",

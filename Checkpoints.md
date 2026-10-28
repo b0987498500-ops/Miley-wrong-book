@@ -4,6 +4,29 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v3.18] - 2026-10-28 (自動收錄國中英文動詞受詞對等平行結構考題 Q279：love 後接動名詞 doing and listening 平行對稱、對等連接詞 and 詞性一致性，零符號純淨繁體中文排版，升級數據庫至 v314，快取升級 v2.87)
+- **類型**：錯題自動收錄 / 國中英文文法 / 動詞受詞用法 / love + V-ing / 對等連接詞 and 平行結構 (Parallel Structure) / 零符號純淨繁體中文排版 / 升級數據庫至 v314 / 快取升級 v2.87
+- **主要變更**：
+  1. **收錄國中英文重要文法試題（Q279，歸入 2026-10-26 最新週次）**：
+     - **Q279** `q_eng_parallel_gerund_infinitive_love_doing_listening_279`（love + V-ing and V-ing 平行結構）：
+       - **題幹**：My brother loves ______ his homework and ______ to music in his bedroom.
+       - **選項**：
+         - ○ (A) does; listens
+         - ○ (B) doing; listening
+         - ○ (C) do; listen
+         - ○ (D) doing; to listen
+       - **正解**：**(B) doing; listening**。
+       - **易錯警示筆記**：
+         1. **對等連接詞 and 的平行對稱原則**：and 連接兩個動作受詞時，詞性與結構必須對稱。前面用動名詞 doing，後面也必須用動名詞 listening。
+         2. **混淆選項排除**：不可前動名詞後不定詞（如 (D) doing; to listen ❌）；不可用現在式第三人稱單數動詞充當受詞（如 (A) does; listens ❌）。
+  2. **圖文處理原則遵循**：
+     - 原截圖為純文字考題，依 SOP 規範「純文字題目不放截圖（`diagramUrl: ""`）」，轉為高易讀性 Markdown 純淨繁體中文排版。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v314`（`miley_wrong_questions_v314`），保留歷史版本無痛繼承鏈。
+     - Service Worker 快取升級為 `miley-pwa-cache-v2.87`，腳本版本標籤升級 `js/data.js?v=314`、`sw.js?v=299`。
+
+---
+
 ## [v3.17] - 2026-10-28 (自動收錄國中英文動詞受詞搭配考題 Q278：stop 接動名詞 learning 表停止放棄、keep 接動名詞 practicing 表持續、連鎖動名詞結構，零符號純淨繁體中文排版，升級數據庫至 v313，快取升級 v2.86)
 - **類型**：錯題自動收錄 / 國中英文文法 / 動名詞 (V-ing) vs 不定詞 (to V) / stop + V-ing vs stop + to V / keep + V-ing / 連鎖動名詞 (keep practicing speaking) / 零符號純淨繁體中文排版 / 升級數據庫至 v313 / 快取升級 v2.86
 - **主要變更**：
