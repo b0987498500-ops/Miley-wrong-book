@@ -4,6 +4,29 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v3.16] - 2026-10-28 (自動收錄國中英文動詞受詞搭配考題 Q277：keep 接動名詞 looking at 與 want 接不定詞 to go、動詞辨析看手錶 look at，零符號純淨繁體中文排版，升級數據庫至 v312，快取升級 v2.85)
+- **類型**：錯題自動收錄 / 國中英文文法 / 動名詞 (V-ing) vs 不定詞 (to V) / keep + V-ing / want + to V / 看手錶 look at vs watch 辨析 / 零符號純淨繁體中文排版 / 升級數據庫至 v312 / 快取升級 v2.85
+- **主要變更**：
+  1. **收錄國中英文重要文法試題（Q277，歸入 2026-10-26 最新週次）**：
+     - **Q277** `q_eng_verb_object_gerund_infinitive_kept_wanted_277`（keep + V-ing 與 want + to V 句型受詞）：
+       - **題幹**：Melody kept ______ her watch during the party because she wanted ______ home early.
+       - **選項**：
+         - ○ (A) watching; going
+         - ○ (B) to watch; to go
+         - ○ (C) looking at; to go
+         - ○ (D) to look at; going
+       - **正解**：**(C) looking at; to go**。
+       - **易錯警示筆記**：
+         1. **看手錶用 look at 而非 watch**：watch 用於觀看活動過程（如看電視、看球賽）；看手錶看時間、注視具體靜態物用 look at！
+         2. **動詞慣用搭配**：keep 後面接動名詞（keep + V-ing ⟹ kept looking at）；want 後面接不定詞（want + to V ⟹ wanted to go）。
+  2. **圖文處理原則遵循**：
+     - 原截圖為純文字考題，依 SOP 規範「純文字題目不放截圖（`diagramUrl: ""`）」，轉為高解析純淨排版。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v312`（`miley_wrong_questions_v312`），保留歷史版本無痛繼承鏈。
+     - Service Worker 快取升級為 `miley-pwa-cache-v2.85`，腳本版本標籤升級 `js/data.js?v=312`、`sw.js?v=297`。
+
+---
+
 ## [v3.15] - 2026-10-28 (一次自動收錄國三幾何三大難題 Q274～Q276：傾斜樹木影子等腰求高 10√3、平行四邊形相似面積連比 32:27:45、平行截線梯形中點三角形面積 40、精繪高解析去劇透去痕幾何圖形、零符號純淨繁體中文排版，升級數據庫至 v311，快取升級 v2.84)
 - **類型**：錯題自動收錄 / 國三幾何經典題組 / 相似形與比例線段 / 特殊直角三角形三角比 / 平行四邊形面積分割 / 梯形內部同底三角形面積 / 去筆跡劇透乾淨向量幾何圖繪製 / 零符號純淨繁體中文排版 / 升級數據庫至 v311 / 快取升級 v2.84
 - **主要變更**：

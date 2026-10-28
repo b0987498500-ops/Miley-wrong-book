@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v311';
+const STORAGE_KEY = 'miley_wrong_questions_v312';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_eng_verb_object_gerund_infinitive_kept_wanted_277",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "動詞後接受詞用法：keep + V-ing（持續...）／want + to V（想要...）／look at 與 watch 差異",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【動名詞 vs. 不定詞＋看手錶動詞搭配】！\n1. **看手錶用「look at」而非「watch」**：\n   - **watch**：觀看「會動的畫面或過程」（如 watch TV 看電視、watch a movie 看電影、watch a game 看球賽）。\n   - **look at**：注視、盯著某個具體物品（如 look at the watch 看手錶確認時間、look at the blackboard 看黑板）。故看手錶必須用 **look at her watch**！\n2. **第一個空格動詞 keep 的慣用句型**：\n   - **keep + V-ing**（持續／一直做某事），過去式為 kept ⟹ 後方必須接動名詞 **looking at**！\n3. **第二個空格動詞 want 的慣用句型**：\n   - **want + to V**（想要做某事），過去式為 wanted ⟹ 後方必須接不定詞 **to go**！\n4. 組合解題：kept **looking at** her watch ... wanted **to go** home ⟹ 選 **(C)**！",
+    "stem": "Melody kept ______ her watch during the party because she wanted ______ home early.\n\n○ (A) watching; going\n○ (B) to watch; to go\n○ (C) looking at; to go\n○ (D) to look at; going",
+    "answer": "(C) looking at; to go",
+    "diagramUrl": "",
+    "solution": "### 💡 核心解題關鍵與文法重點：\n\n1. **中英文句意解析**：\n   - 原句：「Melody kept ______ her watch during the party because she wanted ______ home early.」\n   - 中文意譯：「Melody 在派對期間**不斷看著她的手錶**，因為她**想要早點回家**。」\n\n2. **第一空格：keep 的動詞受詞搭配 ＋ 看手錶的動詞選擇**：\n   - **句型規則**：動詞 **keep**（保持、持續）後方若接另一個動作，習慣接「動名詞（V-ing）」表達持續進行的狀態，即 **keep + V-ing**。\n   - **動詞辨析（look at vs. watch）**：\n     - **look at**：集中視線注視某人或某物（例如看手錶確認時間，慣用 **look at one's watch**）。\n     - **watch**：專注注視正在移動、變化的活動或畫面（例如看電視 watch TV、看球賽 watch a game）。看手錶上的靜止指針或數字確認時間，不使用 watch。\n   - 因此第一格必須填入 **looking at**（排除 B、D 選項）。\n\n3. **第二空格：want 的動詞受詞搭配**：\n   - **句型規則**：動詞 **want**（想要）後方接動詞時，固定接「不定詞（to + 原形動詞）」，即 **want + to V**。\n   - 因此第二格必須填入 **to go**（排除 A、D 選項）。\n\n4. **綜合判斷**：\n   - 第一格為 **looking at**，第二格為 **to go**，完整句子為：\n     *Melody kept **looking at** her watch during the party because she wanted **to go** home early.*\n\n故本題正確答案為 **(C) looking at; to go**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_math_tilted_tree_shadow_trig_274",
     "examPeriod": "一段",
