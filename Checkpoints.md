@@ -4,6 +4,29 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v3.17] - 2026-10-28 (自動收錄國中英文動詞受詞搭配考題 Q278：stop 接動名詞 learning 表停止放棄、keep 接動名詞 practicing 表持續、連鎖動名詞結構，零符號純淨繁體中文排版，升級數據庫至 v313，快取升級 v2.86)
+- **類型**：錯題自動收錄 / 國中英文文法 / 動名詞 (V-ing) vs 不定詞 (to V) / stop + V-ing vs stop + to V / keep + V-ing / 連鎖動名詞 (keep practicing speaking) / 零符號純淨繁體中文排版 / 升級數據庫至 v313 / 快取升級 v2.86
+- **主要變更**：
+  1. **收錄國中英文重要文法試題（Q278，歸入 2026-10-26 最新週次）**：
+     - **Q278** `q_eng_gerund_stop_keep_practice_chain_278`（stop + V-ing 與 keep + V-ing 句型受詞）：
+       - **題幹**：Never stop ______ English. Always keep ______ speaking English every day.
+       - **選項**：
+         - ○ (A) to learn; to practice
+         - ○ (B) to learn; practicing
+         - ○ (C) learning; practicing
+         - ○ (D) learning; to practice
+       - **正解**：**(C) learning; practicing**。
+       - **易錯警示筆記**：
+         1. **stop + V-ing vs. stop + to V 辨析**：stop + V-ing 為「停止正在做的動作（不再做）」；stop + to V 為「停下來轉去做另一件事（表目的）」。本題前句 Never stop learning English 意為「絕不停止學習英文」，故選 learning！
+         2. **keep + V-ing 與連鎖動名詞**：keep 固定接動名詞 practicing；而 practice 後方同樣接動名詞 speaking，形成常見連鎖動名詞結構！
+  2. **圖文處理原則遵循**：
+     - 原截圖為純文字考題，依 SOP 規範「純文字題目不放截圖（`diagramUrl: ""`）」，轉為極致純淨排版。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v313`（`miley_wrong_questions_v313`），保留歷史版本無痛繼承鏈。
+     - Service Worker 快取升級為 `miley-pwa-cache-v2.86`，腳本版本標籤升級 `js/data.js?v=313`、`sw.js?v=298`。
+
+---
+
 ## [v3.16] - 2026-10-28 (自動收錄國中英文動詞受詞搭配考題 Q277：keep 接動名詞 looking at 與 want 接不定詞 to go、動詞辨析看手錶 look at，零符號純淨繁體中文排版，升級數據庫至 v312，快取升級 v2.85)
 - **類型**：錯題自動收錄 / 國中英文文法 / 動名詞 (V-ing) vs 不定詞 (to V) / keep + V-ing / want + to V / 看手錶 look at vs watch 辨析 / 零符號純淨繁體中文排版 / 升級數據庫至 v312 / 快取升級 v2.85
 - **主要變更**：

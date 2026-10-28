@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v312';
+const STORAGE_KEY = 'miley_wrong_questions_v313';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_eng_gerund_stop_keep_practice_chain_278",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "動詞後接受詞用法：stop + V-ing（停止做某事）vs. stop + to V（停下來去做）／keep + V-ing／practice + V-ing（連鎖動名詞）",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【stop 的兩種接法差異 ＋ keep 連鎖動名詞陷阱】！\n1. **stop + V-ing vs. stop + to V 大辨析（國中必考大考點）**：\n   - **stop + V-ing**：**停止正在做的動作**（放棄、不做某事）。例如：Never stop learning English（永不放棄／停止學習英文）。\n   - **stop + to V**：**停下手邊的事，轉身去進行另一件事**（不定詞作目的副詞）。例如：He stopped to drink water（他停下來去喝水）。\n   - 題幹前句意為「絕不要中途放棄/停止學習英文」，故第一空格必須接動名詞 **learning**！\n2. **keep + V-ing 的連鎖動名詞陷阱**：\n   - **keep + V-ing**：持續／一直做某事 ⟹ keep 後方必須接動名詞 **practicing**。\n   - 留意後方的 speaking：因為動詞 **practice**（練習）後方習慣也是接動名詞（**practice + V-ing**），所以形成了「keep practicing speaking English」（持續練習說英文）的漂亮連鎖動名詞結構！\n3. 綜合答案：Never stop **learning** ... Always keep **practicing** ... ⟹ 正確答案選 **(C)**！",
+    "stem": "Never stop ______ English. Always keep ______ speaking English every day.\n\n○ (A) to learn; to practice\n○ (B) to learn; practicing\n○ (C) learning; practicing\n○ (D) learning; to practice",
+    "answer": "(C) learning; practicing",
+    "diagramUrl": "",
+    "solution": "### 💡 核心解題關鍵與文法結構解析：\n\n1. **中英文完整句意剖析**：\n   - 原句：「Never stop ______ English. Always keep ______ speaking English every day.」\n   - 中文意譯：「永遠不要停止學習英文。請務必每天持續練習說英文。」\n\n2. **第一空格：stop 後接受詞的形式判定**：\n   - **stop + V-ing**：表示「停止正在進行的動作」或「戒除、放棄該行為」。\n     - 例句：*He stopped smoking.*（他戒菸了 / 停止抽菸）。\n     - 本題前句為祈使句「Never stop ______ English」，語意為「絕不要停止／放棄學習英文」，故受詞必須用動名詞 **learning**。\n   - **stop + to V**：表示「停下當前正在做的事，轉而去執行另一動作（不定詞表達目的）」。\n     - 例句：*He was tired, so he stopped to rest.*（他累了，所以停下手邊工作去休息）。\n   - 故第一格鎖定 **learning**（直接排除 A、B 選項）。\n\n3. **第二空格：keep 與 practice 的動名詞結構（連鎖動名詞）**：\n   - **keep + V-ing**：表示「持續／一直保持某種動作狀態」。\n     - 故 keep 後面必須接動名詞 **practicing**。\n   - **延伸文法補充（practice 的用法）**：\n     - 動詞 **practice**（練習）後面同樣固定接動名詞（**practice + V-ing**），因此句中接了 *speaking English*。\n     - 形成合乎文法的連鎖結構：*keep + practicing (V-ing) + speaking (V-ing)*。\n   - 故第二格鎖定 **practicing**（排除 D 選項）。\n\n4. **結論**：\n   - 第一格填入 **learning**，第二格填入 **practicing**。\n   - 完整句子：*Never stop **learning** English. Always keep **practicing** speaking English every day.*\n\n故本題正確答案為 **(C) learning; practicing**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_eng_verb_object_gerund_infinitive_kept_wanted_277",
     "examPeriod": "一段",
