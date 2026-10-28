@@ -3,10 +3,130 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v318';
+const STORAGE_KEY = 'miley_wrong_questions_v319';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_phy_circular_motion_acceleration_nature_284",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "等速率圓周運動本質：向心加速度方向時刻指向圓心（方向隨位置改變）／屬於變加速度運動（非等加速度、非等速度）",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【等速率圓周運動「三不是」秒殺口訣】！\n1. **不是「等速度運動」**：速度具有「大小」與「方向」，圓周運動的切線方向時刻改變，因此速度不斷改變，絕對不是等速度！\n2. **不是「等加速度運動」**：加速度同樣具有「大小」與「方向」！雖然向心加速度大小固定，但**向心加速度的方向隨時指向圓心，方向不斷在轉動改變**！只要加速度方向改變，就叫做「變加速度運動」，絕不是等加速度（等加速度運動的加速度方向與大小必須永遠恆定，如自由落體）！\n3. 綜合秒殺：有加速度（向心加速度）＋但不是等加速度（方向時刻改變） ⟹ 選 **(C)**！",
+    "stem": "等速率圓周運動是屬於下列何種運動？\n\n○ (A) 具有加速度且是等加速度的運動\n○ (B) 減速度運動\n○ (C) 具有加速度但不是等加速度的運動\n○ (D) 等速度運動",
+    "answer": "(C) 具有加速度但不是等加速度的運動",
+    "diagramUrl": "",
+    "solution": "### 💡 核心解題關鍵與觀念剖析：\n\n1. **「速度」與「等速度」的定義**：\n   - 速度是**向量**，同時包含「大小（速率）」與「方向」。\n   - 等速率圓周運動中，雖然運動快慢（速率）保持不變，但運動的**切線方向時刻在改變**。\n   - 因為運動方向改變，所以速度必然改變，故**絕非等速度運動**（排除 D）。\n\n2. **「加速度」與「向心加速度」的本質**：\n   - 只要速度有改變（不管是大小改變還是方向改變），物體就一定具有**加速度**。\n   - 等速率圓周運動的加速度為「向心加速度」，大小為 $a = \\frac{v^2}{R}$，方向時刻指向圓心。\n\n3. **為什麼不是「等加速度運動」？（最常考陷阱）**：\n   - 「等加速度運動」的嚴格物理定義為：加速度的**大小與方向皆保持恆定不變**（例如在地表附近的自由落體或斜向拋射）。\n   - 在圓周運動中，物體繞著圓心旋轉，向心加速度的方向**隨時指向圓心**（在最高點時朝下、在最右點時朝左、在最低點時朝上……方向時刻改變）。\n   - 既然方向不斷改變，加速度就不是定值向量，因此**不是等加速度運動**，而屬於**變加速度運動**。\n\n4. **結論**：\n   等速率圓周運動「**具有加速度，但不是等加速度運動**」。\n\n故本題正確答案為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_circular_motion_centripetal_force_direction_285",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "向心力與加速度的向量特性：向心力時刻指向圓心（方向隨位置轉動改變）／速度、加速度、受力方向皆非恆定",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【「指向圓心」不等於「方向保持不變」！】\n1. **核心陷阱剖析**：\n   - 很多同學看到「向心力一直指向圓心」，就直覺誤以為「方向保持不變」而選錯！\n   - 事實上：物體在東邊時，圓心在西邊（力朝西）；物體轉到北邊時，圓心在南邊（力朝南）！力與加速度的**空間指向時刻在旋轉改變**！\n2. **物理量盤點（等速率圓周運動）**：\n   - **大小不變的量**：速率、向心加速度大小、向心力大小、週期、轉速。\n   - **方向不斷改變的量**：速度方向（切線）、加速度方向（指向圓心）、合力/向心力方向（指向圓心）。\n3. 故 (B)「向心力的方向保持不變」敘述錯誤，選 **(B)**！",
+    "stem": "關於某物體作等速率圓周運動的敘述，下列何者錯誤？\n\n○ (A) 運動過程中存在一個向心力\n○ (B) 向心力的方向保持不變\n○ (C) 某物體的速度不斷改變\n○ (D) 某物體的加速度不斷改變",
+    "answer": "(B) 向心力的方向保持不變",
+    "diagramUrl": "",
+    "solution": "### 💡 核心選項逐一解析：\n\n- **(A) 運動過程中存在一個向心力** 👉 **正確**。\n  做圓周運動必須有提供偏轉方向的向心力（$F = \frac{mv^2}{R}$），否則物體將依慣性沿切線方向飛出。\n\n- **(B) 向心力的方向保持不變** 👉 **錯誤（本題所選）**。\n  向心力的方向雖然「恆指向圓心」，但隨著物體在圓周上的位置不斷移動，向心力的**空間指向時刻在改變**（例如在最右側時力朝左，在最上方時力朝下）。力是向量，方向改變即代表力在改變，絕非保持不變。\n\n- **(C) 某物體的速度不斷改變** 👉 **正確**。\n  速度是切線方向，繞圓轉動時切線方向每瞬間都在轉動，故速度不斷改變。\n\n- **(D) 某物體的加速度不斷改變** 👉 **正確**。\n  向心加速度方向恆指向圓心，隨物體位置移動而方向不斷旋轉改變，故加速度向量不斷改變。\n\n故本題錯誤敘述為 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_satellite_orbit_not_constant_velocity_286",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "人造衛星繞地運行：萬有引力提供向心力做圓周運動／等速率而非等速度（切線方向持續轉彎）",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【人造衛星是「等速率圓周運動」，絕非「等速度運動」！】\n1. **「等速度」的唯一可能**：\n   - 「等速度運動」必須是**大小不變且方向不變**的「等速直線運動」（加速度 a = 0，不受合力或合力為 0）。\n2. **人造衛星真實運動狀態**：\n   - 人造衛星繞地球轉動，受地球「萬有引力」吸引作為向心力（故 D 正確）。\n   - 軌跡為圓周（故 A 正確）。\n   - 快慢（速率）不隨時間改變（故 B 正確）。\n   - 運動方向沿軌道切線持續彎曲，因此**速度隨時在改變**，絕非等速度！\n3. 故 (C)「人造衛星的移動屬於等速度運動」錯誤，選 **(C)**！",
+    "stem": "一個繞著地球運轉的人造衛星，關於此人造衛星運動情形的敘述，下列何者錯誤？\n\n○ (A) 屬於圓周運動\n○ (B) 速率將不隨時間而改變\n○ (C) 人造衛星的移動屬於等速度運動\n○ (D) 人造衛星與地球之間有作用力存在",
+    "answer": "(C) 人造衛星的移動屬於等速度運動",
+    "diagramUrl": "",
+    "solution": "### 💡 核心選項逐一剖析：\n\n- **(A) 屬於圓周運動** 👉 **正確**。\n  人造衛星繞地球運轉的軌道可視為等速率圓周運動。\n\n- **(B) 速率將不隨時間而改變** 👉 **正確**。\n  萬有引力垂直於衛星的運動切線方向（不做功），因此衛星的速率（運動快慢）保持恆定。\n\n- **(C) 人造衛星的移動屬於等速度運動** 👉 **錯誤（本題所選）**。\n  「等速度運動」的軌跡必定是直線。人造衛星繞地球旋轉時，運動方向不斷轉彎改變，屬於加速度運動（具有指向地球中心的向心加速度），絕非等速度運動。\n\n- **(D) 人造衛星與地球之間有作用力存在** 👉 **正確**。\n  兩者之間存在萬有引力（互為作用力與反作用力），地球對衛星的萬有引力恰好提供衛星繞地公轉所需的向心力。\n\n故本題錯誤敘述為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_circular_motion_turn_faster_need_more_force_287",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "向心力公式分析：F = mv²/R（轉動愈快速率愈大，所需向心力愈大）／腳踏車轉彎靠摩擦力提供向心力",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【轉得愈快，需要愈大的向心力，絕不會更省力！】\n1. **向心力大小公式核心**：\n   $$F = \\frac{m v^2}{R}$$\n   - 當半徑 $R$ 與質量 $m$ 固定時，所需向心力 $F$ 與速率平方 $v^2$ 成正比（$F \\propto v^2$）。\n   - **轉動愈快 ⟹ 速率 v 愈大 ⟹ 所需向心力 F 愈大**！\n2. **生活常識檢驗（甩水桶／開車過彎）**：\n   - 手拉繩子甩球或手提水桶旋轉，轉得愈快手必須拉得愈用力，若手抓不住繩子就會斷掉或飛出去！\n   - 開車或騎腳踏車轉彎時車速愈快，輪胎與地面所需的側向摩擦力（向心力）愈大，否則容易打滑失控！\n3. 故 (D)「轉動愈快時愈省力，所需的向心力愈小」完全顛倒錯誤，選 **(D)**！",
+    "stem": "關於圓周運動的敘述，下列何者錯誤？\n\n○ (A) 騎腳踏車轉彎時亦需要向心力\n○ (B) 人造衛星繞地球運行可視為圓周運動\n○ (C) 為一種加速度運動，加速度方向指向圓心\n○ (D) 轉動愈快時愈省力，所需的向心力愈小",
+    "answer": "(D) 轉動愈快時愈省力，所需的向心力愈小",
+    "diagramUrl": "",
+    "solution": "### 💡 核心選項逐一解析：\n\n- **(A) 騎腳踏車轉彎時亦需要向心力** 👉 **正確**。\n  轉彎屬於圓周運動的一部分，必須由地面對輪胎的靜摩擦力提供指向彎道內側的向心力，車身向內傾斜也能協助提供向心力。\n\n- **(B) 人造衛星繞地球運行可視為圓周運動** 👉 **正確**。\n  人造衛星繞地球運行軌道接近正圓，由地球對其的萬有引力提供向心力，可視為等速率圓周運動。\n\n- **(C) 為一種加速度運動，加速度方向指向圓心** 👉 **正確**。\n  圓周運動切線方向時刻改變，必定有加速度，且向心加速度方向時刻指向圓心。\n\n- **(D) 轉動愈快時愈省力，所需的向心力愈小** 👉 **錯誤（本題所選）**。\n  依向心力公式 $F = \\frac{mv^2}{R}$，向心力與速率平方成正比。當轉動半徑一定時，轉動愈快（$v$ 愈大），所需之向心力愈大，拉力或摩擦力負擔愈重，絕不可能愈省力。\n\n故本題錯誤敘述為 **(D)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_phy_earth_rotation_centripetal_force_vs_gravity_283",
     "examPeriod": "一段",
