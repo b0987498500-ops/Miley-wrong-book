@@ -3,10 +3,70 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v319';
+const STORAGE_KEY = 'miley_wrong_questions_v320';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_phy_planet_gravity_mass_vs_weight_radius_double_288",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "星球表面萬有引力與體重：質量恆不變（太空人質量仍為 80 公斤）／半徑變 2 倍重力變為 1/4（體重變為 20 公斤重）",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【質量 vs. 重量兩大秒殺鐵律】！\n1. **鐵律一：質量（公斤，kg）到宇宙任何地方都恆定不變！**\n   - 太空人在地球上的質量是 80 公斤，無論飛到月球、火星還是這個新行星，其**質量永遠是 80 公斤**！\n   - 選項 (B)「質量變為 160 公斤」與 (D)「質量變為 20 公斤」直接畫大叉秒殺排除！\n2. **鐵律二：星球表面重力（體重，kgw）與半徑平方成反比！**\n   - 星球表面萬有引力（即體重）：$$W = G \\frac{M \\cdot m}{R^2}$$\n   - 行星質量 $M$ 與地球相同，半徑 $R$ 為地球的 2 倍：\n   - 體重 $W' = \\frac{W}{2^2} = \\frac{80}{4} = \\mathbf{20 \\text{ 公斤重}}$！\n3. 綜合秒殺：質量不變（80 kg）＋ 體重除以 4（20 kgw） ⟹ 選 **(C)**！",
+    "stem": "若某行星的質量與地球相同，但半徑為地球的 2 倍。若地球上一體重 80 公斤重的太空人登陸此行星表面，則下列敘述何者正確？\n\n○ (A) 太空人的體重變為 160 公斤重\n○ (B) 太空人的質量變為 160 公斤\n○ (C) 太空人的體重變為 20 公斤重\n○ (D) 太空人的質量變為 20 公斤",
+    "answer": "(C) 太空人的體重變為 20 公斤重",
+    "diagramUrl": "",
+    "solution": "### 💡 核心解題關鍵與觀念剖析：\n\n1. **辨析「質量」與「重量」的本質差別**：\n   - **質量（單位：公斤，kg）**：代表物體所含物質的總量，**不隨地點或重力場而改變**。太空人在地球上的質量為 80 公斤，登陸到該行星後，其質量依然是 **80 公斤**。\n     - 故選項 (B)、(D) 聲稱質量會改變，皆為嚴重觀念錯誤，直接排除。\n   - **重量 / 體重（單位：公斤重，kgw）**：代表物體所受該星球的「萬有引力大小」，會隨星球質量與半徑改變。\n\n2. **星球表面萬有引力公式計算**：\n   $$W = G \\times \\frac{M \\times m}{R^2}$$\n   - 行星質量 $M$ 與地球相同（比值為 1）。\n   - 太空人自身質量 $m$ 相同（比值為 1）。\n   - 行星半徑 $R$ 為地球半徑的 2 倍（$R' = 2R$）。\n   - 故太空人在該行星表面所受引力（體重）：\n     $$W' = G \\times \\frac{M \\times m}{(2R)^2} = \\frac{1}{4} \\times \\left( G \\times \\frac{M \\times m}{R^2} \\right) = \\frac{1}{4} W$$\n     $$W' = \\frac{1}{4} \\times 80 \\text{ 公斤重} = \\mathbf{20 \\text{ 公斤重}}$$\n\n故本題正確答案為 **(C)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_phy_gravitation_inverse_square_definition_289",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "萬有引力定律基本性質：與距離平方成反比（非成正比）／必為吸引力／遵守牛頓第三運動定律（超距力）",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【萬有引力四大核心性質一覽】！\n1. **成反比！成反比！成反比！**：\n   - 萬有引力大小與距離平方成「**反比**」（$F \\propto \\frac{1}{R^2}$），距離愈遠引力愈弱！\n   - 選項 (B) 寫成「成正比」是極度低級的審題粗心陷阱！\n2. **四大本質檢查**：\n   - 必為**吸引力**（自然界中萬有引力不存在斥力，靜電力才有斥力）。\n   - 遵守**牛頓第三運動定律**（甲吸引乙與乙吸引甲大小相等、方向相反，互為作用力與反作用力）。\n   - 普遍存在於**宇宙任何兩物體之間**（超距力）。\n3. 故 (B)「萬有引力和兩物體間的距離平方成正比」錯誤，選 **(B)**！",
+    "stem": "有關萬有引力的敘述，下列何者錯誤？\n\n○ (A) 萬有引力必為吸引力\n○ (B) 萬有引力和兩物體間的距離平方成正比\n○ (C) 萬有引力遵守牛頓第三運動定律\n○ (D) 萬有引力存在於任何兩物體之間",
+    "answer": "(B) 萬有引力和兩物體間的距離平方成正比",
+    "diagramUrl": "",
+    "solution": "### 💡 核心選項逐一剖析：\n\n- **(A) 萬有引力必為吸引力** 👉 **正確**。\n  萬有引力具有純粹吸引的性質，宇宙中任何具質量的物質皆相互吸引，不存在排斥力（斥力只出現在同性電荷或同名磁極之間）。\n\n- **(B) 萬有引力和兩物體間的距離平方成正比** 👉 **錯誤（本題所選）**。\n  根據牛頓萬有引力定律 $F = G \\frac{m_1 m_2}{R^2}$，引力大小與兩物體質心間的距離平方成「**反比**」，而非正比。\n\n- **(C) 萬有引力遵守牛頓第三運動定律** 👉 **正確**。\n  物體 A 吸引物體 B 的萬有引力，與物體 B 吸引物體 A 的萬有引力，大小相等、方向相反、作用在同一直線上，且同時產生與消失，互為「作用力與反作用力」。\n\n- **(D) 萬有引力存在於任何兩物體之間** 👉 **正確**。\n  萬有引力是宇宙四大基本交互作用之一，宇宙中任何兩物體只要具有質量，彼此之間就必定存在萬有引力。\n\n故本題錯誤敘述為 **(B)**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_phy_circular_motion_acceleration_nature_284",
     "examPeriod": "一段",
