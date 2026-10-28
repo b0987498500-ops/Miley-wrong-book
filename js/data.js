@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v316';
+const STORAGE_KEY = 'miley_wrong_questions_v317';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_phy_gravitation_inverse_square_law_distance_double_282",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "萬有引力定律：引力大小與距離平方成反比（F ∝ 1/R²）／質量不變時距離變為 2 倍引力變為 1/4（0.25F）",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【萬有引力「距離平方成反比」秒殺觀念】！\n1. **題目給的質量數值（100公斤、45公斤）是誘答雜訊**：\n   - 因為兩物體前後質量完全沒有改變，所以根本不需要去乘 100 × 45 浪費計算時間！\n2. **萬有引力公式大核心**：\n   $$F = G \\times \\frac{m_1 m_2}{R^2}$$\n   - 當質量不變時，萬有引力與兩物體距離的「平方」成反比：$$F \\propto \\frac{1}{R^2}$$\n3. **距離倍數平方反比公式**：\n   - 距離由 1 公尺變為 2 公尺（距離變為 **2 倍**）：\n   - 新引力 $F' = \\frac{F}{2^2} = \\frac{1}{4}F = \\mathbf{0.25F}$！\n4. **常見陷阱警告**：\n   - 粗心以為距離變 2 倍引力變一半選 0.5F ❌（忘記平方！）。\n   - 粗心看成正比選 4F ❌（距離越遠引力必然越小！）。",
+    "stem": "甲物體的質量為 100 公斤，乙物體的質量為 45 公斤，若兩物體相距 1 公尺時，其萬有引力為 F，則當兩物體相距 2 公尺時，其萬有引力是多少？\n\n○ (A) 0.25F\n○ (B) 0.5F\n○ (C) F\n○ (D) 4F",
+    "answer": "(A) 0.25F",
+    "diagramUrl": "",
+    "solution": "### 💡 完整破題思路與物理定律解析：\n\n1. **牛頓萬有引力定律公式**：\n   $$F = G \\times \\frac{m_1 \\times m_2}{R^2}$$\n   其中：\n   - $G$ 為萬有引力常數。\n   - $m_1$、$m_2$ 為兩物體的質量。\n   - $R$ 為兩物體質心間的距離。\n\n2. **比例關係分析（破除雜訊）**：\n   - 題目中甲物體質量（$m_1 = 100$ 公斤）與乙物體質量（$m_2 = 45$ 公斤）在距離改變前後**完全保持不變**。\n   - 因此，萬有引力大小 $F$ 僅與距離的平方成反比：\n     $$F \\propto \\frac{1}{R^2}$$\n\n3. **距離由 1 公尺增加至 2 公尺之計算**：\n   - 當距離 $R_1 = 1$ 公尺時，萬有引力為 $F_1 = F$。\n   - 當距離 $R_2 = 2$ 公尺時，設萬有引力為 $F_2$。\n   - 依比例式列式：\n     $$\\frac{F_2}{F_1} = \\frac{\\frac{1}{R_2^2}}{\\frac{1}{R_1^2}} = \\left( \\frac{R_1}{R_2} \\right)^2 = \\left( \\frac{1}{2} \\right)^2 = \\frac{1}{4}$$\n     $$F_2 = \\frac{1}{4} F_1 = 0.25F$$\n\n4. **結論**：\n   距離增為 2 倍，萬有引力變為原來的 $\\frac{1}{2^2} = \\frac{1}{4} = 0.25$ 倍，即 **0.25F**。\n\n故本題正確答案為 **(A) 0.25F**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_eng_tag_question_those_they_arent_they_281",
     "examPeriod": "一段",
