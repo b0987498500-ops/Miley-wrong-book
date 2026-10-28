@@ -3,10 +3,70 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v314';
+const STORAGE_KEY = 'miley_wrong_questions_v316';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_eng_tag_question_those_they_arent_they_281",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "指示代名詞當主詞的附加問句規則：this/that 轉 it，these/those 轉 they／前肯後否（are 轉 aren't）",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【指示代名詞（this/that/these/those）附加問句三大鐵律】！\n1. **附加問句主詞「必須是人稱代名詞」，絕不能重複 this / that / these / those**：\n   - **this / that** 轉為 ⟹ **it**！\n   - **these / those** 轉為 ⟹ **they**！\n   - 絕對不能直接寫 aren't those 或 are those ❌（直接排除 B、D 選項）！\n2. **動詞對應與前肯後否**：\n   - 直述句主要動詞為肯定句 **are**。\n   - 遵守「前肯後否」原則，附加問句必須用否定縮寫形式 **aren't**（直接排除 A 選項）！\n3. 綜合秒殺：肯定 are ⟹ aren't；主詞 those ⟹ they ⟹ 答案秒選 **(C) aren't they**！",
+    "stem": "Those are just the same tricks, ______?\n\n○ (A) are they\n○ (B) are those\n○ (C) aren't they\n○ (D) aren't those",
+    "answer": "(C) aren't they",
+    "diagramUrl": "",
+    "solution": "### 💡 完整破題思路與附加問句關鍵文法：\n\n1. **中英文完整句意剖析**：\n   - 原句：「Those are just the same tricks, ______?」\n   - 中文意譯：「那些只是同樣的把戲，不是嗎？」\n\n2. **第一步：主詞轉換規則（指示代名詞 轉 人稱代名詞）**：\n   - 原句主詞為指示代名詞 **Those**（那些）。\n   - **文法鐵律**：附加問句的主詞**一律必須使用人稱代名詞**（I, you, he, she, it, we, they），絕對不能直接使用名詞或指示代名詞（this, that, these, those）！\n     - 單數指示代名詞 **this / that** ⟹ 轉為代名詞 **it**。\n     - 複數指示代名詞 **these / those** ⟹ 轉為代名詞 **they**。\n   - 故本題附加問句主詞必定為 **they**（直接排除選項 B 與 D）。\n\n3. **第二步：動詞一致性與「前肯後否」原則**：\n   - 直述句的主要動詞為 be 動詞 **are**（肯定形式）。\n   - 根據附加問句「**前肯後否、前否後肯**」的對稱原則：\n     - 前方為肯定句（are） ⟹ 附加問句必須為否定縮寫形 **aren't**。\n   - 排除選項：排除肯定形 are they 的選項 (A)。\n\n4. **結論與句型整合**：\n   - *Those are just the same tricks, **aren't they**?*\n\n故本題正確答案為 **(C) aren't they**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
+  {
+    "id": "q_eng_tag_question_gerund_subject_104_exam_280",
+    "examPeriod": "一段",
+    "subject": "英文",
+    "errorReason": "觀念不懂",
+    "concept": "動名詞當主詞視為單數（代名詞用 it）／附加問句規則：前否後肯＋動詞一致（be 動詞 is）",
+    "uploadDate": "2026-10-28",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【動名詞當主詞的附加問句四大口訣】！\n1. **主詞是「動名詞片語」視為單數事物 ⟹ 代名詞用 it**：\n   - 主詞為「Getting up early on a cold morning」（在寒冷的早晨早起），這是一件事，附加問句代名詞必須用 **it**！千萬不要看語意以為是在對「你」講話而選 you！\n2. **抓主要動詞 ⟹ 附加問句動詞要對應**：\n   - 直述句主要動詞為 be 動詞 **is**，附加問句就必須使用 **be 動詞**，不能用助動詞 does / do！\n3. **前否後肯 ⟹ 負負不得正**：\n   - 前半句是 **is not easy**（否定句），附加問句就必須使用肯定形 **is it**！\n4. 綜合秒殺：前否 (is not) ⟹ 後肯 (is)；主詞 (Getting up...) ⟹ it ⟹ 答案秒選 **(D) is it**！",
+    "stem": "Getting up early on a cold morning is not easy, ______? 【104年會考】\n\n○ (A) are you\n○ (B) do you\n○ (C) does it\n○ (D) is it",
+    "answer": "(D) is it",
+    "diagramUrl": "",
+    "solution": "### 💡 完整破題三步驟與文法核心解析：\n\n1. **第一步：抓主詞，決定附加問句代名詞**：\n   - 句子的完整主詞為 **Getting up early on a cold morning**（在寒冷的早晨早起）。\n   - 文法規則：**動名詞（V-ing）片語**充當主詞時，代表「一件事情」，文法上一律視為**單數第三人稱**，轉成代名詞時必須使用 **it**。\n   - 排除選項：直接排除含有代名詞 you 的選項 (A)、(B)。\n\n2. **第二步：看主要動詞，決定動詞類別**：\n   - 主要子句的動詞是 be 動詞 **is**（*is not easy*）。\n   - 文法規則：附加問句的動詞必須與主要動詞對應一致：\n     - 前面是 be 動詞 ⟹ 後面用 be 動詞。\n     - 前面是一般動詞 ⟹ 後面才用助動詞 (do/does/did)。\n   - 本題主要動詞是 is，附加問句必須用 be 動詞，不可用一般動詞助動詞 does。\n   - 排除選項：排除使用助動詞 does 的選項 (C)。\n\n3. **第三步：前否後肯，決定正負極性**：\n   - 主要子句為否定句（*is not easy*，含有 not）。\n   - 文法規則：附加問句遵守「**前肯後否、前否後肯**」原則。\n   - 前面已為否定句（is not），後方附加問句必須為肯定形，故為 **is it**。\n\n4. **結論與句意驗證**：\n   - *Getting up early on a cold morning is not easy, **is it**?*\n   - 中文意譯：「在寒冷的早晨早起可不容易，對吧？」\n\n故本題正確答案為 **(D) is it**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-28",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_eng_parallel_gerund_infinitive_love_doing_listening_279",
     "examPeriod": "一段",

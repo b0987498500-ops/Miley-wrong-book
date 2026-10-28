@@ -4,6 +4,52 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v3.20] - 2026-10-28 (自動收錄國中英文指示代名詞附加問句經典考題 Q281：指示代名詞 those 必須轉為代名詞 they、前肯後否 are 轉否定縮寫 aren't、零符號純淨繁體中文排版，升級數據庫至 v316，快取升級 v2.89)
+- **類型**：錯題自動收錄 / 國中英文文法 / 附加問句代名詞轉換規則 / 指示代名詞 (this/that 轉 it, these/those 轉 they) / 前肯後否 (are 轉 aren't) / 零符號純淨繁體中文排版 / 升級數據庫至 v316 / 快取升級 v2.89
+- **主要變更**：
+  1. **收錄國中英文核心文法試題（Q281，歸入 2026-10-26 最新週次）**：
+     - **Q281** `q_eng_tag_question_those_they_arent_they_281`（指示代名詞 those 之附加問句轉換）：
+       - **題幹**：Those are just the same tricks, ______?
+       - **選項**：
+         - ○ (A) are they
+         - ○ (B) are those
+         - ○ (C) aren't they
+         - ○ (D) aren't those
+       - **正解**：**(C) aren't they**。
+       - **易錯警示筆記**：
+         1. **主詞代名詞鐵律**：附加問句主詞必須是人稱代名詞，絕不可直接照抄 those！複數 those 轉為 they，單數 that/this 轉為 it。
+         2. **前肯後否**：直述句為肯定 are，附加問句必須用否定縮寫 aren't！
+  2. **圖文處理原則遵循**：
+     - 原截圖為純文字考題，依 SOP 規範「純文字題目不放截圖（`diagramUrl: ""`）」，轉為高易讀性 Markdown 純淨繁體中文排版。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v316`（`miley_wrong_questions_v316`），保留歷史版本無痛繼承鏈。
+     - Service Worker 快取升級為 `miley-pwa-cache-v2.89`，腳本版本標籤升級 `js/data.js?v=316`、`sw.js?v=301`。
+
+---
+
+## [v3.19] - 2026-10-28 (自動收錄 104 年會考英文動名詞當主詞與附加問句經典試題 Q280：動名詞片語當主詞視為單數事物代名詞用 it、前否後肯 is not 對應 is it、零符號純淨繁體中文排版，升級數據庫至 v315，快取升級 v2.88)
+- **類型**：錯題自動收錄 / 104 年會考 / 國中英文文法 / 動名詞 (V-ing) 當主詞 / 單數代名詞 it / 附加問句三大原則（前否後肯、動詞對應一致、代名詞對應） / 零符號純淨繁體中文排版 / 升級數據庫至 v315 / 快取升級 v2.88
+- **主要變更**：
+  1. **收錄 104 年會考英文核心試題（Q280，歸入 2026-10-26 最新週次）**：
+     - **Q280** `q_eng_tag_question_gerund_subject_104_exam_280`（動名詞當主詞之附加問句）：
+       - **題幹**：Getting up early on a cold morning is not easy, ______? 【104年會考】
+       - **選項**：
+         - ○ (A) are you
+         - ○ (B) do you
+         - ○ (C) does it
+         - ○ (D) is it
+       - **正解**：**(D) is it**。
+       - **易錯警示筆記**：
+         1. **動名詞主詞視為單數事物 ⟹ 代名詞用 it**：主詞為「Getting up early on a cold morning」，這是一件事，附加問句代名詞必須用 it，切勿誤選 you！
+         2. **動詞對應與前否後肯**：直述句動詞為 be 動詞 is，附加問句對應使用 is；前句含有 not 為否定句，附加問句必須為肯定形 is it！
+  2. **圖文處理原則遵循**：
+     - 原截圖為純文字考題，依 SOP 規範「純文字題目不放截圖（`diagramUrl: ""`）」，轉為高易讀性 Markdown 純淨繁體中文排版。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v315`（`miley_wrong_questions_v315`），保留歷史版本無痛繼承鏈。
+     - Service Worker 快取升級為 `miley-pwa-cache-v2.88`，腳本版本標籤升級 `js/data.js?v=315`、`sw.js?v=300`。
+
+---
+
 ## [v3.18] - 2026-10-28 (自動收錄國中英文動詞受詞對等平行結構考題 Q279：love 後接動名詞 doing and listening 平行對稱、對等連接詞 and 詞性一致性，零符號純淨繁體中文排版，升級數據庫至 v314，快取升級 v2.87)
 - **類型**：錯題自動收錄 / 國中英文文法 / 動詞受詞用法 / love + V-ing / 對等連接詞 and 平行結構 (Parallel Structure) / 零符號純淨繁體中文排版 / 升級數據庫至 v314 / 快取升級 v2.87
 - **主要變更**：
