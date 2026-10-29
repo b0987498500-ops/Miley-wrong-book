@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v323';
+const STORAGE_KEY = 'miley_wrong_questions_v324';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_phy_torque_arm_perpendicular_distance_5_12_13_293",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國中理化：力矩與轉動平衡／力臂嚴格定義（轉軸到作用線的垂直距離）／斜向力與畢氏三邊 5-12-13 判讀",
+    "uploadDate": "2026-10-29",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【力臂定義秒殺口訣：找垂直，別找桿長！】\n1. **力臂絕非桿長**：只有當作用力「垂直」於桿子時，桿長才等於力臂！本題拉力為斜向，桿長 13 m 絕對不能當作力臂（誤選 D：130 kgw · m ❌）！\n2. **力臂的嚴格定義**：由「轉軸（支點）」向「力的作用線」所作的【垂直距離】！\n   - 圖中已明確畫出垂直記號，轉軸到作用線的垂直距離為 5 m，因此力臂 = 5 m！\n3. **直角三角形 5-12-13 幾何關係**：\n   - 桿長 13 m 是斜邊，力作用線的延長線長度 12 m 是鄰邊，垂直力臂 5 m 是對邊。\n   - 力矩 = 力 × 力臂 = 10 kgw × 5 m = 50 kgw · m！",
+    "stem": "如圖，作用力 F 產生的力矩大小為多少？\n\n○ (A) 0 kgw · m\n○ (B) 50 kgw · m\n○ (C) 120 kgw · m\n○ (D) 130 kgw · m",
+    "answer": "(B) 50 kgw · m",
+    "diagramUrl": "assets/questions/q_phy_torque_arm_perpendicular_distance_5_12_13_293.png",
+    "solution": "### 💡 核心觀念與詳細解題步驟：\n\n1. **第一步：回歸力矩與力臂的物理定義**：\n   - **力矩公式**：$$\\text{力矩 } L = \\text{作用力 } F \\times \\text{力臂 } d$$\n   - **力臂定義**：由**轉軸（支點）**到**力的作用線**之**垂直距離**。\n\n2. **第二步：觀察幾何圖形辨識力臂長度**：\n   - 桿長為 $13\\text{ m}$，但作用力 $F$ 為斜向拉力，並未與桿子垂直。\n   - 沿著作用力 $F$ 向後延伸出「力的作用線」（圖中虛線）。\n   - 從左端轉軸向力的作用線作垂線，垂足處標有直角符號（$\\perp$）。\n   - 轉軸到此作用線的垂直距離恰為 $5\\text{ m}$，此即為作用力 $F$ 的**有效力臂**：\n     $$d = 5\\text{ m}$$\n   - （圖中的直角三角形三邊長恰為 $5、12、13$，符合畢氏定理 $5^2 + 12^2 = 13^2$）。\n\n3. **第三步：代入公式計算力矩**：\n   $$\\text{力矩 } L = F \\times d = 10\\text{ kgw} \\times 5\\text{ m} = \\mathbf{50\\text{ kgw}\\cdot\\text{m}}$$\n   - 方向：對轉軸產生逆時針方向的轉動效果。\n\n故本題正確答案為 **(B) 50 kgw · m**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-29",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_chi_su_shi_songfeng_pavilion_rest_292",
     "examPeriod": "一段",
