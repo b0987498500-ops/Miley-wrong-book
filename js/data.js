@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v322';
+const STORAGE_KEY = 'miley_wrong_questions_v323';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_chi_su_shi_songfeng_pavilion_rest_292",
+    "examPeriod": "一段",
+    "subject": "國文",
+    "errorReason": "審題不清",
+    "concept": "國文文言文閱讀：蘇軾《記遊松風亭》／隨遇而安與放下執念的曠達胸襟／文意理解與細節判讀",
+    "uploadDate": "2026-10-29",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【常見誤選 (C) 松風亭中陷阱！】\n- **容易誤選原因**：篇名為《記遊松風亭》，且文中提到「縱步松風亭下」、「望亭宇尚在木末」，容易先入為主以為他最終登上了松風亭。\n- **核心破題關鍵**：注意關鍵句「望亭宇尚在木末，意謂是如何得到？良久忽曰：『此間有甚麼歇不得處！』」——蘇軾頓悟到何必執著於非要走到高處的松風亭？眼前樹下路邊隨處皆可歇息！這種「放下執念、隨遇而安」的心境正是蘇軾散文的靈魂所在！",
+    "stem": "閱讀下列選文，回答問題：\n\n余嘗寓居惠州嘉祐寺，縱步松風亭下，足力疲乏，思欲就林止息。望亭宇尚在木末，意謂是如何得到？良久忽曰：「此間有甚麼歇不得處！」由是如掛鈎之魚，忽得解脫。若人悟此，雖兵陣相接，鼓聲如雷霆，進則死敵，退則死法①，當恁麼②時也不妨熟歇。\n（蘇軾 記遊松風亭）\n注釋：①死法：死於軍法。 ②恁麼：這麼、如此。\n\n依據本文，蘇軾最後在何處稍作休憩？\n\n○ (A) 嘉祐寺中\n○ (B) 路邊樹下\n○ (C) 松風亭中\n○ (D) 山邊橋下",
+    "answer": "(B) 路邊樹下",
+    "diagramUrl": "",
+    "solution": "### 💡 原文語譯與文意深層剖析：\n\n1. **【語譯】**：\n   我曾經寄居在惠州的嘉祐寺，隨意漫步到松風亭下方。腳力疲憊困乏，心裡想著要到樹林間停下來休息。抬頭望著松風亭還在遙遠的樹梢上方，心裡想著要怎樣才能走得到呢？想了很久，忽然心念一轉說道：「這裡難道有什麼不能歇息的地方嗎！」\n   從此時起，我就如同咬住魚鉤的魚兒突然獲得解脫一樣輕鬆自在。如果有人能參透這個道理，那麼即使在兩軍交戰、戰鼓隆隆聲如雷霆、前進會戰死於敵人手中、後退會死於軍法處決之際，在這樣危急嚴苛的時刻，也不妨安心好好休息片刻。\n\n2. **【核心線索定位與選項辨析】**：\n   - **定位關鍵句**：「思欲就林止息。望亭宇尚在木末，意謂是如何得到？良久忽曰：『此間有甚麼歇不得處！』」\n   - 蘇軾原本想走到松風亭，但看著亭子遠在山林樹梢之上（「尚在木末」），疲憊中忽然頓悟：**休息何必一定要走到松風亭？何處不能休息？** 於是就地在「路邊林間樹下」歇腳，獲得徹底的釋懷解脫。\n   - **選項判斷**：\n     - (A) 嘉祐寺中：為其寄居之處，出遊前所在地，非最後休憩處。\n     - **(B) 路邊樹下：正確**。就地在林木之下、路旁歇腳。\n     - (C) 松風亭中：此為預定目標，但蘇軾中途轉念並未硬撐爬上去，故非松風亭。\n     - (D) 山邊橋下：文中未提及橋樑。\n\n3. **【哲理意涵】**：\n   此篇反映出蘇軾被貶惠州時曠達超脫的人生境界——破除目標與目的地的執念，隨遇而安，當下即是自在解脫。\n\n故本題正確答案為 **(B) 路邊樹下**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-29",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_phy_combustion_mg_s_oxide_acidity_ph_291",
     "examPeriod": "一段",
