@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v321';
+const STORAGE_KEY = 'miley_wrong_questions_v322';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_phy_combustion_mg_s_oxide_acidity_ph_291",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "觀念不懂",
+    "concept": "國中理化：金屬與非金屬燃燒反應／氧化物溶於水之酸鹼性（氧化鎂呈鹼性、二氧化硫呈酸性）／pH值判讀",
+    "uploadDate": "2026-10-29",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【金屬 vs 非金屬燃燒氧化物溶於水酸鹼性三大黃金法則】！\n1. **金屬燃燒產物（甲瓶：鎂）**：\n   - 鎂帶燃燒發出耀眼白光，生成白色粉末「氧化鎂」（2Mg + O₂ → 2MgO）。\n   - 氧化鎂溶於水生成「氫氧化鎂」（MgO + H₂O → Mg(OH)₂），為**鹼性水溶液**，使石蕊試紙變藍色，**pH > 7**！\n2. **非金屬燃燒產物（乙瓶：硫）**：\n   - 硫粉燃燒產生藍紫色火焰及刺激性臭味氣體「二氧化硫」（S + O₂ → SO₂）。\n   - 二氧化硫溶於水生成「亞硫酸」（SO₂ + H₂O → H₂SO₃），為**酸性水溶液**，使石蕊試紙變紅色，**pH < 7**！\n3. **常見秒殺盲點（銅不溶於水）**：\n   - 銅燃燒生成黑色的氧化銅（CuO），但氧化銅**難溶於水**，水溶液呈**中性（pH = 7）**！不可死背「所有金屬氧化物溶於水都呈鹼性」！",
+    "stem": "阿偉將各放有鎂和硫的兩燃燒匙分別點火，然後各加入甲、乙兩充滿氧氣的瓶中繼續燃燒。待火焰熄滅後，分別加入少量的水，充分搖盪後，在室溫時，甲、乙兩瓶水溶液的 pH 值，下列何者正確？\n\n○ (A) 甲瓶 pH 值大於 7，乙瓶 pH 值大於 7\n○ (B) 甲瓶 pH 值大於 7，乙瓶 pH 值小於 7\n○ (C) 甲瓶 pH 值小於 7，乙瓶 pH 值小於 7\n○ (D) 甲瓶 pH 值小於 7，乙瓶 pH 值大於 7",
+    "answer": "(B) 甲瓶 pH 值大於 7，乙瓶 pH 值小於 7",
+    "diagramUrl": "",
+    "solution": "### 💡 核心觀念與兩瓶反應詳細剖析：\n\n1. **甲瓶：鎂（Mg，活潑金屬）的燃燒與產物性質**：\n   - **燃燒反應**：鎂在氧氣中劇烈燃燒，發出強烈刺眼的白光，生成白色的**氧化鎂**：\n     $$2Mg + O_2 \\longrightarrow 2MgO$$\n   - **加水搖盪**：氧化鎂溶於水後生成**氫氧化鎂**：\n     $$MgO + H_2O \\longrightarrow Mg(OH)_2$$\n   - **酸鹼性判斷**：氫氧化鎂水溶液解離出氫氧根離子（$OH^-$），水溶液呈**鹼性**。\n   - 在室溫時，鹼性水溶液的 **$\\text{pH} > 7$**（甲瓶 pH 值大於 7）。\n\n2. **乙瓶：硫（S，非金屬元素）的燃燒與產物性質**：\n   - **燃燒反應**：硫在氧氣中燃燒，產生藍紫色火焰及刺鼻臭味氣體**二氧化硫**：\n     $$S + O_2 \\longrightarrow SO_2$$\n   - **加水搖盪**：二氧化硫易溶於水，生成**亞硫酸**：\n     $$SO_2 + H_2O \\longrightarrow H_2SO_3$$\n   - **酸鹼性判斷**：亞硫酸水溶液解離出氫離子（$H^+$），水溶液呈**酸性**。\n   - 在室溫時，酸性水溶液的 **$\\text{pH} < 7$**（乙瓶 pH 值小於 7）。\n\n3. **綜合研判**：\n   - 甲瓶水溶液呈鹼性，$\\text{pH} > 7$；\n   - 乙瓶水溶液呈酸性，$\\text{pH} < 7$。\n\n故本題正確答案為 **(B) 甲瓶 pH 值大於 7，乙瓶 pH 值小於 7**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-29",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_math_square_cef_ecd_dfg_area_290",
     "examPeriod": "一段",
@@ -516,7 +546,8 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  },\n  {
+  },
+  {
     "id": "q_phy_gravitation_action_reaction_109_exam_273",
     "examPeriod": "一段",
     "subject": "自然/理化",
@@ -545,7 +576,8 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  },\n  {
+  },
+  {
     "id": "q_phy_kepler_orbit_universal_gravitation_distance_272",
     "examPeriod": "一段",
     "subject": "自然/理化",
@@ -574,7 +606,8 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  },\n  {
+  },
+  {
     "id": "q_phy_geostationary_satellite_circular_motion_gravity_271",
     "examPeriod": "一段",
     "subject": "自然/理化",
@@ -603,7 +636,8 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  },\n  {
+  },
+  {
     "id": "q_math_quadratic_irrational_root_reverse_equation_270",
     "examPeriod": "一段",
     "subject": "數學",
@@ -632,7 +666,8 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  },\n  {
+  },
+  {
     "id": "q_math_completing_square_abc_sum_269",
     "examPeriod": "一段",
     "subject": "數學",
@@ -661,7 +696,8 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  },\n  {
+  },
+  {
     "id": "q_math_quadratic_completing_square_k_expression_268",
     "examPeriod": "一段",
     "subject": "數學",
@@ -690,7 +726,8 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  },\n  {
+  },
+  {
     "id": "q_math_completing_square_geometric_tiles_267",
     "examPeriod": "一段",
     "subject": "數學",
@@ -719,7 +756,8 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  },\n  {
+  },
+  {
     "id": "q_math_quadratic_cancel_x_root_loss_266",
     "examPeriod": "一段",
     "subject": "數學",
@@ -748,7 +786,8 @@ const INITIAL_SEED_DATA = [
     "lastReviewedMonday": null,
     "lastReviewedDate": null,
     "reviewedMondays": []
-  },\n  {
+  },
+  {
     "id": "q_soc_hist_rome_republic_three_continents_expansion_161",
     "examPeriod": "一段",
     "subject": "社會",
