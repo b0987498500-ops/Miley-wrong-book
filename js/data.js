@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v326';
+const STORAGE_KEY = 'miley_wrong_questions_v327';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_world_population_5_percent_density_111_exam_297",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "地理／世界人口分布與環境負載力：全球人口稠密區（南亞恆河平原、東亞季風精耕平原）vs 人口稀疏區（乾燥荒漠、高緯苔原針葉林）／111會考題",
+    "uploadDate": "2026-10-30",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【111 會考全球人口極端分布秒殺密碼！】\n1. **看懂題目對比（5% 人口之謎）**：\n   - **深灰色區域（地廣人稀極致）**：涵蓋加拿大北部、西伯利亞、澳洲內陸、撒哈拉沙漠等廣袤土地，面積佔全球近一半，卻只有「5% 人口」！\n   - **黑色區域（極度稠密極致）**：僅僅是南亞「孟加拉與恆河三角洲」這一丁點面積，居然就住了與深灰色廣大土地相同的「5% 人口（約 3.5 億～4 億人）」！\n2. **尋找下一個「黑色區域（極高人口密度）」**：\n   - 題目要小齊在「淺灰色區域」畫一個同樣面積狹小卻擁有「5% 人口（約 3～4 億人）」的圓圈，必須選**全球極端人口稠密區**！\n   - **甲（美國西部大盆地/落磯山區）** ⟹ 雨影效應乾燥少雨、地廣人稀 ❌。\n   - **乙（北非撒哈拉沙漠邊緣）** ⟹ 副熱帶高壓籠罩乾燥氣候、人口極少 ❌。\n   - **丙（俄羅斯西伯利亞）** ⟹ 高緯嚴寒、永凍土覆蓋、人煙罕至 ❌。\n   - **丁（中國華北平原與長江中下游）** ⟹ **季風精耕水稻農業、平原沃野、人口數億、密度極高（正解 ✅）**！",
+    "stem": "2014 年世界上只有 5% 的人口居住在附圖中的深灰色區域；而相同數量的人口則居住在圖中黑色區域。小齊想要在地圖上的淺灰色區域，以圓圈標示另一個人口數量最接近的範圍，則他標示在下列何地最為適宜？【111 年會考】\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁",
+    "answer": "(D) 丁",
+    "diagramUrl": "assets/questions/q_soc_geo_world_population_5_percent_density_111_exam_297.png",
+    "solution": "### 💡 111 會考核心考點與影音深度解析：\n\n1. **第一步：看懂地圖設計的「極端人口密度對比」**：\n   - 2014 年全球總人口約 72 億，**5% 人口約為 3.6 億人**。\n   - **深灰色區域**：包括北加拿大、阿拉斯加、西伯利亞、撒哈拉沙漠、澳洲大沙漠、亞馬遜雨林等地，面積無比遼闊，全部加起來卻僅住 5% 人口（地廣人稀）。\n   - **黑色小點區域**：位於**南亞恆河三角洲與孟加拉一帶**，面積極小，卻憑藉肥沃沖積平原與充沛季風雨量，聚集了近 4 億人口（人口密度居世界之冠）。\n\n2. **第二步：題目任務（在相同大小的圓圈內找出聚集 5% 人口的精華區）**：\n   - 小齊要在淺灰色區域畫一個圓圈，也涵蓋約「5% 的人口（約 3.6 億人）」，因此所選地點必須符合：**面積不大、但人口密度極高、總人口達數億**。\n\n3. **第三步：甲、乙、丙、丁四地地理環境逐一檢視**：\n   - **甲地（北美洲西部內陸／大盆地與落磯山區）**：\n     - 位於西風背風側，氣候乾燥，以沙漠高原為主，人口密度極低。\n   - **乙地（北非撒哈拉沙漠北緣）**：\n     - 受副熱帶高氣壓籠罩，全年乾燥少雨，多為荒漠，人口稀疏。\n   - **丙地（北亞俄羅斯西伯利亞／葉尼塞河流域）**：\n     - 緯度極高、冬季酷寒漫長，分布苔原與泰加針葉林，為典型人口極端稀少區。\n   - **丁地（東亞中國華北平原與長江中下游平原）—【正解 ✅】**：\n     - 屬於東亞季風氣候區，雨熱同期，地形為廣大肥沃平原，擁有悠久的精耕農業歷史與發達的工商業都會，光是華北與華東地區人口就多達數億人，完全符合「在小範圍圓圈內聚集全球 5% 人口」的條件！\n\n故本題正確答案為 **(D) 丁**。\n\n> 📺 **推薦影音深度詳解**：本題完整名師影音剖析可參閱 [YouTube 111會考地理解析精講](https://www.youtube.com/watch?v=Vk4rqBpm3bg)。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-30",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_geo_wallace_east_indies_houses_108_exam_296",
     "examPeriod": "一段",
