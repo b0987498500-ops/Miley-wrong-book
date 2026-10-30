@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v332';
+const STORAGE_KEY = 'miley_wrong_questions_v333';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_ganges_delta_sandbar_island_113_exam_303",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "地理／南亞地形作用與水文沉積：恆河三角洲河流堆積作用／波拉氣旋與豪雨侵襲泥沙暴增／沙洲島嶼之形成與海平面海水侵蝕消失／113會考題",
+    "uploadDate": "2026-10-30",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【113 最新會考恆河口消失的沙洲島（新穆爾島 New Moore）秒殺！】\n1. **看懂題目核心關鍵字「沙洲島」**：\n   - 題目明確指出這是一座**「沙洲島」**（最高點僅 2 公尺）！\n   - 沙洲必定是由**「沉積作用（河流泥沙堆積）」**所形成，絕非「海底火山噴發」（A ❌，火山形成的是岩漿冷卻玄武岩/安山岩火山島）！\n2. **因果關係推理排除**：\n   - **(B) 改善水土保持**：水土保持變好 ⟹ 河水帶沙量減少 ⟹ 沙洲堆不出來 ❌。\n   - **(C) 海平面上升**：海平面上升只會「淹沒」島嶼，無法「形成」沙洲島 ❌。\n   - **(D) 豪雨侵襲帶來大量堆積物（正解 ✅）**：1970 年 11 月歷史上發生毀滅性的「波拉氣旋」，暴雨引發大洪水沖刷恆河中上游，攜帶天文數字的泥沙在河口大量沉積，浮現出新島嶼！",
+    "stem": "1970 年 11 月恆河出海口附近出現一座長 3.5 公里、寬 3 公里，最高點僅 2 公尺的沙洲島，因其位處印度與孟加拉領海交界處，引發兩國領土爭議，但在爭議還未解決之前，這座島嶼就消失了。根據當地自然環境判斷，該島嶼形成的原因最可能為下列何者？【113 年會考】\n\n○ (A) 位處板塊接觸帶，海底火山噴發\n○ (B) 恆河集水區的水土保持持續改善\n○ (C) 恆河河口附近的海平面持續上升\n○ (D) 豪雨侵襲，河流帶來大量堆積物",
+    "answer": "(D) 豪雨侵襲，河流帶來大量堆積物",
+    "diagramUrl": "",
+    "solution": "### 💡 113 會考最新考題深度解析（真實歷史事件：新穆爾島 New Moore Island）：\n\n1. **第一步：提取題幹關鍵地質特徵——「沙洲島」**：\n   - 題幹明確指稱該島嶼為**「沙洲島」**，長 3.5 公里、寬 3 公里，最高點僅海拔 2 公尺。\n   - 沙洲的形成機制純粹屬於外營力的**「流水沉積作用」**：河流從上游沖刷侵蝕大量泥沙，搬運至平緩開闊的出海口後流速驟減，泥沙在淺海灘地大量堆積露出水面，形成沖積沙洲。\n\n2. **第二步：選項逐一邏輯因果檢驗**：\n   - **(A) 錯誤（岩性與成因不符）**：\n     - 恆河三角洲出海口屬於廣大的沖積平原，並非海底火山活躍區；且海底火山噴發冷卻堆疊出的是「火成岩島嶼（如火山島）」，絕不會形成鬆散的「泥沙質沙洲島」。\n   - **(B) 錯誤（反向因果）**：\n     - 若集水區水土保持持續改善，植被涵養水源良好，水土流失減少，河川輸砂量必定顯著下降，反而不利於河口沙洲的形成。\n   - **(C) 錯誤（結果與成因混淆）**：\n     - 「海平面上升」是海水淹沒陸地，只會使低矮島嶼沉入海底（這正是該島後來消失的主因之一！），絕不可能反過來「促成沙洲島露出生長」。\n   - **(D) 正確（豪雨洪水爆發泥沙堆積）**：\n     - 1970 年 11 月發生歷史上最強烈熱帶氣旋之一的「波拉氣旋（Bhola cyclone）」，伴隨特大暴雨導致恆河、布拉馬普特拉河暴發特大洪水，沖刷攜帶海量泥沙在孟加拉灣河口沉積，短時間內堆積浮現出這座「新穆爾島」！後來又因海流長期侵蝕與氣候暖化海平面上升，於 2010 年前再度被海水完全淹沒消失。\n\n故本題正確答案為 **(D) 豪雨侵襲，河流帶來大量堆積物**。\n\n> 📺 **推薦影音深度詳解**：本題完整名師影音精講可參閱 [YouTube 113 會考地理解析影片](https://www.youtube.com/watch?v=llttQDXv_tA)。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-30",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_hist_ww1_east_asia_wilson_taiwan_democracy_302",
     "examPeriod": "一段",
