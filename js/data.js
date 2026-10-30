@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v324';
+const STORAGE_KEY = 'miley_wrong_questions_v325';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_hist_netherlands_indonesia_suwardi_294",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歷史／東南亞與大航海殖民歷史：十七世紀荷蘭東印度公司殖民荷屬東印度（印尼爪哇島）／甲乙丙丁地理地圖判讀",
+    "uploadDate": "2026-10-30",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【東南亞主要殖民母國秒殺口訣與地圖代號全解析！】\n1. **東南亞殖民母國黃金對照表**：\n   - **印尼（丙，爪哇島／蘇門答臘）** ⟹ **荷蘭殖民**（17世紀荷蘭東印度公司設巴達維亞／今雅加達，建立荷屬東印度）。題目關鍵字「自十七世紀以來長期受荷蘭殖民」唯一鎖定**印尼**！\n   - **菲律賓（乙）** ⟹ **西班牙殖民**（16世紀麥哲倫到達，以西班牙國王腓力二世命名），後在美西戰爭（1898）後轉由**美國**統治。\n   - **臺灣（甲）** ⟹ 荷蘭雖曾統治南臺灣（1624-1662，僅38年），但隨後由明鄭、清朝接續，非「長期受荷蘭殖民」！\n   - **中南半島（丁，如越南、寮國、柬埔寨）** ⟹ 19世紀受**法國**殖民統治（法屬印度支那）；緬甸、馬來亞則受**英國**殖民；泰國維持獨立。\n2. **歷史人物補充（畢道文）**：\n   - 畢道文（蘇瓦迪·蘇里亞寧拉特，Ki Hajar Dewantara）為印尼獨立運動先驅與現代教育之父，曾在荷蘭積極推動反殖民運動與印尼獨立！",
+    "stem": "畢道文的家鄉自十七世紀以來長期受荷蘭殖民，從醫科學校畢業後，他即前往荷蘭深造，並積極參與反荷蘭統治、支持家鄉獨立的政治運動。\n\n畢道文的家鄉最可能位於附圖中甲、乙、丙、丁何處？\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁",
+    "answer": "(C) 丙",
+    "diagramUrl": "assets/questions/q_soc_hist_netherlands_indonesia_suwardi_294.png",
+    "solution": "### 💡 核心考點與地圖四大代號深度解析：\n\n1. **第一步：抓取題幹兩大關鍵線索**：\n   - **線索一**：「自十七世紀以來長期受**荷蘭殖民**」。\n   - **線索二**：「前往荷蘭深造，並積極參與**反荷蘭統治、支持家鄉獨立**的政治運動」。\n   - **結論**：該地區自大航海時代（17 世紀）起即為荷蘭東印度公司在東南亞的核心根據地，長期建立「荷屬東印度」（今印度尼西亞）。\n\n2. **第二步：地圖中甲、乙、丙、丁地理位置與殖民歷史對照**：\n   - **甲（臺灣）**：\n     - 荷蘭東印度公司雖於 1624～1662 年統治臺灣南部 38 年，但隨後鄭成功登臺驅逐荷蘭人，進入明鄭時期與清領時期，**絕非長期受荷蘭殖民至近代獨立運動**。\n   - **乙（菲律賓群島）**：\n     - 16 世紀起受**西班牙**殖民統治長達 300 多年（以西班牙國王腓力二世命名），1898 年美西戰爭後割讓給**美國**。\n   - **丙（印度尼西亞／爪哇島與蘇門答臘島）—【正確答案 ✅】**：\n     - 17 世紀初荷蘭成立東印度公司（VOC），於爪哇島建立巴達維亞（今雅加達），以香料貿易為基礎建立殖民統治，統治印尼長達三百多年，直到二戰後印尼才爭取獨立。\n   - **丁（中南半島／泰國、緬甸、法屬印度支那）**：\n     - 丁所標示之中南半島東側主要為**法國**殖民地（法屬印度支那：越南、寮國、柬埔寨），西側為英國殖民地（緬甸），泰國則為緩衝國未被殖民。\n\n3. **綜合判斷**：\n   - 符合「自十七世紀長期受荷蘭殖民」且最終發起反荷獨立運動的家鄉，必定為**印尼（丙）**。\n\n故本題正確答案為 **(C) 丙**。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-30",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_phy_torque_arm_perpendicular_distance_5_12_13_293",
     "examPeriod": "一段",
