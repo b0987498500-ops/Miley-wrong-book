@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v337';
+const STORAGE_KEY = 'miley_wrong_questions_v338';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_iran_windcatcher_badgir_cooling_309",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "地理／西南亞乾燥氣候傳統民居智慧：波斯／伊朗「風塔（Badgir）」天然空調結構／捕捉高處涼風、排出室內熱氣／熱浮力煙囪效應與坎兒井地下冷水冷卻原理",
+    "uploadDate": "2026-10-31",
+    "mondayDate": "2026-10-26",
+    "mondayDates": [
+      "2026-10-26"
+    ],
+    "weekLabel": "2026-10-26 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 **易錯警示筆記**：【西南亞乾燥區「古代天然冷氣機——風塔」秒殺密碼！】\n1. **看懂結構圖「風塔（Badgir）」**：\n   - 圖中房屋頂部矗立著高聳的方形通風塔樓，上方標示「冷氣進、熱氣出、能捕捉更多的風造成良好的室內對流」。\n   - 這正是古波斯文明流傳數千年的世界文化遺產——**伊朗的「風塔（Windcatcher / Badgir）」**！\n2. **運作物理原理（熱浮力與煙囪效應）**：\n   - **捕捉高處涼風**：高空風速較大且溫度較低、沙塵較少，塔頂開口迎風面將外界涼風導引入屋內。\n   - **壓差抽吸熱氣**：室內被陽光照射加熱的熱空氣密度小、向上升騰，從背風側塔口或天井被迅速抽出（煙囪效應）。\n   - **結合坎兒井水系**：涼風導入地下坎兒井冷水面蒸發吸熱，再將冰涼濕潤的冷空氣送進起居室，室內可降溫達 8°C～12°C！\n3. **國家選項秒殺**：\n   - 只有 **(C) 伊朗** 位於炎熱乾燥的伊朗高原（波斯帝國所在地），是風塔建築最著名、保存最完整的代表國！\n   - 越南（熱帶季風，以干欄式高架屋防潮）、阿根廷（潘帕斯草原/溫帶）、義大利（地中海石造房屋）均非風塔代表國 ❌。",
+    "stem": "各地傳統民居形式，深受當地自然環境影響。附圖是某地區常見的房屋建築結構。請根據資訊內容推判，這種建築最可能出現於下列哪個國家？\n\n○ (A) 越南\n○ (B) 阿根廷\n○ (C) 伊朗\n○ (D) 義大利",
+    "answer": "(C) 伊朗",
+    "diagramUrl": "assets/questions/q_soc_geo_iran_windcatcher_badgir_cooling_309.png",
+    "solution": "### 💡 核心考點與波斯傳統風塔深度解析：\n\n1. **第一步：看懂建築構造圖——古代波斯的「風塔（Badgir）」**：\n   - 圖中展示的是屋頂上四面開口的通風塔樓，藉由「冷氣進、熱氣出」促進室內強烈空氣對流，達到無電力降溫效果。\n   - 這是**西南亞（特別是伊朗高原沙漠綠洲城市，如雅茲德 Yazd）**傳統建築最著名的標誌性構造——**「風塔（Windcatcher / 波斯語 Badgir）」**。\n\n2. **第二步：風塔的科學降溫機制**：\n   - **迎風導流**：在乾燥酷熱的沙漠地區，地面熱浪滾滾且常伴隨沙塵；風塔高聳於屋頂上方數公尺至十幾公尺，能捕捉高空較乾淨、涼爽的微風，將其導引向下送入屋內。\n   - **煙囪抽風效應（熱浮力對流）**：當無風時，塔體受陽光照射，塔內空氣受熱膨脹上升，從背風側逸出，形成負壓將室內積聚的熱氣抽走，帶動室內空氣持續循環。\n   - **結合地下水冷卻**：在伊朗，風塔常與**「坎兒井（Qanat）」**地下暗渠或室內水池相連，進入的乾燥熱風經過地下冷泉水面蒸發吸熱，化為涼爽濕潤的冷氣，堪稱古代「零碳排綠建築空調系統」！\n\n3. **第三步：選項各國環境辨析**：\n   - **(A) 越南**：熱帶季風氣候，氣候高溫多雨潮濕，傳統民居以**「干欄式高架屋」**防潮通風避蟲獸為主。\n   - **(B) 阿根廷**：南美洲溫帶草原與沙漠，非風塔建築文化圈。\n   - **(C) 伊朗—【正解 ✅】**：地處伊朗高原，氣候乾燥炎熱、日照強烈，為風塔（Badgir）發源與分布最密集的國家。\n   - **(D) 義大利**：地中海型氣候，傳統民居以厚石牆、小窗戶阻擋夏季烈日與乾燥熱風（如托斯卡尼石屋、阿爾貝羅貝洛圓頂石屋）。\n\n故本題正確答案為 **(C) 伊朗**。\n\n> 📺 **推薦影音深度詳解**：本題名師完整影音剖析可參閱 [YouTube 會考地理解析名師精講](https://www.youtube.com/watch?v=ySeOz9cdNZo)。",
+    "errorCount": 1,
+    "ebbinghausStage": 1,
+    "consecutiveMastered": 0,
+    "isArchived": false,
+    "nextReviewDate": "2026-10-31",
+    "isReviewed": false,
+    "reviewStatus": "unreviewed",
+    "lastReviewDecision": null,
+    "lastReviewedMonday": null,
+    "lastReviewedDate": null,
+    "reviewedMondays": []
+  },
   {
     "id": "q_soc_geo_qatar_arabian_peninsula_desert_climate_308",
     "examPeriod": "一段",
