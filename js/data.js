@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v342';
+const STORAGE_KEY = 'miley_wrong_questions_v343';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_soc_geo_usa_great_lakes_industry_raw_materials_314",
+      "examPeriod": "一段",
+      "subject": "社會",
+      "errorReason": "觀念不懂",
+      "concept": "地理/美洲地理／美國五大湖區重工業區位優勢（煤鐵資源原料豐富與廉價水運）",
+      "uploadDate": "2026-10-31",
+      "mondayDate": "2026-10-26",
+      "mondayDates": [
+          "2026-10-26"
+      ],
+      "weekLabel": "2026-10-26 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【美國五大湖傳統重工業聚落秒殺密碼！】\n1. **核心區位：原料取向（煤＋鐵）＋水運便利**：\n   - **煤礦**：來自東南方阿帕拉契山脈。\n   - **鐵礦**：來自蘇必略湖西岸（梅薩比礦區）。\n   - **廉價水運**：五大湖串聯聖羅倫斯河出海，載運沉重礦石最省成本！\n2. **核心城市發展鏈**：\n   - **匹茲堡**：鋼鐵之都（早期鄰近煤礦）。\n   - **芝加哥**：水陸交通樞紐、肉類加工與鋼鐵製造。\n   - **底特律**：汽車之城（鄰近鋼鐵原料產地）。\n3. **常見解題陷阱**：\n   - 看到重工業（鋼鐵、石化） ➜ 優先思考**「原料（礦產）」**或**「交通（港口/水運）」**，切勿選氣候暖濕或勞工便宜！",
+      "stem": "美國傳統的鋼鐵、汽車工業多發源自五大湖區，該地區最有利於工業發展的條件為何？\n\n○ (A) 氣候暖溼\n○ (B) 原料豐富\n○ (C) 勞工眾多\n○ (D) 地形平坦",
+      "answer": "(B) 原料豐富",
+      "diagramUrl": "",
+      "solution": "### 💡 核心考點：美國五大湖區傳統重工業帶之區位條件（原料導向＋廉價水運）\n\n1. **【正解 (B) 深度解析——煤鐵資源豐富奠定重工業基石】**：\n   - **原料豐富（煤與鐵）**：美國五大湖周邊擁有極為豐沛的重工業原料。東南方阿帕拉契山脈北段蘊藏優質**煤礦**，蘇必略湖西岸（如梅薩比礦區）擁有巨量**鐵礦**。鋼鐵冶煉需要大量煤與鐵，屬於典型的**「原料取向」**工業。\n   - **水運廉價**：五大湖水運便利，大幅降低了笨重煤、鐵原料的運送成本，促進沿岸鋼鐵重工業聚落（如匹茲堡、芝加哥）蓬勃發展。\n   - **汽車工業延伸**：以鋼鐵業為基礎，緊鄰鋼鐵產區的**底特律**就近取得鋼材零件，迅速發展成全球著名的「汽車之城」。\n\n2. **【其餘選項錯誤點逐一剖析】**：\n   - **(A) 錯誤**：五大湖區緯度較高，屬於溫帶大陸性濕潤氣候，冬季受冷氣團與大湖效應影響寒冷多雪，並非「氣候暖溼」，且氣候並非發展鋼鐵工業的主因。\n   - **(C) 錯誤**：鋼鐵、汽車雖需要工人，但該地工業最初興起的關鍵在於「煤鐵原料聚集」；若以廉價勞動力為主導，屬於輕工業（如紡織、成衣）之區位特徵。\n   - **(D) 錯誤**：平坦地形雖便於建廠與鐵路鋪設，但美國中央平原平坦土地廣大，若無煤鐵礦藏與五大湖水運支撐，無法單靠地形平坦發展出重工業。\n\n故本題正確答案為 **(B)**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-10-31",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
     {
       "id": "q_soc_geo_madagascar_orographic_windward_leeward_313",
       "examPeriod": "一段",
