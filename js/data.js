@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v344';
+const STORAGE_KEY = 'miley_wrong_questions_v345';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_sunlight_window_parallel_similar_316",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "幾何/相似形與平行線截比例線段／平行光線投影與相似三角形邊長成比例應用",
+      "uploadDate": "2026-11-01",
+      "mondayDate": "2026-10-26",
+      "mondayDates": [
+          "2026-10-26"
+      ],
+      "weekLabel": "2026-10-26 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【陽光投影與平行線截比例線段秒殺口訣！】\n1. **陽光視為「平行光線」**：\n   - 太陽光線互相平行 ➜ 光線 $AE \\parallel BD$！\n   - 形成一組同位角相等的**相似直角三角形**：$\\triangle ACE \\sim \\triangle BCD$。\n2. **母子相似形比例對應技巧**：\n   - 水平底邊比 = 垂直高之比：\n     $$\\frac{\\overline{CD}}{\\overline{CE}} = \\frac{\\overline{BC}}{\\overline{AC}}$$\n   - 特別注意線段的組合：\n     - 底邊 $\\overline{CE} = \\overline{CD} + \\overline{DE} = 3.6 + 1.2 = 4.8$\n     - 高 $\\overline{AC} = \\overline{BC} + \\overline{AB} = x + 1.8$\n3. **常見致命粗心陷阱**：\n   - ❌ 誤將 $\\overline{DE} = 1.2$ 當作分母！注意母三角形的大底邊是全段 $\\overline{CE} = 4.8$！\n   - 交叉相乘前先**約分比例**（$\\frac{3.6}{4.8} = \\frac{3}{4}$），計算更神速且零失誤！",
+      "stem": "如圖，陽光透過窗口 $\\overline{AB}$ 照進室內，在地上留下寬 1.2 公尺的亮區 $\\overline{DE}$，若 $\\overline{AB} = 1.8$ 公尺，$\\overline{CD} = 3.6$ 公尺，則窗口離地面的高度 $\\overline{BC}$ 為 ______ 公尺。",
+      "answer": "5.4",
+      "diagramUrl": "assets/questions/q_math_sunlight_window_parallel_similar_316.png",
+      "solution": "### 💡 核心考點：平行光線截線與相似三角形之邊長對應比例\n\n1. **【幾何關係與平行光性質分析】**：\n   - 太陽光線為平行光，因此穿過窗口兩端點 $A$ 與 $B$ 的光線互相平行，即 **$\\overline{AE} \\parallel \\overline{BD}$**。\n   - 牆壁垂直於地面，故 $\\angle C = 90^\\circ$。\n   - 在 $\\triangle ACE$ 中，因為 $\\overline{BD} \\parallel \\overline{AE}$，由平行線截比例線段或 AA 相似性質可知：\n     $$\\triangle BCD \\sim \\triangle ACE$$\n\n2. **【確定各線段長度】**：\n   - 設窗口離地面的高度 $\\overline{BC} = x$（公尺）。\n   - 則全高 $\\overline{AC} = \\overline{AB} + \\overline{BC} = 1.8 + x$（公尺）。\n   - 地面陰影/亮區段：$\\overline{CD} = 3.6$ 公尺，亮區 $\\overline{DE} = 1.2$ 公尺。\n   - 則全底長 $\\overline{CE} = \\overline{CD} + \\overline{DE} = 3.6 + 1.2 = 4.8$（公尺）。\n\n3. **【列出相似比方程式並求解】**：\n   - 根據對應邊成比例：\n     $$\\frac{\\overline{BC}}{\\overline{AC}} = \\frac{\\overline{CD}}{\\overline{CE}}$$\n   - 代入已知數據：\n     $$\\frac{x}{x + 1.8} = \\frac{3.6}{4.8}$$\n   - 將右式分子分母同除以 1.2 進行約分化簡：\n     $$\\frac{x}{x + 1.8} = \\frac{3}{4}$$\n   - 交叉相乘：\n     $$4x = 3(x + 1.8)$$\n     $$4x = 3x + 5.4$$\n     $$4x - 3x = 5.4$$\n     $$x = 5.4$$\n\n4. **【結論】**：\n   - 窗口離地面的高度 $\\overline{BC} = 5.4$ 公尺。\n\n故本題答案應填：**5.4**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-01",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_math_circle_point_position_distance_radius_315",
       "examPeriod": "一段",
