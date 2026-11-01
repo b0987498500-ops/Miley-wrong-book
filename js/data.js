@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v345';
+const STORAGE_KEY = 'miley_wrong_questions_v346';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_parallelogram_ratio_abf_abd_317",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "幾何/相似形與面積比／平行四邊形對角線、沙漏相似形與同高三角形面積比例鏈",
+      "uploadDate": "2026-11-01",
+      "mondayDate": "2026-10-26",
+      "mondayDates": [
+          "2026-10-26"
+      ],
+      "weekLabel": "2026-10-26 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【平行四邊形面積比例拆解秒殺密碼！】\n1. **沙漏相似形求線段比**：\n   - 平行四邊形上下平行 $AD \\parallel BC$，且長度相等 $AD = BC$。\n   - 已知 $2\\overline{AE} = \\overline{DE}$ ➜ $\\overline{AE} : \\overline{DE} = 1 : 2$ ➜ $\\overline{AE} : \\overline{AD} = 1 : 3$。\n   - 因此 $\\overline{AE} : \\overline{BC} = 1 : 3$。\n   - 沙漏形 $\\triangle AEF \\sim \\triangle CBF$ ➜ $\\overline{AF} : \\overline{FC} = 1 : 3$！\n2. **同高三角形底邊比 = 面積比**：\n   - 在 $\\triangle ABC$ 中，點 $F$ 在 $\\overline{AC}$ 上 ➜ $\\triangle ABF : \\triangle CBF = \\overline{AF} : \\overline{FC} = 1 : 3$。\n   - 故 $\\triangle ABF = \\frac{1}{4} \\triangle ABC$。\n3. **對角線平分平行四邊形面積**：\n   - 對角線 $AC$ 與 $BD$ 皆將平行四邊形平分為一半：\n     $$\\triangle ABC = \\triangle ABD = \\frac{1}{2} \\square ABCD$$\n   - 替換代入：$\\triangle ABF = \\frac{1}{4} \\triangle ABD$ ➜ 比值為 $1 : 4$！\n4. **常見陷阱**：\n   - 看到 $2\\overline{AE} = \\overline{DE}$，不要把比例算反！是 $AE = 1$、$DE = 2$、$AD = 3$！",
+      "stem": "如圖，在平行四邊形 $ABCD$ 中，$2\\overline{AE} = \\overline{DE}$，$\\overline{AC}$ 交 $\\overline{BE}$ 於 $F$，則：\n\n$\\triangle ABF$ 的面積 : $\\triangle ABD$ 的面積 = ______。",
+      "answer": "1 : 4",
+      "diagramUrl": "assets/questions/q_math_parallelogram_ratio_abf_abd_317.png",
+      "solution": "### 💡 核心考點：平行四邊形性質、沙漏相似形與同高三角形面積比例轉換\n\n1. **【步驟一：利用線段比例求出底邊關係】**：\n   - 題目已知 $2\\overline{AE} = \\overline{DE}$，設 $\\overline{AE} = k$（$k > 0$），則 $\\overline{DE} = 2k$。\n   - 上底長度：$\\overline{AD} = \\overline{AE} + \\overline{DE} = k + 2k = 3k$。\n   - 平行四邊形對邊等長：$\\overline{BC} = \\overline{AD} = 3k$。\n   - 因此上底局部與下底的線段比為：\n     $$\\frac{\\overline{AE}}{\\overline{BC}} = \\frac{k}{3k} = \\frac{1}{3}$$\n\n2. **【步驟二：利用沙漏型相似形求對角線分割比】**：\n   - 因為平行四邊形對邊互相平行（$\\overline{AD} \\parallel \\overline{BC}$），故 $\\overline{AE} \\parallel \\overline{BC}$。\n   - 由內錯角相等，可知 $\\triangle AEF \\sim \\triangle CBF$（AA 相似，沙漏模型）：\n     $$\\frac{\\overline{AF}}{\\overline{CF}} = \\frac{\\overline{AE}}{\\overline{CB}} = \\frac{1}{3}$$\n\n3. **【步驟三：利用同高三角形求 $\\triangle ABF$ 與 $\\triangle ABC$ 的面積比】**：\n   - 觀察 $\\triangle ABC$，線段 $\\overline{BF}$ 將其分割為 $\\triangle ABF$ 與 $\\triangle CBF$。\n   - 兩三角形共用頂點 $B$，底邊在同一直線 $\\overline{AC}$ 上（同高）：\n     $$\\frac{\\text{面積}(\\triangle ABF)}{\\text{面積}(\\triangle CBF)} = \\frac{\\overline{AF}}{\\overline{CF}} = \\frac{1}{3}$$\n   - 全體 $\\triangle ABC$ 的面積：\n     $$\\text{面積}(\\triangle ABC) = \\text{面積}(\\triangle ABF) + \\text{面積}(\\triangle CBF) = 1 + 3 = 4 \\text{ 等份}$$\n   - 因此：\n     $$\\text{面積}(\\triangle ABF) = \\frac{1}{4} \\times \\text{面積}(\\triangle ABC)$$\n\n4. **【步驟四：利用對角線性質轉換為 $\\triangle ABD$】**：\n   - 在平行四邊形 $ABCD$ 中，對角線將平行四邊形分成兩等份：\n     $$\\text{面積}(\\triangle ABC) = \\text{面積}(\\triangle ABD) = \\frac{1}{2} \\square ABCD$$\n   - 代入可得：\n     $$\\text{面積}(\\triangle ABF) = \\frac{1}{4} \\times \\text{面積}(\\triangle ABD)$$\n   - 故兩者面積比為：\n     $$\\text{面積}(\\triangle ABF) : \\text{面積}(\\triangle ABD) = 1 : 4$$\n\n故本題答案應填：**1 : 4**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-01",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_math_sunlight_window_parallel_similar_316",
       "examPeriod": "一段",

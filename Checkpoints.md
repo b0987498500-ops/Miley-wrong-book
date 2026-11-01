@@ -4,6 +4,26 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v3.50] - 2026-11-01 (自動收錄國中數學幾何平行四邊形三角形面積比考題 Q317：平行四邊形對邊等長平行／沙漏相似形 △AEF ~ △CBF 對角線截比／同高三角形底邊比等於面積比／對角線平分面積性質轉換 △ABF : △ABD = 1 : 4、零符號純淨繁體中文排版，數據庫題數達到 421 題！升級數據庫至 v346，快取升級 v3.19)
+- **類型**：錯題自動收錄 / 數學科幾何與相似形 / 平行四邊形性質與相似三角形面積比 / 沙漏相似形（△AEF ~ △CBF）求線段比（AF : CF = 1 : 3） / 同高三角形面積比例（△ABF : △CBF = 1 : 3 ➜ △ABF = 1/4 △ABC） / 對角線平分平行四邊形面積轉換（△ABC = △ABD ➜ △ABF : △ABD = 1 : 4） / 幾何圖形裁切與清晰標籤保留 / 零符號純淨繁體中文排版 / 升級數據庫至 v346 / 快取升級 v3.19
+- **主要變更**：
+  1. **完整收錄平行四邊形面積比例題目（Q317，歸入 2026-10-26 最新週次）**：
+     - **Q317** `q_math_parallelogram_ratio_abf_abd_317`：
+       - **題幹**：如圖，在平行四邊形 $ABCD$ 中，$2\overline{AE} = \overline{DE}$，$\overline{AC}$ 交 $\overline{BE}$ 於 $F$，則：$\triangle ABF$ 的面積 : $\triangle ABD$ 的面積 = ______。
+       - **正解**：**1 : 4**。
+       - **破題關鍵**：
+         1. **邊長關係**：$2\overline{AE} = \overline{DE} \implies \overline{AE} : \overline{DE} = 1 : 2 \implies \overline{AE} : \overline{AD} = 1 : 3$。因 $\overline{BC} = \overline{AD}$，故 $\overline{AE} : \overline{BC} = 1 : 3$。
+         2. **沙漏相似**：$\overline{AD} \parallel \overline{BC} \implies \triangle AEF \sim \triangle CBF \implies \overline{AF} : \overline{CF} = \overline{AE} : \overline{BC} = 1 : 3$。
+         3. **同高面積比**：在 $\triangle ABC$ 中，$\overline{AF} : \overline{CF} = 1 : 3 \implies \triangle ABF = \frac{1}{4} \triangle ABC$。
+         4. **對角線平分**：$\triangle ABC = \triangle ABD = \frac{1}{2} \square ABCD \implies \triangle ABF = \frac{1}{4} \triangle ABD \implies \triangle ABF : \triangle ABD = 1 : 4$。
+  2. **圖文處理原則遵循**：
+     - 精確裁切題幹幾何圖形（平行四邊形 ABCD、對角線 AC、輔助線 BD、截線 BE 及交點 F），清理作答筆跡與邊緣雜質，存為 `assets/questions/q_math_parallelogram_ratio_abf_abd_317.png`。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v346`（`miley_wrong_questions_v346`），題庫總量達 421 題。
+     - Service Worker 快取升級為 `miley-pwa-cache-v3.19`，腳本版本標籤升級 `js/data.js?v=346`。
+
+---
+
 ## [v3.49] - 2026-11-01 (自動收錄國中數學幾何相似形平行投影考題 Q316：陽光透過窗口平行照射室內／地面亮區與陰影／相似直角三角形對應邊成比例求窗高 BC／母子相似比約分計算技巧、零符號純淨繁體中文排版，數據庫題數達到 420 題！升級數據庫至 v345，快取升級 v3.18)
 - **類型**：錯題自動收錄 / 數學科幾何與相似形 / 相似三角形與平行線截比例線段 / 陽光平行光線投影模型（AE // BD） / 相似三角形 △BCD ~ △ACE 邊長對應比（CD/CE = BC/AC） / 幾何圖形裁切與清晰標籤保留 / 零符號純淨繁體中文排版 / 升級數據庫至 v345 / 快取升級 v3.18
 - **主要變更**：
