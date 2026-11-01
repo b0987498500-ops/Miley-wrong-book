@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v349';
+const STORAGE_KEY = 'miley_wrong_questions_v350';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_phy_lever_balance_three_weights_abc_320",
+      "examPeriod": "一段",
+      "subject": "自然/理化",
+      "errorReason": "觀念不懂",
+      "concept": "力學/槓桿平衡與力矩／同側多物體之力矩疊加與力臂定義（支點兩側力矩總和守恆）",
+      "uploadDate": "2026-11-01",
+      "mondayDate": "2026-10-26",
+      "mondayDates": [
+          "2026-10-26"
+      ],
+      "weekLabel": "2026-10-26 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【槓桿力臂距離標記秒殺防呆密碼！】\n1. **力臂定義的核心：距離永遠以「支點」為基準！**：\n   - **甲的力臂**：支點到甲的距離 $= a$。\n   - **乙的力臂**：支點到乙的距離 $= b$。\n   - **丙的力臂（極易粗心致命陷阱！）**：\n     - 圖中 $c$ 標記的是「乙與丙之間的間隔距離」，**不是**支點到丙的距離！\n     - 丙到支點的真正力臂是「支點到乙＋乙到丙」：\n       $$\\text{丙的力臂} = b + c$$\n2. **列力矩平衡方程式**：\n   - 三物體質量相等（設均為 $m$）：\n     $$\\text{逆時針力矩 (左側)} = \\text{順時針力矩 (右側)}$$\n     $$m \\times a = m \\times b + m \\times (b + c)$$\n   - 兩邊同除以 $m$：\n     $$a = b + (b + c) = 2b + c$$\n3. **快篩陷阱**：\n   - ❌ 誤選 (A) $a = b + c$：把 $c$ 誤當作丙到支點的力臂！\n   - 看到圖上的標示弧線，一定要看清楚兩端點到底是落在「支點」還是落在「鄰近物體」上！",
+      "stem": "一支點在中間的槓桿，掛有質量相等的甲、乙、丙三物，其間之距離如圖所示時，且可成平衡狀態，則下列何者正確？\n\n○ (A) $a = b + c$\n○ (B) $2a = b + c$\n○ (C) $a = b + 2c$\n○ (D) $a = 2b + c$",
+      "answer": "(D) $a = 2b + c$",
+      "diagramUrl": "assets/questions/q_phy_lever_balance_three_weights_abc_320.png",
+      "solution": "### 💡 核心考點：槓桿平衡條件與力臂精準判定\n\n1. **【觀念核心：合力矩為零（左側力矩和 = 右側力矩和）】**：\n   - 槓桿達水平平衡時，逆時針方向的力矩總和必等於順時針方向的力矩總和。\n   - 每一物體所產生的力矩大小為：\n     $$\\text{力矩} = \\text{物重} \\times \\text{力臂（物體懸掛點至支點的垂直距離）}$$\n\n2. **【確定甲、乙、丙三物體的力臂】**：\n   - 已知甲、乙、丙三物體質量相等，設三者的重量皆為 $m$。\n   - **甲物體（位於支點左側）**：\n     - 距支點距離為 $a$，故甲物體產生的逆時針力矩為：\n       $$\\tau_{\\text{左}} = m \\times a$$\n   - **乙物體（位於支點右側）**：\n     - 距支點距離為 $b$，故乙物體產生的順時針力矩為：\n       $$\\tau_乙 = m \\times b$$\n   - **丙物體（位於支點右側）**：\n     - 觀察圖形標示，標記 $b$ 為支點至乙的距離，標記 $c$ 為**乙至丙的間隔距離**。\n     - 因此，**丙物體到支點的總距離（力臂）為 $b + c$**。\n     - 丙物體產生的順時針力矩為：\n       $$\\tau_丙 = m \\times (b + c)$$\n\n3. **【列式計算求出關係式】**：\n   - 右側順時針力矩總和：\n     $$\\tau_{\\text{右}} = \\tau_乙 + \\tau_丙 = m \\times b + m \\times (b + c)$$\n   - 根據槓桿平衡條件（$\\tau_{\\text{左}} = \\tau_{\\text{右}}$）：\n     $$m \\times a = m \\times b + m \\times (b + c)$$\n   - 等號兩邊同除以不為零的質量 $m$：\n     $$a = b + b + c$$\n     $$a = 2b + c$$\n\n4. **【其餘選項錯誤點剖析】**：\n   - **(A) $a = b + c$ 錯誤**：誤將 $c$ 當作丙到支點的距離，忽略了丙距離支點必須加上 $b$。\n   - **(B) $2a = b + c$ 錯誤**：比例倒置或移項計算錯誤。\n   - **(C) $a = b + 2c$ 錯誤**：將力臂權重倍數混淆。\n\n故本題正確答案為 **(D)**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-01",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_phy_lever_multi_tier_balance_mass_ratio_319",
       "examPeriod": "一段",
