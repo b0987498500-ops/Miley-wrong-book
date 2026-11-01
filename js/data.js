@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v346';
+const STORAGE_KEY = 'miley_wrong_questions_v347';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_phy_torque_nail_puller_lever_arm_318",
+      "examPeriod": "一段",
+      "subject": "自然/理化",
+      "errorReason": "觀念不懂",
+      "concept": "力學/力矩與槓桿原理／力臂的定義（支點到力的作用線之垂直距離）與起釘器力矩計算",
+      "uploadDate": "2026-11-01",
+      "mondayDate": "2026-10-26",
+      "mondayDates": [
+          "2026-10-26"
+      ],
+      "weekLabel": "2026-10-26 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【力臂定義秒殺口訣！】\n1. **力臂定義永遠是「支點到力的作用線之垂直距離」**：\n   - 力臂 **不是**「支點到施力點的直線距離（桿長）」！\n   - 切勿看到起釘器斜桿長度就直覺選 $d_2$ 或 $d_4$！\n2. **作圖判別黃金法**：\n   - **步驟一**：找出支點（起釘器與地面接觸的轉折點）。\n   - **步驟二**：畫出力的「作用線」（垂直向下的虛線延長線）。\n   - **步驟三**：自支點向力的作用線作「垂直線段」，該線段就是力臂！\n   - 本題中，施力 $F$ 為垂直向下，從地面支點向垂直線作垂線，得到的水平垂直距離正是 $d_3$！\n3. **常見致命陷阱**：\n   - $d_1$：施力點距地面的鉛直高度（非力臂，此方向與力平行）。\n   - $d_2$、$d_4$：起釘器握把的斜面長度（桿長，與施力不垂直）。\n   - 只有 $d_3$ 與施力 $F$ 垂直，故力矩 $= F \\times d_3$！",
+      "stem": "安琪利用起釘器將釘子拔起，其施力 $F$ 的大小、方向如圖所示，則她施力的力矩大小為下列何者？〔93.基測Ⅰ〕\n\n○ (A) $F \\times d_1$\n○ (B) $F \\times d_2$\n○ (C) $F \\times d_3$\n○ (D) $F \\times d_4$",
+      "answer": "(C) $F \\times d_3$",
+      "diagramUrl": "assets/questions/q_phy_torque_nail_puller_lever_arm_318.png",
+      "solution": "### 💡 核心考點：力矩公式與力臂的物理嚴格定義\n\n1. **【力矩的定義與公式】**：\n   - 力矩（$\\tau$ 或 $L$）是使物體繞轉軸旋轉的物理量：\n     $$\\text{力矩} = \\text{力的大小} \\times \\text{力臂}$$\n   - **力臂（Lever Arm）的精準物理定義**：\n     **「由旋轉支點出發，垂直引向力的作用線之最短（垂直）距離。」**\n\n2. **【本題圖形關鍵要素剖析】**：\n   - **支點位置**：起釘器彎折處緊貼地面，此轉折接觸點即為整個起釘器旋轉的「支點」。\n   - **施力方向**：圖中施力 $F$ 的方向為**「鉛直向下」**，其延長虛線即為「鉛直向下的力作用線」。\n   - **尋找垂直力臂**：\n     - 力的作用線為「鉛直線」。\n     - 支點在水平地面上。\n     - 從地面支點到鉛直作用線的**垂直距離**，恰為水平方向的長度 **$d_3$**。\n     - 因此，施力 $F$ 對應的力臂為 $d_3$。\n   - **力矩計算**：\n     $$\\text{力矩} = F \\times d_3$$\n\n3. **【其餘選項錯誤原因逐一剖析】**：\n   - **(A) $F \\times d_1$ 錯誤**：$d_1$ 為施力點到地面的鉛直高度，與力 $F$ 的方向互相平行，兩者不垂直，絕非力臂。\n   - **(B) $F \\times d_2$ 錯誤**：$d_2$ 為起釘器桿身支點到施力點的斜邊長度（桿長），由於桿身是傾斜的，桿身方向與鉛直力 $F$ 並未垂直，不可直接將桿長當作力臂。\n   - **(D) $F \\times d_4$ 錯誤**：$d_4$ 為起釘器夾釘端至施力點的全桿長度，既包含抗力臂側，且方向與力 $F$ 不垂直，不能做為力臂。\n\n故本題正確答案為 **(C)**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-01",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_math_parallelogram_ratio_abf_abd_317",
       "examPeriod": "一段",
