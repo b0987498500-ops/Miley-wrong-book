@@ -3,10 +3,41 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v350';
+const STORAGE_KEY = 'miley_wrong_questions_v351';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_phy_steelyard_fraud_weight_scale_321",
+      "examPeriod": "一段",
+      "subject": "自然/理化",
+      "errorReason": "觀念不懂",
+      "concept": "力學/槓桿平衡與桿秤原理／桿秤歸零校正（空秤盤質量）、偷換輕秤砣（偷斤減兩）之真實質量推導",
+      "uploadDate": "2026-11-01",
+      "mondayDate": "2026-10-26",
+      "mondayDates": [
+          "2026-10-26"
+      ],
+      "weekLabel": "2026-10-26 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【桿秤偷斤減兩秒殺黃金三部曲！】\n1. **首要任務：先求空秤盤質量！**：\n   - 零刻度點 $A$ 不在支點 $O$，代表「空秤盤本身有重量」！\n   - 標準砣重 1.0 kg 掛在 $A$ 點（$OA = 3$ cm），秤盤在 $B$ 點（$OB = 9$ cm）：\n     $$\\text{秤盤} \\times 9 = 1.0 \\times 3 \\implies \\text{秤盤} = \\frac{1}{3} \\text{ kg}$$\n2. **刻度位置本質是「標準砣平衡時的力臂距離」**：\n   - 讀數 3.0 kg 刻度處的力臂位置 $d$：\n     $$(3.0 + \\frac{1}{3}) \\times 9 = 1.0 \\times d \\implies d = 30 \\text{ cm}$$\n   - 即 3.0 kg 刻度線位於支點 $O$ 右側 30 cm 處！\n3. **黑心商販換輕秤砣（0.7 kg）秤物，物體實際質量必變輕**：\n   - 輕砣掛在 30 cm 處 ➜ 提供力矩 $= 0.7 \\times 30 = 21$。\n   - 逆推左側總重：$(W + \\frac{1}{3}) \\times 9 = 21 \\implies W + \\frac{1}{3} = \\frac{7}{3} \\implies W = 2.0 \\text{ kg}$！\n4. **直觀防呆口訣**：\n   - 秤砣變輕（1.0 ➜ 0.7） ➜ 秤砣要移到更遠的刻度才能平衡 ➜ 讀數虛胖（報 3.0 kg），物體實重必定更少（只有 2.0 kg）！",
+      "stem": "在菜市場內個別商販違反公平交易的原則，在使用桿秤時，用不正當的方式侵害了消費者的合法權益，例：某標準桿秤的秤砣質量為 1.0 kg，桿秤的質量可忽略不計，O 點為提紐懸點，A 點為零刻度點，在 $\\overline{OA} = 3$ cm，$\\overline{OB} = 9$ cm 時，可與空秤盤達水平平衡，如附圖所示。如今商販使用桿秤秤某物品時，換了一個實際質量為 0.7 kg 的秤砣來假冒 1.0 kg 的秤砣，讀取桿秤刻度為 3.0 kg，試問物品實際質量為多少 kg？（提示：先找出秤盤的質量）\n\n○ (A) 1.8 kg\n○ (B) 2.0 kg\n○ (C) 2.1 kg\n○ (D) 2.2 kg",
+      "answer": "(B) 2.0 kg",
+      "diagramUrl": "assets/questions/q_phy_steelyard_fraud_weight_scale_321.png",
+      "solution": "### 💡 核心考點：桿秤歸零力矩平衡與黑心秤砣偷斤減兩計算\n\n1. **【步驟一：利用零刻度平衡求出空秤盤質量】**：\n   - 支點為提紐 $O$ 點，左側懸掛空秤盤（力臂 $\\overline{OB} = 9$ cm），右側 $A$ 點為零刻度（力臂 $\\overline{OA} = 3$ cm）。\n   - 當標準秤砣（質量 1.0 kg）掛在 $A$ 點時，桿秤達水平平衡：\n     $$\\text{左力矩} = \\text{右力矩}$$\n     $$\\text{秤盤質量} \\times \\overline{OB} = \\text{標準秤砣} \\times \\overline{OA}$$\n     $$\\text{秤盤} \\times 9 = 1.0 \\times 3$$\n     $$\\text{秤盤質量} = \\frac{3}{9} = \\frac{1}{3} \\text{ kg}$$\n\n2. **【步驟二：找出桿秤讀數「3.0 kg 刻度線」距支點 O 的實際距離】**：\n   - 桿秤的刻度是依照**標準秤砣（1.0 kg）**所劃定的。\n   - 當盤中放置 3.0 kg 物品時，左端總質量為 $(3.0 + \\frac{1}{3})$ kg，力臂為 9 cm。\n   - 設標準秤砣掛在距支點 $d$ 公分處能達平衡：\n     $$\\left(3.0 + \\frac{1}{3}\\right) \\times 9 = 1.0 \\times d$$\n     $$\\frac{10}{3} \\times 9 = 1.0 \\times d \\implies d = 30 \\text{ cm}$$\n   - 也就是說，桿秤上標記「3.0 kg」的刻度線，實際上位於支點 $O$ 右側 **30 cm** 處！\n\n3. **【步驟三：商販換上 0.7 kg 假秤砣，求物品的真實質量 W】**：\n   - 商販讀取的刻度為 3.0 kg，表示該 0.7 kg 的秤砣正是懸掛在 **30 cm** 的位置。\n   - 此時右側提供的順時針力矩為：\n     $$\\tau_{\\text{右}} = 0.7 \\times 30 = 21 \\text{ kg}\\cdot\\text{cm}$$\n   - 設左側盤中物品的真實質量為 $W$ kg，盤中總質量為 $(W + \\frac{1}{3})$ kg：\n     $$\\left(W + \\frac{1}{3}\\right) \\times 9 = 21$$\n     $$W + \\frac{1}{3} = \\frac{21}{9} = \\frac{7}{3}$$\n     $$W = \\frac{7}{3} - \\frac{1}{3} = \\frac{6}{3} = 2.0 \\text{ kg}$$\n\n4. **【結論】**：\n   - 物品實際質量僅有 **2.0 kg**（消費者被黑心灌水了 1.0 kg 的虛假讀數）！\n\n故本題正確答案為 **(B) 2.0 kg**。\n\n📺 **名師影音詳細解題教學**：\n[點擊觀看 YouTube 解題影片（2:36 處精講）](https://www.youtube.com/watch?v=N013giPKiFU&t=156s)",
+      "videoUrl": "https://www.youtube.com/watch?v=N013giPKiFU&t=156s",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-01",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_phy_lever_balance_three_weights_abc_320",
       "examPeriod": "一段",
