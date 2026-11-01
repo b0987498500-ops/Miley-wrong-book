@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v343';
+const STORAGE_KEY = 'miley_wrong_questions_v344';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_circle_point_position_distance_radius_315",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "幾何/圓與坐標幾何／點與圓的位置關係（兩點距離公式、半徑比較判定圓內、圓上、圓外）",
+      "uploadDate": "2026-11-01",
+      "mondayDate": "2026-10-26",
+      "mondayDates": [
+          "2026-10-26"
+      ],
+      "weekLabel": "2026-10-26 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【點與圓位置關係判定黃金三部曲！】\n1. **核心判定標準（點到圓心的距離 d 與半徑 r 之比較）**：\n   - **d < r** ➜ 點在**圓內**\n   - **d = r** ➜ 點在**圓上**\n   - **d > r** ➜ 點在**圓外**\n2. **坐標平面兩點距離公式**：\n   - 點 A(x₁, y₁) 與點 B(x₂, y₂) 的距離 $d = \\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}$\n   - 技巧：若開根號數字較大，可直接比較平方！即比較 $d^2$ 與 $r^2$：\n     - $d^2 < r^2$ ➜ 圓內\n     - $d^2 = r^2$ ➜ 圓上\n     - $d^2 > r^2$ ➜ 圓外\n3. **常見計算粗心陷阱**：\n   - 計算坐標差時務必注意**負負得正**！例如 $4 - (-1) = 5$，別誤算成 $4 - 1 = 3$！",
+      "stem": "一圓 O 的圓心坐標為 O(-1, 5)，且半徑長為 6，若 P 點的坐標為 (4, -1)，則 P 點在圓 O ______。（填內、外或上）",
+      "answer": "外",
+      "diagramUrl": "",
+      "solution": "### 💡 核心考點：平面坐標系中點與圓的位置關係判定\n\n1. **【觀念核心：點到圓心距離 (d) 與半徑 (r) 的關係】**：\n   - 若 $d < r$ ➜ 點在圓的**內部**（圓內）。\n   - 若 $d = r$ ➜ 點在圓的**圓周上**（圓上）。\n   - 若 $d > r$ ➜ 點在圓的**外部**（圓外）。\n\n2. **【步驟一：利用兩點距離公式求 OP 距離 (d)】**：\n   - 圓心 $O(-1, 5)$，目標點 $P(4, -1)$。\n   - 兩點水平坐標差：$\\Delta x = 4 - (-1) = 4 + 1 = 5$\n   - 兩點垂直坐標差：$\\Delta y = -1 - 5 = -6$\n   - 兩點距離 $d = \\overline{OP} = \\sqrt{5^2 + (-6)^2} = \\sqrt{25 + 36} = \\sqrt{61}$\n\n3. **【步驟二：比較距離 d 與半徑 r】**：\n   - 已知圓半徑 $r = 6$。\n   - 由於 $r = 6 = \\sqrt{36}$，且 $\\sqrt{61} > \\sqrt{36}$（即 $d > r$，亦即 $d^2 = 61 > r^2 = 36$）。\n   - 因點 $P$ 到圓心 $O$ 的距離大於半徑，故 $P$ 點在圓 $O$ 的**「外」**部。\n\n故本題答案應填：**外**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-01",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_soc_geo_usa_great_lakes_industry_raw_materials_314",
       "examPeriod": "一段",
