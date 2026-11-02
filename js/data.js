@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v355';
+const STORAGE_KEY = 'miley_wrong_questions_v356';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_phy_work_definition_conditions_hammer_nail_326",
+      "examPeriod": "一段",
+      "subject": "自然/理化",
+      "errorReason": "觀念不懂",
+      "concept": "功與能／物理學上「作功」的充要條件辨析（W = F × S：受力、產生位移、力與位移不垂直）",
+      "uploadDate": "2026-11-02",
+      "mondayDate": "2026-11-02",
+      "mondayDates": [
+          "2026-11-02"
+      ],
+      "weekLabel": "2026-11-02 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【物理學「作功」三條件與三大不作功陷阱！】\n1. **物理作功的充要條件（缺一不可！）**：\n   - ① **物體必須受力**（$F \\neq 0$）。\n   - ② **物體必須沿力的方向有位移**（$S \\neq 0$）。\n   - ③ **力與位移不能互相垂直**（$\\cos 90^\\circ = 0$ 則 $W = 0$）。\n2. **國中會考必考「三種不作功」生活情境對照表**：\n   - ❌ **有位移但不受力（$F = 0$）**：冰壺等速滑行、太空中漂流 ➜ 不作功！\n   - ❌ **有受力但無位移（$S = 0$）**：推牆壁推不動、手抱小孩原地站立、舉啞鈴停在空中 ➜ 徒勞無功（$W = 0$）！\n   - ❌ **有受力且有位移，但「力與位移垂直」（$F \\perp S$）**：手提書包等速水平行走（手出力向上，位移向前）、單擺繩子張力、向心力 ➜ 不作功（$W = 0$）！\n3. **本題唯一有作功的情境**：\n   - ⚡ **(A) 鐵鎚將釘子鎚入木板**：鐵鎚施力向下，釘子位移向下，$F$ 與 $S$ 同向平行，鐵鎚對釘子作正功（$W > 0$）！",
+      "stem": "下列狀況中，何者有作功？\n\n○ (A) 以鐵鎚將釘子鎚入木板\n○ (B) 手推牆壁\n○ (C) 手抱小孩在原地站著\n○ (D) 手提書包等速在水平面上行走",
+      "answer": "(A) 以鐵鎚將釘子鎚入木板",
+      "diagramUrl": "",
+      "solution": "### 💡 核心考點：物理學中「作功」的定義與不作功之情境判定\n\n1. **【觀念核心：作功的物理定義式】**：\n   - 物理學上，一個力對物體作功的定義為：\n     $$W = F \\times S \\times \\cos\\theta$$\n   - 其中：\n     - $F$：作用在物體上的力。\n     - $S$：物體產生的位移。\n     - $\\theta$：力的方向與位移方向之間的夾角。\n   - 要有作功（$W \\neq 0$），必須同時滿足：物體受力（$F \\neq 0$）、物體有位移（$S \\neq 0$），且力的方向不能與位移方向垂直（$\\theta \\neq 90^\\circ$）。\n\n2. **【各選項深度剖析】**：\n   - **(A) 以鐵鎚將釘子鎚入木板（正確，有作功！）**：\n     - 鐵鎚對釘子施加向下的敲擊力（$F > 0$）。\n     - 釘子深入木板中，產生向下的位移（$S > 0$）。\n     - 力的方向與位移方向相同（夾角 $0^\\circ$），故鐵鎚對釘子作正功（$W > 0$）。\n   - **(B) 手推牆壁（不作功）**：\n     - 手有施力，但牆壁穩固不動，位移為零（$S = 0$）。\n     - 根據 $W = F \\times 0 = 0$，手對牆壁不作功。\n   - **(C) 手抱小孩在原地站著（不作功）**：\n     - 手向上施力支撐小孩體重，但在「原地站著」，小孩沒有位移（$S = 0$）。\n     - 根據 $W = F \\times 0 = 0$，手對小孩不作功。\n   - **(D) 手提書包等速在水平面上行走（不作功）**：\n     - 手提書包的施力方向是「鉛直向上」（抗衡重力）。\n     - 行走方向是「水平向前」，兩者互相垂直（夾角 $\\theta = 90^\\circ$）。\n     - 垂直方向無分力產生功，根據 $W = F \\times S \\times \\cos 90^\\circ = 0$，手對書包不作功。\n\n3. **【結論】**：\n   - 僅有 (A) 的力與位移同向且皆不為零，確實有作功。\n\n故本題正確答案為 **(A)**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-02",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_phy_gravity_work_upward_external_force_325",
       "examPeriod": "一段",
