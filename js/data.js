@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v357';
+const STORAGE_KEY = 'miley_wrong_questions_v358';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_phy_work_cases_not_done_carrying_lifting_328",
+      "examPeriod": "一段",
+      "subject": "自然/理化",
+      "errorReason": "觀念不懂",
+      "concept": "功與能／四種事例「並未作功」辨析：（甲）水平等速提書包（F⊥S 不作功）、（乙）手舉重物至頭頂（有作功）、（丙）推牆壁（S=0 不作功）、（丁）鎚鐵釘（有作功）",
+      "uploadDate": "2026-11-02",
+      "mondayDate": "2026-11-02",
+      "mondayDates": [
+          "2026-11-02"
+      ],
+      "weekLabel": "2026-11-02 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【看清題目問的是「並未作功」還是「有作功」！別搞混 (乙) 舉重物的過程！】\n1. **看清題意「未作功」 vs 「有作功」**：\n   - 題目問：**「何者對物體『並未作功』？」** ➜ 要找出 $W = 0$ 的選項！\n2. **逐一掃描四件事例**：\n   - **(甲) 手提書包水平等速度走到校門口**：\n     - 手提力向**上**，位移向**前**，兩者**互相垂直**（$F \\perp S$） ➜ **【未作功】**（$W = 0$）。\n   - **(乙) 在原地手舉重物至頭頂**（⚠️ **高頻失分陷阱！**）：\n     - 雖然寫「在原地」，但動作是**「舉重物至頭頂」**！\n     - 手施力向**上**，重物被抬高向**上**移動一段距離（$S > 0$），力與位移同向 ➜ **【有作功】**（$W > 0$）！\n     - ❌ **易錯誤區**：看到「在原地」就以為位移是 0，忽略了重物被「往上舉高」的鉛直位移！\n   - **(丙) 手推牆壁**：\n     - 牆壁未移動，位移為零（$S = 0$） ➜ **【未作功】**（$W = 0$）。\n   - **(丁) 手持鐵鎚釘鐵釘入木頭內**：\n     - 施力向下，鐵釘深入木頭位移向下，兩者同向 ➜ **【有作功】**（$W > 0$）。\n3. **結論秒殺**：\n   - 並未作功的只有 **(甲)、(丙)**！",
+      "stem": "下列四種事例中，何者對物體並未作功？(甲)手提書包水平等速度走到校門口；(乙)在原地手舉重物至頭頂；(丙)手推牆壁；(丁)手持鐵鎚釘鐵釘入木頭內。\n\n○ (A) 僅(甲)(丙)\n○ (B) 僅(甲)(乙)\n○ (C) 僅(甲)(乙)(丙)\n○ (D) (甲)(乙)(丙)(丁)",
+      "answer": "(A) 僅(甲)(丙)",
+      "diagramUrl": "",
+      "solution": "### 💡 核心考點：物理作功的判定條件與「原地舉高」之位移辨析\n\n1. **【作功的物理定義式回顧】**：\n   $$W = F \\times S \\times \\cos\\theta$$\n   - **有作功（$W \\neq 0$）**：物體受力（$F \\neq 0$）、物體有位移（$S \\neq 0$），且力與位移不垂直（$\\theta \\neq 90^\\circ$）。\n   - **未作功（$W = 0$）**：\n     1. 不受力（$F = 0$）。\n     2. 無位移（$S = 0$）。\n     3. 力與位移互相垂直（$F \\perp S$，$\\cos 90^\\circ = 0$）。\n\n2. **【四項事例逐一嚴謹剖析】**：\n   - **(甲) 手提書包水平等速度走到校門口 ➜【未作功】**：\n     - 手提書包的施力方向為「鉛直向上」（對抗重力）。\n     - 走動時書包的位移方向為「水平向前」。\n     - 力的方向與位移方向垂直（$\\theta = 90^\\circ$），故手對書包**不作功**。\n   - **(乙) 在原地手舉重物至頭頂 ➜【有作功！】**：\n     - 雖然人站在原地沒有走動，但手的施力方向「向上」，重物從下方被舉高到頭頂產生了「向上的鉛直位移」。\n     - 施力方向與位移方向同向平行（$\\theta = 0^\\circ$），手克服重力對物體作了**正功**（增加重物的重力位能）。\n   - **(丙) 手推牆壁 ➜【未作功】**：\n     - 手有向前施力，但牆壁穩固不動，位移為零（$S = 0$），故手對牆壁**不作功**。\n   - **(丁) 手持鐵鎚釘鐵釘入木頭內 ➜【有作功！】**：\n     - 鐵鎚對鐵釘施加向下的敲擊力，鐵釘深入木頭內產生向下的位移。\n     - 施力方向與位移方向同向平行，故鐵鎚對鐵釘作了**正功**。\n\n3. **【結論】**：\n   - 對物體「並未作功」的事例為 **(甲)** 與 **(丙)**。\n\n故本題正確答案為 **(A) 僅(甲)(丙)**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-02",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_phy_work_round_trip_push_force_scalar_327",
       "examPeriod": "一段",
