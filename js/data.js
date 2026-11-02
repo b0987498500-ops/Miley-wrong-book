@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v352';
+const STORAGE_KEY = 'miley_wrong_questions_v353';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_golden_ratio_value_definition_323",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "比例與一元二次方程式／黃金分割比的定義與比值：AB : AC = AC : BC 之比值（(1 + √5)/2 ≈ 1.618）",
+      "uploadDate": "2026-11-02",
+      "mondayDate": "2026-11-02",
+      "mondayDates": [
+          "2026-11-02"
+      ],
+      "weekLabel": "2026-11-02 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【黃金分割比值 0.618 vs 1.618 致命陷阱！】\n1. **看清題目給的比例式方向（大比小 還是 小比大？）**：\n   - 題幹明確定義：$\\overline{AB} : \\overline{AC} = \\overline{AC} : \\overline{BC}$\n   - 且後文補充：「下半身長除以上半身長的比值恰為黃金分割的比例，且人體頭頂到肚臍為上半身，肚臍到腳底為下半身」➜ 正常身材人體下半身長於上半身，故比值必大於 1！\n   - 觀察線段圖：全段 $\\overline{AB}$ > 長段 $\\overline{AC}$ > 短段 $\\overline{BC}$，因此 $\\overline{AB} : \\overline{AC}$ 是「全段比長段（大比中）」或「長段比短段（中比小）」，比值必定 **大於 1**！\n2. **列式計算推導**：\n   - 令短段 $\\overline{BC} = 1$，長段 $\\overline{AC} = x$（$x > 0$），則全段 $\\overline{AB} = x + 1$。\n   - 依題意：$(x + 1) : x = x : 1 \\implies x^2 = x + 1 \\implies x^2 - x - 1 = 0$。\n   - 解一元二次方程式：$x = \\frac{1 + \\sqrt{5}}{2}$（負不合）。\n   - 代入近似值 $\\sqrt{5} \\approx 2.236$：\n     $$x = \\frac{1 + 2.236}{2} = \\frac{3.236}{2} = 1.618$$\n3. **常見失分盲點**：\n   - ❌ 誤填 **0.618**：0.618 是短段比長段 $\\frac{\\sqrt{5}-1}{2}$（小於 1），但本題定義為 $\\overline{AB} : \\overline{AC} = \\overline{AC} : \\overline{BC}$，是長比短，故為 **1.618**！",
+      "stem": "如圖，在線段 AB 上取一點 C，線段 AB、線段 AC、線段 BC 三線段的長度滿足線段 AB : 線段 AC = 線段 AC : 線段 BC 的關係，我們稱這樣的比為黃金分割比，是最美麗的比例。一般我們形容擁有黃金比例的身材，指的是下半身長除以上半身長的比值恰為黃金分割的比例，且定義人體的頭頂到肚臍為上半身，肚臍到腳底為下半身。請回答下列問題：\n\n求黃金分割比的比值為何？（$\\sqrt{2} = 1.414$，$\\sqrt{3} = 1.732$，$\\sqrt{5} = 2.236$）\n\n○ (A) 0.618\n○ (B) 1.414\n○ (C) 1.618\n○ (D) 2.236",
+      "answer": "(C) 1.618",
+      "diagramUrl": "",
+      "solution": "### 💡 核心考點：黃金分割比之代數方程式推導與比值計算\n\n1. **【步驟一：理解題意與線段關係】**：\n   - 在線段 $\\overline{AB}$ 上有一點 $C$，$C$ 位於 $A$ 與 $B$ 之間，故：\n     $$\\overline{AB} = \\overline{AC} + \\overline{BC}$$\n   - 題幹給定黃金分割比之比例式：\n     $$\\overline{AB} : \\overline{AC} = \\overline{AC} : \\overline{BC}$$\n   - 此比例式為「全長 : 長段 = 長段 : 短段」，亦即下半身（較長）除以上半身（較短）的比值，其值必定大於 1。\n\n2. **【步驟二：設未知數列出一元二次方程式】**：\n   - 設短段 $\\overline{BC} = 1$，長段 $\\overline{AC} = x$（其中 $x > 0$）。\n   - 則全長 $\\overline{AB} = \\overline{AC} + \\overline{BC} = x + 1$。\n   - 代入黃金分割比例式：\n     $$(x + 1) : x = x : 1$$\n   - 外項乘積等於內項乘積：\n     $$x^2 = x + 1$$\n     $$x^2 - x - 1 = 0$$\n\n3. **【步驟三：利用公式解求出 x】**：\n   - 利用一元二次方程式公式解：\n     $$x = \\frac{-(-1) \\pm \\sqrt{(-1)^2 - 4 \\times 1 \\times (-1)}}{2 \\times 1} = \\frac{1 \\pm \\sqrt{1 + 4}}{2} = \\frac{1 \\pm \\sqrt{5}}{2}$$\n   - 因為長度比值必為正數，負根不合，故：\n     $$x = \\frac{1 + \\sqrt{5}}{2}$$\n\n4. **【步驟四：代入數值求出近似小數】**：\n   - 題目給定 $\\sqrt{5} \\approx 2.236$：\n     $$x = \\frac{1 + 2.236}{2} = \\frac{3.236}{2} = 1.618$$\n\n5. **【易錯對照辨析：為何不是 0.618？】**：\n   - 若是「短段比長段」（例如 $\\frac{\\overline{BC}}{\\overline{AC}}$），比值為 $\\frac{\\sqrt{5}-1}{2} \\approx 0.618$。\n   - 但本題線段比例為 $\\overline{AB} : \\overline{AC} = \\overline{AC} : \\overline{BC}$，且題幹特別強調是「下半身長（長段）除以上半身長（短段）」，比值大於 1，因此標準比值為 **1.618**！\n\n故本題正確答案為 **(C) 1.618**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-02",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_math_sum_product_difference_squared_322",
       "examPeriod": "一段",
