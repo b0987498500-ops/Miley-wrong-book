@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v358';
+const STORAGE_KEY = 'miley_wrong_questions_v359';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_phy_constant_force_kinematics_work_energy_329",
+      "examPeriod": "一段",
+      "subject": "自然/理化",
+      "errorReason": "計算粗心",
+      "concept": "運動學與功／牛頓第二運動定律 F=ma、等加速度運動位移 S=1/2at² 與功 W=FS 或功能定理（末速度 15m/s、時間 3s ➜ 位移 22.5m 而非 45m）",
+      "uploadDate": "2026-11-02",
+      "mondayDate": "2026-11-02",
+      "mondayDates": [
+          "2026-11-02"
+      ],
+      "weekLabel": "2026-11-02 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【位移絕不能直接用「末速度 × 時間」！等加速度運動位移要除以 2！】\n1. **致命粗心點（(C) 為何是 22.5 公尺不是 45 公尺？）**：\n   - ❌ **直接拿末速相乘**：$S = 15 \\times 3 = 45$ 公尺 ➜ **完全把加速度運動當成等速運動了！**\n   - ⚡ **正確算法（v-t 圖三角形面積）**：\n     $$S = \\frac{1}{2} \\times \\text{底} \\times \\text{高} = \\frac{1}{2} \\times 3 \\times 15 = 22.5 \\text{ 公尺}$$\n     或用公式 $S = \\frac{1}{2} a t^2 = \\frac{1}{2} \\times 5 \\times 3^2 = 22.5 \\text{ 公尺}$！\n2. **四步驟完整串聯鏈（會考高頻連環考點）**：\n   - ① **算加速度 $a$**：$a = \\frac{v - v_0}{t} = \\frac{15 - 0}{3} = 5 \\text{ m/s}^2$（水平定力 ➜ 等加速度運動，(A) 正確）。\n   - ② **算質量 $m$**：$F = m \\times a \\implies 10 = m \\times 5 \\implies m = 2 \\text{ kg}$（(B) 正確）。\n   - ③ **算位移 $S$**：$S = 22.5 \\text{ m}$（(C) 寫 45 公尺，故 **(C) 錯誤**）。\n   - ④ **算作功 $W$**：$W = F \\times S = 10 \\times 22.5 = 225 \\text{ J}$（或用動能定理 $\\Delta E_k = \\frac{1}{2} m v^2 = \\frac{1}{2} \\times 2 \\times 15^2 = 225 \\text{ J}$，雙重驗證 (D) 正確）！",
+      "stem": "一靜置於無摩擦水平面上的物體，當它受到 10 牛頓的水平定力作用 3 秒鐘後，物體的末速度為 15 公尺／秒，則下列敘述何者錯誤？\n\n○ (A) 物體做等加速度運動\n○ (B) 物體的質量為 2 公斤\n○ (C) 物體前進 45 公尺\n○ (D) 力對物體所作的功為 225 焦耳",
+      "answer": "(C) 物體前進 45 公尺",
+      "diagramUrl": "",
+      "solution": "### 💡 核心考點：牛頓第二運動定律、等加速度直線運動與作功綜合計算\n\n1. **【選項 (A) 分析：運動狀態判定】**：\n   - 物體質量固定，受到大小方向皆不變的「水平定力 $F = 10$ 牛頓」作用。\n   - 根據牛頓第二運動定律 $F = ma$，合力為定值時，加速度 $a$ 亦為定值。\n   - 加速度大小為：\n     $$a = \\frac{\\Delta v}{\\Delta t} = \\frac{15 - 0}{3} = 5 \\text{ 公尺/秒}^2$$\n   - 故物體確實做**等加速度運動**，(A) 敘述正確。\n\n2. **【選項 (B) 分析：物體質量計算】**：\n   - 根據 $F = ma$：\n     $$10 = m \\times 5 \\implies m = \\frac{10}{5} = 2 \\text{ 公斤}$$\n   - 故物體的質量為 2 公斤，(B) 敘述正確。\n\n3. **【選項 (C) 分析：位移大小計算（錯誤所在！）】**：\n   - **方法一（$v-t$ 圖面積法）**：\n     - 繪製速度-時間圖（$v-t$ 圖），由原點 $(0, 0)$ 等加速至 $(3, 15)$，圖形為直角三角形。\n     - 位移 $S$ 等於圖形面積：\n       $$S = \\frac{1}{2} \\times \\text{底} \\times \\text{高} = \\frac{1}{2} \\times 3 \\times 15 = 22.5 \\text{ 公尺}$$\n   - **方法二（等加速度運動公式）**：\n     $$S = v_0 t + \\frac{1}{2} a t^2 = 0 + \\frac{1}{2} \\times 5 \\times 3^2 = \\frac{1}{2} \\times 45 = 22.5 \\text{ 公尺}$$\n   - **錯誤剖析**：選項敘述「物體前進 45 公尺」是直接以末速度 $15 \\times 3 = 45$ 計算，誤將等加速運動當成等速運動，漏乘了 $\\frac{1}{2}$！故 **(C) 敘述錯誤**。\n\n4. **【選項 (D) 分析：外力作功計算】**：\n   - **方法一（功的定義式 $W = F \\times S$）**：\n     $$W = F \\times S = 10 \\times 22.5 = 225 \\text{ 焦耳}$$\n   - **方法二（功能定理：合力作功等於動能增加量）**：\n     $$W = \\Delta E_k = \\frac{1}{2} m v^2 - \\frac{1}{2} m v_0^2 = \\frac{1}{2} \\times 2 \\times 15^2 - 0 = 225 \\text{ 焦耳}$$\n   - 故力對物體所作的功為 225 焦耳，(D) 敘述正確。\n\n5. **【結論】**：\n   - 題目要求選出何者「錯誤」，故應選 (C)。\n\n故本題正確答案為 **(C) 物體前進 45 公尺**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-02",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_phy_work_cases_not_done_carrying_lifting_328",
       "examPeriod": "一段",
