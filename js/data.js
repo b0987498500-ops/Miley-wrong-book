@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v361';
+const STORAGE_KEY = 'miley_wrong_questions_v362';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_circle_tangent_segment_pythagoras_332",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "圓與切線／切線垂直於通過切點的半徑（OQ ⊥ PQ）與畢氏定理求切線段長（PQ = √(OP² - OQ²) = √(5² - 3²) = 4）",
+      "uploadDate": "2026-11-02",
+      "mondayDate": "2026-11-02",
+      "mondayDates": [
+          "2026-11-02"
+      ],
+      "weekLabel": "2026-11-02 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【圓的切線問題第一直覺：連半徑、做垂直！】\n1. **看見切線與切點 $Q$，輔助線必連 $\\overline{OQ}$**：\n   - 圓心到切點的連線必垂直於切線：\n     $$\\overline{OQ} \\perp \\overline{PQ} \\implies \\angle OQP = 90^\\circ$$\n   - 構成以 $\\overline{OP}$ 為**斜邊**的直角三角形 $\\triangle OPQ$！\n2. **三步秒殺密碼（經典 3-4-5 直角三角形）**：\n   - ① **求斜邊 $\\overline{OP}$**：圓心 $O(0, 0)$ 到圓外點 $P(4, 3)$ 的距離：\n     $$\\overline{OP} = \\sqrt{4^2 + 3^2} = \\sqrt{16 + 9} = 5$$\n   - ② **求半徑股 $\\overline{OQ}$**：題目已知半徑為 $3$ ➜ $\\overline{OQ} = 3$。\n   - ③ **求切線段股 $\\overline{PQ}$**：利用畢氏定理：\n     $$\\overline{PQ} = \\sqrt{\\overline{OP}^2 - \\overline{OQ}^2} = \\sqrt{5^2 - 3^2} = \\sqrt{25 - 9} = \\sqrt{16} = 4$$\n3. **常見失分陷阱**：\n   - ❌ **誤將 $\\overline{PQ}$ 當作斜邊**：誤算為 $\\sqrt{5^2 + 3^2} = \\sqrt{34}$！切記：**直角出現在切點 $Q$ 處，$\\overline{OP}$ 才是對著直角的斜邊**！",
+      "stem": "在座標平面上，以原點 O 為圓心，半徑為 3 畫圓，若 P(4, 3) 為圓外一點，直線 L 通過 P 點，且為圓 O 的切線，Q 為切點，則線段 PQ = ？\n\n○ (A) 3\n○ (B) 4\n○ (C) 5\n○ (D) √34",
+      "answer": "(B) 4",
+      "diagramUrl": "assets/questions/q_math_circle_tangent_segment_pythagoras_332.png",
+      "solution": "### 💡 核心考點：圓的切線性質、平面兩點距離公式與畢氏定理應用\n\n1. **【步驟一：作輔助線與切線垂直性質】**：\n   - 連接圓心 $O$ 與切點 $Q$。\n   - 根據**圓的切線幾何性質**：「圓心與切點的連線（即半徑），必垂直於該點的切線」。\n   - 因此：\n     $$\\overline{OQ} \\perp \\overline{PQ} \\implies \\angle OQP = 90^\\circ$$\n   - 此時 $\\triangle OPQ$ 為一個直角三角形，其中**斜邊為 $\\overline{OP}$**，兩股分別為半徑 $\\overline{OQ}$ 與切線段 $\\overline{PQ}$。\n\n2. **【步驟二：求出斜邊線段 OP 的長度】**：\n   - 圓心為座標原點 $O(0, 0)$，圓外一點為 $P(4, 3)$。\n   - 根據平面座標兩點間距離公式：\n     $$\\overline{OP} = \\sqrt{(4 - 0)^2 + (3 - 0)^2} = \\sqrt{4^2 + 3^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5$$\n\n3. **【步驟三：求出半徑線段 OQ 的長度】**：\n   - 題幹給定圓 $O$ 的半徑為 $3$。\n   - 因 $Q$ 點在圓周上，故：\n     $$\\overline{OQ} = r = 3$$\n\n4. **【步驟四：利用畢氏定理求切線段長 PQ】**：\n   - 在直角三角形 $\\triangle OPQ$ 中：\n     $$\\overline{OQ}^2 + \\overline{PQ}^2 = \\overline{OP}^2$$\n     $$3^2 + \\overline{PQ}^2 = 5^2$$\n     $$9 + \\overline{PQ}^2 = 25$$\n     $$\\overline{PQ}^2 = 25 - 9 = 16$$\n     $$\\overline{PQ} = \\sqrt{16} = 4$$\n\n5. **【結論】**：\n   - 切線段 $\\overline{PQ}$ 的長度為 **4**。\n\n故本題正確答案為 **(B) 4**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-02",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_phy_lifting_gas_tanks_work_average_power_331",
       "examPeriod": "一段",
