@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v356';
+const STORAGE_KEY = 'miley_wrong_questions_v357';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_phy_work_round_trip_push_force_scalar_327",
+      "examPeriod": "一段",
+      "subject": "自然/理化",
+      "errorReason": "觀念不懂",
+      "concept": "功與能／來回一趟的外力作功計算：去程回程推力與位移皆同向（作功為純量，分段相加 W = W₁ + W₂ = 50 + 50 = 100 焦耳）",
+      "uploadDate": "2026-11-02",
+      "mondayDate": "2026-11-02",
+      "mondayDates": [
+          "2026-11-02"
+      ],
+      "weekLabel": "2026-11-02 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【「來回一趟」外力作功絕不是 0！功是純量分段累加！】\n1. **致命直覺陷阱（誤選 0 的原因）**：\n   - ❌ **錯誤思考**：「回到原處總位移為 0，所以 $W = F \\times S = 0$？」➜ **大錯特錯！**\n   - 這是推力，不是保守力！小芬在去程是「向前推、物體向前移」；回程是「向後推、物體向後移」！\n2. **分段檢視「推力方向」與「位移方向」**：\n   - **去程**：小芬施力向前（5 N），位移向前（10 m），兩者**同向** ➜ 作**正功**：\n     $$W_1 = 5 \\times 10 = +50 \\text{ 焦耳}$$\n   - **回程**：小芬改為施力向後（5 N），位移也向後（10 m），兩者依然**同向** ➜ 依然作**正功**：\n     $$W_2 = 5 \\times 10 = +50 \\text{ 焦耳}$$\n   - **總作功**：功是純量，直接相加：\n     $$W_{\\text{總}} = W_1 + W_2 = 50 + 50 = 100 \\text{ 焦耳}$$\n3. **什麼時候來回一趟作功才是 0？**：\n   - 只有「重力」等保守力在水平面封閉路徑，或是原地不動無摩擦力做功，或是單一固定方向的外力在來回時一正一負抵消（例如去程受外力向前、回程外力仍向前拉物體向後走）。\n   - 但本題小芬是「主動將物體推回原地」，推力必定轉向！因此去程與回程皆作正功！",
+      "stem": "小芬沿水平方向用 5 牛頓的力量，推動 2 牛頓重的物體前進 10 公尺後，再施以同樣大小的力沿原路徑將物體推回原地，則來回一趟，小芬對物體共作功多少焦耳？\n\n○ (A) 0\n○ (B) 20\n○ (C) 50\n○ (D) 100",
+      "answer": "(D) 100",
+      "diagramUrl": "",
+      "solution": "### 💡 核心考點：分段作功計算、功的純量性與方向同向判定\n\n1. **【觀念核心：功是純量，需分段計算後直接相加】**：\n   - 在物理學中，外力隨運動方向改變時，不能直接用全過程的總位移（起終點向量和）乘外力，必須將整個過程分段計算。\n   - 功的公式為：\n     $$W = F \\times S \\times \\cos\\theta$$\n\n2. **【去程階段分析】**：\n   - 小芬施加水平推力 $F_1 = 5$ 牛頓。\n   - 物體向前移動位移 $S_1 = 10$ 公尺。\n   - 施力方向與物體運動方向相同（夾角 $\\theta_1 = 0^\\circ$）：\n     $$W_1 = 5 \\times 10 \\times \\cos 0^\\circ = 50 \\text{ 焦耳}$$\n\n3. **【回程階段分析】**：\n   - 小芬沿原路徑將物體「推回原地」，此時小芬必須改朝反向施力，施力大小依然為 $F_2 = 5$ 牛頓。\n   - 物體向後移動回起點，位移 $S_2 = 10$ 公尺。\n   - 此時推力的方向與回程位移方向**依然相同**（夾角 $\\theta_2 = 0^\\circ$），故回程依然作正功：\n     $$W_2 = 5 \\times 10 \\times \\cos 0^\\circ = 50 \\text{ 焦耳}$$\n\n4. **【總作功計算】**：\n   - 來回一趟，小芬對物體所作的總功為兩段作功的代數和：\n     $$W_{\\text{總}} = W_1 + W_2 = 50 + 50 = 100 \\text{ 焦耳}$$\n\n5. **【各選項干擾剖析】**：\n   - **(A) 0**：誤以為來回一趟總位移為 0 故作功為 0（忽略了回程推力也轉向，依然在推動前進作正功）。\n   - **(B) 20**：誤用物重 2 牛頓代入計算（$2 \\times 10$）。\n   - **(C) 50**：只計算了單程（去程）的作功，漏算了回程。\n\n故本題正確答案為 **(D) 100**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-02",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_phy_work_definition_conditions_hammer_nail_326",
       "examPeriod": "一段",
