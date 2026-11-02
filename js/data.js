@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v359';
+const STORAGE_KEY = 'miley_wrong_questions_v360';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_phy_constant_force_power_work_330",
+      "examPeriod": "一段",
+      "subject": "自然/理化",
+      "errorReason": "觀念不懂",
+      "concept": "功與功率／牛頓運動定律與平均功率計算：F-t 圖定力 4N、質量 2kg ➜ 加速度 a=2m/s²、位移 S=25m、功率 P=W/t=20 瓦特（或 P=F×v̄ 秒殺）",
+      "uploadDate": "2026-11-02",
+      "mondayDate": "2026-11-02",
+      "mondayDates": [
+          "2026-11-02"
+      ],
+      "weekLabel": "2026-11-02 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【求「功率」不要只算到「功」！兩種解題思路秒殺！】\n1. **看清題目問的是「功率（單位時間作功）」還是「作功」**：\n   - 題目問：**「0～5 秒內，此作用力對該物體作功的『功率』為多少？」**\n   - 功率定義式：\n     $$P = \\frac{W}{t} = \\frac{F \\times S}{t}$$\n   - ⚠️ 功率單位是**瓦特（W）**或**焦耳／秒（J/s）**，算出總功 100 焦耳後，**務必記得除以時間 5 秒**得到 20 瓦特！\n2. **解法一（三步標準解）：$F \\implies a \\implies S \\implies P$**：\n   - ① 讀圖得水平定力 $F = 4 \\text{ N}$。\n   - ② 求加速度：$a = \\frac{F}{m} = \\frac{4}{2} = 2 \\text{ m/s}^2$。\n   - ③ 求 5 秒位移：$S = \\frac{1}{2} a t^2 = \\frac{1}{2} \\times 2 \\times 5^2 = 25 \\text{ 公尺}$。\n   - ④ 求總功與功率：$W = 4 \\times 25 = 100 \\text{ J} \\implies P = \\frac{100}{5} = 20 \\text{ W}$！\n3. **解法二（秒殺金律）：$P = F \\times \\bar{v}$（定力乘平均速度）**：\n   - 靜止開始等加速，$5$ 秒末速 $v = a t = 2 \\times 5 = 10 \\text{ m/s}$。\n   - 平均速度 $\\bar{v} = \\frac{0 + 10}{2} = 5 \\text{ m/s}$。\n   - 平均功率 $P = F \\times \\bar{v} = 4 \\times 5 = 20 \\text{ W}$！（兩秒口算直接得解）",
+      "stem": "質量 2 公斤的物體靜置於光滑的水平桌面上，仰偉施水平方向的作用力 F 於該物體，其 F 與時間（t）關係如附圖所示，則 0～5 秒內，此作用力對該物體作功的功率為多少？\n\n○ (A) 20\n○ (B) 15\n○ (C) 10\n○ (D) 0.8",
+      "answer": "(A) 20",
+      "diagramUrl": "assets/questions/q_phy_constant_force_power_work_330.png",
+      "solution": "### 💡 核心考點：F-t 圖之物理意義、牛頓第二運動定律與平均功率計算\n\n1. **【步驟一：從 F-t 圖讀取外力資訊並求加速度】**：\n   - 觀察 $F-t$ 圖可知，水平作用力 $F$ 在 $0 \\sim 5$ 秒內維持一條水平直線，代表大小恆為 **$F = 4$ 牛頓**（水平定力）。\n   - 已知物體質量 $m = 2$ 公斤，桌面光滑無摩擦力。\n   - 根據牛頓第二運動定律 $F = ma$：\n     $$4 = 2 \\times a \\implies a = \\frac{4}{2} = 2 \\text{ 公尺/秒}^2$$\n\n2. **【步驟二：求 0～5 秒內的位移 S】**：\n   - 物體由靜止開始做等加速度運動（初速度 $v_0 = 0$）：\n     $$S = v_0 t + \\frac{1}{2} a t^2 = 0 + \\frac{1}{2} \\times 2 \\times 5^2 = 25 \\text{ 公尺}$$\n\n3. **【步驟三：求外力所作的功 W】**：\n   - 水平外力與物體運動方向相同（同向作正功）：\n     $$W = F \\times S = 4 \\text{ 牛頓} \\times 25 \\text{ 公尺} = 100 \\text{ 焦耳}$$\n\n4. **【步驟四：求 0～5 秒內的平均功率 P】**：\n   - 功率之定義為「單位時間內所作的功」：\n     $$P = \\frac{W}{t} = \\frac{100 \\text{ 焦耳}}{5 \\text{ 秒}} = 20 \\text{ 瓦特 (W)}$$\n\n5. **【⚡ 秒殺另解：定力乘平均速度】**：\n   - $5$ 秒時的末速度 $v = v_0 + at = 0 + 2 \\times 5 = 10$ 公尺／秒。\n   - $0 \\sim 5$ 秒內的平均速度：\n     $$\\bar{v} = \\frac{v_0 + v}{2} = \\frac{0 + 10}{2} = 5 \\text{ 公尺/秒}$$\n   - 平均功率：\n     $$P = F \\times \\bar{v} = 4 \\times 5 = 20 \\text{ 瓦特 (W)}$$\n\n故本題正確答案為 **(A) 20**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-02",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_phy_constant_force_kinematics_work_energy_329",
       "examPeriod": "一段",
