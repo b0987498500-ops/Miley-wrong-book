@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v354';
+const STORAGE_KEY = 'miley_wrong_questions_v355';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_phy_gravity_work_upward_external_force_325",
+      "examPeriod": "一段",
+      "subject": "自然/理化",
+      "errorReason": "審題不清",
+      "concept": "功與能／地球引力作功之正負號與受力主體辨析（W = F × S × cosθ，重力向下位移向上作負功）",
+      "uploadDate": "2026-11-02",
+      "mondayDate": "2026-11-02",
+      "mondayDates": [
+          "2026-11-02"
+      ],
+      "weekLabel": "2026-11-02 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【看清題目到底問「哪一個力」在作功！】\n1. **受力主體絕對不要張冠李戴！**：\n   - 題幹給了「向上外力 10 牛頓」，但最後問的是：**「此時『地球引力』對物體作功多少焦耳？」**\n   - ❌ **致命粗心**：誤看成向上外力作功（$10 \\times 10 = 100$ 焦耳）或誤選 100 / -100。\n   - ⚡ **抓準目標力**：只看「地球引力（重力）」的大小與方向！\n2. **功的正負號判定金律**：\n   - 力與位移**同向** ➜ 作**正功**（$> 0$）\n   - 力與位移**垂直** ➜ **不作功**（$= 0$）\n   - 力與位移**反向** ➜ 作**負功**（$< 0$）！\n   - 本題物體**向上**上升 10 公尺，而地球引力永遠**向下**拉，兩者方向相反 ➜ 必定為**負功（負號必備）**！\n3. **數值計算**：\n   - 物重 $= 1 \\text{ kgw} = 9.8 \\text{ 牛頓}$（向下）。\n   - 位移 $= 10 \\text{ 公尺}$（向上）。\n   - 重力作功 $W = - (9.8 \\times 10) = -98 \\text{ 焦耳}$！",
+      "stem": "一重量為 1 kgw 之物體受一 10 牛頓向上外力作用上升 10 公尺，此時地球引力對物體作功多少焦耳？（1 kgw = 9.8 牛頓）\n\n○ (A) 100\n○ (B) 98\n○ (C) -98\n○ (D) -100",
+      "answer": "(C) -98",
+      "diagramUrl": "",
+      "solution": "### 💡 核心考點：作功的定義、力的來源鎖定與正負號判定\n\n1. **【步驟一：鎖定所求之「受力主體」】**：\n   - 題幹中出現了兩個力：\n     1. 向上外力 $F_{\\text{外}} = 10$ 牛頓（方向向上）。\n     2. 地球引力（重力）$W_{\\text{重}} = 1\\text{ kgw} = 9.8$ 牛頓（方向向下）。\n   - 題目明確詢問：**「此時『地球引力』對物體作功多少焦耳？」**\n   - 因此計算作功時，力的數值**必須帶入地球引力 $9.8$ 牛頓**，向上外力 $10$ 牛頓為干擾資訊！\n\n2. **【步驟二：作功公式與正負號判定】**：\n   - 功的定義式：\n     $$W = F \\times S \\times \\cos\\theta$$\n   - 其中：\n     - 地球引力大小 $F = 9.8$ 牛頓，方向**向下**。\n     - 物體的位移大小 $S = 10$ 公尺，方向**向上**。\n     - 力的方向與位移方向相反（夾角 $\\theta = 180^\\circ$），故引力對物體作**負功**。\n\n3. **【步驟三：代入計算】**：\n   - 重力作功：\n     $$W = - (9.8 \\times 10) = -98 \\text{ 焦耳}$$\n\n4. **【各選項干擾陷阱解析】**：\n   - **(A) 100**：誤算為向上外力作功（$10 \\times 10 = 100$）。\n   - **(B) 98**：算對了重力大小，但漏掉方向相反應為負功的定義。\n   - **(D) -100**：將外力誤加上負號，混淆外力與重力。\n\n故本題正確答案為 **(C) -98**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-02",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_math_golden_ratio_high_heels_height_324",
       "examPeriod": "一段",
