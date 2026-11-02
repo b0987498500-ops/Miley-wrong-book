@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v353';
+const STORAGE_KEY = 'miley_wrong_questions_v354';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_golden_ratio_high_heels_height_324",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "比例與一元一次方程式／黃金比例的身材應用：穿高跟鞋增加下半身與總身高求鞋高（(104+x)/(172+x) = 0.618 或 (104+x)/68 = 1.618）",
+      "uploadDate": "2026-11-02",
+      "mondayDate": "2026-11-02",
+      "mondayDates": [
+          "2026-11-02"
+      ],
+      "weekLabel": "2026-11-02 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【穿高跟鞋求黃金身材秒殺關鍵！】\n1. **穿高跟鞋時，什麼變了？什麼沒變？**：\n   - **沒變**：上半身的身長保持不變！\n     $$\\text{上半身} = 172 - 104 = 68 \\text{ 公分}$$\n   - **變了**：下半身增加 $x$ 公分（變成 $104 + x$），總身高也增加 $x$ 公分（變成 $172 + x$）！\n2. **兩種黃金比例列式（依題幹定義無縫互通）**：\n   - **方式一（下半身比上半身 = 1.618）⚡ 最快解法，分母是常數！**：\n     $$\\frac{104 + x}{68} = 1.618$$\n     $$104 + x = 68 \\times 1.618 = 110.024$$\n     $$x = 110.024 - 104 = 6.024 \\approx 6 \\text{ 公分}$$\n   - **方式二（下半身比總身高 = 0.618）**：\n     $$\\frac{104 + x}{172 + x} = 0.618$$\n     $$104 + x = 0.618(172 + x) = 106.296 + 0.618x$$\n     $$0.382x = 2.296 \\implies x = \\frac{2.296}{0.382} \\approx 6.01 \\approx 6 \\text{ 公分}$$\n3. **防呆判定**：\n   - 原本比例：$\\frac{104}{68} \\approx 1.529 < 1.618$（或 $\\frac{104}{172} \\approx 0.605 < 0.618$），故小美原本**不是**黃金比例。\n   - 穿上約 **6 公分** 的高跟鞋即可達到最美麗的黃金比例！",
+      "stem": "如圖，已知小美的身高為 172 公分，下半身長為 104 公分。請判斷小美的身材比例是否為黃金比例？若不是，她可以穿多少公分高的高跟鞋來達成黃金比例？（以四捨五入法取到整數位）\n\n○ (A) 是黃金比例；不需穿高跟鞋\n○ (B) 不是黃金比例；穿 4 公分高跟鞋\n○ (C) 不是黃金比例；穿 6 公分高跟鞋\n○ (D) 不是黃金比例；穿 8 公分高跟鞋",
+      "answer": "(C) 不是黃金比例；穿 6 公分高跟鞋",
+      "diagramUrl": "",
+      "solution": "### 💡 核心考點：黃金比例的身材應用與方程式求解\n\n1. **【步驟一：檢驗原本身材是否為黃金比例】**：\n   - 小美原本總身高 $= 172$ 公分，下半身 $= 104$ 公分。\n   - 上半身 $= 172 - 104 = 68$ 公分。\n   - 檢驗下半身除以上半身之比值：\n     $$\\frac{104}{68} \\approx 1.529 \\neq 1.618$$\n   - 或檢驗下半身除以總身高之比值：\n     $$\\frac{104}{172} \\approx 0.6047 \\neq 0.618$$\n   - **結論**：小美目前的比例**不是黃金比例**。\n\n2. **【步驟二：設鞋高未知數並分析身體變化】**：\n   - 設小美穿 $x$ 公分高的高跟鞋。\n   - 穿上鞋子後：\n     - 上半身長度不變，仍為 $68$ 公分。\n     - 下半身長度變為 $104 + x$ 公分。\n     - 總身高變為 $172 + x$ 公分。\n\n3. **【步驟三：列方程式並求解 x】**：\n   - **【解法一：利用下半身長比上半身長 = 1.618（推薦）】**：\n     $$\\frac{104 + x}{68} = 1.618$$\n     $$104 + x = 68 \\times 1.618$$\n     $$104 + x = 110.024$$\n     $$x = 110.024 - 104 = 6.024$$\n     - 四捨五入取至整數位：$x \\approx 6$ 公分。\n   - **【解法二：利用下半身長比總身高 = 0.618】**：\n     $$\\frac{104 + x}{172 + x} = 0.618$$\n     $$104 + x = 0.618 \\times (172 + x)$$\n     $$104 + x = 106.296 + 0.618x$$\n     $$1x - 0.618x = 106.296 - 104$$\n     $$0.382x = 2.296$$\n     $$x = \\frac{2.296}{0.382} \\approx 6.0105$$\n     - 四捨五入取至整數位：$x \\approx 6$ 公分。\n\n4. **【結論】**：\n   - 小美原本身材不是黃金比例，她可以穿 **6** 公分高的高跟鞋來達成黃金比例。\n\n故本題正確答案為 **(C) 不是黃金比例；穿 6 公分高跟鞋**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-02",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_math_golden_ratio_value_definition_323",
       "examPeriod": "一段",
