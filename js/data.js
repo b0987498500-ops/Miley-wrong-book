@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v351';
+const STORAGE_KEY = 'miley_wrong_questions_v352';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_sum_product_difference_squared_322",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "計算粗心",
+      "concept": "乘法公式／兩數之和與乘積求兩數之差的平方：(a - b)² = (a + b)² - 4ab 恆等式秒殺",
+      "uploadDate": "2026-11-02",
+      "mondayDate": "2026-11-02",
+      "mondayDates": [
+          "2026-11-02"
+      ],
+      "weekLabel": "2026-11-02 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【乘法公式萬用變形秒殺心法！】\n1. **看清題目問的是什麼！**：\n   - 題目問的是「兩數之差的平方 $(a - b)^2$」，**不是**要你把大數、小數個別解出來！\n   - ❌ **慢速硬算（繞遠路又容易算錯）**：列出一元二次方程式 $a(3-a)=1 \\implies a^2 - 3a + 1 = 0$，用公式解 $a = \\frac{3 \\pm \\sqrt{5}}{2}$，再代入算兩數相減的平方。\n   - ⚡ **秒殺解法（乘法公式變形）**：直接利用恆等式：\n     $$(a - b)^2 = (a + b)^2 - 4ab$$\n2. **三秒心算**：\n   - 已知 $a + b = 3$，$ab = 1$：\n     $$(a - b)^2 = 3^2 - 4(1) = 9 - 4 = 5$$\n3. **黃金對照表（必背乘法公式延伸型）**：\n   - $a^2 + b^2 = (a + b)^2 - 2ab$\n   - $(a - b)^2 = (a + b)^2 - 4ab$\n   - $(a + b)^2 = (a - b)^2 + 4ab$",
+      "stem": "已知大、小兩數的和為 3，且兩數乘積為 1，求兩數之差的平方為多少？\n\n○ (A) 3\n○ (B) 4\n○ (C) 5\n○ (D) 9",
+      "answer": "(C) 5",
+      "diagramUrl": "",
+      "solution": "### 💡 核心考點：乘法公式之變形應用（和、積、差的平方關係）\n\n1. **【解法一：乘法公式恆等式秒殺（推薦最佳解法）】**：\n   - 設大數為 $a$、小數為 $b$。\n   - 依題意：\n     - 兩數之和：$a + b = 3$\n     - 兩數之積：$ab = 1$\n   - 題目所求為「兩數之差的平方」，即 $(a - b)^2$。\n   - 利用完全平方公式展開並對照：\n     $$(a + b)^2 = a^2 + 2ab + b^2$$\n     $$(a - b)^2 = a^2 - 2ab + b^2$$\n   - 將兩式相減可得核心變形公式：\n     $$(a - b)^2 = (a + b)^2 - 4ab$$\n   - 將已知數值直接代入：\n     $$(a - b)^2 = 3^2 - 4 \\times 1 = 9 - 4 = 5$$\n\n2. **【解法二：列一元二次方程式公式解（驗算與原理）】**：\n   - 設大數為 $a$，則小數為 $3 - a$。\n   - 依兩數乘積為 1：\n     $$a(3 - a) = 1 \\implies 3a - a^2 = 1 \\implies a^2 - 3a + 1 = 0$$\n   - 利用一元二次方程式公式解：\n     $$a = \\frac{-(-3) \\pm \\sqrt{(-3)^2 - 4 \\times 1 \\times 1}}{2 \\times 1} = \\frac{3 \\pm \\sqrt{5}}{2}$$\n   - 因大數大於小數，取大數為 $\\frac{3 + \\sqrt{5}}{2}$，小數為 $3 - \\frac{3 + \\sqrt{5}}{2} = \\frac{3 - \\sqrt{5}}{2}$。\n   - 兩數之差為：\n     $$a - b = \\frac{3 + \\sqrt{5}}{2} - \\frac{3 - \\sqrt{5}}{2} = \\frac{2\\sqrt{5}}{2} = \\sqrt{5}$$\n   - 兩數之差的平方為：\n     $$(a - b)^2 = (\\sqrt{5})^2 = 5$$\n\n3. **【結論】**：\n   - 兩數之差的平方為 **5**。\n\n故本題正確答案為 **(C) 5**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-02",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_phy_steelyard_fraud_weight_scale_321",
       "examPeriod": "一段",
