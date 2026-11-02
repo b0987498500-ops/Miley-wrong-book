@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v360';
+const STORAGE_KEY = 'miley_wrong_questions_v361';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_phy_lifting_gas_tanks_work_average_power_331",
+      "examPeriod": "一段",
+      "subject": "自然/理化",
+      "errorReason": "計算粗心",
+      "concept": "功與功率／多物體搬運總作功與平均功率計算：重力單位換算（20 kgw = 200 N）、時間單位換算（20 分鐘 = 1200 秒）、P = W/t = 2.5 瓦特",
+      "uploadDate": "2026-11-02",
+      "mondayDate": "2026-11-02",
+      "mondayDates": [
+          "2026-11-02"
+      ],
+      "weekLabel": "2026-11-02 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【三大單位換算陷阱！分 ➜ 秒、kgw ➜ N、漏乘總桶數！】\n1. **功率的標準國際單位是「瓦特 (W) = 焦耳／秒 (J/s)」**：\n   - 時間是 **20 分鐘** ➜ ⚠️ **絕對不能直接帶入 20！必須換成「秒」**：\n     $$t = 20 \\times 60 = 1200 \\text{ 秒}$$\n   - ❌ **直接拿 20 當分母**：會算出 $150$ 瓦特（大陷阱 (C)）！\n2. **力的單位要換成「牛頓 (N)」**：\n   - 每桶重 $20 \\text{ 公斤重 (kgw)}$，已知重力加速度 $g = 10 \\text{ m/s}^2$：\n     $$F_{\\text{每桶}} = 20 \\times 10 = 200 \\text{ 牛頓 (N)}$$\n3. **總桶數要乘進去（共 15 桶）**：\n   - 搬運一桶作功：$W_1 = 200 \\times 1 = 200 \\text{ 焦耳}$。\n   - 搬運 15 桶總作功：$W_{\\text{總}} = 200 \\times 15 = 3000 \\text{ 焦耳}$。\n4. **平均功率秒算**：\n   $$P = \\frac{W_{\\text{總}}}{t} = \\frac{3000 \\text{ 焦耳}}{1200 \\text{ 秒}} = \\frac{30}{12} = 2.5 \\text{ 瓦特 (W)}$$！",
+      "stem": "搬運工將 15 桶瓦斯桶從地面搬運至高度 1 公尺的小貨車上；已知每一桶瓦斯桶的重量皆為 20 公斤重，且搬運工一共花了 20 分鐘才完成他的工作。則這 20 分鐘之內，搬運工對所有瓦斯桶作功的平均功率為多少瓦特？（重力加速度 g = 10 公尺／秒²）\n\n○ (A) 2.5\n○ (B) 10\n○ (C) 150\n○ (D) 600",
+      "answer": "(A) 2.5",
+      "diagramUrl": "",
+      "solution": "### 💡 核心考點：克服重力作功、多物件總功累加與國際標準單位換算\n\n1. **【步驟一：將重力單位換算為標準牛頓 (N)】**：\n   - 每桶瓦斯重量為 $20$ 公斤重（kgw）。\n   - 題目給定重力加速度 $g = 10$ 公尺／秒$^2$。\n   - 搬運一桶瓦斯所需向上克服重力的施力：\n     $$F = 20 \\text{ kg} \\times 10 \\text{ m/s}^2 = 200 \\text{ 牛頓 (N)}$$\n\n2. **【步驟二：計算搬運 15 桶瓦斯所作的總功 W】**：\n   - 搬運高度（鉛直位移）$h = 1$ 公尺。\n   - 搬運單桶瓦斯作功：\n     $$W_1 = F \\times h = 200 \\text{ N} \\times 1 \\text{ m} = 200 \\text{ 焦耳 (J)}$$\n   - 共搬運 $15$ 桶瓦斯，總作功為：\n     $$W_{\\text{總}} = W_1 \\times 15 = 200 \\times 15 = 3000 \\text{ 焦耳 (J)}$$\n\n3. **【步驟三：將時間換算為標準秒數 (s)】**：\n   - 搬運時間為 $20$ 分鐘。\n   - 換算為秒：\n     $$t = 20 \\times 60 = 1200 \\text{ 秒 (s)}$$\n\n4. **【步驟四：計算平均功率 P】**：\n   - 根據功率定義式 $P = \\frac{W}{t}$：\n     $$P = \\frac{W_{\\text{總}}}{t} = \\frac{3000 \\text{ 焦耳}}{1200 \\text{ 秒}} = \\frac{30}{12} = 2.5 \\text{ 瓦特 (W)}$$\n\n5. **【常見錯誤陷阱剖析】**：\n   - **(C) 150**：忘記將時間「分鐘」換成「秒」，直接算 $\\frac{3000}{20} = 150$。\n   - **(B) 10**：漏乘總桶數 15，或是漏將公斤重乘以重力加速度 $g$。\n   - **(D) 600**：計算過程連乘錯誤。\n\n故本題正確答案為 **(A) 2.5**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-02",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_phy_constant_force_power_work_330",
       "examPeriod": "一段",
