@@ -4,6 +4,26 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v3.76] - 2026-11-03 (自動收錄國中數學圓雙切線與切點弦長考題 Q343：圓外點 P 引兩切線 PA PB／C 為 OP 中點 CP = 3 半徑 OC = 3／母子相似射影定理 OA² = OM × OP 求 OM = 3/2／求 CM = OC - OM = 3/2／精準裁切切線幾何圖形、零符號純淨繁體中文排版，數據庫題數達到 447 題！升級數據庫至 v372，快取升級 v3.45)
+- **類型**：錯題自動收錄 / 數學科幾何（圓與切線） / 圓外一點引兩切線之對稱性質（$\\overline{PA} = \\overline{PB}$，$\\overline{OP} \\perp \\overline{AB}$） / 連接切點半徑垂直切線（$\\overline{OA} \\perp \\overline{PA} \\implies \\angle OAP = 90^\\circ$） / 中點條件反推半徑（$C$ 在圓上，$\\overline{OC} = r = \\overline{CP} = 3$，斜邊 $\\overline{OP} = 6$） / 直角三角形母子相似性質（射影定理：$\\overline{OA}^2 = \\overline{OM} \\times \\overline{OP} \\implies 3^2 = 6\\overline{OM} \\implies \\overline{OM} = \\frac{3}{2}$） / 線段差求 $\\overline{CM} = \\overline{OC} - \\overline{OM} = 3 - \\frac{3}{2} = \\frac{3}{2}$ / 幾何圖形精確裁切整合 / 零符號純淨繁體中文排版 / 升級數據庫至 v372 / 快取升級 v3.45
+- **主要變更**：
+  1. **完整收錄數學圓切線與切點弦考題（Q343，歸入 2026-11-02 最新週次）**：
+     - **Q343** `q_math_circle_tangents_cm_segment_343`：
+       - **題幹**：如圖所示，直線 PA、直線 PB 為圓 O 的兩條切線，A、B 為切點，線段 OP 與圓 O 相交於 C 點，與線段 AB 相交於 M 點。若 C 為線段 OP 的中點，且線段 CP = 3，則線段 CM = ？
+       - **選項**：○ (A) 1 ○ (B) 3/2 ○ (C) 2 ○ (D) 3√3 / 2
+       - **正解**：**(B) 3/2**。
+       - **破題關鍵**：
+         1. **求半徑與斜邊**：$C$ 在圓上且為中點 $\implies$ 半徑 $\overline{OC} = 3$，斜邊 $\overline{OP} = 6$。
+         2. **母子相似（射影定理）**：$\overline{OA}^2 = \overline{OM} \times \overline{OP} \implies 9 = 6\overline{OM} \implies \overline{OM} = \frac{3}{2}$。
+         3. **求 $\overline{CM}$**：$\overline{CM} = \overline{OC} - \overline{OM} = 3 - \frac{3}{2} = \frac{3}{2}$。
+  2. **圖文處理原則遵循**：
+     - 精確裁切題幹切線幾何圖形，存為 `assets/questions/q_math_circle_tangents_cm_segment_343.png`，點擊可開啟燈箱放大檢視。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v372`（`miley_wrong_questions_v372`），題庫總量達 447 題。
+     - Service Worker 快取升級為 `miley-pwa-cache-v3.45`，腳本版本標籤升級 `js/data.js?v=372`。
+
+---
+
 ## [v3.75] - 2026-11-03 (自動收錄國中理化動能公式＋牛頓第二定律跨單元整合考題 Q342：質量 5kg 靜置光滑平面受 10N 水平推力／由動能 Ek = 1/2 mv² = 360J 逆求末速 v = 12 m/s／由 F = ma 求加速度 a = 2 m/s²／由 v = v0 + at 求得 t = 6 秒／跨章節破題三部曲深入剖析、純文字無圖題零截圖純淨繁體中文排版，數據庫題數達到 446 題！升級數據庫至 v371，快取升級 v3.44)
 - **類型**：錯題自動收錄 / 自然科理化（功與能 ＋ 力與運動跨章節整合） / 動能公式逆求末速度（$E_k = \\frac{1}{2}mv^2 \\implies v = 12\\text{ m/s}$） / 牛頓第二運動定律（$F = ma \\implies a = 2\\text{ m/s}^2$） / 等加速度運動速度公式求時間（$v = v_0 + at \\implies t = 6\\text{ s}$） / 功能定理位移速算法（$W = FS = \\Delta E_k \\implies S = 36\\text{ m}, t = \\frac{S}{\\bar{v}} = 6\\text{ s}$） / 純文字無圖題目遵循不附截圖規範 / 零符號純淨繁體中文排版 / 升級數據庫至 v371 / 快取升級 v3.44
 - **主要變更**：
