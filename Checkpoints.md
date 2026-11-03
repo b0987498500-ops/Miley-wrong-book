@@ -4,6 +4,26 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v3.70] - 2026-11-03 (自動收錄英文文法對等關聯連接詞 not only... but (also)... 省略規則考題 Q337：not only save money BUT save natural resources／深度剖析 also 為副詞可省略但 but 為對等連接詞絕不可省略之核心文法機制、避開盲目背誦口訣誤選 (B) also 陷阱、純文字無圖題零截圖純淨繁體中文排版，數據庫題數達到 441 題！升級數據庫至 v366，快取升級 v3.39)
+- **類型**：錯題自動收錄 / 英文科文法 / 對等關聯連接詞 not only A but (also) B / 詞性與省略規則：對等連接詞 but 不可省略、加強語氣副詞 also 可省略 / 避開單選 also 造成缺乏連接詞的文法斷層陷阱 / 原形動詞片語平行對等 / 純文字無圖題目遵循不附截圖規範 / 零符號純淨繁體中文排版 / 升級數據庫至 v366 / 快取升級 v3.39
+- **主要變更**：
+  1. **完整收錄英文文法關聯連接詞考題（Q337，歸入 2026-11-02 最新週次）**：
+     - **Q337** `q_eng_correlative_not_only_but_also_337`：
+       - **題幹**：These green buildings can not only save money ______ save the natural (自然的) resources on Earth.
+       - **選項**：○ (A) but ○ (B) also ○ (C) and ○ (D) to
+       - **正解**：**(A) but**。
+       - **破題關鍵**：
+         1. **關聯連接詞結構**：not only A but (also) B，A 與 B 平行（save money 與 save resources）。
+         2. **省略規則**：but 是不可或缺的對等連接詞，副詞 also 經常被省略；因此句中可單獨使用 but，但絕不可單獨使用 also。
+         3. **避坑 (B) also**：若只填 also 會缺少連接詞，導致兩個動詞片語無法連接（run-on 錯誤）。
+  2. **圖文處理原則遵循**：
+     - 本題為純文字文法考題，依標準作業規範不附截圖（`diagramUrl: ""`），呈現極致純淨繁體中文排版。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v366`（`miley_wrong_questions_v366`），題庫總量達 441 題。
+     - Service Worker 快取升級為 `miley-pwa-cache-v3.39`，腳本版本標籤升級 `js/data.js?v=366`。
+
+---
+
 ## [v3.69] - 2026-11-03 (自動收錄英文文法 Either A or B 就近原則＋動名詞片語單數主詞＋be fun 事物主詞句型考題 Q336：Either reading... or watching online movies IS a lot of fun／避開鄰近複數名詞 movies 誤選 are 之視覺陷阱、避開混淆人 have fun 誤選 has/have 陷阱、純文字無圖題零截圖純淨繁體中文排版，數據庫題數達到 440 題！升級數據庫至 v365，快取升級 v3.38)
 - **類型**：錯題自動收錄 / 英文科文法 / 對等關聯連接詞 Either A or B 就近原則（主詞動詞一致性由後者 B 決定） / 動名詞片語（watching online movies）作主詞無論受詞單複數一律視為「單數主詞」 / 辨析 be fun（事物/活動很有樂趣）vs. have fun（某人玩得開心）的主詞差異 / 零符號純淨繁體中文排版 / 升級數據庫至 v365 / 快取升級 v3.38
 - **主要變更**：
