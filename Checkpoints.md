@@ -4,6 +4,27 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v3.68] - 2026-11-03 (自動收錄英文文法對等連接詞雙重精選題 Q334-Q335：感官動詞受詞補語對等原形動詞 saw a woman get in... and drive... 避開誤連主詞之 and drove 陷阱、被動態與不及物動詞過去式對等 were blown away and fell 避開誤判被動之 and fallen 陷阱、純文字無圖題零截圖純淨繁體中文排版，數據庫題數達到 439 題！升級數據庫至 v364，快取升級 v3.37)
+- **類型**：錯題自動收錄 / 英文科文法雙題 / 感官動詞受詞補語平行對稱結構（$\\text{saw} + \\text{O} + \\text{VR1 and VR2}$） / 開車開走為主詞受詞女人動作（原形 drive）非 David 動作（避開 (D) and drove 陷阱） / 雙動詞謂語對等連接詞（were blown away and fell ...） / 不及物動詞 fall 無被動態（避開 (D) and fallen 陷阱） / 純文字無圖題目遵循不附截圖規範 / 零符號純淨繁體中文排版 / 升級數據庫至 v364 / 快取升級 v3.37
+- **主要變更**：
+  1. **完整收錄英文文法感官動詞受詞補語考題（Q334，歸入 2026-11-02 最新週次）**：
+     - **Q334** `q_eng_verb_sensory_parallel_complement_get_drive_334`：
+       - **題幹**：David looked out of the balcony window and saw a woman get in his car ______ away.
+       - **選項**：○ (A) drive ○ (B) drove ○ (C) and drive ○ (D) and drove
+       - **正解**：**(C) and drive**。
+       - **破題關鍵**：感官動詞 saw 接受詞 a woman，受詞補語為 get in；第二個動作開車離去亦為女人所為，兩動作以 and 連接且對等使用原形動詞 drive；避開誤以為與 David 過去式動作 looked/saw 對等而選 (D) and drove 之陷阱。
+  2. **完整收錄英文文法被動態與主動過去式對等考題（Q335，歸入 2026-11-02 最新週次）**：
+     - **Q335** `q_eng_parallel_passive_active_fell_335`：
+       - **題幹**：It was very windy this morning. Some of the shirts on the balcony were blown away ______ in the pond.
+       - **選項**：○ (A) fell ○ (B) and fell ○ (C) fallen ○ (D) and fallen
+       - **正解**：**(B) and fell**。
+       - **破題關鍵**：襯衫被風吹走（were blown away，被動態），隨後掉進池塘（fall 為不及物動詞，無被動態，以主動過去式 fell 表示）；兩動詞謂語以 and 連接；避開誤將 fall 作為被動態過去分詞而選 (D) and fallen 之高頻陷阱。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v364`（`miley_wrong_questions_v364`），題庫總量達 439 題。
+     - Service Worker 快取升級為 `miley-pwa-cache-v3.37`，腳本版本標籤升級 `js/data.js?v=364`。
+
+---
+
 ## [v3.67] - 2026-11-03 (自動收錄109年國中會考英文科對等不定詞結構考題 Q333：Josh has planned to make a trip... and (to) visit...／對等連接詞 and 連接不定詞省略 to 規則／避開誤連完成式 visited 之高頻語意陷阱、純文字無圖題零截圖純淨繁體中文排版，數據庫題數達到 437 題！升級數據庫至 v363，快取升級 v3.36)
 - **類型**：錯題自動收錄 / 英文科 / 109 年會考精選題 / 文法對等連接詞（Parallel Structure） / 動詞 plan 後接不定詞（$\\text{plan} + \\text{to VR}$） / 對等連接詞 and 連接兩個不定詞：$\\text{to make ... and (to) visit ...}$（第二個不定詞省略 to，保留原形動詞 VR） / 高頻干擾選項 (D) visited 避坑解析（避免誤判為連接完成式 has planned 造成語意荒謬） / 純文字無圖題目遵循不附截圖規範 / 零符號純淨繁體中文排版 / 升級數據庫至 v363 / 快取升級 v3.36
 - **主要變更**：
