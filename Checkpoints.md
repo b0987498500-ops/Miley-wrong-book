@@ -4,6 +4,26 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v3.77] - 2026-11-03 (自動收錄國中數學圓雙切線與正三角形求半徑考題 Q344：切線長 PA = PB 且 △PAB 為正三角形邊長 6／OP 平分頂角 ∠APO = 30°／連接切點半徑 OA ⊥ PA 形成 30°-60°-90° 特殊直角三角形／由長股 PA = 6 求短股半徑 r = 6/√3 = 2√3／純文字無圖題零截圖純淨繁體中文排版，數據庫題數達到 448 題！升級數據庫至 v373，快取升級 v3.46)
+- **類型**：錯題自動收錄 / 數學科幾何（圓與切線） / 切線長性質（$\\overline{PA} = \\overline{PB}$）與正三角形性質（$\\overline{PA} = \\overline{PB} = \\overline{AB} = 6$，$\\angle APB = 60^\\circ$） / 角平分線對稱性質（$\\angle APO = 30^\\circ$） / 切點半徑垂直切線（$\\overline{OA} \\perp \\overline{PA} \\implies \\angle OAP = 90^\\circ$） / $30^\\circ - 60^\\circ - 90^\\circ$ 特殊直角三角形邊長比（$1 : \\sqrt{3} : 2$） / 避開將切線長 6 當作短股算出 $6\\sqrt{3}$ 陷阱 / 純文字無圖題目遵循不附截圖規範 / 零符號純淨繁體中文排版 / 升級數據庫至 v373 / 快取升級 v3.46
+- **主要變更**：
+  1. **完整收錄數學圓切線與正三角形考題（Q344，歸入 2026-11-02 最新週次）**：
+     - **Q344** `q_math_circle_tangents_equilateral_radius_344`：
+       - **題幹**：若圓 O 外一點 P 對圓作切線段 PA、PB，且 △PAB 為正三角形，線段 AB = 6，則此圓 O 的半徑為多少？
+       - **選項**：○ (A) 2 ○ (B) 2√3 ○ (C) 3√3 ○ (D) 4√3
+       - **正解**：**(B) 2√3**。
+       - **破題關鍵**：
+         1. **切線長與正三角形**：$\\overline{PA} = \\overline{PB} = \\overline{AB} = 6$，$\\angle APB = 60^\\circ$。
+         2. **對稱角平分線**：$\\angle APO = 30^\\circ$。
+         3. **特殊直角三角形邊比**：$\\triangle OAP$ 中 $\\angle OAP = 90^\\circ$、$\\angle APO = 30^\\circ$、$\\angle AOP = 60^\\circ$。長股 $\\overline{PA} = 6$，短股半徑 $r = \\frac{6}{\\sqrt{3}} = 2\\sqrt{3}$。
+  2. **圖文處理原則遵循**：
+     - 本題為純文字幾何題，依標準作業規範不附截圖（`diagramUrl: ""`），呈現極致純淨繁體中文排版。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v373`（`miley_wrong_questions_v373`），題庫總量達 448 題。
+     - Service Worker 快取升級為 `miley-pwa-cache-v3.46`，腳本版本標籤升級 `js/data.js?v=373`。
+
+---
+
 ## [v3.76] - 2026-11-03 (自動收錄國中數學圓雙切線與切點弦長考題 Q343：圓外點 P 引兩切線 PA PB／C 為 OP 中點 CP = 3 半徑 OC = 3／母子相似射影定理 OA² = OM × OP 求 OM = 3/2／求 CM = OC - OM = 3/2／精準裁切切線幾何圖形、零符號純淨繁體中文排版，數據庫題數達到 447 題！升級數據庫至 v372，快取升級 v3.45)
 - **類型**：錯題自動收錄 / 數學科幾何（圓與切線） / 圓外一點引兩切線之對稱性質（$\\overline{PA} = \\overline{PB}$，$\\overline{OP} \\perp \\overline{AB}$） / 連接切點半徑垂直切線（$\\overline{OA} \\perp \\overline{PA} \\implies \\angle OAP = 90^\\circ$） / 中點條件反推半徑（$C$ 在圓上，$\\overline{OC} = r = \\overline{CP} = 3$，斜邊 $\\overline{OP} = 6$） / 直角三角形母子相似性質（射影定理：$\\overline{OA}^2 = \\overline{OM} \\times \\overline{OP} \\implies 3^2 = 6\\overline{OM} \\implies \\overline{OM} = \\frac{3}{2}$） / 線段差求 $\\overline{CM} = \\overline{OC} - \\overline{OM} = 3 - \\frac{3}{2} = \\frac{3}{2}$ / 幾何圖形精確裁切整合 / 零符號純淨繁體中文排版 / 升級數據庫至 v372 / 快取升級 v3.45
 - **主要變更**：
