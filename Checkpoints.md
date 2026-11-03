@@ -4,6 +4,26 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v3.69] - 2026-11-03 (自動收錄英文文法 Either A or B 就近原則＋動名詞片語單數主詞＋be fun 事物主詞句型考題 Q336：Either reading... or watching online movies IS a lot of fun／避開鄰近複數名詞 movies 誤選 are 之視覺陷阱、避開混淆人 have fun 誤選 has/have 陷阱、純文字無圖題零截圖純淨繁體中文排版，數據庫題數達到 440 題！升級數據庫至 v365，快取升級 v3.38)
+- **類型**：錯題自動收錄 / 英文科文法 / 對等關聯連接詞 Either A or B 就近原則（主詞動詞一致性由後者 B 決定） / 動名詞片語（watching online movies）作主詞無論受詞單複數一律視為「單數主詞」 / 辨析 be fun（事物/活動很有樂趣）vs. have fun（某人玩得開心）的主詞差異 / 零符號純淨繁體中文排版 / 升級數據庫至 v365 / 快取升級 v3.38
+- **主要變更**：
+  1. **完整收錄英文文法動名詞與關聯連接詞考題（Q336，歸入 2026-11-02 最新週次）**：
+     - **Q336** `q_eng_either_or_gerund_subject_is_fun_336`：
+       - **題幹**：Either reading comic books or watching online movies ______ a lot of fun.
+       - **選項**：○ (A) is ○ (B) are ○ (C) has ○ (D) have
+       - **正解**：**(A) is**。
+       - **破題關鍵**：
+         1. **Either A or B 就近原則**：動詞由 B 決定（watching online movies）。
+         2. **動名詞片語作主詞視為單數**：核心是「看電影這件事（watching）」，不是名詞 movies，故動詞必須用單數形。
+         3. **be fun 與 have fun 區辨**：主詞是「活動/事物（看電影）」而非「人」，活動本身很有樂趣必須使用 be 動詞 `is a lot of fun`，人玩得很開心才使用 `have fun`。
+  2. **圖文處理原則遵循**：
+     - 本題為純文字文法考題，依標準作業規範不附截圖（`diagramUrl: ""`），呈現極致純淨繁體中文排版。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v365`（`miley_wrong_questions_v365`），題庫總量達 440 題。
+     - Service Worker 快取升級為 `miley-pwa-cache-v3.38`，腳本版本標籤升級 `js/data.js?v=365`。
+
+---
+
 ## [v3.68] - 2026-11-03 (自動收錄英文文法對等連接詞雙重精選題 Q334-Q335：感官動詞受詞補語對等原形動詞 saw a woman get in... and drive... 避開誤連主詞之 and drove 陷阱、被動態與不及物動詞過去式對等 were blown away and fell 避開誤判被動之 and fallen 陷阱、純文字無圖題零截圖純淨繁體中文排版，數據庫題數達到 439 題！升級數據庫至 v364，快取升級 v3.37)
 - **類型**：錯題自動收錄 / 英文科文法雙題 / 感官動詞受詞補語平行對稱結構（$\\text{saw} + \\text{O} + \\text{VR1 and VR2}$） / 開車開走為主詞受詞女人動作（原形 drive）非 David 動作（避開 (D) and drove 陷阱） / 雙動詞謂語對等連接詞（were blown away and fell ...） / 不及物動詞 fall 無被動態（避開 (D) and fallen 陷阱） / 純文字無圖題目遵循不附截圖規範 / 零符號純淨繁體中文排版 / 升級數據庫至 v364 / 快取升級 v3.37
 - **主要變更**：
