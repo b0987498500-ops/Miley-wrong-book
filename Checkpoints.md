@@ -4,6 +4,30 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v3.67] - 2026-11-03 (自動收錄109年國中會考英文科對等不定詞結構考題 Q333：Josh has planned to make a trip... and (to) visit...／對等連接詞 and 連接不定詞省略 to 規則／避開誤連完成式 visited 之高頻語意陷阱、純文字無圖題零截圖純淨繁體中文排版，數據庫題數達到 437 題！升級數據庫至 v363，快取升級 v3.36)
+- **類型**：錯題自動收錄 / 英文科 / 109 年會考精選題 / 文法對等連接詞（Parallel Structure） / 動詞 plan 後接不定詞（$\\text{plan} + \\text{to VR}$） / 對等連接詞 and 連接兩個不定詞：$\\text{to make ... and (to) visit ...}$（第二個不定詞省略 to，保留原形動詞 VR） / 高頻干擾選項 (D) visited 避坑解析（避免誤判為連接完成式 has planned 造成語意荒謬） / 純文字無圖題目遵循不附截圖規範 / 零符號純淨繁體中文排版 / 升級數據庫至 v363 / 快取升級 v3.36
+- **主要變更**：
+  1. **完整收錄 109 年會考英文文法對等結構考題（Q333，歸入 2026-11-02 最新週次）**：
+     - **Q333** `q_eng_inf_parallel_plan_visit_333`：
+       - **題幹**：Josh has planned to make a trip to New York and ______ some of his friends there. 【109年會考】
+       - **選項**：
+         - ○ (A) visit
+         - ○ (B) visits
+         - ○ (C) visiting
+         - ○ (D) visited
+       - **正解**：**(A) visit**。
+       - **破題關鍵**：
+         1. **動詞受詞平行結構**：主要動詞為 `has planned`，後接不定詞片語作受詞，`and` 連接兩件「計畫要做的事」：`to make a trip` 與 `(to) visit friends`。
+         2. **省略 to 之慣用**：對等連接詞連接不定詞時，第二個 `to` 習慣省略，後方填入原形動詞 `visit`。
+         3. **避坑 (D) visited**：若填 visited 會變成「已經計畫……且已經拜訪完」，違背正在規劃旅行的語意邏輯。
+  2. **圖文處理原則遵循**：
+     - 本題為純文字考題，依標準作業規範不附截圖（`diagramUrl: ""`），呈現極致純淨繁體中文排版。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v363`（`miley_wrong_questions_v363`），題庫總量達 437 題。
+     - Service Worker 快取升級為 `miley-pwa-cache-v3.36`，腳本版本標籤升級 `js/data.js?v=363`。
+
+---
+
 ## [v3.66] - 2026-11-02 (自動收錄國中數學圓與切線段長考題 Q332：圓 O 半徑為 3、圓外點 P(4, 3)／切線垂直於切點半徑 OQ ⊥ PQ／斜邊 OP = √(4²+3²) = 5／畢氏定理求切線段長 PQ = √(5²-3²) = 4／生成高清座標幾何切線圖形、零符號純淨繁體中文排版，數據庫題數達到 436 題！升級數據庫至 v362，快取升級 v3.35)
 - **類型**：錯題自動收錄 / 數學科 / 圓的切線性質與畢氏定理 / 切線垂直於通過切點的半徑（$\\overline{OQ} \\perp \\overline{PQ} \\implies \\angle OQP = 90^\\circ$） / 圓外一點 $P(4, 3)$ 到圓心 $O(0, 0)$ 距離為斜邊 $\\overline{OP} = \\sqrt{4^2 + 3^2} = 5$ / 半徑為股 $\\overline{OQ} = 3$ / 切線段長為股 $\\overline{PQ} = \\sqrt{5^2 - 3^2} = 4$（經典 3-4-5 直角三角形） / 避免誤把切線段當斜邊算出 $\\sqrt{34}$ 陷阱 / 零奇怪符號純淨繁體中文排版 / 升級數據庫至 v362 / 快取升級 v3.35
 - **主要變更**：

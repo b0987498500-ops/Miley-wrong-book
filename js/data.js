@@ -3,10 +3,40 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v362';
+const STORAGE_KEY = 'miley_wrong_questions_v363';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_eng_inf_parallel_plan_visit_333",
+      "examPeriod": "一段",
+      "subject": "英文",
+      "errorReason": "觀念不懂",
+      "concept": "文法/對等連接詞 and 連接對等不定詞（plan to make ... and (to) visit ... 省略 to 之平行對稱結構）",
+      "uploadDate": "2026-11-03",
+      "mondayDate": "2026-11-02",
+      "mondayDates": [
+          "2026-11-02"
+      ],
+      "weekLabel": "2026-11-02 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 **易錯警示筆記**：【對等連接詞 and 的前後平行對稱陷阱！】\n1. **看見 and 必找「對稱的兩端」**：\n   - 題目：Josh has planned [to make ... and (to) ______ ...]\n   - plan to + V1 and (to) V2 ➜ 第二個 to 習慣省略，後面必須保持「原形動詞 (VR)」！\n2. **會考常見陷阱 (D) visited 避坑秘訣**：\n   - ❌ **誤以為連接完成式**：看到 has planned 就順手選 visited？\n   - ❗ **看語意邏輯**：Josh 正在「計畫」去紐約，朋友還沒拜訪，拜訪朋友是**計畫中的行程**，與 make 平行，絕不是已經拜訪完畢！",
+      "stem": "Josh has planned to make a trip to New York and ______ some of his friends there. 【109年會考】\n\n○ (A) visit\n○ (B) visits\n○ (C) visiting\n○ (D) visited",
+      "answer": "(A) visit",
+      "diagramUrl": "",
+      "solution": "### 💡 核心考點：對等連接詞 and 連接對等不定詞結構（Parallel Structure）\n\n1. **【正解 (A) 深度破題分析——plan to + V 複合對等結構】**：\n   - **主要動詞與受詞結構**：句子的主詞是 Josh，動詞時態為現在完成式 has planned（已經計畫）。\n   - **受詞的不定詞受詞**：動詞 plan 後面習慣接不定詞片語作受詞，即：\n     6067\\text{plan} + \\text{to VR}6067\n   - **對等連接詞 and 的平行結構**：\n     句中 and 連接了 Josh 計畫要做的事情（兩項行動）：\n     - 第一件事：to make a trip to New York（去紐約旅行）\n     - 第二件事：to visit some of his friends there（拜訪當地的朋友）\n   - **省略 to 的慣用規則**：\n     當對等連接詞（and, or, but）連接兩個不定詞時，為了避免重複並使句子簡潔，**第二個不定詞通常會省略 to**，只保留原形動詞（VR）：\n     6067\\text{Josh has planned [to make ... and (to) visit ...]}6067\n   - 因此空格處應填入原形動詞 **visit**，故選 **(A)**。\n\n2. **【其餘干擾選項錯誤點逐一破解】**：\n   - **(B) visits（第三人稱單數現在式）❌**：\n     若選 visits，句子結構會變成 has planned ... and visits ...，時態前後嚴重矛盾，且主詞 Josh 若連接兩個現在式動詞應為 plans ... and visits ...，此處前面是完成式 has planned，無法與單純現在式 visits 對等。\n   - **(C) visiting（現在分詞／動名詞）❌**：\n     動詞 plan 後方接不定詞 to VR，不接動名詞 V-ing；且前面是 to make，兩者結構無法對稱。\n   - **(D) visited（過去式／過去分詞）❌【超高頻易錯陷阱！】**：\n     許多同學看到前面有 has planned（現在完成式），直覺以為 and 是在連接完成式的動詞：has [planned ... and visited ...]。但若這樣解讀，語意會變成「Josh 已經計畫……而且 Josh 已經拜訪過朋友」，前後邏輯完全不通！既然去紐約的旅行還在「計畫（plan to make a trip）」，拜訪朋友當然也是「計畫要做的事」，因此 visit 必須與 make 平行對等，而非與 planned 對等！\n\n故本題正確答案為 **(A)**。",
+      "errorCount": 1,
+      "ebbinghausStage": 1,
+      "consecutiveMastered": 0,
+      "isArchived": false,
+      "nextReviewDate": "2026-11-03",
+      "isReviewed": false,
+      "reviewStatus": "unreviewed",
+      "lastReviewDecision": null,
+      "lastReviewedMonday": null,
+      "lastReviewedDate": null,
+      "reviewedMondays": []
+  },
   {
       "id": "q_math_circle_tangent_segment_pythagoras_332",
       "examPeriod": "一段",
