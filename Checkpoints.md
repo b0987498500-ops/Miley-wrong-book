@@ -4,6 +4,26 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v3.80] - 2026-11-04 (自動收錄國中數學四邊形內切圓與平行相似形求線段長度考題 Q347：DE // BC，圓 O 內切於四邊形 DBCE，周長 16，BC = 4，求 DE 之長／切線長代換 AN = 4，△ADE 周長等於兩側切線長之和 8，相似三角形周長比求 DE = 2／乾淨幾何圖形、零符號純淨繁體中文排版，數據庫題數達到 451 題！升級數據庫至 v376，快取升級 v3.49)
+- **類型**：錯題自動收錄 / 數學科幾何（圓與切線） / 圓外切四邊形切線長性質（$\\overline{DM}=\\overline{DN}, \\overline{EM}=\\overline{EQ}$） / 三角形周長與切線長關聯（$\\overline{AN} = 4$） / 線段代換法求頂端小三角形周長（$\\triangle ADE \\text{ 周長} = \\overline{AN} + \\overline{AQ} = 8$） / 平行線截相似三角形性質（$\\triangle ADE \\sim \\triangle ABC$，$AA$ 相似） / 相似形對應邊比等於周長比（$\\overline{DE} : \\overline{BC} = 8 : 16 \\implies \\overline{DE} = 2$） / 圖表去痕清理原則：裁切精準乾淨幾何示意圖（`q_math_circle_inscribed_trapezoid_de_347.png`） / 零符號純淨繁體中文排版 / 升級數據庫至 v376 / 快取升級 v3.49
+- **主要變更**：
+  1. **完整收錄圓外切四邊形與平行相似形綜合幾何考題（Q347，歸入 2026-11-02 最新週次）**：
+     - **Q347** `q_math_circle_inscribed_trapezoid_de_347`：
+       - **題幹**：如圖所示，在 △ABC 中，D、E 兩點分別在線段 AB、AC 上，DE // BC，若圓 O 內切於四邊形 DBCE，M、N、P、Q 為切點。若 △ABC 周長（AB + BC + CA）= 16，BC = 4，則線段 DE 之長為何？
+       - **選項**：○ (A) 1 ○ (B) 2 ○ (C) 3 ○ (D) 4
+       - **正解**：**(B) 2**。
+       - **破題關鍵**：
+         1. **求切線長 $\overline{AN}$**：$\triangle ABC$ 周長 $= 2(x + y + z) = 16 \implies x + y + z = 8$。因 $\overline{BC} = y + z = 4$，故 $\overline{AN} = x = 8 - 4 = 4$。
+         2. **求 $\triangle ADE$ 周長**：切線長代換 $\overline{DE} = \overline{DM} + \overline{EM} = \overline{DN} + \overline{EQ}$，故 $\triangle ADE$ 周長 $= (\overline{AD} + \overline{DN}) + (\overline{AE} + \overline{EQ}) = \overline{AN} + \\overline{AQ} = 4 + 4 = 8$。
+         3. **相似形對應邊比**：$\overline{DE} \parallel \overline{BC} \implies \triangle ADE \sim \triangle ABC$。對應邊長比等於周長比：$\overline{DE} : 4 = 8 : 16 \implies \overline{DE} = 2$。
+  2. **圖文處理原則遵循**：
+     - 精確裁切原圖幾何圖形存為 `assets/questions/q_math_circle_inscribed_trapezoid_de_347.png`，點擊可開啟燈箱清晰檢視。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v376`（`miley_wrong_questions_v376`），題庫總量達 451 題。
+     - Service Worker 快取升級為 `miley-pwa-cache-v3.49`，腳本版本標籤升級 `js/data.js?v=376`。
+
+---
+
 ## [v3.79] - 2026-11-04 (依使用者指示單獨收錄第(1)小題：國中數學三角形內切圓切線長考題 Q346：AB=7 BC=8 AC=9 求 CF - BD／半周長 s = 12 求 CF = s - c = 5、BD = s - b = 3 得線段差 2／暗黑秒殺相消法 AC - AB = (x+z) - (x+y) = z - y = 9 - 7 = 2／清除粉紅筆跡生成高解析幾何圖、零符號純淨繁體中文排版，數據庫題數達到 450 題里程碑！升級數據庫至 v375，快取升級 v3.48)
 - **類型**：錯題自動收錄 / 數學科幾何（圓與切線） / 三角形內切圓切線長性質（$\\overline{AD}=\\overline{AF}=x, \\overline{BD}=\\overline{BE}=y, \\overline{CE}=\\overline{CF}=z$） / 半周長公式求解（$s = 12, \\overline{CF} = 12 - 7 = 5, \\overline{BD} = 12 - 9 = 3$） / 快速相消秒殺技巧（$\\overline{AC} - \\overline{AB} = \\overline{CF} - \\overline{BD} = 9 - 7 = 2$） / 嚴格遵從使用者指示「第二題不需要放，只有第一題要放」 / 圖表去痕清理原則：生成高對比乾淨幾何圖形（`q_math_circle_inscribed_tangents_cf_bd_346.png`） / 零符號純淨繁體中文排版 / 升級數據庫至 v375 / 快取升級 v3.48
 - **主要變更**：
