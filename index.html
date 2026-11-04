@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>智慧錯題複習系統 | Smart Question Review</title>
-  
+
   <!-- Google Fonts: Ghibli Vintage Picture Book & Steampunk Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Marcellus&family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Marcellus&family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700;900&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet">
+
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- KaTeX CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-  
+
   <!-- PWA Manifest & Mobile App Support -->
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="assets/icon-192.png">
@@ -29,7 +32,7 @@
 
   <!-- PWA Standalone & Service Worker Initialization -->
   <script>
-    (function() {
+    (function () {
       try {
         var ua = (navigator.userAgent || '').toLowerCase();
         if (ua.indexOf('line') > -1 && window.location.search.indexOf('openExternalBrowser=1') === -1) {
@@ -37,65 +40,65 @@
           window.location.href = window.location.href + sep + 'openExternalBrowser=1';
         }
         var isPWA = (window.matchMedia && (
-                        window.matchMedia('(display-mode: standalone)').matches ||
-                        window.matchMedia('(display-mode: fullscreen)').matches ||
-                        window.matchMedia('(display-mode: minimal-ui)').matches
-                    )) ||
-                    window.navigator.standalone === true ||
-                    window.location.search.indexOf('source=pwa') !== -1 ||
-                    (document.referrer && document.referrer.indexOf('android-app://') === 0) ||
-                    localStorage.getItem('miley_pwa_installed') === 'true';
+          window.matchMedia('(display-mode: standalone)').matches ||
+          window.matchMedia('(display-mode: fullscreen)').matches ||
+          window.matchMedia('(display-mode: minimal-ui)').matches
+        )) ||
+          window.navigator.standalone === true ||
+          window.location.search.indexOf('source=pwa') !== -1 ||
+          (document.referrer && document.referrer.indexOf('android-app://') === 0) ||
+          localStorage.getItem('miley_pwa_installed') === 'true';
         if (isPWA) {
           document.documentElement.classList.add('is-pwa-standalone');
         }
-      } catch(e) {}
+      } catch (e) { }
 
       // Register Service Worker
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('sw.js?v=337').then(function(reg) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('sw.js?v=337').then(function (reg) {
             if (typeof reg.update === 'function') {
               reg.update();
             }
             console.log('PWA ServiceWorker registered & updated:', reg.scope);
-          }).catch(function(err) {
+          }).catch(function (err) {
             console.warn('PWA ServiceWorker registration failed:', err);
           });
         });
       }
     })();
     // Immediate theme preference initialization (Dark by default, supports Light theme)
-    (function() {
+    (function () {
       try {
         var theme = localStorage.getItem('miley_theme_mode');
         if (theme === 'light') {
           document.documentElement.classList.add('light-theme');
-          document.addEventListener('DOMContentLoaded', function() {
+          document.addEventListener('DOMContentLoaded', function () {
             document.body.classList.add('light-theme');
             var btn = document.getElementById('theme-toggle-btn');
             if (btn) btn.innerHTML = '<i class="fa-solid fa-sun" style="color: #f59e0b;"></i>';
           });
         }
-      } catch (e) {}
+      } catch (e) { }
     })();
     // Reset and cleanup any legacy page zoom
-    (function() {
+    (function () {
       try {
         localStorage.removeItem('miley_page_zoom_ratio');
         document.documentElement.style.zoom = '';
-      } catch (e) {}
+      } catch (e) { }
     })();
     // Enforce Miley's preferred compact sidebar width (196px rendered on screen / 157px CSS) immediately on launch
-    (function() {
+    (function () {
       try {
         var savedW = localStorage.getItem('miley_sidebar_width_v4');
         var w = savedW ? parseInt(savedW, 10) : 157;
         if (!w || isNaN(w) || w < 145 || w > 400) w = 157;
         document.documentElement.style.setProperty('--sidebar-width', w + 'px');
-      } catch (e) {}
+      } catch (e) { }
     })();
     // Immediate date updater on load
-    (function() {
+    (function () {
       function syncCurrentDateDisplay() {
         const displayEl = document.getElementById('current-date-display');
         const labelEl = document.getElementById('current-date-label');
@@ -129,6 +132,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 </head>
+
 <body>
   <!-- LINE 內嵌瀏覽器跳出導引彈窗 (防呆圖文教學) -->
   <div id="lineGuideModal" class="guide-modal hidden">
@@ -138,8 +142,10 @@
       1. 請點擊右上角的 <strong style="color:#ef4444;">[⋮]</strong> 或 <strong style="color:#ef4444;">[≡]</strong><br>
       2. 選擇 <strong style="color:#38bdf8;">「以其他應用程式開啟」</strong> 或 <strong style="color:#38bdf8;">「在預設瀏覽器中開啟」</strong>
     </div>
-    <img src="assets/z_img_line.png" alt="LINE 開啟瀏覽器教學" style="width: 80%; max-width: 320px; margin: 20px auto; border-radius: 12px; display: block; border: 2px solid #38bdf8;">
-    <button id="lineCloseBtn" class="btn-guide-close" onclick="document.getElementById('lineGuideModal').classList.add('hidden')">關閉提示</button>
+    <img src="assets/z_img_line.png" alt="LINE 開啟瀏覽器教學"
+      style="width: 80%; max-width: 320px; margin: 20px auto; border-radius: 12px; display: block; border: 2px solid #38bdf8;">
+    <button id="lineCloseBtn" class="btn-guide-close"
+      onclick="document.getElementById('lineGuideModal').classList.add('hidden')">關閉提示</button>
   </div>
 
   <!-- Android 專屬安裝 App 教學彈窗 -->
@@ -149,14 +155,16 @@
       <div class="guide-steps-box">
         <p>1. 點擊瀏覽器右上角的 <strong>「選單」圖示 ⋮</strong></p>
         <p>2. 點選 <strong>「安裝應用程式」</strong> 或 <strong>「加到主畫面」 📲</strong></p>
-        <div style="background: rgba(99, 102, 241, 0.15); border: 1px solid #6366f1; border-radius: 8px; padding: 10px; margin-top: 12px;">
+        <div
+          style="background: rgba(99, 102, 241, 0.15); border: 1px solid #6366f1; border-radius: 8px; padding: 10px; margin-top: 12px;">
           <p style="font-size: 14px; color: #fef08a; margin: 0; line-height: 1.5;">
             💡 <strong>若在 LINE 中開啟：</strong><br>
             請點右上角 <strong>「⋮」</strong> ➜ 點選 <strong>「在預設瀏覽器中開啟」</strong>（Chrome），即可一鍵安裝到桌面！
           </p>
         </div>
       </div>
-      <button class="btn-primary-close" style="margin-top: 18px;" onclick="document.getElementById('androidInstallGuideModal').classList.add('hidden')">我知道了 👍</button>
+      <button class="btn-primary-close" style="margin-top: 18px;"
+        onclick="document.getElementById('androidInstallGuideModal').classList.add('hidden')">我知道了 👍</button>
     </div>
   </div>
 
@@ -169,7 +177,8 @@
         <p>2. 往下滑動，點選 <strong>「加入主畫面」 ➕</strong></p>
         <p>3. 點擊右上角 <strong>「新增」</strong> 即可像 App 一樣在桌面秒開使用！</p>
       </div>
-      <button class="btn-primary-close" style="margin-top: 18px;" onclick="document.getElementById('iosInstallModal').classList.add('hidden')">我知道了 👍</button>
+      <button class="btn-primary-close" style="margin-top: 18px;"
+        onclick="document.getElementById('iosInstallModal').classList.add('hidden')">我知道了 👍</button>
     </div>
   </div>
 
@@ -178,7 +187,8 @@
     <aside class="sidebar" id="sidebar">
       <div class="brand" id="brand-logo-btn" style="cursor: pointer;" title="點擊重新整理頁面">
         <div class="logo-icon">
-          <img src="assets/icon-192.png" alt="麥麥 Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+          <img src="assets/icon-192.png" alt="麥麥 Logo"
+            style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
         </div>
         <div class="brand-text">
           <h2>麥麥錯題本</h2>
@@ -236,7 +246,8 @@
     </aside>
 
     <!-- Sidebar Draggable Resizer Splitter (側邊欄寬度可拖曳交界調整條) -->
-    <div id="sidebar-resizer" class="sidebar-resizer" role="separator" aria-orientation="vertical" title="按住並左右拖曳可調整側邊欄寬度（雙擊還原預設寬度）"></div>
+    <div id="sidebar-resizer" class="sidebar-resizer" role="separator" aria-orientation="vertical"
+      title="按住並左右拖曳可調整側邊欄寬度（雙擊還原預設寬度）"></div>
 
     <!-- Main Content Area -->
     <main class="main-content">
@@ -255,7 +266,8 @@
 
           <div class="header-right">
             <!-- 前往麥麥筆記跨站捷徑按鈕 -->
-            <a href="https://b0987498500-ops.github.io/Miley-notes/" target="_blank" rel="noopener" class="sync-nav-btn notes-cross-link-btn" title="開啟麥麥筆記手帳（支援雙向傳送門聯動）">
+            <a href="https://b0987498500-ops.github.io/Miley-notes/" target="_blank" rel="noopener"
+              class="sync-nav-btn notes-cross-link-btn" title="開啟麥麥筆記手帳（支援雙向傳送門聯動）">
               <i class="fa-solid fa-book-bookmark" style="color: #f59e0b;"></i>
               <span>麥麥筆記</span>
             </a>
@@ -279,18 +291,22 @@
 
                 <div class="popover-body sync-popover-body">
                   <div class="sync-cloud-status-box" style="text-align: center; padding: 12px 8px;">
-                    <i class="fa-solid fa-cloud-arrow-up" style="color: #10b981; font-size: 2rem; margin-bottom: 6px;"></i>
+                    <i class="fa-solid fa-cloud-arrow-up"
+                      style="color: #10b981; font-size: 2rem; margin-bottom: 6px;"></i>
                     <strong style="color: #ffffff; font-size: 1.05rem; display: block;">Supabase 雲端無縫同步</strong>
-                    <div class="sync-status-indicator" id="modal-cloud-status-badge" style="font-size: 0.85rem; margin-top: 4px;">🟢 連線正常 ‧ 雲端已即時同步</div>
+                    <div class="sync-status-indicator" id="modal-cloud-status-badge"
+                      style="font-size: 0.85rem; margin-top: 4px;">🟢 連線正常 ‧ 雲端已即時同步</div>
                   </div>
 
                   <div style="margin: 16px 0 12px 0; text-align: center;">
-                    <button type="button" id="btn-force-cloud-sync" class="btn-cloud-refresh btn-cloud-refresh-lg" title="立即強制雙向對齊">
+                    <button type="button" id="btn-force-cloud-sync" class="btn-cloud-refresh btn-cloud-refresh-lg"
+                      title="立即強制雙向對齊">
                       <i class="fa-solid fa-rotate"></i> 立即對齊
                     </button>
                   </div>
 
-                  <div class="sync-cloud-time" id="modal-cloud-last-sync-time" style="text-align: center; color: rgba(255,255,255,0.6); font-size: 0.82rem;">最後同步時間：已連線準備完畢</div>
+                  <div class="sync-cloud-time" id="modal-cloud-last-sync-time"
+                    style="text-align: center; color: rgba(255,255,255,0.6); font-size: 0.82rem;">最後同步時間：已連線準備完畢</div>
                 </div>
               </div>
             </div>
@@ -311,7 +327,8 @@
                     <span>智慧心靈寶庫</span>
                   </div>
                   <div style="display: flex; align-items: center; gap: 8px;">
-                    <button id="btn-wisdom-sync" class="popover-sync-btn" title="手機與電腦跨裝置進度即時同步" onclick="window.SyncModule && window.SyncModule.openModal()">
+                    <button id="btn-wisdom-sync" class="popover-sync-btn" title="手機與電腦跨裝置進度即時同步"
+                      onclick="window.SyncModule && window.SyncModule.openModal()">
                       <i class="fa-solid fa-arrows-rotate"></i>
                     </button>
                     <button id="btn-close-wisdom-popover" class="popover-close-btn" title="關閉">&times;</button>
@@ -335,7 +352,8 @@
 
                 <div class="wisdom-tabs">
                   <button class="wisdom-tab-btn active" data-wisdom-tab="all">🌟 全部知識金句</button>
-                  <button class="wisdom-tab-btn" data-wisdom-tab="fav">❤️ 我收藏的愛心 (<span id="wisdom-fav-count">0</span>)</button>
+                  <button class="wisdom-tab-btn" data-wisdom-tab="fav">❤️ 我收藏的愛心 (<span
+                      id="wisdom-fav-count">0</span>)</button>
                 </div>
 
                 <div class="wisdom-cards-scroll" id="wisdom-cards-container">
@@ -364,11 +382,14 @@
                 <!-- Calendar Month Nav Header -->
                 <div class="cal-month-header">
                   <div class="cal-month-nav-left">
-                    <button id="cal-prev-month-btn" class="cal-nav-btn" title="上個月"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button id="cal-prev-month-btn" class="cal-nav-btn" title="上個月"><i
+                        class="fa-solid fa-chevron-left"></i></button>
                     <span id="cal-month-label" class="cal-month-title">2026 年 9 月</span>
-                    <button id="cal-next-month-btn" class="cal-nav-btn" title="下個月"><i class="fa-solid fa-chevron-right"></i></button>
+                    <button id="cal-next-month-btn" class="cal-nav-btn" title="下個月"><i
+                        class="fa-solid fa-chevron-right"></i></button>
                   </div>
-                  <button id="cal-close-btn" class="cal-nav-btn cal-close-btn" title="關閉日曆"><i class="fa-solid fa-xmark"></i></button>
+                  <button id="cal-close-btn" class="cal-nav-btn cal-close-btn" title="關閉日曆"><i
+                      class="fa-solid fa-xmark"></i></button>
                 </div>
 
                 <!-- Days of Week Header -->
@@ -471,11 +492,13 @@
                       </div>
                     </div>
                     <div class="canvas-wrapper clickable-image-wrapper" id="orig-img-wrapper" title="點擊全螢幕放大閱讀純淨題目照片">
-                      <div id="orig-placeholder-hint" style="padding: 40px 20px; text-align: center; color: var(--text-muted);">
+                      <div id="orig-placeholder-hint"
+                        style="padding: 40px 20px; text-align: center; color: var(--text-muted);">
                         <i class="fa-solid fa-image" style="font-size: 2.5rem; margin-bottom: 10px; opacity: 0.5;"></i>
                         <p>請先由上方【上傳錯題照片】</p>
                       </div>
-                      <img id="original-preview-img" alt="純淨題目照片" style="max-width: 100%; height: auto; border-radius: 6px; display: none; margin: 0 auto; cursor: pointer;">
+                      <img id="original-preview-img" alt="純淨題目照片"
+                        style="max-width: 100%; height: auto; border-radius: 6px; display: none; margin: 0 auto; cursor: pointer;">
                     </div>
                   </div>
 
@@ -494,12 +517,15 @@
                     </div>
 
                     <!-- Direct Answer Image Display -->
-                    <div id="solution-drawer-container" class="canvas-wrapper clickable-image-wrapper solution-drawer" title="點擊全螢幕放大閱讀解答照片">
-                      <div id="solution-placeholder-hint" style="padding: 40px 20px; text-align: center; color: var(--text-muted);">
+                    <div id="solution-drawer-container" class="canvas-wrapper clickable-image-wrapper solution-drawer"
+                      title="點擊全螢幕放大閱讀解答照片">
+                      <div id="solution-placeholder-hint"
+                        style="padding: 40px 20px; text-align: center; color: var(--text-muted);">
                         <i class="fa-solid fa-image" style="font-size: 2.5rem; margin-bottom: 10px; opacity: 0.5;"></i>
                         <p>系統將自動分離出【解析與答案照片】</p>
                       </div>
-                      <img id="solution-preview-img" alt="分離出之答案照片" style="max-width: 100%; height: auto; border-radius: 6px; display: none; margin: 0 auto; cursor: pointer;">
+                      <img id="solution-preview-img" alt="分離出之答案照片"
+                        style="max-width: 100%; height: auto; border-radius: 6px; display: none; margin: 0 auto; cursor: pointer;">
                     </div>
                   </div>
 
@@ -508,8 +534,10 @@
                 </div>
 
                 <!-- Action Bar: Confirm & Save Wrong Question to Archive -->
-                <div class="save-action-bar" style="display: flex; justify-content: center; margin-top: 24px; padding-top: 18px; border-top: 1px dashed rgba(255, 255, 255, 0.15);">
-                  <button type="button" id="btn-save-question-confirm" class="btn-primary" style="padding: 16px 48px; font-size: 1.2rem; font-weight: 700; border-radius: 50px; background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35); cursor: pointer; transition: all 0.25s ease;">
+                <div class="save-action-bar"
+                  style="display: flex; justify-content: center; margin-top: 24px; padding-top: 18px; border-top: 1px dashed rgba(255, 255, 255, 0.15);">
+                  <button type="button" id="btn-save-question-confirm" class="btn-primary"
+                    style="padding: 16px 48px; font-size: 1.2rem; font-weight: 700; border-radius: 50px; background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35); cursor: pointer; transition: all 0.25s ease;">
                     <i class="fa-solid fa-floppy-disk"></i> 💾 確認儲存錯題 (歸檔入庫)
                   </button>
                 </div>
@@ -618,7 +646,9 @@
                         <div class="hero-weapon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                       </div>
                       <div class="character-name">錯題剋星 Miley</div>
-                      <div class="hero-hp-bar"><div class="hp-fill" style="width: 100%;"></div></div>
+                      <div class="hero-hp-bar">
+                        <div class="hp-fill" style="width: 100%;"></div>
+                      </div>
                     </div>
 
                     <div class="battle-slash-fx" id="battle-slash-fx">
@@ -631,7 +661,9 @@
                         <i class="fa-solid fa-dragon"></i>
                       </div>
                       <div class="monster-name" id="monster-name">粗心失分怪 (Lv.99)</div>
-                      <div class="monster-hp-bar"><div class="monster-hp-fill" id="monster-hp-fill" style="width: 75%;"></div></div>
+                      <div class="monster-hp-bar">
+                        <div class="monster-hp-fill" id="monster-hp-fill" style="width: 75%;"></div>
+                      </div>
                     </div>
                     <!-- Susuwatari Soot Sprite Floating Easter Egg 1 -->
                     <div class="soot-sprite soot-sprite-arena soot-1" title="煤煤蟲 (灰塵精靈) 抓到了！">
@@ -642,16 +674,19 @@
                   </div>
 
                   <div class="battle-cta-box">
-                    <button type="button" id="btn-attack-monster" class="btn-attack-monster antique-sword-btn" title="揮動傳奇黃銅古劍打擊錯題怪！">
+                    <button type="button" id="btn-attack-monster" class="btn-attack-monster antique-sword-btn"
+                      title="揮動傳奇黃銅古劍打擊錯題怪！">
                       <span class="sword-paw-icon">🐾</span>
                       <span class="sword-btn-text">點擊揮刀打擊錯題怪！</span>
                     </button>
                     <p class="battle-instruction">
                       <span class="desktop-instruction">
-                        <i class="fa-solid fa-hand-point-left fa-bounce"></i> 請從左側選取<strong>【科目分類】</strong>，<br>或上方選擇<strong>【週次】</strong>開始錯題特訓！
+                        <i class="fa-solid fa-hand-point-left fa-bounce"></i>
+                        請從左側選取<strong>【科目分類】</strong>，<br>或上方選擇<strong>【週次】</strong>開始錯題特訓！
                       </span>
                       <span class="mobile-instruction">
-                        <i class="fa-solid fa-hand-point-up fa-bounce"></i> 請從上方選取<strong>【科目分類】</strong>，<br>或上方選擇<strong>【週次】</strong>開始錯題特訓！
+                        <i class="fa-solid fa-hand-point-up fa-bounce"></i>
+                        請從上方選取<strong>【科目分類】</strong>，<br>或上方選擇<strong>【週次】</strong>開始錯題特訓！
                       </span>
                     </p>
                   </div>
@@ -683,9 +718,11 @@
                   <div class="review-top-actions">
                     <!-- Inline Font Size Quick Adjuster (精簡小巧不佔位) -->
                     <div class="review-font-control-inline" title="快速調整題目與解析字體大小">
-                      <button type="button" id="btn-review-font-dec" class="btn-secondary font-quick-btn" title="題目字體縮小"><i class="fa-solid fa-font" style="font-size: 0.72rem;"></i> -</button>
+                      <button type="button" id="btn-review-font-dec" class="btn-secondary font-quick-btn"
+                        title="題目字體縮小"><i class="fa-solid fa-font" style="font-size: 0.72rem;"></i> -</button>
                       <span id="review-font-indicator" class="review-font-tag">100%</span>
-                      <button type="button" id="btn-review-font-inc" class="btn-secondary font-quick-btn" title="題目字體放大"><i class="fa-solid fa-font" style="font-size: 1.02rem;"></i> +</button>
+                      <button type="button" id="btn-review-font-inc" class="btn-secondary font-quick-btn"
+                        title="題目字體放大"><i class="fa-solid fa-font" style="font-size: 1.02rem;"></i> +</button>
                     </div>
 
                     <button id="btn-toggle-fullscreen" class="btn-accent-sm" title="切換全螢幕滿版大畫面">
@@ -714,193 +751,207 @@
                 </div>
                 <!-- Ebbinghaus Progress Tracker -->
                 <div class="review-progress-bar-container">
-                <div class="progress-info">
-                  <div class="progress-info-left">
-                    <span id="review-current-index">題目 1 / 5</span>
-                    <div id="bookmark-resume-chip" class="bookmark-resume-chip hidden">
-                      <i class="fa-solid fa-bookmark" style="color: #f59e0b;"></i>
-                      <span id="bookmark-resume-text">標籤記在第 1 題</span>
-                      <button type="button" id="btn-resume-jump" class="btn-resume-jump-link">跳轉 <i class="fa-solid fa-chevron-right"></i></button>
-                    </div>
-                  </div>
-                  <span id="review-ebbinghaus-stage" class="stage-tag">艾賓浩斯週期: 1 週次</span>
-                </div>
-                <div class="progress-track-wrapper" id="review-progress-wrapper" title="拖曳或點擊可磁吸切換題目">
-                  <div class="progress-track" id="review-progress-track">
-                    <div id="review-progress-fill" class="progress-fill" style="width: 0%;"></div>
-                    <div id="review-progress-ticks" class="progress-ticks"></div>
-                    <div id="review-progress-thumb" class="progress-thumb progress-train-thumb" aria-label="學習前進號火車頭">
-                      <div class="train-steam-container">
-                        <span class="steam-puff p1"></span>
-                        <span class="steam-puff p2"></span>
-                        <span class="steam-puff p3"></span>
-                      </div>
-                      <div class="train-body-wrapper" title="學習前進列車 🚂">
-                        <svg class="train-locomotive-svg" viewBox="0 0 46 30" width="46" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <defs>
-                            <linearGradient id="trainBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                              <stop offset="0%" stop-color="#ec4899" />
-                              <stop offset="45%" stop-color="#d946ef" />
-                              <stop offset="100%" stop-color="#8b5cf6" />
-                            </linearGradient>
-                            <linearGradient id="trainCabGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                              <stop offset="0%" stop-color="#f43f5e" />
-                              <stop offset="100%" stop-color="#be185d" />
-                            </linearGradient>
-                            <linearGradient id="trainRoofGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                              <stop offset="0%" stop-color="#fbbf24" />
-                              <stop offset="100%" stop-color="#f59e0b" />
-                            </linearGradient>
-                            <filter id="headlightGlow" x="-50%" y="-50%" width="200%" height="200%">
-                              <feGaussianBlur stdDeviation="2.5" result="blur" />
-                              <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                            </filter>
-                          </defs>
-
-                          <!-- Headlight Beam Cone (照射前方的光束) -->
-                          <polygon points="40,16 46,12 46,20" fill="rgba(253, 224, 71, 0.45)" class="train-headlight-cone" />
-
-                          <!-- Cowcatcher / Front Pilot (前排障器) -->
-                          <polygon points="37,24 43,24 39,18 37,18" fill="#475569" stroke="#1e293b" stroke-width="0.8" />
-
-                          <!-- Main Boiler Body (車身鍋爐) -->
-                          <rect x="15" y="11" width="22" height="11" rx="3.5" fill="url(#trainBodyGrad)" stroke="#ffffff" stroke-width="0.9" />
-
-                          <!-- Front Headlight (車前明亮大燈) -->
-                          <rect x="37" y="13.5" width="3.5" height="5" rx="1.2" fill="#fbbf24" stroke="#d97706" stroke-width="0.6" />
-                          <circle cx="39" cy="16" r="1.5" fill="#ffffff" filter="url(#headlightGlow)" />
-
-                          <!-- Driver's Cabin (駕駛艙) -->
-                          <rect x="4" y="7" width="13" height="15" rx="3" fill="url(#trainCabGrad)" stroke="#ffffff" stroke-width="0.9" />
-
-                          <!-- Cabin Roof (圓弧車頂) -->
-                          <path d="M2 7.5 C2 5.2, 4.5 4.8, 10.5 4.8 C16.5 4.8, 19 5.2, 19 7.5 Z" fill="url(#trainRoofGrad)" stroke="#b45309" stroke-width="0.7" />
-
-                          <!-- Cabin Window (藍色車窗與光澤) -->
-                          <rect x="7" y="9.5" width="7" height="6.5" rx="1.5" fill="#e0f2fe" stroke="#38bdf8" stroke-width="0.7" />
-                          <line x1="8" y1="14" x2="12.5" y2="9.5" stroke="#ffffff" stroke-width="0.9" stroke-linecap="round" opacity="0.85" />
-
-                          <!-- Smokestack Chimney (排煙煙囪) -->
-                          <path d="M26.5 11 L25 5.5 L31 5.5 L29.5 11 Z" fill="#334155" stroke="#ffffff" stroke-width="0.7" />
-                          <ellipse cx="28" cy="5.5" rx="3.2" ry="1.2" fill="#fbbf24" />
-
-                          <!-- Wheels (滾動車輪與精緻連桿) -->
-                          <!-- Rear Big Wheel (後方大動輪) -->
-                          <circle cx="10.5" cy="22" r="4.8" fill="#0f172a" stroke="#fbbf24" stroke-width="1.1" />
-                          <circle cx="10.5" cy="22" r="2.2" fill="#ec4899" />
-                          <!-- Front Wheel 1 (前方小輪) -->
-                          <circle cx="23" cy="23.2" r="3.6" fill="#0f172a" stroke="#fbbf24" stroke-width="0.9" />
-                          <circle cx="23" cy="23.2" r="1.5" fill="#ec4899" />
-                          <!-- Front Wheel 2 (最前小輪) -->
-                          <circle cx="32.5" cy="23.2" r="3.6" fill="#0f172a" stroke="#fbbf24" stroke-width="0.9" />
-                          <circle cx="32.5" cy="23.2" r="1.5" fill="#ec4899" />
-
-                          <!-- Connecting Side Rod (連動鋼桿) -->
-                          <line x1="10.5" y1="23.2" x2="32.5" y2="23.2" stroke="#cbd5e1" stroke-width="1.1" stroke-linecap="round" />
-                        </svg>
+                  <div class="progress-info">
+                    <div class="progress-info-left">
+                      <span id="review-current-index">題目 1 / 5</span>
+                      <div id="bookmark-resume-chip" class="bookmark-resume-chip hidden">
+                        <i class="fa-solid fa-bookmark" style="color: #f59e0b;"></i>
+                        <span id="bookmark-resume-text">標籤記在第 1 題</span>
+                        <button type="button" id="btn-resume-jump" class="btn-resume-jump-link">跳轉 <i
+                            class="fa-solid fa-chevron-right"></i></button>
                       </div>
                     </div>
+                    <span id="review-ebbinghaus-stage" class="stage-tag">艾賓浩斯週期: 1 週次</span>
                   </div>
-                  <div id="review-scrub-tooltip" class="scrub-tooltip hidden">🚂 學習號列車</div>
-                </div>
-              </div>
+                  <div class="progress-track-wrapper" id="review-progress-wrapper" title="拖曳或點擊可磁吸切換題目">
+                    <div class="progress-track" id="review-progress-track">
+                      <div id="review-progress-fill" class="progress-fill" style="width: 0%;"></div>
+                      <div id="review-progress-ticks" class="progress-ticks"></div>
+                      <div id="review-progress-thumb" class="progress-thumb progress-train-thumb" aria-label="學習前進號火車頭">
+                        <div class="train-steam-container">
+                          <span class="steam-puff p1"></span>
+                          <span class="steam-puff p2"></span>
+                          <span class="steam-puff p3"></span>
+                        </div>
+                        <div class="train-body-wrapper" title="學習前進列車 🚂">
+                          <svg class="train-locomotive-svg" viewBox="0 0 46 30" width="46" height="30" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                              <linearGradient id="trainBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ec4899" />
+                                <stop offset="45%" stop-color="#d946ef" />
+                                <stop offset="100%" stop-color="#8b5cf6" />
+                              </linearGradient>
+                              <linearGradient id="trainCabGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#f43f5e" />
+                                <stop offset="100%" stop-color="#be185d" />
+                              </linearGradient>
+                              <linearGradient id="trainRoofGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#fbbf24" />
+                                <stop offset="100%" stop-color="#f59e0b" />
+                              </linearGradient>
+                              <filter id="headlightGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="2.5" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                              </filter>
+                            </defs>
 
-              <!-- Main Card Component with Navigation Arrows -->
-              <div class="flashcard-stage-main">
-                <button id="fc-prev-btn" class="fc-nav-arrow arrow-left" title="上一題 (快捷鍵 ←)" aria-label="上一題">
-                  <i class="fa-solid fa-chevron-left"></i>
-                  <span class="fc-nav-label">上一題</span>
-                </button>
+                            <!-- Headlight Beam Cone (照射前方的光束) -->
+                            <polygon points="40,16 46,12 46,20" fill="rgba(253, 224, 71, 0.45)"
+                              class="train-headlight-cone" />
 
-                <div class="flashcard-card" id="main-flashcard">
-                  <!-- Question-bound Transparent Calculation Canvas -->
-                  <canvas id="scratchpad-canvas" class="scratchpad-transparent-canvas"></canvas>
-                  
-                  <!-- Card Header -->
-                  <div class="card-top-bar">
-                    <div class="card-meta-tags" style="display: none;">
-                      <span class="tag-subject" id="fc-subject">理化</span>
-                      <span class="tag-reason" id="fc-reason">觀念不懂</span>
-                      <span class="tag-concept" id="fc-concept">連通管原理</span>
-                    </div>
-                    <div class="card-top-actions">
-                      <button type="button" id="btn-card-pin-bookmark" class="btn-card-pin-bookmark" title="標記/收藏此題書籤">
-                        <i class="fa-regular fa-bookmark"></i> <span class="card-pin-label">標籤此題</span>
-                      </button>
-                      <span class="review-status-badge unreviewed" id="fc-review-status-badge" title="複習狀態">
-                        <i class="fa-solid fa-hourglass-half"></i> 未複習
-                      </span>
-                      <span class="mastery-status unmastered" id="fc-mastery-badge">未擊敗 (1 次)</span>
-                      <button id="btn-delete-this-week" class="btn-delete-week" title="僅從本週移除此錯題">
-                        <i class="fa-solid fa-trash-can"></i> 僅在本週刪除
-                      </button>
-                    </div>
-                  </div>
+                            <!-- Cowcatcher / Front Pilot (前排障器) -->
+                            <polygon points="37,24 43,24 39,18 37,18" fill="#475569" stroke="#1e293b"
+                              stroke-width="0.8" />
 
-                  <!-- Split Content Grid: Left Question, Right Solution -->
-                  <div class="card-grid-split">
-                    <!-- Clean Stem & Diagram -->
-                    <div class="card-body-stem">
-                      <div id="fc-stem-text" class="stem-katex-text"></div>
-                      <div id="fc-diagram-container" class="fc-diagram-container hidden">
-                        <img id="fc-diagram-img" src="" alt="題目圖形">
-                      </div>
-                      <div id="fc-options-text" class="stem-katex-text options-katex-text" style="margin-top: 16px;"></div>
-                    </div>
+                            <!-- Main Boiler Body (車身鍋爐) -->
+                            <rect x="15" y="11" width="22" height="11" rx="3.5" fill="url(#trainBodyGrad)"
+                              stroke="#ffffff" stroke-width="0.9" />
 
-                    <!-- Pure Answer Container (Initially Hidden) -->
-                    <div id="fc-answer-container" class="fc-answer-container hidden">
-                      <!-- Standard Answer & Steps -->
-                      <div class="solution-content-box">
-                        <div class="sol-answer"><strong>標準答案：</strong><span id="fc-std-answer"></span></div>
-                        <div class="sol-steps">
-                          <strong>詳細解題步驟：</strong>
-                          <div id="fc-solution-steps" class="steps-katex-text"></div>
+                            <!-- Front Headlight (車前明亮大燈) -->
+                            <rect x="37" y="13.5" width="3.5" height="5" rx="1.2" fill="#fbbf24" stroke="#d97706"
+                              stroke-width="0.6" />
+                            <circle cx="39" cy="16" r="1.5" fill="#ffffff" filter="url(#headlightGlow)" />
+
+                            <!-- Driver's Cabin (駕駛艙) -->
+                            <rect x="4" y="7" width="13" height="15" rx="3" fill="url(#trainCabGrad)" stroke="#ffffff"
+                              stroke-width="0.9" />
+
+                            <!-- Cabin Roof (圓弧車頂) -->
+                            <path d="M2 7.5 C2 5.2, 4.5 4.8, 10.5 4.8 C16.5 4.8, 19 5.2, 19 7.5 Z"
+                              fill="url(#trainRoofGrad)" stroke="#b45309" stroke-width="0.7" />
+
+                            <!-- Cabin Window (藍色車窗與光澤) -->
+                            <rect x="7" y="9.5" width="7" height="6.5" rx="1.5" fill="#e0f2fe" stroke="#38bdf8"
+                              stroke-width="0.7" />
+                            <line x1="8" y1="14" x2="12.5" y2="9.5" stroke="#ffffff" stroke-width="0.9"
+                              stroke-linecap="round" opacity="0.85" />
+
+                            <!-- Smokestack Chimney (排煙煙囪) -->
+                            <path d="M26.5 11 L25 5.5 L31 5.5 L29.5 11 Z" fill="#334155" stroke="#ffffff"
+                              stroke-width="0.7" />
+                            <ellipse cx="28" cy="5.5" rx="3.2" ry="1.2" fill="#fbbf24" />
+
+                            <!-- Wheels (滾動車輪與精緻連桿) -->
+                            <!-- Rear Big Wheel (後方大動輪) -->
+                            <circle cx="10.5" cy="22" r="4.8" fill="#0f172a" stroke="#fbbf24" stroke-width="1.1" />
+                            <circle cx="10.5" cy="22" r="2.2" fill="#ec4899" />
+                            <!-- Front Wheel 1 (前方小輪) -->
+                            <circle cx="23" cy="23.2" r="3.6" fill="#0f172a" stroke="#fbbf24" stroke-width="0.9" />
+                            <circle cx="23" cy="23.2" r="1.5" fill="#ec4899" />
+                            <!-- Front Wheel 2 (最前小輪) -->
+                            <circle cx="32.5" cy="23.2" r="3.6" fill="#0f172a" stroke="#fbbf24" stroke-width="0.9" />
+                            <circle cx="32.5" cy="23.2" r="1.5" fill="#ec4899" />
+
+                            <!-- Connecting Side Rod (連動鋼桿) -->
+                            <line x1="10.5" y1="23.2" x2="32.5" y2="23.2" stroke="#cbd5e1" stroke-width="1.1"
+                              stroke-linecap="round" />
+                          </svg>
                         </div>
                       </div>
                     </div>
-                  </div>
-
-                  <!-- Interactive Answer Result Banner -->
-                  <div id="fc-check-result-banner" class="fc-check-result-banner hidden"></div>
-
-                  <!-- Action Toolbar -->
-                  <div class="card-action-bar">
-                    <div class="fc-action-buttons-wrap" id="fc-action-buttons-wrap">
-                      <button id="fc-check-answer-btn" class="btn-check-answer hidden">
-                        <i class="fa-solid fa-circle-check"></i> 對答案
-                      </button>
-                      <button id="fc-reveal-btn" class="btn-reveal">
-                        <i class="fa-solid fa-eye"></i> 查看解析
-                      </button>
-                      <button id="fc-skip-later-btn" class="btn-skip-later" title="這題較複雜，先跳過往後排一個，稍後再回來挑戰">
-                        <i class="fa-solid fa-forward-step"></i> 先跳過，晚點做
-                      </button>
-                    </div>
-
-                    <div id="fc-feedback-btns" class="feedback-btns-group hidden">
-                      <button id="btn-retry-question" class="btn-retry-card" title="重新作答本題">
-                        <i class="fa-solid fa-rotate-left"></i> 重測本題
-                      </button>
-                      <button id="btn-mark-unmastered" class="btn-unmastered">
-                        <i class="fa-solid fa-xmark"></i> 未擊敗<span class="kbd-shortcut"> (按 1)</span>
-                      </button>
-                      <button id="btn-mark-mastered" class="btn-mastered">
-                        <i class="fa-solid fa-check"></i> 已擊敗<span class="kbd-shortcut"> (按 2)</span>
-                      </button>
-                      <button id="btn-note-portal" class="btn-note-portal" title="開啟筆記傳送門，將本題重點寫入麥麥筆記手帳">
-                        <i class="fa-solid fa-door-open"></i> 筆記傳送門
-                      </button>
-                    </div>
+                    <div id="review-scrub-tooltip" class="scrub-tooltip hidden">🚂 學習號列車</div>
                   </div>
                 </div>
 
-                <button id="fc-next-btn" class="fc-nav-arrow arrow-right" title="下一題 (快捷鍵 →)" aria-label="下一題">
-                  <i class="fa-solid fa-chevron-right"></i>
-                  <span class="fc-nav-label">下一題</span>
-                </button>
+                <!-- Main Card Component with Navigation Arrows -->
+                <div class="flashcard-stage-main">
+                  <button id="fc-prev-btn" class="fc-nav-arrow arrow-left" title="上一題 (快捷鍵 ←)" aria-label="上一題">
+                    <i class="fa-solid fa-chevron-left"></i>
+                    <span class="fc-nav-label">上一題</span>
+                  </button>
+
+                  <div class="flashcard-card" id="main-flashcard">
+                    <!-- Question-bound Transparent Calculation Canvas -->
+                    <canvas id="scratchpad-canvas" class="scratchpad-transparent-canvas"></canvas>
+
+                    <!-- Card Header -->
+                    <div class="card-top-bar">
+                      <div class="card-meta-tags" style="display: none;">
+                        <span class="tag-subject" id="fc-subject">理化</span>
+                        <span class="tag-reason" id="fc-reason">觀念不懂</span>
+                        <span class="tag-concept" id="fc-concept">連通管原理</span>
+                      </div>
+                      <div class="card-top-actions">
+                        <button type="button" id="btn-card-pin-bookmark" class="btn-card-pin-bookmark"
+                          title="標記/收藏此題書籤">
+                          <i class="fa-regular fa-bookmark"></i> <span class="card-pin-label">標籤此題</span>
+                        </button>
+                        <span class="review-status-badge unreviewed" id="fc-review-status-badge" title="複習狀態">
+                          <i class="fa-solid fa-hourglass-half"></i> 未複習
+                        </span>
+                        <span class="mastery-status unmastered" id="fc-mastery-badge">未擊敗 (1 次)</span>
+                        <button id="btn-delete-this-week" class="btn-delete-week" title="僅從本週移除此錯題">
+                          <i class="fa-solid fa-trash-can"></i> 僅在本週刪除
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Split Content Grid: Left Question, Right Solution -->
+                    <div class="card-grid-split">
+                      <!-- Clean Stem & Diagram -->
+                      <div class="card-body-stem">
+                        <div id="fc-stem-text" class="stem-katex-text"></div>
+                        <div id="fc-diagram-container" class="fc-diagram-container hidden">
+                          <img id="fc-diagram-img" src="" alt="題目圖形">
+                        </div>
+                        <div id="fc-options-text" class="stem-katex-text options-katex-text" style="margin-top: 16px;">
+                        </div>
+                      </div>
+
+                      <!-- Pure Answer Container (Initially Hidden) -->
+                      <div id="fc-answer-container" class="fc-answer-container hidden">
+                        <!-- Standard Answer & Steps -->
+                        <div class="solution-content-box">
+                          <div class="sol-answer"><strong>標準答案：</strong><span id="fc-std-answer"></span></div>
+                          <div class="sol-steps">
+                            <strong>詳細解題步驟：</strong>
+                            <div id="fc-solution-steps" class="steps-katex-text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Interactive Answer Result Banner -->
+                    <div id="fc-check-result-banner" class="fc-check-result-banner hidden"></div>
+
+                    <!-- Action Toolbar -->
+                    <div class="card-action-bar">
+                      <div class="fc-action-buttons-wrap" id="fc-action-buttons-wrap">
+                        <button id="fc-check-answer-btn" class="btn-check-answer hidden">
+                          <i class="fa-solid fa-circle-check"></i> 對答案
+                        </button>
+                        <button id="fc-reveal-btn" class="btn-reveal">
+                          <i class="fa-solid fa-eye"></i> 查看解析
+                        </button>
+                        <button id="fc-skip-later-btn" class="btn-skip-later" title="這題較複雜，先跳過往後排一個，稍後再回來挑戰">
+                          <i class="fa-solid fa-forward-step"></i> 先跳過，晚點做
+                        </button>
+                      </div>
+
+                      <div id="fc-feedback-btns" class="feedback-btns-group hidden">
+                        <button id="btn-retry-question" class="btn-retry-card" title="重新作答本題">
+                          <i class="fa-solid fa-rotate-left"></i> 重測本題
+                        </button>
+                        <button id="btn-mark-unmastered" class="btn-unmastered">
+                          <i class="fa-solid fa-xmark"></i> 未擊敗<span class="kbd-shortcut"> (按 1)</span>
+                        </button>
+                        <button id="btn-mark-mastered" class="btn-mastered">
+                          <i class="fa-solid fa-check"></i> 已擊敗<span class="kbd-shortcut"> (按 2)</span>
+                        </button>
+                        <button id="btn-note-portal" class="btn-note-portal" title="開啟筆記傳送門，將本題重點寫入麥麥筆記手帳">
+                          <i class="fa-solid fa-door-open"></i> 筆記傳送門
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button id="fc-next-btn" class="fc-nav-arrow arrow-right" title="下一題 (快捷鍵 →)" aria-label="下一題">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span class="fc-nav-label">下一題</span>
+                  </button>
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </section>
@@ -970,9 +1021,11 @@
                 </div>
 
                 <div class="swipe-controls">
-                  <button id="swipe-prev-btn" class="btn-circle" title="上一題"><i class="fa-solid fa-arrow-left"></i></button>
+                  <button id="swipe-prev-btn" class="btn-circle" title="上一題"><i
+                      class="fa-solid fa-arrow-left"></i></button>
                   <span id="swipe-index-indicator" class="swipe-index">1 / 3</span>
-                  <button id="swipe-next-btn" class="btn-circle" title="下一題"><i class="fa-solid fa-arrow-right"></i></button>
+                  <button id="swipe-next-btn" class="btn-circle" title="下一題"><i
+                      class="fa-solid fa-arrow-right"></i></button>
                 </div>
               </div>
 
@@ -1066,9 +1119,10 @@
   <div id="scratchpad-overlay" class="scratchpad-overlay hidden">
     <!-- Floating Controls Toolbar -->
     <div class="scratchpad-floating-toolbar">
-      <div class="toolbar-title"><i class="fa-solid fa-pen-ruler" style="color: var(--accent-primary);"></i> 隨身草稿畫筆</div>
+      <div class="toolbar-title"><i class="fa-solid fa-pen-ruler" style="color: var(--accent-primary);"></i> 隨身草稿畫筆
+      </div>
       <div class="toolbar-divider"></div>
-      
+
       <!-- Color Chips Picker -->
       <div class="scratch-color-picker">
         <button class="color-dot active" data-color="#ef4444" style="background: #ef4444;" title="紅色筆"></button>
@@ -1076,8 +1130,10 @@
         <button class="color-dot" data-color="#10b981" style="background: #10b981;" title="綠色筆"></button>
         <button class="color-dot" data-color="#f59e0b" style="background: #f59e0b;" title="黃色筆"></button>
         <button class="color-dot" data-color="#0f172a" style="background: #0f172a;" title="黑色筆"></button>
-        <button class="color-dot" data-color="#ffffff" style="background: #ffffff; border: 1px solid #ccc;" title="白色筆"></button>
-        <input type="color" id="scratch-color-custom" value="#ef4444" title="自訂顏色" style="width: 22px; height: 22px; border: none; cursor: pointer; background: transparent; padding: 0;">
+        <button class="color-dot" data-color="#ffffff" style="background: #ffffff; border: 1px solid #ccc;"
+          title="白色筆"></button>
+        <input type="color" id="scratch-color-custom" value="#ef4444" title="自訂顏色"
+          style="width: 22px; height: 22px; border: none; cursor: pointer; background: transparent; padding: 0;">
       </div>
 
       <div class="toolbar-divider"></div>
@@ -1092,10 +1148,14 @@
       <div class="toolbar-divider"></div>
 
       <div class="scratch-action-btns">
-        <button id="scratch-eraser-btn" class="scratch-btn scratch-tool-btn" title="切換橡皮擦（擦除局部筆劃）"><i class="fa-solid fa-eraser"></i> 橡皮擦</button>
-        <button id="scratch-undo-btn" class="scratch-btn" title="復原上一筆"><i class="fa-solid fa-rotate-left"></i> 復原</button>
-        <button id="scratch-clear-btn" class="scratch-btn" title="清除所有筆劃"><i class="fa-solid fa-trash-can"></i> 清除</button>
-        <button id="scratch-close-btn" class="scratch-btn btn-close-scratch" title="關閉草稿區並清除所有筆劃（還原乾淨畫面）"><i class="fa-solid fa-xmark"></i> 關閉草稿</button>
+        <button id="scratch-eraser-btn" class="scratch-btn scratch-tool-btn" title="切換橡皮擦（擦除局部筆劃）"><i
+            class="fa-solid fa-eraser"></i> 橡皮擦</button>
+        <button id="scratch-undo-btn" class="scratch-btn" title="復原上一筆"><i class="fa-solid fa-rotate-left"></i>
+          復原</button>
+        <button id="scratch-clear-btn" class="scratch-btn" title="清除所有筆劃"><i class="fa-solid fa-trash-can"></i>
+          清除</button>
+        <button id="scratch-close-btn" class="scratch-btn btn-close-scratch" title="關閉草稿區並清除所有筆劃（還原乾淨畫面）"><i
+            class="fa-solid fa-xmark"></i> 關閉草稿</button>
       </div>
     </div>
   </div>
@@ -1109,20 +1169,26 @@
       </div>
       <div class="modal-body">
         <div class="form-group" style="margin-bottom: 14px;">
-          <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; display: block;"><i class="fa-regular fa-calendar"></i> 目標日期</label>
-          <input type="date" id="cal-input-date" class="form-control" style="width: 100%; padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-main);">
+          <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; display: block;"><i
+              class="fa-regular fa-calendar"></i> 目標日期</label>
+          <input type="date" id="cal-input-date" class="form-control"
+            style="width: 100%; padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-main);">
         </div>
         <div class="form-group" style="margin-bottom: 14px;">
-          <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; display: block;"><i class="fa-solid fa-tag"></i> 類型</label>
-          <select id="cal-input-type" class="form-control" style="width: 100%; padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-main);">
+          <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; display: block;"><i
+              class="fa-solid fa-tag"></i> 類型</label>
+          <select id="cal-input-type" class="form-control"
+            style="width: 100%; padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-main);">
             <option value="exam">🎯 段考標記 (Exam)</option>
             <option value="plan">📖 學習進度 (Study Plan)</option>
             <option value="review">⏰ 複習提醒 (Review)</option>
           </select>
         </div>
         <div class="form-group" style="margin-bottom: 14px;">
-          <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; display: block;"><i class="fa-solid fa-pen"></i> 事項名稱 / 科目說明</label>
-          <input type="text" id="cal-input-title" class="form-control" placeholder="例如：自然/理化第一次段考、複習連通管錯題" style="width: 100%; padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-main);">
+          <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; display: block;"><i
+              class="fa-solid fa-pen"></i> 事項名稱 / 科目說明</label>
+          <input type="text" id="cal-input-title" class="form-control" placeholder="例如：自然/理化第一次段考、複習連通管錯題"
+            style="width: 100%; padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-main);">
         </div>
       </div>
       <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
@@ -1138,10 +1204,14 @@
       <div class="lightbox-header">
         <span id="lightbox-title" class="lightbox-title"><i class="fa-solid fa-magnifying-glass-plus"></i> 圖片放大檢視</span>
         <div class="lightbox-controls">
-          <button type="button" id="lightbox-zoom-out-btn" class="lightbox-tool-btn" title="縮小 (滾輪向下)"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
-          <button type="button" id="lightbox-zoom-reset-btn" class="lightbox-tool-btn" title="還原最佳尺寸"><span id="lightbox-zoom-level">100%</span></button>
-          <button type="button" id="lightbox-zoom-in-btn" class="lightbox-tool-btn" title="放大 (滾輪向上)"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
-          <button type="button" id="lightbox-zoom-fit-btn" class="lightbox-tool-btn" title="最適填滿"><i class="fa-solid fa-expand"></i></button>
+          <button type="button" id="lightbox-zoom-out-btn" class="lightbox-tool-btn" title="縮小 (滾輪向下)"><i
+              class="fa-solid fa-magnifying-glass-minus"></i></button>
+          <button type="button" id="lightbox-zoom-reset-btn" class="lightbox-tool-btn" title="還原最佳尺寸"><span
+              id="lightbox-zoom-level">100%</span></button>
+          <button type="button" id="lightbox-zoom-in-btn" class="lightbox-tool-btn" title="放大 (滾輪向上)"><i
+              class="fa-solid fa-magnifying-glass-plus"></i></button>
+          <button type="button" id="lightbox-zoom-fit-btn" class="lightbox-tool-btn" title="最適填滿"><i
+              class="fa-solid fa-expand"></i></button>
           <button type="button" id="lightbox-close-btn" class="icon-btn" title="關閉 (Esc)">
             <i class="fa-solid fa-xmark"></i>
           </button>
@@ -1160,49 +1230,61 @@
     <div class="modal-content glass-panel" style="max-width: 560px;">
       <div class="modal-header">
         <h3><i class="fa-solid fa-font" style="color: var(--accent-primary);"></i> 貼上純文字題目與解析</h3>
-        <button type="button" class="modal-close-btn" id="btn-close-paste-text-modal"><i class="fa-solid fa-xmark"></i></button>
+        <button type="button" class="modal-close-btn" id="btn-close-paste-text-modal"><i
+            class="fa-solid fa-xmark"></i></button>
       </div>
       <div class="modal-body">
         <p class="hint-text" style="margin-bottom: 12px; color: var(--text-secondary); font-size: 0.85rem;">
           <i class="fa-solid fa-circle-info"></i> 請直接將文字題目貼入下方框中，AI 將自動辨識拆分題目、選項與解答：
         </p>
         <div class="form-group" style="margin-bottom: 14px;">
-          <textarea id="paste-text-input" class="form-control" rows="8" placeholder="請在此貼上純文字題目、選項或解答...&#10;範例：&#10;求一元二次方程式 2x² - 5x + 1 = 0 的兩實根。&#10;(A) x = (5 ± √17) / 4&#10;解析：代入公式解 x = (-b ± √(b²-4ac)) / (2a)..." style="width: 100%; font-size: 0.9rem; line-height: 1.5; padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-main);"></textarea>
+          <textarea id="paste-text-input" class="form-control" rows="8"
+            placeholder="請在此貼上純文字題目、選項或解答...&#10;範例：&#10;求一元二次方程式 2x² - 5x + 1 = 0 的兩實根。&#10;(A) x = (5 ± √17) / 4&#10;解析：代入公式解 x = (-b ± √(b²-4ac)) / (2a)..."
+            style="width: 100%; font-size: 0.9rem; line-height: 1.5; padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-main);"></textarea>
         </div>
       </div>
       <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px;">
         <button type="button" id="btn-cancel-paste-text-modal" class="btn-secondary">取消</button>
-        <button type="button" id="btn-submit-paste-text" class="btn-secondary"><i class="fa-solid fa-wand-magic-sparkles"></i> 載入至表單</button>
-        <button type="button" id="btn-submit-and-save-text" class="btn-primary"><i class="fa-solid fa-cloud-arrow-up"></i> 一鍵歸檔錄入</button>
+        <button type="button" id="btn-submit-paste-text" class="btn-secondary"><i
+            class="fa-solid fa-wand-magic-sparkles"></i> 載入至表單</button>
+        <button type="button" id="btn-submit-and-save-text" class="btn-primary"><i
+            class="fa-solid fa-cloud-arrow-up"></i> 一鍵歸檔錄入</button>
       </div>
     </div>
   </div>
 
-    <!-- Similar Question Interactive Challenge Modal -->
+  <!-- Similar Question Interactive Challenge Modal -->
   <div id="modal-similar-question" class="modal-overlay hidden">
     <div class="modal-content glass-panel similar-question-modal-content">
       <div class="modal-header">
         <div style="display: flex; align-items: center; gap: 10px;">
-          <span class="badge badge-warning" id="sq-modal-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> 類似題實戰挑戰</span>
-          <h3 style="margin: 0; font-size: 1.15rem; color: var(--text-main); font-weight: 700;" id="sq-modal-title">相關核心觀念自我檢測</h3>
+          <span class="badge badge-warning" id="sq-modal-tag"><i class="fa-solid fa-wand-magic-sparkles"></i>
+            類似題實戰挑戰</span>
+          <h3 style="margin: 0; font-size: 1.15rem; color: var(--text-main); font-weight: 700;" id="sq-modal-title">
+            相關核心觀念自我檢測</h3>
         </div>
-        <button type="button" class="modal-close-btn" id="btn-close-similar-modal"><i class="fa-solid fa-xmark"></i></button>
+        <button type="button" class="modal-close-btn" id="btn-close-similar-modal"><i
+            class="fa-solid fa-xmark"></i></button>
       </div>
 
       <div class="similar-modal-body">
         <!-- Target Concept Tag -->
         <div style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-secondary);">
           <span>🎯 對應觀念：</span>
-          <strong id="sq-modal-concept" style="color: var(--accent-warning); background: rgba(245, 158, 11, 0.12); padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(245, 158, 11, 0.3);"></strong>
+          <strong id="sq-modal-concept"
+            style="color: var(--accent-warning); background: rgba(245, 158, 11, 0.12); padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(245, 158, 11, 0.3);"></strong>
         </div>
 
         <!-- Question Stem -->
         <div class="similar-stem-card">
           <div class="similar-stem-header">
-            <span style="font-weight: 700; color: var(--accent-primary);"><i class="fa-regular fa-circle-question"></i> 實戰題目</span>
+            <span style="font-weight: 700; color: var(--accent-primary);"><i class="fa-regular fa-circle-question"></i>
+              實戰題目</span>
             <span style="font-size: 0.8rem; color: var(--text-muted);">請點擊下方選項作答</span>
           </div>
-          <div id="sq-stem-text" style="font-size: calc(1.05rem * var(--content-font-scale, 1)); line-height: 1.7; color: var(--text-main); white-space: pre-wrap;"></div>
+          <div id="sq-stem-text"
+            style="font-size: calc(1.05rem * var(--content-font-scale, 1)); line-height: 1.7; color: var(--text-main); white-space: pre-wrap;">
+          </div>
         </div>
 
         <!-- Dynamic Options Grid -->
@@ -1217,7 +1299,8 @@
             <strong>✅ 正確答案：</strong> <span id="sq-correct-answer"></span>
           </div>
           <div class="sq-explanation-box">
-            <strong style="display: block; margin-bottom: 6px; color: var(--text-main);"><i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> 詳解與核心觀念突破：</strong>
+            <strong style="display: block; margin-bottom: 6px; color: var(--text-main);"><i
+                class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> 詳解與核心觀念突破：</strong>
             <div id="sq-explanation-text" style="white-space: pre-wrap;"></div>
           </div>
         </div>
@@ -1231,7 +1314,8 @@
           <button type="button" id="btn-dismiss-similar-question" class="btn-secondary" title="已理解掌握，不加入錯題">
             <i class="fa-solid fa-check"></i> 我已搞懂，不需加入
           </button>
-          <button type="button" id="btn-add-similar-to-wrong-book" class="btn-primary btn-accent-glow" title="將此題加入本週錯題本，納入後續複習週期">
+          <button type="button" id="btn-add-similar-to-wrong-book" class="btn-primary btn-accent-glow"
+            title="將此題加入本週錯題本，納入後續複習週期">
             <i class="fa-solid fa-bookmark"></i> 加入錯題本
           </button>
         </div>
@@ -1254,7 +1338,8 @@
             </div>
           </div>
         </div>
-        <button type="button" class="modal-close-btn" id="btn-close-note-portal" title="關閉"><i class="fa-solid fa-xmark"></i></button>
+        <button type="button" class="modal-close-btn" id="btn-close-note-portal" title="關閉"><i
+            class="fa-solid fa-xmark"></i></button>
       </div>
 
       <!-- 主體：快速帶入 Chip + 單一純淨重點輸入框 -->
@@ -1274,7 +1359,8 @@
 
         <!-- 單一核心輸入框：筆記重點（大字、清爽手帳紙質感） -->
         <div class="portal-textarea-wrapper">
-          <textarea id="portal-note-content" class="portal-clean-textarea" placeholder="在這裡寫下妳想記錄的重點（例如：石灰岩是沉積岩）..."></textarea>
+          <textarea id="portal-note-content" class="portal-clean-textarea"
+            placeholder="在這裡寫下妳想記錄的重點（例如：石灰岩是沉積岩）..."></textarea>
         </div>
       </div>
 
@@ -1296,7 +1382,7 @@
 
 
   <!-- Main JavaScript App Modules -->
-  <script src="js/data.js?v=372"></script>
+  <script src="js/data.js?v=374"></script>
   <script src="js/utils/katex_render.js?v=216"></script>
   <script src="js/utils/pdf_export.js?v=216"></script>
   <script src="js/modules/upload.js?v=216"></script>
@@ -1309,4 +1395,5 @@
   <script src="js/modules/sync.js?v=218"></script>
   <script src="js/app.js?v=218"></script>
 </body>
+
 </html>
