@@ -4,6 +4,27 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v3.81] - 2026-11-04 (依使用者指示單獨收錄第(2)題：國中數學平行線圓切線與直角梯形求半徑考題 Q348：AB // CD 分別切圓於 A、D，BC 切圓於 E，AB=3，CD=2，求半徑 r／直徑 AD=2r、切線長 BC=3+2=5、梯形垂線畢氏定理 (2r)^2+1^2=5^2 得 r=√6／母子相似暗黑秒殺公式 r^2 = AB × CD = 6／去文字精準裁切 2x 示意圖、零符號純淨繁體中文排版，數據庫題數達到 452 題！升級數據庫至 v377，快取升級 v3.50)
+- **類型**：錯題自動收錄 / 數學科幾何（圓與切線） / 平行切線性質（$\\overline{AD} = 2r$ 為直徑） / 切線長定理（$\\overline{BE}=\\overline{AB}=3, \\overline{CE}=\\overline{CD}=2 \\implies \\overline{BC}=5$） / 直角梯形輔助線畢氏定理（$(2r)^2 + 1^2 = 5^2 \\implies r = \\sqrt{6}$） / 直角三角形母子相似射影定理秒殺技巧（$\\angle BOC = 90^\\circ \\implies r^2 = \\overline{AB} \\times \\overline{CD} = 6$） / 嚴格遵從使用者指示「把第二題記到錯題本，第一題不用急」 / 圖表處理：精確裁切圖(二)並 Lanczos 2x 放大存為高清晰圖檔（`q_math_circle_parallel_tangents_radius_348.png`） / 零符號純淨繁體中文排版 / 升級數據庫至 v377 / 快取升級 v3.50
+- **主要變更**：
+  1. **完整收錄平行切線夾切線直角梯形半徑考題（Q348，歸入 2026-11-02 最新週次）**：
+     - **Q348** `q_math_circle_parallel_tangents_radius_348`：
+       - **題幹**：如圖所示，線段 AB、BC、CD 分別與圓 O 相切於 A、E、D 三點，且 AB // CD。若 AB = 3，CD = 2，則圓 O 的半徑 r 為何？
+       - **選項**：○ (A) 2 ○ (B) √5 ○ (C) √6 ○ (D) 3
+       - **正解**：**(C) √6**。
+       - **破題關鍵**：
+         1. **直徑確認**：兩平行切線垂直半徑，切點連線 $\overline{AD}$ 為直徑 $2r$。
+         2. **切線長轉移**：$\overline{BC} = \overline{BE} + \overline{CE} = 3 + 2 = 5$。
+         3. **法一（畢氏定理）**：自 $C$ 作垂線 $\overline{CH} \perp \overline{AB}$，在直角 $\triangle BHC$ 中 $(2r)^2 + (3-2)^2 = 5^2 \implies 4r^2 = 24 \implies r = \sqrt{6}$。
+         4. **法二（母子相似暗黑秒殺公式）**：$\angle BOC = 90^\circ$，$r^2 = \overline{BE} \times \overline{CE} = 3 \times 2 = 6 \implies r = \sqrt{6}$。
+  2. **圖文處理原則遵循**：
+     - 去除「圖(二)」字樣，精準裁切幾何圖並 2x 高解析放大存為 `assets/questions/q_math_circle_parallel_tangents_radius_348.png`，支援燈箱放大檢視。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v377`（`miley_wrong_questions_v377`），題庫總量達 452 題。
+     - Service Worker 快取升級為 `miley-pwa-cache-v3.50`，腳本版本標籤升級 `js/data.js?v=377`。
+
+---
+
 ## [v3.80] - 2026-11-04 (自動收錄國中數學四邊形內切圓與平行相似形求線段長度考題 Q347：DE // BC，圓 O 內切於四邊形 DBCE，周長 16，BC = 4，求 DE 之長／切線長代換 AN = 4，△ADE 周長等於兩側切線長之和 8，相似三角形周長比求 DE = 2／乾淨幾何圖形、零符號純淨繁體中文排版，數據庫題數達到 451 題！升級數據庫至 v376，快取升級 v3.49)
 - **類型**：錯題自動收錄 / 數學科幾何（圓與切線） / 圓外切四邊形切線長性質（$\\overline{DM}=\\overline{DN}, \\overline{EM}=\\overline{EQ}$） / 三角形周長與切線長關聯（$\\overline{AN} = 4$） / 線段代換法求頂端小三角形周長（$\\triangle ADE \\text{ 周長} = \\overline{AN} + \\overline{AQ} = 8$） / 平行線截相似三角形性質（$\\triangle ADE \\sim \\triangle ABC$，$AA$ 相似） / 相似形對應邊比等於周長比（$\\overline{DE} : \\overline{BC} = 8 : 16 \\implies \\overline{DE} = 2$） / 圖表去痕清理原則：裁切精準乾淨幾何示意圖（`q_math_circle_inscribed_trapezoid_de_347.png`） / 零符號純淨繁體中文排版 / 升級數據庫至 v376 / 快取升級 v3.49
 - **主要變更**：
