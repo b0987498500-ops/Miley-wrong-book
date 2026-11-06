@@ -4,6 +4,36 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v4.00] - 2026-11-06 (自動收錄國中英語文法字彙題組 Q369..Q372：Q369 drop 重複字尾加 ed 為 dropped／辨析單短母音加單子音過去式規則、just 時態判讀；Q370 情緒動詞事物主詞 Jolin's songs usually interest my sister 為正解／辨析複數主詞動詞原形、人當主詞 be interested in、形容詞 interesting；Q371 句子合併情緒形容詞片語 Jack is bored with doing the same thing every day 為正解／辨析介係詞 with 後接動名詞 V-ing；Q372 英制身高計量單位 six feet and two inches tall 為正解／辨析 foot/feet、inch/inches、排除公尺公里公斤／純文字題目不附截圖規範、零符號純淨繁體中文排版，數據庫題數達到 476 題！升級數據庫至 v395，快取升級 v3.69)
+- **類型**：錯題自動收錄 / 國中英語（文意字彙、動詞時態變化、情緒動詞句型、情緒形容詞介係詞片語與英制度量衡單位） / 動詞過去式重複字尾規則（短母音＋單子音 drop $\to$ dropped） / 情緒動詞三大句型（物 ＋ interest ＋ 人 vs 人 ＋ be interested in ＋ 物 vs 物 ＋ be interesting） / 句子合併（代名詞 it 替換為動名詞片語 doing the same thing every day，介係詞 with 後接 V-ing） / 英制身高表達（feet and inches tall） / 純文字題目嚴格遵循不放截圖規範 / 零奇怪符號、永久純淨繁體中文排版 / 升級數據庫至 v395 / 快取升級 v3.69
+- **主要變更**：
+  1. **完整收錄 4 道英文文法與字彙考題（Q369..Q372，歸入 2026-11-02 最新週次）**：
+     - **Q369** `q_eng_vocab_dropped_water_369`：
+       - **題幹**：Ivy just d_____ped her phone in water, and she can't turn it on now.
+       - **標準答案**：**dropped**。
+       - **破題關鍵**：由 just 與後句 can't turn it on now 判定為過去式，drop 為單一短母音加單一子音，過去式必須重複字尾 p 加 ed。
+     - **Q370** `q_eng_gram_emotion_verb_interest_370`：
+       - **題幹**：Jolin's songs usually ________ my sister.
+       - **選項**：○ (A) are interested ○ (B) interests ○ (C) interesting ○ (D) interest
+       - **正解**：**(D) interest**。
+       - **破題關鍵**：句型為「事物 ＋ interest ＋ 人」，主詞 Jolin's songs 為複數名詞，現在簡單式使用動詞原形 interest。
+     - **Q371** `q_eng_gram_sentence_bored_with_doing_371`：
+       - **題幹**：【句子合併題】：{ Doing the same thing every day is boring. Jack is bored with it. (用 Jack 為主詞合併句子) }
+       - **標準答案**：**Jack is bored with doing the same thing every day.**
+       - **破題關鍵**：人 ＋ be bored with ＋ V-ing，將代名詞 it 替換為動名詞片語 doing the same thing every day。
+     - **Q372** `q_eng_vocab_height_unit_feet_inches_372`：
+       - **題幹**：The volleyball (排球) player is six feet and two ________ tall. 【桃園光明】
+       - **選項**：○ (A) kilometers ○ (B) meters ○ (C) inches ○ (D) kilograms
+       - **正解**：**(C) inches**。
+       - **破題關鍵**：英制身高固定搭配：... feet and ... inches tall（6 呎 2 吋高，約 188 公分）。
+  2. **圖文處理原則遵循**：
+     - 本題組 4 題皆為純文字考題，依規不附多餘截圖，以純淨繁體中文排版呈現。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v395`（`miley_wrong_questions_v395`），題庫總量達 476 題。
+     - Service Worker 快取升級為 `miley-pwa-cache-v3.69`，腳本版本標籤升級 `js/data.js?v=395`。
+
+---
+
 ## [v3.99] - 2026-11-06 (自動收錄國中社會公民市場經濟秩序與消費者權益保護法制題組 Q367..Q368：Q367 各直轄市縣市政府設立何種機構提供諮詢及申訴服務／「消費者服務中心」1950 專線為正解／辨析消保官再申訴、消費爭議調解委員會、民間消基會；Q368 立法院制定哪項法律目的在維護交易秩序與消費者權益確保公平競爭促進經濟繁榮安定／《公平交易法》為正解／辨析公平交易委員會獨立機關管制獨占、聯合哄抬、不實廣告；深度對照《消費者保護法》七天鑑賞期與定型化契約／純文字考題不附截圖規範、零符號純淨繁體中文排版，數據庫題數達到 472 題！升級數據庫至 v394，快取升級 v3.68)
 - **類型**：錯題自動收錄 / 社會科公民與社會（市場經濟秩序維護、公平競爭法制與消費者權益保障行政救濟體系） / 消費爭議行政救濟三部曲（第一步：各直轄市與縣市政府「消費者服務中心」1950 專線；第二步：縣市政府「消費者保護官（消保官）」提出再申訴；第三步：各縣市政府「消費爭議調解委員會」申請調解） / 官方專責機關 vs 民間公益財團法人消基會（消費者文教基金會）權力邊界 / 市場競爭核心雙雄法規深度辨析（《公平交易法》維護交易秩序確保公平競爭、規範獨占、聯合卡特爾壟斷、不實廣告 vs 《消費者保護法》保障國民消費生活安全、定型化契約顯失公平無效、七日猶豫期、企業無過失責任） / 純文字題目嚴格遵循不放截圖規範 / 零奇怪符號、永久純淨繁體中文排版 / 升級數據庫至 v394 / 快取升級 v3.68
 - **主要變更**：
