@@ -18,8 +18,81 @@ window.ReviewModule = {
   scratchHistory: [],
   savedScratchMap: {},
   sessionReviewedIds: new Set(),
+  SKIPPED_STORAGE_KEY: 'miley_skipped_questions_order',
+  skippedQuestionIds: new Set(),
+  skippedOrderList: [],
+
+  loadSkippedQuestionIds: function() {
+    try {
+      const raw = localStorage.getItem(this.SKIPPED_STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) {
+          this.skippedOrderList = parsed.filter(id => typeof id === 'string' && id.trim());
+          this.skippedQuestionIds = new Set(this.skippedOrderList);
+          return;
+        }
+      }
+    } catch (e) {
+      console.warn('Failed to load skipped questions from storage:', e);
+    }
+    this.skippedOrderList = [];
+    this.skippedQuestionIds = new Set();
+  },
+
+  persistSkippedQuestionIds: function() {
+    try {
+      localStorage.setItem(this.SKIPPED_STORAGE_KEY, JSON.stringify(this.skippedOrderList || []));
+    } catch (e) {
+      console.warn('Failed to persist skipped questions to storage:', e);
+    }
+  },
+
+  addSkippedQuestionId: function(id) {
+    if (!id) return;
+    if (!this.skippedQuestionIds) this.skippedQuestionIds = new Set();
+    if (!Array.isArray(this.skippedOrderList)) this.skippedOrderList = [];
+
+    const existingIdx = this.skippedOrderList.indexOf(id);
+    if (existingIdx !== -1) {
+      this.skippedOrderList.splice(existingIdx, 1);
+    }
+    this.skippedOrderList.push(id);
+    this.skippedQuestionIds.add(id);
+    this.persistSkippedQuestionIds();
+  },
+
+  removeSkippedQuestionId: function(id) {
+    if (!id) return;
+    if (this.skippedQuestionIds) {
+      this.skippedQuestionIds.delete(id);
+    }
+    if (Array.isArray(this.skippedOrderList)) {
+      const idx = this.skippedOrderList.indexOf(id);
+      if (idx !== -1) {
+        this.skippedOrderList.splice(idx, 1);
+      }
+    }
+    this.persistSkippedQuestionIds();
+  },
+
+  cleanUpCompletedSkippedQuestions: function() {
+    if (!this.skippedOrderList || this.skippedOrderList.length === 0) return;
+    const beforeLen = this.skippedOrderList.length;
+    this.skippedOrderList = this.skippedOrderList.filter(id => {
+      const q = window.dataManager?.getById(id);
+      if (!q) return true;
+      return !this.isQuestionReviewed(q);
+    });
+    this.skippedQuestionIds = new Set(this.skippedOrderList);
+    if (this.skippedOrderList.length !== beforeLen) {
+      this.persistSkippedQuestionIds();
+    }
+  },
 
   init: function() {
+    this.loadSkippedQuestionIds();
+    this.cleanUpCompletedSkippedQuestions();
     this.bindEvents();
     this.bindProgressScrubberEvents();
     this.bindWelcomeEvents();
@@ -630,7 +703,8 @@ window.ReviewModule = {
   currentMondayFilter: null,
 
   loadReviewQueue: function(subjectFilter = null, mondayFilter = null, targetIndex = null) {
-    this.skippedQuestionIds = new Set();
+    this.loadSkippedQuestionIds();
+    this.cleanUpCompletedSkippedQuestions();
     if (subjectFilter !== undefined) this.currentSubjectFilter = subjectFilter;
     if (mondayFilter !== undefined) {
       this.currentMondayFilter = mondayFilter;
@@ -689,9 +763,26 @@ window.ReviewModule = {
       return keyA.localeCompare(keyB);
     });
 
-    // 2. Reviewed questions in front, unreviewed questions after (preserving deterministic insertion order within each group)
+    // 2. Reviewed questions in front, unreviewed questions after
     const reviewed = list.filter(q => this.isQuestionReviewed(q));
     const unreviewed = list.filter(q => !this.isQuestionReviewed(q));
+
+    // 3. Unreviewed sorting: skipped questions ("先跳過，晚點做") are permanently deferred to the very end
+    unreviewed.sort((a, b) => {
+      const isSkipA = this.skippedQuestionIds && this.skippedQuestionIds.has(a.id);
+      const isSkipB = this.skippedQuestionIds && this.skippedQuestionIds.has(b.id);
+      if (!isSkipA && isSkipB) return -1;
+      if (isSkipA && !isSkipB) return 1;
+      if (isSkipA && isSkipB) {
+        const idxA = this.skippedOrderList.indexOf(a.id);
+        const idxB = this.skippedOrderList.indexOf(b.id);
+        if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+      }
+      const keyA = window.dataManager.getQuestionSortKey(a);
+      const keyB = window.dataManager.getQuestionSortKey(b);
+      return keyA.localeCompare(keyB);
+    });
+
     this.activeQuestions = [...reviewed, ...unreviewed];
 
     if (targetIndex !== null && typeof targetIndex === 'number' && this.activeQuestions.length > 0) {
@@ -790,6 +881,7 @@ window.ReviewModule = {
 
   reorderQueueReviewedFirst: function() {
     if (!this.activeQuestions || this.activeQuestions.length <= 1) return;
+    this.cleanUpCompletedSkippedQuestions();
     const reviewed = [];
     const unreviewed = [];
 
@@ -813,8 +905,13 @@ window.ReviewModule = {
         const isSkipA = this.skippedQuestionIds && this.skippedQuestionIds.has(a.id);
         const isSkipB = this.skippedQuestionIds && this.skippedQuestionIds.has(b.id);
         // 被跳過的難題永久堅定留在未複習隊列的最末尾（直到所有其他未跳過題目都完成）
-        if (isSkipA && !isSkipB) return 1;
         if (!isSkipA && isSkipB) return -1;
+        if (isSkipA && !isSkipB) return 1;
+        if (isSkipA && isSkipB) {
+          const idxA = this.skippedOrderList.indexOf(a.id);
+          const idxB = this.skippedOrderList.indexOf(b.id);
+          if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+        }
         const keyA = window.dataManager.getQuestionSortKey(a);
         const keyB = window.dataManager.getQuestionSortKey(b);
         return keyA.localeCompare(keyB);
@@ -842,15 +939,12 @@ window.ReviewModule = {
 
     this.saveCurrentQuestionScratchState();
 
-    if (!this.skippedQuestionIds) {
-      this.skippedQuestionIds = new Set();
-    }
-    this.skippedQuestionIds.add(currentQ.id);
+    this.addSkippedQuestionId(currentQ.id);
 
     // 移至隊列最後一題
     const [item] = this.activeQuestions.splice(this.currentIndex, 1);
     this.activeQuestions.push(item);
-    this.showToast('⏭️ 已將本題移至【隊列最後一題】，先做其它題目再來挑戰！');
+    this.showToast('⏭️ 已將本題移至【隊列最後一題】並永久記憶，先做其它題目再來挑戰！');
 
     // 重新排序 unreviewed 隊列，確保被跳過題目堅定排列在所有未複習題目之後
     this.reorderQueueReviewedFirst();
@@ -1439,9 +1533,16 @@ window.ReviewModule = {
         reviewStatusBadgeEl.innerHTML = `<i class="fa-solid fa-circle-check"></i> 已複習`;
         reviewStatusBadgeEl.title = '此題已經在此輪/本週複習過';
       } else {
-        reviewStatusBadgeEl.className = 'review-status-badge unreviewed';
-        reviewStatusBadgeEl.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> 未複習`;
-        reviewStatusBadgeEl.title = '此題尚未作答複習（可先跳過往後排）';
+        const isSkipped = this.skippedQuestionIds && this.skippedQuestionIds.has(q.id);
+        if (isSkipped) {
+          reviewStatusBadgeEl.className = 'review-status-badge unreviewed is-skipped-later';
+          reviewStatusBadgeEl.innerHTML = `<i class="fa-solid fa-clock-rotate-left"></i> 稍後再戰（已排最後）`;
+          reviewStatusBadgeEl.title = '您已將此題先跳過排至最後一題，做完其他題目後挑戰';
+        } else {
+          reviewStatusBadgeEl.className = 'review-status-badge unreviewed';
+          reviewStatusBadgeEl.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> 未複習`;
+          reviewStatusBadgeEl.title = '此題尚未作答複習（可先跳過往後排）';
+        }
       }
     }
 
@@ -1723,9 +1824,7 @@ window.ReviewModule = {
 
     // 1. Mark as reviewed in session and in question object
     this.sessionReviewedIds.add(q.id);
-    if (this.skippedQuestionIds) {
-      this.skippedQuestionIds.delete(q.id);
-    }
+    this.removeSkippedQuestionId(q.id);
     q.isReviewed = true;
     q.reviewStatus = 'reviewed';
 
@@ -1789,6 +1888,7 @@ window.ReviewModule = {
 
     if (choice === "1") {
       const oldIndex = this.currentIndex;
+      this.removeSkippedQuestionId(q.id);
       window.dataManager.removeQuestionFromWeek(q.id, currentMonday);
       this.showToast(`🗑️ 已從 ${formattedWeek} 週次清單中移除此題！`);
 
@@ -1802,6 +1902,7 @@ window.ReviewModule = {
       this.loadReviewQueue(activeSubj, activeMonday, oldIndex);
     } else if (choice === "2") {
       const oldIndex = this.currentIndex;
+      this.removeSkippedQuestionId(q.id);
       window.dataManager.deleteQuestion(q.id);
       this.showToast(`💥 已永久全域徹底刪除此題！`);
 

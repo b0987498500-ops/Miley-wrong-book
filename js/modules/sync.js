@@ -395,12 +395,19 @@ window.SyncModule = {
       if (seenStr) seenWisdomCount = parseInt(seenStr, 10) || 0;
     } catch (e) {}
 
+    let skippedIds = [];
+    try {
+      const skipStr = localStorage.getItem('miley_skipped_questions_order');
+      if (skipStr) skippedIds = JSON.parse(skipStr);
+    } catch (e) {}
+
     return {
-      version: '1.15',
+      version: '1.16',
       timestamp: Date.now(),
       dateStr: new Date().toISOString().split('T')[0],
       favWisdom: favWisdom,
       seenWisdomCount: seenWisdomCount,
+      skippedIds: skippedIds,
       deletedIds: Array.isArray(window.dataManager.deletedIds) ? window.dataManager.deletedIds : [],
       removedMondaysMap: window.dataManager.removedMondaysMap || {},
       progress: progressList
@@ -581,6 +588,15 @@ window.SyncModule = {
           window.WisdomModule.updateHeaderBadge();
         } else {
           localStorage.setItem('miley_seen_wisdom_count', String(newSeen));
+        }
+      } catch (e) {}
+    }
+
+    if (Array.isArray(payload.skippedIds)) {
+      try {
+        localStorage.setItem('miley_skipped_questions_order', JSON.stringify(payload.skippedIds));
+        if (window.ReviewModule && typeof window.ReviewModule.loadSkippedQuestionIds === 'function') {
+          window.ReviewModule.loadSkippedQuestionIds();
         }
       } catch (e) {}
     }

@@ -4,6 +4,26 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v3.91] - 2026-11-06 (依使用者需求核心優化「先跳過，晚點做」持久化記憶機制：跳過題目永久移至隊列最後一題、重整網頁或重開網站 100% 保持在最後一題不插隊、作答完成後自動解鎖回歸已複習綠色徽章群、新增專屬紫羅蘭稍後再戰狀態徽章／快取升級 v3.60)
+- **類型**：麥麥核心體驗優化 / 複習隊列順序管理 / 「先跳過，晚點做」localStorage 永久記憶持久化 / 隊列排序雙群制（已複習在前半段，未複習在後半段，被跳過題目堅定排在所有未複習題目之後） / 作答擊敗或未擊敗完成後自動解鎖回歸已複習 / 專屬紫羅蘭徽章 `稍後再戰（已排最後）` / 跨裝置 sync 同步支援 / 快取升級 v3.60
+- **主要變更**：
+  1. **持久化記憶機制導入 (`SKIPPED_STORAGE_KEY: 'miley_skipped_questions_order'`)**：
+     - 在 `ReviewModule` 新增 `loadSkippedQuestionIds`、`persistSkippedQuestionIds`、`addSkippedQuestionId`、`removeSkippedQuestionId` 與 `cleanUpCompletedSkippedQuestions`。
+     - 使用者只要點擊「先跳過，晚點做」，該題 ID 立即加入永久記憶清單，儲存於 `localStorage`。
+  2. **跨重整、跨切換科目與週次永久保持在隊列最末尾**：
+     - 修復原先 `loadReviewQueue` 會意外重置清空跳過名單的問題，改為自動載入並清理已完成題目。
+     - 在 `loadReviewQueue` 與 `reorderQueueReviewedFirst` 中，嚴格將未複習題目依「未跳過群」與「已跳過群」分流，跳過題目永久排在所有未跳過題目的最後面。
+     - 重新整理網頁或關閉重開時，當前站點直接停留在下一道待複習題目，絕不會再次跳出已被跳過的難題！
+  3. **作答完成自動解鎖與徽章連動**：
+     - 使用者一旦點擊「已擊敗」或「未擊敗」（完成作答），系統自動呼叫 `removeSkippedQuestionId` 解除跳過鎖定，該題即刻歸入前半段已複習站點（綠色打勾徽章）。
+     - 未作答前，該題頂部狀態徽章顯示專屬紫羅蘭色 `稍後再戰（已排最後）`，視覺反饋極致清晰。
+  4. **快取與版本更新**：
+     - 更新 `styles.css` 支援 `.is-skipped-later` 徽章特效，版本升級至 `styles.css?v=285`。
+     - 更新 `review.js?v=223`、`sync.js?v=219`。
+     - Service Worker 快取升級為 `miley-pwa-cache-v3.60`。
+
+---
+
 ## [v3.90] - 2026-11-05 (自動收錄國中九年級數學正方形內切半圓切線長性質與畢氏定理考題 Q357：以正方形邊長 BC 為直徑作半圓 O，P 點在 CD 上，AP 切半圓於 T 點，求 AT : TP 比值／兩大直角隱藏切點 AB 垂直 BC 與 CD 垂直 BC／切線長等長 AT=AB=a、TP=PC=x／直角三角形 ADP 畢氏定理 (a+x)^2=(a-x)^2+a^2 展開相消 4ax=a^2 得 a=4x 比值為 4／精準裁切無劇透高解析幾何示意圖、零符號純淨繁體中文排版，數據庫題數達到 461 題！升級數據庫至 v386，快取升級 v3.59)
 - **類型**：錯題自動收錄 / 數學科幾何（圓與切線） / 正方形內切半圓特性（$\\angle B = \\angle C = 90^\\circ$ 隱藏切點 $B$ 與 $C$） / 切線長定理（$\\overline{AT} = \\overline{AB} = a$、$\\overline{TP} = \\overline{PC} = x$） / 直角三角形 $\\triangle ADP$ 畢氏定理設元解方程式（$(a+x)^2 = (a-x)^2 + a^2 \\implies 4ax = a^2 \\implies a = 4x$） / 線段比值求解（$\\overline{AT} : \\overline{TP} = a : x = 4$） / 圖表處理：精準裁切右上角幾何示意圖並經 2x Lanczos 高畫質放大存為 `q_math_square_inscribed_semicircle_tangent_357.png` / 零符號純淨繁體中文排版 / 升級數據庫至 v386 / 快取升級 v3.59
 - **主要變更**：
