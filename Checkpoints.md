@@ -4,6 +4,23 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v4.02] - 2026-11-06 (自動收錄國中英語名詞子句與動名詞當主詞單數一致性考題 Q378：You will find that making a jack-o'-lantern is fun and easy 為正解／辨析 that 名詞子句結構、動名詞片語 making V-ing 當主詞視為第三人稱單數必用 is／排除複數 are、原形 be 與完成式 have been／純文字題目不附截圖規範、零符號純淨繁體中文排版，數據庫題數達到 482 題！升級數據庫至 v397，快取升級 v3.71)
+- **類型**：錯題自動收錄 / 國中英語（名詞子句結構、動名詞當主詞視為單數與主詞動詞單複數一致性） / 動名詞片語（making a jack-o'-lantern）作為 that 名詞子句主詞視為單數事物，搭配單數動詞 is / 避免受後方受詞或名詞干擾之解題心法 / 純文字題目嚴格遵循不放截圖規範 / 零奇怪符號、永久純淨繁體中文排版 / 升級數據庫至 v397 / 快取升級 v3.71
+- **主要變更**：
+  1. **完整收錄動名詞主詞文法考題（Q378，歸入 2026-11-02 最新週次）**：
+     - **Q378** `q_eng_gram_gerund_subject_jack_o_lantern_378`：
+       - **題幹**：You will find that making a jack-o'-lantern ________ fun and easy.
+       - **選項**：○ (A) are ○ (B) is ○ (C) be ○ (D) have been
+       - **正解**：**(B) is**。
+       - **破題關鍵**：that 引導名詞子句，子句主詞為動名詞片語 making a jack-o'-lantern（製作南瓜燈這件事），動名詞當主詞一律視為第三人稱單數，故 be 動詞必用 is。
+  2. **圖文處理原則遵循**：
+     - 本題為純文字考題（截圖無圖表），依規不附多餘截圖，以純淨繁體中文排版呈現。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v397`（`miley_wrong_questions_v397`），題庫總量達 482 題。
+     - Service Worker 快取升級為 `miley-pwa-cache-v3.71`，腳本版本標籤升級 `js/data.js?v=397`。
+
+---
+
 ## [v4.01] - 2026-11-06 (自動收錄國中英語情緒形容詞與附加問句精選題組 Q373..Q377：Q373 連綴動詞修飾人 Father looks so tired 為正解／辨析人修飾-ed 感到疲倦 vs 事物令人疲累-ing；Q374 情緒形容詞前置修飾事物 an exciting welcome party 為正解／辨析冠詞 an 搭配與事物令人興奮-ing；Q375 現在進行式縮寫附加問句 Ms. Chen's watching..., isn't she 為正解／辨析's watching 為 is 判定前肯後否；Q376 情緒動詞及物用法過去式 The movie really interested all of us yesterday 為正解／辨析物當主詞使人感興趣、yesterday 過去式時態；Q377 There is 存在句附加問句 There is no water..., is there 為正解／辨析否定詞 no 判定前否後肯、there 主詞保留排除 it／純文字考題不附截圖規範、零符號純淨繁體中文排版，數據庫題數達到 481 題！升級數據庫至 v396，快取升級 v3.70)
 - **類型**：錯題自動收錄 / 國中英語（連綴動詞主詞補語、情緒形容詞-ed/-ing對照、附加問句縮寫與否定詞判定、情緒動詞及物句型與時態一致性） / 情緒形容詞兩大分類（人感到疲憊 tired / 興奮 excited vs 事物令人疲累 tiring / 令人興奮 exciting） / 連綴動詞句型（look + adj.） / 附加問句兩大核心考點（現在進行式 's watching 辨析為 is，前肯後否 isn't she；There is no water 含有否定詞 no，前否後肯 is there，保留 there 排除 it） / 情緒動詞及物用法（物 + interest + 人，搭配時間副詞 yesterday 過去式 interested） / 純文字題目嚴格遵循不放截圖規範 / 零奇怪符號、永久純淨繁體中文排版 / 升級數據庫至 v396 / 快取升級 v3.70
 - **主要變更**：
