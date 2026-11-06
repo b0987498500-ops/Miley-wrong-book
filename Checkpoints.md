@@ -4,6 +4,38 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v4.01] - 2026-11-06 (自動收錄國中英語情緒形容詞與附加問句精選題組 Q373..Q377：Q373 連綴動詞修飾人 Father looks so tired 為正解／辨析人修飾-ed 感到疲倦 vs 事物令人疲累-ing；Q374 情緒形容詞前置修飾事物 an exciting welcome party 為正解／辨析冠詞 an 搭配與事物令人興奮-ing；Q375 現在進行式縮寫附加問句 Ms. Chen's watching..., isn't she 為正解／辨析's watching 為 is 判定前肯後否；Q376 情緒動詞及物用法過去式 The movie really interested all of us yesterday 為正解／辨析物當主詞使人感興趣、yesterday 過去式時態；Q377 There is 存在句附加問句 There is no water..., is there 為正解／辨析否定詞 no 判定前否後肯、there 主詞保留排除 it／純文字考題不附截圖規範、零符號純淨繁體中文排版，數據庫題數達到 481 題！升級數據庫至 v396，快取升級 v3.70)
+- **類型**：錯題自動收錄 / 國中英語（連綴動詞主詞補語、情緒形容詞-ed/-ing對照、附加問句縮寫與否定詞判定、情緒動詞及物句型與時態一致性） / 情緒形容詞兩大分類（人感到疲憊 tired / 興奮 excited vs 事物令人疲累 tiring / 令人興奮 exciting） / 連綴動詞句型（look + adj.） / 附加問句兩大核心考點（現在進行式 's watching 辨析為 is，前肯後否 isn't she；There is no water 含有否定詞 no，前否後肯 is there，保留 there 排除 it） / 情緒動詞及物用法（物 + interest + 人，搭配時間副詞 yesterday 過去式 interested） / 純文字題目嚴格遵循不放截圖規範 / 零奇怪符號、永久純淨繁體中文排版 / 升級數據庫至 v396 / 快取升級 v3.70
+- **主要變更**：
+  1. **完整收錄 5 道英文文法核心考題（Q373..Q377，歸入 2026-11-02 最新週次）**：
+     - **Q373** `q_eng_gram_tired_vs_tiring_373`：
+       - **題幹**：Father looks so ________. Maybe he should take a rest. 【新北五峰】
+       - **選項**：○ (A) tiring ○ (B) tired ○ (C) tire ○ (D) tires
+       - **正解**：**(B) tired**。
+     - **Q374** `q_eng_gram_exciting_welcome_party_374`：
+       - **題幹**：Miranda had an ________ welcome party because she got many gifts from her neighbors. 【新北三和】
+       - **選項**：○ (A) excited ○ (B) exciting ○ (C) excited about ○ (D) exciting to
+       - **正解**：**(B) exciting**。
+     - **Q375** `q_eng_gram_tag_question_is_watching_375`：
+       - **題幹**：Ms. Chen's watching a movie with her husband, ________? 【桃園大有】
+       - **選項**：○ (A) hasn't she ○ (B) isn't she ○ (C) doesn't she ○ (D) wasn't she
+       - **正解**：**(B) isn't she**。
+     - **Q376** `q_eng_gram_emotion_verb_past_interested_376`：
+       - **題幹**：The funny movie really ________ all of us yesterday. We all laughed loudly when watching it. 【桃園大有】
+       - **選項**：○ (A) interesting ○ (B) interested ○ (C) interests ○ (D) interest
+       - **正解**：**(B) interested**。
+     - **Q377** `q_eng_gram_tag_question_there_is_no_377`：
+       - **題幹**：There is no water in the afternoon because of the typhoon, ________? 【新北崇林】
+       - **選項**：○ (A) is it ○ (B) isn't it ○ (C) is there ○ (D) isn't there
+       - **正解**：**(C) is there**。
+  2. **圖文處理原則遵循**：
+     - 本題組 5 題皆為純文字考題，依規不附多餘截圖，以純淨繁體中文排版呈現。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v396`（`miley_wrong_questions_v396`），題庫總量達 481 題。
+     - Service Worker 快取升級為 `miley-pwa-cache-v3.70`，腳本版本標籤升級 `js/data.js?v=396`。
+
+---
+
 ## [v4.00] - 2026-11-06 (自動收錄國中英語文法字彙題組 Q369..Q372：Q369 drop 重複字尾加 ed 為 dropped／辨析單短母音加單子音過去式規則、just 時態判讀；Q370 情緒動詞事物主詞 Jolin's songs usually interest my sister 為正解／辨析複數主詞動詞原形、人當主詞 be interested in、形容詞 interesting；Q371 句子合併情緒形容詞片語 Jack is bored with doing the same thing every day 為正解／辨析介係詞 with 後接動名詞 V-ing；Q372 英制身高計量單位 six feet and two inches tall 為正解／辨析 foot/feet、inch/inches、排除公尺公里公斤／純文字題目不附截圖規範、零符號純淨繁體中文排版，數據庫題數達到 476 題！升級數據庫至 v395，快取升級 v3.69)
 - **類型**：錯題自動收錄 / 國中英語（文意字彙、動詞時態變化、情緒動詞句型、情緒形容詞介係詞片語與英制度量衡單位） / 動詞過去式重複字尾規則（短母音＋單子音 drop $\to$ dropped） / 情緒動詞三大句型（物 ＋ interest ＋ 人 vs 人 ＋ be interested in ＋ 物 vs 物 ＋ be interesting） / 句子合併（代名詞 it 替換為動名詞片語 doing the same thing every day，介係詞 with 後接 V-ing） / 英制身高表達（feet and inches tall） / 純文字題目嚴格遵循不放截圖規範 / 零奇怪符號、永久純淨繁體中文排版 / 升級數據庫至 v395 / 快取升級 v3.69
 - **主要變更**：
