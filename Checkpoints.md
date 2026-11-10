@@ -4,6 +4,41 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v4.34] - 2026-11-10 (自動雙收錄國中九年級幾何圓形旋轉與半圓對摺考點重點題 Q428 與 Q429：圓內接三角形旋轉求角 BAD＝60 度／半圓沿弦 AC 對摺交直徑於 D 點求角 BAC＝18 度／嚴格實施 100 字內極簡解析準則、九年級主流秒解法／幾何圖純白底 2x Lanczos 高畫質優化，題庫總數達到 533 題！升級數據庫至 v430，快取升級 v4.03)
+- **類型**：錯題自動收錄 / 國中數學（幾何／圓形性質、圓內接三角形旋轉變換、等弦對等弧、同弧圓周角、半圓沿弦對摺對稱弧度、共線同角對應圓周角等於所對弧一半）
+- **主要變更**：
+  1. **完整收錄圓形旋轉與半圓對摺雙重點題（Q428、Q429，歸入 2026-11-09 最新週次）**：
+     - **Q428** `q_math_geo_circle_inscribed_rotate_bad_60_428`：
+       - **題幹**：如附圖，$\triangle ABC$ 為圓內接三角形，其中 $\angle BAC = 20^\circ$，$\angle B = 30^\circ$。若將 $\triangle ABC$ 旋轉至 $\triangle ADE$，則 $\angle BAD$ 為多少度？
+       - **選項**：○ (A) 50 度 ◉ (B) 60 度 ○ (C) 70 度 ○ (D) 80 度
+       - **正解**：**(B) 60 度**
+       - **嚴格 100 字極簡解析**（約 82 字）：
+         1. 弧 $BC = 2\angle A = 40^\circ$，弧 $AC = 2\angle B = 60^\circ \implies$ 弧 $AB = 40^\circ + 60^\circ = 100^\circ$。
+         2. 旋轉後弦 $AE = AB \implies$ 弧 $AE = 100^\circ$，得弧 $BE = 360^\circ - 200^\circ = 160^\circ$。
+         3. 圓周角 $\angle BAE = 160^\circ \div 2 = 80^\circ$。故 $\angle BAD = \angle BAE - \angle EAD = 80^\circ - 20^\circ = 60^\circ$。選 (B)。
+       - **精煉易錯警示筆記**：
+         - 💡 易錯筆記：弦 $AE = AB$ 必得等弧（$100^\circ$）！由整圓 $360^\circ$ 扣除兩弧得弧 $BE$，再由圓周角為弧之一半（$80^\circ$）扣除 $\angle EAD$（$20^\circ$）即得正解。
+     - **Q429** `q_math_geo_circle_semicircle_fold_chord_bac_18_429`：
+       - **題幹**：如附圖，線段 $\overline{AB}$ 為半圓 $O$ 的直徑，$C$ 點在圓 $O$ 上，將 $\widehat{AC}$ 沿 $\overline{AC}$ 對摺後，與 $\overline{AB}$ 交於 $D$ 點。已知 $\widehat{AD} : \widehat{CD} = 3 : 1$，則 $\angle BAC$ 為多少度？
+       - **選項**：◉ (A) 18 度 ○ (B) 24 度 ○ (C) 30 度 ○ (D) 36 度
+       - **正解**：**(A) 18 度**
+       - **嚴格 100 字極簡解析**（約 85 字）：
+         1. 設翻摺弧 $CD = k^\circ$、$AD = 3k^\circ$，則弧 $AC = 3k^\circ + k^\circ = 4k^\circ$。
+         2. $A、D、B$ 共線 $\implies \angle BAC$ 與 $\angle CAD$ 為同角。因圓周角等於所對弧之一半，得弧 $BC =$ 弧 $CD = k^\circ$。
+         3. 直徑半圓弧 $= 4k^\circ + k^\circ = 5k^\circ = 180^\circ \implies k = 36^\circ$。
+         4. 故圓周角 $\angle BAC = 36^\circ \div 2 = 18^\circ$。選 (A)。
+       - **精煉易錯警示筆記**：
+         - 💡 易錯筆記：$A、D、B$ 共線使 $\angle BAC$ 與 $\angle CAD$ 為同一角！兩等圓中同圓周角所對弧相等，故弧 $BC =$ 弧 $CD = k$，再用半圓 $180^\circ$ 即可秒殺。
+  2. **圖文處理原則遵循**：
+     - 兩道幾何圓形圖均獨立裁切、去除筆跡、底色 `#FFFFFF` 淨化與 2x Lanczos 高畫質放大保存至 `assets/questions/`：
+       - `q_math_geo_circle_inscribed_rotate_bad_60_428.png`
+       - `q_math_geo_circle_semicircle_fold_chord_bac_18_429.png`
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v430`（`miley_wrong_questions_v430`），題庫總量達到 **533 題**！
+     - Service Worker 快取升級為 `miley-pwa-cache-v4.03`，腳本版本標籤升級 `js/data.js?v=430`。
+
+---
+
 ## [v4.33] - 2026-11-10 (自動收錄國中九年級幾何圓形翻摺重點題 Q427：圓弧向下對摺切於圓心 O、弦心距為半徑一半、30°-60°-90° 特殊角推導圓心角 COD＝120 度／嚴格實施 100 字極簡解析準則／幾何對稱圖純白底 2x Lanczos 高畫質優化，數據庫總題數達到 531 題！升級數據庫至 v428，快取升級 v4.02)
 - **類型**：錯題自動收錄 / 國中數學（幾何／圓形性質、圓弧翻摺對稱軸、弦心距垂直平分半徑 $OM = r/2$、$1 : \sqrt{3} : 2$ 特殊直角三角形、圓心角 $\angle COD = 120^\circ$）
 - **主要變更**：
