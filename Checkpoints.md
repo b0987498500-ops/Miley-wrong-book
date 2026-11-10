@@ -4,6 +4,26 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v4.30] - 2026-11-10 (自動收錄國中數學圓形幾何與直徑圓周角重點題 Q425：AD 為直徑、OB 垂直 AD 且長度為 4、CAD 角 30 度求截線段 BC 長度／直徑所對圓周角為直角、30-60-90 特殊比例與相似形比例推導／BC＝4 為正解／幾何圖表粉紅輔助線精準清理去痕、純白底 2x Lanczos 高畫質優化、零奇怪符號純淨繁體中文排版，數據庫題數達到 529 題！升級數據庫至 v425，快取升級 v3.99)
+- **類型**：錯題自動收錄 / 國中數學（幾何／圓形性質、直徑所對圓周角為直角 $\angle ACD = 90^\circ$、特殊角 $30^\circ-60^\circ-90^\circ$ 直角三角形邊長比 $1 : \sqrt{3} : 2$、相似三角形 $\triangle ABO \sim \triangle ADC$、垂徑定理輔助秒殺解法、線段相減求長）
+- **主要變更**：
+  1. **完整收錄圓直徑與特殊角線段重點題（Q425，歸入 2026-11-09 最新週次）**：
+     - **Q425** `q_math_geo_circle_diameter_secant_bc_425`：
+       - **題幹**：如附圖，線段 $\overline{AD}$ 為圓 $O$ 的直徑，$\overline{AC}$ 為圓內一弦，$\angle CAD = 30^\circ$，$\overline{OB} \perp \overline{AD}$。若 $\overline{OB} = 4$，則線段 $\overline{BC}$ 的長度為何？
+       - **選項**：◉ (A) 4 ○ (B) 4√3 ○ (C) 6 ○ (D) 8
+       - **正解**：**(A) 4**
+       - **核心概念**：
+         - 在 Rt$\triangle AOB$ 中，$\angle OAB = 30^\circ$ 且 $\overline{OB} = 4$，由 $1 : \sqrt{3} : 2$ 特殊比求得 $\overline{AB} = 8$、半徑 $\overline{AO} = 4\sqrt{3}$，直徑 $\overline{AD} = 8\sqrt{3}$。
+         - 連接輔助線 $\overline{CD}$，直徑所對圓周角 $\angle ACD = 90^\circ$；在 Rt$\triangle ACD$ 中，弦長 $\overline{AC} = \overline{AD} \times \cos 30^\circ = 8\sqrt{3} \times \frac{\sqrt{3}}{2} = 12$（亦可由 $\triangle ABO \sim \triangle ADC$ 相似比導出）。
+         - 所求線段 $\overline{BC} = \overline{AC} - \overline{AB} = 12 - 8 = 4$。
+  2. **圖文處理原則遵循**：
+     - 截圖中幾何圓形含有解答標記之粉紅色輔助線 $\overline{CD}$，嚴格依據 SOP 進行去痕清理，完美還原原始純淨題圖，並經純白底 `#FFFFFF` 淨化與 2x Lanczos 高畫質平滑放大，保存至 `assets/questions/q_math_geo_circle_diameter_secant_bc_425.png`，支援燈箱放大檢視。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v425`（`miley_wrong_questions_v425`），題庫總量達到 **529 題**！
+     - Service Worker 快取升級為 `miley-pwa-cache-v3.99`，腳本版本標籤升級 `js/data.js?v=425`。
+
+---
+
 ## [v4.29] - 2026-11-09 (自動收錄國中理化簡單機械與功的原理重點題 Q424：機械定義與功的原理全面辨析【只要能幫助人類作功的裝置都可稱為機械為正解／使用任何機械絕不可能省功、省力必費距離、定滑輪僅改變方向不省力】／純文字題目不放截圖規範、零奇怪符號純淨繁體中文排版，數據庫題數達到 528 題！升級數據庫至 v424，快取升級 v3.98)
 - **類型**：錯題自動收錄 / 國中自然理化（簡單機械、功與能、功的原理 $W_{\text{入}} \ge W_{\text{出}}$ 能量守恆、省力與費力機械之物理意涵、定滑輪與陀飛輪實例解析）
 - **主要變更**：
