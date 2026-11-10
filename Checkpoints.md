@@ -4,6 +4,27 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v4.31] - 2026-11-10 (自動收錄國中數學同弧圓周角與等腰直角三角形重點題 Q426：AD 為直徑、長度為 3、角 ABC 等於角 CAD 求弦 AC 長度／同弧圓周角相等∠ADC＝∠ABC、直徑圓周角 90 度導出等腰直角三角形／AC＝(3/2)√2 為正解／幾何圖形純白底 2x Lanczos 高畫質優化、零奇怪符號純淨繁體中文排版，數據庫題數達到 530 題里程碑！升級數據庫至 v426，快取升級 v4.00)
+- **類型**：錯題自動收錄 / 國中數學（幾何／圓形性質、圓周角定理同弧所對圓周角相等 $\angle ADC = \angle ABC$、直徑所對圓周角為直角 $\angle ACD = 90^\circ$、等腰直角三角形邊長比 $1 : 1 : \sqrt{2}$、斜邊求股長）
+- **主要變更**：
+  1. **完整收錄圓直徑與圓周角相等重點題（Q426，歸入 2026-11-09 最新週次）**：
+     - **Q426** `q_math_geo_circle_diameter_secant_angle_equality_426`：
+       - **題幹**：如附圖，線段 $\overline{AD}$ 為圓 $O$ 的直徑，$\overline{BC}$、$\overline{AB}$、$\overline{AC}$ 為圓內的三條弦。若 $\overline{AD} = 3$，且 $\angle ABC = \angle CAD$，則弦 $\overline{AC}$ 的長度為何？
+       - **選項**：◉ (A) (3/2)√2 ○ (B) (3/2)√3 ○ (C) 3√2 ○ (D) 3/2
+       - **正解**：**(A) (3/2)√2**
+       - **核心概念**：
+         - 連接 $\overline{CD}$，由同弧 $\widehat{AC}$ 所對圓周角相等得 $\angle ADC = \angle ABC$。
+         - 題意給定 $\angle ABC = \angle CAD$，故 $\angle ADC = \angle CAD$，$\triangle ACD$ 為等腰三角形（$\overline{AC} = \overline{CD}$）。
+         - 因 $\overline{AD}$ 為直徑，直徑所對圓周角 $\angle ACD = 90^\circ$。
+         - $\triangle ACD$ 為等腰直角三角形（$45^\circ-45^\circ-90^\circ$），斜邊 $\overline{AD} = 3$，故股長 $\overline{AC} = \frac{\overline{AD}}{\sqrt{2}} = \frac{3\sqrt{2}}{2}$。
+  2. **圖文處理原則遵循**：
+     - 幾何圓圖經純白底 `#FFFFFF` 淨化、邊角去痕與 2x Lanczos 高畫質放大保存至 `assets/questions/q_math_geo_circle_diameter_secant_angle_equality_426.png`，支援燈箱放大檢視。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v426`（`miley_wrong_questions_v426`），題庫總量達到 **530 題** 里程碑！
+     - Service Worker 快取升級為全新整數版號 `miley-pwa-cache-v4.00`，腳本版本標籤升級 `js/data.js?v=426`。
+
+---
+
 ## [v4.30] - 2026-11-10 (自動收錄國中數學圓形幾何與直徑圓周角重點題 Q425：AD 為直徑、OB 垂直 AD 且長度為 4、CAD 角 30 度求截線段 BC 長度／直徑所對圓周角為直角、30-60-90 特殊比例與相似形比例推導／BC＝4 為正解／幾何圖表粉紅輔助線精準清理去痕、純白底 2x Lanczos 高畫質優化、零奇怪符號純淨繁體中文排版，數據庫題數達到 529 題！升級數據庫至 v425，快取升級 v3.99)
 - **類型**：錯題自動收錄 / 國中數學（幾何／圓形性質、直徑所對圓周角為直角 $\angle ACD = 90^\circ$、特殊角 $30^\circ-60^\circ-90^\circ$ 直角三角形邊長比 $1 : \sqrt{3} : 2$、相似三角形 $\triangle ABO \sim \triangle ADC$、垂徑定理輔助秒殺解法、線段相減求長）
 - **主要變更**：
