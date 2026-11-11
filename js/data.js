@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v432';
+const STORAGE_KEY = 'miley_wrong_questions_v433';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_civ_recall_representative_political_rights_civil_exam_432",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "國中公民／人民之基本權利與義務／參政權（選舉、罷免、創制、複決、應考試、服公職）／四種基本權利辨析（平等、自由、受益、參政）",
+    "uploadDate": "2026-11-11",
+    "mondayDate": "2026-11-09",
+    "mondayDates": [
+      "2026-11-09"
+    ],
+    "weekLabel": "2026-11-09 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：罷免與應考試服公職皆屬「參政權」！訴願與受教為「受益權」，遷徙為「自由權」。",
+    "stem": "小光認為自己所屬選區內的民意代表，違背了競選時所提出的政見，於是發動連署提案罷免該位民意代表。上述小光行使的人民基本權利類型與下列何者最類似？【103年會考】\n\n○ (A) 對於政府行政處分提出訴願\n○ (B) 參加國家考試擔任公務人員\n○ (C) 依照個人需求遷移居住地點\n○ (D) 接受國民義務教育完成學業。",
+    "answer": "(B) 參加國家考試擔任公務人員",
+    "explanation": "罷免與應考試服公職，都是屬於人民的參政權。(A)訴願是受益權；(C)往來遷徙是自由權；(D)接受國民義務教育是受益權。",
+    "diagramUrl": ""
+  },
   {
     "id": "q_soc_civ_constitutional_amendment_procedure_diagram_431",
     "examPeriod": "一段",
