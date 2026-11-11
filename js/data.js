@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v434';
+const STORAGE_KEY = 'miley_wrong_questions_v435';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_math_geo_circle_inscribed_interior_angle_afc_48_434",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國中幾何／圓形幾何性質／等分圓弧／圓內角定理／圓周角與所對弧度數",
+    "uploadDate": "2026-11-11",
+    "mondayDate": "2026-11-09",
+    "mondayDates": [
+      "2026-11-09"
+    ],
+    "weekLabel": "2026-11-09 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：五等分得 5 段等弧 r！P 為圓內交點，平角互補得圓內角 72°，由圓內角定理 (2r＋r)/2＝72° 即可秒求 r＝48°。",
+    "stem": "如附圖，圓上 $B$、$C$、$D$、$E$ 四點將 $\\widehat{ACF}$ 分成五等分，$P$ 為 $\\overline{AE}$、$\\overline{CF}$ 的交點，若 $\\angle CPE = 108^\\circ$，則 $\\angle AFC$ 為多少度？\n\n○ (A) 36 度\n○ (B) 42 度\n○ (C) 48 度\n○ (D) 54 度",
+    "answer": "(C) 48 度",
+    "explanation": "1. 設每等分弧為 r° ⟹ 弧 AC ＝ 2r°，弧 EF ＝ r°。\n2. ∠APC ＝ 180° － 108° ＝ 72°。\n3. 由圓內角定理：∠APC ＝ (弧 AC ＋ 弧 EF) ÷ 2 ⟹ 72° ＝ (2r° ＋ r°) ÷ 2 ⟹ r ＝ 48°。\n4. 故圓周角 ∠AFC ＝ 弧 AC ÷ 2 ＝ r ＝ 48°。選 (C)。",
+    "diagramUrl": "assets/questions/q_math_geo_circle_inscribed_interior_angle_afc_48_434.png"
+  },
   {
     "id": "q_soc_civ_legal_hierarchy_convention_rights_child_act_433",
     "examPeriod": "一段",
