@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v433';
+const STORAGE_KEY = 'miley_wrong_questions_v434';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_civ_legal_hierarchy_convention_rights_child_act_433",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "國中公民／法律的基本概念／法規範的位階（憲法、法律、命令）／中央法規標準法命名原則（法、律、條例、通則）",
+    "uploadDate": "2026-11-11",
+    "mondayDate": "2026-11-09",
+    "mondayDates": [
+      "2026-11-09"
+    ],
+    "weekLabel": "2026-11-09 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：見「立法院三讀」或名稱為「法、律、條例、通則」必為法律位階！命令由行政機關訂定。",
+    "stem": "我國為與國際接軌，落實聯合國的《兒童權利公約》要求的人權保障。由立法院三讀通過了《兒童權利公約施行法》。請問，下列有關《兒童權利公約施行法》的解釋，何者正確？\n\n○ (A) 擁有憲法級位階，規定原則性的事務\n○ (B) 擁有法律級位階，可實現憲法的精神\n○ (C) 擁有命令級位階，行政機關可以修改\n○ (D) 擁有命令級位階，縣市議會可以修改",
+    "answer": "(B) 擁有法律級位階，可實現憲法的精神",
+    "explanation": "由立法院三讀通過且名稱為「法」，屬於法律位階（包含法、律、條例、通則），故選(B)。(A)憲法位階僅含憲法本文與增修條文；(C)(D)命令由行政機關發布修改。",
+    "diagramUrl": ""
+  },
   {
     "id": "q_soc_civ_recall_representative_political_rights_civil_exam_432",
     "examPeriod": "一段",
