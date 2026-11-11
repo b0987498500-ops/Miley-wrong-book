@@ -239,16 +239,9 @@ window.ReviewModule = {
       }
     });
 
-    // Keep fullscreen UI state in sync when user exits via ESC key
-    document.addEventListener('fullscreenchange', () => {
-      if (!document.fullscreenElement && document.body.classList.contains('fullscreen-review-mode')) {
-        document.body.classList.remove('fullscreen-review-mode');
-        const btn = document.getElementById('btn-toggle-fullscreen');
-        if (btn) {
-          btn.innerHTML = '<i class="fa-solid fa-expand"></i> 全螢幕';
-        }
-      }
-    });
+    // 平板/行動端防誤退出：平板觸控上下滑動絕不自動退出全螢幕複習模式！
+    // 嚴格遵守使用者要求：必須等使用者親自點擊「退出全螢幕」按鈕（或桌機按 ESC 鍵）才退出。
+    // （移除原生 fullscreenchange 對 body.fullscreen-review-mode 的干擾移除）
 
     // Global Keyboard Shortcuts for Fullscreen Flashcard Review
     document.addEventListener('keydown', (e) => {
@@ -296,6 +289,9 @@ window.ReviewModule = {
         if (scratchOverlay && !scratchOverlay.classList.contains('hidden')) {
           e.preventDefault();
           self.closeScratchpad();
+        } else if (document.body.classList.contains('fullscreen-review-mode')) {
+          e.preventDefault();
+          document.getElementById('btn-toggle-fullscreen')?.click();
         }
       } else if (e.key === 'f' || e.key === 'F') {
         e.preventDefault();

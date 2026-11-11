@@ -5049,6 +5049,7 @@ body.fullscreen-review-mode {
   overflow-x: hidden !important;
   height: auto !important;
   min-height: 100vh !important;
+  overscroll-behavior-y: contain !important;
   -webkit-overflow-scrolling: touch !important;
 }
 
