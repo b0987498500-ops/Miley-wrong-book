@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v442';
+const STORAGE_KEY = 'miley_wrong_questions_v443';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_sci_phys_bottle_opener_lever_resistance_middle_442",
+    "examPeriod": "一段",
+    "subject": "自然",
+    "errorReason": "觀念不懂",
+    "concept": "國中理化／簡單機械與功／槓桿原理／開瓶器之三點位置（支點、抗力點、施力點）／抗力點在中間之省力槓桿",
+    "uploadDate": "2026-11-11",
+    "mondayDate": "2026-11-09",
+    "mondayDates": [
+      "2026-11-09"
+    ],
+    "weekLabel": "2026-11-09 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：開瓶器前端頂住瓶蓋頂部為「支點」，中間勾住瓶蓋邊緣為「抗力點」，手握把柄為「施力點」！抗力點在中間必為「省力費時」槓桿！",
+    "stem": "如圖使用「開瓶器打開瓶蓋」時，下列敘述何者正確？\n\n○ (A) 開瓶器是個省時的工具\n○ (B) 手的施力比瓶蓋的抗力大\n○ (C) 開瓶器是支點在中間的槓桿\n○ (D) 開瓶器是抗力點在中間的槓桿。",
+    "answer": "(D) 開瓶器是抗力點在中間的槓桿。",
+    "explanation": "抗力點在支點與施力點之間，是一種省力的槓桿。故選(D)。",
+    "diagramUrl": "assets/questions/q_sci_phys_bottle_opener_lever_resistance_middle_442.png"
+  },
   {
     "id": "q_soc_hist_talas_battle_papermaking_transmission_west_441",
     "examPeriod": "一段",
