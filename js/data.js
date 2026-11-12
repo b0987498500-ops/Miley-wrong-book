@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v445';
+const STORAGE_KEY = 'miley_wrong_questions_v446';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_math_geo_circle_inscribed_quad_external_angles_b_47_445",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國中幾何／圓形幾何性質／圓內接四邊形性質／外角等於內對角／對角互補／三角形外角與內角和",
+    "uploadDate": "2026-11-12",
+    "mondayDate": "2026-11-09",
+    "mondayDates": [
+      "2026-11-09"
+    ],
+    "weekLabel": "2026-11-09 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：圓內接四邊形「外角等於內對角」！由兩外角三角形分別列出兩對角（134°－∠B 與 140°－∠B），相加等於 180° 即可秒殺！",
+    "stem": "如附圖，$A$、$B$、$C$、$D$ 為圓上四點，線段 $\\overline{AB}$ 和 $\\overline{CD}$ 的延長線交於圓外一點 $E$，線段 $\\overline{AD}$ 和 $\\overline{BC}$ 的延長線交於圓外一點 $F$。若 $\\angle E = 46^\\circ$，$\\angle F = 40^\\circ$，則 $\\angle B$ 為多少度？\n\n○ (A) 43 度\n○ (B) 47 度\n○ (C) 51 度\n○ (D) 55 度",
+    "answer": "(B) 47 度",
+    "explanation": "1. 由圓內接四邊形外角等於內對角：在 △EAD 中，∠BCD ＝ 180° － 46° － ∠B ＝ 134° － ∠B。\n2. 同理在 △FCD 中，∠BAD ＝ 180° － 40° － ∠B ＝ 140° － ∠B。\n3. 對角互補：∠BAD ＋ ∠BCD ＝ 180° ⟹ (140° － ∠B) ＋ (134° － ∠B) ＝ 180° ⟹ 2∠B ＝ 94° ⟹ ∠B ＝ 47°。選 (B)。",
+    "diagramUrl": "assets/questions/q_math_geo_circle_inscribed_quad_external_angles_b_47_445.png"
+  },
   {
     "id": "q_soc_civ_parliamentary_system_cabinet_uk_100_444",
     "examPeriod": "一段",
