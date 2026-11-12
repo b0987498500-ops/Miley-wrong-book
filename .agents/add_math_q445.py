@@ -65,3 +65,4 @@ sw = re.sub(r"miley-pwa-cache-v[\d\.]+", "miley-pwa-cache-v4.14", sw)
 with open('sw.js', 'w', encoding='utf-8') as f:
     f.write(sw)
 print("Updated sw.js successfully!")
+
