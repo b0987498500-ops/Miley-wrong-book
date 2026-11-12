@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v443';
+const STORAGE_KEY = 'miley_wrong_questions_v444';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_civ_constitution_stability_news_referendum_443",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "國中公民／憲法之最高性、原則性與固定性／修憲門檻與憲法之固定性／公民投票複決之選舉人法定資格",
+    "uploadDate": "2026-11-12",
+    "mondayDate": "2026-11-09",
+    "mondayDates": [
+      "2026-11-09"
+    ],
+    "weekLabel": "2026-11-09 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：修憲門檻極高（需立院 3/4 決議 ＋ 965萬公投同意票）體現憲法的「固定性」！憲法修正案由「立法院」提出，非行政院。",
+    "stem": "附圖是小平看到的一則新聞快訊。根據圖中內容及我國憲政體制、法律規範判斷，下列哪一項敘述完全正確？\n\n○ (A) 圖中內容凸顯出《憲法》的固定性\n○ (B) 該憲法修正案應該是由行政院提出\n○ (C) 受監護宣告者依法享有此次投票權\n○ (D) 具有我國國民身分即可行使複決權",
+    "answer": "(A) 圖中內容凸顯出《憲法》的固定性",
+    "explanation": "修憲門檻極高且繁複，呈現出《憲法》修改困難的「固定性」特色，故選(A)。(B)修憲案由立法院提出；(C)(D)投票需符合法定選舉人資格（年滿20歲、未受監護宣告）。",
+    "diagramUrl": "assets/questions/q_soc_civ_constitution_stability_news_referendum_443.png"
+  },
   {
     "id": "q_sci_phys_bottle_opener_lever_resistance_middle_442",
     "examPeriod": "一段",
