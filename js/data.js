@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v444';
+const STORAGE_KEY = 'miley_wrong_questions_v445';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_civ_parliamentary_system_cabinet_uk_100_444",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "國中公民／民主國家的政府體制／內閣制之核心特徵（虛位元首、國會多數組閣出任首相、行政立法合一）／以英國為典範",
+    "uploadDate": "2026-11-12",
+    "mondayDate": "2026-11-09",
+    "mondayDates": [
+      "2026-11-09"
+    ],
+    "weekLabel": "2026-11-09 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：見「多數黨黨魁任首相、虛位元首（英王）、行政對立法負責」必為「內閣制」（英國）！美國為總統制，我國為雙首長制。",
+    "stem": "附圖是小慈用來輔助說明某國家政府體制的圖形，根據其內容判斷，她最可能是在說明下列哪一國家？【100年第2次基測】\n\n○ (A) 北韓\n○ (B) 英國\n○ (C) 美國\n○ (D) 中華民國。",
+    "answer": "(B) 英國",
+    "explanation": "圖中「國會過半數席位產生首相、虛位元首、內閣對議會負責」為典型「內閣制」特徵，以英國為代表。故選(B)。",
+    "diagramUrl": "assets/questions/q_soc_civ_parliamentary_system_cabinet_uk_100_444.png"
+  },
   {
     "id": "q_soc_civ_constitution_stability_news_referendum_443",
     "examPeriod": "一段",
