@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v447';
+const STORAGE_KEY = 'miley_wrong_questions_v448';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_math_geo_circle_inscribed_quad_angle_cad_52_447",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國中幾何／圓形幾何性質／圓內接四邊形／同弧所對圓周角相等／三角形內角和 180 度",
+    "uploadDate": "2026-11-12",
+    "mondayDate": "2026-11-09",
+    "mondayDates": [
+      "2026-11-09"
+    ],
+    "weekLabel": "2026-11-09 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：圓內接四邊形對角線夾角，對同弧（CD 弧）之圓周角必相等（∠CAD＝∠CBD）！先由 △BCD 內角和算得 ∠CBD＝52° 即可秒殺。",
+    "stem": "如附圖，四邊形 $ABCD$ 為圓內接四邊形，線段 $\\overline{AC}$ 和 $\\overline{BD}$ 為對角線。若 $\\angle BCD = 70^\\circ$，$\\angle BDC = 58^\\circ$，則 $\\angle CAD$ 為多少度？\n\n○ (A) 48 度\n○ (B) 52 度\n○ (C) 58 度\n○ (D) 70 度",
+    "answer": "(B) 52 度",
+    "explanation": "1. 在 △BCD 中，∠CBD ＝ 180° － 70° － 58° ＝ 52°。\n2. 同弧所對圓周角相等：∠CAD 與 ∠CBD 對同弧 CD，故 ∠CAD ＝ ∠CBD ＝ 52°。選 (B)。",
+    "diagramUrl": "assets/questions/q_math_geo_circle_inscribed_quad_angle_cad_52_447.png"
+  },
   {
     "id": "q_math_geo_circle_concyclic_quad_angle_cad_20_446",
     "examPeriod": "一段",
