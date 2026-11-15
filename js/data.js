@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v453';
+const STORAGE_KEY = 'miley_wrong_questions_v454';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_math_geo_quad_concyclic_diagonals_angle_dec_75_453",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "國中幾何／圓形幾何性質／四點共圓判定（對角互補）／同弧所對圓周角相等／三角形外角定理",
+    "uploadDate": "2026-11-15",
+    "mondayDate": "2026-11-09",
+    "mondayDates": [
+      "2026-11-09"
+    ],
+    "weekLabel": "2026-11-09 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：見對角相加為 180°（85°＋95°＝180°）必聯想「四點共圓」！由同弧圓周角得 ∠ACB＝30°，再利用 △EBC 外角定理秒殺 ∠DEC＝75°。",
+    "stem": "如附圖，在四邊形 $ABCD$ 中，$\\overline{AC}$、$\\overline{BD}$ 兩對角線相交於 $E$ 點。若 $\\angle ABD = 40^\\circ$，$\\angle ADB = 30^\\circ$，$\\angle DBC = 45^\\circ$，$\\angle BDC = 65^\\circ$，則 $\\angle DEC$ 為多少度？\n\n○ (A) 65 度\n○ (B) 70 度\n○ (C) 75 度\n○ (D) 80 度",
+    "answer": "(C) 75 度",
+    "explanation": "1. 對角互補：∠B ＋ ∠D ＝ (40° ＋ 45°) ＋ (30° ＋ 65°) ＝ 180° ⟹ A、B、C、D 四點共圓。\n2. 同弧圓周角相等：∠ACB ＝ ∠ADB ＝ 30°。\n3. 三角形外角定理：在 △EBC 中，∠DEC ＝ ∠DBC ＋ ∠ACB ＝ 45° ＋ 30° ＝ 75°。選 (C)。",
+    "diagramUrl": "assets/questions/q_math_geo_quad_concyclic_diagonals_angle_dec_75_453.png"
+  },
   {
     "id": "q_math_geo_circle_inscribed_trapezoid_angle_acb_55_452",
     "examPeriod": "一段",
