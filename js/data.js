@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v455';
+const STORAGE_KEY = 'miley_wrong_questions_v456';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_sci_phys_simple_machine_scissors_blade_inclined_plane_455",
+    "examPeriod": "一段",
+    "subject": "自然/理化",
+    "errorReason": "審題不清",
+    "concept": "國中理化／簡單機械／斜面的應用（刀刃、楔、螺絲）／審題陷阱（整把剪刀為槓桿 vs 刀刃刃口為斜面）",
+    "uploadDate": "2026-11-15",
+    "mondayDate": "2026-11-09",
+    "mondayDates": [
+      "2026-11-09"
+    ],
+    "weekLabel": "2026-11-09 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：審題陷阱！整把剪刀本體操作為「槓桿」，但若特指「刀刃刃口（刀鋒）」則是利用劈（楔）的「斜面」原理省力切割，切勿看太快選錯！",
+    "stem": "剪刀的刃口是哪一種形式的機械？\n\n○ (A) 槓桿\n○ (B) 輪軸\n○ (C) 滑輪\n○ (D) 斜面",
+    "answer": "(D) 斜面",
+    "explanation": "剪刀的刃口是斜面（楔）的應用。選 (D)。",
+    "diagramUrl": ""
+  },
   {
     "id": "q_math_geo_circle_inscribed_quad_angle_dao_67_454",
     "examPeriod": "一段",
