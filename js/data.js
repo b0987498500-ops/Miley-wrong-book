@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v468';
+const STORAGE_KEY = 'miley_wrong_questions_v469';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_soc_civ_division_of_labor_trade_international_trade_grape_470",
+      "examPeriod": "一段",
+      "subject": "社會",
+      "errorReason": "觀念不懂",
+      "concept": "國中公民／全球化與國際貿易／分工與交易概念／國際分工 vs 國際貿易（跨國買賣商品）之辨析",
+      "uploadDate": "2026-11-16",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+          "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：概念辨析：(C)「跨國不同階段生產」屬於國際分工；(D)「跨國買賣商品、進口貨物」才屬於國際貿易！",
+      "stem": "根據分工與交易的概念判斷，下列何者涉及國際貿易？\n\n○ (A) 育筑請家人到市區的法式餐廳用餐慶祝父親節\n○ (B) 俊成與班上美國留學生一起合作討論專題報告\n○ (C) 服飾品牌在中國生產布料，在越南負責製作成品\n◉ (D) 建銘在國內大賣場任職，負責採購智利進口葡萄",
+      "answer": "(D) 建銘在國內大賣場任職，負責採購智利進口葡萄",
+      "explanation": "(A)屬於國內市場交易；(B)屬於分工；(C)屬於國際分工；(D)跨國買賣進口商品屬於國際貿易。選 (D)。",
+      "diagramUrl": ""
+  },
   {
       "id": "q_soc_civ_tariff_belize_shrimp_price_drop_115cap_468",
       "examPeriod": "一段",
