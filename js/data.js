@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v461';
+const STORAGE_KEY = 'miley_wrong_questions_v462';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_regular_pentagon_formation_series_sum_210_461",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "國中數學／數列與級數／等差級數生活應用題／正五邊形排隊陣型（頂點重複扣除）／等差級數求和公式",
+      "uploadDate": "2026-11-16",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+          "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：1. 正五邊形「頂點重複計算」陷阱：每圈總人數為「每邊人數×5－5（扣除 5 個重複頂點）」，千萬不能算成 3×5＝15！2. 列出各圈人數為 10, 20, 30, ...（公差 10），再套用等差級數求和公式 S₆ ＝ 210 人。",
+      "stem": "如圖，有若干位學生排出正五邊形的隊形，由內而外共排了 6 圈，且學生人數剛好排完。已知最內圈每邊 3 人，往外每圈每邊增加 2 人（即由內向外算起第 2 圈每邊 5 人，第 3 圈每邊 7 人，…）。請問此隊形的學生共有多少人？〔92.基測 II〕\n\n○ (A) 210\n○ (B) 240\n○ (C) 285\n○ (D) 630",
+      "answer": "(A) 210",
+      "explanation": "1. 各圈人數（頂點扣重複）：\n   第 1 圈 ＝ 3×5－5 ＝ 10（人）；第 2 圈 ＝ 5×5－5 ＝ 20（人）；第 3 圈 ＝ 7×5－5 ＝ 30（人）\n   各圈人數成公差 d ＝ 10 之等差數列。\n2. 求 6 圈總人數：利用等差級數和公式 S₆ ＝ [6 × (2×10 ＋ 5×10)] ÷ 2 ＝ 3 × 70 ＝ 210（人）。選 (A)。",
+      "diagramUrl": "assets/questions/q_math_regular_pentagon_formation_series_sum_210_461.png"
+  },
   {
       "id": "q_math_arithmetic_series_odd_even_terms_diff_a1_64_460",
       "examPeriod": "一段",
