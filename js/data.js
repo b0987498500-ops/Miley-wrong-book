@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v460';
+const STORAGE_KEY = 'miley_wrong_questions_v461';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_arithmetic_series_odd_even_terms_diff_a1_64_460",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "國中數學／數列與級數／等差數列性質／奇數項與偶數項之差求公差（5d）／首項 a₁ 計算",
+      "uploadDate": "2026-11-16",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+          "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：1. 兩式對齊相減法：(a₂＋a₄＋a₆＋a₈＋a₁₀) － (a₁＋a₃＋a₅＋a₇＋a₉) ＝ 5d ＝ 220 － 240 ＝ －20 ⟹ 公差 d ＝ －4（注意負號！）。2. 代回奇數項和 5a₁ ＋ 20d ＝ 240 即可秒解 a₁ ＝ 64。",
+      "stem": "一個等差級數的第 n 項為 aₙ，若 a₁ ＋ a₃ ＋ a₅ ＋ a₇ ＋ a₉ ＝ 240，a₂ ＋ a₄ ＋ a₆ ＋ a₈ ＋ a₁₀ ＝ 220，則首項 a₁ 之值為何？\n\n○ (A) 56\n○ (B) 60\n○ (C) 64\n○ (D) 68",
+      "answer": "(C) 64",
+      "explanation": "1. 偶數項減奇數項求公差：(a₂＋a₄＋a₆＋a₈＋a₁₀) － (a₁＋a₃＋a₅＋a₇＋a₉) ＝ 5d ＝ 220 － 240 ＝ －20 ⟹ d ＝ －4。\n2. 求首項 a₁：奇數項和 ＝ 5a₁ ＋ 20d ＝ 240 ⟹ 5a₁ ＋ 20(－4) ＝ 240 ⟹ 5a₁ ＝ 320 ⟹ a₁ ＝ 64。選 (C)。",
+      "diagramUrl": ""
+  },
   {
       "id": "q_math_diff_squares_series_sum_86_to_1_3741_459",
       "examPeriod": "一段",

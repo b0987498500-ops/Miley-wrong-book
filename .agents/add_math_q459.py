@@ -49,3 +49,4 @@ with open('js/data.js', 'w', encoding='utf-8') as f:
     data_content = f.write(data_content)
 
 print("Updated js/data.js successfully!")
+
