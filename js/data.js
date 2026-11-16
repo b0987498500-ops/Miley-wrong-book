@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v459';
+const STORAGE_KEY = 'miley_wrong_questions_v460';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_diff_squares_series_sum_86_to_1_3741_459",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "國中數學／乘法公式／平方差公式 a²－b²＝(a＋b)(a－b)／數列與級數／等差級數求和公式／分組化簡妙算",
+      "uploadDate": "2026-11-16",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+          "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：1. 看到「平方差交錯相減」，兩兩分組利用 a²－b²＝(a＋b)(a－b)，因相鄰項之差為 1，秒轉化為「1 到 86 連續整數求和」。2. 等差級數和公式：(首項＋末項)×項數 ÷ 2 ＝ (1＋86)×86 ÷ 2 ＝ 3741，切勿硬算平方！",
+      "stem": "求 86² － 85² ＋ 84² － 83² ＋ …… ＋ 2² － 1² 之值為何？\n\n○ (A) 3641\n○ (B) 3741\n○ (C) 3781\n○ (D) 3841",
+      "answer": "(B) 3741",
+      "explanation": "1. 平方差分組：利用 a²－b² ＝ (a＋b)(a－b)，兩兩相鄰項差皆為 1：\n   原式 ＝ (86＋85)×1 ＋ (84＋83)×1 ＋ …… ＋ (2＋1)×1 ＝ 86＋85＋……＋1。\n2. 等差級數求和：利用梯形公式 Sₙ ＝ (1＋86)×86 ÷ 2 ＝ 87×43 ＝ 3741。選 (B)。",
+      "diagramUrl": ""
+  },
   {
     "id": "q_sci_phys_fishing_rod_wheel_axle_work_1500j_458",
     "examPeriod": "一段",
