@@ -3,10 +3,48 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v469';
+const STORAGE_KEY = 'miley_wrong_questions_v471';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_geo_circle_diameter_chords_bpd60_abc20_472",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "國中幾何／圓形幾何性質／直徑所對圓周角為直角（∠ADB＝90°）／圓周角與等弦等弧性質（BC＝CD ⟹ ∠CDB＝∠CBD）／外角定理",
+      "uploadDate": "2026-11-17",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+          "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：直徑考點首選「連接 AD 造直角（∠ADB＝90°）」！看到 BC＝CD 立刻想到等腰 △BCD，利用同弧圓周角 ∠ADC＝x° 與底角 90°－x° 導出頂角 ∠DCB＝2x°，最後由 △PBC 外角 3x＝60° 秒殺。",
+      "stem": "如圖，AB 為圓 O 的直徑，C、D 為圓上的兩點，CD 和 AB 相交於 P 點，若 BC ＝ CD，∠BPD ＝ 60°，則 ∠ABC ＝ ？\n\n○ (A) 32°\n○ (B) 25°\n◉ (C) 20°\n○ (D) 18°",
+      "answer": "(C) 20°",
+      "explanation": "1. 輔助線與直角：連接 AD。因 AB 為直徑，得 ∠ADB ＝ 90°。\n2. 等弦對等角：設 ∠ABC ＝ x°，則同弧 AC 之圓周角 ∠ADC ＝ x°。由 BC ＝ CD 知 △BCD 為等腰三角形，故 ∠DCB ＝ 2x°。\n3. 外角定理：在 △PBC 中，外角 ∠BPD ＝ ∠DCB ＋ ∠ABC ⟹ 60° ＝ 2x° ＋ x° ⟹ x ＝ 20°。選 (C)。",
+      "diagramUrl": "assets/questions/q_math_geo_circle_diameter_chords_bpd60_abc20_472.png"
+  },
+  {
+      "id": "q_math_geo_triangle_altitudes_midpoint_angle_dme_70_471",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "國中幾何／圓形幾何性質／四點共圓判別（直角對直徑）／圓外角公式 ∠A＝½(弧BC－弧DE)／圓心角 ∠DME＝弧DE",
+      "uploadDate": "2026-11-17",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+          "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：破題神經：看到兩高「∠BEC＝∠BDC＝90°」，立即連結「以 BC 為直徑四點共圓（圓心 M）」！頂角 ∠A 實為割線交於圓外之「圓外角」，利用 ∠A＝½(180°－弧DE) 秒解圓心角 ∠DME＝70°。",
+      "stem": "如圖，在 △ABC 中，∠A ＝ 55°，M 為 BC 的中點，BD 為 AC 上的高，CE 為 AB 上的高，則 ∠DME ＝ ？\n\n○ (A) 60°\n○ (B) 65°\n○ (C) 68°\n◉ (D) 70°",
+      "answer": "(D) 70°",
+      "explanation": "1. 四點共圓：由 ∠BEC ＝ ∠BDC ＝ 90°，知 B、C、D、E 四點共圓，以 BC 為直徑、M 為圓心，故 弧BC ＝ 180°。\n2. 圓外角求弧度：∠A 為圓外角，∠A ＝ ½(弧BC － 弧DE) ⟹ 55° ＝ ½(180° － 弧DE) ⟹ 弧DE ＝ 70°。\n3. 圓心角性質：∠DME 為弧DE 所對的圓心角，故 ∠DME ＝ 弧DE ＝ 70°。選 (D)。",
+      "diagramUrl": "assets/questions/q_math_geo_triangle_altitudes_midpoint_angle_dme_70_471.png"
+  },
   {
       "id": "q_soc_civ_division_of_labor_trade_international_trade_grape_470",
       "examPeriod": "一段",
