@@ -73,3 +73,4 @@ with open('js/data.js', 'w', encoding='utf-8') as f:
     f.write(data_content)
 
 print(f"Updated js/data.js successfully with {len(q_list)} Chinese questions (Q479, Q480)!")
+
