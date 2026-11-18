@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v475';
+const STORAGE_KEY = 'miley_wrong_questions_v476';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_chem_reaction_rate_caco3_hcl_co2_bubbles_484",
+      "examPeriod": "一段",
+      "subject": "自然/理化",
+      "errorReason": "觀念不懂",
+      "concept": "理化／反應速率／反應快慢之測量方法／氣體產物 (CO₂) 冒出氣泡最易肉眼觀察與定量測量",
+      "uploadDate": "2026-11-18",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+          "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：測量反應速率優先選擇「有明顯外觀變化」者！生成物 CO₂ 為氣體，反應時會產生連續氣泡，可直接測量氣體體積或冒泡速率；而鹽酸與氯化鈣皆為無色水溶液，難以用肉眼直接觀察變化。",
+      "stem": "已知 CaCO₃ ＋ 2HCl → CaCl₂ ＋ CO₂ ＋ H₂O，欲觀察此反應的快慢，以觀察哪一物質的變化最方便？\n\n◉ (A) CO₂\n○ (B) HCl\n○ (C) CaCO₃\n○ (D) CaCl₂",
+      "answer": "(A) CO₂",
+      "explanation": "CO₂ 為氣體產物，生成時會冒出氣泡，直接計算氣泡產生速率或收集氣體體積最方便觀察。選 (A)。",
+      "diagramUrl": ""
+  },
   {
       "id": "q_soc_geo_usa_climate_zones_taiwan_ding_111cap_483",
       "examPeriod": "一段",
