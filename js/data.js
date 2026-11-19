@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v486';
+const STORAGE_KEY = 'miley_wrong_questions_v487';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_eng_grammar_noun_clause_indirect_question_happen_tainan_fuxing_501",
+      "examPeriod": "一段",
+      "subject": "英文",
+      "errorReason": "觀念不懂",
+      "concept": "英文文法／名詞子句／間接問句語序 (疑問詞 + S + V)／happen 不及物動詞用法",
+      "uploadDate": "2026-11-20",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+          "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：happen 為「不及物動詞」，主詞須為「事情」（如 what happened / this happened），不可用「人」作主詞（如 ✘ he happened）；間接問句不與 that 連用。",
+      "stem": "Does anyone know ________? 【臺南復興】\n\n◉ (A) how this could happen\n○ (B) what he happened\n○ (C) that what happened to him\n○ (D) what to happen",
+      "answer": "(A) how this could happen",
+      "explanation": "know 後接間接問句 (疑問詞+S+V)。(A)語序正確；(B)應改 what happened to him；(C)刪 that；(D)改 what happened。選 (A)。",
+      "diagramUrl": ""
+  },
   {
       "id": "q_math_geo_intersecting_circles_inscribed_angle_p_500",
       "examPeriod": "一段",

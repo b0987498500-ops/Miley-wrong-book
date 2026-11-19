@@ -4,6 +4,30 @@
 - **GitHub 倉庫**：https://github.com/b0987498500-ops/Miley-wrong-book
 - **線上網站網址 (GitHub Pages)**：https://b0987498500-ops.github.io/Miley-wrong-book/
 
+## [v4.85] - 2026-11-20 (自動收錄國中英語名詞子句考題 Q501：間接問句語序與 happen 不及物動詞用法／臺南復興段考題／純文字題目不放冗餘截圖／照錄原題精簡解析／題庫總量達到 605 題！升級數據庫至 v487，快取升級 v4.55)
+- **類型**：錯題自動收錄 / 國中英語（九年級文法、名詞子句、間接問句肯定句語序「疑問詞 + S + V」、不及物動詞 happen 用法「某事發生在某人身上」what happened to sb.、原截圖解析優先精簡照錄）
+- **主要變更**：
+  1. **完整收錄英語間接問句核心考題（Q501，歸入 2026-11-16 最新週次）**：
+     - **Q501** `q_eng_grammar_noun_clause_indirect_question_happen_tainan_fuxing_501`：
+       - **題幹**：Does anyone know ________? 【臺南復興】
+       - **選項**：
+         ◉ (A) how this could happen
+         ○ (B) what he happened
+         ○ (C) that what happened to him
+         ○ (D) what to happen
+       - **正解**：**(A) how this could happen**
+       - **精簡照錄原題解析**：
+         - know 後接間接問句 (疑問詞+S+V)。(A)語序正確；(B)應改 what happened to him；(C)刪 that；(D)改 what happened。選 (A)。
+       - **精煉易錯警示筆記**：
+         - 💡 易錯筆記：happen 為「不及物動詞」，主詞須為「事情」（如 what happened / this happened），不可用「人」作主詞（如 ✘ he happened）；間接問句不與 that 連用。
+  2. **圖文規範遵循**：
+     - 純文字題目，嚴格依 SOP `diagramUrl: ""` 設為空字串，不放任何冗餘截圖。
+  3. **數據庫升級與快取更新**：
+     - 數據庫版本升級至 `v487`（`miley_wrong_questions_v487`），題庫總量達到 **605 題**！
+     - Service Worker 快取升級為 `miley-pwa-cache-v4.55`，腳本版本標籤升級 `js/data.js?v=487`。
+
+---
+
 ## [v4.84] - 2026-11-19 (自動收錄國中九年級數學圓形幾何考題 Q500：兩相交圓半徑等腰三角形與對稱性推導／圓心角與圓周角度數求值／主動去痕純化輔助線／嚴格遵循國中數學 100 字極簡正規推導／題庫總量達到 604 題！升級數據庫至 v486，快取升級 v4.54)
 - **類型**：錯題自動收錄 / 國中數學（九年級幾何、圓形幾何、兩圓相交、等腰三角形同圓半徑等長、全等對稱性、圓心角與圓周角關係、主動消除解答輔助線還原純淨原題圖形、極簡 95 字四行正規推導）
 - **主要變更**：
