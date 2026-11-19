@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v485';
+const STORAGE_KEY = 'miley_wrong_questions_v486';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_geo_intersecting_circles_inscribed_angle_p_500",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "幾何／圓形／兩圓相交性質／等腰三角形（同圓半徑等長）／圓心角與圓周角度數關係",
+      "uploadDate": "2026-11-19",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+          "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：A 點在圓 O 上，故 OA = OB 均為圓 O 半徑，△OAB 為等腰三角形；由對稱性得 弧BAC = 40° + 40° = 80°，圓周角 ∠P 為所對弧度數的一半（40°）。",
+      "stem": "如右圖，圓 O 與圓 A 相交於 B、C 兩點，P 為圓 O 上一點，若 ∠ABO = 70°，則 ∠P = ？\n\n◉ (A) 40°\n○ (B) 45°\n○ (C) 52°\n○ (D) 70°",
+      "answer": "(A) 40°",
+      "explanation": "1. 在圓 O 中，半徑 OA = OB ⇨ ∠BAO = ∠ABO = 70°。\n2. 圓心角 ∠AOB = 180° - 2 × 70° = 40°。\n3. 由對稱性（△ABO ≅ △ACO）得 ∠AOC = ∠AOB = 40° ⇨ 弧BAC = 80°。\n4. 圓周角 ∠P = 1/2 弧BAC = 1/2 × 80° = 40°。選 (A)。",
+      "diagramUrl": "assets/questions/q_math_geo_intersecting_circles_inscribed_angle_p_500.png"
+  },
   {
       "id": "q_math_geo_circle_exterior_angles_inscribed_quadrilateral_499",
       "examPeriod": "一段",
