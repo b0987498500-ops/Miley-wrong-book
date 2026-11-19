@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v489';
+const STORAGE_KEY = 'miley_wrong_questions_v490';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_eng_grammar_noun_clause_if_whether_subject_verb_agreement_goes_504",
+      "examPeriod": "一段",
+      "subject": "英文",
+      "errorReason": "觀念不懂",
+      "concept": "英文文法／名詞子句／if (是否) 引導間接問句語序 (S + V) 與三單現在式動詞 (goes)",
+      "uploadDate": "2026-11-20",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+          "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：間接問句兩大核心原則：① 絕不倒裝（不可用助動詞倒裝 ✘ does S go）；② 主詞與動詞時態一致（主詞為三單時，動詞切勿漏掉 -es ✘ go ➔ ✔ goes）。",
+      "stem": "I'm not sure if ________ to the temple every weekend.\n\n○ (A) my grandmother go\n◉ (B) my grandmother goes\n○ (C) my grandmother does go\n○ (D) does my grandmother go",
+      "answer": "(B) my grandmother goes",
+      "explanation": "if（是否）引導名詞子句，須用直述肯定語序 (S + V)。主詞 my grandmother 為第三人稱單數，動詞 go 須變為 goes。選 (B)。",
+      "diagramUrl": ""
+  },
   {
       "id": "q_eng_grammar_noun_clause_what_preposition_object_surprised_at_503",
       "examPeriod": "一段",
