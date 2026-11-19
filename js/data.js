@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v483';
+const STORAGE_KEY = 'miley_wrong_questions_v484';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_geo_circle_inscribed_quadrilateral_parallel_chords_498",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "幾何／圓形／平行弦截等弧與等弦對等弧／圓周角與直徑半圓弧度／等腰三角形邊長性質",
+      "uploadDate": "2026-11-19",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+          "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：牢記「平行弦截等弧」（AD // BC ⇨ 弧AB = 弧CD）與「等弦對等弧」（AD = CD ⇨ 弧AD = 弧CD）；直徑 AE 對應半圓 180°，推得 ∠BAE = ∠BFA = 55° 形成等腰三角形。",
+      "stem": "如右圖，四邊形 ABCD 為圓 O 的圓內接四邊形，線段 AD // 線段 BC，直徑 AE 和 線段 BC 相交於 F 點，線段 AD = 線段 CD = 6，若 ∠B = 70°，則 線段 BF = ？\n\n◉ (A) 6\n○ (B) 6√2\n○ (C) 6√3\n○ (D) 9√3",
+      "answer": "(A) 6",
+      "explanation": "1. AD // BC 且 AD = CD ⇨ 弧AB = 弧AD = 弧CD。\n2. 圓周角 ∠B = 70° ⇨ 弧ADC = 140° ⇨ 弧AB = 70° ⇨ AB = 6。\n3. 直徑 AE ⇨ 弧BE = 180° - 70° = 110° ⇨ ∠BAE = 55°。\n4. △ABF 中，∠BFA = 180° - 70° - 55° = 55° = ∠BAE ⇨ BF = AB = 6。選 (A)。",
+      "diagramUrl": "assets/questions/q_math_geo_circle_inscribed_quadrilateral_parallel_chords_498.png"
+  },
   {
       "id": "q_soc_geo_usa_hurricane_occurrence_season_august_496",
       "examPeriod": "一段",
