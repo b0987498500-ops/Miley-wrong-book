@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v484';
+const STORAGE_KEY = 'miley_wrong_questions_v485';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_geo_circle_exterior_angles_inscribed_quadrilateral_499",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "幾何／圓形／圓內接四邊形外角性質／三角形外角定理／圓周角與弧度推導",
+      "uploadDate": "2026-11-19",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+          "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：善用圓內接四邊形外角等於內對角（∠ABP = ∠ADC = x°）與三角形外角定理（∠BAP = x + 40°），在 △ABP 中解出 x = 55° 得 弧ABC = 110°；再由 △ACR 外角求出圓周角 ∠CAR = 30°，兩弧相減即得 弧AB = 50°。",
+      "stem": "如右圖，P、R 為圓外兩點，線段 RA 和 線段 RD 交圓於 B、C 兩點，線段 PD 和 線段 PC 交圓於 A、B 兩點，若 ∠P = 30°，∠R = 40°，∠ACD = 70°，則 弧AB 的度數為何？\n\n○ (A) 48°\n◉ (B) 50°\n○ (C) 52°\n○ (D) 55°",
+      "answer": "(B) 50°",
+      "explanation": "1. 設 ∠ADC = x°，由圓內接四邊形外角得 ∠ABP = x°，△ADR 外角得 ∠BAP = x + 40°。\n2. △ABP 中，(x + 40) + x + 30 = 180 ⇨ x = 55° ⇨ 弧ABC = 110°。\n3. △ACR 外角 ∠ACD = ∠R + ∠CAR ⇨ 70° = 40° + ∠CAR ⇨ ∠CAR = 30° ⇨ 弧BC = 60°。\n4. 弧AB = 弧ABC - 弧BC = 110° - 60° = 50°。選 (B)。",
+      "diagramUrl": "assets/questions/q_math_geo_circle_exterior_angles_inscribed_quadrilateral_499.png"
+  },
   {
       "id": "q_math_geo_circle_inscribed_quadrilateral_parallel_chords_498",
       "examPeriod": "一段",
