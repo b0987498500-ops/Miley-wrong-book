@@ -3,10 +3,48 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v491';
+const STORAGE_KEY = 'miley_wrong_questions_v493';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_soc_civ_interest_group_lobbying_legislator_attitude_table_507",
+      "examPeriod": "一段",
+      "subject": "社會",
+      "errorReason": "觀念不懂",
+      "concept": "公民／利益團體與政策遊說／國會審議法案與民意表達／理性審議與議員職權分析",
+      "uploadDate": "2026-11-21",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：遊說是利益團體或民眾向國會議員表達訴求的合法管道（民主政體常見運作方式）。議員未表態可能出於審慎評估、多方權衡或維持中立，絕不能直接扣上「失職」的罪名。",
+      "stem": "附表是國會審議某法案，議員在接受遊說前後，對於法案態度的變化統計。根據內容判斷，下列敘述何者最不合理？\n\n【調查統計表】\n・支持法案的議員比例：進行遊說前 10% ➔ 進行遊說後 60%\n・反對法案的議員比例：進行遊說前 10% ➔ 進行遊說後 30%\n・未表態的議員比例：進行遊說前 80% ➔ 進行遊說後 10%\n\n○ (A) 該國屬於民主政體\n○ (B) 公共意見對政策有影響力\n◉ (C) 未表態的議員失職\n○ (D) 遊說可以有效的影響政策",
+      "answer": "(C) 未表態的議員失職",
+      "explanation": "遊說是民主政體中合法的民意與利益表達途徑，統計顯示遊說後支持與反對比例皆有明顯變動（未表態大幅下降），顯示遊說與公共意見對政策確實具影響力。議員未表態可能是仍在審慎研議法案內容，不可逕自認定為「失職」，故 (C) 敘述最不合理。",
+      "diagramUrl": ""
+},
+  {
+      "id": "q_soc_civ_local_government_special_municipality_merger_legislative_yuan_506",
+      "examPeriod": "一段",
+      "subject": "社會",
+      "errorReason": "觀念不懂",
+      "concept": "公民／地方制度法與法規位階／法律修訂權責在立法院／直轄市改制程序與山地原住民區自治",
+      "uploadDate": "2026-11-21",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+          "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：《地方制度法》屬立法院制定的「中央法律」，地方議會只能制定「自治條例」，無權修訂《地方制度法》；縣市合併改制為直轄市由內政部報請行政院核定即可。",
+      "stem": "根據我國《地方制度法》規定：縣（市）擬改制為直轄市，縣（市）政府得擬訂改制計畫，經縣（市）議會同意後，由內政部報請行政院核定之。若此項提案通過，新竹縣當地具有泰雅與賽夏兩大族群文化的五峰鄉，將配合修改選舉制度。\n關於這則政壇新聞，從法律角度來看，哪一項分析是錯誤的？\n\n◉ (A) 須由地方議會通過《地方制度法》的修正案才生效\n○ (B) 五峰鄉將選出「山地原住民區」的區長與區民代表\n○ (C) 若改革完成，將同時減少一個縣政府與一個市政府\n○ (D) 改制後的直轄市長候選人，年齡至少須年滿30歲",
+      "answer": "(A) 須由地方議會通過《地方制度法》的修正案才生效",
+      "explanation": "《地方制度法》的修訂權責機關為立法院。選 (A)。",
+      "diagramUrl": ""
+  },
   {
       "id": "q_soc_civ_local_government_county_administered_city_councilor_puzi_505",
       "examPeriod": "一段",
