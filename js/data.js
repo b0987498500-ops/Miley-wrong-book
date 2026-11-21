@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v493';
+const STORAGE_KEY = 'miley_wrong_questions_v494';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_earth_geological_cross_section_fault_dike_order_508",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "地科／地層剖面與地質事件／截切定律／正斷層受張力／相對地質年代判斷",
+      "uploadDate": "2026-11-21",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：依「截切定律」，被截切者較老、截切人者較新。X-Y 斷層與甲岩脈未互相接觸或截切，兩者無法直接比較先後順序！另外，斷層上盤相對向下移為「正斷層」，由地殼「張力」拉扯形成。",
+      "stem": "右圖為某處之地層剖面示意圖，有關地質事件發生的先後順序，下列何者正確？\n\n○ (A) 砂岩形成比甲岩脈晚\n○ (B) X-Y 斷層形成一定比礫岩早\n◉ (C) 無法判斷 X-Y 斷層和甲岩脈形成的先後\n○ (D) 此處斷層是受壓力作用形成",
+      "answer": "(C) 無法判斷 X-Y 斷層和甲岩脈形成的先後",
+      "explanation": "(A) 砂岩形成比甲岩脈早；(B) 礫岩被斷層截切過，故較早出現；(C) X-Y 斷層與甲岩脈無互相影響，無法判斷生成先後；(D) 上盤相對下移為正斷層，應是受張力作用形成。故選 (C)。",
+      "diagramUrl": "assets/questions/science_q508_geological_cross_section.png"
+},
   {
       "id": "q_soc_civ_interest_group_lobbying_legislator_attitude_table_507",
       "examPeriod": "一段",
