@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v495';
+const STORAGE_KEY = 'miley_wrong_questions_v496';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_earth_himalayas_continental_collision_volcanism_510",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "地科／板塊擠壓碰撞與造山運動／大陸與大陸板塊聚合／喜馬拉雅山／玄武岩漿湧出特徵",
+      "uploadDate": "2026-11-22",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：喜馬拉雅山為「大陸地殼撞大陸地殼」（印澳板塊撞歐亞板塊），密度相當無法隱沒，因此產生劇烈造山隆起、強震與褶皺，但「幾乎沒有火山噴發」！玄武岩漿主要出現在「張裂性板塊邊界」（如中洋脊、冰島）或熱點。",
+      "stem": "右圖為喜馬拉雅山形成的示意圖，下列敘述何者錯誤？\n\n○ (A) 此處為大陸地殼與大陸地殼相聚合，故地震很多\n○ (B) 在造山運動過程，地殼受到板塊彼此推撞而隆起形成山脈\n○ (C) 因板塊聚合作用，此處岩層多褶皺及斷層\n◉ (D) 喜馬拉雅山一帶常湧出玄武岩漿",
+      "answer": "(D) 喜馬拉雅山一帶常湧出玄武岩漿",
+      "explanation": "(D) 玄武岩漿湧出為「張裂性板塊邊界」（如中洋脊）或熱點之特徵。喜馬拉雅山為大陸地殼與大陸地殼碰撞造山，岩層褶皺劇烈、地震頻繁，但幾乎無火山與岩漿噴發活動。故選 (D)。",
+      "diagramUrl": "assets/questions/science_q510_himalayas_collision_diagram.png"
+},
   {
       "id": "q_sci_earth_plate_tectonics_boundary_divergent_convergent_509",
       "examPeriod": "一段",
