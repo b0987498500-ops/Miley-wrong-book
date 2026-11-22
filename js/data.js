@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v497';
+const STORAGE_KEY = 'miley_wrong_questions_v498';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_earth_plate_convergent_continental_oceanic_subduction_volcano_512",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "地科／板塊構造學說／大陸地殼(花崗岩) vs. 海洋地殼(玄武岩)／聚合隱沒帶地質特徵／火山島弧與山脈",
+      "uploadDate": "2026-11-22",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：Ⅰ為花崗岩＝「大陸地殼」（密度小）；與其屬性不同的Ⅱ為玄武岩＝「海洋地殼」（密度大）。兩者在甲處「聚合」時，密度大的海洋地殼（東側）向西側大陸地殼下方「隱沒」，深融後的岩漿會在「甲處西側（大陸地殼上）」噴出形成火山山脈！",
+      "stem": "【題組】參考右圖，甲是不同板塊聚合的邊界，且Ⅰ與Ⅱ是屬性不同的地殼，而已知Ⅰ的組成為花崗岩。\n\n有關本圖的推論，下列何者正確？\n\n○ (A) 甲處有明顯軟流圈熱對流上升的狀況\n○ (B) 甲處東側會出現高大褶皺山脈\n◉ (C) 甲處西側可能會有岩漿湧出地表\n○ (D) 甲處東側會出現中洋脊構造",
+      "answer": "(C) 甲處西側可能會有岩漿湧出地表",
+      "explanation": "Ⅰ為花崗岩（大陸地殼），屬性不同的Ⅱ為玄武岩（海洋地殼）。聚合邊界熱對流下降，密度大的海洋地殼（東側）向大陸地殼（西側）下方隱沒融熔，岩漿會在大陸地殼上方（甲處西側）湧出地表形成火山弧與山脈。中洋脊為張裂特徵。故選 (C)。",
+      "diagramUrl": "assets/questions/science_q512_continental_oceanic_plate_subduction.png"
+},
   {
       "id": "q_sci_earth_plate_boundaries_geological_features_iceland_trench_511",
       "examPeriod": "一段",
