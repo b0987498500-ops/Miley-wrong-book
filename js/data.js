@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v500';
+const STORAGE_KEY = 'miley_wrong_questions_v501';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_earth_interior_layers_lithosphere_earthquake_focus_515",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "地科／地球內部結構／岩石圈(地殼+上部地函頂部) vs. 軟流圈／板塊運動與地震震源分佈深度",
+      "uploadDate": "2026-11-22",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：板塊即為「岩石圈」，由「地殼（甲）」加上「上部地函頂部（乙）」組成，厚度約 100 公里，屬於堅硬冷脆的岩石。板塊碰撞錯動產生的「地震震源」幾乎都發生在此表淺的岩石圈（甲、乙）範圍內！軟流圈（丙）具可塑性，不易累積應力破裂。",
+      "stem": "右圖為已知的地球內部結構示意圖，從板塊運動的觀點來說，其震源最可能位在圖中的哪一些部分？\n\n◉ (A) 甲、乙\n○ (B) 乙、丙\n○ (C) 丙、丁\n○ (D) 丁、戊",
+      "answer": "(A) 甲、乙",
+      "explanation": "板塊（岩石圈）包含地殼（甲）與地函最頂部（乙），厚度約 100 公里，為堅硬具脆性的岩石圈。板塊運動造成的破裂錯動（地震震源）多發生在此表淺層；丙為軟流圈具可塑性不易累積應力破裂。故選 (A)。",
+      "diagramUrl": "assets/questions/science_q515_earth_interior_lithosphere_earthquake.png"
+},
   {
       "id": "q_sci_earth_fold_fault_comparison_compression_stress_514",
       "examPeriod": "一段",
