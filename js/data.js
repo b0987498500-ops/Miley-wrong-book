@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v499';
+const STORAGE_KEY = 'miley_wrong_questions_v500';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_earth_fold_fault_comparison_compression_stress_514",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "地科／地質構造／褶皺 vs. 斷層異同比較／地應力受力機制(擠壓 vs. 張力)／破裂錯動特徵",
+      "uploadDate": "2026-11-22",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：褶皺「只能由擠壓」形成（地下深處塑性彎曲，無錯動）；斷層則受「擠壓（逆斷層）」或「張裂（正斷層）」皆可形成（有破裂錯動）。因此兩者的「共同之處」就是「皆可由地殼擠壓產生」！",
+      "stem": "下列哪一個是褶皺和斷層的相同之處？\n\n○ (A) 岩層皆產生明顯的錯動\n○ (B) 皆可由地殼的張裂產生\n◉ (C) 皆可由地殼的擠壓產生\n○ (D) 皆可由地殼的侵蝕產生",
+      "answer": "(C) 皆可由地殼的擠壓產生",
+      "explanation": "(A) 褶皺僅彎曲無破裂錯動現象；(B) 褶皺無法由張裂產生，僅能由擠壓形成；(C) 擠壓可形成褶皺，亦可形成逆斷層，故皆可由擠壓產生；(D) 兩者皆為內營力構造，非侵蝕所致。故選 (C)。",
+      "diagramUrl": ""
+},
   {
       "id": "q_sci_earth_taroko_marble_fold_plate_compression_513",
       "examPeriod": "一段",
