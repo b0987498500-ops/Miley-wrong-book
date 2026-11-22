@@ -3,10 +3,48 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v503';
+const STORAGE_KEY = 'miley_wrong_questions_v504';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_earth_taiwan_earthquake_deep_subduction_intensity_scale_520",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "地科／地震學與臺灣地質／深層地震與隱沒帶方向／菲律賓海板塊向北隱沒至歐亞板塊下／規模唯一與震度差異",
+      "uploadDate": "2026-11-22",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：臺灣東北部隱沒方向為「菲律賓海板塊向北隱沒至歐亞板塊之下」，愈往北震源愈深（本題深達 271.3 公里！）；全臺測得「規模」相同，但地質鬆軟處可能震度較大，故距震央近不代表震度一定最大。",
+      "stem": "【題組】圖(一)為某次地震報告資料，圖(二)為臺灣附近的板塊交界示意圖。\n\n下列關於此次地震的敘述，何者錯誤？\n\n○ (A) 宜蘭的搖晃程度比臺東大\n○ (B) 愈接近震央不見得震度會愈大\n○ (C) 全臺各地的芮氏規模數值應相同\n◉ (D) 從震源深度及隱沒方向可知，此次地震的成因為歐亞板塊隱沒至菲律賓海板塊之下",
+      "answer": "(D) 從震源深度及隱沒方向可知，此次地震的成因為歐亞板塊隱沒至菲律賓海板塊之下",
+      "explanation": "(D) 錯誤，震央在臺灣東北外海，深度達 271.3 公里，成因為「菲律賓海板塊向北隱沒至歐亞板塊之下」；全臺芮氏規模相同（7.2），宜蘭震度 4 級大於臺東 1 級，震度受地層影響離震央近未必最大。故選 (D)。",
+      "diagramUrl": "assets/questions/science_q519_q520_taiwan_earthquake_plate_map.png"
+},
+  {
+      "id": "q_sci_earth_taiwan_earthquake_epicenter_plate_boundary_map_519",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "地科／地震學與臺灣地質／地震報告判讀／震央經緯度座標對照臺灣板塊交界圖／歐亞板塊 vs. 菲律賓海板塊",
+      "uploadDate": "2026-11-22",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：中央氣象署地震報告標註震央在「北緯 25.38°、東經 122.42°」（基隆東北東方海域）。對照圖(二)，臺灣北部以「琉球海溝」為界，琉球海溝以北（含宜蘭海域、基隆外海）上方均屬於「歐亞板塊」！",
+      "stem": "【題組】圖(一)為某次地震報告資料，圖(二)為臺灣附近的板塊交界示意圖。\n\n根據圖(二)判斷，此次地震的震央位置位於何處？\n\n○ (A) 琉球海溝\n◉ (B) 歐亞板塊\n○ (C) 菲律賓海板塊\n○ (D) 呂宋島弧",
+      "answer": "(B) 歐亞板塊",
+      "explanation": "依資料顯示震央位置為北緯 25.38°、東經 122.42°（基隆東北東方海域，紅星處）。對照圖(二)板塊交界帶，該震央座標位於琉球海溝北側的「歐亞板塊」上。故選 (B)。",
+      "diagramUrl": "assets/questions/science_q519_q520_taiwan_earthquake_plate_map.png"
+},
   {
       "id": "q_sci_earth_earthquake_intensity_scale_damage_shaking_518",
       "examPeriod": "一段",
