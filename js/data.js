@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v501';
+const STORAGE_KEY = 'miley_wrong_questions_v502';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_earth_disaster_earthquake_safety_measures_516",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "地科／天然災害與防震防災／地震就地避難三步驟(趴下、掩護、穩住)／耐震設計、禁搭電梯與防海嘯",
+      "uploadDate": "2026-11-22",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：地震發生劇烈搖晃時應立即落實「趴下、掩護、穩住」保護頭部，絕不可貿然在劇烈晃動中跑去開關門，否則極易被掉落物砸傷或跌倒受傷！建築耐震、禁搭電梯、海邊防海嘯往高處避難皆為正確防災措施。",
+      "stem": "臺灣地處環太平洋地震帶上，因此人民特別要對地震災害防災事項加以注意，下列哪一項與預防震災無關？\n\n◉ (A) 地震時，盡快關閉大門，避免被門邊的倒塌物襲擊\n○ (B) 建築物建築時，加強耐震設計，以保護生命財產安全\n○ (C) 地震時不可搭乘電梯，以免發生危險\n○ (D) 發生大地震後，在海邊的人應盡量往高處及空曠處避難",
+      "answer": "(A) 地震時，盡快關閉大門，避免被門邊的倒塌物襲擊",
+      "explanation": "地震強烈搖晃時應立即遵守「趴下、掩護、穩住」原則保護頭頸部，貿然跑去關門反而容易在移動過程中被掉落物砸傷或跌倒受困，並非正確防震措施。故選 (A)。",
+      "diagramUrl": ""
+},
   {
       "id": "q_sci_earth_interior_layers_lithosphere_earthquake_focus_515",
       "examPeriod": "一段",
