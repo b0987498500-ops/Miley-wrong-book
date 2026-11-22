@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v498';
+const STORAGE_KEY = 'miley_wrong_questions_v499';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_earth_taroko_marble_fold_plate_compression_513",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "地科／地質構造與岩石／太魯閣大理岩(變質岩)／波浪狀彎曲褶皺／板塊擠壓作用環境",
+      "uploadDate": "2026-11-22",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：岩壁「波浪狀彎曲」構造為「褶皺」，由地下深處高溫高壓環境下受到板塊強烈「水平擠壓」塑性變形而成；大理岩亦是由石灰岩經高溫高壓變質而成，均印證此處受擠壓作用。",
+      "stem": "小豪到太魯閣國家公園進行校外教學，除見到大量大理岩分布外，另在公路岩壁上發現有波浪狀彎曲的地質構造，由此觀察可推知太魯閣國家公園的地下深處最可能為下列哪一種環境？\n\n○ (A) 屬於熔融的液態層\n○ (B) 溫度比地表層低\n○ (C) 板塊正在張裂\n◉ (D) 板塊受到擠壓作用",
+      "answer": "(D) 板塊受到擠壓作用",
+      "explanation": "波浪狀彎曲的地質構造為「褶皺」，大理岩為石灰岩經高溫高壓形成的「變質岩」，兩者皆顯示該地地下深處處於板塊受到強烈「擠壓作用」的環境。故選 (D)。",
+      "diagramUrl": ""
+},
   {
       "id": "q_sci_earth_plate_convergent_continental_oceanic_subduction_volcano_512",
       "examPeriod": "一段",
