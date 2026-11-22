@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v496';
+const STORAGE_KEY = 'miley_wrong_questions_v497';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_earth_plate_boundaries_geological_features_iceland_trench_511",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "地科／板塊構造學說／板塊邊界地質現象／張裂性邊界(玄武岩、中洋脊、冰島) vs. 聚合性邊界(海溝、造山運動、安山岩)",
+      "uploadDate": "2026-11-22",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：板塊「分離處（張裂性）」主產「玄武岩」、中洋脊與裂谷，冰島即為中洋脊露出海面處；板塊「聚合處」才會有海洋板塊隱沒之「海溝」、造山運動與「安山岩」質火山。",
+      "stem": "有關各種板塊的地質現象描述，下列何者正確？\n\n○ (A) 板塊分離處——安山岩質火山\n○ (B) 板塊分離處——造山運動\n◉ (C) 板塊聚合處——海溝的形成\n○ (D) 板塊聚合處——冰島的形成",
+      "answer": "(C) 板塊聚合處——海溝的形成",
+      "explanation": "(A)(B) 板塊分離處（張裂性）主要是玄武岩質火山，地形以中洋脊、裂谷為主；(C) 板塊聚合隱沒處會形成深邃的海溝與褶皺造山帶，故正確；(D) 冰島屬於板塊分離處的大西洋中洋脊露出海面的部分。故選 (C)。",
+      "diagramUrl": ""
+},
   {
       "id": "q_sci_earth_himalayas_continental_collision_volcanism_510",
       "examPeriod": "一段",
