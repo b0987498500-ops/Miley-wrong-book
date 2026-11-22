@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v506';
+const STORAGE_KEY = 'miley_wrong_questions_v507';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_chi_lit_author_wu_jun_keywords_tang_poetry_schools_523",
+      "examPeriod": "一段",
+      "subject": "國文",
+      "errorReason": "觀念不懂",
+      "concept": "國學常識／歷代作家風格流派／南朝梁文學家吳均(字叔庠、駢文、奉朝請、與宋元思書) vs. 盛唐山水田園派(王維、孟浩然)",
+      "uploadDate": "2026-11-22",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：吳均字「叔庠」，南朝梁駢文大家（吳均體，代表作《與宋元思書》），曾任「奉朝請」；「山水田園派」為「盛唐」詩歌流派（代表為王維、孟浩然），朝代與文體流派皆不合！",
+      "stem": "若要上網搜尋吳均的相關資料，下列哪一個關鍵詞最「不適合」？\n\n○ (A) 駢文名家\n○ (B) 奉朝請\n◉ (C) 山水田園派\n○ (D) 叔庠",
+      "answer": "(C) 山水田園派",
+      "explanation": "吳均為南朝梁著名文學家，字叔庠，官至奉朝請，長於描寫山水的駢體散文（吳均體）；「山水田園派」為唐代詩歌流派，代表人物為王維與孟浩然。故選 (C)。",
+      "diagramUrl": ""
+},
   {
       "id": "q_math_geo_circle_inscribed_isosceles_trapezoid_shaded_area_522",
       "examPeriod": "一段",
