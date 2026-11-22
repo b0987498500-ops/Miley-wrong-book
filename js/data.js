@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v505';
+const STORAGE_KEY = 'miley_wrong_questions_v506';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_geo_circle_inscribed_isosceles_trapezoid_shaded_area_522",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "幾何證明與圓形／圓內接四邊形與平行弦截等弧／等腰直角三角形求圓半徑／等腰梯形高與陰影面積",
+      "uploadDate": "2026-11-22",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：1. 平行弦截等弧：線段 AD // 線段 BC ⇒ 弧 AB = 弧 CD ⇒ 線段 AB = 線段 CD（等腰梯形）。2. 弧 AB = 90° ⇒ ∠AOB = 90°，由等腰直角 △AOB 算圓半徑：2r² = (5√2)² ⇒ r = 5（圓面積 25π）。3. 梯形作雙高，底邊差除以 2 得股長 1，由畢氏定理算出梯形高為 7，梯形面積 49。",
+      "stem": "如右圖，四邊形 ABCD 為圓內接四邊形，線段 AD // 線段 BC，弧 AB = 90°，且線段 AD = 6，線段 BC = 8，線段 AB = 5√2，則塗色部分的面積為何？\n\n◉ (A) 25π - 49\n○ (B) 25π - 50\n○ (C) 25π - 64\n○ (D) 25π - 65",
+      "answer": "(A) 25π - 49",
+      "explanation": "1. 弧 AB = 90° ⇒ △AOB 為等腰直角三角形：2r² = (5√2)² ⇒ 半徑 r = 5，圓面積 = 25π。\n2. AD // BC 截等弧 ⇒ AB = CD，等腰梯形高 h = √((5√2)² - ((8 - 6) ÷ 2)²) = √(50 - 1) = 7。\n3. 梯形面積 = (6 + 8) × 7 ÷ 2 = 49。塗色面積 = 圓面積 - 梯形面積 = 25π - 49。選 (A)。",
+      "diagramUrl": "assets/questions/math_q522_inscribed_trapezoid_circle_area.png"
+},
   {
       "id": "q_sci_earth_cross_section_age_dating_erosion_surfaces_uplift_521",
       "examPeriod": "一段",
