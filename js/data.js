@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v504';
+const STORAGE_KEY = 'miley_wrong_questions_v505';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_earth_cross_section_age_dating_erosion_surfaces_uplift_521",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "地科／地質學／地層剖面年代推算／截切定律應用／侵蝕面與地殼抬升次數推論",
+      "uploadDate": "2026-11-22",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：地層在水下「沉積」，必須「地殼抬升露出水面」才會遭受「侵蝕」！剖面中共有 3 個侵蝕面（B-C、A-B 與目前地表），代表陸地至少經歷 3 次抬升！依截切定律，甲截切 A（5萬年）故甲<5萬年；丙截切 C（14萬年）故丙<14萬年；乙截切丙故乙晚於丙。",
+      "stem": "右圖為某地層的剖面圖，A、B、C 為沉積地層，甲、乙為侵入岩脈，丙為斷層。若 A 岩層沉積至今有 5 萬年，B 岩層形成至今有 10 萬年，C 岩層形成至今已有 14 萬年，下列推論何者合理？\n\n○ (A) 甲岩脈距今可能有 8 萬年\n○ (B) 乙岩脈侵入時間比丙斷層形成時間早\n○ (C) 丙斷層距今可能至少有 15 萬年\n◉ (D) 此處至少曾發生過陸地被抬升 3 次",
+      "answer": "(D) 此處至少曾發生過陸地被抬升 3 次",
+      "explanation": "(A) 甲截切 A 故甲距今小於 5 萬年；(B) 乙岩脈截切丙斷層，乙在丙之後；(C) 丙截切 C 故丙在 C 之後，距今不到 14 萬年；(D) 圖中共有 3 個侵蝕面（B-C、A-B 與目前地表），表示陸地至少曾抬升露出水面受侵蝕 3 次。故選 (D)。",
+      "diagramUrl": "assets/questions/science_q521_geological_cross_section_erosion_uplift.png"
+},
   {
       "id": "q_sci_earth_taiwan_earthquake_deep_subduction_intensity_scale_520",
       "examPeriod": "一段",
