@@ -3,10 +3,48 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v502';
+const STORAGE_KEY = 'miley_wrong_questions_v503';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_earth_earthquake_intensity_scale_damage_shaking_518",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "地科／地震學／地震規模(唯一、代表能量) vs. 地震震度(多個、代表地表晃動程度)／震度非線性倍數關係",
+      "uploadDate": "2026-11-22",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：同一場地震「規模（釋放總能量）只有一個」且各地皆同，能量無倍數之分；「震度」代表當地「地表搖晃程度與破壞程度」，4 級搖晃大於 2 級，但震度級數與破壞程度絕非 2 倍線性關係！",
+      "stem": "某一場地震，測得甲地為 4 級，乙地為 2 級，請問下列敘述何者正確？\n\n○ (A) 甲地釋放的能量為乙地的 2 倍\n○ (B) 甲地破壞程度為乙地的 2 倍\n○ (C) 甲地的震源深度，遠比乙地的深\n◉ (D) 甲地地表的搖晃程度較乙地大",
+      "answer": "(D) 甲地地表的搖晃程度較乙地大",
+      "explanation": "同場地震釋放總能量（規模）與震源深度皆唯一相同；震度表示地表感受之搖晃與破壞程度，甲地 4 級搖晃程度大於乙地 2 級，但非 2 倍線性關係。故選 (D)。",
+      "diagramUrl": ""
+},
+  {
+      "id": "q_sci_earth_taiwan_volcanic_islands_basalt_andesite_penghu_517",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "地科／臺灣地質與火成岩／火山島嶼岩石種類對照／澎湖群島(玄武岩) vs. 龜山島綠島蘭嶼(安山岩)",
+      "uploadDate": "2026-11-22",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：臺灣火山島岩石口訣：「澎湖獨特玄武岩，其餘火山多安山」！澎湖群島為地函岩漿噴發形成之「玄武岩」；而大屯火山、龜山島、綠島、蘭嶼皆為板塊隱沒帶造山活動噴發形成之「安山岩」。",
+      "stem": "臺灣因板塊活動，曾發生過許多火山活動，留下許多火山島，下列哪一處的火成岩種類與其他三者明顯不同？\n\n◉ (A) 澎湖\n○ (B) 龜山島\n○ (C) 綠島\n○ (D) 蘭嶼",
+      "answer": "(A) 澎湖",
+      "explanation": "澎湖群島為玄武岩組成；龜山島、綠島、蘭嶼則為板塊聚合隱沒帶火山噴發形成之安山岩。故選 (A)。",
+      "diagramUrl": ""
+},
   {
       "id": "q_sci_earth_disaster_earthquake_safety_measures_516",
       "examPeriod": "一段",
