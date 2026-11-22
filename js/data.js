@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v494';
+const STORAGE_KEY = 'miley_wrong_questions_v495';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_earth_plate_tectonics_boundary_divergent_convergent_509",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "地科／板塊構造學說／板塊交界帶類型／張裂性邊界 vs. 聚合性邊界／熱對流升降與地殼新生隱沒",
+      "uploadDate": "2026-11-22",
+      "mondayDate": "2026-11-16",
+      "mondayDates": [
+            "2026-11-16"
+      ],
+      "weekLabel": "2026-11-16 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：箭頭向兩側拉開（甲）＝「張裂性交界」，軟流圈熱對流「上升」，岩漿湧出冷卻為「新地殼」（如中洋脊）；箭頭相對擠壓隱沒（乙）＝「聚合性交界」，熱對流「下降」，「老地殼」隱沒消滅（如海溝）。",
+      "stem": "右圖是板塊運動的示意圖，有關甲、乙不同板塊交界帶的敘述，下列哪一項正確？\n\n○ (A) 甲處軟流圈熱對流下降，乙處軟流圈熱對流上升\n○ (B) 甲處可能形成海溝，乙處可能形成中洋脊\n◉ (C) 甲處是新地殼生成的地方，乙處是老地殼隱沒的地方\n○ (D) 甲處一定在陸地上，乙處一定在海底",
+      "answer": "(C) 甲處是新地殼生成的地方，乙處是老地殼隱沒的地方",
+      "explanation": "(A) 甲處軟流圈熱對流上升，乙處熱對流下降；(B) 甲處可能形成中洋脊，乙處可能形成海溝；(C) 正確，張裂處為新地殼生成處，隱沒帶為老地殼隱沒消滅處；(D) 圖中甲處與乙處皆位於海底。故選 (C)。",
+      "diagramUrl": "assets/questions/science_q509_plate_tectonics_boundary.png"
+},
   {
       "id": "q_sci_earth_geological_cross_section_fault_dike_order_508",
       "examPeriod": "一段",
