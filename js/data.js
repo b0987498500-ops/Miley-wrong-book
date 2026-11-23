@@ -3,10 +3,67 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v510';
+const STORAGE_KEY = 'miley_wrong_questions_v511';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_chi_phonetic_zhu_cheng_530",
+      "examPeriod": "一段",
+      "subject": "國文",
+      "errorReason": "觀念不懂",
+      "concept": "國文／字音字形／多音字辨析／「著」稱 (ㄓㄨˋ) vs. 著裝 (ㄓㄨㄛˊ) vs. 著涼 (ㄓㄠˊ)／著名與顯著",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：「著」有多音辨析：1. 讀「ㄓㄨˋ」：表顯明、著名、寫作，如「著稱」、「著名」、「名著」、「著述」、「顯著」。2. 讀「ㄓㄨㄛˊ」：表穿戴、附著、處所，如「著裝」、「附著」、「著落」、「著手」。3. 讀「ㄓㄠˊ」：表受到、燃燒，如「著涼」、「著急」、「著火」。",
+      "stem": "「著稱」一詞中，「著」字的正確讀音應為下列何者？\n\n○ (A) ㄓㄨㄛˊ\n○ (B) ㄓㄠˊ\n◉ (C) ㄓㄨˋ\n○ (D) ˙ㄗㄜ",
+      "answer": "(C) ㄓㄨˋ",
+      "explanation": "「著」讀 ㄓㄨˋ（第四聲，音同注）時，指顯著、出名或著作，如「著稱」、「著名」、「名著」；讀 ㄓㄨㄛˊ 指穿戴或接觸（著衣、附著）；讀 ㄓㄠˊ 指受到或著火（著涼、著急）。「著稱」意為以某項特點出名，讀 ㄓㄨˋ。故選 (C)。",
+      "diagramUrl": ""
+},
+  {
+      "id": "q_chi_phonetic_bu_chi_529",
+      "examPeriod": "一段",
+      "subject": "國文",
+      "errorReason": "觀念不懂",
+      "concept": "國文／字音字形／易錯常考字音／「不啻」之「啻」 (ㄔˋ，口部)／不只、不亞於、如同",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：「啻」標準讀音為「ㄔˋ」（第四聲，音同翅，口部）！常被誤讀為「ㄉㄧˋ」或「ㄕˋ」。「不啻」意指「不僅、不只、不亞於、如同」，例如「不啻天壤之別」、「獲益不啻百倍」。",
+      "stem": "「不啻」一詞中，「啻」字的正確讀音應為下列何者？\n\n○ (A) ㄉㄧˋ\n○ (B) ㄕˋ\n◉ (C) ㄔˋ\n○ (D) ㄓˋ",
+      "answer": "(C) ㄔˋ",
+      "explanation": "「啻」為口部、帝聲，標準讀音為 ㄔˋ（第四聲去聲，音同翅）。「不啻」意指不僅、不只、不亞於或如同，如「不啻天壤之別」。切勿誤讀為 ㄉㄧˋ 或 ㄕˋ。故選 (C)。",
+      "diagramUrl": ""
+},
+  {
+      "id": "q_chi_phonetic_ji_ke_jie_jue_528",
+      "examPeriod": "一段",
+      "subject": "國文",
+      "errorReason": "觀念不懂",
+      "concept": "國文／字音字形／多音字辨析／「幾」可解決 (ㄐㄧ) vs. 詢問數量 (ㄐㄧˇ)／表幾乎、接近",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：「幾」有二音：1. 讀「ㄐㄧ」（第一聲，音同肌）：表「幾乎、接近、微細」，如「幾可解決」、「幾乎」、「庶幾」、「所剩無幾」、「見幾而作」。2. 讀「ㄐㄧˇ」（第三聲）：表「疑問或不定的數量」，如「幾天」、「幾何」、「相差無幾（亦常通ㄐㄧ）」。",
+      "stem": "「幾可解決」一詞中，「幾」字的正確讀音應為下列何者？\n\n○ (A) ㄐㄧˇ\n◉ (B) ㄐㄧ\n○ (C) ㄐㄧˋ\n○ (D) ㄐㄧㄝ",
+      "answer": "(B) ㄐㄧ",
+      "explanation": "「幾」讀 ㄐㄧ（第一聲，陰平）時，表接近、幾乎、差一點，如「幾可解決」、「幾乎」、「所剩無幾」；若讀 ㄐㄧˇ（第三聲）則表示詢問數量（如幾個人、幾何）。故選 (B)。",
+      "diagramUrl": ""
+},
   {
       "id": "q_math_geo_parallelogram_similar_triangles_area_ratio_527",
       "examPeriod": "一段",
