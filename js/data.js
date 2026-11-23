@@ -3,10 +3,48 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v513';
+const STORAGE_KEY = 'miley_wrong_questions_v514';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_chi_ortho_homophone_qiao_long_huang_suo_540",
+      "examPeriod": "一段",
+      "subject": "國文",
+      "errorReason": "觀念不懂",
+      "concept": "國文／字音字形／同音異字辨析／訣竅與鬼迷心竅 (竅) vs. 籠統與聾啞 vs. 遑論與驚惶 vs. 瑣碎與連鎖",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：高頻字形對照：\n1.「竅」（穴部）：訣竅、竅門、鬼迷心竅皆為「竅」。\n2.「籠」統（竹部包容概括）vs.「聾」啞（耳部失聰）。\n3.不「遑」細論（辵部何況）vs.驚「惶」失措（心部害怕）。\n4.「瑣」碎（玉部小玉玉屑）vs.連「鎖」店（金部鐵鍊鎖環）。",
+      "stem": "下列「」中的注音寫成國字後，何組字形相同？\n\n◉ (A) 抓到訣「ㄎㄧㄠˋ」／鬼迷心「ㄎㄧㄠˋ」\n○ (B) 「ㄌㄨㄥˊ」統／「ㄌㄨㄥˊ」啞人士\n○ (C) 不「ㄏㄨㄤˊ」細論／驚「ㄏㄨㄤˊ」失措\n○ (D) 「ㄙㄨㄛˇ」碎雜務／連「ㄙㄨㄛˇ」店",
+      "answer": "(A) 抓到訣「ㄎㄧㄠˋ」／鬼迷心「ㄎㄧㄠˋ」",
+      "explanation": "(A) 皆作「竅」（穴部，訣竅／鬼迷心竅）。\n(B) 「籠」統（竹部）／「聾」啞人士（耳部）。\n(C) 不「遑」細論（辵部，何況）／驚「惶」失措（心部，恐懼）。\n(D) 「瑣」碎雜務（玉部）／連「鎖」店（金部）。故選 (A)。",
+      "diagramUrl": ""
+},
+  {
+      "id": "q_chi_phonetic_multi_sound_pao_jia_ji_xiang_539",
+      "examPeriod": "一段",
+      "subject": "國文",
+      "errorReason": "觀念不懂",
+      "concept": "國文／字音字形／多音字辨析／相 (ㄒㄧㄤˋ) vs. 炮 (ㄆㄠˊ/ㄆㄠˋ) vs. 假 (ㄐㄧㄚˇ/ㄐㄧㄚˋ) vs. 幾 (ㄐㄧ/ㄐㄧˇ)",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：多音字考點速記：\n1.「相」：互相讀 ㄒㄧㄤ；宰相、輔佐（相夫教子）、相貌、照相皆讀 ㄒㄧㄤˋ。\n2.「炮」：如法「炮」製讀 ㄆㄠˊ；一「炮」而紅讀 ㄆㄠˋ。\n3.「假」：不「假」思索、不「假」辭色讀 ㄐㄧㄚˇ（藉由）；請假、假期讀 ㄐㄧㄚˋ。\n4.「幾」：幾近、幾乎讀 ㄐㄧ；幾何讀 ㄐㄧˇ。",
+      "stem": "下列「」中的字，何組讀音相同？\n\n○ (A) 如法「炮」製／一「炮」而紅\n○ (B) 不「假」辭色／不「假」外出\n○ (C) 「幾」近完美／人生「幾」何\n◉ (D) 「相」夫教子／出將入「相」",
+      "answer": "(D) 「相」夫教子／出將入「相」",
+      "explanation": "(A) ㄆㄠˊ（中藥製法）／ㄆㄠˋ（火炮、爆竹）。\n(B) ㄐㄧㄚˇ（憑藉、藉由）／ㄐㄧㄚˋ（請假、休假）。\n(C) ㄐㄧ（幾乎、接近）／ㄐㄧˇ（多少、數量）。\n(D) 皆讀 ㄒㄧㄤˋ：「相夫教子」指輔佐丈夫（ㄒㄧㄤˋ，輔助）；「出將入相」指宰相官位（ㄒㄧㄤˋ）。故選 (D)。",
+      "diagramUrl": ""
+},
   {
       "id": "q_chi_ortho_huang_lun_538",
       "examPeriod": "一段",
