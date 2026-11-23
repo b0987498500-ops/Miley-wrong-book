@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v508';
+const STORAGE_KEY = 'miley_wrong_questions_v509';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_func_linear_positive_integer_domain_discrete_points_525",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "函數與直角坐標系／一次函數在正整數定義域下的圖形／離散點 vs. 連續直線與線段辨析",
+      "uploadDate": "2026-11-23",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：魔鬼條件是「x、y 皆為正整數（1, 2, 3...）」！因為自變數 x 只能取 1, 2, 3，其對應的 y 也只能是 3, 2, 1，解只有三組，在坐標平面上的圖形只能是「3 個孤立的離散點」，絕對不能畫成連續的「直線（A）」或「線段（B）」！",
+      "stem": "有一函數 y = 4 - x，x、y 皆正整數，則何者是此函數的圖形？（點擊圖表可檢視各選項坐標圖）\n\n○ (A) 通過 (0, 4) 與 (4, 0) 的連續直線\n○ (B) 連接 (0, 4) 到 (4, 0) 的連續線段\n◉ (C) 坐標平面上 (1, 3)、(2, 2)、(3, 1) 三個獨立的點\n○ (D) y = 3 的水平直線",
+      "answer": "(C) 坐標平面上 (1, 3)、(2, 2)、(3, 1) 三個獨立的點",
+      "explanation": "因 x、y 皆為正整數：\n當 x = 1 ⇒ y = 3 ⇒ (1, 3)\n當 x = 2 ⇒ y = 2 ⇒ (2, 2)\n當 x = 3 ⇒ y = 1 ⇒ (3, 1)\n（若 x ≥ 4 則 y ≤ 0 不合）。圖形僅為三個離散的孤立點，不可連成直線或線段。選 (C)。",
+      "diagramUrl": "assets/questions/math_q525_linear_function_discrete_points.png"
+},
   {
       "id": "q_math_func_linear_domain_quadrant_intersection_524",
       "examPeriod": "一段",
