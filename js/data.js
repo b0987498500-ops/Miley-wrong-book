@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v514';
+const STORAGE_KEY = 'miley_wrong_questions_v515';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_phys_torque_definition_rotation_effect_541",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "理化／力與運動／力矩的定義與物理意義／旋轉效果 vs. 移動／力臂與方向性",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：「力」是改變物體「移動」狀態的原因（F=ma）；「力矩」是使物體產生「轉動」效果的物理量（力矩＝力×力臂），無法使物體產生移動！力矩具方向性（順時針或逆時針）。",
+      "stem": "有關力矩的敘述，下列何者錯誤？\n\n◉ (A) 力矩可使物體發生移動或轉動\n○ (B) 力矩定義為支點到力作用線之垂直距離與作用力的乘積\n○ (C) 力矩是有方向之物理量\n○ (D) 力矩是測量物體旋轉效果的物理量",
+      "answer": "(A) 力矩可使物體發生移動或轉動",
+      "explanation": "(A) 錯誤，力矩只會使物體產生「轉動」效果，使物體產生「移動」的是外力（合力）；(B) 力矩＝外力×力臂（支點至作用線垂直距離）；(C) 力矩具方向性（順時針與逆時針）；(D) 力矩為衡量物體轉動效果之物理量。故選 (A)。",
+      "diagramUrl": ""
+},
   {
       "id": "q_chi_ortho_homophone_qiao_long_huang_suo_540",
       "examPeriod": "一段",
