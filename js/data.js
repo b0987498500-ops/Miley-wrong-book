@@ -3,10 +3,48 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v509';
+const STORAGE_KEY = 'miley_wrong_questions_v510';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_geo_parallelogram_similar_triangles_area_ratio_527",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "九年級幾何證明與相似形／平行四邊形對邊平行相等／蝴蝶形相似三角形／邊長比與面積比平方關係",
+      "uploadDate": "2026-11-23",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：1. 平行四邊形對邊相等 AB = CD，E 為 CD 中點 ⇒ DE : AB = 1 : 2。2. 由 AB // CD 得 △DEF ∼ △BAF（AA 相似）。3. ★相似三角形面積比等於對應「邊長的平方比」：(1 : 2)² = 1 : 4，千萬不要直接誤選邊長比 1 : 2！",
+      "stem": "如圖，在平行四邊形 ABCD 中，E 為線段 CD 中點，則 △DEF 與 △ABF 的面積比為何？\n\n○ (A) 1 : 1\n○ (B) 1 : 2\n◉ (C) 1 : 4\n○ (D) 2 : 3",
+      "answer": "(C) 1 : 4",
+      "explanation": "1. E 為 CD 中點 ⇒ DE : CD = 1 : 2。又平行四邊形對邊 AB = CD，故 DE : AB = 1 : 2。\n2. 因 AB // CD，得 △DEF ∼ △BAF（AA 相似）。\n3. 相似形面積比等於對應邊長平方比：△DEF : △ABF = 1² : 2² = 1 : 4。選 (C)。",
+      "diagramUrl": "assets/questions/math_q527_parallelogram_similar_triangle_area.png"
+},
+  {
+      "id": "q_math_func_telecom_bill_linear_function_application_526",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "函數與直角坐標系／一次函數生活應用題／基本費分段線型函數 vs. 正比函數交點聯立求解",
+      "uploadDate": "2026-11-23",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：1. 太亞不收基本費過原點，斜率 30÷6=5，函數 y=5x。2. 寶島前 9 分鐘基本費 135，超過 9 分鐘每分增加 (170-135)÷(18-9)=35/9 元，函數 y=135+(35/9)(x-9)。3. 令兩者費用相等列式：5x=100+(35/9)x ⇒ (10/9)x=100 ⇒ x=90 分鐘。",
+      "stem": "均均去手機行欲購買手機並搭配電信公司的合約，於是店員向她講解寶島之星與太亞電信兩家電信公司通話費的差異，寶島之星的方案為 9 分鐘以內收取基本費，超過 9 分鐘之後的通話費，與通話時間成線型函數關係，太亞電信的方案為不收基本費，通話費與通話時間成線型函數關係，如圖所示。若均均發現依她每個月平均通話時間計算，正好兩家電信公司的通話費都相同，則均均平均每個月使用手機通話的時間為多少分鐘？\n\n◉ (A) 90\n○ (B) 106\n○ (C) 113\n○ (D) 120",
+      "answer": "(A) 90",
+      "explanation": "1. 太亞電信：過 (0,0) 與 (6,30)，每分 5 元，通話費 y = 5x。\n2. 寶島之星：超過 9 分每分增加 (170-135)÷(18-9) = 35/9 元，通話費 y = 135 + (35/9)(x - 9)。\n3. 費用相同：5x = 100 + (35/9)x ⇒ (10/9)x = 100 ⇒ x = 90 分鐘。選 (A)。",
+      "diagramUrl": "assets/questions/math_q526_telecom_linear_function.png"
+},
   {
       "id": "q_math_func_linear_positive_integer_domain_discrete_points_525",
       "examPeriod": "一段",
