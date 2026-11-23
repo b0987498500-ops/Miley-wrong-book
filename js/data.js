@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v515';
+const STORAGE_KEY = 'miley_wrong_questions_v516';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_phys_torque_calculation_three_forces_net_rotation_542",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "計算粗心",
+      "concept": "理化／力與運動／槓桿與力矩／合力矩計算與轉動方向判定／力臂定義(通過支點力矩為零)",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：1. 力矩＝力×力臂（支點到力作用線的「垂直距離」）。2. F2 的作用線直接通過支點 A，力臂＝0，力矩＝0！3. 找準方向：以 A 為旋轉中心，向上推的 F1 造成「順時針」力矩；向右下推的 F3 垂直力臂為 AD（30cm），造成「逆時針」力矩。合力矩為兩者相減。",
+      "stem": "如右圖，一根以 A 點為轉軸的木棒，分別受到 F1 = 300 gw、F2 = 200 gw、F3 = 100 gw 三個力，則三力的合力矩為多少？木棒將如何轉動？\n\n◉ (A) 合力矩為 3000 gw·cm，順時針轉動\n○ (B) 合力矩為 3000 gw·cm，逆時針轉動\n○ (C) 合力矩為 6000 gw·cm，順時針轉動\n○ (D) 合力矩為 9000 gw·cm，順時針轉動",
+      "answer": "(A) 合力矩為 3000 gw·cm，順時針轉動",
+      "explanation": "1. F1 造成的力矩＝AB × F1 ＝ 20 × 300 ＝ 6000（gw·cm，順時針）。\n2. F2 作用線通過支點 A，力臂＝0，造成的力矩＝0。\n3. F3 造成的力矩＝AD × F3 ＝ 30 × 100 ＝ 3000（gw·cm，逆時針）。\n合力矩＝6000 - 3000 ＝ 3000（gw·cm，順時針）。故選 (A)。",
+      "diagramUrl": "assets/questions/science_q542_torque_net_calculation_rotation.png"
+},
   {
       "id": "q_sci_phys_torque_definition_rotation_effect_541",
       "examPeriod": "一段",
