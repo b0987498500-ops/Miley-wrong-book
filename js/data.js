@@ -3,10 +3,143 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v511';
+const STORAGE_KEY = 'miley_wrong_questions_v512';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_chi_ortho_bu_chi_word_537",
+      "examPeriod": "一段",
+      "subject": "國文",
+      "errorReason": "觀念不懂",
+      "concept": "國文／字音字形／常用易錯字形／「不啻」之「啻」 (口部、音ㄔˋ)／不只、不亞於、如同",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：「不啻」之「啻」從「口」部（口＋帝，音 ㄔˋ）！意為不只、不亞於、如同（如「不啻天壤之別」）。常被誤寫為無口部的「帝」或言部的「諦」。",
+      "stem": "「不ㄔˋ」文句中，注音「ㄔˋ」字應寫為下列何者？\n\n○ (A) 帝\n○ (B) 啼\n◉ (C) 啻\n○ (D) 諦",
+      "answer": "(C) 啻",
+      "explanation": "「不啻」意為不只、不僅、如同，字作「啻」（口部、帝聲，讀 ㄔˋ）。易混淆字：帝（巾部，皇帝）、諦（言部，真諦）、啼（啼哭）。故選 (C)。",
+      "diagramUrl": ""
+},
+  {
+      "id": "q_chi_ortho_qi_shi_536",
+      "examPeriod": "一段",
+      "subject": "國文",
+      "errorReason": "觀念不懂",
+      "concept": "國文／字音字形／常用易錯字形／「受到歧視」之「歧」 (止部、音ㄑㄧˊ)／差別待遇、分岔",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：「歧視」從「止」部（左「止」右「支」）！意為分岔、不平等的差別待遇（如歧視、歧途、分歧）。常被誤寫為山部的「岐」（岐山）或「崎」（崎嶇）。",
+      "stem": "「受到ㄑㄧˊ視」文句中，注音「ㄑㄧˊ」字應寫為下列何者？\n\n○ (A) 岐\n◉ (B) 歧\n○ (C) 崎\n○ (D) 祈",
+      "answer": "(B) 歧",
+      "explanation": "「歧視」指不平等、差別待遇，字作「歧」（止部，歧途、歧路、歧視）。易混淆字：岐（山部，岐山、三叉路）、崎（崎嶇）。故選 (B)。",
+      "diagramUrl": ""
+},
+  {
+      "id": "q_chi_ortho_mou_li_mu_di_535",
+      "examPeriod": "一段",
+      "subject": "國文",
+      "errorReason": "觀念不懂",
+      "concept": "國文／字音字形／常用易錯字形／「牟利目的」之「牟」 (牛部、音ㄇㄡˊ)／牟取暴利、私人利益",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：「牟利」慣用作「牟」取私利（牛部！字作「牟」）；雖音義通「謀」，但在國文字形測驗與規範用語中，「牟利」、「牟取暴利」標準字形必作「牟」！",
+      "stem": "「ㄇㄡˊ利目的」文句中，注音「ㄇㄡˊ」字應寫為下列何者？\n\n○ (A) 謀\n◉ (B) 牟\n○ (C) 眸\n○ (D) 侔",
+      "answer": "(B) 牟",
+      "explanation": "「牟利」指謀取私利或暴利，字作「牟」（牛部，牟取、牟利）。易混淆字：謀（言部，謀求、計謀）、眸（目部，眼眸）、侔（人部，相侔）。故選 (B)。",
+      "diagramUrl": ""
+},
+  {
+      "id": "q_chi_ortho_tao_ke_534",
+      "examPeriod": "一段",
+      "subject": "國文",
+      "errorReason": "觀念不懂",
+      "concept": "國文／字音字形／常用易錯字形／「吸引饕客」之「饕」 (食部、音ㄊㄠ)／美食鑑賞、貪食",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：「饕客」從「食」部（上「號」省筆，下「食」）！意指喜好品嘗美食的顧客。常被誤寫為手部的「掏」或水部的「淘」。",
+      "stem": "「吸引ㄊㄠ客」文句中，注音「ㄊㄠ」字應寫為下列何者？\n\n○ (A) 掏\n○ (B) 淘\n◉ (C) 饕\n○ (D) 滔",
+      "answer": "(C) 饕",
+      "explanation": "「饕客」指美食愛好者、品味佳餚的人。字作「饕」（食部，饕餮、饕客）。易混淆字：掏（手部，掏錢）、淘（水部，淘汰、淘金）、滔（水部，滔滔不絕）。故選 (C)。",
+      "diagramUrl": ""
+},
+  {
+      "id": "q_chi_ortho_jing_xiang_bao_dao_533",
+      "examPeriod": "一段",
+      "subject": "國文",
+      "errorReason": "觀念不懂",
+      "concept": "國文／字音字形／常用易錯字形／「競相報導」之「競」 (立部、音ㄐㄧㄥˋ)／爭逐、爭先恐後",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：「競相報導」是各家媒體「互相競爭、搶先恐後」報導，從「立」部作「競」！不可誤寫為竟然的「竟」或環境的「境」。",
+      "stem": "「ㄐㄧㄥˋ相報導」文句中，注音「ㄐㄧㄥˋ」字應寫為下列何者？\n\n○ (A) 竟\n◉ (B) 競\n○ (C) 境\n○ (D) 鏡",
+      "answer": "(B) 競",
+      "explanation": "「競相報導」指爭先恐後、搶先爭取報導，字作「競」（立部，競逐、競爭）。易混淆字：竟（音部，竟然、究竟）、境（土部，環境、意境）。故選 (B)。",
+      "diagramUrl": ""
+},
+  {
+      "id": "q_chi_ortho_wei_lei_532",
+      "examPeriod": "一段",
+      "subject": "國文",
+      "errorReason": "觀念不懂",
+      "concept": "國文／字音字形／常用易錯字形／「味蕾」之「蕾」 (艸部、音ㄌㄟˇ)／花苞、味覺感受器",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：「味蕾」形狀如同含苞待放之花蕾，從「艸」部作「蕾」！切勿寫成無草字頭的「雷」或人部的「儡」。",
+      "stem": "「味ㄌㄟˇ」文句中，注音「ㄌㄟˇ」字應寫為下列何者？\n\n○ (A) 雷\n◉ (B) 蕾\n○ (C) 儡\n○ (D) 擂",
+      "answer": "(B) 蕾",
+      "explanation": "「味蕾」為舌面味覺感受構造，因其外觀狀似花蕾，故從「艸」部，字作「蕾」。易混淆字：雷（雨部，雷電）、儡（人部，傀儡）、擂（手部，打擂台）。故選 (B)。",
+      "diagramUrl": ""
+},
+  {
+      "id": "q_chi_ortho_jue_qiao_531",
+      "examPeriod": "一段",
+      "subject": "國文",
+      "errorReason": "觀念不懂",
+      "concept": "國文／字音字形／常用易錯字形／「成功訣竅」之「竅」 (穴部、音ㄎㄧㄠˋ)／竅門、孔穴關鍵",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：「訣竅」指孔穴、竅門，從「穴」部作「竅」！常被誤寫為羽部的「翹」（翹起）或手部的「撬」（撬開）。",
+      "stem": "「成功訣ㄎㄧㄠˋ」文句中，注音「ㄎㄧㄠˋ」字應寫為下列何者？\n\n○ (A) 翹\n○ (B) 撬\n◉ (C) 竅\n○ (D) 瞧",
+      "answer": "(C) 竅",
+      "explanation": "「訣竅」指解決問題的關鍵方法、竅門。字作「竅」（穴部，孔穴、竅門）。易混淆字：翹（羽部，向上仰起）、撬（手部，以棍槓動）、瞧（目部，觀看）。故選 (C)。",
+      "diagramUrl": ""
+},
   {
       "id": "q_chi_phonetic_zhu_cheng_530",
       "examPeriod": "一段",
