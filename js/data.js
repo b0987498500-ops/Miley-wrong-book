@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v512';
+const STORAGE_KEY = 'miley_wrong_questions_v513';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_chi_ortho_huang_lun_538",
+      "examPeriod": "一段",
+      "subject": "國文",
+      "errorReason": "觀念不懂",
+      "concept": "國文／字音字形／常用易錯字形／「遑論」之「遑」 (辵部、音ㄏㄨㄤˊ)／更不用說、何況",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：「遑論」指更不用說、何況，從「辵（辶）」部作「遑」！常被誤寫為心部的「惶」（驚惶、惶恐）或彳部的「徨」（徬徨徘徊）。",
+      "stem": "「ㄏㄨㄤˊ論」文句中，注音「ㄏㄨㄤˊ」字應寫為下列何者？\n\n○ (A) 徨\n◉ (B) 遑\n○ (C) 惶\n○ (D) 煌",
+      "answer": "(B) 遑",
+      "explanation": "「遑論」指況且、何況、更不用說。字作「遑」（辵部，皇聲，音 ㄏㄨㄤˊ）。易混淆字：徨（彳部，徬徨）、惶（心部，恐惶、人心惶惶）、煌（火部，輝煌、金碧輝煌）。故選 (B)。",
+      "diagramUrl": ""
+},
   {
       "id": "q_chi_ortho_bu_chi_word_537",
       "examPeriod": "一段",
