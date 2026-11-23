@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v507';
+const STORAGE_KEY = 'miley_wrong_questions_v508';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_func_linear_domain_quadrant_intersection_524",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "審題不清",
+      "concept": "線型函數與直角坐標系／限制定義域一次函數線段經過象限判定／端點極值代入法",
+      "uploadDate": "2026-11-23",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：魔鬼在細節！題目明確限制「x 的範圍為 -2 ≤ x ≤ 1」，圖形只是一條「線段」，千萬不能當作整條無限延伸的直線（直線過一、三、四象限）！代入端點得 y 最大值只有 -2（y 坐標恆負），故圖形僅落在第三、四象限。",
+      "stem": "函數 y = 3x - 5，若 x 的範圍為 -2 ≤ x ≤ 1，則此函數的圖形經過第幾象限？\n\n○ (A) 一、二\n◉ (B) 三、四\n○ (C) 一、二、三\n○ (D) 一、三、四",
+      "answer": "(B) 三、四",
+      "explanation": "1. 代入兩端點求坐標：\n   當 x = 1 時，y = 3(1) - 5 = -2 ⇒ 端點 (1, -2) 位在第四象限。\n   當 x = -2 時，y = 3(-2) - 5 = -11 ⇒ 端點 (-2, -11) 位在第三象限。\n2. 在 -2 ≤ x ≤ 1 區間內，y 坐標恆為負值（-11 ≤ y ≤ -2），故線段僅經過第三、四象限。選 (B)。",
+      "diagramUrl": ""
+},
   {
       "id": "q_chi_lit_author_wu_jun_keywords_tang_poetry_schools_523",
       "examPeriod": "一段",
