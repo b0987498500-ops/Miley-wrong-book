@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v516';
+const STORAGE_KEY = 'miley_wrong_questions_v517';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_earth_fossil_environmental_geological_indicator_trilobite_543",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "地科／地質歷史與化石／指準化石(三葉蟲為古生代海洋) vs. 指相化石(珊瑚淺海、長毛象寒冷、海膽證地殼抬升)",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：1. 珊瑚需要陽光共生藻光合作用，生長在「溫暖清澈的淺海（非深海）」！2. 陸地上發現海膽化石證明地層「曾受板塊擠壓抬升（有變動）」。3. 長毛象長毛為禦寒適應，代表「寒冷氣候」。4. 三葉蟲為「古生代海洋」指準化石。",
+      "stem": "化石除了能作為地質年代的指標，也能幫助了解古生物當時的生存環境。下列有關化石的推論，何者正確？\n\n○ (A) 若挖出的大象化石，全身長有長毛，可推論當時的氣候較溫暖\n○ (B) 地層出現珊瑚化石，表示當時的沉積環境是熱帶且溫暖的深海海域\n○ (C) 東北角海岸的岩層表面有海膽化石，可以佐證臺灣島地層不曾變動\n◉ (D) 地層中出現三葉蟲的化石，可判定該地層為古生代的海洋沉積岩層",
+      "answer": "(D) 地層中出現三葉蟲的化石，可判定該地層為古生代的海洋沉積岩層",
+      "explanation": "(A) 長毛象可推論當時氣候極為寒冷；(B) 珊瑚生長於溫暖清澈的「淺海」；(C) 海膽生活於海洋，現出露於陸地岩層證明臺灣地層「曾發生抬升變動」；(D) 三葉蟲為古生代代表性海洋生物。故選 (D)。",
+      "diagramUrl": ""
+},
   {
       "id": "q_sci_phys_torque_calculation_three_forces_net_rotation_542",
       "examPeriod": "一段",
