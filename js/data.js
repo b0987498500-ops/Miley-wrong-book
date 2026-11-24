@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v520';
+const STORAGE_KEY = 'miley_wrong_questions_v521';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_geo_intersecting_circles_collinear_cbd_arc_abd_547",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "國中幾何／兩相交圓／共線外角定理（∠ABD＝∠BAC＋∠ACB）／圓周角與優劣弧度數求法（弧 ABD＝360°－弧 AD）",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：1. 跨圓考題關鍵在「外角定理」：C、B、D 共線，∠ABD ＝ ∠BAC ＋ ∠ACB ＝ 48° ＋ 40° ＝ 88°。2. 審題看清所求弧：圓周角 ∠ABD 所對為劣弧 AD（176°），題目求含 B 點的「優弧 ABD」，需用 360° － 176° ＝ 184°！",
+      "stem": "如圖，已知兩圓交於 A、B 兩點，且 C、B、D 三點共線，若 弧 BC ＝ 96°，∠ACB ＝ 40°，則 弧 ABD 為多少度？\n\n○ (A) 164°\n○ (B) 176°\n◉ (C) 184°\n○ (D) 192°",
+      "answer": "(C) 184°",
+      "explanation": "1. 左圓圓周角：∠BAC ＝ (1/2) 弧 BC ＝ (1/2) × 96° ＝ 48°。\n2. △ABC 外角定理：C、B、D 共線，得 ∠ABD ＝ 48° ＋ 40° ＝ 88°。\n3. 右圓圓周角：∠ABD 所對劣弧 AD ＝ 2 × 88° ＝ 176°。\n4. 優弧 ABD ＝ 360° － 176° ＝ 184°。故選 (C)。",
+      "diagramUrl": "assets/questions/math_q547_two_circles_arc_abd.png"
+},
   {
       "id": "q_math_geo_cyclic_quadrilateral_arcs_diameter_area_546",
       "examPeriod": "一段",
