@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v519';
+const STORAGE_KEY = 'miley_wrong_questions_v520';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_geo_cyclic_quadrilateral_arcs_diameter_area_546",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "國中幾何／圓形幾何性質／圓內接四邊形對角互補（∠BAD＝∠BCD＝90° ⟹ BD為直徑）／弧度推導直角三角形邊長與四邊形面積分割",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：1. 圓內接對角互補且相等，必各為 90°，對角線 BD 即為直徑！2. 弧 CD ＝ 60°，弦 CD 恰等於半徑 R ＝ 2（正三角形性質），得直徑 BD ＝ 4。3. 沿直徑 BD 分割為等腰直角 △ABD（面積 4）與 30°-60°-90° 直角 △BCD（面積 2√3），相加即得正解。",
+      "stem": "如圖，已知 弧 AB ＝ 弧 AD，弧 BC ＝ 2 弧 CD，∠BAD ＝ ∠BCD，若 CD ＝ 2 公分，則四邊形 ABCD 的面積為多少平方公分？\n\n○ (A) 2 ＋ 2√3\n○ (B) 4 ＋ √3\n◉ (C) 4 ＋ 2√3\n○ (D) 6 ＋ 2√3",
+      "answer": "(C) 4 ＋ 2√3",
+      "explanation": "1. 四邊形內接對角互補且相等：∠BAD ＝ ∠BCD ＝ 90°，故 BD 為直徑。\n2. 弧 BC ＋ 弧 CD ＝ 180° ⟹ 弧 CD ＝ 60°，半徑 R ＝ CD ＝ 2，直徑 BD ＝ 4。\n3. 直角 △BCD 邊長為 2、2√3、4，面積 ＝ (1/2) × 2 × 2√3 ＝ 2√3。\n4. 等腰直角 △ABD 斜邊為 4，面積 ＝ (1/2) × 4 × 2 ＝ 4。\n總面積 ＝ 4 ＋ 2√3 平方公分。故選 (C)。",
+      "diagramUrl": "assets/questions/math_q546_circle_quadrilateral_area.png"
+},
   {
       "id": "q_math_geo_cyclic_quadrilateral_opposite_supplementary_inscribed_angles_545",
       "examPeriod": "一段",
