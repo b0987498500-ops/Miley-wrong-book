@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v517';
+const STORAGE_KEY = 'miley_wrong_questions_v518';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_geo_circle_diameter_secants_arc_cd_544",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "國中幾何／圓形幾何性質／直徑所對圓周角為直角（∠ACB＝90°）／圓周角與所對弧長關係（弧 CD＝2∠CBP）／外角定理",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：1. 見直徑必連線造直角：連接 BC 即得圓周角 ∠ACB ＝ 90°。2. 利用 △BCP 外角定理（外角等於兩內對角和）：∠ACB ＝ ∠CBP ＋ ∠P ⟹ 90° ＝ ∠CBP ＋ 52° ⟹ ∠CBP ＝ 38°。3. 圓周角度數為所對弧度數的一半，故 弧 CD ＝ 2 × 38° ＝ 76°！",
+      "stem": "如圖，線段 AB 為圓 O 的直徑，PA ＝ PB，且 PA 與 PB 分別交圓 O 於 C、D 兩點，已知 ∠P ＝ 52°，求 弧 CD 的度數為何？\n\n○ (A) 64°\n○ (B) 72°\n◉ (C) 76°\n○ (D) 84°",
+      "answer": "(C) 76°",
+      "explanation": "連接 BC。\n1. 因為 AB 為直徑，所以圓周角 ∠ACB ＝ 90°。\n2. 利用 △BCP 外角定理：∠ACB ＝ ∠CBP ＋ ∠P ⟹ 90° ＝ ∠CBP ＋ 52° ⟹ ∠CBP ＝ 38°。\n3. 圓周角 ∠CBP 所對的弧為弧 CD，故 弧 CD ＝ 2 × ∠CBP ＝ 2 × 38° ＝ 76°。故選 (C)。",
+      "diagramUrl": "assets/questions/math_q544_circle_diameter_secants_arc_cd.png"
+},
   {
       "id": "q_sci_earth_fossil_environmental_geological_indicator_trilobite_543",
       "examPeriod": "一段",
