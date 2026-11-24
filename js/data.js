@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v518';
+const STORAGE_KEY = 'miley_wrong_questions_v519';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_math_geo_cyclic_quadrilateral_opposite_supplementary_inscribed_angles_545",
+      "examPeriod": "一段",
+      "subject": "數學",
+      "errorReason": "觀念不懂",
+      "concept": "國中幾何／圓形幾何性質／圓內接四邊形判定（對角互補 ∠ABC＋∠ADC＝180° ⟹ 四點共圓）／同弧所對圓周角相等（∠1＝∠2）",
+      "uploadDate": "2026-11-24",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：1. 四邊形「對角互補」（∠ABC ＋ ∠ADC ＝ 180°）是四點共圓（內接於圓）的判定定理！2. 確定共圓後，看準同弦/同弧 AB：∠1 與 ∠2 皆為對應弧 AB 的圓周角，同弧所對圓周角相等，故 ∠1 ＝ ∠2！",
+      "stem": "如圖，若 ∠ABC ＋ ∠ADC ＝ 180°，則 ∠1 與 ∠2 的大小關係為何？\n\n○ (A) ∠1 ＞ ∠2\n○ (B) ∠1 ＜ ∠2\n◉ (C) ∠1 ＝ ∠2\n○ (D) 無法確定",
+      "answer": "(C) ∠1 ＝ ∠2",
+      "explanation": "因為四邊形 ABCD 的對角互補（∠ABC ＋ ∠ADC ＝ 180°），所以 A、B、C、D 四點共圓（四邊形 ABCD 內接於一圓）。\n又 ∠1 與 ∠2 皆為同弧 AB 所對的圓周角，根據同弧所對的圓周角相等定理，得 ∠1 ＝ ∠2。故選 (C)。",
+      "diagramUrl": "assets/questions/math_q545_concyclic_quadrilateral_angles.png"
+},
   {
       "id": "q_math_geo_circle_diameter_secants_arc_cd_544",
       "examPeriod": "一段",
