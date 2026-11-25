@@ -3,10 +3,90 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v534';
+const STORAGE_KEY = 'miley_wrong_questions_v538';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_soc_geo_andes_tunnel_chile_argentina_trade_china_109exam_563",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "地理／中南美洲／安地斯山脈界山／大西洋與太平洋海陸聯運／109會考",
+  "uploadDate": "2026-11-25",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：智利本身已在太平洋岸，往亞洲（日本、紐西蘭）直航即可；阿根廷在東側大西洋岸，原本須繞麥哲倫海峽，通隧道後省時最多。",
+  "stem": "南美洲南端海運天然限制多，橫越安地斯山脈又常受冬季降雪阻礙交通，因此智利與阿根廷兩國計畫興建打通安地斯山脈的隧道。該隧道不僅可大幅縮短運輸時間，也降低氣候對貨運的影響，有利於大西洋岸國家與太平洋岸國家間的貿易。在上述工程完工後，下列何者的運輸時間渴望降低？\n\n○ (A) 智利至日本\n○ (B) 智利至紐西蘭\n○ (C) 阿根廷至英國\n◉ (D) 阿根廷至中國",
+  "answer": "(D) 阿根廷至中國",
+  "explanation": "阿根廷臨大西洋、智利臨太平洋。打通安地斯山脈隧道後，阿根廷貨物可西行至智利直接橫渡太平洋往中國。選 (D)。",
+  "solution": "阿根廷臨大西洋、智利臨太平洋。打通安地斯山脈隧道後，阿根廷貨物可西行至智利直接橫渡太平洋往中國。選 (D)。",
+  "diagramUrl": ""
+},
+  {
+  "id": "q_soc_geo_pan_american_highway_darien_gap_rainforest_111exam_562",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "地理／中南美洲／泛美公路達連隘口／熱帶雨林生態保護／111會考",
+  "uploadDate": "2026-11-25",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：巴拿馬至哥倫比亞交界為達連隘口（熱帶雨林），終年高溫多雨、年溫差極小；巴拿馬運河在該段以西，早已建橋跨越。",
+  "stem": "附圖為貫穿美洲的泛美公路示意圖，主幹線北起美國阿拉斯加，南至智利。美洲多國可透過這個公路系統相互連結，但巴拿馬到哥倫比亞之間的路段至今尚未修建。根據圖中資訊判斷，該路段未修建的原因之一最可能為下列何者？\n\n○ (A) 年溫差大施工困難\n◉ (B) 保護熱帶雨林生態\n○ (C) 運河阻隔難以跨越\n○ (D) 維護因紐特人文化",
+  "answer": "(B) 保護熱帶雨林生態",
+  "explanation": "未修建路段（巴拿馬至哥倫比亞）位於 8°N 附近，屬熱帶雨林氣候區，未修建主因為保護雨林生態。選 (B)。",
+  "solution": "未修建路段（巴拿馬至哥倫比亞）位於 8°N 附近，屬熱帶雨林氣候區，未修建主因為保護雨林生態。選 (B)。",
+  "diagramUrl": "assets/questions/social_geo_q562_pan_american_highway_map.png"
+},
+  {
+  "id": "q_soc_geo_chile_atacama_desert_solar_power_pacific_561",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "地理／中南美洲／智利阿他加馬沙漠／太平洋沿岸／太陽能發電潛力",
+  "uploadDate": "2026-11-25",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：智利西臨太平洋，北部阿他加馬沙漠為全球最乾燥沙漠之一；巴西與阿根廷東臨大西洋，巴拿馬無廣大沙漠。",
+  "stem": "南美洲某國的總統曾提出一個構想：該國北部的沙漠陽光充沛、日照充足，具有適合發展太陽能發電的潛力，預計未來將透過海底電纜，將太陽能光電直接經由該國西側的太平洋，送往亞洲地區。根據上述判斷，該國最可能為下列何者？\n\n◉ (A) 智利\n○ (B) 巴西\n○ (C) 巴拿馬\n○ (D) 阿根廷",
+  "answer": "(A) 智利",
+  "explanation": "智利西臨太平洋，北部有阿他加馬沙漠，終年乾燥少雨、日照充足，且隔太平洋與亞洲相望。選 (A)。",
+  "solution": "智利西臨太平洋，北部有阿他加馬沙漠，終年乾燥少雨、日照充足，且隔太平洋與亞洲相望。選 (A)。",
+  "diagramUrl": ""
+},
+  {
+  "id": "q_soc_geo_patagonia_temperate_desert_leeward_falkland_current_560",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "地理／中南美洲／巴塔哥尼亞高原／溫帶沙漠成因／西風背風側與福克蘭寒流",
+  "uploadDate": "2026-11-25",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：巴塔哥尼亞高原因「西風背風側」及東側「福克蘭寒流」成荒漠；西側的祕魯涼流在太平洋岸，副熱帶高壓則在熱帶。",
+  "stem": "位於阿根廷南部的巴塔哥尼亞高原，擁有南半球唯一的溫帶沙漠氣候，造成當地氣候乾燥的原因有下列哪些？ (甲)副熱帶高壓籠罩 (乙)位於西風背風側 (丙)福克蘭寒流流經 (丁)祕魯涼流流經\n\n○ (A) 甲乙\n○ (B) 甲丙\n◉ (C) 乙丙\n○ (D) 乙丁",
+  "answer": "(C) 乙丙",
+  "explanation": "巴塔哥尼亞高原位於安地斯山脈西風背風側（雨影區），且東側有福克蘭寒流流經減濕，形成溫帶沙漠。選 (C)。",
+  "solution": "巴塔哥尼亞高原位於安地斯山脈西風背風側（雨影區），且東側有福克蘭寒流流經減濕，形成溫帶沙漠。選 (C)。",
+  "diagramUrl": ""
+},
   {
   "id": "q_soc_geo_latin_america_andes_highland_settlement_quito_lapaz_559",
   "examPeriod": "一段",
