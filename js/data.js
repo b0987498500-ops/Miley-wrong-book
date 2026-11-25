@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v526';
+const STORAGE_KEY = 'miley_wrong_questions_v527';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_sci_phy_gravity_equilibrium_earth_moon_spaceship_ratio_552",
+  "examPeriod": "一段",
+  "subject": "自然",
+  "errorReason": "計算粗心",
+  "concept": "理化／力與運動／萬有引力定律(F＝GMm/R²)／引力平衡與距離平方成反比／月球與地球距離比推導",
+  "uploadDate": "2026-11-25",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：1. 審題看清比值順序：題目問「距月球中心：距地球中心（x : y）」，月球質量小，引力相等時飛船必靠近月球（x < y），答案必為 1 : 9 而非 9 : 1！2. 萬有引力與「距離平方成反比」，距離比為質量比開根號 √1 : √81 ＝ 1 : 9。",
+  "stem": "地球質量大約是月球質量的 81 倍，在登月飛船通過月、地之間，月球和地球對它引力相等的位置時，飛船離開月球中心和地球中心的距離比為何？\n\n◉ (A) 1 : 9\n○ (B) 9 : 1\n○ (C) 1 : 1\n○ (D) 3 : 1",
+  "answer": "(A) 1 : 9",
+  "explanation": "萬有引力公式 F ＝ GMm / R²。當引力相等時：M / x² ＝ 81M / y² ⟹ y² / x² ＝ 81 ⟹ y : x ＝ 9 : 1。故飛船距月球與地球之距離比 x : y ＝ 1 : 9。選 (A)。",
+  "solution": "萬有引力公式 F ＝ GMm / R²。當引力相等時：M / x² ＝ 81M / y² ⟹ y² / x² ＝ 81 ⟹ y : x ＝ 9 : 1。故飛船距月球與地球之距離比 x : y ＝ 1 : 9。選 (A)。",
+  "diagramUrl": ""
+},
   {
   "id": "q_sci_phy_vertical_projectile_forces_net_downward_551",
   "examPeriod": "一段",
