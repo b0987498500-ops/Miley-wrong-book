@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v521';
+const STORAGE_KEY = 'miley_wrong_questions_v522';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_chem_organic_compounds_classification_c2hno_548",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "理化／有機化合物的分類／有機物定義(主要含碳，可含N、S等) vs. 烴類(僅含C、H) vs. 醣類(碳水化合物 H:O=2:1)",
+      "uploadDate": "2026-11-25",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：1. 有機化合物主要含碳，常含 H、O、N、S 等（如蛋白質、尿素皆含 N，仍為有機物，甲生錯）。2. 烴類嚴格限定「僅含碳、氫」兩元素，含其他元素必非烴類（丙生對）。3. 醣類（碳水化合物）通式為 Cₙ(H₂O)ₘ，是指「氫氧比 H:O ＝ 2:1」，而非碳與氧（乙生錯）。",
+      "stem": "上理化課時，李老師要幫學生複習有機化合物的分類，因此老師給學生一個問題，在黑板寫了 C₂HNO，讓學生就此化學式「C₂HNO」討論應該歸在哪一類有機化合物。學生分別提出各自看法。\n\n甲生說：「C₂HNO 中，除了 C、H、O 之外還有其他元素，所以不是有機化合物。」\n乙生說：「C₂HNO 中，C : O ＝ 2 : 1，所以是有機化合物中的醣類，又稱碳水化合物」\n丙生說：「C₂HNO 中，除了 C、H 以外還有其他元素所以不是烴類」\n\n關於甲、乙、丙生的說法，以下何者正確？\n\n○ (A) 甲、乙生正確，丙生錯誤\n◉ (B) 甲、乙生錯誤，丙生正確\n○ (C) 甲、丙生正確，乙生錯誤\n○ (D) 甲、乙、丙生都正確",
+      "answer": "(B) 甲、乙生錯誤，丙生正確",
+      "explanation": "甲生：除了 C、H、O 之外含有其他元素（如 N），也可能是有機化合物；乙生：碳水化合物化學式通式為 Cₙ(H₂O)ₘ，為氫氧原子數比 H:O ＝ 2:1，非碳氧比；丙生：烴類僅由碳、氫兩元素組成，故丙生正確。選 (B)。",
+      "diagramUrl": ""
+},
   {
       "id": "q_math_geo_intersecting_circles_collinear_cbd_arc_abd_547",
       "examPeriod": "一段",
