@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v533';
+const STORAGE_KEY = 'miley_wrong_questions_v534';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_soc_geo_latin_america_andes_highland_settlement_quito_lapaz_559",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "地理／中南美洲／人口與都市分布／熱帶高地氣候／安地斯山脈高地聚落",
+  "uploadDate": "2026-11-25",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：低緯熱帶平地濕熱，人口與首都常建於安地斯山脈的「高地氣候區」（如基多、拉巴斯、波哥大）。",
+  "stem": "中南美洲人口分布極度不均，低緯地區因平地氣候潮溼悶熱，使都市多集中在較為涼爽的地方，如厄瓜多首都基多、玻利維亞首都拉巴斯等。上述兩個都市皆位於下列哪個地理區？\n\n○ (A) 巴西高原\n○ (B) 亞馬孫盆地\n○ (C) 西印度群島\n◉ (D) 安地斯山脈",
+  "answer": "(D) 安地斯山脈",
+  "explanation": "厄瓜多基多與玻利維亞拉巴斯均位於安地斯山脈，因海拔高氣候涼爽宜人（熱帶高地），都市多集中於此。選 (D)。",
+  "solution": "厄瓜多基多與玻利維亞拉巴斯均位於安地斯山脈，因海拔高氣候涼爽宜人（熱帶高地），都市多集中於此。選 (D)。",
+  "diagramUrl": ""
+},
   {
   "id": "q_soc_geo_latin_america_landmass_shape_climate_558",
   "examPeriod": "一段",
