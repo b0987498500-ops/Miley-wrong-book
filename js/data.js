@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v527';
+const STORAGE_KEY = 'miley_wrong_questions_v528';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_sci_phy_uniform_circular_motion_centripetal_force_direction_553",
+  "examPeriod": "一段",
+  "subject": "自然",
+  "errorReason": "觀念不懂",
+  "concept": "理化／力與運動／等速率圓周運動／向心力與加速度指向圓心且垂直速度／只改變運動方向不改變快慢",
+  "uploadDate": "2026-11-25",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：1. 向心力與速度方向恆垂直（不作功），只改變運動「方向」，不能改變速率「快慢」！2. 向心力消失時，物體因慣性沿「切線方向」直線飛出，非向外沿半徑飛出。",
+  "stem": "有關等速率圓周運動的敘述，下列何者錯誤？\n\n○ (A) 向心力及加速度永遠指向圓心\n○ (B) 向心力及加速度的方向永遠和速度的方向垂直\n◉ (C) 向心力能改變運動的快慢\n○ (D) 當向心力消失時，作圓周運動的物體會因慣性作用，而沿圓的切線方向飛出",
+  "answer": "(C) 向心力能改變運動的快慢",
+  "explanation": "向心力與速度方向隨時保持垂直，因此只改變運動方向、不改變運動快慢（速率大小不變）。故 (C) 敘述錯誤，選 (C)。",
+  "solution": "向心力與速度方向隨時保持垂直，因此只改變運動方向、不改變運動快慢（速率大小不變）。故 (C) 敘述錯誤，選 (C)。",
+  "diagramUrl": ""
+},
   {
   "id": "q_sci_phy_gravity_equilibrium_earth_moon_spaceship_ratio_552",
   "examPeriod": "一段",
