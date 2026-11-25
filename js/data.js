@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v528';
+const STORAGE_KEY = 'miley_wrong_questions_v529';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_sci_phy_braking_deceleration_resistance_newton_second_law_554",
+  "examPeriod": "一段",
+  "subject": "自然",
+  "errorReason": "計算粗心",
+  "concept": "理化／力與運動／牛頓第二運動定律(F＝ma)／時速換算秒速(36 km/h＝10 m/s)／等減速度煞車阻力計算",
+  "uploadDate": "2026-11-25",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：1. 單位換算第一步：36 km/h ＝ 10 m/s，絕不能用 36 直接計算！2. 阻力「大小」問數值大小，取正值 2000 牛頓（負號僅代表方向相反）。",
+  "stem": "質量為 1000 公斤的車子原以 36 公里／時的速度行駛，今以等減速度煞車 5 秒後，車子停下來。若煞車過程的阻力一定，則煞車時車子所受的阻力大小為多少牛頓？\n\n◉ (A) 2000 牛頓\n○ (B) 3000 牛頓\n○ (C) 4000 牛頓\n○ (D) 5000 牛頓",
+  "answer": "(A) 2000 牛頓",
+  "explanation": "36 km/h ＝ 10 m/s。加速度 a ＝ (0 － 10) / 5 ＝ －2 m/s²。阻力大小 F ＝ ma ＝ 1000 × 2 ＝ 2000 牛頓。選 (A)。",
+  "solution": "36 km/h ＝ 10 m/s。加速度 a ＝ (0 － 10) / 5 ＝ －2 m/s²。阻力大小 F ＝ ma ＝ 1000 × 2 ＝ 2000 牛頓。選 (A)。",
+  "diagramUrl": ""
+},
   {
   "id": "q_sci_phy_uniform_circular_motion_centripetal_force_direction_553",
   "examPeriod": "一段",

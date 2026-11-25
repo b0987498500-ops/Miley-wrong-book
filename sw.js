@@ -1,4 +1,4 @@
-const CACHE_NAME = 'miley-pwa-cache-v4.96';
+const CACHE_NAME = 'miley-pwa-cache-v4.97';
 
 const ASSETS_TO_CACHE = [
   './',
