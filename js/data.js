@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v532';
+const STORAGE_KEY = 'miley_wrong_questions_v533';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_soc_geo_latin_america_landmass_shape_climate_558",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "地理／中南美洲／氣候特徵／陸塊形狀對氣候之影響",
+  "uploadDate": "2026-11-25",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：南美洲「北寬南窄」，溫帶地區陸塊狹窄無廣大內陸，受海洋環抱調節，故無溫帶大陸性氣候。",
+  "stem": "中南美洲的熱帶氣候區範圍廣大，溫帶氣候區則較為狹窄，甚至沒有溫帶大陸性氣候分布，此與下列何者的關係最密切？\n\n○ (A) 地勢起伏\n○ (B) 盛行風向\n○ (C) 洋流性質\n◉ (D) 陸塊形狀",
+  "answer": "(D) 陸塊形狀",
+  "explanation": "南美洲陸塊北寬南窄，低緯熱帶陸塊面積廣，溫帶地區狹窄且易受海洋調節，故缺乏溫帶大陸性氣候。選 (D)。",
+  "solution": "南美洲陸塊北寬南窄，低緯熱帶陸塊面積廣，溫帶地區狹窄且易受海洋調節，故缺乏溫帶大陸性氣候。選 (D)。",
+  "diagramUrl": ""
+},
   {
   "id": "q_sci_phy_farmer_carrying_hoe_shoulder_support_force_557",
   "examPeriod": "一段",
