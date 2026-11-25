@@ -3,10 +3,29 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v522';
+const STORAGE_KEY = 'miley_wrong_questions_v523';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+      "id": "q_sci_chem_organic_esterification_nu_er_hong_ethyl_acetate_549",
+      "examPeriod": "一段",
+      "subject": "自然",
+      "errorReason": "觀念不懂",
+      "concept": "理化／常見有機化合物／酯化反應(有機酸＋醇 ⟶ 酯＋水)／發酵釀酒(乙醇)氧化成乙酸／乙酸乙酯(果香氣味)",
+      "uploadDate": "2026-11-25",
+      "mondayDate": "2026-11-23",
+      "mondayDates": [
+            "2026-11-23"
+      ],
+      "weekLabel": "2026-11-23 (最新週次)",
+      "isGuessedOrUnstable": false,
+      "mistakeNote": "💡 易錯筆記：1. 釀酒產生食用「乙醇（酒精）」，長時間陳釀微量氧化成「乙酸（醋酸）」。2. 乙酸與乙醇緩慢進行「酯化反應」生成具有水果香味的「乙酸乙酯」（越陳越香），非甲酸或純酒精本身！",
+      "stem": "相傳「女兒紅」酒的由來：「紹興城的一位裁縫師在得知自己妻子懷孕後，以醣類和酵素釀了幾罐酒埋藏在地底，想等孩子滿月時宴請賓客，不料卻生了個女兒，因為當時重男輕女，所以裁縫師也就沒有慶祝，酒便一直埋藏在地底。光陰似箭，當女兒長大結婚時，裁縫師想起那些埋藏在地底的酒，於是便挖出這些酒來宴請賓客，打開酒罈時發現酒香撲鼻、味道醇正，賓客紛紛讚嘆好酒，於是大家便把這酒稱為『女兒紅』。」酒罈打開的一瞬間香味撲鼻，由以上的傳說，酒中生成的有機酸類與酒精發生反應，而形成具有香味的物質。根據上述推測此具有香味的物質最可能為何？\n\n○ (A) 乙酸\n○ (B) 乙醇\n○ (C) 甲酸乙酯\n◉ (D) 乙酸乙酯",
+      "answer": "(D) 乙酸乙酯",
+      "explanation": "醣類與酵素釀造的酒，形成可以食用的乙醇。而酒中可能形成的有機酸為乙酸。兩者反應形成乙酸乙酯。選 (D)。",
+      "diagramUrl": ""
+},
   {
       "id": "q_sci_chem_organic_compounds_classification_c2hno_548",
       "examPeriod": "一段",
