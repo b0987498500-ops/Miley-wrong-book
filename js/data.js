@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v525';
+const STORAGE_KEY = 'miley_wrong_questions_v526';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_sci_phy_vertical_projectile_forces_net_downward_551",
+  "examPeriod": "一段",
+  "subject": "自然",
+  "errorReason": "觀念不懂",
+  "concept": "理化／力與運動／鉛直上拋運動之受力分析／減速運動合力方向必向下(重力向下、阻力向下)",
+  "uploadDate": "2026-11-25",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：1. 石塊離手後，手的推力已不存在！2. 物體向上運動但速度漸慢（減速），代表加速度與合力方向必向下。3. 重力恆向下大小不變；空氣阻力恆與運動方向相反（向上運動時阻力向下）。",
+  "stem": "垂直向上拋出一小石塊，石塊離手後繼續向上運動，但速度愈來愈小，則該石塊所受的力為下列何者？\n\n◉ (A) 石塊所受的合力向下\n○ (B) 石塊所受的重力愈來愈小\n○ (C) 石塊所受的阻力向上\n○ (D) 石塊不受力的作用",
+  "answer": "(A) 石塊所受的合力向下",
+  "explanation": "速度向上、速度漸小（減速）⟹ 加速度向下、合力向下；重力恆向下且大小不變，空氣阻力與運動方向相反（向下）。故選 (A)。",
+  "solution": "速度向上、速度漸小（減速）⟹ 加速度向下、合力向下；重力恆向下且大小不變，空氣阻力與運動方向相反（向下）。故選 (A)。",
+  "diagramUrl": ""
+},
   {
   "id": "q_sci_phy_newton_first_law_inertia_external_force_zero_550",
   "examPeriod": "一段",
