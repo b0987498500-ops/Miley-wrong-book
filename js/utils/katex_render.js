@@ -303,6 +303,12 @@ window.katexUtils = {
     let el = typeof elementOrId === 'string' ? document.getElementById(elementOrId) : elementOrId;
     if (!el) return;
 
+    // 若傳入內容為空或未定義，必須強制清空 innerHTML，絕不可殘留上一題的解析內容！
+    if (textStr === undefined || textStr === null || textStr === '') {
+      el.innerHTML = '';
+      return;
+    }
+
     if (textStr !== undefined && textStr !== null) {
       let formattedText = String(textStr);
       if (formattedText.includes('569X')) {

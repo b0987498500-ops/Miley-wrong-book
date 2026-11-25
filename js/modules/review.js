@@ -241,7 +241,66 @@ window.ReviewModule = {
 
     // 平板/行動端防誤退出：平板觸控上下滑動絕不自動退出全螢幕複習模式！
     // 嚴格遵守使用者要求：必須等使用者親自點擊「退出全螢幕」按鈕（或桌機按 ESC 鍵）才退出。
-    // （移除原生 fullscreenchange 對 body.fullscreen-review-mode 的干擾移除）
+    // 監聽原生全螢幕變化事件（如桌機使用者按下 ESC 鍵原生退出時）：即時同步退出全螢幕 UI 狀態，絕不殘留全螢幕滿版樣式！
+    const syncFullscreenState = () => {
+      if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        document.body.classList.remove('fullscreen-review-mode');
+        const btn = document.getElementById('btn-toggle-fullscreen');
+        if (btn) {
+          btn.innerHTML = '<i class="fa-solid fa-expand"></i> 全螢幕';
+        }
+      }
+    };
+    document.addEventListener('fullscreenchange', syncFullscreenState);
+    document.addEventListener('webkitfullscreenchange', syncFullscreenState);
+
+    // 頂層全域 ESC 鍵監聽（捕獲階段）：確保無論游標焦點在哪，只要按下 ESC 鍵，必定 100% 徹底退出全螢幕、照片放大燈箱、草稿計算板及各類彈窗！
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' || e.code === 'Escape') {
+        // 1. 若有照片放大檢視燈箱，優先徹底關閉
+        const lightboxModal = document.getElementById('image-lightbox-modal');
+        if (lightboxModal && !lightboxModal.classList.contains('hidden')) {
+          e.preventDefault();
+          document.getElementById('lightbox-close-btn')?.click();
+          return;
+        }
+
+        // 2. 若有草稿計算板，優先關閉
+        const scratchOverlay = document.getElementById('scratchpad-overlay');
+        if (scratchOverlay && !scratchOverlay.classList.contains('hidden')) {
+          e.preventDefault();
+          self.closeScratchpad();
+          return;
+        }
+
+        // 3. 若有各類提示彈窗或對話框，關閉之
+        const openModals = document.querySelectorAll('.modal-overlay:not(.hidden), .guide-modal:not(.hidden)');
+        if (openModals.length > 0) {
+          e.preventDefault();
+          openModals.forEach(m => {
+            const closeBtn = m.querySelector('.modal-close-btn, .close-btn, [id*="close"]');
+            if (closeBtn) closeBtn.click();
+            else m.classList.add('hidden');
+          });
+          return;
+        }
+
+        // 4. 徹底退出全螢幕複習模式與瀏覽器全螢幕
+        if (document.body.classList.contains('fullscreen-review-mode') || document.fullscreenElement || document.webkitFullscreenElement) {
+          e.preventDefault();
+          document.body.classList.remove('fullscreen-review-mode');
+          const btn = document.getElementById('btn-toggle-fullscreen');
+          if (btn) {
+            btn.innerHTML = '<i class="fa-solid fa-expand"></i> 全螢幕';
+          }
+          if (document.exitFullscreen && document.fullscreenElement) {
+            document.exitFullscreen().catch(() => {});
+          } else if (document.webkitExitFullscreen && document.webkitFullscreenElement) {
+            document.webkitExitFullscreen().catch(() => {});
+          }
+        }
+      }
+    }, true);
 
     // Global Keyboard Shortcuts for Fullscreen Flashcard Review
     document.addEventListener('keydown', (e) => {
@@ -1713,8 +1772,9 @@ window.ReviewModule = {
     }
 
     // Render Answer & Steps
-    document.getElementById('fc-std-answer').innerText = q.answer;
-    window.katexUtils.renderText('fc-solution-steps', q.solution);
+    document.getElementById('fc-std-answer').innerText = q.answer || '';
+    const solutionText = (q.explanation || q.solution || '').trim();
+    window.katexUtils.renderText('fc-solution-steps', solutionText || '本題暫無解析');
   },
 
   revealAnswer: function(isCorrect) {
