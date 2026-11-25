@@ -3,10 +3,50 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v530';
+const STORAGE_KEY = 'miley_wrong_questions_v532';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_sci_phy_farmer_carrying_hoe_shoulder_support_force_557",
+  "examPeriod": "一段",
+  "subject": "自然",
+  "errorReason": "觀念不懂",
+  "concept": "理化／力與運動／槓桿原理／轉動平衡／肩膀支點受力",
+  "uploadDate": "2026-11-25",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：容易誤選 (C) 6！6 kgw 只是手向下的施力，肩膀要同時承受「手的下壓力 6 kgw」與「鋤頭重 4 kgw」，總受力為 10 kgw。",
+  "stem": "農夫扛著長柄鋤頭、手握木柄末端，達靜力平衡，如右圖所示，木柄全長 1 公尺，重量不計，鐵製鋤頭為 4 公斤重，距肩膀 60 公分；則農夫肩膀受力多少公斤重？\n\n○ (A) 2\n○ (B) 4\n○ (C) 6\n◉ (D) 10",
+  "answer": "(D) 10",
+  "explanation": "以肩膀為支點：手施力×40＝4×60，得手施力＝6 kgw。肩膀向上支撐力＝手施力＋鋤頭重＝6＋4＝10 kgw。故選 (D)。",
+  "solution": "以肩膀為支點：手施力×40＝4×60，得手施力＝6 kgw。肩膀向上支撐力＝手施力＋鋤頭重＝6＋4＝10 kgw。故選 (D)。",
+  "diagramUrl": "assets/questions/science_q557_farmer_carrying_hoe.png"
+},
+  {
+  "id": "q_sci_phy_static_equilibrium_two_people_carrying_pole_556",
+  "examPeriod": "一段",
+  "subject": "自然",
+  "errorReason": "觀念不懂",
+  "concept": "理化／力與運動／槓桿原理／靜力平衡／合力為零／合力矩為零",
+  "uploadDate": "2026-11-25",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：靜止平衡兩大條件：1. 合力＝0（移動平衡）；2. 合力矩＝0（轉動平衡）。合力必為 0，絕不會有任何方向！",
+  "stem": "甲、乙兩人以長為 2 公尺的木棒（重量不計）合挑 60 公斤重的物體，如右圖所示，若物體距離甲為 1.2 公尺，則下列敘述何者錯誤？\n\n○ (A) 甲負重 24 公斤重\n○ (B) 乙負重 36 公斤重\n◉ (C) 作用在此木棒的合力方向向上\n○ (D) 作用在此木棒的合力矩＝0",
+  "answer": "(C) 作用在此木棒的合力方向向上",
+  "explanation": "靜力平衡時合力＝0、合力矩＝0。甲負重 24 kgw、乙負重 36 kgw，合力為零而非向上。故選 (C)。",
+  "solution": "靜力平衡時合力＝0、合力矩＝0。甲負重 24 kgw、乙負重 36 kgw，合力為零而非向上。故選 (C)。",
+  "diagramUrl": "assets/questions/science_q556_two_people_carrying_stick.png"
+},
   {
   "id": "q_sci_phy_satellite_orbit_gravity_centripetal_force_555",
   "examPeriod": "一段",
