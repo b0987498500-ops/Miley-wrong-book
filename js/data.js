@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v524';
+const STORAGE_KEY = 'miley_wrong_questions_v525';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_sci_phy_newton_first_law_inertia_external_force_zero_550",
+  "examPeriod": "一段",
+  "subject": "自然",
+  "errorReason": "觀念不懂",
+  "concept": "理化／力與運動／牛頓第一運動定律(慣性定律)／不受外力時動者恆作等速度直線運動",
+  "uploadDate": "2026-11-25",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：日常物體減速停止是因為「摩擦力」作用！若「一切外力同時消失（合力為零）」，依牛頓第一運動定律（慣性），運動中的物體將永久維持「等速度直線運動」，絕不會停止！",
+  "stem": "一正在運動中的物體，若它所受的一切外力都同時消失，則該運動體的運動將有何變化？\n\n○ (A) 立即停下來\n○ (B) 速度逐漸變慢最終停止\n○ (C) 運動的方向不變，但速度變快\n◉ (D) 會變為作等速度直線運動",
+  "answer": "(D) 會變為作等速度直線運動",
+  "explanation": "物體不受外力作用（合力為零）時，會保持原來的運動狀態：靜者恆靜，動者恆作等速度直線運動。故選 (D)。",
+  "solution": "物體不受外力作用（合力為零）時，會保持原來的運動狀態：靜者恆靜，動者恆作等速度直線運動。故選 (D)。",
+  "diagramUrl": ""
+},
   {
     "id": "q_sci_chem_organic_esterification_nu_er_hong_ethyl_acetate_549",
     "examPeriod": "一段",
