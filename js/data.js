@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v529';
+const STORAGE_KEY = 'miley_wrong_questions_v530';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_sci_phy_satellite_orbit_gravity_centripetal_force_555",
+  "examPeriod": "一段",
+  "subject": "自然",
+  "errorReason": "觀念不懂",
+  "concept": "理化／力與運動／人造衛星圓周運動／萬有引力提供向心力／變加速度運動／作用力與反作用力",
+  "uploadDate": "2026-11-25",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：1. 向心加速度方向隨時改變，屬於「變加速度運動」，非等加速度！2. 地球與衛星互吸為「作用力與反作用力」，大小必定相等。3. 向心力消失時因慣性沿「切線方向」飛出，絕非圖中沿半徑向外的 A 方向。",
+  "stem": "人造衛星受到地球的向心力作用，環繞地球作圓周運動，其示意圖如右圖所示。則下列敘述何者正確？\n\n◉ (A) 提供人造衛星環繞地球運轉的向心力，來自於地球與人造衛星間的萬有引力\n○ (B) 人造衛星受到指向地球的向心力作用，故人造衛星作等加速度運動\n○ (C) 人造衛星對地球的吸引力小於地球對人造衛星的吸引力\n○ (D) 假設有一天，此向心力突然消失，則人造衛星將沿圖中 A 方向飛出",
+  "answer": "(A) 提供人造衛星環繞地球運轉的向心力，來自於地球與人造衛星間的萬有引力",
+  "explanation": "(A) 正確，萬有引力提供向心力；(B) 加速度方向隨時指向圓心（方向在變，非等加速度）；(C) 兩者互為作用力與反作用力，大小相等；(D) 向心力消失時沿切線方向飛出。故選 (A)。",
+  "solution": "(A) 正確，萬有引力提供向心力；(B) 加速度方向隨時指向圓心（方向在變，非等加速度）；(C) 兩者互為作用力與反作用力，大小相等；(D) 向心力消失時沿切線方向飛出。故選 (A)。",
+  "diagramUrl": "assets/questions/science_q555_satellite_earth_orbit.png"
+},
   {
   "id": "q_sci_phy_braking_deceleration_resistance_newton_second_law_554",
   "examPeriod": "一段",
