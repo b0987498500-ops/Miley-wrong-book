@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v541';
+const STORAGE_KEY = 'miley_wrong_questions_v542';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_soc_civ_local_representatives_municipality_county_city_106exam_567",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "公民／地方自治／地方民意代表／直轄市議員／縣轄市民代表／立法委員／106會考",
+  "uploadDate": "2026-11-26",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：「市民代表」只存在於「縣轄市」（如花蓮市）；直轄市（高雄）及市（新竹）底下為派出機關的區，沒有市民代表。",
+  "stem": "甲、乙、丙三人的居住地資料如附表，近日三人分別向當地選出的民意代表陳情，希望他們能反映民情。根據表中資料判斷，此三人所陳情的對象，最可能分別為下列何者？【106年會考】\n\n| 居民 | 居住地 |\n| :---: | :--- |\n| **甲** | 高雄市 |\n| **乙** | 新竹市 |\n| **丙** | 花蓮縣花蓮市 |\n\n○ (A) 甲：市民代表，乙：市議員，丙：立法委員\n○ (B) 甲：市議員，乙：市民代表，丙：立法委員\n○ (C) 甲：立法委員，乙：市民代表，丙：市議員\n◉ (D) 甲：市議員，乙：立法委員，丙：市民代表",
+  "answer": "(D) 甲：市議員，乙：立法委員，丙：市民代表",
+  "explanation": "高雄市（直轄市）與新竹市（市）均無市民代表；花蓮市（縣轄市）有市民代表。故選 (D)。",
+  "solution": "高雄市（直轄市）與新竹市（市）均無市民代表；花蓮市（縣轄市）有市民代表。故選 (D)。",
+  "diagramUrl": ""
+},
   {
   "id": "q_soc_civ_local_government_officials_council_interpellation_110exam_566",
   "examPeriod": "一段",
