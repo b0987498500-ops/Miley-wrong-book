@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v538';
+const STORAGE_KEY = 'miley_wrong_questions_v539';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_soc_civ_impeachment_disciplinary_court_judicial_yuan_106exam_564",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "公民／中央政府職權／權力分立／監察院彈劾權與司法院懲戒法院職權／106會考",
+  "uploadDate": "2026-11-26",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：監察院負責「彈劾」（提案移送），司法院「懲戒法院」負責「審理與判決懲戒」（公務員懲戒制度採不告不理）。",
+  "stem": "大南：「當監察委員通過彈劾案件後，會交由我們審理，否則即使公務員涉及違法情事，我們也不能主動對當事人的行為進行審議。」根據大南的說法判斷，他應是任職於下列哪一個機關？〔106.會考修訂〕\n\n○ (A) 審計部\n○ (B) 法務部\n○ (C) 臺北高等行政法院\n◉ (D) 懲戒法院",
+  "answer": "(D) 懲戒法院",
+  "explanation": "監察委員彈劾違法或失職的公務人員後，移送司法院懲戒法院審理。選 (D)。",
+  "solution": "監察委員彈劾違法或失職的公務人員後，移送司法院懲戒法院審理。選 (D)。",
+  "diagramUrl": ""
+},
   {
   "id": "q_soc_geo_andes_tunnel_chile_argentina_trade_china_109exam_563",
   "examPeriod": "一段",
