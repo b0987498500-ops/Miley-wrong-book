@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v542';
+const STORAGE_KEY = 'miley_wrong_questions_v543';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_soc_civ_election_candidate_age_local_government_107exam_568",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "公民／地方自治／公職候選人年齡限制／縣長與鄉長年齡資格／民意代表／107會考",
+  "uploadDate": "2026-11-26",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：行政首長參選年齡：縣（市）長需滿 30 歲、鄉（鎮、市）長需滿 26 歲。28 歲只能參選鄉長（③）；上學經 ③、放學經民代（②）。",
+  "stem": "阿倫上學途中，路過某候選人的競選總部，看到了「28 歲新人，開創地方行政新氣象」的標語；放學回家，又經過另一位候選人的競選總部，懸掛著「評鑑第一名的民意代表，懇請支持連任」的布條。附圖是阿倫家周邊環境示意圖，根據圖中內容判斷，下列何者最可能是阿倫上學、放學的路線？【107 年會考】\n\n○ (A) 如圖 (A) 路線\n○ (B) 如圖 (B) 路線\n◉ (C) 如圖 (C) 路線\n○ (D) 如圖 (D) 路線",
+  "answer": "(C) 如圖 (C) 路線",
+  "explanation": "28歲選地方首長只能選③鄉長（需滿26歲，縣長需滿30歲）；放學經民意代表②縣議員。選 (C)。",
+  "solution": "28歲選地方首長只能選③鄉長（需滿26歲，縣長需滿30歲）；放學經民意代表②縣議員。選 (C)。",
+  "diagramUrl": "assets/questions/social_civ_q568_election_campaign_route_full.png"
+},
   {
   "id": "q_soc_civ_local_representatives_municipality_county_city_106exam_567",
   "examPeriod": "一段",
