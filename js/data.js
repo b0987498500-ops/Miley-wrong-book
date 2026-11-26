@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v539';
+const STORAGE_KEY = 'miley_wrong_questions_v540';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_soc_civ_grand_justices_constitutional_court_powers_110exam_565",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "公民／中央政府職權／司法院大法官與憲法法庭職權／總統副總統彈劾審理／110會考",
+  "uploadDate": "2026-11-26",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：總統彈劾案由「立法院」提案通過後，移送「司法院大法官（憲法法庭）」審理；(C) 普通訴訟審判為普通法院法官職權。",
+  "stem": "老師在課堂上進行猜謎遊戲，要同學從提示中猜出謎題所指的官員。根據提示內容判斷，下列何者屬於此官員的職權範圍？【110年會考補考】\n\n【猜謎提示】\n1. 我的產生方式是由總統提名，經立法院同意後任命。\n2. 我是憲法法庭的成員之一。\n3. 當對法律的適用產生疑義時，就是我發揮功能的時候了。\n\n○ (A) 代表國家偵查、追訴刑事犯罪\n○ (B) 提出憲法修正案及領土變更案\n○ (C) 在法庭上獨立審判各種訴訟案件\n◉ (D) 審理立法委員提出的總統彈劾案",
+  "answer": "(D) 審理立法委員提出的總統彈劾案",
+  "explanation": "提示官員為司法院大法官，組成憲法法庭審理總統彈劾案，故選 (D)。(A)檢察官；(B)立委；(C)法官。",
+  "solution": "提示官員為司法院大法官，組成憲法法庭審理總統彈劾案，故選 (D)。(A)檢察官；(B)立委；(C)法官。",
+  "diagramUrl": ""
+},
   {
   "id": "q_soc_civ_impeachment_disciplinary_court_judicial_yuan_106exam_564",
   "examPeriod": "一段",
