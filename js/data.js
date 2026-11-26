@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v540';
+const STORAGE_KEY = 'miley_wrong_questions_v541';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_soc_civ_local_government_officials_council_interpellation_110exam_566",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "公民／地方政府與中央政府職權／中央政務官／立法委員／法官／地方行政首長與局處長／110會考",
+  "uploadDate": "2026-11-26",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：受「縣議員質詢」的機關必定為地方行政機關（如縣長、局處長）；甲（行政院閣員）、乙（法官）、丙（立委）皆為中央公職。",
+  "stem": "某大學邀請四位名人蒞校演講，附表為此四場演講的錄音檔案片段。根據表中內容判斷，下列何者最可能曾任我國地方政府公職人員？【110年會考補考】\n\n| 演講者 | 演講內容 |\n| :---: | :--- |\n| **甲** | 在院長提請總統任命後，我正式接任此工作，準備面對挑戰……。 |\n| **乙** | 在許多案件中，握有審判權的我們也常常陷入兩難的局面……。 |\n| **丙** | 質詢經濟部部長的那次經驗，是我最難忘的回憶……。 |\n| **丁** | 我任職的機關遭到糾正，縣議員也多次對此提出質詢……。 |\n\n○ (A) 甲\n○ (B) 乙\n○ (C) 丙\n◉ (D) 丁",
+  "answer": "(D) 丁",
+  "explanation": "丁任職機關受縣議員質詢，為地方行政機關（如縣府官員）。選 (D)。（甲：部會首長；乙：法官；丙：立委）",
+  "solution": "丁任職機關受縣議員質詢，為地方行政機關（如縣府官員）。選 (D)。（甲：部會首長；乙：法官；丙：立委）",
+  "diagramUrl": ""
+},
   {
   "id": "q_soc_civ_grand_justices_constitutional_court_powers_110exam_565",
   "examPeriod": "一段",
