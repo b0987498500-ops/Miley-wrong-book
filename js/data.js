@@ -3,10 +3,90 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v544';
+const STORAGE_KEY = 'miley_wrong_questions_v548';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_chi_rhetoric_writing_techniques_dynamic_static_573",
+  "examPeriod": "一段",
+  "subject": "國文",
+  "errorReason": "觀念不懂",
+  "concept": "國文／課文寫作技巧／與宋元思書／以動寫靜／化靜為動／擬人修辭",
+  "uploadDate": "2026-11-27",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：易混淆 (A) 與 (D)！(A)「泠泠作響、嚶嚶成韻」是「以有聲襯無聲（以動襯靜）」；(D)「負勢競上、互相軒邈」將靜態山勢寫活，才是「以動寫靜（化靜為動）」！",
+  "stem": "《與宋元思書》一文寫景技巧高超，將一百許里的富春江山水，濃縮在字裡行間。其中「將靜態的景物予以動態的描寫」，更令人讚嘆。下列文句，何者使用了「以動寫靜」的寫作技巧？\n\n○ (A) 泉水激石，泠泠作響；好鳥相鳴，嚶嚶成韻\n○ (B) 風煙俱淨，天山共色，從流飄蕩，任意東西\n○ (C) 水皆縹碧，千丈見底，游魚細石，直視無礙\n◉ (D) 夾岸高山，皆生寒樹。負勢競上，互相軒邈",
+  "answer": "(D) 夾岸高山，皆生寒樹。負勢競上，互相軒邈",
+  "explanation": "(A) 泉聲鳥鳴是以聲襯靜（聽覺襯托寧靜）；(B) 總寫山水全景與舟行自在；(C) 清水游魚為白描靜景；(D) 以「負勢競上、互相軒邈」將靜止高山化為爭先競逐之動態生命，為典型以動寫靜。選 (D)。",
+  "solution": "(A) 泉聲鳥鳴是以聲襯靜（聽覺襯托寧靜）；(B) 總寫山水全景與舟行自在；(C) 清水游魚為白描靜景；(D) 以「負勢競上、互相軒邈」將靜止高山化為爭先競逐之動態生命，為典型以動寫靜。選 (D)。",
+  "diagramUrl": ""
+},
+  {
+  "id": "q_chi_reading_vocabulary_polysemy_same_meaning_572",
+  "examPeriod": "一段",
+  "subject": "國文",
+  "errorReason": "觀念不懂",
+  "concept": "國文／閱讀理解／文言語詞一詞多義辨析／經綸／東西／無礙／飄蕩",
+  "uploadDate": "2026-11-27",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：文言語詞常有轉品：「經綸世務」作動詞（治理），「任意東西」作動詞（向東向西漂流），須依上下文詞性辨別。",
+  "stem": "下列「　」中的詞語，何組意思兩兩相同？\n\n○ (A) 「經綸」世務者，窺谷忘返／他的學識淵博，滿腹「經綸」，讓人欽佩\n○ (B) 從流飄蕩，任意「東西」／百貨公司周年慶大特價，顧客把握良機，搶購很多「東西」\n◉ (C) 游魚細石，直視「無礙」／我們兩人之間的感情「無礙」，這次的誤會，很快就冰釋了\n○ (D) 從流「飄蕩」，任意東西／地震震垮了家園，他只能到處「飄蕩」，四海為家",
+  "answer": "(C) 游魚細石，直視「無礙」／我們兩人之間的感情「無礙」，這次的誤會，很快就冰釋了",
+  "explanation": "(A) 前者為動詞「統籌治理」，後者為名詞「才識學問」；(B) 前者指「向東向西」，後者指「物品」；(C) 兩者皆為「毫無阻礙」之意；(D) 前者指「隨波漂流」，後者指「流浪漂泊」。故選 (C)。",
+  "solution": "(A) 前者為動詞「統籌治理」，後者為名詞「才識學問」；(B) 前者指「向東向西」，後者指「物品」；(C) 兩者皆為「毫無阻礙」之意；(D) 前者指「隨波漂流」，後者指「流浪漂泊」。故選 (C)。",
+  "diagramUrl": ""
+},
+  {
+  "id": "q_chi_orthography_bopomofo_to_characters_same_glyph_571",
+  "examPeriod": "一段",
+  "subject": "國文",
+  "errorReason": "觀念不懂",
+  "concept": "國文／字音字形／注音寫國字／字形辨析／遑／嶂／縹／邈",
+  "uploadDate": "2026-11-27",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：不「遑」多讓（不比別人差）與「遑」論（何況）皆從「辶」；水皆「縹」碧為青白石色，從「糸」。",
+  "stem": "下列「　」中的注音寫成國字後，何組字形相同？\n\n◉ (A) 不「ㄏㄨㄤˊ」多讓／「ㄏㄨㄤˊ」論\n○ (B) 身「ㄓㄤˋ」／層巒疊「ㄓㄤˋ」\n○ (C) 水皆「ㄆㄧㄠˇ」碧／「ㄆㄧㄠˇ」白\n○ (D) 「ㄇㄧㄠˇ」茫／互相軒「ㄇㄧㄠˇ」",
+  "answer": "(A) 不「ㄏㄨㄤˊ」多讓／「ㄏㄨㄤˊ」論",
+  "explanation": "(A) 皆作「遑」（閒暇、何況）；(B) 身「長」／層巒疊「嶂」；(C) 水皆「縹」碧（青綠色）／「漂」白；(D) 「渺」茫／互相軒「邈」（爭遠）。故選 (A)。",
+  "solution": "(A) 皆作「遑」（閒暇、何況）；(B) 身「長」／層巒疊「嶂」；(C) 水皆「縹」碧（青綠色）／「漂」白；(D) 「渺」茫／互相軒「邈」（爭遠）。故選 (A)。",
+  "diagramUrl": ""
+},
+  {
+  "id": "q_chi_orthography_similar_characters_pronunciation_570",
+  "examPeriod": "一段",
+  "subject": "國文",
+  "errorReason": "觀念不懂",
+  "concept": "國文／字音字形／形似字讀音辨析／雋與隼／伶與泠／擢與躍／湍與端",
+  "uploadDate": "2026-11-27",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：佳言「雋」語讀 ㄐㄩㄢˋ，鷹「隼」讀 ㄓㄨㄣˇ；拔「擢」讀 ㄓㄨㄛˊ（提拔）；急「湍」讀 ㄊㄨㄢ（水流急）。",
+  "stem": "下列「　」中的形似字，何組讀音相同？\n\n○ (A) 佳言「雋」語／凶猛鷹「隼」\n◉ (B) 口齒「伶」俐／「泠泠」作響\n○ (C) 「躍躍」欲試／拔「擢」人才\n○ (D) 急「湍」甚箭／詭計多「端」",
+  "answer": "(B) 口齒「伶」俐／「泠泠」作響",
+  "explanation": "(A) ㄐㄩㄢˋ（雋）／ㄓㄨㄣˇ（隼）；(B) 皆讀 ㄌㄧㄥˊ（口齒伶俐／泠泠作響音同）；(C) ㄩㄝˋ（躍）／ㄓㄨㄛˊ（擢）；(D) ㄊㄨㄢ（湍）／ㄉㄨㄢ（端）。故選 (B)。",
+  "solution": "(A) ㄐㄩㄢˋ（雋）／ㄓㄨㄣˇ（隼）；(B) 皆讀 ㄌㄧㄥˊ（口齒伶俐／泠泠作響音同）；(C) ㄩㄝˋ（躍）／ㄓㄨㄛˊ（擢）；(D) ㄊㄨㄢ（湍）／ㄉㄨㄢ（端）。故選 (B)。",
+  "diagramUrl": ""
+},
   {
   "id": "q_soc_civ_local_government_powers_budget_district_office_569",
   "examPeriod": "一段",
