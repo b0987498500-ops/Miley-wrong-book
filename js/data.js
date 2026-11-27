@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v548';
+const STORAGE_KEY = 'miley_wrong_questions_v549';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+  "id": "q_soc_civ_civil_law_age_legal_capacity_marriage_18_574",
+  "examPeriod": "一段",
+  "subject": "社會",
+  "errorReason": "觀念不懂",
+  "concept": "公民／民法／行為能力與年齡規範／18歲成年與結婚年齡／登記婚制度",
+  "uploadDate": "2026-11-27",
+  "mondayDate": "2026-11-23",
+  "mondayDates": [
+    "2026-11-23"
+  ],
+  "weekLabel": "2026-11-23 (最新週次)",
+  "isGuessedOrUnstable": false,
+  "mistakeNote": "💡 易錯筆記：1. 現行民法滿 18 歲即成年，具完全行為能力，男女法定結婚年齡亦皆為 18 歲。2. 我國結婚採「登記婚」，非求婚或辦婚宴即生效，必須完成戶政登記！",
+  "stem": "《民法》內容規範私人間的權利義務關係，包括財產與身分關係。而不同年齡的人從事買賣、結婚等與民法規範有關的行為，在法律上也會具有不同的效力。若依我國現行《民法》對年齡的規範，下列哪一項敘述是正確的？\n\n○ (A) 6 歲的小貝，獨自一人到影城購票看電影，具有完全效力\n○ (B) 15 歲的菲菲，用壓歲錢購買電腦，不須經法定代理人同意\n◉ (C) 18 歲的小佳，不但可以自行決定結婚對象，還可以買新車\n○ (D) 22 歲的奇隆，買鑽戒給女友求婚成功，兩人就能成為配偶",
+  "answer": "(C) 18 歲的小佳，不但可以自行決定結婚對象，還可以買新車",
+  "explanation": "(A) 未滿 7 歲為無行為能力人，購票行為無效；(B) 15 歲為限制行為能力人，買電腦須法定代理人同意；(C) 現行民法 18 歲成年且達法定結婚年齡，具完全行為能力；(D) 結婚須向戶政機關登記才具配偶效力。選 (C)。",
+  "solution": "(A) 未滿 7 歲為無行為能力人，購票行為無效；(B) 15 歲為限制行為能力人，買電腦須法定代理人同意；(C) 現行民法 18 歲成年且達法定結婚年齡，具完全行為能力；(D) 結婚須向戶政機關登記才具配偶效力。選 (C)。",
+  "diagramUrl": ""
+},
   {
   "id": "q_chi_rhetoric_writing_techniques_dynamic_static_573",
   "examPeriod": "一段",
