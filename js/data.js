@@ -3,10 +3,50 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v551';
+const STORAGE_KEY = 'miley_wrong_questions_v552';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_civ_media_public_opinion_adoption_criminal_trial_578",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "公民／傳播媒體／公共意見／親屬關係／收養法定血親／刑事訴訟無罪推定／法官與檢察官職責",
+    "uploadDate": "2026-11-27",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：1. 收養成立後，養父母與養子女在法律上屬於「直系血親（擬制／法定血親）」，絕非旁系！2. 刑事訴訟保障人權核心：採「無罪推定原則」，檢察官負責偵查蒐證起訴，法官負責獨立審判，各司其職。",
+    "stem": "2021 年初，南韓 SBS 電視臺《想知道真相》節目報導一起震驚韓國上下的虐童案，引發韓國民眾集體怒火。有一對夫婦收養孩子後，卻又涉嫌虐童致死。殘酷手段讓許多知名韓星也加入聲討行列，消息迅速透過網路傳遍世界。最終，這對虐童夫婦遭到地方法院的法官判決「無期徒刑」。此次事件，也讓韓國立法機關「修法加重虐童罰則」。\n請問：如果用我國相關法律來衡量，下列敘述何者正確？\n\n○ (A) 收養成立之後，雙方的關係就是旁系血親\n◉ (B) 電視臺的報導，有助於促成公共意見形成\n○ (C) 被告罪大惡極，法官採取有罪推定的原則\n○ (D) 正義終於伸張，依靠法官深入調查的努力",
+    "answer": "(B) 電視臺的報導，有助於促成公共意見形成",
+    "explanation": "(A) 收養成立為直系法定血親，非旁系；(B) 媒體報導引發大眾關注，凝聚公共意見促成修法；(C) 刑事訴訟採無罪推定原則；(D) 偵查案件由檢察官負責，法官負責中立審判。選 (B)。",
+    "solution": "(A) 收養成立為直系法定血親，非旁系；(B) 媒體報導引發大眾關注，凝聚公共意見促成修法；(C) 刑事訴訟採無罪推定原則；(D) 偵查案件由檢察官負責，法官負責中立審判。選 (B)。",
+    "diagramUrl": ""
+  },
+  {
+    "id": "q_soc_civ_constitutional_court_criminal_remedy_577",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "公民／權利救濟／刑事訴訟／審級救濟／窮盡審級救濟／憲法法庭裁判憲法審查",
+    "uploadDate": "2026-11-27",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：1. 有期徒刑為刑事制裁，若對法院判決不服，應走刑事訴訟上訴途徑；窮盡各級審級救濟確定後，若認裁判違憲，得向「憲法法庭」聲請審查！2. 訴願是針對行政機關之「行政處分」，不能對法院判決提訴願！",
+    "stem": "阿治在網路上分享自己潛水過程中觸碰綠蠵龜的影片，引發了爭議。由於他隨意觸碰保育類動物的行為，涉嫌違反《野生動物保育法》，一旦確定行為違法，最重將可能面臨有期徒刑的處罰。根據上述內容判斷，若阿治遭罰但不服，且窮盡救濟途徑，他採行下列哪一方式進行權利救濟最適當？\n\n○ (A) 向相關單位提出請願\n◉ (B) 向憲法法庭提起上訴\n○ (C) 向訴願管轄機關提出訴願\n○ (D) 由律師向市政府申請調解",
+    "answer": "(B) 向憲法法庭提起上訴",
+    "explanation": "(A) 請願為向機關陳請建議，非判決救濟；(B) 徒刑為刑事裁判，窮盡審級後得向憲法法庭聲請救濟；(C) 訴願針對行政處分，非刑事裁判；(D) 徒刑為刑事公訴，不得申請調解。選 (B)。",
+    "solution": "(A) 請願為向機關陳請建議，非判決救濟；(B) 徒刑為刑事裁判，窮盡審級後得向憲法法庭聲請救濟；(C) 訴願針對行政處分，非刑事裁判；(D) 徒刑為刑事公訴，不得申請調解。選 (B)。",
+    "diagramUrl": ""
+  },
   {
     "id": "q_soc_civ_court_personnel_robes_judge_prosecutor_lawyer_576",
     "examPeriod": "一段",
