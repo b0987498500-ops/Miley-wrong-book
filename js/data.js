@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v549';
+const STORAGE_KEY = 'miley_wrong_questions_v550';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_civ_mediation_committee_civil_criminal_offense_575",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "公民／權利救濟／鄉鎮市區調解委員會／告訴乃論刑事案件／提起訴訟",
+    "uploadDate": "2026-11-27",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：1. 鄉鎮市區調解委員會受理之刑事事件「僅限告訴乃論」，非告訴乃論（公訴罪）不可聲請調解！2. 若調解不成立，當事人可改向法院提起訴訟。",
+    "stem": "附表為我國某行政機關公布的統計資料，根據表中資料判斷，下列敘述何者正確？【110 年會考補考】\n\n【○○區調解委員會辦理民、刑事事件調解情形】\n・刑事事件：調解成立 550 件、調解不成立 150 件\n・民事事件：調解成立 300 件、調解不成立 200 件\n（單位：件）\n\n○ (A) 屬於告訴乃論刑事事件的件數為 550 件\n○ (B) 屬於非告訴乃論刑事事件的件數為 700 件\n○ (C) 調解不成立，可改提和解的件數共為 200 件\n◉ (D) 調解不成立，可改提訴訟的件數共為 350 件",
+    "answer": "(D) 調解不成立，可改提訴訟的件數共為 350 件",
+    "explanation": "(A) 刑事調解限告訴乃論，件數為 700；(B) 非告訴乃論不得聲請調解，件數為 0；(C) 調解不成立可向法院起訴；(D) 調解不成立共 150+200=350 件，皆可改提訴訟。選 (D)。",
+    "solution": "(A) 刑事調解限告訴乃論，件數為 700；(B) 非告訴乃論不得聲請調解，件數為 0；(C) 調解不成立可向法院起訴；(D) 調解不成立共 150+200=350 件，皆可改提訴訟。選 (D)。",
+    "diagramUrl": ""
+  },
   {
   "id": "q_soc_civ_civil_law_age_legal_capacity_marriage_18_574",
   "examPeriod": "一段",
