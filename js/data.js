@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v552';
+const STORAGE_KEY = 'miley_wrong_questions_v553';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_civ_administrative_sanction_remedy_579",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "公民／行政法／行政處分與行政罰／罰鍰與罰金辨析／行政救濟訴願／訴訟權",
+    "uploadDate": "2026-11-27",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：1. 「罰鍰」vs「罰金」：行政機關（環保局）開立的處分是「行政罰鍰」；只有法院依《刑法》判決的才是「刑罰罰金」。2. 救濟途徑：不服行政處分應循「訴願 ➔ 行政訴訟」；提起訴訟是行使憲法第 16 條保障的「訴訟權（受益權）」，不是自由權！",
+    "stem": "附圖是張小姐收到來自行政機關的一份文書。依圖中資訊判斷，有關其處分內容及依法尋求救濟的敘述，下列何者正確？\n\n【○○市政府環境保護局執行違反《廢棄物清理法》案件裁處書】\n・受處分人：張○○\n・違反事實：隨手丟棄菸蒂於公設道路，致污染環境\n・主旨：開罰新臺幣 1,200 元整\n・法令依據：違反《廢棄物清理法》第 27 條第 1 款，依第 50 條第 3 款裁處\n\n○ (A) 此案件是透過刑罰制裁藉以約束個人行為\n◉ (B) 張小姐被罰若不服可採行政救濟提起訴願\n○ (C) 由法官依罪刑法定原則對此案件作出判決\n○ (D) 張小姐基於《憲法》保障的自由權可提訴訟",
+    "answer": "(B) 張小姐被罰若不服可採行政救濟提起訴願",
+    "explanation": "(A) 環保局開罰為行政罰鍰，非刑罰；(B) 不服行政處分得依法提訴願與行政訴訟；(C) 行政罰由行政機關裁處，非由法官判決；(D) 提訴訟是行使憲法保障之訴訟權，非自由權。選 (B)。",
+    "solution": "(A) 環保局開罰為行政罰鍰，非刑罰；(B) 不服行政處分得依法提訴願與行政訴訟；(C) 行政罰由行政機關裁處，非由法官判決；(D) 提訴訟是行使憲法保障之訴訟權，非自由權。選 (B)。",
+    "diagramUrl": "assets/questions/q_soc_civ_administrative_sanction_remedy_579.png"
+  },
   {
     "id": "q_soc_civ_media_public_opinion_adoption_criminal_trial_578",
     "examPeriod": "一段",
