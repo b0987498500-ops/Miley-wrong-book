@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v550';
+const STORAGE_KEY = 'miley_wrong_questions_v551';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_civ_court_personnel_robes_judge_prosecutor_lawyer_576",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "公民／訴訟程序／法庭角色職責／法袍顏色辨識／公訴與自訴",
+    "uploadDate": "2026-11-27",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：1. 法袍鑲邊顏色：法官（藍邊＝青天象徵公正客觀）、檢察官（紫邊＝綱紀威嚴）、律師（白邊＝黑白分明辯護潔白）、公設辯護人（綠邊）、書記官（黑邊）。2. 民事訴訟只有法官與原被告雙方/律師，絕不會有「檢察官」出席！",
+    "stem": "你參加一場法庭審判，看到如附圖的各種法庭人員（檢察官：黑底紫邊、法官：黑底藍邊、律師：黑底白邊）。關於這些法庭人員的職責，下列敘述何者正確？\n\n○ (A) 法官：主動調查案件並執行刑罰\n◉ (B) 檢察官：偵查犯罪並且起訴罪犯\n○ (C) 律師：協助被害人提出公訴案件\n○ (D) 如果有這三位，這屬於民事訴訟",
+    "answer": "(B) 檢察官：偵查犯罪並且起訴罪犯",
+    "explanation": "(A) 法官採不告不理，不主動調查且由檢察署執行刑罰；(B) 檢察官代表國家偵查犯罪並提起公訴；(C) 律師協助自訴或辯護，公訴由檢察官提起；(D) 出現檢察官代表此為刑事訴訟。選 (B)。",
+    "solution": "(A) 法官採不告不理，不主動調查且由檢察署執行刑罰；(B) 檢察官代表國家偵查犯罪並提起公訴；(C) 律師協助自訴或辯護，公訴由檢察官提起；(D) 出現檢察官代表此為刑事訴訟。選 (B)。",
+    "diagramUrl": "assets/questions/q_soc_civ_court_personnel_robes_576.png"
+  },
   {
     "id": "q_soc_civ_mediation_committee_civil_criminal_offense_575",
     "examPeriod": "一段",
