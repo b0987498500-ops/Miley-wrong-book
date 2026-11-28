@@ -3,10 +3,50 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v557';
+const STORAGE_KEY = 'miley_wrong_questions_v558';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_usa_agricultural_belts_wheat_588",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "地理／北美洲／美國農業專業化分區／中央大平原小麥帶／春小麥與冬小麥",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：美國農業專業化分區口訣：中部大平原為「甲小麥帶（北春小麥、南冬小麥）」、中央密西西比河流域為「乙玉米帶」、東北部五大湖為「丙酪農帶」、東南部為「丁棉花與亞熱帶作物帶」。",
+    "stem": "美國幅員廣大，是全球面積第三大的國家，且農業十分發達，附圖是美國的農作物分布圖。請問：美國是全球重要的小麥出口國之一，平均每年出口量高達 2,000 至 2,400 萬公噸。請問：美國主要種植小麥的地區位於附圖中何處？\n\n◉ (A) 甲\n○ (B) 乙\n○ (C) 丙\n○ (D) 丁",
+    "answer": "(A) 甲",
+    "explanation": "(A) 甲位於大平原中北部及南部，為小麥帶；(B) 乙為密西西比河流域之玉米帶；(C) 丙位於五大湖與東北部人口稠密區之酪農帶；(D) 丁位於東南部之棉花與亞熱帶作物帶。選 (A)。",
+    "solution": "(A) 甲位於大平原中北部及南部，為小麥帶；(B) 乙為密西西比河流域之玉米帶；(C) 丙位於五大湖與東北部人口稠密區之酪農帶；(D) 丁位於東南部之棉花與亞熱帶作物帶。選 (A)。",
+    "diagramUrl": "assets/questions/q_soc_geo_usa_agricultural_belts_wheat_588.png"
+  },
+  {
+    "id": "q_soc_geo_amazon_rainforest_vegetation_strata_587",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "地理／南美洲／亞馬孫盆地／熱帶雨林氣候／多層次垂直植被景觀",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：熱帶雨林（如亞馬孫盆地）植物種類極為繁複，為爭奪陽光形成明顯的「垂直分層（高大喬木層、中層灌木、底層草本與附生藤蔓）」，絕非整齊劃一的單一樹種！",
+    "stem": "下列何者為亞馬孫河流域內最常見的天然植被景觀？（請對照附圖植被高度與分層特徵）\n\n○ (A) 圖 (A) 熱帶莽原疏林\n○ (B) 圖 (B) 寒溫帶針葉林\n◉ (C) 圖 (C) 多層次熱帶雨林\n○ (D) 圖 (D) 熱帶沙漠仙人掌灌木",
+    "answer": "(C) 圖 (C) 多層次熱帶雨林",
+    "explanation": "(A) 為夏雨冬乾之熱帶莽原疏林；(B) 為高緯寒溫帶之單一針葉林；(C) 亞馬孫流域終年高溫多雨，形成樹冠茂密、高低成層的熱帶雨林；(D) 為乾燥氣候之仙人掌耐旱灌木。選 (C)。",
+    "solution": "(A) 為夏雨冬乾之熱帶莽原疏林；(B) 為高緯寒溫帶之單一針葉林；(C) 亞馬孫流域終年高溫多雨，形成樹冠茂密、高低成層的熱帶雨林；(D) 為乾燥氣候之仙人掌耐旱灌木。選 (C)。",
+    "diagramUrl": "assets/questions/q_soc_geo_amazon_rainforest_vegetation_strata_587.png"
+  },
   {
     "id": "q_soc_geo_south_america_overurbanization_rio_de_janeiro_586",
     "examPeriod": "一段",
