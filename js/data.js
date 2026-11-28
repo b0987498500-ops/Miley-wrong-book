@@ -3,10 +3,70 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v554';
+const STORAGE_KEY = 'miley_wrong_questions_v555';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_yellowstone_national_park_rocky_mountains_geothermal_583",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "地理／北美洲／黃石國家公園／板塊運動／洛磯山脈新褶曲山脈地熱景觀",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：地熱、間歇泉與火山地形是「板塊交界／年輕褶曲山脈」的典型特徵。北美西部洛磯山脈位於環太平洋火山地震帶，地殼活動劇烈，黃石國家公園即坐落於此。",
+    "stem": "美國的黃石國家公園擁有特殊的地熱噴泉、峽谷、火山等景觀，成為世界著名的旅遊勝地。根據其地形作用力判斷，該國家公園最可能位於下列哪個地形區？\n\n○ (A) 五大湖區\n◉ (B) 洛磯山脈\n○ (C) 北美大平原\n○ (D) 阿帕拉契山脈",
+    "answer": "(B) 洛磯山脈",
+    "explanation": "(A) 五大湖為冰河侵蝕地形；(B) 洛磯山脈屬環太平洋年輕褶曲帶，地殼活躍多地熱與火山；(C) 大平原為平緩沉積平原；(D) 阿帕拉契山為古老穩定地塊無火山活動。選 (B)。",
+    "solution": "(A) 五大湖為冰河侵蝕地形；(B) 洛磯山脈屬環太平洋年輕褶曲帶，地殼活躍多地熱與火山；(C) 大平原為平緩沉積平原；(D) 阿帕拉契山為古老穩定地塊無火山活動。選 (B)。",
+    "diagramUrl": ""
+  },
+  {
+    "id": "q_soc_geo_appalachian_mountains_old_eroded_topography_582",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "地理／北美洲／古老陸塊／阿帕拉契山脈／長期風化侵蝕作用",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：阿帕拉契山脈形成於古生代，屬於「古老結晶陸塊／古褶曲山脈」，因年代久遠，歷經億萬年長期的風化與侵蝕，山頂圓鈍且地勢低緩。",
+    "stem": "北美東部的阿帕拉契山脈地勢低緩，起伏不大，此一現象與下列哪一因素關係最密切？\n\n○ (A) 氣候乾燥，風化旺盛\n○ (B) 冰河地形，侵蝕作用\n○ (C) 板塊張裂，地層陷落\n◉ (D) 古老陸塊，久經侵蝕",
+    "answer": "(D) 古老陸塊，久經侵蝕",
+    "explanation": "(A) 東部氣候濕潤非乾燥；(B) 冰河主要侵蝕加拿大地盾與高緯區；(C) 該處非板塊張裂陷落地區；(D) 阿帕拉契山為古老褶曲山脈，經長期風化侵蝕而地勢低緩。選 (D)。",
+    "solution": "(A) 東部氣候濕潤非乾燥；(B) 冰河主要侵蝕加拿大地盾與高緯區；(C) 該處非板塊張裂陷落地區；(D) 阿帕拉契山為古老褶曲山脈，經長期風化侵蝕而地勢低緩。選 (D)。",
+    "diagramUrl": ""
+  },
+  {
+    "id": "q_soc_geo_north_america_topography_profile_pacific_581",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "地理／北美洲／地形特徵／東西地形剖面圖／洛磯山脈與太平洋",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：北美洲地形三大縱列：西部是高峻的新褶曲「洛磯山脈」（緊鄰太平洋），中部是廣大平原，東部是低緩的「阿帕拉契山脈」（緊鄰大西洋）。",
+    "stem": "附圖為北美洲的地形剖面圖。依據其地理位置判斷，圖中「甲」海域應為下列何者？\n\n○ (A) 太平洋\n○ (B) 大西洋\n○ (C) 墨西哥灣\n○ (D) 哈得孫灣",
+    "answer": "(A) 太平洋",
+    "explanation": "(A) 北美西側緊鄰洛磯山脈，甲為西側太平洋；(B) 大西洋位於東側阿帕拉契山以東；(C) 墨西哥灣位於北美南方；(D) 哈得孫灣深入加拿大東北部。選 (A)。",
+    "solution": "(A) 北美西側緊鄰洛磯山脈，甲為西側太平洋；(B) 大西洋位於東側阿帕拉契山以東；(C) 墨西哥灣位於北美南方；(D) 哈得孫灣深入加拿大東北部。選 (A)。",
+    "diagramUrl": "assets/questions/q_soc_geo_north_america_topography_profile_pacific_581.png"
+  },
   {
     "id": "q_math_similar_rectangles_area_ratio_diagonal_580",
     "examPeriod": "一段",
