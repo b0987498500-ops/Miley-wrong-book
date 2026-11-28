@@ -3,10 +3,50 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v561';
+const STORAGE_KEY = 'miley_wrong_questions_v562';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_his_zheng_regime_england_trade_agreement_anping_593",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歷史／臺灣史／鄭氏時期／國際貿易／1670年英格蘭東印度公司商館／軍需品與鹿皮蔗糖",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：鄭氏時期對外貿易考點：1670 年鄭經在位時，為突破清廷海禁與遷界令，與「英國東印度公司（英格蘭）」簽署通商條約，在安平設立商館，採購火藥軍火等軍需物資，並出口蔗糖與鹿皮。",
+    "stem": "1670 年，□□政府特許的民營公司派員至臺灣，與鄭氏政權協議通商，並於安平成立商館。此公司將臺灣所產的鹿皮、蔗糖銷往海外，並販售布匹、軍需品至臺灣。雙方持續貿易往來，直至鄭氏政權滅亡才終止。上述的□□指的是下列哪個國家？\n\n○ (A) 法國\n○ (B) 荷蘭\n○ (C) 西班牙\n◉ (D) 英格蘭",
+    "answer": "(D) 英格蘭",
+    "explanation": "(A) 法國未曾與鄭氏簽訂商約；(B) 荷蘭被鄭成功驅逐後與鄭氏敵對；(C) 西班牙早被荷蘭驅逐出臺灣；(D) 1670 年英國東印度公司與鄭經簽約通商，於安平設商館銷售軍需品。選 (D)。",
+    "solution": "(A) 法國未曾與鄭氏簽訂商約；(B) 荷蘭被鄭成功驅逐後與鄭氏敵對；(C) 西班牙早被荷蘭驅逐出臺灣；(D) 1670 年英國東印度公司與鄭經簽約通商，於安平設商館銷售軍需品。選 (D)。",
+    "diagramUrl": ""
+  },
+  {
+    "id": "q_soc_his_byzantine_and_ottoman_ruled_greece_592",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歷史／西洋史／巴爾幹半島／拜占庭帝國與鄂圖曼土耳其統治／希臘歷史發展",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：希臘歷史統治政權演變：古希臘城邦 ➔ 亞歷山大帝國 ➔ 羅馬帝國 ➔ 東羅馬拜占庭帝國（希臘正教核心） ➔ 1453 年後受鄂圖曼土耳其帝國統治近 400 年 ➔ 19 世紀獨立。",
+    "stem": "右圖是歷史老師在課堂上講述的內容：「這個國家曾被拜占庭帝國、鄂圖曼帝國統治過，文化特色多元，可以看出其歷史發展的遺跡。」由老師提到的內容判斷，這個國家最可能是今天的哪個國家？\n\n○ (A) 義大利\n○ (B) 西班牙\n○ (C) 英國\n◉ (D) 希臘",
+    "answer": "(D) 希臘",
+    "explanation": "(A) 義大利未曾被鄂圖曼統治；(B) 西班牙未曾受拜占庭或鄂圖曼長期統治；(C) 英國兩國皆未曾統治；(D) 希臘位於巴爾幹半島，先後遭拜占庭與鄂圖曼帝國統治數百年。選 (D)。",
+    "solution": "(A) 義大利未曾被鄂圖曼統治；(B) 西班牙未曾受拜占庭或鄂圖曼長期統治；(C) 英國兩國皆未曾統治；(D) 希臘位於巴爾幹半島，先後遭拜占庭與鄂圖曼帝國統治數百年。選 (D)。",
+    "diagramUrl": ""
+  },
   {
     "id": "q_soc_his_ottoman_empire_conquest_constantinople_1453_591",
     "examPeriod": "一段",
