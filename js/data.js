@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v563';
+const STORAGE_KEY = 'miley_wrong_questions_v564';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_his_four_transcontinental_empires_maps_595",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歷史／西洋史／跨歐亞非大帝國／版圖地圖辨識／亞歷山大／拜占庭／阿拉伯／鄂圖曼",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：四大橫跨歐亞非大帝國首都定位速記：1. 甲（亞歷山大帝國）：定都巴比倫。2. 乙（拜占庭帝國）：定都君士坦丁堡。3. 丙（阿拉伯帝國）：定都巴格達（阿拔斯王朝）。4. 丁（鄂圖曼帝國）：定都伊斯坦堡。共通特徵皆為「橫跨歐、亞、非三洲」！",
+    "stem": "希真參加問答節目，其中一題的題目內容如附圖所示：「以下四個歷史上的大帝國有何共通之處？（甲：亞歷山大帝國／乙：拜占庭帝國／丙：阿拉伯帝國／丁：鄂圖曼帝國）」。請問：希真應回答什麼答案才能獲得分數？\n\n○ (A) 都是信仰佛教的國家\n○ (B) 均為阿拉伯人創立的國家\n○ (C) 都是信仰基督教的國家\n◉ (D) 均為橫跨歐亞非三洲的國家",
+    "answer": "(D) 均為橫跨歐亞非三洲的國家",
+    "explanation": "(A) 四國皆非佛教國家；(B) 僅丙為阿拉伯人建立；(C) 僅乙拜占庭信基督教，丙丁信伊斯蘭教；(D) 甲亞歷山大、乙拜占庭、丙阿拉伯、丁鄂圖曼皆橫跨歐亞非三洲。選 (D)。",
+    "solution": "(A) 四國皆非佛教國家；(B) 僅丙為阿拉伯人建立；(C) 僅乙拜占庭信基督教，丙丁信伊斯蘭教；(D) 甲亞歷山大、乙拜占庭、丙阿拉伯、丁鄂圖曼皆橫跨歐亞非三洲。選 (D)。",
+    "diagramUrl": "assets/questions/q_soc_his_four_transcontinental_empires_maps_595.png"
+  },
   {
     "id": "q_soc_his_byzantine_empire_eastern_orthodoxy_caesaropapism_594",
     "examPeriod": "一段",
