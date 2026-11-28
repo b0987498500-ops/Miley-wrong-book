@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v558';
+const STORAGE_KEY = 'miley_wrong_questions_v559';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_his_australia_british_colonization_convicts_589",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歷史／地理／大洋洲與澳洲／庫克船長／英國殖民／新南威爾斯罪犯流放地",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：澳洲殖民歷史關鍵節點：1770 年英國庫克船長登陸並宣告主權，1788 年英國艦隊在雪梨建立第一個殖民定居點，初期長期作為英國本土過剩犯人的「流放監獄」，至 19 世紀淘金熱後才轉為自由移民。",
+    "stem": "新南威爾斯位於澳洲的東南部，是澳洲人口最多的一州。1770 年，探險家庫克船長將此地命名為「新南威爾斯」；1788 年，★國在此地設置殖民地，為該國在澳洲的第一個殖民地。直到 1840 年，新南威爾斯一直是★國流放犯人的地方。上述提到的「★國」應為下列何者？\n\n○ (A) 西班牙\n◉ (B) 英國\n○ (C) 荷蘭\n○ (D) 義大利",
+    "answer": "(B) 英國",
+    "explanation": "(A) 西班牙殖民中南美洲與菲律賓；(B) 18 世紀庫克船長代表英國探險，英國在雪梨設殖民地流放罪犯；(C) 荷蘭曾命名新荷蘭但未建立犯人殖民地；(D) 義大利未參與早期澳洲殖民。選 (B)。",
+    "solution": "(A) 西班牙殖民中南美洲與菲律賓；(B) 18 世紀庫克船長代表英國探險，英國在雪梨設殖民地流放罪犯；(C) 荷蘭曾命名新荷蘭但未建立犯人殖民地；(D) 義大利未參與早期澳洲殖民。選 (B)。",
+    "diagramUrl": ""
+  },
   {
     "id": "q_soc_geo_usa_agricultural_belts_wheat_588",
     "examPeriod": "一段",
