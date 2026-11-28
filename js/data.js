@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v560';
+const STORAGE_KEY = 'miley_wrong_questions_v561';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_his_ottoman_empire_conquest_constantinople_1453_591",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歷史／西洋史／跨歐亞非大帝國／鄂圖曼土耳其帝國／1453年攻陷君士坦丁堡／滅拜占庭帝國",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：跨歐亞非大帝國起源地秒殺：1. 鄂圖曼帝國（起源於小亞細亞，1453 年攻陷君士坦丁堡滅東羅馬拜占庭）。2. 阿拉伯帝國（起源於阿拉伯半島）。3. 羅馬帝國（起源於義大利半島）。4. 蒙古帝國（起源於蒙古高原）。",
+    "stem": "某國起源於小亞細亞西北部，而後向外擴張領土，占據了小亞細亞、地中海東岸、兩河流域、阿拉伯半島西部沿海、北非等地區，版圖遼闊，但最為世人熟悉的，是在十五世紀攻占君士坦丁堡。上述的國家應為下列何者？\n\n○ (A) 蒙古帝國\n○ (B) 阿拉伯帝國\n○ (C) 羅馬帝國\n◉ (D) 鄂圖曼帝國",
+    "answer": "(D) 鄂圖曼帝國",
+    "explanation": "(A) 蒙古發源蒙古高原；(B) 阿拉伯發源阿拉伯半島，未攻克君士坦丁堡；(C) 羅馬起源義大利半島；(D) 鄂圖曼發源小亞細亞，於 1453 年攻陷君士坦丁堡滅東羅馬。選 (D)。",
+    "solution": "(A) 蒙古發源蒙古高原；(B) 阿拉伯發源阿拉伯半島，未攻克君士坦丁堡；(C) 羅馬起源義大利半島；(D) 鄂圖曼發源小亞細亞，於 1453 年攻陷君士坦丁堡滅東羅馬。選 (D)。",
+    "diagramUrl": ""
+  },
   {
     "id": "q_soc_his_remembrance_day_british_colonies_australia_590",
     "examPeriod": "一段",
