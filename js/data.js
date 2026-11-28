@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v559';
+const STORAGE_KEY = 'miley_wrong_questions_v560';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_his_remembrance_day_british_colonies_australia_590",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歷史／地理／大英國協／英國殖民地／一戰國殤紀念日紅花／澳洲殖民歷史",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：11 月 11 日為一戰停戰協定生效日（國殤紀念日，佩戴虞美人紅花 Poppy），由英國與其前殖民地（大英國協成員如澳洲、紐西蘭、加拿大等）共同傳承至今。解題關鍵在於辨識「何者曾為英國殖民地」！",
+    "stem": "英國的英格蘭足球超級聯賽，在最接近 11 月 11 日的比賽日，會舉辦紀念活動：比賽前由軍人、球員與觀眾一起進行默哀儀式，各隊球衣上印有紅花圖案，其餘參與者也在衣服上別著紅花。這是因為英國及其殖民地為紀念第一次世界大戰犧牲將士，將 11 月 11 日訂為紀念日，許多殖民地在獨立後，仍保留此節日。根據上文，下列何者最可能保有同樣的紀念活動？【113 會考】\n\n◉ (A) 澳洲職業足球聯賽\n○ (B) 巴西足球甲級聯賽\n○ (C) 荷蘭足球甲級聯賽\n○ (D) 韓國職業足球聯賽",
+    "answer": "(A) 澳洲職業足球聯賽",
+    "explanation": "(A) 澳洲曾為英國殖民地，為大英國協成員且隨英軍參戰一戰，保有紅花紀念日；(B) 巴西曾為葡萄牙殖民地；(C) 荷蘭為歐洲國家非英國殖民地；(D) 韓國近代遭日本殖民統治。選 (A)。",
+    "solution": "(A) 澳洲曾為英國殖民地，為大英國協成員且隨英軍參戰一戰，保有紅花紀念日；(B) 巴西曾為葡萄牙殖民地；(C) 荷蘭為歐洲國家非英國殖民地；(D) 韓國近代遭日本殖民統治。選 (A)。",
+    "diagramUrl": ""
+  },
   {
     "id": "q_soc_his_australia_british_colonization_convicts_589",
     "examPeriod": "一段",
