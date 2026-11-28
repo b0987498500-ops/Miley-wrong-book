@@ -3,10 +3,50 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v564';
+const STORAGE_KEY = 'miley_wrong_questions_v565';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_his_islamic_civilization_achievements_597",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歷史／西洋史／伊斯蘭文明／文化成就／翻譯運動／百年翻譯運動／文藝復興",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：伊斯蘭文化三大必考考點：1. 數字：吸收「印度」數字改良為「阿拉伯數字」；2. 科技傳播：怛羅斯之役傳出「造紙術」（非印刷術）；3. 文學：《天方夜譚》描寫阿拔斯首都「巴格達」（非耶路撒冷）。",
+    "stem": "伊斯蘭文明的起源可上溯至七世紀伊斯蘭教的出現，隨著阿拉伯帝國的擴張，伊斯蘭文明逐漸形成。請問：下列哪一項是伊斯蘭文明的成就？\n\n○ (A) 曾學習古埃及人創造的數字系統，並將其傳至西方\n○ (B) 與唐朝發生怛羅斯之役，將中國的印刷術傳入歐洲\n◉ (C) 將希臘、羅馬典籍翻譯成阿拉伯文，影響日後的文藝復興\n○ (D) 文學作品《天方夜譚》反映耶路撒冷商業繁榮的社會風貌",
+    "answer": "(C) 將希臘、羅馬典籍翻譯成阿拉伯文，影響日後的文藝復興",
+    "explanation": "(A)傳播的是印度數字系統；(B)怛羅斯之役傳入歐洲的是造紙術；(C)大量翻譯希臘羅馬典籍，保存古典文化並催生文藝復興；(D)《天方夜譚》描繪的是巴格達的繁榮風貌。選 (C)。",
+    "solution": "(A)傳播的是印度數字系統；(B)怛羅斯之役傳入歐洲的是造紙術；(C)大量翻譯希臘羅馬典籍，保存古典文化並催生文藝復興；(D)《天方夜譚》描繪的是巴格達的繁榮風貌。選 (C)。",
+    "diagramUrl": ""
+  },
+  {
+    "id": "q_soc_his_ottoman_empire_16th_century_territory_596",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歷史／西洋史／鄂圖曼帝國／十六世紀極盛疆域／滅拜占庭帝國",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：圖中定都伊斯坦堡（君士坦丁堡），版圖囊括巴爾幹半島、小亞細亞、埃及與美索不達米亞，為十六世紀盛期的「鄂圖曼帝國」。牢記關鍵事蹟：1453年攻陷君士坦丁堡滅拜占庭帝國！",
+    "stem": "附圖為某個政權在十六世紀時的疆域圖。請問：下列何者為此政權的事蹟？\n\n○ (A) 將過去的法律彙編成《十二表法》\n○ (B) 曾將基督教定為唯一的合法宗教\n○ (C) 君王積極擴張，並推廣希臘文化\n◉ (D) 攻入君士坦丁堡，滅拜占庭帝國",
+    "answer": "(D) 攻入君士坦丁堡，滅拜占庭帝國",
+    "explanation": "(A)《十二表法》為羅馬共和成就；(B)將基督教定為國教為羅馬帝國；(C)推廣希臘文化為亞歷山大帝國；(D)圖為十六世紀鄂圖曼帝國，其於1453年滅拜占庭帝國。選 (D)。",
+    "solution": "(A)《十二表法》為羅馬共和成就；(B)將基督教定為國教為羅馬帝國；(C)推廣希臘文化為亞歷山大帝國；(D)圖為十六世紀鄂圖曼帝國，其於1453年滅拜占庭帝國。選 (D)。",
+    "diagramUrl": "assets/questions/q_soc_his_ottoman_empire_16th_century_territory_596.png"
+  },
   {
     "id": "q_soc_his_four_transcontinental_empires_maps_595",
     "examPeriod": "一段",
