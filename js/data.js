@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v553';
+const STORAGE_KEY = 'miley_wrong_questions_v554';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_math_similar_rectangles_area_ratio_diagonal_580",
+    "examPeriod": "一段",
+    "subject": "數學",
+    "errorReason": "觀念不懂",
+    "concept": "數學／相似形／相似多邊形／相似矩形面積比與對應線段比／對角線長度比",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：1. 相似多邊形之「面積比 ＝ 對應邊長（或對角線）的平方比」；反推線段比時「必須開平方根」，切莫直接拿面積比 1:3 當作答案！2. 線段 DF 與 BD 分別為兩相似矩形之對應對角線。",
+    "stem": "如圖，矩形 DEFG 的面積 ＝ 1/3 矩形 DABC 的面積。若矩形 DEFG ∼ 矩形 DABC，則線段 DF : 線段 BD ＝ ？\n\n○ (A) 1 : 2\n○ (B) 1 : 3\n○ (C) 1 : √2\n◉ (D) 1 : √3",
+    "answer": "(D) 1 : √3",
+    "explanation": "(A) 誤算為 1:2；(B) 誤將邊長比直接等於面積比 1:3；(C) 誤算為 1:√2；(D) 相似形面積比等於對應線段平方比，DF : BD = √1 : √3 = 1 : √3。選 (D)。",
+    "solution": "(A) 誤算為 1:2；(B) 誤將邊長比直接等於面積比 1:3；(C) 誤算為 1:√2；(D) 相似形面積比等於對應線段平方比，DF : BD = √1 : √3 = 1 : √3。選 (D)。",
+    "diagramUrl": "assets/questions/q_math_similar_rectangles_area_ratio_diagonal_580.png"
+  },
   {
     "id": "q_soc_civ_administrative_sanction_remedy_579",
     "examPeriod": "一段",
