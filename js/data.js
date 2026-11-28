@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v555';
+const STORAGE_KEY = 'miley_wrong_questions_v556';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_south_america_isotherm_andes_mountains_584",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "地理／南美洲／氣候特徵／等溫線分布／安地斯山脈走向與地形高度影響",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：一般等溫線受緯度影響多呈「東西向」延伸；若等溫線呈現「南北向」偏折延伸，必是受到「南北走向山脈地勢高低」（如安地斯山脈）或沿海涼暖流的強烈影響！",
+    "stem": "南美洲的氣候類型多樣，各個地區的氣候特色也有所不同，附圖為南美洲 1 月月均溫 25°C 等溫線分布圖，影響該等溫線呈現此一分布型態的因素為何？\n\n◉ (A) 山脈走向\n○ (B) 迎風背風\n○ (C) 降水季節\n○ (D) 洋流性質",
+    "answer": "(A) 山脈走向",
+    "explanation": "(A) 安地斯山脈南北縱貫，地勢高低使等溫線隨山脈走向呈南北延伸；(B) 迎風背風主要影響降水多寡；(C) 降水季節影響乾濕季；(D) 秘魯涼流僅影響西側沿海，非全圖南北縱向主因。選 (A)。",
+    "solution": "(A) 安地斯山脈南北縱貫，地勢高低使等溫線隨山脈走向呈南北延伸；(B) 迎風背風主要影響降水多寡；(C) 降水季節影響乾濕季；(D) 秘魯涼流僅影響西側沿海，非全圖南北縱向主因。選 (A)。",
+    "diagramUrl": "assets/questions/q_soc_geo_south_america_isotherm_andes_mountains_584.png"
+  },
   {
     "id": "q_soc_geo_yellowstone_national_park_rocky_mountains_geothermal_583",
     "examPeriod": "一段",
