@@ -3,10 +3,50 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v556';
+const STORAGE_KEY = 'miley_wrong_questions_v557';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_geo_south_america_overurbanization_rio_de_janeiro_586",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "地理／南美洲／都市化問題／假都市化／過度都市化／巴西里約熱內盧",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：1. 審題秒殺點：題幹開宗明義「這座南美洲城市」，選項中僅「里約熱內盧」位於南美洲巴西！2. 假都市化（過度都市化）：鄉村推力過大導致大量無技能人口湧入大城市，超出城市公共設施承載力，形成貧民窟、治安與失業等社會問題。",
+    "stem": "「這座南美洲城市近年因有太多人口移入，再加上政府公共設施未能及時更新，城市發展雖較鄉村佳，卻無法滿足日益湧入找工作的人口，使得城市交通混亂，無業遊民遊蕩街頭的景象處處可見。」上述城市最可能為下列何者？\n\n○ (A) 紐約\n○ (B) 東京\n○ (C) 舊金山\n◉ (D) 里約熱內盧",
+    "answer": "(D) 里約熱內盧",
+    "explanation": "(A) 紐約位於北美洲美國東岸；(B) 東京位於亞洲日本；(C) 舊金山位於北美洲美國西岸；(D) 里約熱內盧位於南美洲巴西，因過度都市化湧入大量移工導致貧民窟與交通混亂。選 (D)。",
+    "solution": "(A) 紐約位於北美洲美國東岸；(B) 東京位於亞洲日本；(C) 舊金山位於北美洲美國西岸；(D) 里約熱內盧位於南美洲巴西，因過度都市化湧入大量移工導致貧民窟與交通混亂。選 (D)。",
+    "diagramUrl": ""
+  },
+  {
+    "id": "q_soc_geo_americas_topography_north_to_south_cards_585",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "地理／美洲／地形特徵／由北向南空間排列／洛磯山脈／西印度群島／亞馬孫雨林／巴西高原",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：美洲地形南北跨度大，定位緯度是解題關鍵：丙（北美洛磯山脈，北緯 30°~60°）➔ 乙（中美洲加勒比海群島，北緯 10°~25°）➔ 丁（赤道亞馬孫雨林，0°~5°S）➔ 甲（南半球巴西高原，10°~20°S）。",
+    "stem": "附圖是地理老師準備的四張中南美洲地形特色卡片，若按照由北往南的順序排列，其正確順序為何？\n\n【四張地形特色卡片】\n・甲：位巴西境內，夏雨冬乾的高原（巴西高原）\n・乙：位在加勒比海上的熱帶島嶼群（西印度群島）\n・丙：縱貫北美洲的洛磯山脈\n・丁：世界最大的熱帶雨林區（亞馬孫盆地）\n\n○ (A) 甲丁乙丙\n○ (B) 乙丁丙甲\n◉ (C) 丙乙丁甲\n○ (D) 丁乙甲丙",
+    "answer": "(C) 丙乙丁甲",
+    "explanation": "(A) 甲為最南端巴西高原；(B) 丙洛磯山脈位於最北；(C) 緯度由北至南依序為：丙北美洛磯山脈、乙加勒比海群島、丁赤道亞馬孫雨林、甲南半球巴西高原；(D) 丁非最北。選 (C)。",
+    "solution": "(A) 甲為最南端巴西高原；(B) 丙洛磯山脈位於最北；(C) 緯度由北至南依序為：丙北美洛磯山脈、乙加勒比海群島、丁赤道亞馬孫雨林、甲南半球巴西高原；(D) 丁非最北。選 (C)。",
+    "diagramUrl": ""
+  },
   {
     "id": "q_soc_geo_south_america_isotherm_andes_mountains_584",
     "examPeriod": "一段",
