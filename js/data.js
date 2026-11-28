@@ -3,10 +3,30 @@
  * Manages wrong questions, Ebbinghaus repetition states, tree structure, seed datasets.
  */
 
-const STORAGE_KEY = 'miley_wrong_questions_v562';
+const STORAGE_KEY = 'miley_wrong_questions_v563';
 
 // Initial Seed Data - Multi-Subject Multi-Week Dataset for Miley
 const INITIAL_SEED_DATA = [
+  {
+    "id": "q_soc_his_byzantine_empire_eastern_orthodoxy_caesaropapism_594",
+    "examPeriod": "一段",
+    "subject": "社會",
+    "errorReason": "觀念不懂",
+    "concept": "歷史／西洋史／拜占庭帝國／希臘正教／政教合一／聖索菲亞大教堂",
+    "uploadDate": "2026-11-28",
+    "mondayDate": "2026-11-23",
+    "mondayDates": [
+      "2026-11-23"
+    ],
+    "weekLabel": "2026-11-23 (最新週次)",
+    "isGuessedOrUnstable": false,
+    "mistakeNote": "💡 易錯筆記：中古歐洲兩大宗教世界對比：1. 拜占庭帝國（東歐）：信仰「希臘正教（東正教）」，中心為君士坦丁堡，皇帝兼掌政權與教權，為「政教合一」。2. 西歐封建社會：信仰「羅馬公教（天主教）」，以羅馬教宗為領袖，教權與王權互爭高下。",
+    "stem": "有關拜占庭帝國宗教信仰的敘述，下列何者正確？\n\n◉ (A) 信奉希臘正教，形成政教合一的世界\n○ (B) 服從羅馬教宗的領導，建造聖索菲亞大教堂\n○ (C) 全境有虔敬的宗教信仰，信仰唯一的神祇為阿拉\n○ (D) 因教義解釋分歧而脫離基督教世界，改信猶太教",
+    "answer": "(A) 信奉希臘正教，形成政教合一的世界",
+    "explanation": "(A) 拜占庭信奉希臘正教，皇帝兼任教會領袖，形成政教合一；(B) 拜占庭建聖索菲亞大教堂，但不服從羅馬教宗；(C) 阿拉為伊斯蘭教神祇；(D) 拜占庭分裂為東正教，未改信猶太教。選 (A)。",
+    "solution": "(A) 拜占庭信奉希臘正教，皇帝兼任教會領袖，形成政教合一；(B) 拜占庭建聖索菲亞大教堂，但不服從羅馬教宗；(C) 阿拉為伊斯蘭教神祇；(D) 拜占庭分裂為東正教，未改信猶太教。選 (A)。",
+    "diagramUrl": ""
+  },
   {
     "id": "q_soc_his_zheng_regime_england_trade_agreement_anping_593",
     "examPeriod": "一段",
